@@ -24,6 +24,14 @@
       "type": "build"
     },
     {
+      "name": "eslint-config-airbnb-typescript",
+      "type": "build"
+    },
+    {
+      "name": "eslint-config-prettier",
+      "type": "build"
+    },
+    {
       "name": "eslint-import-resolver-node",
       "type": "build"
     },
@@ -33,6 +41,18 @@
     },
     {
       "name": "eslint-plugin-import",
+      "type": "build"
+    },
+    {
+      "name": "eslint-plugin-markdownlint",
+      "type": "build"
+    },
+    {
+      "name": "eslint-plugin-prettier",
+      "type": "build"
+    },
+    {
+      "name": "eslint-plugin-testing-library",
       "type": "build"
     },
     {

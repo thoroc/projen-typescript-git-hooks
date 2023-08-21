@@ -13,10 +13,17 @@
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
-    "project": "./tsconfig.dev.json"
+    "project": "./tsconfig.json"
   },
   "extends": [
-    "plugin:import/typescript"
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended",
+    "prettier"
   ],
   "settings": {
     "import/parsers": {
@@ -28,13 +35,14 @@
     "import/resolver": {
       "node": {},
       "typescript": {
-        "project": "./tsconfig.dev.json",
+        "project": "./tsconfig.json",
         "alwaysTryTypes": true
       }
     }
   },
   "ignorePatterns": [
     "*.js",
+    "!.projenrc.js",
     "*.d.ts",
     "node_modules/",
     "*.generated.ts",
@@ -44,15 +52,19 @@
   ],
   "rules": {
     "indent": [
-      "off"
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
     ],
     "@typescript-eslint/indent": [
       "error",
       2
     ],
     "quotes": [
-      "error",
-      "single",
+      2,
+      "double",
       {
         "avoidEscape": true
       }
@@ -125,14 +137,11 @@
       "always"
     ],
     "max-len": [
-      "error",
+      "warn",
       {
-        "code": 150,
-        "ignoreUrls": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreComments": true,
-        "ignoreRegExpLiterals": true
+        "code": 110,
+        "tabWidth": 2,
+        "ignoreUrls": true
       }
     ],
     "quote-props": [
@@ -219,9 +228,62 @@
           "method"
         ]
       }
-    ]
+    ],
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        "default": "generic"
+      }
+    ],
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ],
+    "@typescript-eslint/no-empty-function": [
+      "error"
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error"
+    ],
+    "@typescript-eslint/quotes": [
+      "error",
+      "double",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "linebreak-style": 1,
+    "no-empty-function": "off",
+    "no-tabs": [
+      "error",
+      {
+        "allowIndentationTabs": true
+      }
+    ],
+    "no-unused-vars": "off"
   },
   "overrides": [
+    {
+      "files": [
+        ".projenrc.js"
+      ],
+      "rules": {
+        "@typescript-eslint/no-require-imports": "off",
+        "import/no-extraneous-dependencies": "off"
+      }
+    },
+    {
+      "files": [
+        "*.md"
+      ],
+      "parser": "eslint-plugin-markdownlint/parser"
+    },
     {
       "files": [
         ".projenrc.ts"

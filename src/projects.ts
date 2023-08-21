@@ -1,8 +1,7 @@
 import { typescript } from "projen";
 import { TypeScriptModuleResolution } from "projen/lib/javascript";
-import { Prettier } from "./components/codestandards";
+import { Eslint, Prettier } from "./components/codestandards";
 import {
-  GitClientHook,
   GitHooksManagerType,
   Husky,
   HuskyOptions,
@@ -26,6 +25,7 @@ export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProj
 
 export class GitHooksEnabledProject extends typescript.TypeScriptProject {
   public readonly gitHooksManager?: Husky | Lefthook;
+  public readonly eslint?: Eslint;
   public readonly prettier?: Prettier;
 
   constructor(options: GitHooksEnabledProjectOptions) {
@@ -34,6 +34,8 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
       deps: ["ts-node", ...(options.deps ?? [])],
       devDeps: ["@types/node", ...(options.devDeps ?? [])],
 
+      eslint: false,
+      eslintOptions: options.eslintOptions,
       prettier: false,
       prettierOptions: options.prettierOptions,
 
@@ -60,25 +62,12 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
         throw Error(`Unable to initiate a git hook manager: "${options.gitHooksManager}"`);
     }
 
+    if (options.eslint ?? true) {
+      this.eslint = new Eslint(this, options.eslintOptions);
+    }
+
     if (options.prettier ?? true) {
       this.prettier = new Prettier(this, options.prettierOptions);
-    }
-  }
-
-  preSynthesize(): void {
-    if (this.gitHooksManager instanceof Husky) {
-      this.gitHooksManager.lintStaged?.addRule({
-        filePattern: "src/**/*.{ts,tsx}",
-        commands: ["eslint --cache --fix", "prettier --write"],
-      });
-    }
-
-    if (this.gitHooksManager instanceof Lefthook) {
-      this.gitHooksManager.addCommand(GitClientHook.PRE_COMMIT, {
-        name: "eslint",
-        glob: "src/**/*.{ts,tsx}",
-        run: "eslint --cache --fix",
-      });
     }
   }
 }
