@@ -36,11 +36,7 @@ export class Husky extends GitHooksManager {
     super(project);
 
     if (project.parent) {
-      throw Error(
-        `${JSON.stringify(
-          project,
-        )}: GitHooksManager can only be configured on the root project.`,
-      );
+      throw Error(`${JSON.stringify(project)}: GitHooksManager can only be configured on the root project.`);
     }
 
     this.project = project;
@@ -56,25 +52,16 @@ export class Husky extends GitHooksManager {
     const shebang = "#!/bin/sh";
     return new TextFile(this.project, `.husky/${hook}`, {
       executable: true,
-      lines: [
-        shebang,
-        '. "$(dirname "$0")/_/husky.sh"',
-        "",
-        command.join("\n"),
-      ],
+      lines: [shebang, '. "$(dirname "$0")/_/husky.sh"', "", command.join("\n")],
     });
   }
 
   preSynthesize(): void {
     const script =
-      this.project.package.packageManager === NodePackageManager.YARN
-        ? "postinstall"
-        : "prepare";
+      this.project.package.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
     this.project.package.setScript(script, "npx husky install");
 
-    this.createHook(GitClientHook.PRE_COMMIT, [
-      this.lintStaged ? "npx lint-staged" : "",
-    ]);
+    this.createHook(GitClientHook.PRE_COMMIT, [this.lintStaged ? "npx lint-staged" : ""]);
     this.createHook(GitClientHook.PRE_PUSH, ["npx project test"]);
   }
 }
