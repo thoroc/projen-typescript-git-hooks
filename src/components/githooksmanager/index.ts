@@ -20,11 +20,8 @@ export abstract class GitHooksManager extends Component {
   /**
    * Returns the singletone component of a project or undefined if there is none.
    */
-  public static of(
-    project: javascript.NodeProject,
-  ): GitHooksManager | undefined {
-    const singleton = (c: Component): c is GitHooksManager =>
-      c instanceof GitHooksManager;
+  public static of(project: javascript.NodeProject): GitHooksManager | undefined {
+    const singleton = (c: Component): c is GitHooksManager => c instanceof GitHooksManager;
     return project.components.find(singleton);
   }
 
@@ -34,11 +31,7 @@ export abstract class GitHooksManager extends Component {
     super(project);
 
     if (project.parent) {
-      throw Error(
-        `${JSON.stringify(
-          project,
-        )}: GitHooksManager can only be configured on the root project.`,
-      );
+      throw Error(`${JSON.stringify(project)}: GitHooksManager can only be configured on the root project.`);
     }
 
     this.project = project;

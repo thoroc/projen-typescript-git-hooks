@@ -112,6 +112,15 @@
         }
       ]
     },
+    "format": {
+      "name": "format",
+      "description": "Runs Prettier",
+      "steps": [
+        {
+          "exec": "prettier --write \"{src,projenrc}/**/*.{js,jsx,ts,tsx}\""
+        }
+      ]
+    },
     "install": {
       "name": "install",
       "description": "Install project dependencies and update lockfile (non-frozen)",
@@ -227,13 +236,13 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --upgrade --target=minor --filter=@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,husky,jest,jest-junit,lint-staged,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript"
+          "exec": "npm-check-updates --upgrade --target=minor --filter=@types/jest,@types/node,@types/prettier,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,husky,jest,jest-junit,lint-staged,npm-check-updates,prettier,projen,standard-version,ts-jest,ts-node,typescript"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint husky jest jest-junit lint-staged npm-check-updates projen standard-version ts-jest ts-node typescript"
+          "exec": "yarn upgrade @types/jest @types/node @types/prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint husky jest jest-junit lint-staged npm-check-updates prettier projen standard-version ts-jest ts-node typescript"
         },
         {
           "exec": "npx projen"

@@ -54,9 +54,7 @@ export class Lefthook extends GitHooksManager {
   }
 
   public addCommand(hookName: GitClientHook, command: LefthookCommand) {
-    const action = this.config.actions?.find(
-      (hook) => hook.actionName === hookName,
-    );
+    const action = this.config.actions?.find((hook) => hook.actionName === hookName);
 
     if (!action) {
       this.config.actions.push({
@@ -69,9 +67,7 @@ export class Lefthook extends GitHooksManager {
   }
 
   public addScript(hookName: GitClientHook, script: LefthookScript) {
-    const action = this.config.actions?.find(
-      (hook) => hook.actionName === hookName,
-    );
+    const action = this.config.actions?.find((hook) => hook.actionName === hookName);
 
     if (!action) {
       this.config.actions.push({
@@ -85,9 +81,7 @@ export class Lefthook extends GitHooksManager {
 
   preSynthesize(): void {
     const script =
-      this.project.package.packageManager === NodePackageManager.YARN
-        ? "postinstall"
-        : "prepare";
+      this.project.package.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
     this.project.package.setScript(script, "npx lefthook install");
 
     console.log("GitHooksManagerEnabled: Creating new Lefthook config file.");

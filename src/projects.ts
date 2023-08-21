@@ -1,5 +1,6 @@
 import { typescript } from "projen";
 import { TypeScriptModuleResolution } from "projen/lib/javascript";
+import { Prettier } from "./components/codestandards";
 import {
   GitClientHook,
   GitHooksManagerType,
@@ -9,8 +10,7 @@ import {
   LefthookOptions,
 } from "./components/githooksmanager";
 
-export interface GitHooksEnabledProjectOptions
-  extends typescript.TypeScriptProjectOptions {
+export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProjectOptions {
   /**
    * Setup gitHooksManager
    * @default true
@@ -26,12 +26,16 @@ export interface GitHooksEnabledProjectOptions
 
 export class GitHooksEnabledProject extends typescript.TypeScriptProject {
   public readonly gitHooksManager?: Husky | Lefthook;
+  public readonly prettier?: Prettier;
 
   constructor(options: GitHooksEnabledProjectOptions) {
     super({
       ...options,
       deps: ["ts-node", ...(options.deps ?? [])],
       devDeps: ["@types/node", ...(options.devDeps ?? [])],
+
+      prettier: false,
+      prettierOptions: options.prettierOptions,
 
       tsconfig: {
         compilerOptions: {
@@ -47,21 +51,17 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
 
     switch (options.gitHooksManager) {
       case GitHooksManagerType.HUSKY:
-        this.gitHooksManager = new Husky(
-          this,
-          options.gitHooksManagerOptions as HuskyOptions,
-        );
+        this.gitHooksManager = new Husky(this, options.gitHooksManagerOptions as HuskyOptions);
         break;
       case GitHooksManagerType.LEFTHOOK:
-        this.gitHooksManager = new Lefthook(
-          this,
-          options.gitHooksManagerOptions as LefthookOptions,
-        );
+        this.gitHooksManager = new Lefthook(this, options.gitHooksManagerOptions as LefthookOptions);
         break;
       default:
-        throw Error(
-          `Unable to initiate a git hook manager: "${options.gitHooksManager}"`,
-        );
+        throw Error(`Unable to initiate a git hook manager: "${options.gitHooksManager}"`);
+    }
+
+    if (options.prettier ?? true) {
+      this.prettier = new Prettier(this, options.prettierOptions);
     }
   }
 
@@ -71,10 +71,6 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
         filePattern: "src/**/*.{ts,tsx}",
         commands: ["eslint --cache --fix", "prettier --write"],
       });
-      this.gitHooksManager?.lintStaged?.addRule({
-        filePattern: "*.md",
-        commands: "npx prettier --write --prose-wrap always",
-      });
     }
 
     if (this.gitHooksManager instanceof Lefthook) {
@@ -82,16 +78,6 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
         name: "eslint",
         glob: "src/**/*.{ts,tsx}",
         run: "eslint --cache --fix",
-      });
-      this.gitHooksManager.addCommand(GitClientHook.PRE_COMMIT, {
-        name: "prettier",
-        glob: "src/**/*.{ts,tsx}",
-        run: "prettier --write",
-      });
-      this.gitHooksManager.addCommand(GitClientHook.PRE_COMMIT, {
-        name: "prettier",
-        glob: "*.md",
-        run: "npx prettier --write --prose-wrap always",
       });
     }
   }

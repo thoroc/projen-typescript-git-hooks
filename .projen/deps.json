@@ -10,6 +10,10 @@
       "type": "build"
     },
     {
+      "name": "@types/prettier",
+      "type": "build"
+    },
+    {
       "name": "@typescript-eslint/eslint-plugin",
       "version": "^5",
       "type": "build"
@@ -56,6 +60,10 @@
     {
       "name": "npm-check-updates",
       "version": "^16",
+      "type": "build"
+    },
+    {
+      "name": "prettier",
       "type": "build"
     },
     {

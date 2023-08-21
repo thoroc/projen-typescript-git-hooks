@@ -9,6 +9,7 @@
     "default": "npx projen default",
     "eject": "npx projen eject",
     "eslint": "npx projen eslint",
+    "format": "npx projen format",
     "package": "npx projen package",
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@types/jest": "^29.5.3",
     "@types/node": "^16",
+    "@types/prettier": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
     "eslint": "^8",
@@ -36,6 +38,7 @@
     "jest-junit": "^15",
     "lint-staged": "^14.0.1",
     "npm-check-updates": "^16",
+    "prettier": "^3.0.2",
     "projen": "^0.72.18",
     "standard-version": "^9",
     "ts-jest": "^29.1.1",
