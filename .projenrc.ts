@@ -1,12 +1,12 @@
-import { typescript } from 'projen';
-const project = new typescript.TypeScriptProject({
+import { GitHooksEnabledProject } from './src/projects';
+
+const project = new GitHooksEnabledProject({
   defaultReleaseBranch: 'main',
   name: 'projen-typescript-git-hooks',
+  description: 'Projen template for Typescript project supporting Git hooks and extra tooling',
   projenrcTs: true,
 
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
+  peerDeps: ['projen'],
+  deps: ['projen'],
 });
 project.synth();
