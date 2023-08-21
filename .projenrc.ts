@@ -1,3 +1,4 @@
+import { GitHooksManagerType } from './src/components/githooksmanager';
 import { GitHooksEnabledProject } from './src/projects';
 
 const project = new GitHooksEnabledProject({
@@ -8,5 +9,7 @@ const project = new GitHooksEnabledProject({
 
   peerDeps: ['projen'],
   deps: ['projen'],
+
+  gitHooksManager: GitHooksManagerType.HUSKY
 });
 project.synth();
