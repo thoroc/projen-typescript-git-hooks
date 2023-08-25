@@ -3,7 +3,7 @@ import { GitHooksEnabledProject } from "../../../src";
 import { GitHooksManagerType } from "../../../src/components/githooksmanager";
 
 describe("Custom Eslint", () => {
-  test("New dev dependcies added - with prettier disabled", () => {
+  it("has new dev dependcies added - with prettier disabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -27,7 +27,7 @@ describe("Custom Eslint", () => {
     expect(Object.keys(config)).not.toContain("eslint-plugin-prettier");
   });
 
-  test("New dev dependcies added - with prettier enabled", () => {
+  it("has new dev dependcies added - with prettier enabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -46,7 +46,7 @@ describe("Custom Eslint", () => {
     expect(Object.keys(config)).toContain("eslint-plugin-prettier");
   });
 
-  test.only("New extended - with prettier disabled", () => {
+  it("has new extended - with prettier disabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -73,7 +73,7 @@ describe("Custom Eslint", () => {
     // expect(config).not.toContain("prettier");
   });
 
-  test("New extended - with prettier enabled", () => {
+  it("has new extended - with prettier enabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -93,5 +93,27 @@ describe("Custom Eslint", () => {
 
     expect(config.at(-2)).toEqual("plugin:prettier/recommended");
     expect(config.at(-1)).toEqual("prettier");
+  });
+
+  it("has new pre-commit rule - with husky enabled", () => {
+    // Arrange
+    const project = new GitHooksEnabledProject({
+      name: "test",
+      defaultReleaseBranch: "main",
+      eslint: true,
+      prettier: true,
+      gitHooksManager: GitHooksManagerType.HUSKY,
+    });
+
+    // Act
+    const snapshot = synthSnapshot(project);
+    const config = snapshot["package.json"]["lint-staged"];
+
+    // Assert
+    expect(Object.keys(config)).toContain("src/**/*.{ts,tsx}");
+  });
+
+  it("has new pre-commit rule - with lefthook enabled", () => {
+    console.log("Not implemented yet");
   });
 });

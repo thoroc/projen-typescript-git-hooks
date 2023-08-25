@@ -236,13 +236,13 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --upgrade --target=minor --filter=@types/jest,@types/node,@types/prettier,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,eslint-config-airbnb-typescript,eslint-config-prettier,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-markdownlint,eslint-plugin-prettier,eslint-plugin-testing-library,eslint,husky,jest,jest-junit,lint-staged,npm-check-updates,prettier,projen,standard-version,ts-jest,ts-node,typescript"
+          "exec": "npm-check-updates --upgrade --target=minor --filter=@types/jest,@types/node,@types/prettier,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,eslint-config-airbnb-typescript,eslint-config-prettier,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-markdownlint,eslint-plugin-prettier,eslint-plugin-testing-library,eslint,husky,jest,jest-junit,lint-staged,npm-check-updates,prettier,projen,standard-version,ts-jest,ts-node,typescript,yaml"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/jest @types/node @types/prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-config-prettier eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-markdownlint eslint-plugin-prettier eslint-plugin-testing-library eslint husky jest jest-junit lint-staged npm-check-updates prettier projen standard-version ts-jest ts-node typescript"
+          "exec": "yarn upgrade @types/jest @types/node @types/prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-config-prettier eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-markdownlint eslint-plugin-prettier eslint-plugin-testing-library eslint husky jest jest-junit lint-staged npm-check-updates prettier projen standard-version ts-jest ts-node typescript yaml"
         },
         {
           "exec": "npx projen"

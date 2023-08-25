@@ -20,7 +20,7 @@ export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProj
    * gitHooksManagerEnabled options
    * @default - default options
    */
-  readonly gitHooksManagerOptions?: GitHooksEnabledProjectOptions;
+  readonly gitHooksManagerOptions?: {};
 }
 
 export class GitHooksEnabledProject extends typescript.TypeScriptProject {
@@ -79,5 +79,7 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
       const eslintOptions = { dirs: ["src", "test"], prettier: options.prettier, ...options.eslintOptions };
       this.eslint = new Eslint(this, eslintOptions);
     }
+
+    this.addDevDeps("yaml");
   }
 }

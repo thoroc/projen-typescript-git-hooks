@@ -7,7 +7,7 @@ describe("Custom Prettier", () => {
   const markdownGlob = "*.md";
   const markdownCommand = "npx prettier --write --prose-wrap always";
 
-  test("new DevDeps added", () => {
+  it("has new DevDeps added", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -24,7 +24,7 @@ describe("Custom Prettier", () => {
     expect(Object.keys(config)).toContain("@types/prettier");
   });
 
-  test("new Task added", () => {
+  it("has new Task added", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -42,7 +42,7 @@ describe("Custom Prettier", () => {
     expect(config.format).toEqual("npx projen format");
   });
 
-  test("Husky Project: new lint-staged rule", () => {
+  it("has new lint-staged rule with Husky enabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -60,7 +60,7 @@ describe("Custom Prettier", () => {
     expect(config[markdownGlob]).toContain(markdownCommand);
   });
 
-  test("Lefthook Project: new rule", () => {
+  it("has new rule with Lefthook enabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",

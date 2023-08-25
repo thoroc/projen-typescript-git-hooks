@@ -14,7 +14,7 @@ export enum GitHooksManagerType {
   LEFTHOOK = "lefthook",
 }
 
-export interface GitHooksManagerOptions {}
+export type GitHooksManagerOptions = {};
 
 export abstract class GitHooksManager extends Component {
   /**
