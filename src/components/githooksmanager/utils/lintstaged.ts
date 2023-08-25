@@ -67,9 +67,9 @@ export class LintStaged extends Component {
         existingRule.commands = [existingRule.commands as string, rule.commands as string];
       }
 
-      console.log(`LintStaged: Added commands to existing rule ${rule.filePattern}.`);
+      console.log(`${this.constructor.name}: Added commands to existing rule ${rule.filePattern}.`);
     } else {
-      console.log(`LintStaged: Rule ${rule.filePattern} doesn't exist, adding it now.`);
+      console.log(`${this.constructor.name}: Rule ${rule.filePattern} doesn't exist, adding it now.`);
       this.rules.push(rule);
     }
   }

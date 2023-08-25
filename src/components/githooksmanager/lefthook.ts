@@ -18,8 +18,8 @@ export interface LefthookScript {
 
 export interface LefthookAction {
   actionName: GitClientHook;
-  commands?: LefthookCommand[];
-  scripts?: LefthookScript[];
+  commands?: Array<LefthookCommand>;
+  scripts?: Array<LefthookScript>;
 }
 
 export interface LefthookConfig {
@@ -84,7 +84,7 @@ export class Lefthook extends GitHooksManager {
       this.project.package.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
     this.project.package.setScript(script, "npx lefthook install");
 
-    console.log("GitHooksManagerEnabled: Creating new Lefthook config file.");
+    console.log(`${this.constructor.name}: Creating new Lefthook config file.`);
 
     new YamlFile(this.project, "lefthook.yml", {
       executable: true,

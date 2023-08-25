@@ -39,4 +39,4 @@ export abstract class GitHooksManager extends Component {
 }
 
 export { Husky, HuskyOptions } from "./husky";
-export { Lefthook, LefthookOptions } from "./lefthook";
+export { Lefthook, LefthookOptions, LefthookCommand } from "./lefthook";

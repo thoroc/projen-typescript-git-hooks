@@ -1,13 +1,11 @@
-import * as yaml from 'yaml';
+import { synthSnapshot } from "projen/lib/util/synth";
+import * as yaml from "yaml";
 import { GitHooksEnabledProject } from "../../../src";
 import { GitHooksManagerType, LefthookCommand } from "../../../src/components/githooksmanager";
-import { synthSnapshot } from 'projen/lib/util/synth';
-
-
 
 describe("Custom Prettier", () => {
-  const markdownGlob: string = "*.md";
-  const markdownCommand: string = "npx prettier --write --prose-wrap always";
+  const markdownGlob = "*.md";
+  const markdownCommand = "npx prettier --write --prose-wrap always";
 
   test("new DevDeps added", () => {
     // Arrange
@@ -20,7 +18,7 @@ describe("Custom Prettier", () => {
 
     // Act
     const snapshot = synthSnapshot(project);
-    const config = snapshot["package.json"]["devDependencies"];
+    const config = snapshot["package.json"].devDependencies;
 
     // Assert
     expect(Object.keys(config)).toContain("@types/prettier");
@@ -37,11 +35,11 @@ describe("Custom Prettier", () => {
 
     // Act
     const snapshot = synthSnapshot(project);
-    const config = snapshot["package.json"]["scripts"];
+    const config = snapshot["package.json"].scripts;
 
     // Assert
     expect(Object.keys(config)).toContain("format");
-    expect(config["format"]).toEqual("npx projen format");
+    expect(config.format).toEqual("npx projen format");
   });
 
   test("Husky Project: new lint-staged rule", () => {
@@ -75,11 +73,11 @@ describe("Custom Prettier", () => {
     const snapshot = synthSnapshot(project);
 
     const config = yaml.parse(snapshot["lefthook.yml"]);
-    const commands = config[0]["commands"];
+    const commands = config[0].commands;
     const prettierCommands = commands.filter((command: LefthookCommand) => command.name === "prettier");
     const markdownConfig = prettierCommands.find((command: LefthookCommand) => command.glob === markdownGlob);
 
     // Assert
-    expect(markdownConfig["run"]).toEqual(markdownCommand);
+    expect(markdownConfig.run).toEqual(markdownCommand);
   });
 });

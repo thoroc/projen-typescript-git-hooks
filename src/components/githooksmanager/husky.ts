@@ -48,7 +48,7 @@ export class Husky extends GitHooksManager {
   }
 
   private createHook(hook: GitClientHook, command: Array<string>): TextFile {
-    console.log(`VcsEnabled: Creating new husky hook for ${hook} hook.`);
+    console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`);
     const shebang = "#!/bin/sh";
     return new TextFile(this.project, `.husky/${hook}`, {
       executable: true,

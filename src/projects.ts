@@ -35,9 +35,9 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
       devDeps: ["@types/node", ...(options.devDeps ?? [])],
 
       eslint: false,
-      eslintOptions: options.eslintOptions,
+      eslintOptions: { dirs: [] },
       prettier: false,
-      prettierOptions: options.prettierOptions,
+      prettierOptions: {},
 
       tsconfig: {
         compilerOptions: {
@@ -48,6 +48,11 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
           noImplicitReturns: true,
         },
         ...options.tsconfig,
+      },
+
+      tsconfigDev: {
+        compilerOptions: {},
+        include: ["test/**/*.test.ts"],
       },
     });
 
@@ -62,12 +67,17 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
         throw Error(`Unable to initiate a git hook manager: "${options.gitHooksManager}"`);
     }
 
-    if (options.eslint ?? true) {
-      this.eslint = new Eslint(this, options.eslintOptions);
-    }
+    // console.log(`Project's options: ${JSON.stringify(options, undefined, 2)}`);
 
     if (options.prettier ?? true) {
+      console.log("Prettier enabled");
       this.prettier = new Prettier(this, options.prettierOptions);
+    }
+
+    if (options.eslint ?? true) {
+      console.log("Eslint enabled");
+      const eslintOptions = { dirs: ["src", "test"], prettier: options.prettier, ...options.eslintOptions };
+      this.eslint = new Eslint(this, eslintOptions);
     }
   }
 }

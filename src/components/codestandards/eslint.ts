@@ -1,9 +1,66 @@
 import { Component, javascript } from "projen";
 import { Eslint as BaseEslint, EslintOptions } from "projen/lib/javascript";
+import { Prettier } from "./prettier";
 import { GitHooksEnabledProject } from "../..";
 import { GitClientHook, Husky, Lefthook } from "../githooksmanager";
 
 export class Eslint extends BaseEslint {
+  public static defaultOptions = { dirs: ["src", "test"], prettier: false };
+  public static defaultRules = {
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        default: "generic",
+      },
+    ],
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        extendDefaults: true,
+        types: {
+          "{}": false,
+        },
+      },
+    ],
+    "@typescript-eslint/no-empty-function": ["error"],
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/quotes": [
+      "error",
+      "double",
+      {
+        avoidEscape: true,
+        allowTemplateLiterals: true,
+      },
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        devDependencies: ["**/test/**", "**/build-tools/**", ".projenrc.ts", "projenrc/**/*.ts"],
+        optionalDependencies: false,
+        peerDependencies: true,
+      },
+    ],
+    indent: ["error", 2, { SwitchCase: 1 }],
+    "linebreak-style": 1,
+    "max-len": [
+      "warn",
+      {
+        code: 110,
+        tabWidth: 2,
+        ignoreUrls: true,
+      },
+    ],
+    "no-empty-function": "off",
+    "no-tabs": [
+      "error",
+      {
+        allowIndentationTabs: true,
+      },
+    ],
+    "no-unused-vars": "off",
+    quotes: [2, "double", { avoidEscape: true }],
+  };
+
   /**
    * Returns the singletone component of a project or undefined if there is none.
    */
@@ -16,12 +73,7 @@ export class Eslint extends BaseEslint {
   private eslintExtendsOverride: Array<string>;
 
   constructor(project: GitHooksEnabledProject, options?: EslintOptions) {
-    super(
-      project,
-      options ?? {
-        dirs: ["src", "test"],
-      },
-    );
+    super(project, options ?? Eslint.defaultOptions);
 
     this.project = project;
     this.eslintExtendsOverride = [];
@@ -42,65 +94,18 @@ export class Eslint extends BaseEslint {
       "plugin:import/warnings",
     );
 
-    if (options?.prettier ?? true) {
+    // console.log(`Prettier value: ${options?.prettier}`);
+
+    if (options?.prettier || Prettier.of(project)) {
+      console.log("Eslint: Prettier enabled. Adding dev dependencies and extends");
       this.project.addDevDeps("eslint-config-prettier", "eslint-plugin-prettier");
       this.eslintExtendsOverride.push("plugin:prettier/recommended", "prettier");
     }
 
-    this.addRules({
-      "@typescript-eslint/array-type": [
-        "error",
-        {
-          default: "generic",
-        },
-      ],
-      "@typescript-eslint/ban-types": [
-        "error",
-        {
-          extendDefaults: true,
-          types: {
-            "{}": false,
-          },
-        },
-      ],
-      "@typescript-eslint/no-empty-function": ["error"],
-      "@typescript-eslint/no-unused-vars": ["error"],
-      "@typescript-eslint/quotes": [
-        "error",
-        "double",
-        {
-          avoidEscape: true,
-          allowTemplateLiterals: true,
-        },
-      ],
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          devDependencies: ["**/test/**", "**/build-tools/**", ".projenrc.ts", "projenrc/**/*.ts"],
-          optionalDependencies: false,
-          peerDependencies: true,
-        },
-      ],
-      indent: ["error", 2, { SwitchCase: 1 }],
-      "linebreak-style": 1,
-      "max-len": [
-        "warn",
-        {
-          code: 110,
-          tabWidth: 2,
-          ignoreUrls: true,
-        },
-      ],
-      "no-empty-function": "off",
-      "no-tabs": [
-        "error",
-        {
-          allowIndentationTabs: true,
-        },
-      ],
-      "no-unused-vars": "off",
-      quotes: [2, "double", { avoidEscape: true }],
-    });
+    // making sure the tests are being linted
+    this.config.parserOptions.project = "tsconfig.dev.json";
+
+    this.addRules(Eslint.defaultRules);
 
     // eslint-plugin-markdownlint
     this.addOverride({
@@ -128,8 +133,6 @@ export class Eslint extends BaseEslint {
         run: "prettier --write",
       });
     }
-
-    // console.log('Eslint instantiated');
   }
 
   preSynthesize(): void {

@@ -48,8 +48,8 @@ junit.xml
 !/src/
 /lib
 /dist/
-!/.eslintrc.json
 !/.prettierignore
 !/.prettierrc.json
+!/.eslintrc.json
 !/.husky/pre-commit
 !/.husky/pre-push
