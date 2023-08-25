@@ -1,7 +1,7 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import * as yaml from "yaml";
 import { GitHooksEnabledProject } from "../../../src";
-import { GitHooksManagerType, LefthookCommand } from "../../../src/components/githooksmanager";
+import { GitHooksManagerType, ILefthookCommand } from "../../../src/components/githooksmanager";
 
 describe("Custom Prettier", () => {
   const markdownGlob = "*.md";
@@ -74,8 +74,10 @@ describe("Custom Prettier", () => {
 
     const config = yaml.parse(snapshot["lefthook.yml"]);
     const commands = config[0].commands;
-    const prettierCommands = commands.filter((command: LefthookCommand) => command.name === "prettier");
-    const markdownConfig = prettierCommands.find((command: LefthookCommand) => command.glob === markdownGlob);
+    const prettierCommands = commands.filter((command: ILefthookCommand) => command.name === "prettier");
+    const markdownConfig = prettierCommands.find(
+      (command: ILefthookCommand) => command.glob === markdownGlob,
+    );
 
     // Assert
     expect(markdownConfig.run).toEqual(markdownCommand);

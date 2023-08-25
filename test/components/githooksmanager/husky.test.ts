@@ -14,9 +14,6 @@ describe("Husky", () => {
 
     // Act
     const snapshot = synthSnapshot(project);
-
-    console.log(snapshot);
-
     const config = snapshot[".husky/pre-commit"];
 
     // Assert
@@ -34,9 +31,6 @@ describe("Husky", () => {
 
     // Act
     const snapshot = synthSnapshot(project);
-
-    console.log(snapshot);
-
     const config = snapshot[".husky/pre-push"];
 
     // Assert

@@ -1,33 +1,12 @@
 import { Component, YamlFile, javascript } from "projen";
 import { NodePackageManager } from "projen/lib/javascript";
-import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from ".";
+import { ILefthookCommand } from "./command";
+import { Config, ILefthookConfig } from "./config";
+import { ILefthookScript } from "./script";
+import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from "..";
 
-export interface LefthookCommand {
-  name: string;
-  run: string;
-  files?: string;
-  exclude?: string;
-  glob?: string;
-  tags?: string;
-}
-
-export interface LefthookScript {
-  name: string;
-  runner: string;
-}
-
-export interface LefthookAction {
-  actionName: GitClientHook;
-  commands?: Array<LefthookCommand>;
-  scripts?: Array<LefthookScript>;
-}
-
-export interface LefthookConfig {
-  actions: Array<LefthookAction>;
-}
-
-export interface LefthookOptions extends GitHooksManagerOptions {
-  config?: LefthookConfig;
+export interface ILefthookOptions extends GitHooksManagerOptions {
+  config?: ILefthookConfig;
 }
 
 export class Lefthook extends GitHooksManager {
@@ -39,9 +18,9 @@ export class Lefthook extends GitHooksManager {
     return project.components.find(singleton);
   }
 
-  public config: LefthookConfig;
+  public config: ILefthookConfig;
 
-  constructor(project: javascript.NodeProject, options?: LefthookOptions) {
+  constructor(project: javascript.NodeProject, options?: ILefthookOptions) {
     super(project);
 
     project.addDevDeps("lefthook");
@@ -53,7 +32,7 @@ export class Lefthook extends GitHooksManager {
     console.log("Initiating Lefthook");
   }
 
-  public addCommand(hookName: GitClientHook, command: LefthookCommand) {
+  public addCommand(hookName: GitClientHook, command: ILefthookCommand) {
     const action = this.config.actions?.find((hook) => hook.actionName === hookName);
 
     if (!action) {
@@ -66,7 +45,7 @@ export class Lefthook extends GitHooksManager {
     action?.commands?.push(command);
   }
 
-  public addScript(hookName: GitClientHook, script: LefthookScript) {
+  public addScript(hookName: GitClientHook, script: ILefthookScript) {
     const action = this.config.actions?.find((hook) => hook.actionName === hookName);
 
     if (!action) {
@@ -86,9 +65,13 @@ export class Lefthook extends GitHooksManager {
 
     console.log(`${this.constructor.name}: Creating new Lefthook config file.`);
 
+    const config = this.config as Config;
+
     new YamlFile(this.project, "lefthook.yml", {
       executable: true,
-      obj: this.config?.actions,
+      obj: config.serialise(),
     });
   }
 }
+
+export { ILefthookCommand } from "./command";

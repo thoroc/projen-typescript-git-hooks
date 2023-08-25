@@ -6,7 +6,7 @@ import {
   Husky,
   HuskyOptions,
   Lefthook,
-  LefthookOptions,
+  ILefthookOptions,
 } from "./components/githooksmanager";
 
 export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProjectOptions {
@@ -61,13 +61,11 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
         this.gitHooksManager = new Husky(this, options.gitHooksManagerOptions as HuskyOptions);
         break;
       case GitHooksManagerType.LEFTHOOK:
-        this.gitHooksManager = new Lefthook(this, options.gitHooksManagerOptions as LefthookOptions);
+        this.gitHooksManager = new Lefthook(this, options.gitHooksManagerOptions as ILefthookOptions);
         break;
       default:
         throw Error(`Unable to initiate a git hook manager: "${options.gitHooksManager}"`);
     }
-
-    // console.log(`Project's options: ${JSON.stringify(options, undefined, 2)}`);
 
     if (options.prettier ?? true) {
       console.log("Prettier enabled");
