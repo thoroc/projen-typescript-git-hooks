@@ -24,7 +24,7 @@
     "postinstall": "npx husky install"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.3",
+    "@types/jest": "^29.5.4",
     "@types/node": "^16",
     "@types/prettier": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^5",
@@ -61,11 +61,8 @@
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "version": "0.0.0",
+  "types": "lib/index.d.ts",
   "jest": {
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.ts?(x)",
-      "<rootDir>/(test|src)/**/*(*.)@(spec|test).ts?(x)"
-    ],
     "clearMocks": true,
     "collectCoverage": true,
     "coverageReporters": [
@@ -85,6 +82,10 @@
     "watchPathIgnorePatterns": [
       "/node_modules/"
     ],
+    "testMatch": [
+      "**/__tests__/**/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[tj]s?(x)"
+    ],
     "reporters": [
       "default",
       [
@@ -94,14 +95,15 @@
         }
       ]
     ],
-    "preset": "ts-jest",
-    "globals": {
-      "ts-jest": {
-        "tsconfig": "tsconfig.dev.json"
-      }
+    "transform": {
+      "^.+\\.ts?$": [
+        "ts-jest",
+        {
+          "tsconfig": "tsconfig.dev.json"
+        }
+      ]
     }
   },
-  "types": "lib/index.d.ts",
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
       "eslint --cache --fix",

@@ -8,6 +8,7 @@ import {
   Lefthook,
   ILefthookOptions,
 } from "./components/githooksmanager";
+import { Jest } from "./components/jest";
 
 export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProjectOptions {
   /**
@@ -25,6 +26,7 @@ export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProj
 
 export class GitHooksEnabledProject extends typescript.TypeScriptProject {
   public readonly gitHooksManager?: Husky | Lefthook;
+  public readonly jest?: Jest;
   public readonly eslint?: Eslint;
   public readonly prettier?: Prettier;
 
@@ -38,6 +40,8 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
       eslintOptions: { dirs: [] },
       prettier: false,
       prettierOptions: {},
+      jest: false,
+      jestOptions: {},
 
       tsconfig: {
         compilerOptions: {
@@ -65,6 +69,11 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
         break;
       default:
         throw Error(`Unable to initiate a git hook manager: "${options.gitHooksManager}"`);
+    }
+
+    if (options.jest ?? true) {
+      console.log("Jest enabled");
+      this.jest = new Jest(this, options.jestOptions);
     }
 
     if (options.prettier ?? true) {
