@@ -1,9 +1,9 @@
-import { ILefthookCommand } from "./command";
-import { ILefthookScript } from "./script";
+import { LefthookCommandOptions } from "./command";
+import { LefthookScriptOptions } from "./script";
 import { GitClientHook } from "..";
 
-export interface ILefthookAction {
+export interface LefthookAction {
   actionName: GitClientHook;
-  commands?: Array<ILefthookCommand>;
-  scripts?: Array<ILefthookScript>;
+  commands?: Array<LefthookCommandOptions>;
+  scripts?: Array<LefthookScriptOptions>;
 }

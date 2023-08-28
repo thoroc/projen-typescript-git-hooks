@@ -1,17 +1,18 @@
-import { ILefthookAction } from "./action";
-import { Command } from "./command";
+import { LefthookAction } from "./action";
+import { LefthookCommand } from "./command";
 import { Serializer } from "../../../utils";
 
-export interface ILefthookConfig {
-  actions: Array<ILefthookAction>;
+export interface LefthookConfigOptions {
+  actions: Array<LefthookAction>;
 }
 
-export class Config implements ILefthookConfig, Serializer {
-  readonly actions: Array<ILefthookAction>;
+export class LefthookConfig implements LefthookConfigOptions, Serializer {
+  readonly actions: Array<LefthookAction>;
 
-  constructor(actions: Array<ILefthookAction>) {
-    this.actions = actions;
+  constructor(options: LefthookConfigOptions) {
+    this.actions = options.actions;
   }
+
   serialise(): unknown {
     const transfomed: { [key: string]: any } = {};
 
@@ -24,7 +25,7 @@ export class Config implements ILefthookConfig, Serializer {
         const transformedCommands = [];
 
         for (const cmd of action.commands) {
-          transformedCommands.push((cmd as Command).serialise());
+          transformedCommands.push((cmd as LefthookCommand).serialise());
         }
 
         transfomed[name] = {

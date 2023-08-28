@@ -1,4 +1,4 @@
-export interface ILefthookScript {
+export interface LefthookScriptOptions {
   name: string;
   runner: string;
 }
