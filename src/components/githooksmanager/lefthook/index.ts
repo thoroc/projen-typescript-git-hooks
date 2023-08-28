@@ -1,6 +1,6 @@
 import { Component, YamlFile } from "projen";
 import { NodePackageManager } from "projen/lib/javascript";
-import { LefthookCommandOptions } from "./command";
+import { LefthookCommand, LefthookCommandOptions } from "./command";
 import { LefthookConfig } from "./config";
 import { LefthookScriptOptions } from "./script";
 import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from "..";
@@ -43,7 +43,7 @@ export class Lefthook extends GitHooksManager {
     if (!action) {
       this.config.actions.push({
         actionName: hookName,
-        commands: [command],
+        commands: [new LefthookCommand(command)],
       });
     }
 

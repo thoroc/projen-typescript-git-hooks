@@ -1,11 +1,13 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import * as yaml from "yaml";
 import { GitHooksEnabledProject } from "../../../src";
-import { GitHooksManagerType, ILefthookCommand } from "../../../src/components/githooksmanager";
+import { GitHooksManagerType } from "../../../src/components/githooksmanager";
 
 describe("Custom Prettier", () => {
   const markdownGlob = "*.md";
   const markdownCommand = "npx prettier --write --prose-wrap always";
+  const sourceCodeGlob = "src/**/*.{ts,tsx}";
+  const sourceCodeCommand = "npx prettier --write";
 
   it("has new DevDeps added", () => {
     // Arrange
@@ -71,15 +73,23 @@ describe("Custom Prettier", () => {
 
     // Act
     const snapshot = synthSnapshot(project);
-
     const config = yaml.parse(snapshot["lefthook.yml"]);
-    const commands = config[0].commands;
-    const prettierCommands = commands.filter((command: ILefthookCommand) => command.name === "prettier");
-    const markdownConfig = prettierCommands.find(
-      (command: ILefthookCommand) => command.glob === markdownGlob,
-    );
+    const commands = config["pre-commit"].commands;
+
+    const prettierCommands = commands.filter((command: any) => {
+      const keys = Object.keys(command);
+      return keys[0] === "prettier";
+    });
+
+    const markdownConfig = prettierCommands.find((command: any) => {
+      return command.prettier.glob === markdownGlob;
+    });
+    const sourceCodeConfig = prettierCommands.find((command: any) => {
+      return command.prettier.glob === sourceCodeGlob;
+    });
 
     // Assert
-    expect(markdownConfig.run).toEqual(markdownCommand);
+    expect(markdownConfig.prettier.run).toEqual(markdownCommand);
+    expect(sourceCodeConfig.prettier.run).toEqual(sourceCodeCommand);
   });
 });

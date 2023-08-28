@@ -6,7 +6,7 @@ import {
   Husky,
   HuskyOptions,
   Lefthook,
-  ILefthookOptions,
+  LefthookOptions,
 } from "./components/githooksmanager";
 import { Jest } from "./components/jest";
 
@@ -72,7 +72,7 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
         this.gitHooksManager = new Husky(this, options.gitHooksManagerOptions as HuskyOptions);
         break;
       case GitHooksManagerType.LEFTHOOK:
-        this.gitHooksManager = new Lefthook(this, options.gitHooksManagerOptions as ILefthookOptions);
+        this.gitHooksManager = new Lefthook(this, options.gitHooksManagerOptions as LefthookOptions);
         break;
       default:
         throw Error(`Unable to initiate a git hook manager: "${options.gitHooksManager}"`);
