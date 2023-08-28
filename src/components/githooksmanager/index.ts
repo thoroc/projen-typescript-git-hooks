@@ -1,4 +1,5 @@
-import { Component, javascript } from "projen";
+import { Component } from "projen";
+import { GitHooksEnabledProject } from "../../projects";
 
 /**
  * The list of git cient-side hooks
@@ -20,14 +21,14 @@ export abstract class GitHooksManager extends Component {
   /**
    * Returns the singletone component of a project or undefined if there is none.
    */
-  public static of(project: javascript.NodeProject): GitHooksManager | undefined {
+  public static of(project: GitHooksEnabledProject): GitHooksManager | undefined {
     const singleton = (c: Component): c is GitHooksManager => c instanceof GitHooksManager;
     return project.components.find(singleton);
   }
 
-  readonly project: javascript.NodeProject;
+  readonly project: GitHooksEnabledProject;
 
-  constructor(project: javascript.NodeProject) {
+  constructor(project: GitHooksEnabledProject) {
     super(project);
 
     if (project.parent) {

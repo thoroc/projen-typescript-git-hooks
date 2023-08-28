@@ -1,4 +1,4 @@
-import { Component, javascript } from "projen";
+import { Component } from "projen";
 import { Eslint as BaseEslint, EslintOptions } from "projen/lib/javascript";
 import { Prettier } from "./prettier";
 import { GitHooksEnabledProject } from "../..";
@@ -32,6 +32,7 @@ export class Eslint extends BaseEslint {
         allowTemplateLiterals: true,
       },
     ],
+    "dot-notation": "warn",
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -64,7 +65,7 @@ export class Eslint extends BaseEslint {
   /**
    * Returns the singletone component of a project or undefined if there is none.
    */
-  public static of(project: javascript.NodeProject): Eslint | undefined {
+  public static of(project: GitHooksEnabledProject): Eslint | undefined {
     const singleton = (c: Component): c is Eslint => c instanceof Eslint;
     return project.components.find(singleton);
   }
@@ -97,7 +98,7 @@ export class Eslint extends BaseEslint {
     // console.log(`Prettier value: ${options?.prettier}`);
 
     if (options?.prettier || Prettier.of(project)) {
-      console.log("Eslint: Prettier enabled. Adding dev dependencies and extends");
+      if (this.project.debug) console.log("Eslint: Prettier enabled. Adding dev dependencies and extends");
       this.project.addDevDeps("eslint-config-prettier", "eslint-plugin-prettier");
       this.eslintExtendsOverride.push("plugin:prettier/recommended", "prettier");
     }
@@ -136,10 +137,10 @@ export class Eslint extends BaseEslint {
   }
 
   preSynthesize(): void {
-    console.log(`${this.constructor.name}: preSynthesis.`);
+    if (this.project.debug) console.log(`${this.constructor.name}: preSynthesis.`);
 
     if (this.eslintExtendsOverride.length > 0) {
-      console.log(`${this.constructor.name}: sorting out the extends section.`);
+      if (this.project.debug) console.log(`${this.constructor.name}: sorting out the extends section.`);
 
       const eslintConfig = this.project.tryFindObjectFile(".eslintrc.json");
       const eslintExtends = [...new Set(this.eslintExtendsOverride)];

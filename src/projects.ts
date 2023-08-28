@@ -22,6 +22,12 @@ export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProj
    * @default - default options
    */
   readonly gitHooksManagerOptions?: {};
+
+  /**
+   * Printing out debug statement
+   * @default false
+   */
+  readonly debug?: boolean;
 }
 
 export class GitHooksEnabledProject extends typescript.TypeScriptProject {
@@ -29,6 +35,7 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
   public readonly jest?: Jest;
   public readonly eslint?: Eslint;
   public readonly prettier?: Prettier;
+  public readonly debug?: boolean;
 
   constructor(options: GitHooksEnabledProjectOptions) {
     super({
@@ -71,18 +78,20 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
         throw Error(`Unable to initiate a git hook manager: "${options.gitHooksManager}"`);
     }
 
+    this.debug = options.debug ?? false;
+
     if (options.jest ?? true) {
-      console.log("Jest enabled");
+      if (this.debug) console.log("Jest enabled");
       this.jest = new Jest(this, options.jestOptions);
     }
 
     if (options.prettier ?? true) {
-      console.log("Prettier enabled");
+      if (this.debug) console.log("Prettier enabled");
       this.prettier = new Prettier(this, options.prettierOptions);
     }
 
     if (options.eslint ?? true) {
-      console.log("Eslint enabled");
+      if (this.debug) console.log("Eslint enabled");
       const eslintOptions = { dirs: ["src", "test"], prettier: options.prettier, ...options.eslintOptions };
       this.eslint = new Eslint(this, eslintOptions);
     }

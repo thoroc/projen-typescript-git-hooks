@@ -1,9 +1,10 @@
-import { Component, YamlFile, javascript } from "projen";
+import { Component, YamlFile } from "projen";
 import { NodePackageManager } from "projen/lib/javascript";
 import { LefthookCommandOptions } from "./command";
 import { LefthookConfig } from "./config";
 import { LefthookScriptOptions } from "./script";
 import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from "..";
+import { GitHooksEnabledProject } from "../../../projects";
 
 export interface LefthookOptions extends GitHooksManagerOptions {
   config?: LefthookConfig;
@@ -13,14 +14,15 @@ export class Lefthook extends GitHooksManager {
   /**
    * Returns the singletone component of a project or undefined if there is none.
    */
-  public static of(project: javascript.NodeProject): Lefthook | undefined {
+  public static of(project: GitHooksEnabledProject): Lefthook | undefined {
     const singleton = (c: Component): c is Lefthook => c instanceof Lefthook;
     return project.components.find(singleton);
   }
 
+  public readonly project: GitHooksEnabledProject;
   public config: LefthookConfig;
 
-  constructor(project: javascript.NodeProject, options?: LefthookOptions) {
+  constructor(project: GitHooksEnabledProject, options?: LefthookOptions) {
     super(project);
 
     project.addDevDeps("lefthook");
@@ -31,7 +33,8 @@ export class Lefthook extends GitHooksManager {
       },
     );
 
-    console.log("Initiating Lefthook");
+    this.project = project;
+    if (this.project.debug) console.log("Initiating Lefthook");
   }
 
   public addCommand(hookName: GitClientHook, command: LefthookCommandOptions) {
@@ -65,7 +68,7 @@ export class Lefthook extends GitHooksManager {
       this.project.package.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
     this.project.package.setScript(script, "npx lefthook install");
 
-    console.log(`${this.constructor.name}: Creating new Lefthook config file.`);
+    if (this.project.debug) console.log(`${this.constructor.name}: Creating new Lefthook config file.`);
 
     const config = this.config as LefthookConfig;
 

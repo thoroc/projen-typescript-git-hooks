@@ -1,5 +1,6 @@
-import { Component, Project } from "projen";
+import { Component } from "projen";
 import { GitHooksManager } from "..";
+import { GitHooksEnabledProject } from "../../../projects";
 
 export interface LintStagedRule {
   /**
@@ -27,7 +28,7 @@ export class LintStaged extends Component {
   /**
    * Returns the singletone component of a project or undefined if there is none.
    */
-  public static of(project: Project): LintStaged | undefined {
+  public static of(project: GitHooksEnabledProject): LintStaged | undefined {
     const singleton = (c: Component): c is LintStaged => c instanceof LintStaged;
     return project.components.find(singleton);
   }
@@ -67,9 +68,11 @@ export class LintStaged extends Component {
         existingRule.commands = [existingRule.commands as string, rule.commands as string];
       }
 
-      console.log(`${this.constructor.name}: Added commands to existing rule ${rule.filePattern}.`);
+      if (this.component.project.debug)
+        console.log(`${this.constructor.name}: Added commands to existing rule ${rule.filePattern}.`);
     } else {
-      console.log(`${this.constructor.name}: Rule ${rule.filePattern} doesn't exist, adding it now.`);
+      if (this.component.project.debug)
+        console.log(`${this.constructor.name}: Rule ${rule.filePattern} doesn't exist, adding it now.`);
       this.rules.push(rule);
     }
   }

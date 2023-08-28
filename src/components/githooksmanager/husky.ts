@@ -1,7 +1,8 @@
-import { Component, TextFile, javascript } from "projen";
+import { Component, TextFile } from "projen";
 import { NodePackageManager } from "projen/lib/javascript/node-package";
 import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from ".";
 import { LintStaged, LintStagedOptions } from "./utils/lintstaged";
+import { GitHooksEnabledProject } from "../../projects";
 
 export interface HuskyOptions extends GitHooksManagerOptions {
   /**
@@ -23,16 +24,16 @@ export class Husky extends GitHooksManager {
   /**
    * Returns the singletone component of a project or undefined if there is none.
    */
-  public static of(project: javascript.NodeProject): Husky | undefined {
+  public static of(project: GitHooksEnabledProject): Husky | undefined {
     const singleton = (c: Component): c is Husky => c instanceof Husky;
     return project.components.find(singleton);
   }
 
-  readonly project: javascript.NodeProject;
+  readonly project: GitHooksEnabledProject;
 
   public readonly lintStaged?: LintStaged;
 
-  constructor(project: javascript.NodeProject, options?: HuskyOptions) {
+  constructor(project: GitHooksEnabledProject, options?: HuskyOptions) {
     super(project);
 
     if (project.parent) {
@@ -48,7 +49,8 @@ export class Husky extends GitHooksManager {
   }
 
   private createHook(hook: GitClientHook, command: Array<string>): TextFile {
-    console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`);
+    if (this.project.debug)
+      console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`);
     const shebang = "#!/bin/sh";
     return new TextFile(this.project, `.husky/${hook}`, {
       executable: true,

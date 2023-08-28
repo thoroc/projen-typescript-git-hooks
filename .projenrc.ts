@@ -9,6 +9,7 @@ const project = new GitHooksEnabledProject({
 
   peerDeps: ["projen"],
   deps: ["projen"],
+  debug: true,
 
   gitHooksManager: GitHooksManagerType.HUSKY,
 });

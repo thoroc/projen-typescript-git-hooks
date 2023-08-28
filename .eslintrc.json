@@ -114,9 +114,7 @@
     "no-trailing-spaces": [
       "error"
     ],
-    "dot-notation": [
-      "error"
-    ],
+    "dot-notation": "warn",
     "no-bitwise": [
       "error"
     ],
