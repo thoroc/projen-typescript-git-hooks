@@ -64,6 +64,6 @@ export class Husky extends GitHooksManager {
     this.project.package.setScript(script, "npx husky install");
 
     this.createHook(GitClientHook.PRE_COMMIT, [this.lintStaged ? "npx lint-staged" : ""]);
-    this.createHook(GitClientHook.PRE_PUSH, ["npx project test"]);
+    this.createHook(GitClientHook.PRE_PUSH, ["yarn test"]);
   }
 }

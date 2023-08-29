@@ -117,7 +117,7 @@
       "description": "Runs Prettier",
       "steps": [
         {
-          "exec": "prettier --write \"{src,projenrc}/**/*.{js,jsx,ts,tsx}\""
+          "exec": "npx prettier --write \"{src,projenrc}/**/*.{js,jsx,ts,tsx}\""
         }
       ]
     },

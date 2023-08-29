@@ -34,6 +34,6 @@ describe("Husky", () => {
     const config = snapshot[".husky/pre-push"];
 
     // Assert
-    expect(config).toEqual('#!/bin/sh\n. "$(dirname "$0")/_/husky.sh"\n\nnpx project test');
+    expect(config).toEqual('#!/bin/sh\n. "$(dirname "$0")/_/husky.sh"\n\nyarn test');
   });
 });

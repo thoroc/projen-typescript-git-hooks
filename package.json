@@ -107,7 +107,7 @@
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
       "eslint --cache --fix",
-      "prettier --write"
+      "npx prettier --write"
     ],
     "*.md": "npx prettier --write --prose-wrap always"
   },
