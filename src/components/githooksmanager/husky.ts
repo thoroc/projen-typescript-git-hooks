@@ -46,8 +46,7 @@ export class Husky extends GitHooksManager {
     if (this.project.debug) console.log(options);
 
     if (options?.lintStaged ?? true) {
-      console.log("LintStaged enabled");
-      // if (this.project.debug) console.log("LintStaged enabled");
+      if (this.project.debug) console.log("LintStaged enabled");
       this.lintStaged = new LintStaged(this.project, options?.lintStagedOptions);
     }
 
