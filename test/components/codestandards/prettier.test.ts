@@ -58,6 +58,9 @@ describe("Custom Prettier", () => {
     const config = snapshot["package.json"]["lint-staged"];
 
     // Assert
+    expect(Object.keys(config)).toContain(sourceCodeGlob);
+    expect(config[sourceCodeGlob]).toContain(sourceCodeCommand);
+
     expect(Object.keys(config)).toContain(markdownGlob);
     expect(config[markdownGlob]).toContain(markdownCommand);
   });
@@ -89,7 +92,7 @@ describe("Custom Prettier", () => {
     });
 
     // Assert
-    expect(markdownConfig.prettier.run).toEqual(markdownCommand);
-    expect(sourceCodeConfig.prettier.run).toEqual(sourceCodeCommand);
+    expect(markdownConfig.prettier.run).toEqual(`${markdownCommand} {staged_files}`);
+    expect(sourceCodeConfig.prettier.run).toEqual(`${sourceCodeCommand} {staged_files}`);
   });
 });

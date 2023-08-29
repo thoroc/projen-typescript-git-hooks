@@ -22,13 +22,13 @@ describe("Lefthook", () => {
 pre-commit:
   commands:
     - prettier:
-        run: npx prettier --write --prose-wrap always
+        run: npx prettier --write --prose-wrap always {staged_files}
         glob: "*.md"
     - eslint:
-        run: eslint --cache --fix
+        run: eslint --cache --fix {staged_files}
         glob: src/**/*.{ts,tsx}
     - prettier:
-        run: prettier --write
+        run: npx prettier --write {staged_files}
         glob: src/**/*.{ts,tsx}
 `);
   });

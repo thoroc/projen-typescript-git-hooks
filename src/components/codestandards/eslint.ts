@@ -95,8 +95,6 @@ export class Eslint extends BaseEslint {
       "plugin:import/warnings",
     );
 
-    // console.log(`Prettier value: ${options?.prettier}`);
-
     if (options?.prettier || Prettier.of(project)) {
       if (this.project.debug) console.log("Eslint: Prettier enabled. Adding dev dependencies and extends");
       this.project.addDevDeps("eslint-config-prettier", "eslint-plugin-prettier");
@@ -118,7 +116,7 @@ export class Eslint extends BaseEslint {
     if (this.project.gitHooksManager instanceof Husky) {
       this.project.gitHooksManager.lintStaged?.addRule({
         filePattern: "src/**/*.{ts,tsx}",
-        commands: ["eslint --cache --fix", "prettier --write"],
+        commands: ["eslint --cache --fix", "npx prettier --write"],
       });
     }
 
@@ -131,7 +129,7 @@ export class Eslint extends BaseEslint {
       this.project.gitHooksManager.addCommand(GitClientHook.PRE_COMMIT, {
         name: "prettier",
         glob: "src/**/*.{ts,tsx}",
-        run: "prettier --write",
+        run: "npx prettier --write",
       });
     }
   }

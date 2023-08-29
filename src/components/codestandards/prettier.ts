@@ -36,7 +36,7 @@ export class Prettier extends javascript.Prettier {
 
     this.project.addTask("format", {
       description: "Runs Prettier",
-      exec: 'prettier --write "{src,projenrc}/**/*.{js,jsx,ts,tsx}"',
+      exec: 'npx prettier --write "{src,projenrc}/**/*.{js,jsx,ts,tsx}"',
     });
 
     this.ignoreFile?.addPatterns("tsconfig.dev.json", "tsconfig.json", "node_modules", "build", "coverage");
