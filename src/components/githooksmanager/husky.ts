@@ -1,6 +1,7 @@
 import { Component, TextFile } from "projen";
 import { NodePackageManager } from "projen/lib/javascript/node-package";
 import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from ".";
+import { Commitizen, CommitizenOptions } from "./utils/commitizen";
 import { LintStaged, LintStagedOptions } from "./utils/lintstaged";
 import { GitHooksEnabledProject } from "../../projects";
 
@@ -10,7 +11,7 @@ export interface HuskyOptions extends GitHooksManagerOptions {
    *
    * @default true
    */
-  readonly lintStaged?: boolean;
+  readonly lintStaged?: LintStaged;
 
   /**
    * Set rules for lint-staged
@@ -18,6 +19,20 @@ export interface HuskyOptions extends GitHooksManagerOptions {
    * @default {}
    */
   readonly lintStagedOptions?: LintStagedOptions;
+
+  /**
+   * Enable commitizen and re-adding of staged files pre commit.
+   *
+   * @default true
+   */
+  readonly commitizen?: Commitizen;
+
+  /**
+   * Set rules for commitizen
+   *
+   * @default {}
+   */
+  readonly commitizenOptions?: CommitizenOptions;
 }
 
 export class Husky extends GitHooksManager {
@@ -32,6 +47,7 @@ export class Husky extends GitHooksManager {
   readonly project: GitHooksEnabledProject;
 
   public readonly lintStaged?: LintStaged;
+  public readonly commitizen?: Commitizen;
 
   constructor(project: GitHooksEnabledProject, options?: HuskyOptions) {
     super(project);
@@ -44,7 +60,13 @@ export class Husky extends GitHooksManager {
     this.project.addDevDeps("husky");
 
     if (options?.lintStaged ?? true) {
+      if (this.project.debug) console.log("LintStaged enabled");
       this.lintStaged = new LintStaged(this, options?.lintStagedOptions);
+    }
+
+    if (options?.commitizen ?? true) {
+      if (this.project.debug) console.log("Commitizen enabled");
+      this.commitizen = new Commitizen(this, options?.commitizenOptions);
     }
   }
 
@@ -65,5 +87,10 @@ export class Husky extends GitHooksManager {
 
     this.createHook(GitClientHook.PRE_COMMIT, [this.lintStaged ? "npx lint-staged" : ""]);
     this.createHook(GitClientHook.PRE_PUSH, ["yarn test"]);
+    if (this.commitizen) {
+      this.createHook(GitClientHook.PRE_COMMIT_MESSAGE, [
+        "exec < /dev/tty && ./node_nodules/.bin/cz --hook || true",
+      ]);
+    }
   }
 }

@@ -8,6 +8,7 @@ import { GitHooksEnabledProject } from "../../projects";
 export enum GitClientHook {
   PRE_COMMIT = "pre-commit",
   PRE_PUSH = "pre-push",
+  PRE_COMMIT_MESSAGE = "prepare-commit-message",
 }
 
 export enum GitHooksManagerType {
