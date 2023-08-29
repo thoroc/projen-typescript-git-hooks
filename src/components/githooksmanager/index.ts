@@ -9,7 +9,7 @@ import { CommitizenOptions } from "../codestandards/commitizen";
 export enum GitClientHook {
   PRE_COMMIT = "pre-commit",
   PRE_PUSH = "pre-push",
-  PRE_COMMIT_MESSAGE = "prepare-commit-message",
+  PRE_COMMIT_MESSAGE = "prepare-commit-msg",
 }
 
 export enum GitHooksManagerType {

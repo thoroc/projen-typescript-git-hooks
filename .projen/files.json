@@ -10,7 +10,7 @@
     ".gitignore",
     ".husky/pre-commit",
     ".husky/pre-push",
-    ".husky/prepare-commit-message",
+    ".husky/prepare-commit-msg",
     ".mergify.yml",
     ".npmignore",
     ".npmrc",
