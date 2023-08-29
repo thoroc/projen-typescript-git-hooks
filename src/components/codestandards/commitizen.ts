@@ -34,9 +34,9 @@ export class Commitizen extends Component {
       "cz-conventional-changelog",
     );
 
-    this.project.addTask("commit", {
+    this.project.addTask("commitizen", {
       description: "Commitizen's commit",
-      exec: "./node_modules/.bin/cz",
+      exec: "cz",
     });
   }
 
@@ -54,7 +54,7 @@ export class Commitizen extends Component {
     }
 
     (this.project.gitHooksManager as Husky).createHook(GitClientHook.PRE_COMMIT_MESSAGE, [
-      "exec < /dev/tty && ./node_nodules/.bin/cz --hook || true",
+      "exec < /dev/tty && npx cz --hook || true",
     ]);
   }
 }

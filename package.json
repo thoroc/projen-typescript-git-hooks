@@ -5,7 +5,7 @@
     "build": "npx projen build",
     "bump": "npx projen bump",
     "clobber": "npx projen clobber",
-    "commit": "npx projen commit",
+    "commitizen": "npx projen commitizen",
     "compile": "npx projen compile",
     "default": "npx projen default",
     "eject": "npx projen eject",

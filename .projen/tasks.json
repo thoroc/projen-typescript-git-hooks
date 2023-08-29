@@ -73,12 +73,12 @@
       ],
       "condition": "git diff --exit-code > /dev/null"
     },
-    "commit": {
-      "name": "commit",
+    "commitizen": {
+      "name": "commitizen",
       "description": "Commitizen's commit",
       "steps": [
         {
-          "exec": "./node_modules/.bin/cz"
+          "exec": "cz"
         }
       ]
     },

@@ -16,11 +16,11 @@ describe("Commitizen Component", () => {
 
     // Act
     const snapshot = synthSnapshot(project);
-    const config = snapshot[".husky/prepare-commit-message"];
+    const config = snapshot[".husky/prepare-commit-msg"];
 
     // Assert
     expect(config).toEqual(
-      '#!/bin/sh\n. "$(dirname "$0")/_/husky.sh"\n\nexec < /dev/tty && ./node_nodules/.bin/cz --hook || true',
+      '#!/bin/sh\n. "$(dirname "$0")/_/husky.sh"\n\nexec < /dev/tty && npx cz --hook || true',
     );
   });
 });
