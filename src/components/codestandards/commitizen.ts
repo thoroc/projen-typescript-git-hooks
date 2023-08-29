@@ -1,6 +1,6 @@
 import { Component, JsonFile } from "projen";
-import { GitHooksManager } from "..";
-import { GitHooksEnabledProject } from "../../../projects";
+import { GitHooksEnabledProject } from "../../projects";
+import { GitClientHook, Husky } from "../githooksmanager";
 
 export interface CommitizenOptions {
   readonly json?: boolean;
@@ -17,13 +17,16 @@ export class Commitizen extends Component {
     return project.components.find(singleton);
   }
 
-  options?: CommitizenOptions;
-  project: GitHooksEnabledProject;
-  constructor(component: GitHooksManager, options?: CommitizenOptions) {
-    super(component.project);
+  readonly options?: CommitizenOptions;
 
-    this.project = component.project;
+  project: GitHooksEnabledProject;
+
+  constructor(project: GitHooksEnabledProject, options?: CommitizenOptions) {
+    super(project);
+
+    this.project = project;
     this.options = options;
+
     this.project.addDevDeps(
       "@commitlint/cli",
       "@commitlint/config-conventional",
@@ -49,5 +52,9 @@ export class Commitizen extends Component {
         commitizen: Commitizen.config,
       });
     }
+
+    (this.project.gitHooksManager as Husky).createHook(GitClientHook.PRE_COMMIT_MESSAGE, [
+      "exec < /dev/tty && ./node_nodules/.bin/cz --hook || true",
+    ]);
   }
 }

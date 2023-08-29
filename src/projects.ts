@@ -2,6 +2,7 @@ import { typescript } from "projen";
 import { TypeScriptModuleResolution } from "projen/lib/javascript";
 import { Eslint, Prettier } from "./components/codestandards";
 import {
+  GitHooksManagerOptions,
   GitHooksManagerType,
   Husky,
   HuskyOptions,
@@ -21,7 +22,7 @@ export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProj
    * gitHooksManagerEnabled options
    * @default - default options
    */
-  readonly gitHooksManagerOptions?: {};
+  readonly gitHooksManagerOptions?: GitHooksManagerOptions;
 
   /**
    * Printing out debug statement
@@ -67,6 +68,10 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
       },
     });
 
+    this.debug = options.debug ?? false;
+
+    if (this.debug) console.log(options);
+
     switch (options.gitHooksManager) {
       case GitHooksManagerType.HUSKY:
         this.gitHooksManager = new Husky(this, options.gitHooksManagerOptions as HuskyOptions);
@@ -77,8 +82,6 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
       default:
         throw Error(`Unable to initiate a git hook manager: "${options.gitHooksManager}"`);
     }
-
-    this.debug = options.debug ?? false;
 
     if (options.jest ?? true) {
       if (this.debug) console.log("Jest enabled");

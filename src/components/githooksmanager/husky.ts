@@ -1,9 +1,9 @@
 import { Component, TextFile } from "projen";
 import { NodePackageManager } from "projen/lib/javascript/node-package";
 import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from ".";
-import { Commitizen, CommitizenOptions } from "./utils/commitizen";
 import { LintStaged, LintStagedOptions } from "./utils/lintstaged";
 import { GitHooksEnabledProject } from "../../projects";
+import { Commitizen } from "../codestandards/commitizen";
 
 export interface HuskyOptions extends GitHooksManagerOptions {
   /**
@@ -19,20 +19,6 @@ export interface HuskyOptions extends GitHooksManagerOptions {
    * @default {}
    */
   readonly lintStagedOptions?: LintStagedOptions;
-
-  /**
-   * Enable commitizen and re-adding of staged files pre commit.
-   *
-   * @default true
-   */
-  readonly commitizen?: Commitizen;
-
-  /**
-   * Set rules for commitizen
-   *
-   * @default {}
-   */
-  readonly commitizenOptions?: CommitizenOptions;
 }
 
 export class Husky extends GitHooksManager {
@@ -44,10 +30,8 @@ export class Husky extends GitHooksManager {
     return project.components.find(singleton);
   }
 
-  readonly project: GitHooksEnabledProject;
-
-  public readonly lintStaged?: LintStaged;
-  public readonly commitizen?: Commitizen;
+  readonly lintStaged?: LintStaged;
+  readonly commitizen?: Commitizen;
 
   constructor(project: GitHooksEnabledProject, options?: HuskyOptions) {
     super(project);
@@ -59,18 +43,21 @@ export class Husky extends GitHooksManager {
     this.project = project;
     this.project.addDevDeps("husky");
 
+    if (this.project.debug) console.log(options);
+
     if (options?.lintStaged ?? true) {
-      if (this.project.debug) console.log("LintStaged enabled");
-      this.lintStaged = new LintStaged(this, options?.lintStagedOptions);
+      console.log("LintStaged enabled");
+      // if (this.project.debug) console.log("LintStaged enabled");
+      this.lintStaged = new LintStaged(this.project, options?.lintStagedOptions);
     }
 
     if (options?.commitizen ?? true) {
       if (this.project.debug) console.log("Commitizen enabled");
-      this.commitizen = new Commitizen(this, options?.commitizenOptions);
+      this.commitizen = new Commitizen(this.project, options?.commitizenOptions);
     }
   }
 
-  private createHook(hook: GitClientHook, command: Array<string>): TextFile {
+  createHook(hook: GitClientHook, command: Array<string>): TextFile {
     if (this.project.debug)
       console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`);
     const shebang = "#!/bin/sh";
@@ -85,12 +72,6 @@ export class Husky extends GitHooksManager {
       this.project.package.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
     this.project.package.setScript(script, "npx husky install");
 
-    this.createHook(GitClientHook.PRE_COMMIT, [this.lintStaged ? "npx lint-staged" : ""]);
     this.createHook(GitClientHook.PRE_PUSH, ["yarn test"]);
-    if (this.commitizen) {
-      this.createHook(GitClientHook.PRE_COMMIT_MESSAGE, [
-        "exec < /dev/tty && ./node_nodules/.bin/cz --hook || true",
-      ]);
-    }
   }
 }

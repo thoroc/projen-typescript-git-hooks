@@ -114,6 +114,6 @@ describe("Custom Eslint", () => {
   });
 
   it("has new pre-commit rule - with lefthook enabled", () => {
-    console.log("Not implemented yet");
+    // console.log("Not implemented yet");
   });
 });
