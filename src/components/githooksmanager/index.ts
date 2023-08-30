@@ -1,5 +1,6 @@
 import { Component } from "projen";
 import { GitHooksEnabledProject } from "../../projects";
+import { CommitizenOptions } from "../codestandards/commitizen";
 
 /**
  * The list of git cient-side hooks
@@ -8,6 +9,7 @@ import { GitHooksEnabledProject } from "../../projects";
 export enum GitClientHook {
   PRE_COMMIT = "pre-commit",
   PRE_PUSH = "pre-push",
+  PRE_COMMIT_MESSAGE = "prepare-commit-msg",
 }
 
 export enum GitHooksManagerType {
@@ -15,7 +17,21 @@ export enum GitHooksManagerType {
   LEFTHOOK = "lefthook",
 }
 
-export type GitHooksManagerOptions = {};
+export type GitHooksManagerOptions = {
+  /**
+   * Enable commitizen and re-adding of staged files pre commit.
+   *
+   * @default true
+   */
+  readonly commitizen?: boolean;
+
+  /**
+   * Set rules for commitizen
+   *
+   * @default {}
+   */
+  readonly commitizenOptions?: CommitizenOptions;
+};
 
 export abstract class GitHooksManager extends Component {
   /**
@@ -26,7 +42,7 @@ export abstract class GitHooksManager extends Component {
     return project.components.find(singleton);
   }
 
-  readonly project: GitHooksEnabledProject;
+  public project: GitHooksEnabledProject;
 
   constructor(project: GitHooksEnabledProject) {
     super(project);

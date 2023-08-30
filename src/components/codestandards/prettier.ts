@@ -26,10 +26,11 @@ export class Prettier extends javascript.Prettier {
       },
     ],
   };
-  public project: GitHooksEnabledProject;
+
+  project: GitHooksEnabledProject;
 
   constructor(project: GitHooksEnabledProject, options?: PrettierOptions) {
-    super(project, options ?? Prettier.defaultOptions);
+    super(project as javascript.NodeProject, options ?? Prettier.defaultOptions);
 
     this.project = project;
     this.project.addDevDeps("@types/prettier");

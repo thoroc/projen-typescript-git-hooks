@@ -1,5 +1,5 @@
 import { Component } from "projen";
-import { GitHooksManager } from "..";
+import { GitClientHook, Husky } from "..";
 import { GitHooksEnabledProject } from "../../../projects";
 
 export interface LintStagedRule {
@@ -33,14 +33,13 @@ export class LintStaged extends Component {
     return project.components.find(singleton);
   }
 
-  private component: GitHooksManager;
-
+  project: GitHooksEnabledProject;
   rules: Array<LintStagedRule>;
 
-  constructor(component: GitHooksManager, options?: LintStagedOptions) {
-    super(component.project);
+  constructor(project: GitHooksEnabledProject, options?: LintStagedOptions) {
+    super(project);
 
-    this.component = component;
+    this.project = project;
     this.rules = [];
 
     if (options?.rules) {
@@ -49,7 +48,7 @@ export class LintStaged extends Component {
       }
     }
 
-    this.component.project.addDevDeps("lint-staged");
+    this.project.addDevDeps("lint-staged");
   }
 
   public addRule(rule: LintStagedRule): void {
@@ -68,17 +67,19 @@ export class LintStaged extends Component {
         existingRule.commands = [existingRule.commands as string, rule.commands as string];
       }
 
-      if (this.component.project.debug)
+      if (this.project.debug)
         console.log(`${this.constructor.name}: Added commands to existing rule ${rule.filePattern}.`);
     } else {
-      if (this.component.project.debug)
+      if (this.project.debug)
         console.log(`${this.constructor.name}: Rule ${rule.filePattern} doesn't exist, adding it now.`);
       this.rules.push(rule);
     }
   }
 
   preSynthesize(): void {
-    this.component.project.package.addField("lint-staged", this.expandLintStagedRules());
+    this.project.package.addField("lint-staged", this.expandLintStagedRules());
+
+    (this.project.gitHooksManager as Husky).createHook(GitClientHook.PRE_COMMIT, ["npx lint-staged"]);
   }
 
   private expandLintStagedRules() {

@@ -1,10 +1,10 @@
-import { Component } from "projen";
-import { Eslint as BaseEslint, EslintOptions } from "projen/lib/javascript";
+import { Component, javascript } from "projen";
+import { EslintOptions } from "projen/lib/javascript";
 import { Prettier } from "./prettier";
 import { GitHooksEnabledProject } from "../..";
 import { GitClientHook, Husky, Lefthook } from "../githooksmanager";
 
-export class Eslint extends BaseEslint {
+export class Eslint extends javascript.Eslint {
   public static defaultOptions = { dirs: ["src", "test"], prettier: false };
   public static defaultRules = {
     "@typescript-eslint/array-type": [
@@ -70,11 +70,11 @@ export class Eslint extends BaseEslint {
     return project.components.find(singleton);
   }
 
-  public project: GitHooksEnabledProject;
+  project: GitHooksEnabledProject;
   private eslintExtendsOverride: Array<string>;
 
   constructor(project: GitHooksEnabledProject, options?: EslintOptions) {
-    super(project, options ?? Eslint.defaultOptions);
+    super(project as javascript.NodeProject, options ?? Eslint.defaultOptions);
 
     this.project = project;
     this.eslintExtendsOverride = [];

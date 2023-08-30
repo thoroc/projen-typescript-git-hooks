@@ -51,5 +51,6 @@ junit.xml
 !/.prettierignore
 !/.prettierrc.json
 !/.eslintrc.json
-!/.husky/pre-commit
 !/.husky/pre-push
+!/.husky/pre-commit
+!/.husky/prepare-commit-msg

@@ -19,8 +19,8 @@ export class Lefthook extends GitHooksManager {
     return project.components.find(singleton);
   }
 
-  public readonly project: GitHooksEnabledProject;
-  public config: LefthookConfig;
+  project: GitHooksEnabledProject;
+  config: LefthookConfig;
 
   constructor(project: GitHooksEnabledProject, options?: LefthookOptions) {
     super(project);
@@ -72,7 +72,7 @@ export class Lefthook extends GitHooksManager {
 
     const config = this.config as LefthookConfig;
 
-    console.log(config);
+    // console.log(config);
 
     new YamlFile(this.project, "lefthook.yml", {
       executable: true,
