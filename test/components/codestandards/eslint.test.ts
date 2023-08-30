@@ -1,9 +1,28 @@
 import { synthSnapshot } from "projen/lib/util/synth";
+import * as yaml from "yaml";
 import { GitHooksEnabledProject } from "../../../src";
+import { Eslint } from "../../../src/components/codestandards";
 import { GitHooksManagerType } from "../../../src/components/githooksmanager";
 
 describe("Custom Eslint", () => {
-  it("has new dev dependcies added - with prettier disabled", () => {
+  it("Retuns a singleton", () => {
+    // Arrange
+    const project = new GitHooksEnabledProject({
+      name: "test",
+      defaultReleaseBranch: "main",
+      eslint: true,
+      prettier: false,
+      gitHooksManager: GitHooksManagerType.HUSKY,
+    });
+
+    // Act
+    const eslint = project.eslint;
+
+    // Assert
+    expect(eslint).toEqual(Eslint.of(project));
+  });
+
+  it("Adds new dev dependencies  - with prettier disabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -27,7 +46,7 @@ describe("Custom Eslint", () => {
     expect(Object.keys(config)).not.toContain("eslint-plugin-prettier");
   });
 
-  it("has new dev dependcies added - with prettier enabled", () => {
+  it("Adds new dev dependencies - with prettier enabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -46,7 +65,7 @@ describe("Custom Eslint", () => {
     expect(Object.keys(config)).toContain("eslint-plugin-prettier");
   });
 
-  it("has new extended - with prettier disabled", () => {
+  it("Adds new extended - with prettier disabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -73,7 +92,7 @@ describe("Custom Eslint", () => {
     // expect(config).not.toContain("prettier");
   });
 
-  it("has new extended - with prettier enabled", () => {
+  it("Adds new extended - with prettier enabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -95,7 +114,7 @@ describe("Custom Eslint", () => {
     expect(config.at(-1)).toEqual("prettier");
   });
 
-  it("has new pre-commit rule - with husky enabled", () => {
+  it("Adds new pre-commit rule with husky enabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -111,9 +130,35 @@ describe("Custom Eslint", () => {
 
     // Assert
     expect(Object.keys(config)).toContain("src/**/*.{ts,tsx}");
+    expect(config["src/**/*.{ts,tsx}"]).toContain("eslint --cache --fix");
   });
 
-  it("has new pre-commit rule - with lefthook enabled", () => {
-    // console.log("Not implemented yet");
+  it("has new pre-commit rule with lefthook enabled", () => {
+    // Arrange
+    const project = new GitHooksEnabledProject({
+      name: "test",
+      defaultReleaseBranch: "main",
+      eslint: true,
+      prettier: true,
+      gitHooksManager: GitHooksManagerType.LEFTHOOK,
+    });
+
+    // Act
+    const snapshot = synthSnapshot(project);
+    const config = yaml.parse(snapshot["lefthook.yml"]);
+    const commands = config["pre-commit"].commands;
+
+    const filteredCommands = commands.filter((command: any) => {
+      const keys: any = Object.keys(command);
+      return keys[0] === "eslint";
+    });
+
+    // Assert
+    expect(filteredCommands[0]).toEqual({
+      eslint: {
+        glob: "src/**/*.{ts,tsx}",
+        run: "eslint --cache --fix {staged_files}",
+      },
+    });
   });
 });
