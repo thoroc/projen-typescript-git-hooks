@@ -3,6 +3,7 @@ import { EslintOptions } from "projen/lib/javascript";
 import { Prettier } from "./prettier";
 import { GitHooksEnabledProject } from "../..";
 import { GitClientHook, Husky, Lefthook } from "../githooksmanager";
+import { LintStaged } from "../githooksmanager/utils/lintstaged";
 
 export class Eslint extends javascript.Eslint {
   public static defaultOptions = { dirs: ["src", "test"], prettier: false };
@@ -114,19 +115,19 @@ export class Eslint extends javascript.Eslint {
     });
 
     if (this.project.gitHooksManager instanceof Husky) {
-      this.project.gitHooksManager.lintStaged?.addRule({
+      LintStaged.of(this.project)?.addRule({
         filePattern: "src/**/*.{ts,tsx}",
         commands: ["eslint --cache --fix", "npx prettier --write"],
       });
     }
 
     if (this.project.gitHooksManager instanceof Lefthook) {
-      this.project.gitHooksManager.addCommand(GitClientHook.PRE_COMMIT, {
+      Lefthook.of(this.project)?.addCommand(GitClientHook.PRE_COMMIT, {
         name: "eslint",
         glob: "src/**/*.{ts,tsx}",
         run: "eslint --cache --fix",
       });
-      this.project.gitHooksManager.addCommand(GitClientHook.PRE_COMMIT, {
+      Lefthook.of(this.project)?.addCommand(GitClientHook.PRE_COMMIT, {
         name: "prettier",
         glob: "src/**/*.{ts,tsx}",
         run: "npx prettier --write",

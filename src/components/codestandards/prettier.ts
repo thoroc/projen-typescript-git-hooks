@@ -2,6 +2,7 @@ import { javascript } from "projen";
 import { PrettierOptions, ProseWrap, QuoteProps, TrailingComma } from "projen/lib/javascript";
 import { GitHooksEnabledProject } from "../../projects";
 import { GitClientHook, Husky, Lefthook } from "../githooksmanager";
+import { LintStaged } from "../githooksmanager/utils/lintstaged";
 
 export class Prettier extends javascript.Prettier {
   static defaultOptions = {
@@ -43,15 +44,15 @@ export class Prettier extends javascript.Prettier {
     this.ignoreFile?.addPatterns("tsconfig.dev.json", "tsconfig.json", "node_modules", "build", "coverage");
 
     if (this.project.gitHooksManager instanceof Husky) {
-      this.project.gitHooksManager?.lintStaged?.addRule({
+      LintStaged.of(this.project)?.addRule({
         filePattern: "*.md",
         commands: "npx prettier --write --prose-wrap always",
       });
     }
 
     if (this.project.gitHooksManager instanceof Lefthook) {
-      this.project.gitHooksManager.addCommand(GitClientHook.PRE_COMMIT, {
-        name: "prettier",
+      Lefthook.of(this.project)?.addCommand(GitClientHook.PRE_COMMIT, {
+        name: "markdown-prettier",
         glob: "*.md",
         run: "npx prettier --write --prose-wrap always",
       });

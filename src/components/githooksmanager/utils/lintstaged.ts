@@ -74,12 +74,12 @@ export class LintStaged extends Component {
         console.log(`${this.constructor.name}: Rule ${rule.filePattern} doesn't exist, adding it now.`);
       this.rules.push(rule);
     }
+
+    Husky.of(this.project)?.createHook(GitClientHook.PRE_COMMIT, ["npx lint-staged"]);
   }
 
   preSynthesize(): void {
     this.project.package.addField("lint-staged", this.expandLintStagedRules());
-
-    (this.project.gitHooksManager as Husky).createHook(GitClientHook.PRE_COMMIT, ["npx lint-staged"]);
   }
 
   private expandLintStagedRules() {
