@@ -84,7 +84,7 @@ describe("Custom Prettier", () => {
     expect(config["src/**/*.{ts,tsx}"]).toContain("npx prettier --write");
   });
 
-  it("Adds new rule for markdown with Lefthook enabled", () => {
+  it("Adds new prec-commmit rule for markdown with Lefthook enabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -112,7 +112,7 @@ describe("Custom Prettier", () => {
     });
   });
 
-  it("Adds new rule for prettier with Lefthook enabled", () => {
+  it("Adds new pre-commit rule for prettier with Lefthook enabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
