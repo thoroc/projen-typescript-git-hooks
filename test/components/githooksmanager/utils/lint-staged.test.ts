@@ -108,7 +108,7 @@ describe("Husky", () => {
     expect(config[glob].splice(-1)).toEqual([command]);
   });
 
-  it("Add new commands to existing Rule", () => {
+  it("Add multiple new command to existing Rule", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
