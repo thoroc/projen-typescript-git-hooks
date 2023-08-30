@@ -54,3 +54,4 @@ junit.xml
 !/.eslintrc.json
 !/.husky/pre-push
 !/.husky/prepare-commit-msg
+!/.editorconfig

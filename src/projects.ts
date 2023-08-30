@@ -1,6 +1,7 @@
 import { typescript } from "projen";
 import { TypeScriptModuleResolution } from "projen/lib/javascript";
 import { Eslint, Prettier } from "./components/codestandards";
+import { EditorConfig, EditorConfigOptions } from "./components/codestandards/editorconfig";
 import {
   GitHooksManagerType,
   Husky,
@@ -28,6 +29,9 @@ export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProj
    * @default false
    */
   readonly debug?: boolean;
+
+  readonly editorConfig?: boolean;
+  readonly editorConfigOptions?: EditorConfigOptions;
 }
 
 export class GitHooksEnabledProject extends typescript.TypeScriptProject {
@@ -46,6 +50,7 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
   public readonly eslint?: Eslint;
   public readonly prettier?: Prettier;
   public readonly debug?: boolean;
+  public readonly editorConfig?: EditorConfig;
 
   constructor(options: GitHooksEnabledProjectOptions) {
     super({
@@ -102,6 +107,10 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
       this.eslint = new Eslint(this, eslintOptions);
     }
 
-    this.addDevDeps("yaml");
+    if (options.editorConfig ?? true) {
+      this.editorConfig = new EditorConfig(this, options.editorConfigOptions);
+    }
+
+    this.addDevDeps("yaml", "change-case");
   }
 }
