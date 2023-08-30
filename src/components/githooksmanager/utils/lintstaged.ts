@@ -49,6 +49,8 @@ export class LintStaged extends Component {
     }
 
     this.project.addDevDeps("lint-staged");
+
+    Husky.of(this.project)?.createHook(GitClientHook.PRE_COMMIT, ["npx lint-staged"]);
   }
 
   public addRule(rule: LintStagedRule): void {
@@ -57,15 +59,12 @@ export class LintStaged extends Component {
     if (existingRuleIndex !== -1) {
       const existingRule: LintStagedRule = this.rules[existingRuleIndex];
 
-      if (Array.isArray(existingRule.commands) && Array.isArray(rule.commands)) {
-        existingRule.commands = [...existingRule.commands, ...rule.commands];
-      } else if (Array.isArray(existingRule.commands)) {
-        existingRule.commands.push(rule.commands as string);
-      } else if (Array.isArray(rule.commands)) {
-        existingRule.commands = [existingRule.commands as string, ...rule.commands];
-      } else {
-        existingRule.commands = [existingRule.commands as string, rule.commands as string];
-      }
+      const existingCommands = Array.isArray(existingRule.commands)
+        ? existingRule.commands
+        : [existingRule.commands];
+      const newCommands = Array.isArray(rule.commands) ? rule.commands : [rule.commands];
+
+      existingRule.commands = [...existingCommands, ...newCommands];
 
       if (this.project.debug)
         console.log(`${this.constructor.name}: Added commands to existing rule ${rule.filePattern}.`);
@@ -74,8 +73,6 @@ export class LintStaged extends Component {
         console.log(`${this.constructor.name}: Rule ${rule.filePattern} doesn't exist, adding it now.`);
       this.rules.push(rule);
     }
-
-    Husky.of(this.project)?.createHook(GitClientHook.PRE_COMMIT, ["npx lint-staged"]);
   }
 
   preSynthesize(): void {
@@ -84,11 +81,9 @@ export class LintStaged extends Component {
 
   private expandLintStagedRules() {
     if (this.rules.length > 0) {
-      const sortedRules = this.rules.sort((rule1, rule2) => {
-        if (rule1.filePattern > rule2.filePattern) return -1;
-        else if (rule1.filePattern < rule2.filePattern) return 1;
-        else return 0;
-      });
+      const sortedRules = this.rules.sort((rule1: LintStagedRule, rule2: LintStagedRule) =>
+        rule2.filePattern.localeCompare(rule1.filePattern),
+      );
 
       const preparedLintStagedRules: { [key: string]: string | Array<string> } = {};
 

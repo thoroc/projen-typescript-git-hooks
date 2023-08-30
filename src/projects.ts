@@ -2,7 +2,6 @@ import { typescript } from "projen";
 import { TypeScriptModuleResolution } from "projen/lib/javascript";
 import { Eslint, Prettier } from "./components/codestandards";
 import {
-  GitHooksManagerOptions,
   GitHooksManagerType,
   Husky,
   HuskyOptions,
@@ -22,7 +21,7 @@ export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProj
    * gitHooksManagerEnabled options
    * @default - default options
    */
-  readonly gitHooksManagerOptions?: GitHooksManagerOptions;
+  readonly gitHooksManagerOptions?: HuskyOptions | LefthookOptions;
 
   /**
    * Printing out debug statement
@@ -32,6 +31,16 @@ export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProj
 }
 
 export class GitHooksEnabledProject extends typescript.TypeScriptProject {
+  public static defaultTsConfig = {
+    compilerOptions: {
+      esModuleInterop: true,
+      forceConsistentCasingInFileNames: true,
+      moduleResolution: TypeScriptModuleResolution.NODE,
+      noEmitOnError: true,
+      noImplicitReturns: true,
+    },
+  };
+
   public readonly gitHooksManager?: Husky | Lefthook;
   public readonly jest?: Jest;
   public readonly eslint?: Eslint;
@@ -52,13 +61,7 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
       jestOptions: {},
 
       tsconfig: {
-        compilerOptions: {
-          esModuleInterop: true,
-          forceConsistentCasingInFileNames: true,
-          moduleResolution: TypeScriptModuleResolution.NODE,
-          noEmitOnError: true,
-          noImplicitReturns: true,
-        },
+        ...GitHooksEnabledProject.defaultTsConfig,
         ...options.tsconfig,
       },
 
