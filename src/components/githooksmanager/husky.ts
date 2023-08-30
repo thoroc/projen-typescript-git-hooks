@@ -56,14 +56,20 @@ export class Husky extends GitHooksManager {
     }
   }
 
-  createHook(hook: GitClientHook, command: Array<string>): TextFile {
+  createHook(hook: GitClientHook, command: Array<string>): void {
     if (this.project.debug)
       console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`);
     const shebang = "#!/bin/sh";
-    return new TextFile(this.project, `.husky/${hook}`, {
-      executable: true,
-      lines: [shebang, '. "$(dirname "$0")/_/husky.sh"', "", command.join("\n")],
-    });
+    const gitHookFilename = `.husky/${hook}`;
+
+    const gitHookFile = this.project.tryFindFile(gitHookFilename);
+
+    if (gitHookFile === undefined) {
+      new TextFile(this.project, gitHookFilename, {
+        executable: true,
+        lines: [shebang, '. "$(dirname "$0")/_/husky.sh"', "", command.join("\n")],
+      });
+    }
   }
 
   preSynthesize(): void {
