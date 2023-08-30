@@ -32,7 +32,6 @@ describe("Commitizen Component", () => {
       prettier: true,
       gitHooksManager: GitHooksManagerType.HUSKY,
       gitHooksManagerOptions: { commitizen: true },
-      debug: true,
     });
 
     // Act

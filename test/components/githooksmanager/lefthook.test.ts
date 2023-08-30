@@ -21,7 +21,7 @@ describe("Lefthook", () => {
 
 pre-commit:
   commands:
-    - prettier:
+    - markdown-prettier:
         run: npx prettier --write --prose-wrap always {staged_files}
         glob: "*.md"
     - eslint:

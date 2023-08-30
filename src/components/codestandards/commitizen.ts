@@ -53,7 +53,7 @@ export class Commitizen extends Component {
       });
     }
 
-    (this.project.gitHooksManager as Husky).createHook(GitClientHook.PRE_COMMIT_MESSAGE, [
+    Husky.of(this.project)?.createHook(GitClientHook.PRE_COMMIT_MESSAGE, [
       "exec < /dev/tty && npx cz --hook || true",
     ]);
   }
