@@ -4,7 +4,7 @@ import { GitHooksEnabledProject } from "../../../src";
 import { GitHooksManagerType } from "../../../src/components/githooksmanager";
 
 describe("Custom Prettier", () => {
-  it("has new DevDeps added", () => {
+  it("Adds new dev dependencie", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -21,7 +21,7 @@ describe("Custom Prettier", () => {
     expect(Object.keys(config)).toContain("@types/prettier");
   });
 
-  it("has new Task added", () => {
+  it("Adds new Task", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -32,14 +32,23 @@ describe("Custom Prettier", () => {
 
     // Act
     const snapshot = synthSnapshot(project);
-    const config = snapshot["package.json"].scripts;
+    const config = snapshot[".projen/tasks.json"];
+    const packageJson = snapshot["package.json"];
 
     // Assert
-    expect(Object.keys(config)).toContain("format");
-    expect(config.format).toEqual("npx projen format");
+    expect(config.tasks.format).toEqual({
+      name: "format",
+      description: "Runs Prettier",
+      steps: [
+        {
+          exec: 'npx prettier --write "{src,projenrc}/**/*.{js,jsx,ts,tsx}"',
+        },
+      ],
+    });
+    expect(packageJson.scripts.format).toEqual("npx projen format");
   });
 
-  it("has new lint-staged rule for markdown with Husky enabled", () => {
+  it("Adds new lint-staged rule for markdown with Husky enabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -57,7 +66,7 @@ describe("Custom Prettier", () => {
     expect(config["*.md"]).toContain("npx prettier --write --prose-wrap always");
   });
 
-  it("has new lint-staged rule for prettier with Husky enabled", () => {
+  it("Adds new lint-staged rule for prettier with Husky enabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -75,7 +84,7 @@ describe("Custom Prettier", () => {
     expect(config["src/**/*.{ts,tsx}"]).toContain("npx prettier --write");
   });
 
-  it("has new rule for markdown with Lefthook enabled", () => {
+  it("Adds new rule for markdown with Lefthook enabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
@@ -103,7 +112,7 @@ describe("Custom Prettier", () => {
     });
   });
 
-  it("has new rule for prettier with Lefthook enabled", () => {
+  it("Adds new rule for prettier with Lefthook enabled", () => {
     // Arrange
     const project = new GitHooksEnabledProject({
       name: "test",
