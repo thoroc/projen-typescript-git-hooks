@@ -10,6 +10,7 @@ const project = new GitHooksEnabledProject({
   peerDeps: ["projen"],
   deps: ["projen"],
   debug: true,
+  docgen: true,
 
   gitHooksManager: GitHooksManagerType.HUSKY,
 });
