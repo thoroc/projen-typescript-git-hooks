@@ -29,13 +29,13 @@ export class LefthookCommand implements LefthookCommandOptions, Serializer {
     this.stagedFiles = options.stagedFiles ?? true;
   }
 
-  asRecords(): Record<string, string | boolean> {
+  asRecords(): Record<string, string | boolean | {}> {
     const props = Object.getOwnPropertyNames(this);
-    const records: Record<string, string> = {};
+    const records: Record<string, string | boolean | {}> = {};
 
     for (const id in props) {
       const name: string = props[id];
-      const value: any = this[name as keyof LefthookCommand];
+      const value: unknown = this[name as keyof LefthookCommand];
 
       if (value !== undefined && value) {
         if (name === "run" && this.stagedFiles === true) {
@@ -50,7 +50,7 @@ export class LefthookCommand implements LefthookCommandOptions, Serializer {
   }
 
   serialise(): unknown {
-    const transfomed: { [key: string]: any } = {};
+    const transfomed: { [key: string]: unknown } = {};
     const name = this.name;
     const values = omit(this.asRecords(), "name", "stagedFiles");
 
