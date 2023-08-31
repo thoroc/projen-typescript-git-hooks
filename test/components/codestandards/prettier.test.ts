@@ -1,7 +1,7 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import * as yaml from "yaml";
 import { GitHooksEnabledProject } from "../../../src";
-import { GitHooksManagerType } from "../../../src/components/githooksmanager";
+import { GitHooksManagerType, LefthookCommandOptions } from "../../../src/components/githooksmanager";
 
 describe("Custom Prettier", () => {
   it("Adds new dev dependencie", () => {
@@ -98,8 +98,8 @@ describe("Custom Prettier", () => {
     const config = yaml.parse(snapshot["lefthook.yml"]);
     const commands = config["pre-commit"].commands;
 
-    const filteredCommands = commands.filter((command: any) => {
-      const keys: any = Object.keys(command);
+    const filteredCommands = commands.filter((command: LefthookCommandOptions) => {
+      const keys: Array<string> = Object.keys(command);
       return keys[0] === "markdown-prettier";
     });
 
@@ -126,8 +126,8 @@ describe("Custom Prettier", () => {
     const config = yaml.parse(snapshot["lefthook.yml"]);
     const commands = config["pre-commit"].commands;
 
-    const filteredCommands = commands.filter((command: any) => {
-      const keys: any = Object.keys(command);
+    const filteredCommands = commands.filter((command: LefthookCommandOptions) => {
+      const keys: Array<string> = Object.keys(command);
       return keys[0] === "prettier";
     });
 

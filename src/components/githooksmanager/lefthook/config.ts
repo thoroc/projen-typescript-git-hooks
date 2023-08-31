@@ -14,7 +14,7 @@ export class LefthookConfig implements LefthookConfigOptions, Serializer {
   }
 
   serialise(): unknown {
-    const transfomed: { [key: string]: any } = {};
+    const transfomed: { [key: string]: unknown } = {};
 
     for (const id in this.actions) {
       const action = this.actions[id];
@@ -25,8 +25,6 @@ export class LefthookConfig implements LefthookConfigOptions, Serializer {
         const transformedCommands = [];
 
         for (const cmd of action.commands) {
-          // console.log(cmd);
-
           if (cmd instanceof LefthookCommand) {
             transformedCommands.push((cmd as LefthookCommand).serialise());
           } else {
