@@ -1,3 +1,4 @@
+import { javascript } from "projen";
 import { GitHooksManagerType } from "./src/components/githooksmanager";
 import { GitHooksEnabledProject } from "./src/projects";
 
@@ -13,6 +14,8 @@ const project = new GitHooksEnabledProject({
   docgen: true,
   autoApproveUpgrades: true,
   autoApproveOptions: { allowedUsernames: ["thoroc"], secret: "GITHUB_TOKEN" },
+
+  depsUpgradeOptions: { workflowOptions: { schedule: javascript.UpgradeDependenciesSchedule.WEEKLY } },
 
   gitHooksManager: GitHooksManagerType.HUSKY,
 });
