@@ -24,5 +24,14 @@ export class Jest extends BaseJest {
         },
       ],
     });
+
+    const tasksJson = this.project.tryFindObjectFile(".projen/tasks.json");
+
+    tasksJson?.addOverride("tasks.test.steps", [
+      {
+        exec: "jest --passWithNoTests --updateSnapshot",
+        receiveArgs: true,
+      },
+    ]);
   }
 }
