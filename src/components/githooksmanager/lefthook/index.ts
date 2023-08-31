@@ -10,6 +10,9 @@ export interface LefthookOptions extends GitHooksManagerOptions {
   config?: LefthookConfig;
 }
 
+/**
+ * @pjid lefthook
+ */
 export class Lefthook extends GitHooksManager {
   /**
    * Returns the singletone component of a project or undefined if there is none.
@@ -82,4 +85,7 @@ export class Lefthook extends GitHooksManager {
   }
 }
 
+export { LefthookAction } from "./action";
 export { LefthookCommandOptions } from "./command";
+export { LefthookConfig, LefthookConfigOptions } from "./config";
+export { LefthookScriptOptions } from "./script";
