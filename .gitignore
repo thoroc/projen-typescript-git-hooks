@@ -49,8 +49,8 @@ jspm_packages/
 /test-reports/
 junit.xml
 /coverage/
+!/.husky/pre-push
 !/.prettierignore
 !/.prettierrc.json
 !/.eslintrc.json
-!/.husky/pre-push
 !/.husky/prepare-commit-msg

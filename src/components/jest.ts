@@ -1,13 +1,19 @@
 import { Project } from "projen";
-import { Jest as BaseJest, JestOptions, NodeProject } from "projen/lib/javascript";
+import { Jest as BaseJest, JestOptions, NodePackageManager } from "projen/lib/javascript";
+import { GitClientHook, Husky } from "./githooksmanager";
+import { GitHooksEnabledProject } from "../projects";
 
 export class Jest extends BaseJest {
   readonly project: Project;
 
-  constructor(project: NodeProject, options?: JestOptions) {
+  constructor(project: GitHooksEnabledProject, options?: JestOptions) {
     super(project, options);
 
     project.addDevDeps("ts-jest", "@types/jest");
+
+    const script = project.package.packageManager === NodePackageManager.YARN ? "yarn test" : "npm run test";
+
+    Husky.of(project)?.createHook(GitClientHook.PRE_PUSH, [script]);
 
     this.project = project;
   }

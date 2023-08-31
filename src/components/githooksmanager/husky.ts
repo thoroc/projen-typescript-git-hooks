@@ -76,7 +76,5 @@ export class Husky extends GitHooksManager {
     const script =
       this.project.package.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
     this.project.package.setScript(script, "npx husky install");
-
-    this.createHook(GitClientHook.PRE_PUSH, ["yarn test"]);
   }
 }
