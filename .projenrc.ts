@@ -12,9 +12,9 @@ const project = new GitHooksEnabledProject({
   deps: ["projen"],
   debug: true,
   docgen: true,
+
   autoApproveUpgrades: true,
   autoApproveOptions: { allowedUsernames: ["thoroc"], secret: "GITHUB_TOKEN" },
-
   depsUpgradeOptions: { workflowOptions: { schedule: javascript.UpgradeDependenciesSchedule.WEEKLY } },
 
   gitHooksManager: GitHooksManagerType.HUSKY,
