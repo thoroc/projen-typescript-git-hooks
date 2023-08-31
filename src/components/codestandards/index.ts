@@ -1,3 +1,3 @@
 export { Prettier } from "./prettier";
 export { Eslint } from "./eslint";
-export { Commitizen } from "./commitizen";
+export { Commitizen, CommitizenOptions } from "./commitizen";

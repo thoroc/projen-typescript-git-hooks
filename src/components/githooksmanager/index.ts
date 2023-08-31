@@ -56,4 +56,13 @@ export abstract class GitHooksManager extends Component {
 }
 
 export { Husky, HuskyOptions } from "./husky";
-export { Lefthook, LefthookOptions, LefthookCommandOptions } from "./lefthook";
+export { LintStaged, LintStagedRule, LintStagedOptions } from "./utils/lintstaged";
+export {
+  Lefthook,
+  LefthookAction,
+  LefthookConfig,
+  LefthookConfigOptions,
+  LefthookOptions,
+  LefthookCommandOptions,
+  LefthookScriptOptions,
+} from "./lefthook";
