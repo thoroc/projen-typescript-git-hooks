@@ -43,7 +43,7 @@ export class Husky extends GitHooksManager {
     this.project = project;
     this.project.addDevDeps("husky");
 
-    if (this.project.debug) console.log(options);
+    if (this.project.debug) console.log(`Husky Options: ${JSON.stringify(options, undefined, 2)}`);
 
     if (options?.lintStaged ?? true) {
       if (this.project.debug) console.log("LintStaged enabled");
@@ -57,17 +57,16 @@ export class Husky extends GitHooksManager {
   }
 
   createHook(hook: GitClientHook, command: Array<string>): void {
-    if (this.project.debug)
-      console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`);
-    const shebang = "#!/bin/sh";
     const gitHookFilename = `.husky/${hook}`;
-
     const gitHookFile = this.project.tryFindFile(gitHookFilename);
 
     if (gitHookFile === undefined) {
+      if (this.project.debug)
+        console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`);
+
       new TextFile(this.project, gitHookFilename, {
         executable: true,
-        lines: [shebang, '. "$(dirname "$0")/_/husky.sh"', "", command.join("\n")],
+        lines: ["#!/bin/sh", '. "$(dirname "$0")/_/husky.sh"', "", command.join("\n")],
       });
     }
   }

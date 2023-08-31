@@ -56,8 +56,6 @@ export class LefthookCommand implements LefthookCommandOptions, Serializer {
 
     transfomed[name] = values;
 
-    // console.log(values);
-
     return transfomed;
   }
 }
