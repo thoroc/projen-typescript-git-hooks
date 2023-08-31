@@ -2,6 +2,8 @@
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
+Documentation: <https://thoroc.github.io/projen-typescript-git-hooks/index.html>
+
 Inspiration:
 
 - <https://github.com/mnoumanshahzad/projen-types>
