@@ -73,7 +73,7 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
 
     this.debug = options.debug ?? false;
 
-    if (this.debug) console.log(options);
+    if (this.debug) console.log(`Synthesising with options: ${JSON.stringify(options, undefined, 2)}`);
 
     switch (options.gitHooksManager) {
       case GitHooksManagerType.HUSKY:

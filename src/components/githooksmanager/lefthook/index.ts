@@ -40,6 +40,9 @@ export class Lefthook extends GitHooksManager {
   public addCommand(hookName: GitClientHook, command: LefthookCommandOptions) {
     const action = this.config.actions?.find((hook) => hook.actionName === hookName);
 
+    if (this.project.debug)
+      console.log(`${this.constructor.name}: Adding new Command: ${action?.actionName}.`);
+
     if (!action) {
       this.config.actions.push({
         actionName: hookName,
@@ -71,8 +74,6 @@ export class Lefthook extends GitHooksManager {
     if (this.project.debug) console.log(`${this.constructor.name}: Creating new Lefthook config file.`);
 
     const config = this.config as LefthookConfig;
-
-    // console.log(config);
 
     new YamlFile(this.project, "lefthook.yml", {
       executable: true,

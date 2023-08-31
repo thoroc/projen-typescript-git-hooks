@@ -136,8 +136,6 @@ export class Eslint extends javascript.Eslint {
   }
 
   preSynthesize(): void {
-    if (this.project.debug) console.log(`${this.constructor.name}: preSynthesis.`);
-
     if (this.eslintExtendsOverride.length > 0) {
       if (this.project.debug) console.log(`${this.constructor.name}: sorting out the extends section.`);
 
