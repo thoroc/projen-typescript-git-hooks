@@ -24,7 +24,7 @@ const project = new GitHooksEnabledProject({
 new YamlFile(project, ".github/workflows/pull-request-comments.yml", {
   obj: {
     name: "Jest Coverage Comment",
-    on: { pull_request: "" },
+    on: { pull_request: {} },
     jobs: {
       build: {
         "runs-on": "ubuntu-latest",
