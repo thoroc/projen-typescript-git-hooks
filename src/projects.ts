@@ -59,7 +59,6 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
       prettierOptions: {},
       jest: false,
       jestOptions: {},
-
       tsconfig: {
         ...GitHooksEnabledProject.defaultTsConfig,
         ...options.tsconfig,

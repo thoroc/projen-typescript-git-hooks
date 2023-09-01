@@ -5,6 +5,7 @@ import { GitHooksEnabledProject } from "./src/projects";
 const project = new GitHooksEnabledProject({
   defaultReleaseBranch: "main",
   name: "projen-typescript-git-hooks",
+  repository: "https://github.com/thoroc/projen-typescript-git-hooks",
   description: "Projen template for Typescript project supporting Git hooks and extra tooling",
   projenrcTs: true,
 
