@@ -26,8 +26,10 @@ export class EditorConfig extends Component {
     const transformed: { [key: string]: string | {} } = {};
 
     for (const id in this.sections) {
-      const section = this.sections[id as any];
-      transformed[section.name] = new EditorConfigParams(section.params).serialise();
+      const section = this.sections[id as keyof typeof this.sections];
+      transformed[(section as EditorConfigSection).name] = new EditorConfigParams(
+        (section as EditorConfigSection).params,
+      ).serialise();
     }
 
     new TomlFile(this.project, ".editorconfig", {
