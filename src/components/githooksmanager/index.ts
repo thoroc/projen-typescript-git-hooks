@@ -1,5 +1,6 @@
 import { Component } from "projen";
 import { GitHooksEnabledProject } from "../../projects";
+import { Markdownlint, MarkdownlintOptions } from "../codestandards";
 import { CommitizenOptions } from "../codestandards/commitizen";
 
 /**
@@ -31,6 +32,20 @@ export type GitHooksManagerOptions = {
    * @default {}
    */
   readonly commitizenOptions?: CommitizenOptions;
+
+  /**
+   * Enable markdownlint
+   *
+   * @default true
+   */
+  readonly markdownlint?: boolean;
+
+  /**
+   * Markdownlint options
+   *
+   * @default {}
+   */
+  readonly markdownlintOptions?: MarkdownlintOptions;
 };
 
 export abstract class GitHooksManager extends Component {
@@ -43,8 +58,9 @@ export abstract class GitHooksManager extends Component {
   }
 
   public project: GitHooksEnabledProject;
+  readonly markdownlint?: Markdownlint;
 
-  constructor(project: GitHooksEnabledProject) {
+  constructor(project: GitHooksEnabledProject, options?: GitHooksManagerOptions) {
     super(project);
 
     if (project.parent) {
@@ -52,6 +68,11 @@ export abstract class GitHooksManager extends Component {
     }
 
     this.project = project;
+
+    if (options?.markdownlint ?? true) {
+      if (this.project.debug) console.log("Markdownlint enabled");
+      this.markdownlint = new Markdownlint(this.project, options?.markdownlintOptions);
+    }
   }
 }
 

@@ -14,3 +14,21 @@ export const omit = <T extends {}, K extends keyof T>(obj: T, ...keys: Array<K>)
 export interface Serializer {
   serialise(): unknown;
 }
+
+export function toSnakeCase(str: string) {
+  return str.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
+}
+
+export function recursiveToSnake(item: unknown, transformer: any, depth = 0): unknown {
+  if (Array.isArray(item)) {
+    return item.map((el: unknown) => recursiveToSnake(el, depth + 1));
+  } else if (typeof item === "function" || item !== Object(item)) {
+    return item;
+  }
+  return Object.fromEntries(
+    Object.entries(item as Record<string, unknown>).map(([key, value]: [string, unknown]) => [
+      depth === 0 ? key : transformer(key),
+      recursiveToSnake(value, depth + 1),
+    ]),
+  );
+}

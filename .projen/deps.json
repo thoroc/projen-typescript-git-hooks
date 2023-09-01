@@ -98,6 +98,10 @@
       "type": "build"
     },
     {
+      "name": "markdownlint-cli2",
+      "type": "build"
+    },
+    {
       "name": "npm-check-updates",
       "version": "^16",
       "type": "build"

@@ -46,6 +46,8 @@ jspm_packages/
 !/src/
 /lib
 /dist/
+!/.markdownlintignore
+!/markdownlint.yml
 !/.husky/pre-commit
 /test-reports/
 junit.xml

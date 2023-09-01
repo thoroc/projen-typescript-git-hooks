@@ -13,6 +13,7 @@
     ".husky/pre-commit",
     ".husky/pre-push",
     ".husky/prepare-commit-msg",
+    ".markdownlintignore",
     ".mergify.yml",
     ".npmignore",
     ".npmrc",
@@ -22,6 +23,7 @@
     ".projen/files.json",
     ".projen/tasks.json",
     "LICENSE",
+    "markdownlint.yml",
     "tsconfig.dev.json",
     "tsconfig.json"
   ],

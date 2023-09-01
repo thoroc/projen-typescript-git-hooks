@@ -14,6 +14,7 @@
 /.husky/pre-commit linguist-generated
 /.husky/pre-push linguist-generated
 /.husky/prepare-commit-msg linguist-generated
+/.markdownlintignore linguist-generated
 /.mergify.yml linguist-generated
 /.npmignore linguist-generated
 /.npmrc linguist-generated
@@ -24,6 +25,7 @@
 /.projen/files.json linguist-generated
 /.projen/tasks.json linguist-generated
 /LICENSE linguist-generated
+/markdownlint.yml linguist-generated
 /package.json linguist-generated
 /tsconfig.dev.json linguist-generated
 /tsconfig.json linguist-generated
