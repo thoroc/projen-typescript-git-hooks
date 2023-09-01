@@ -56,5 +56,6 @@ junit.xml
 !/.prettierignore
 !/.prettierrc.json
 !/.eslintrc.json
+!/.github/workflows/pull-request-comments.yml
 !/.husky/prepare-commit-msg
 !/.editorconfig
