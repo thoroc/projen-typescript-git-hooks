@@ -77,13 +77,6 @@ export class Markdownlint extends Component {
         obj: transformedRules,
       });
     }
-
-    if (this.project.gitHooksManager instanceof Husky) {
-      LintStaged.of(this.project)?.addRule({
-        filePattern: "*.md",
-        commands: ["markdownlint-cli2 --fix"],
-      });
-    }
   }
 
   /**
@@ -102,5 +95,12 @@ export class Markdownlint extends Component {
     this.project.components.filter(isSourceCode).forEach((c) => {
       this.addIgnorePattern(c.filePath);
     });
+
+    if (this.project.gitHooksManager instanceof Husky) {
+      LintStaged.of(this.project)?.addRule({
+        filePattern: "*.md",
+        commands: ["markdownlint-cli2 --fix"],
+      });
+    }
   }
 }

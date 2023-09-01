@@ -2,7 +2,7 @@ import { Component, javascript } from "projen";
 import { EslintOptions } from "projen/lib/javascript";
 import { Prettier } from "./prettier";
 import { GitHooksEnabledProject } from "../..";
-import { GitClientHook, Husky, Lefthook } from "../githooksmanager";
+import { GitClientHook, Lefthook } from "../githooksmanager";
 import { LintStaged } from "../githooksmanager/utils/lintstaged";
 
 export class Eslint extends javascript.Eslint {
@@ -114,25 +114,21 @@ export class Eslint extends javascript.Eslint {
       // extends: ['plugin:markdownlint/recommended']
     });
 
-    if (this.project.gitHooksManager instanceof Husky) {
-      LintStaged.of(this.project)?.addRule({
-        filePattern: "src/**/*.{ts,tsx}",
-        commands: ["eslint --cache --fix", "npx prettier --write"],
-      });
-    }
+    LintStaged.of(this.project)?.addRule({
+      filePattern: "src/**/*.{ts,tsx}",
+      commands: ["eslint --cache --fix", "npx prettier --write"],
+    });
 
-    if (this.project.gitHooksManager instanceof Lefthook) {
-      Lefthook.of(this.project)?.addCommand(GitClientHook.PRE_COMMIT, {
-        name: "eslint",
-        glob: "src/**/*.{ts,tsx}",
-        run: "eslint --cache --fix",
-      });
-      Lefthook.of(this.project)?.addCommand(GitClientHook.PRE_COMMIT, {
-        name: "prettier",
-        glob: "src/**/*.{ts,tsx}",
-        run: "npx prettier --write",
-      });
-    }
+    Lefthook.of(this.project)?.addCommand(GitClientHook.PRE_COMMIT, {
+      name: "eslint",
+      glob: "src/**/*.{ts,tsx}",
+      run: "eslint --cache --fix",
+    });
+    Lefthook.of(this.project)?.addCommand(GitClientHook.PRE_COMMIT, {
+      name: "prettier",
+      glob: "src/**/*.{ts,tsx}",
+      run: "npx prettier --write",
+    });
   }
 
   preSynthesize(): void {
