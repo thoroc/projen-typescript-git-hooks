@@ -116,6 +116,7 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
     }
 
     if (options.editorConfig ?? true) {
+      if (this.debug) console.log("EditorConfig enabled");
       this.editorConfig = new EditorConfig(this, options.editorConfigOptions);
     }
 
