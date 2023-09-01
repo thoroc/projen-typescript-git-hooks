@@ -37,6 +37,7 @@
     "@types/prettier": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
+    "change-case": "^4.1.2",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8",
@@ -67,7 +68,8 @@
   },
   "dependencies": {
     "projen": "^0.72.18",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "type-fest": "^4.3.1"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",

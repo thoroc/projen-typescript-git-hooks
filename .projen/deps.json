@@ -32,6 +32,10 @@
       "type": "build"
     },
     {
+      "name": "change-case",
+      "type": "build"
+    },
+    {
       "name": "commitizen",
       "type": "build"
     },
@@ -141,6 +145,10 @@
     },
     {
       "name": "ts-node",
+      "type": "runtime"
+    },
+    {
+      "name": "type-fest",
       "type": "runtime"
     }
   ],

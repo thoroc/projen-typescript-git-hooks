@@ -55,3 +55,4 @@ junit.xml
 !/.prettierrc.json
 !/.eslintrc.json
 !/.husky/prepare-commit-msg
+!/.editorconfig
