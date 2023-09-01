@@ -28,9 +28,17 @@ new YamlFile(project, ".github/workflows/pull-request-comments.yml", {
     jobs: {
       build: {
         "runs-on": "ubuntu-latest",
+        env: { CI: "true" },
         steps: [
-          { uses: "actions/checkout@v3" },
-          { name: "Install dependencies", run: "npx project install:ci" },
+          {
+            name: "Checkout",
+            uses: "actions/checkout@v3",
+            with: {
+              ref: "${{ github.event.pull_request.head.ref }}",
+              repository: "${{ github.event.pull_request.head.repo.full_name }}",
+            },
+          },
+          { name: "Install dependencies", run: "yarn install --check-files" },
           { name: "Run tests", run: "npx jest --coverage --coverageReporters json-summary" },
           { name: "Jest Coverage Comment", uses: "MishaKav/jest-coverage-comment@main" },
         ],
