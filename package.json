@@ -1,8 +1,8 @@
 {
-  "name": "projen-typescript-git-hooks",
+  "name": "@thoroc/projen-typescript-git-hooks",
   "repository": {
     "type": "git",
-    "url": "git@github.com:thoroc/projen-typescript-git-hooks.git"
+    "url": "https://github.com/thoroc/projen-typescript-git-hooks.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -29,7 +29,7 @@
     "projen": "npx projen"
   },
   "author": {
-    "name": "Thomas Roche",
+    "name": "thoroc",
     "email": "thomas.a.roche@gmail.com",
     "organization": false
   },
@@ -58,6 +58,9 @@
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "version": "0.0.0",
   "jest": {
     "testMatch": [
