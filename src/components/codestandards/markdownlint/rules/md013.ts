@@ -1,4 +1,4 @@
-export interface MD013 {
+export interface Md013 {
   /**
    * Number of characters for code blocks
    * @default 80
@@ -12,7 +12,7 @@ export interface MD013 {
   /**
    * Include headings
    * @default true
-   * @deprecated
+   * @deprecated use headings instead
    */
   readonly headers?: boolean;
   /**

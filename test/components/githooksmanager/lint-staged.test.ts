@@ -1,7 +1,7 @@
 import { synthSnapshot } from 'projen/lib/util/synth';
-import { GitHooksEnabledProject } from '../../../../src';
-import { GitHooksManagerType, Husky } from '../../../../src/components/githooksmanager';
-import { LintStaged } from '../../../../src/components/githooksmanager/utils/lintstaged';
+import { GitHooksEnabledProject } from '../../../src';
+import { GitHooksManagerType, Husky } from '../../../src/components/githooksmanager';
+import { LintStaged } from '../../../src/components/githooksmanager/lintstaged';
 
 describe('Husky', () => {
   it('Retuns a singleton', () => {

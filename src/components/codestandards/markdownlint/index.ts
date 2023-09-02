@@ -1,6 +1,6 @@
 import { Component, IgnoreFile, Project, SourceCode, YamlFile } from 'projen';
 import { MarkdownlintRules } from './rules';
-import { GitHooksEnabledProject } from '../../../projects';
+import { GitHooksEnabledProject } from '../../../typescript/githooks-enabled-project';
 import { recursiveToSnake, toSnakeCase } from '../../../utils';
 import { Husky, LintStaged } from '../../githooksmanager';
 
@@ -9,7 +9,6 @@ export interface MarkdownlintOptions {
    * Set the rules for Markdownlint
    */
   readonly rules?: MarkdownlintRules;
-
   /**
    * Defines an .markdownlintignore file
    *
@@ -19,8 +18,8 @@ export interface MarkdownlintOptions {
 }
 
 export class Markdownlint extends Component {
-  static defaultRules = {
-    MD013: {
+  static defaultRules: MarkdownlintRules = {
+    md013: {
       lineLength: 80,
       headingLineLength: 80,
       codeBlockLineLength: 80,
@@ -31,7 +30,7 @@ export class Markdownlint extends Component {
       strict: false,
       stern: false,
     },
-    MD024: {
+    md024: {
       allowDifferentNesting: true,
       siblingsOnly: true,
     },
@@ -45,7 +44,7 @@ export class Markdownlint extends Component {
     return project.components.find(singleton);
   }
 
-  readonly project: GitHooksEnabledProject;
+  readonly project: Project;
   readonly options: MarkdownlintOptions;
 
   /**
@@ -68,7 +67,7 @@ export class Markdownlint extends Component {
       this.ignoreFile = new IgnoreFile(project, '.markdownlintignore');
     }
 
-    this.project.addDevDeps('markdownlint-cli2');
+    (this.project as GitHooksEnabledProject).addDevDeps('markdownlint-cli2');
 
     if (Object.keys(this.rules).length > 0) {
       const transformedRules = recursiveToSnake(this.rules, toSnakeCase);
@@ -96,11 +95,14 @@ export class Markdownlint extends Component {
       this.addIgnorePattern(c.filePath);
     });
 
-    if (this.project.gitHooksManager instanceof Husky) {
-      LintStaged.of(this.project)?.addRule({
+    if ((this.project as GitHooksEnabledProject).gitHooksManager instanceof Husky) {
+      LintStaged.of(this.project as GitHooksEnabledProject)?.addRule({
         filePattern: '*.md',
         commands: ['markdownlint-cli2 --fix'],
       });
     }
   }
 }
+
+
+export * from './rules';

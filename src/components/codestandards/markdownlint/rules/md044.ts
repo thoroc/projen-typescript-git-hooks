@@ -1,4 +1,4 @@
-export interface ProperNames {
+export interface Md044 {
   /**
    * Include code blocks
    * @default true

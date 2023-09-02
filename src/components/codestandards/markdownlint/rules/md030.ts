@@ -1,4 +1,4 @@
-export interface MD030 {
+export interface Md030 {
   /**
    * Spaces for multi-line ordered list items
    * @default 1

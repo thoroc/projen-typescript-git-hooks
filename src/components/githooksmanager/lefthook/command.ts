@@ -1,16 +1,24 @@
-import { Serializer, omit } from '../../../utils';
+import { ISerializer } from '../../../utils';
 
 export interface LefthookCommandOptions {
-  name: string;
-  run: string;
+  readonly name: string;
+  readonly run: string;
+  readonly files?: string;
+  readonly exclude?: string;
+  readonly glob?: string;
+  readonly tags?: string;
+  readonly stagedFiles?: boolean;
+}
+export type LefthookCommandType = {
+  run?: string;
   files?: string;
   exclude?: string;
   glob?: string;
   tags?: string;
-  stagedFiles?: boolean;
+  [key: string]: string | undefined; // Add a string index signature
 }
 
-export class LefthookCommand implements LefthookCommandOptions, Serializer {
+export class LefthookCommand implements ISerializer {
   readonly name: string;
   readonly run: string;
   readonly files?: string;
@@ -29,19 +37,22 @@ export class LefthookCommand implements LefthookCommandOptions, Serializer {
     this.stagedFiles = options.stagedFiles ?? true;
   }
 
-  asRecords(): Record<string, string | boolean | {}> {
-    const props = Object.getOwnPropertyNames(this);
-    const records: Record<string, string | boolean | {}> = {};
+  asRecords(): object {
+    const records: LefthookCommandType = {};
+    const excludes: Array<string> = ['name', 'stagedFiles'];
 
-    for (const id in props) {
-      const name: string = props[id];
-      const value: unknown = this[name as keyof LefthookCommand];
+    for (const propName in this) {
+      if (Object.prototype.hasOwnProperty.call(this, propName)) {
+        const name: string = propName;
+        const value: unknown = (this as any)[name as keyof LefthookCommand];
+        const isNotExcluded: boolean = !excludes.includes(name);
 
-      if (value !== undefined && value) {
-        if (name === 'run' && this.stagedFiles === true) {
-          records[name] = `${value} {staged_files}`;
-        } else {
-          records[name] = value;
+        if (value !== undefined && value && isNotExcluded) {
+          if (name === 'run' && this.stagedFiles === true) {
+            records[name] = `${value} {staged_files}`;
+          } else {
+            records[name] = value as string;
+          }
         }
       }
     }
@@ -49,12 +60,11 @@ export class LefthookCommand implements LefthookCommandOptions, Serializer {
     return records;
   }
 
-  serialise(): unknown {
-    const transfomed: { [key: string]: unknown } = {};
+  serialize(): object {
+    const transfomed: { [key: string]: object } = {};
     const name = this.name;
-    const values = omit(this.asRecords(), 'name', 'stagedFiles');
 
-    transfomed[name] = values;
+    transfomed[name] = this.asRecords();
 
     return transfomed;
   }

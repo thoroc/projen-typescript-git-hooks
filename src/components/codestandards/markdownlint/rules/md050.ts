@@ -3,7 +3,7 @@ export enum StrongStyle {
   CONSISTENT = 'consistent',
   UNDERSCORE = 'underscore',
 }
-export interface MD050 {
+export interface Md050 {
   /**
    * Strong style should be consistent
    * @default StrongStyle.CONSISTENT

@@ -1,4 +1,4 @@
-export interface MD022 {
+export interface Md022 {
   /**
    * Blank lines above heading
    * @default 1

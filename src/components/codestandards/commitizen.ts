@@ -1,13 +1,17 @@
-import { Component, JsonFile } from 'projen';
-import { GitHooksEnabledProject } from '../../projects';
+import { Component, JsonFile, Project } from 'projen';
+import { GitHooksEnabledProject } from '../../typescript/githooks-enabled-project';
 import { GitClientHook, Husky } from '../githooksmanager';
 
 export interface CommitizenOptions {
   readonly json?: boolean;
 }
 
+export interface CommitizenConfig {
+  readonly path: string;
+}
+
 export class Commitizen extends Component {
-  static config = { path: './node_modules/cz-conventional-changelog' };
+  public static config: CommitizenConfig = { path: './node_modules/cz-conventional-changelog' };
 
   /**
    * Returns the singletone component of a project or undefined if there is none.
@@ -19,7 +23,7 @@ export class Commitizen extends Component {
 
   readonly options?: CommitizenOptions;
 
-  project: GitHooksEnabledProject;
+  readonly project: Project;
 
   constructor(project: GitHooksEnabledProject, options?: CommitizenOptions) {
     super(project);
@@ -27,7 +31,7 @@ export class Commitizen extends Component {
     this.project = project;
     this.options = options;
 
-    this.project.addDevDeps(
+    (this.project as GitHooksEnabledProject).addDevDeps(
       '@commitlint/cli',
       '@commitlint/config-conventional',
       'commitizen',
@@ -42,13 +46,13 @@ export class Commitizen extends Component {
 
   preSynthesize(): void {
     if (this.options?.json) {
-      if (this.project.debug) console.log(`${this.constructor.name}: Saving config in .czrc.`);
+      if ((this.project as GitHooksEnabledProject).debug) console.log(`${this.constructor.name}: Saving config in .czrc.`);
 
       new JsonFile(this.project, '.czrc', {
         obj: Commitizen.config,
       });
     } else {
-      if (this.project.debug) console.log(`${this.constructor.name}: Saving config in package.json.`);
+      if ((this.project as GitHooksEnabledProject).debug) console.log(`${this.constructor.name}: Saving config in package.json.`);
 
       const packageJson = this.project.tryFindObjectFile('package.json');
 
@@ -57,7 +61,7 @@ export class Commitizen extends Component {
       });
     }
 
-    Husky.of(this.project)?.createHook(GitClientHook.PRE_COMMIT_MESSAGE, [
+    Husky.of(this.project as GitHooksEnabledProject)?.createHook(GitClientHook.PRE_COMMIT_MESSAGE, [
       'exec < /dev/tty && npx cz --hook || true',
     ]);
   }

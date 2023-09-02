@@ -1,4 +1,4 @@
-export interface MD012 {
+export interface Md012 {
   /**
    * Consecutive blank lines
    * @default 1

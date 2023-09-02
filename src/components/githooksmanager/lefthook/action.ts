@@ -3,7 +3,7 @@ import { LefthookScriptOptions } from './script';
 import { GitClientHook } from '..';
 
 export interface LefthookAction {
-  actionName: GitClientHook;
-  commands?: Array<LefthookCommandOptions>;
-  scripts?: Array<LefthookScriptOptions>;
+  readonly actionName: GitClientHook;
+  readonly commands?: Array<LefthookCommandOptions>;
+  readonly scripts?: Array<LefthookScriptOptions>;
 }

@@ -1,3 +1,3 @@
-export * from './projects';
+export * from './typescript/githooks-enabled-project';
 export * from './components';
-export { Serializer } from './utils';
+export { ISerializer as Serializer } from './utils';

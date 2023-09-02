@@ -1,14 +1,14 @@
-import { SnakeCasedPropertiesDeep } from 'type-fest';
+import { ISerializer } from '../../../utils';
 
 export interface EditorConfigParamsOptions {
-  indentStyle?: string;
-  indentSize?: number;
-  endOfLine?: string;
-  charset?: string;
-  insertFinalNewline?: boolean;
+  readonly indentStyle?: string;
+  readonly indentSize?: number;
+  readonly endOfLine?: string;
+  readonly charset?: string;
+  readonly insertFinalNewline?: boolean;
 }
 
-export class EditorConfigParams implements EditorConfigParamsOptions {
+export class EditorConfigParams implements ISerializer {
   readonly indentStyle?: string;
   readonly indentSize?: number;
   readonly endOfLine?: string;
@@ -23,7 +23,7 @@ export class EditorConfigParams implements EditorConfigParamsOptions {
     this.insertFinalNewline = options.insertFinalNewline;
   }
 
-  serialise(): SnakeCasedPropertiesDeep<EditorConfigParamsOptions> {
+  serialize(): object {
     return {
       indent_style: this.indentStyle,
       indent_size: this.indentSize,

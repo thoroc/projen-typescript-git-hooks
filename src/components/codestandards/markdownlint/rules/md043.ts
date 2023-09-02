@@ -1,8 +1,8 @@
-export interface MD043 {
+export interface Md043 {
   /**
    * List of headings
    * @default []
-   * @deprecated
+   * @deprecated use headings instead
    */
   readonly headers?: Array<string>;
   /**

@@ -1,4 +1,6 @@
 import { YamlFile, cdk } from 'projen';
+import { Eslint } from './src/components/codestandards/eslint';
+import { Prettier } from './src/components/codestandards/prettier';
 
 const project = new cdk.JsiiProject({
   author: 'thoroc',
@@ -12,11 +14,15 @@ const project = new cdk.JsiiProject({
   docgen: true,
   deps: ['projen', 'yaml', 'type-fest'],
   bundledDeps: ['yaml', 'type-fest'],
+  peerDeps: ['projen'],
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
   // devDeps: [],             /* Build dependencies for this module. */
   // packageName: undefined,  /* The "name" in package.json. */
   npmDistTag: 'latest',
   npmRegistryUrl: 'https:///npm.pkg.github.com',
+
+  eslintOptions: Eslint.defaultOptions,
+  prettierOptions: Prettier.defaultPrettierOptions,
 });
 
 new YamlFile(project, '.github/workflows/pull-request-comments.yml', {

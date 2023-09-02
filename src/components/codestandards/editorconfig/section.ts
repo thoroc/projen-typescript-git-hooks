@@ -1,12 +1,12 @@
 import { EditorConfigParamsOptions } from './params';
 
 export interface EditorConfigSectionOptions {
-  name: string;
-  params: EditorConfigParamsOptions;
+  readonly name: string;
+  readonly params: EditorConfigParamsOptions;
 }
 
-export class EditorConfigSection implements EditorConfigSectionOptions {
-  static defaultSection = {
+export class EditorConfigSection {
+  static defaultEditorConfigSection: EditorConfigSectionOptions = {
     name: '*',
     params: {
       indentStyle: 'space',

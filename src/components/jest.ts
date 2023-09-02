@@ -1,7 +1,7 @@
 import { Project } from 'projen';
 import { Jest as BaseJest, JestOptions, NodePackageManager } from 'projen/lib/javascript';
 import { GitClientHook, Husky } from './githooksmanager';
-import { GitHooksEnabledProject } from '../projects';
+import { GitHooksEnabledProject } from '../typescript/githooks-enabled-project';
 
 export class Jest extends BaseJest {
   readonly project: Project;
