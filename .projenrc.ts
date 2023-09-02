@@ -9,7 +9,9 @@ const project = new cdk.JsiiProject({
   projenrcTs: true,
   repositoryUrl: 'https://github.com/thoroc/projen-typescript-git-hooks.git',
 
+  docgen: true,
   deps: ['projen', 'yaml', 'type-fest'],
+  bundledDeps: ['yaml', 'type-fest'],
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
   // devDeps: [],             /* Build dependencies for this module. */
   // packageName: undefined,  /* The "name" in package.json. */
