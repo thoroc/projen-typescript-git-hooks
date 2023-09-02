@@ -1,21 +1,21 @@
-import { Component } from "projen";
-import { GitHooksEnabledProject } from "../../projects";
-import { Markdownlint, MarkdownlintOptions } from "../codestandards";
-import { CommitizenOptions } from "../codestandards/commitizen";
+import { Component } from 'projen';
+import { GitHooksEnabledProject } from '../../projects';
+import { Markdownlint, MarkdownlintOptions } from '../codestandards';
+import { CommitizenOptions } from '../codestandards/commitizen';
 
 /**
  * The list of git cient-side hooks
  * @see https://git-scm.com/docs/githooks
  */
 export enum GitClientHook {
-  PRE_COMMIT = "pre-commit",
-  PRE_PUSH = "pre-push",
-  PRE_COMMIT_MESSAGE = "prepare-commit-msg",
+  PRE_COMMIT = 'pre-commit',
+  PRE_PUSH = 'pre-push',
+  PRE_COMMIT_MESSAGE = 'prepare-commit-msg',
 }
 
 export enum GitHooksManagerType {
-  HUSKY = "husky",
-  LEFTHOOK = "lefthook",
+  HUSKY = 'husky',
+  LEFTHOOK = 'lefthook',
 }
 
 export type GitHooksManagerOptions = {
@@ -70,14 +70,14 @@ export abstract class GitHooksManager extends Component {
     this.project = project;
 
     if (options?.markdownlint ?? true) {
-      if (this.project.debug) console.log("Markdownlint enabled");
+      if (this.project.debug) console.log('Markdownlint enabled');
       this.markdownlint = new Markdownlint(this.project, options?.markdownlintOptions);
     }
   }
 }
 
-export { Husky, HuskyOptions } from "./husky";
-export { LintStaged, LintStagedRule, LintStagedOptions } from "./utils/lintstaged";
+export { Husky, HuskyOptions } from './husky';
+export { LintStaged, LintStagedRule, LintStagedOptions } from './utils/lintstaged';
 export {
   Lefthook,
   LefthookAction,
@@ -86,4 +86,4 @@ export {
   LefthookOptions,
   LefthookCommandOptions,
   LefthookScriptOptions,
-} from "./lefthook";
+} from './lefthook';

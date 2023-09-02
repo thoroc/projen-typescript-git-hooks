@@ -1,6 +1,6 @@
-import { LefthookAction } from "./action";
-import { LefthookCommand } from "./command";
-import { Serializer } from "../../../utils";
+import { LefthookAction } from './action';
+import { LefthookCommand } from './command';
+import { Serializer } from '../../../utils';
 
 export interface LefthookConfigOptions {
   actions: Array<LefthookAction>;

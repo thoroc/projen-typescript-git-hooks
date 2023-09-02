@@ -1,7 +1,7 @@
 export enum StrongStyle {
-  ASTERISK = "asterisk",
-  CONSISTENT = "consistent",
-  UNDERSCORE = "underscore",
+  ASTERISK = 'asterisk',
+  CONSISTENT = 'consistent',
+  UNDERSCORE = 'underscore',
 }
 export interface MD050 {
   /**

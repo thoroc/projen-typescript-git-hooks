@@ -1,7 +1,7 @@
-import { Component, TomlFile } from "projen";
-import { EditorConfigParams } from "./params";
-import { EditorConfigSection, EditorConfigSectionOptions } from "./section";
-import { GitHooksEnabledProject } from "../../../projects";
+import { Component, TomlFile } from 'projen';
+import { EditorConfigParams } from './params';
+import { EditorConfigSection, EditorConfigSectionOptions } from './section';
+import { GitHooksEnabledProject } from '../../../projects';
 
 export interface EditorConfigOptions {
   sections: Array<EditorConfigSection>;
@@ -19,7 +19,7 @@ export class EditorConfig extends Component {
     this.options = options;
     this.sections = options?.sections ?? [EditorConfigSection.defaultSection];
 
-    this.project.addDeps("type-fest");
+    this.project.addDeps('type-fest');
   }
 
   preSynthesize(): void {
@@ -32,7 +32,7 @@ export class EditorConfig extends Component {
       ).serialise();
     }
 
-    new TomlFile(this.project, ".editorconfig", {
+    new TomlFile(this.project, '.editorconfig', {
       obj: { root: true, ...transformed },
     });
   }

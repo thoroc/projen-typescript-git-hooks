@@ -1,7 +1,7 @@
 export enum EmphasisStyle {
-  ASTERISK = "asterisk",
-  CONSISTENT = "consistent",
-  UNDERSCORE = "underscore",
+  ASTERISK = 'asterisk',
+  CONSISTENT = 'consistent',
+  UNDERSCORE = 'underscore',
 }
 
 export interface MD049 {

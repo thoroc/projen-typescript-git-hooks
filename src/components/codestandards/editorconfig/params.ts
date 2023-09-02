@@ -1,4 +1,4 @@
-import { SnakeCasedPropertiesDeep } from "type-fest";
+import { SnakeCasedPropertiesDeep } from 'type-fest';
 
 export interface EditorConfigParamsOptions {
   indentStyle?: string;

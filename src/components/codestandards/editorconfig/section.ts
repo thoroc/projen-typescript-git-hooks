@@ -1,4 +1,4 @@
-import { EditorConfigParamsOptions } from "./params";
+import { EditorConfigParamsOptions } from './params';
 
 export interface EditorConfigSectionOptions {
   name: string;
@@ -7,12 +7,12 @@ export interface EditorConfigSectionOptions {
 
 export class EditorConfigSection implements EditorConfigSectionOptions {
   static defaultSection = {
-    name: "*",
+    name: '*',
     params: {
-      indentStyle: "space",
+      indentStyle: 'space',
       indentSize: 2,
-      endOfLine: "lf",
-      charset: "utf-8",
+      endOfLine: 'lf',
+      charset: 'utf-8',
       insertFinalNewline: true,
     },
   };

@@ -1,8 +1,8 @@
-import { javascript } from "projen";
-import { PrettierOptions, ProseWrap, QuoteProps, TrailingComma } from "projen/lib/javascript";
-import { GitHooksEnabledProject } from "../../projects";
-import { GitClientHook, Lefthook } from "../githooksmanager";
-import { LintStaged } from "../githooksmanager/utils/lintstaged";
+import { javascript } from 'projen';
+import { PrettierOptions, ProseWrap, QuoteProps, TrailingComma } from 'projen/lib/javascript';
+import { GitHooksEnabledProject } from '../../projects';
+import { GitClientHook, Lefthook } from '../githooksmanager';
+import { LintStaged } from '../githooksmanager/utils/lintstaged';
 
 export class Prettier extends javascript.Prettier {
   static defaultOptions = {
@@ -16,7 +16,7 @@ export class Prettier extends javascript.Prettier {
     },
     overrides: [
       {
-        files: ["*.md"],
+        files: ['*.md'],
         options: {
           printWidth: 120,
           proseWrap: ProseWrap.ALWAYS,
@@ -34,24 +34,24 @@ export class Prettier extends javascript.Prettier {
     super(project as javascript.NodeProject, options ?? Prettier.defaultOptions);
 
     this.project = project;
-    this.project.addDevDeps("@types/prettier");
+    this.project.addDevDeps('@types/prettier');
 
-    this.project.addTask("format", {
-      description: "Runs Prettier",
+    this.project.addTask('format', {
+      description: 'Runs Prettier',
       exec: 'npx prettier --write "{src,projenrc}/**/*.{js,jsx,ts,tsx}"',
     });
 
-    this.ignoreFile?.addPatterns("tsconfig.dev.json", "tsconfig.json", "node_modules", "build", "coverage");
+    this.ignoreFile?.addPatterns('tsconfig.dev.json', 'tsconfig.json', 'node_modules', 'build', 'coverage');
 
     LintStaged.of(this.project)?.addRule({
-      filePattern: "*.md",
-      commands: "npx prettier --write --prose-wrap always",
+      filePattern: '*.md',
+      commands: 'npx prettier --write --prose-wrap always',
     });
 
     Lefthook.of(this.project)?.addCommand(GitClientHook.PRE_COMMIT, {
-      name: "markdown-prettier",
-      glob: "*.md",
-      run: "npx prettier --write --prose-wrap always",
+      name: 'markdown-prettier',
+      glob: '*.md',
+      run: 'npx prettier --write --prose-wrap always',
     });
   }
 }

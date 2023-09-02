@@ -1,7 +1,7 @@
 export enum CodeFenceStyle {
-  BACKTICK = "backtick",
-  CONSISTENT = "consistent",
-  TILDE = "tilde",
+  BACKTICK = 'backtick',
+  CONSISTENT = 'consistent',
+  TILDE = 'tilde',
 }
 
 export interface MD048 {

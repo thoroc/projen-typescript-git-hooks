@@ -1,9 +1,9 @@
-import { Component, TextFile } from "projen";
-import { NodePackageManager } from "projen/lib/javascript/node-package";
-import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from ".";
-import { LintStaged, LintStagedOptions } from "./utils/lintstaged";
-import { GitHooksEnabledProject } from "../../projects";
-import { Commitizen } from "../codestandards/commitizen";
+import { Component, TextFile } from 'projen';
+import { NodePackageManager } from 'projen/lib/javascript/node-package';
+import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from '.';
+import { LintStaged, LintStagedOptions } from './utils/lintstaged';
+import { GitHooksEnabledProject } from '../../projects';
+import { Commitizen } from '../codestandards/commitizen';
 
 export interface HuskyOptions extends GitHooksManagerOptions {
   /**
@@ -41,17 +41,17 @@ export class Husky extends GitHooksManager {
     }
 
     this.project = project;
-    this.project.addDevDeps("husky");
+    this.project.addDevDeps('husky');
 
     if (this.project.debug) console.log(`Husky Options: ${JSON.stringify(options, undefined, 2)}`);
 
     if (options?.lintStaged ?? true) {
-      if (this.project.debug) console.log("LintStaged enabled");
+      if (this.project.debug) console.log('LintStaged enabled');
       this.lintStaged = new LintStaged(this.project, options?.lintStagedOptions);
     }
 
     if (options?.commitizen ?? true) {
-      if (this.project.debug) console.log("Commitizen enabled");
+      if (this.project.debug) console.log('Commitizen enabled');
       this.commitizen = new Commitizen(this.project, options?.commitizenOptions);
     }
   }
@@ -61,19 +61,18 @@ export class Husky extends GitHooksManager {
     const gitHookFile = this.project.tryFindFile(gitHookFilename);
 
     if (gitHookFile === undefined) {
-      if (this.project.debug)
-        console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`);
+      if (this.project.debug) {console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`);}
 
       new TextFile(this.project, gitHookFilename, {
         executable: true,
-        lines: ["#!/bin/sh", '. "$(dirname "$0")/_/husky.sh"', "", command.join("\n")],
+        lines: ['#!/bin/sh', '. "$(dirname "$0")/_/husky.sh"', '', command.join('\n')],
       });
     }
   }
 
   preSynthesize(): void {
     const script =
-      this.project.package.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
-    this.project.package.setScript(script, "npx husky install");
+      this.project.package.packageManager === NodePackageManager.YARN ? 'postinstall' : 'prepare';
+    this.project.package.setScript(script, 'npx husky install');
   }
 }

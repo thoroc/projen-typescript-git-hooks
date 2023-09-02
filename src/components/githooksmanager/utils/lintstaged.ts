@@ -1,6 +1,6 @@
-import { Component } from "projen";
-import { GitClientHook, Husky } from "..";
-import { GitHooksEnabledProject } from "../../../projects";
+import { Component } from 'projen';
+import { GitClientHook, Husky } from '..';
+import { GitHooksEnabledProject } from '../../../projects';
 
 export interface LintStagedRule {
   /**
@@ -48,9 +48,9 @@ export class LintStaged extends Component {
       }
     }
 
-    this.project.addDevDeps("lint-staged");
+    this.project.addDevDeps('lint-staged');
 
-    Husky.of(this.project)?.createHook(GitClientHook.PRE_COMMIT, ["npx lint-staged"]);
+    Husky.of(this.project)?.createHook(GitClientHook.PRE_COMMIT, ['npx lint-staged']);
   }
 
   public addRule(rule: LintStagedRule): void {
@@ -66,17 +66,15 @@ export class LintStaged extends Component {
 
       existingRule.commands = [...existingCommands, ...newCommands];
 
-      if (this.project.debug)
-        console.log(`${this.constructor.name}: Added commands to existing rule ${rule.filePattern}.`);
+      if (this.project.debug) {console.log(`${this.constructor.name}: Added commands to existing rule ${rule.filePattern}.`);}
     } else {
-      if (this.project.debug)
-        console.log(`${this.constructor.name}: Rule ${rule.filePattern} doesn't exist, adding it now.`);
+      if (this.project.debug) {console.log(`${this.constructor.name}: Rule ${rule.filePattern} doesn't exist, adding it now.`);}
       this.rules.push(rule);
     }
   }
 
   preSynthesize(): void {
-    this.project.package.addField("lint-staged", this.expandLintStagedRules());
+    this.project.package.addField('lint-staged', this.expandLintStagedRules());
   }
 
   private expandLintStagedRules() {

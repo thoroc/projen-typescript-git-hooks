@@ -1,4 +1,4 @@
-import { Serializer, omit } from "../../../utils";
+import { Serializer, omit } from '../../../utils';
 
 export interface LefthookCommandOptions {
   name: string;
@@ -38,7 +38,7 @@ export class LefthookCommand implements LefthookCommandOptions, Serializer {
       const value: unknown = this[name as keyof LefthookCommand];
 
       if (value !== undefined && value) {
-        if (name === "run" && this.stagedFiles === true) {
+        if (name === 'run' && this.stagedFiles === true) {
           records[name] = `${value} {staged_files}`;
         } else {
           records[name] = value;
@@ -52,7 +52,7 @@ export class LefthookCommand implements LefthookCommandOptions, Serializer {
   serialise(): unknown {
     const transfomed: { [key: string]: unknown } = {};
     const name = this.name;
-    const values = omit(this.asRecords(), "name", "stagedFiles");
+    const values = omit(this.asRecords(), 'name', 'stagedFiles');
 
     transfomed[name] = values;
 

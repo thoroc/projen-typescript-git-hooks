@@ -1,9 +1,9 @@
 export enum UnorderedListStyle {
-  CONSISTENT = "consistent",
-  ASTERISK = "asterisk",
-  DASH = "dash",
-  PLUS = "plus",
-  SUBLIST = "sublist",
+  CONSISTENT = 'consistent',
+  ASTERISK = 'asterisk',
+  DASH = 'dash',
+  PLUS = 'plus',
+  SUBLIST = 'sublist',
 }
 
 export interface MD004 {

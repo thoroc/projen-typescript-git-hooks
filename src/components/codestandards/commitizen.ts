@@ -1,13 +1,13 @@
-import { Component, JsonFile } from "projen";
-import { GitHooksEnabledProject } from "../../projects";
-import { GitClientHook, Husky } from "../githooksmanager";
+import { Component, JsonFile } from 'projen';
+import { GitHooksEnabledProject } from '../../projects';
+import { GitClientHook, Husky } from '../githooksmanager';
 
 export interface CommitizenOptions {
   readonly json?: boolean;
 }
 
 export class Commitizen extends Component {
-  static config = { path: "./node_modules/cz-conventional-changelog" };
+  static config = { path: './node_modules/cz-conventional-changelog' };
 
   /**
    * Returns the singletone component of a project or undefined if there is none.
@@ -28,15 +28,15 @@ export class Commitizen extends Component {
     this.options = options;
 
     this.project.addDevDeps(
-      "@commitlint/cli",
-      "@commitlint/config-conventional",
-      "commitizen",
-      "cz-conventional-changelog",
+      '@commitlint/cli',
+      '@commitlint/config-conventional',
+      'commitizen',
+      'cz-conventional-changelog',
     );
 
-    this.project.addTask("commitizen", {
+    this.project.addTask('commitizen', {
       description: "Commitizen's commit",
-      exec: "cz",
+      exec: 'cz',
     });
   }
 
@@ -44,21 +44,21 @@ export class Commitizen extends Component {
     if (this.options?.json) {
       if (this.project.debug) console.log(`${this.constructor.name}: Saving config in .czrc.`);
 
-      new JsonFile(this.project, ".czrc", {
+      new JsonFile(this.project, '.czrc', {
         obj: Commitizen.config,
       });
     } else {
       if (this.project.debug) console.log(`${this.constructor.name}: Saving config in package.json.`);
 
-      const packageJson = this.project.tryFindObjectFile("package.json");
+      const packageJson = this.project.tryFindObjectFile('package.json');
 
-      packageJson?.addOverride("config", {
+      packageJson?.addOverride('config', {
         commitizen: Commitizen.config,
       });
     }
 
     Husky.of(this.project)?.createHook(GitClientHook.PRE_COMMIT_MESSAGE, [
-      "exec < /dev/tty && npx cz --hook || true",
+      'exec < /dev/tty && npx cz --hook || true',
     ]);
   }
 }

@@ -1,8 +1,8 @@
-import { Component, IgnoreFile, Project, SourceCode, YamlFile } from "projen";
-import { MarkdownlintRules } from "./rules";
-import { GitHooksEnabledProject } from "../../../projects";
-import { recursiveToSnake, toSnakeCase } from "../../../utils";
-import { Husky, LintStaged } from "../../githooksmanager";
+import { Component, IgnoreFile, Project, SourceCode, YamlFile } from 'projen';
+import { MarkdownlintRules } from './rules';
+import { GitHooksEnabledProject } from '../../../projects';
+import { recursiveToSnake, toSnakeCase } from '../../../utils';
+import { Husky, LintStaged } from '../../githooksmanager';
 
 export interface MarkdownlintOptions {
   /**
@@ -65,15 +65,15 @@ export class Markdownlint extends Component {
     this.rules = options?.rules ?? Markdownlint.defaultRules;
 
     if (options?.ignoreFile ?? true) {
-      this.ignoreFile = new IgnoreFile(project, ".markdownlintignore");
+      this.ignoreFile = new IgnoreFile(project, '.markdownlintignore');
     }
 
-    this.project.addDevDeps("markdownlint-cli2");
+    this.project.addDevDeps('markdownlint-cli2');
 
     if (Object.keys(this.rules).length > 0) {
       const transformedRules = recursiveToSnake(this.rules, toSnakeCase);
 
-      new YamlFile(this.project, "markdownlint.yml", {
+      new YamlFile(this.project, 'markdownlint.yml', {
         obj: transformedRules,
       });
     }
@@ -98,8 +98,8 @@ export class Markdownlint extends Component {
 
     if (this.project.gitHooksManager instanceof Husky) {
       LintStaged.of(this.project)?.addRule({
-        filePattern: "*.md",
-        commands: ["markdownlint-cli2 --fix"],
+        filePattern: '*.md',
+        commands: ['markdownlint-cli2 --fix'],
       });
     }
   }

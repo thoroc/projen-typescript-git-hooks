@@ -1,15 +1,15 @@
-import { typescript } from "projen";
-import { TypeScriptModuleResolution } from "projen/lib/javascript";
-import { Eslint, Prettier } from "./components/codestandards";
-import { EditorConfig, EditorConfigOptions } from "./components/codestandards/editorconfig";
+import { typescript } from 'projen';
+import { TypeScriptModuleResolution } from 'projen/lib/javascript';
+import { Eslint, Prettier } from './components/codestandards';
+import { EditorConfig, EditorConfigOptions } from './components/codestandards/editorconfig';
 import {
   GitHooksManagerType,
   Husky,
   HuskyOptions,
   Lefthook,
   LefthookOptions,
-} from "./components/githooksmanager";
-import { Jest } from "./components/jest";
+} from './components/githooksmanager';
+import { Jest } from './components/jest';
 
 export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProjectOptions {
   /**
@@ -63,8 +63,8 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
   constructor(options: GitHooksEnabledProjectOptions) {
     super({
       ...options,
-      deps: ["ts-node", ...(options.deps ?? [])],
-      devDeps: ["@types/node", ...(options.devDeps ?? [])],
+      deps: ['ts-node', ...(options.deps ?? [])],
+      devDeps: ['@types/node', ...(options.devDeps ?? [])],
 
       eslint: false,
       eslintOptions: { dirs: [] },
@@ -79,7 +79,7 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
 
       tsconfigDev: {
         compilerOptions: {},
-        include: ["test/**/*.test.ts"],
+        include: ['test/**/*.test.ts'],
       },
     });
 
@@ -99,26 +99,26 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
     }
 
     if (options.jest ?? true) {
-      if (this.debug) console.log("Jest enabled");
+      if (this.debug) console.log('Jest enabled');
       this.jest = new Jest(this, options.jestOptions);
     }
 
     if (options.prettier ?? true) {
-      if (this.debug) console.log("Prettier enabled");
+      if (this.debug) console.log('Prettier enabled');
       this.prettier = new Prettier(this, options.prettierOptions);
     }
 
     if (options.eslint ?? true) {
-      if (this.debug) console.log("Eslint enabled");
-      const eslintOptions = { dirs: ["src", "test"], prettier: options.prettier, ...options.eslintOptions };
+      if (this.debug) console.log('Eslint enabled');
+      const eslintOptions = { dirs: ['src', 'test'], prettier: options.prettier, ...options.eslintOptions };
       this.eslint = new Eslint(this, eslintOptions);
     }
 
     if (options.editorConfig ?? true) {
-      if (this.debug) console.log("EditorConfig enabled");
+      if (this.debug) console.log('EditorConfig enabled');
       this.editorConfig = new EditorConfig(this, options.editorConfigOptions);
     }
 
-    this.addDevDeps("yaml", "change-case");
+    this.addDevDeps('yaml', 'change-case');
   }
 }

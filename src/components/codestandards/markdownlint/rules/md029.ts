@@ -1,8 +1,8 @@
 export enum OrderedListItemPrefix {
-  ONE = "one",
-  ONE_OR_ORDERED = "one_or_ordered",
-  ORDERED = "ordered",
-  ZERO = "zero",
+  ONE = 'one',
+  ONE_OR_ORDERED = 'one_or_ordered',
+  ORDERED = 'ordered',
+  ZERO = 'zero',
 }
 
 export interface MD029 {
