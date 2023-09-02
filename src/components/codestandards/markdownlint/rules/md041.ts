@@ -1,4 +1,4 @@
-export interface MD041 {
+export interface Md041 {
   /**
    * RegExp for matching title in front matter
    * @default ^\s*title\s*[:=]

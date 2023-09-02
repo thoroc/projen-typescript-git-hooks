@@ -1,14 +1,14 @@
-import { Component, TomlFile } from 'projen';
-import { EditorConfigParams } from './params';
-import { EditorConfigSection, EditorConfigSectionOptions } from './section';
-import { GitHooksEnabledProject } from '../../../projects';
+import { Component, Project, TomlFile } from "projen";
+import { EditorConfigParams } from "./params";
+import { EditorConfigSection, EditorConfigSectionOptions } from "./section";
+import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
 
 export interface EditorConfigOptions {
-  sections: Array<EditorConfigSection>;
+  readonly sections: Array<EditorConfigSection>;
 }
 
 export class EditorConfig extends Component {
-  readonly project: GitHooksEnabledProject;
+  readonly project: Project;
   readonly options?: EditorConfigOptions;
   private sections?: Array<EditorConfigSectionOptions>;
 
@@ -17,23 +17,26 @@ export class EditorConfig extends Component {
 
     this.project = project;
     this.options = options;
-    this.sections = options?.sections ?? [EditorConfigSection.defaultSection];
+    this.sections = options?.sections ?? [EditorConfigSection.defaultEditorConfigSection];
 
-    this.project.addDeps('type-fest');
+    (this.project as GitHooksEnabledProject).addDeps("type-fest");
   }
 
   preSynthesize(): void {
-    const transformed: { [key: string]: string | {} } = {};
+    const transformed: { [key: string]: object } = {};
 
     for (const id in this.sections) {
       const section = this.sections[id as keyof typeof this.sections];
       transformed[(section as EditorConfigSection).name] = new EditorConfigParams(
         (section as EditorConfigSection).params,
-      ).serialise();
+      ).serialize();
     }
 
-    new TomlFile(this.project, '.editorconfig', {
+    new TomlFile(this.project, ".editorconfig", {
       obj: { root: true, ...transformed },
     });
   }
 }
+
+export * from "./section";
+export * from "./params";

@@ -1,15 +1,15 @@
 export enum UnorderedListStyle {
-  CONSISTENT = 'consistent',
-  ASTERISK = 'asterisk',
-  DASH = 'dash',
-  PLUS = 'plus',
-  SUBLIST = 'sublist',
+  CONSISTENT = "consistent",
+  ASTERISK = "asterisk",
+  DASH = "dash",
+  PLUS = "plus",
+  SUBLIST = "sublist",
 }
 
-export interface MD004 {
+export interface Md004 {
   /**
    * List style
    * @default UnorderedListStyle.CONSISTENT
    */
-  style?: UnorderedListStyle;
+  readonly style?: UnorderedListStyle;
 }

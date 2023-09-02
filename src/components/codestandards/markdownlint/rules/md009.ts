@@ -1,4 +1,4 @@
-export interface MD009 {
+export interface Md009 {
   /**
    * Spaces for line break
    * @default 2

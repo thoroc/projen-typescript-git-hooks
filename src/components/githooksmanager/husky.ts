@@ -1,9 +1,9 @@
-import { Component, TextFile } from 'projen';
-import { NodePackageManager } from 'projen/lib/javascript/node-package';
-import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from '.';
-import { LintStaged, LintStagedOptions } from './utils/lintstaged';
-import { GitHooksEnabledProject } from '../../projects';
-import { Commitizen } from '../codestandards/commitizen';
+import { Component, Project, TextFile } from "projen";
+import { NodePackageManager } from "projen/lib/javascript/node-package";
+import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from ".";
+import { LintStaged, LintStagedOptions } from "./lintstaged";
+import { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
+import { Commitizen } from "../codestandards/commitizen";
 
 export interface HuskyOptions extends GitHooksManagerOptions {
   /**
@@ -12,7 +12,6 @@ export interface HuskyOptions extends GitHooksManagerOptions {
    * @default true
    */
   readonly lintStaged?: LintStaged;
-
   /**
    * Set rules for lint-staged
    *
@@ -25,9 +24,9 @@ export class Husky extends GitHooksManager {
   /**
    * Returns the singletone component of a project or undefined if there is none.
    */
-  public static of(project: GitHooksEnabledProject): Husky | undefined {
+  public static of(project: Project): Husky | undefined {
     const singleton = (c: Component): c is Husky => c instanceof Husky;
-    return project.components.find(singleton);
+    return (project as GitHooksEnabledProject).components.find(singleton);
   }
 
   readonly lintStaged?: LintStaged;
@@ -40,19 +39,18 @@ export class Husky extends GitHooksManager {
       throw Error(`${JSON.stringify(project)}: GitHooksManager can only be configured on the root project.`);
     }
 
-    this.project = project;
-    this.project.addDevDeps('husky');
+    (this.project as GitHooksEnabledProject).addDevDeps("husky");
 
-    if (this.project.debug) console.log(`Husky Options: ${JSON.stringify(options, undefined, 2)}`);
+    if ((this.project as GitHooksEnabledProject).debug) console.log(`Husky Options: ${JSON.stringify(options, undefined, 2)}`);
 
     if (options?.lintStaged ?? true) {
-      if (this.project.debug) console.log('LintStaged enabled');
-      this.lintStaged = new LintStaged(this.project, options?.lintStagedOptions);
+      if ((this.project as GitHooksEnabledProject).debug) console.log("LintStaged enabled");
+      this.lintStaged = new LintStaged(this.project as GitHooksEnabledProject, options?.lintStagedOptions);
     }
 
     if (options?.commitizen ?? true) {
-      if (this.project.debug) console.log('Commitizen enabled');
-      this.commitizen = new Commitizen(this.project, options?.commitizenOptions);
+      if ((this.project as GitHooksEnabledProject).debug) console.log("Commitizen enabled");
+      this.commitizen = new Commitizen(this.project as GitHooksEnabledProject, options?.commitizenOptions);
     }
   }
 
@@ -61,18 +59,18 @@ export class Husky extends GitHooksManager {
     const gitHookFile = this.project.tryFindFile(gitHookFilename);
 
     if (gitHookFile === undefined) {
-      if (this.project.debug) {console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`);}
+      if ((this.project as GitHooksEnabledProject).debug) { console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`); }
 
       new TextFile(this.project, gitHookFilename, {
         executable: true,
-        lines: ['#!/bin/sh', '. "$(dirname "$0")/_/husky.sh"', '', command.join('\n')],
+        lines: ["#!/bin/sh", '. "$(dirname "$0")/_/husky.sh"', "", command.join("\n")],
       });
     }
   }
 
   preSynthesize(): void {
     const script =
-      this.project.package.packageManager === NodePackageManager.YARN ? 'postinstall' : 'prepare';
-    this.project.package.setScript(script, 'npx husky install');
+      (this.project as GitHooksEnabledProject).package.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
+    (this.project as GitHooksEnabledProject).package.setScript(script, "npx husky install");
   }
 }

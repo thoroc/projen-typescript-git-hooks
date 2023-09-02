@@ -1,24 +1,7 @@
-import { Component } from 'projen';
-import { GitClientHook, Husky } from '..';
-import { GitHooksEnabledProject } from '../../../projects';
-
-export interface LintStagedRule {
-  /**
-   * file pattern or filename for the rule
-   */
-  filePattern: string;
-
-  /**
-   * command to execute on the file specified
-   */
-  commands: string | Array<string>;
-
-  /**
-   * Set the command to be the last one
-   * TODO: refactor the addRule so we respect this option
-   */
-  last?: boolean;
-}
+import { Component, Project } from "projen";
+import { LintStagedRule, LintStagedRuleOptions } from "./rules";
+import { GitClientHook, Husky } from "..";
+import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
 
 export interface LintStagedOptions {
   readonly rules?: Array<LintStagedRule>;
@@ -33,7 +16,7 @@ export class LintStaged extends Component {
     return project.components.find(singleton);
   }
 
-  project: GitHooksEnabledProject;
+  readonly project: Project;
   rules: Array<LintStagedRule>;
 
   constructor(project: GitHooksEnabledProject, options?: LintStagedOptions) {
@@ -48,12 +31,12 @@ export class LintStaged extends Component {
       }
     }
 
-    this.project.addDevDeps('lint-staged');
+    (this.project as GitHooksEnabledProject).addDevDeps("lint-staged");
 
-    Husky.of(this.project)?.createHook(GitClientHook.PRE_COMMIT, ['npx lint-staged']);
+    Husky.of(this.project as GitHooksEnabledProject)?.createHook(GitClientHook.PRE_COMMIT, ["npx lint-staged"]);
   }
 
-  public addRule(rule: LintStagedRule): void {
+  public addRule(rule: LintStagedRuleOptions): void {
     const existingRuleIndex: number = this.rules.findIndex((r) => r.filePattern === rule.filePattern);
 
     if (existingRuleIndex !== -1) {
@@ -66,15 +49,15 @@ export class LintStaged extends Component {
 
       existingRule.commands = [...existingCommands, ...newCommands];
 
-      if (this.project.debug) {console.log(`${this.constructor.name}: Added commands to existing rule ${rule.filePattern}.`);}
+      if ((this.project as GitHooksEnabledProject).debug) { console.log(`${this.constructor.name}: Added commands to existing rule ${rule.filePattern}.`); }
     } else {
-      if (this.project.debug) {console.log(`${this.constructor.name}: Rule ${rule.filePattern} doesn't exist, adding it now.`);}
-      this.rules.push(rule);
+      if ((this.project as GitHooksEnabledProject).debug) { console.log(`${this.constructor.name}: Rule ${rule.filePattern} doesn't exist, adding it now.`); }
+      this.rules.push(new LintStagedRule(rule));
     }
   }
 
   preSynthesize(): void {
-    this.project.package.addField('lint-staged', this.expandLintStagedRules());
+    (this.project as GitHooksEnabledProject).package.addField("lint-staged", this.expandLintStagedRules());
   }
 
   private expandLintStagedRules() {
@@ -95,3 +78,5 @@ export class LintStaged extends Component {
     return {};
   }
 }
+
+export * from "./rules";

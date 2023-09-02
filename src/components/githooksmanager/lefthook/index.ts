@@ -1,13 +1,13 @@
-import { Component, YamlFile } from 'projen';
-import { NodePackageManager } from 'projen/lib/javascript';
-import { LefthookCommand, LefthookCommandOptions } from './command';
-import { LefthookConfig } from './config';
-import { LefthookScriptOptions } from './script';
-import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from '..';
-import { GitHooksEnabledProject } from '../../../projects';
+import { Component, Project, YamlFile } from "projen";
+import { NodePackageManager } from "projen/lib/javascript";
+import { LefthookCommand, LefthookCommandOptions } from "./command";
+import { LefthookConfig } from "./config";
+import { LefthookScriptOptions } from "./script";
+import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from "..";
+import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
 
 export interface LefthookOptions extends GitHooksManagerOptions {
-  config?: LefthookConfig;
+  readonly config?: LefthookConfig;
 }
 
 /**
@@ -17,18 +17,17 @@ export class Lefthook extends GitHooksManager {
   /**
    * Returns the singletone component of a project or undefined if there is none.
    */
-  public static of(project: GitHooksEnabledProject): Lefthook | undefined {
+  public static of(project: Project): Lefthook | undefined {
     const singleton = (c: Component): c is Lefthook => c instanceof Lefthook;
-    return project.components.find(singleton);
+    return (project as GitHooksEnabledProject).components.find(singleton);
   }
 
-  project: GitHooksEnabledProject;
   config: LefthookConfig;
 
   constructor(project: GitHooksEnabledProject, options?: LefthookOptions) {
     super(project);
 
-    project.addDevDeps('lefthook');
+    project.addDevDeps("lefthook");
 
     this.config = new LefthookConfig(
       options?.config ?? {
@@ -36,14 +35,13 @@ export class Lefthook extends GitHooksManager {
       },
     );
 
-    this.project = project;
-    if (this.project.debug) console.log('Initiating Lefthook');
+    if ((this.project as GitHooksEnabledProject).debug) console.log("Initiating Lefthook");
   }
 
   public addCommand(hookName: GitClientHook, command: LefthookCommandOptions) {
     const action = this.config.actions?.find((hook) => hook.actionName === hookName);
 
-    if (this.project.debug) {console.log(`${this.constructor.name}: Adding new Command: ${action?.actionName}.`);}
+    if ((this.project as GitHooksEnabledProject).debug) { console.log(`${this.constructor.name}: Adding new Command: ${action?.actionName}.`); }
 
     if (!action) {
       this.config.actions.push({
@@ -70,21 +68,21 @@ export class Lefthook extends GitHooksManager {
 
   preSynthesize(): void {
     const script =
-      this.project.package.packageManager === NodePackageManager.YARN ? 'postinstall' : 'prepare';
-    this.project.package.setScript(script, 'npx lefthook install');
+      (this.project as GitHooksEnabledProject).package.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
+    (this.project as GitHooksEnabledProject).package.setScript(script, "npx lefthook install");
 
-    if (this.project.debug) console.log(`${this.constructor.name}: Creating new Lefthook config file.`);
+    if ((this.project as GitHooksEnabledProject).debug) console.log(`${this.constructor.name}: Creating new Lefthook config file.`);
 
     const config = this.config as LefthookConfig;
 
-    new YamlFile(this.project, 'lefthook.yml', {
+    new YamlFile(this.project, "lefthook.yml", {
       executable: true,
-      obj: config.serialise(),
+      obj: config.serialize(),
     });
   }
 }
 
-export { LefthookAction } from './action';
-export { LefthookCommandOptions } from './command';
-export { LefthookConfig, LefthookConfigOptions } from './config';
-export { LefthookScriptOptions } from './script';
+export * from "./action";
+export * from "./command";
+export * from "./config";
+export * from "./script";

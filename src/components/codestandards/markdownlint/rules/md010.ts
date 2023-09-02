@@ -1,4 +1,4 @@
-export interface MD010 {
+export interface Md010 {
   /**
    * Include code blocks
    * @default true

@@ -11,8 +11,8 @@ export const inclusivePick = <T extends {}, K extends string | number | symbol>(
 export const omit = <T extends {}, K extends keyof T>(obj: T, ...keys: Array<K>) =>
   Object.fromEntries(Object.entries(obj).filter(([key]) => !keys.includes(key as K))) as Omit<T, K>;
 
-export interface Serializer {
-  serialise(): unknown;
+export interface ISerializer {
+  serialize(): object;
 }
 
 export function toSnakeCase(str: string) {
@@ -22,7 +22,7 @@ export function toSnakeCase(str: string) {
 export function recursiveToSnake(item: unknown, transformer: any, depth = 0): unknown {
   if (Array.isArray(item)) {
     return item.map((el: unknown) => recursiveToSnake(el, depth + 1));
-  } else if (typeof item === 'function' || item !== Object(item)) {
+  } else if (typeof item === "function" || item !== Object(item)) {
     return item;
   }
   return Object.fromEntries(

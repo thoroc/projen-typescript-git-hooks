@@ -1,4 +1,4 @@
-export interface NoEmphasisAsHeading {
+export interface Md036 {
   /**
    * Punctuation characters
    * @default .,;:!?。，；：！？

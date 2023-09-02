@@ -1,7 +1,7 @@
-import { Project } from 'projen';
-import { Jest as BaseJest, JestOptions, NodePackageManager } from 'projen/lib/javascript';
-import { GitClientHook, Husky } from './githooksmanager';
-import { GitHooksEnabledProject } from '../projects';
+import { Project } from "projen";
+import { Jest as BaseJest, JestOptions, NodePackageManager } from "projen/lib/javascript";
+import { GitClientHook, Husky } from "./githooksmanager";
+import { GitHooksEnabledProject } from "../typescript/githooks-enabled-project";
 
 export class Jest extends BaseJest {
   readonly project: Project;
@@ -9,9 +9,9 @@ export class Jest extends BaseJest {
   constructor(project: GitHooksEnabledProject, options?: JestOptions) {
     super(project, options);
 
-    project.addDevDeps('ts-jest', '@types/jest');
+    project.addDevDeps("ts-jest", "@types/jest");
 
-    const script = project.package.packageManager === NodePackageManager.YARN ? 'yarn test' : 'npm run test';
+    const script = project.package.packageManager === NodePackageManager.YARN ? "yarn test" : "npm run test";
 
     Husky.of(project)?.createHook(GitClientHook.PRE_PUSH, [script]);
 
@@ -19,23 +19,23 @@ export class Jest extends BaseJest {
   }
 
   preSynthesize(): void {
-    const packageJson = this.project.tryFindObjectFile('package.json');
+    const packageJson = this.project.tryFindObjectFile("package.json");
 
-    packageJson?.addDeletionOverride('jest.globals');
-    packageJson?.addOverride('jest.transform', {
-      '^.+\\.ts?$': [
-        'ts-jest',
+    packageJson?.addDeletionOverride("jest.globals");
+    packageJson?.addOverride("jest.transform", {
+      "^.+\\.ts?$": [
+        "ts-jest",
         {
-          tsconfig: 'tsconfig.dev.json',
+          tsconfig: "tsconfig.dev.json",
         },
       ],
     });
 
-    const tasksJson = this.project.tryFindObjectFile('.projen/tasks.json');
+    const tasksJson = this.project.tryFindObjectFile(".projen/tasks.json");
 
-    tasksJson?.addOverride('tasks.test.steps', [
+    tasksJson?.addOverride("tasks.test.steps", [
       {
-        exec: 'jest --passWithNoTests --updateSnapshot',
+        exec: "jest --passWithNoTests --updateSnapshot",
         receiveArgs: true,
       },
     ]);

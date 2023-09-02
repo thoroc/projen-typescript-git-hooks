@@ -1,10 +1,10 @@
 export enum CodeBlockStyle {
-  CONSISTENT = 'consistent',
-  FENCED = 'fenced',
-  INDENTED = 'indented',
+  CONSISTENT = "consistent",
+  FENCED = "fenced",
+  INDENTED = "indented",
 }
 
-export interface MD046 {
+export interface Md046 {
   /**
    * Block style
    * @default CodeBlockStyle.CONSISTENT

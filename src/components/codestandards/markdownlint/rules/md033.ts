@@ -1,4 +1,4 @@
-export interface MD033 {
+export interface Md033 {
   /**
    * Allowed elements
    * @default []
