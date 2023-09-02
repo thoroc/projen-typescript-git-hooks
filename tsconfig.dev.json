@@ -11,7 +11,7 @@
       "es2019"
     ],
     "module": "CommonJS",
-    "noEmitOnError": true,
+    "noEmitOnError": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -23,15 +23,12 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "stripInternal": true,
-    "target": "ES2019",
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node"
+    "target": "ES2019"
   },
   "include": [
     ".projenrc.js",
     "src/**/*.ts",
     "test/**/*.ts",
-    "test/**/*.test.ts",
     ".projenrc.ts",
     "projenrc/**/*.ts"
   ],
