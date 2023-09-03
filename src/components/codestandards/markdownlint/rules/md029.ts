@@ -5,7 +5,7 @@ export enum OrderedListItemPrefix {
   ZERO = "zero",
 }
 
-export interface MD029 {
+export interface Md029 {
   /**
    * List style
    * @default OrderedListItemPrefix.ONE_OR_ORDERED

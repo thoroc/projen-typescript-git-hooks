@@ -6,10 +6,10 @@ export enum UnorderedListStyle {
   SUBLIST = "sublist",
 }
 
-export interface MD004 {
+export interface Md004 {
   /**
    * List style
    * @default UnorderedListStyle.CONSISTENT
    */
-  style?: UnorderedListStyle;
+  readonly style?: UnorderedListStyle;
 }

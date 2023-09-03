@@ -1,14 +1,6 @@
 {
   "dependencies": [
     {
-      "name": "@commitlint/cli",
-      "type": "build"
-    },
-    {
-      "name": "@commitlint/config-conventional",
-      "type": "build"
-    },
-    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -18,37 +10,13 @@
       "type": "build"
     },
     {
-      "name": "@types/prettier",
-      "type": "build"
-    },
-    {
       "name": "@typescript-eslint/eslint-plugin",
-      "version": "^5",
+      "version": "^6",
       "type": "build"
     },
     {
       "name": "@typescript-eslint/parser",
-      "version": "^5",
-      "type": "build"
-    },
-    {
-      "name": "change-case",
-      "type": "build"
-    },
-    {
-      "name": "commitizen",
-      "type": "build"
-    },
-    {
-      "name": "cz-conventional-changelog",
-      "type": "build"
-    },
-    {
-      "name": "eslint-config-airbnb-typescript",
-      "type": "build"
-    },
-    {
-      "name": "eslint-config-prettier",
+      "version": "^6",
       "type": "build"
     },
     {
@@ -64,24 +32,8 @@
       "type": "build"
     },
     {
-      "name": "eslint-plugin-markdownlint",
-      "type": "build"
-    },
-    {
-      "name": "eslint-plugin-prettier",
-      "type": "build"
-    },
-    {
-      "name": "eslint-plugin-testing-library",
-      "type": "build"
-    },
-    {
       "name": "eslint",
       "version": "^8",
-      "type": "build"
-    },
-    {
-      "name": "husky",
       "type": "build"
     },
     {
@@ -94,20 +46,30 @@
       "type": "build"
     },
     {
-      "name": "lint-staged",
+      "name": "jsii-diff",
       "type": "build"
     },
     {
-      "name": "markdownlint-cli2",
+      "name": "jsii-docgen",
+      "type": "build"
+    },
+    {
+      "name": "jsii-pacmak",
+      "type": "build"
+    },
+    {
+      "name": "jsii-rosetta",
+      "version": "~5.0.0",
+      "type": "build"
+    },
+    {
+      "name": "jsii",
+      "version": "~5.0.0",
       "type": "build"
     },
     {
       "name": "npm-check-updates",
       "version": "^16",
-      "type": "build"
-    },
-    {
-      "name": "prettier",
       "type": "build"
     },
     {
@@ -128,16 +90,16 @@
       "type": "build"
     },
     {
-      "name": "typedoc",
-      "type": "build"
-    },
-    {
       "name": "typescript",
       "type": "build"
     },
     {
+      "name": "type-fest",
+      "type": "bundled"
+    },
+    {
       "name": "yaml",
-      "type": "build"
+      "type": "bundled"
     },
     {
       "name": "projen",
@@ -148,11 +110,11 @@
       "type": "runtime"
     },
     {
-      "name": "ts-node",
+      "name": "type-fest",
       "type": "runtime"
     },
     {
-      "name": "type-fest",
+      "name": "yaml",
       "type": "runtime"
     }
   ],

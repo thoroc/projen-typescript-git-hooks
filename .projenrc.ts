@@ -1,25 +1,29 @@
-import { YamlFile, javascript } from "projen";
-import { GitHooksManagerType } from "./src/components/githooksmanager";
-import { GitHooksEnabledProject } from "./src/projects";
+import { YamlFile, cdk } from "projen";
+import { Eslint } from "./src/components/codestandards/eslint";
+import { Prettier } from "./src/components/codestandards/prettier";
 
-const project = new GitHooksEnabledProject({
+const project = new cdk.JsiiProject({
+  author: "thoroc",
+  authorAddress: "thomas.a.roche@gmail.com",
   defaultReleaseBranch: "main",
-  name: "projen-typescript-git-hooks",
-  repository: "https://github.com/thoroc/projen-typescript-git-hooks",
-  description: "Projen template for Typescript project supporting Git hooks and extra tooling",
+  jsiiVersion: "~5.0.0",
+  name: "@thoroc/projen-typescript-git-hooks",
   projenrcTs: true,
+  repositoryUrl: "https://github.com/thoroc/projen-typescript-git-hooks.git",
 
-  peerDeps: ["projen"],
-  deps: ["projen"],
-  debug: true,
   docgen: true,
+  deps: ["projen", "yaml", "type-fest"],
+  devDeps: ["projen"],
+  bundledDeps: ["yaml", "type-fest"],
+  peerDeps: ["projen"],
 
-  autoApproveUpgrades: true,
-  autoApproveOptions: { allowedUsernames: ["thoroc"], secret: "GITHUB_TOKEN" },
-  depsUpgradeOptions: { workflowOptions: { schedule: javascript.UpgradeDependenciesSchedule.WEEKLY } },
+  npmDistTag: "latest",
+  npmRegistryUrl: "https:///npm.pkg.github.com",
 
-  gitHooksManager: GitHooksManagerType.HUSKY,
+  prettierOptions: Prettier.defaultPrettierOptions,
 });
+
+project.eslint?.addRules(Eslint.defaultEslintRules);
 
 new YamlFile(project, ".github/workflows/pull-request-comments.yml", {
   obj: {
@@ -28,8 +32,8 @@ new YamlFile(project, ".github/workflows/pull-request-comments.yml", {
     jobs: {
       build: {
         "runs-on": "ubuntu-latest",
-        env: { CI: "true" },
-        steps: [
+        "env": { CI: "true" },
+        "steps": [
           {
             name: "Checkout",
             uses: "actions/checkout@v3",

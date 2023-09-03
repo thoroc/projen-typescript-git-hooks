@@ -1,5 +1,5 @@
-import { Component } from "projen";
-import { GitHooksEnabledProject } from "../../projects";
+import { Component, Project } from "projen";
+import { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
 import { Markdownlint, MarkdownlintOptions } from "../codestandards";
 import { CommitizenOptions } from "../codestandards/commitizen";
 
@@ -18,28 +18,25 @@ export enum GitHooksManagerType {
   LEFTHOOK = "lefthook",
 }
 
-export type GitHooksManagerOptions = {
+export interface GitHooksManagerOptions {
   /**
    * Enable commitizen and re-adding of staged files pre commit.
    *
    * @default true
    */
   readonly commitizen?: boolean;
-
   /**
    * Set rules for commitizen
    *
    * @default {}
    */
   readonly commitizenOptions?: CommitizenOptions;
-
   /**
    * Enable markdownlint
    *
    * @default true
    */
   readonly markdownlint?: boolean;
-
   /**
    * Markdownlint options
    *
@@ -49,15 +46,7 @@ export type GitHooksManagerOptions = {
 };
 
 export abstract class GitHooksManager extends Component {
-  /**
-   * Returns the singletone component of a project or undefined if there is none.
-   */
-  public static of(project: GitHooksEnabledProject): GitHooksManager | undefined {
-    const singleton = (c: Component): c is GitHooksManager => c instanceof GitHooksManager;
-    return project.components.find(singleton);
-  }
-
-  public project: GitHooksEnabledProject;
+  readonly project: Project;
   readonly markdownlint?: Markdownlint;
 
   constructor(project: GitHooksEnabledProject, options?: GitHooksManagerOptions) {
@@ -70,20 +59,12 @@ export abstract class GitHooksManager extends Component {
     this.project = project;
 
     if (options?.markdownlint ?? true) {
-      if (this.project.debug) console.log("Markdownlint enabled");
-      this.markdownlint = new Markdownlint(this.project, options?.markdownlintOptions);
+      if ((this.project as GitHooksEnabledProject).debug) console.log("Markdownlint enabled");
+      this.markdownlint = new Markdownlint(this.project as GitHooksEnabledProject, options?.markdownlintOptions);
     }
   }
 }
 
-export { Husky, HuskyOptions } from "./husky";
-export { LintStaged, LintStagedRule, LintStagedOptions } from "./utils/lintstaged";
-export {
-  Lefthook,
-  LefthookAction,
-  LefthookConfig,
-  LefthookConfigOptions,
-  LefthookOptions,
-  LefthookCommandOptions,
-  LefthookScriptOptions,
-} from "./lefthook";
+export * from "./husky";
+export * from "./lintstaged";
+export * from "./lefthook";

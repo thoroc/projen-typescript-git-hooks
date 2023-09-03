@@ -1,4 +1,4 @@
-export interface MD035 {
+export interface Md035 {
   /**
    * Horizontal rule style
    * @default consistent

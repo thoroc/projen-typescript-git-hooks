@@ -7,10 +7,10 @@ export enum HeadingStyle {
   SETEXT_WITH_ATX_CLOSED = "setext_with_atx_closed",
 }
 
-export interface MD003 {
+export interface Md003 {
   /**
    * Heading style
    * @default HeadingStyle.CONSISTENT
    */
-  style?: HeadingStyle;
+  readonly style?: HeadingStyle;
 }

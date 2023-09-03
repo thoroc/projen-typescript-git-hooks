@@ -1,4 +1,4 @@
-export interface MD007 {
+export interface Md007 {
   /**
    * Spaces for indent
    * @default 2

@@ -1,4 +1,4 @@
-export interface MD040 {
+export interface Md040 {
   /**
    * List of languages
    * @default []

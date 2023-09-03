@@ -10,3 +10,5 @@ Inspiration:
 - <https://github.com/AllyMurray/projen-modules>
 - <https://github.com/gplassard/projen-extensions>
 - <https://github.com/mountain-pass/cool-bits-for-projen>
+- <https://github.com/seeebiii/projen-test>
+- <https://github.com/kcwinner/projen-github-demo>

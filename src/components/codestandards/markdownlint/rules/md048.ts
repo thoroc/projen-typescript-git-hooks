@@ -4,7 +4,7 @@ export enum CodeFenceStyle {
   TILDE = "tilde",
 }
 
-export interface MD048 {
+export interface Md048 {
   /**
    * Code fence style
    * @default CodeFenceStyle.CONSISTENT

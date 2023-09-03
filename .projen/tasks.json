@@ -73,12 +73,12 @@
       ],
       "condition": "git diff --exit-code > /dev/null"
     },
-    "commitizen": {
-      "name": "commitizen",
-      "description": "Commitizen's commit",
+    "compat": {
+      "name": "compat",
+      "description": "Perform API compatibility check against latest version",
       "steps": [
         {
-          "exec": "cz"
+          "exec": "jsii-diff npm:$(node -p \"require('./package.json').name\") -k --ignore-file .compatignore || (echo \"\nUNEXPECTED BREAKING CHANGES: add keys such as 'removed:constructs.Node.of' to .compatignore to skip.\n\" && exit 1)"
         }
       ]
     },
@@ -87,7 +87,7 @@
       "description": "Only compile",
       "steps": [
         {
-          "exec": "tsc --build"
+          "exec": "jsii --silence-warnings=reserved-word"
         }
       ]
     },
@@ -102,10 +102,10 @@
     },
     "docgen": {
       "name": "docgen",
-      "description": "Generate TypeScript API reference docs/",
+      "description": "Generate API.md from .jsii manifest",
       "steps": [
         {
-          "exec": "typedoc src --disableSources --out docs/"
+          "exec": "jsii-docgen -o API.md"
         }
       ]
     },
@@ -126,16 +126,7 @@
       "description": "Runs eslint against the codebase",
       "steps": [
         {
-          "exec": "eslint --ext .ts --fix --no-error-on-unmatched-pattern src test .projenrc.js projenrc .projenrc.ts"
-        }
-      ]
-    },
-    "format": {
-      "name": "format",
-      "description": "Runs Prettier",
-      "steps": [
-        {
-          "exec": "npx prettier --write \"{src,projenrc}/**/*.{js,jsx,ts,tsx}\""
+          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools projenrc .projenrc.ts"
         }
       ]
     },
@@ -162,10 +153,25 @@
       "description": "Creates the distribution package",
       "steps": [
         {
-          "exec": "mkdir -p dist/js"
-        },
+          "exec": "if [ ! -z ${CI} ]; then rsync -a . .repo --exclude .git --exclude node_modules && rm -rf dist && mv .repo dist; else npx projen package-all; fi"
+        }
+      ]
+    },
+    "package-all": {
+      "name": "package-all",
+      "description": "Packages artifacts for all target languages",
+      "steps": [
         {
-          "exec": "mv $(npm pack) dist/js/"
+          "spawn": "package:js"
+        }
+      ]
+    },
+    "package:js": {
+      "name": "package:js",
+      "description": "Create js language bindings",
+      "steps": [
+        {
+          "exec": "jsii-pacmak -v --target js"
         }
       ]
     },
@@ -217,6 +223,9 @@
         {
           "exec": "jest --passWithNoTests --updateSnapshot",
           "receiveArgs": true
+        },
+        {
+          "spawn": "eslint"
         }
       ]
     },
@@ -256,13 +265,13 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --upgrade --target=minor --filter=@commitlint/cli,@commitlint/config-conventional,@types/jest,@types/node,@types/prettier,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,change-case,commitizen,cz-conventional-changelog,eslint-config-airbnb-typescript,eslint-config-prettier,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-markdownlint,eslint-plugin-prettier,eslint-plugin-testing-library,eslint,husky,jest,jest-junit,lint-staged,markdownlint-cli2,npm-check-updates,prettier,projen,standard-version,ts-jest,ts-node,typedoc,typescript,yaml,type-fest"
+          "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,jsii-diff,jsii-docgen,jsii-pacmak,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript,type-fest,yaml"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @commitlint/cli @commitlint/config-conventional @types/jest @types/node @types/prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser change-case commitizen cz-conventional-changelog eslint-config-airbnb-typescript eslint-config-prettier eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-markdownlint eslint-plugin-prettier eslint-plugin-testing-library eslint husky jest jest-junit lint-staged markdownlint-cli2 npm-check-updates prettier projen standard-version ts-jest ts-node typedoc typescript yaml type-fest"
+          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak npm-check-updates projen standard-version ts-jest ts-node typescript type-fest yaml"
         },
         {
           "exec": "npx projen"
@@ -277,7 +286,7 @@
       "description": "Watch & compile in the background",
       "steps": [
         {
-          "exec": "tsc --build -w"
+          "exec": "jsii -w --silence-warnings=reserved-word"
         }
       ]
     }

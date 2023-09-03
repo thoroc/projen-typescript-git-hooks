@@ -1,4 +1,4 @@
-export interface MD026 {
+export interface Md026 {
   /**
    * Punctuation characters not allowed at end of headings
    * @default .,;:!。，；：！

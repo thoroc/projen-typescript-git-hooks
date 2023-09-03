@@ -1,4 +1,4 @@
-export interface MD024 {
+export interface Md024 {
   /**
    * Only check sibling headings
    * @default false

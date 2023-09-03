@@ -1,15 +1,15 @@
-import { typescript } from "projen";
-import { TypeScriptModuleResolution } from "projen/lib/javascript";
-import { Eslint, Prettier } from "./components/codestandards";
-import { EditorConfig, EditorConfigOptions } from "./components/codestandards/editorconfig";
+import { typescript, javascript } from "projen";
+import { TypeScriptModuleResolution, TypescriptConfigOptions } from "projen/lib/javascript";
+import { Eslint, Prettier } from "../components/codestandards";
+import { EditorConfig, EditorConfigOptions } from "../components/codestandards/editorconfig";
 import {
   GitHooksManagerType,
   Husky,
   HuskyOptions,
   Lefthook,
   LefthookOptions,
-} from "./components/githooksmanager";
-import { Jest } from "./components/jest";
+} from "../components/githooksmanager";
+import { Jest } from "../components/jest";
 
 export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProjectOptions {
   /**
@@ -17,25 +17,21 @@ export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProj
    * @default true
    */
   readonly gitHooksManager?: GitHooksManagerType;
-
   /**
    * gitHooksManagerEnabled options
    * @default - default options
    */
   readonly gitHooksManagerOptions?: HuskyOptions | LefthookOptions;
-
   /**
    * Printing out debug statement
    * @default false
    */
   readonly debug?: boolean;
-
   /**
    * Enable editorConfig
    * @default true
    */
   readonly editorConfig?: boolean;
-
   /**
    * EditorConfig options
    */
@@ -43,7 +39,7 @@ export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProj
 }
 
 export class GitHooksEnabledProject extends typescript.TypeScriptProject {
-  public static defaultTsConfig = {
+  public static defaultTsConfig: TypescriptConfigOptions = {
     compilerOptions: {
       esModuleInterop: true,
       forceConsistentCasingInFileNames: true,
@@ -53,12 +49,12 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
     },
   };
 
-  public readonly gitHooksManager?: Husky | Lefthook;
-  public readonly jest?: Jest;
-  public readonly eslint?: Eslint;
-  public readonly prettier?: Prettier;
-  public readonly debug?: boolean;
-  public readonly editorConfig?: EditorConfig;
+  readonly gitHooksManager?: Husky | Lefthook;
+  readonly jest?: javascript.Jest;
+  readonly eslint?: javascript.Eslint;
+  readonly prettier?: javascript.Prettier;
+  readonly debug?: boolean;
+  readonly editorConfig?: EditorConfig;
 
   constructor(options: GitHooksEnabledProjectOptions) {
     super({
@@ -100,18 +96,18 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
 
     if (options.jest ?? true) {
       if (this.debug) console.log("Jest enabled");
-      this.jest = new Jest(this, options.jestOptions);
+      this.jest = new Jest(this, options.jestOptions) as javascript.Jest;
     }
 
     if (options.prettier ?? true) {
       if (this.debug) console.log("Prettier enabled");
-      this.prettier = new Prettier(this, options.prettierOptions);
+      this.prettier = new Prettier(this, options.prettierOptions) as javascript.Prettier;
     }
 
     if (options.eslint ?? true) {
       if (this.debug) console.log("Eslint enabled");
       const eslintOptions = { dirs: ["src", "test"], prettier: options.prettier, ...options.eslintOptions };
-      this.eslint = new Eslint(this, eslintOptions);
+      this.eslint = new Eslint(this, eslintOptions) as javascript.Eslint;
     }
 
     if (options.editorConfig ?? true) {
