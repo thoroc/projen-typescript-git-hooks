@@ -23,7 +23,9 @@ const project = new cdk.JsiiProject({
 
   eslint: false,
   prettier: false,
-  // prettierOptions: Prettier.defaultPrettierOptions,
+  jestOptions: {
+    configFilePath: "jest.config.json",
+  },
 });
 
 project.eslint?.addRules(Eslint.defaultEslintRules);
