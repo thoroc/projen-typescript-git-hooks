@@ -56,3 +56,5 @@ tsconfig.json
 !/.eslintrc.json
 !/.prettierignore
 !/.prettierrc.json
+!/.czrc
+!/.husky/prepare-commit-msg

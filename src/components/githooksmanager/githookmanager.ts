@@ -1,4 +1,4 @@
-import { Component, Project } from "projen";
+import { Component } from "projen";
 import { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
 
 /**
@@ -16,16 +16,7 @@ export enum GitHooksManagerType {
   LEFTHOOK = "lefthook",
 }
 
-export interface GitHooksAction {
-  readonly glob: string;
-  readonly name?: string;
-  readonly commands: string | Array<string>;
-  readonly githookType: GitClientHook;
-}
-
 export abstract class GitHooksManager extends Component {
-  readonly project: Project;
-
   constructor(project: GitHooksEnabledProject) {
     super(project);
 
@@ -33,7 +24,7 @@ export abstract class GitHooksManager extends Component {
       throw Error(`${JSON.stringify(project)}: GitHooksManager can only be configured on the root project.`);
     }
 
-    this.project = project;
+    project.addDeps("change-case");
   }
 
   preSynthesize(): void {

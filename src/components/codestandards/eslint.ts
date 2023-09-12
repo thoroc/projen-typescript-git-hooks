@@ -138,8 +138,9 @@ export class Eslint extends javascript.Eslint {
 
   preSynthesize(): void {
     if (this.eslintExtendsOverride && this.eslintExtendsOverride.length > 0) {
-      if ((this.project as GitHooksEnabledProject).debug)
+      if ((this.project as GitHooksEnabledProject).debug) {
         console.log(`${this.constructor.name}: sorting out the extends section.`);
+      }
 
       const eslintConfig = this.project.tryFindObjectFile(".eslintrc.json");
       const eslintExtends = [...new Set(this.eslintExtendsOverride)];

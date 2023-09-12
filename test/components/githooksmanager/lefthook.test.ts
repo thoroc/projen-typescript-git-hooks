@@ -26,10 +26,10 @@ pre-commit:
         glob: "*.md"
     - eslint:
         run: eslint --cache --fix {staged_files}
-        glob: src/**/*.{ts,tsx}
+        glob: src/**/*.ts
     - prettier:
         run: npx prettier --write {staged_files}
-        glob: src/**/*.{ts,tsx}
+        glob: src/**/*.ts
 `);
   });
 });

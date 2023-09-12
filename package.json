@@ -8,6 +8,7 @@
     "build": "npx projen build",
     "bump": "npx projen bump",
     "clobber": "npx projen clobber",
+    "commitizen": "npx projen commitizen",
     "compat": "npx projen compat",
     "compile": "npx projen compile",
     "default": "npx projen default",
@@ -36,11 +37,15 @@
     "organization": false
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
     "@types/jest": "^29.5.4",
     "@types/node": "^16",
     "@types/prettier": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^6",
     "@typescript-eslint/parser": "^6",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.0.0",
@@ -71,6 +76,7 @@
     "projen": "^0.73.6"
   },
   "dependencies": {
+    "change-case": "^4.1.2",
     "projen": "^0.73.6",
     "type-fest": "^4.3.1",
     "yaml": "^2.3.2"

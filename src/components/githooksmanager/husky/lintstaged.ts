@@ -68,10 +68,8 @@ export class LintStaged extends Component {
 
   private expandLintStagedRules() {
     if (this.rules.length > 0) {
-      const sortedRules = this.rules.sort(
-        (rule1: LintStagedRule, rule2: LintStagedRule) =>
-          rule2.filePattern.localeCompare(rule1.filePattern),
-
+      const sortedRules = this.rules.sort((rule1: LintStagedRule, rule2: LintStagedRule) =>
+        rule2.filePattern.localeCompare(rule1.filePattern),
       );
 
       const preparedLintStagedRules: { [key: string]: string | Array<string> } = {};

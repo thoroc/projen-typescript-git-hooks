@@ -69,17 +69,16 @@ export class Lefthook extends GitHooksManager {
   }
 
   preSynthesize(): void {
-    const script =
-      (this.project as GitHooksEnabledProject).package.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
-    (this.project as GitHooksEnabledProject).package.setScript(script, "npx lefthook install");
+    const pkg = (this.project as GitHooksEnabledProject).package;
+    const script = pkg.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
+    pkg.setScript(script, "npx lefthook install");
 
-    if ((this.project as GitHooksEnabledProject).debug) console.log(`${this.constructor.name}: Creating new Lefthook config file.`);
-
-    const config = this.config as LefthookConfig;
+    if ((this.project as GitHooksEnabledProject).debug)
+      console.log(`${this.constructor.name}: Creating new Lefthook config file.`);
 
     new YamlFile(this.project, "lefthook.yml", {
       executable: true,
-      obj: config.serialize(),
+      obj: this.config.serialize(),
     });
   }
 }

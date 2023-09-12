@@ -23,7 +23,6 @@ import { Md049 } from "./rules/md049";
 import { Md050 } from "./rules/md050";
 import { Md053 } from "./rules/md053";
 
-
 export interface MarkdownlintRules {
   /**
    * MD001 - Heading levels should only increment by one level at a time

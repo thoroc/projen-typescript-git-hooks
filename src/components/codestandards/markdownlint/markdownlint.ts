@@ -1,8 +1,9 @@
+import * as cc from "change-case";
 import { Component, IgnoreFile, Project, SourceCode, YamlFile } from "projen";
-import { MarkdownlintRules } from "../rules";
-import { GitHooksEnabledProject } from "../../../../typescript/githooks-enabled-project";
-import { recursiveToSnake, toSnakeCase } from "../../../../utils";
-import { Husky, LintStaged } from "../../../githooksmanager";
+import { MarkdownlintRules } from "./markdownlintrules";
+import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
+import { objectKeyCaseConverter } from "../../../utils/serializer";
+import { Husky, LintStaged } from "../../githooksmanager/husky";
 
 export interface MarkdownlintOptions {
   /**
@@ -70,7 +71,7 @@ export class Markdownlint extends Component {
     (this.project as GitHooksEnabledProject).addDevDeps("markdownlint-cli2");
 
     if (Object.keys(this.rules).length > 0) {
-      const transformedRules = recursiveToSnake(this.rules, toSnakeCase);
+      const transformedRules = objectKeyCaseConverter(this.rules, cc.paramCase);
 
       new YamlFile(this.project, "markdownlint.yml", {
         obj: transformedRules,

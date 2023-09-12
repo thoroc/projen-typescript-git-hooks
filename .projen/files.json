@@ -1,5 +1,6 @@
 {
   "files": [
+    ".czrc",
     ".eslintrc.json",
     ".gitattributes",
     ".github/pull_request_template.md",
@@ -10,6 +11,7 @@
     ".github/workflows/upgrade-main.yml",
     ".gitignore",
     ".husky/pre-commit",
+    ".husky/prepare-commit-msg",
     ".mergify.yml",
     ".npmrc",
     ".prettierignore",
