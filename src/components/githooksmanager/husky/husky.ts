@@ -1,5 +1,6 @@
-import { Component, Project, TextFile } from "projen";
+import { Component, Project } from "projen";
 import { NodePackageManager } from "projen/lib/javascript/node-package";
+import { HuskyHookFile } from "./huskyhook";
 import { LintStaged, LintStagedOptions } from "./lintstaged";
 import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
 import { GitHooksManager, GitClientHook } from "../githookmanager";
@@ -58,10 +59,7 @@ export class Husky extends GitHooksManager {
         console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`);
       }
 
-      new TextFile(this.project, gitHookFilename, {
-        executable: true,
-        lines: ["#!/bin/sh", '. "$(dirname "$0")/_/husky.sh"', "", command.join("\n")],
-      });
+      new HuskyHookFile(this.project, { hook: hook, command: command.join("\n") });
     }
   }
 

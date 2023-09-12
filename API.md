@@ -2417,6 +2417,45 @@ gitHooksManagerEnabled options.
 
 ---
 
+### HuskyHookFileOptions <a name="HuskyHookFileOptions" id="@thoroc/projen-typescript-git-hooks.HuskyHookFileOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.HuskyHookFileOptions.Initializer"></a>
+
+```typescript
+import { HuskyHookFileOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const huskyHookFileOptions: HuskyHookFileOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFileOptions.property.command">command</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFileOptions.property.hook">hook</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a></code> | *No description.* |
+
+---
+
+##### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.HuskyHookFileOptions.property.command"></a>
+
+```typescript
+public readonly command: string;
+```
+
+- *Type:* string
+
+---
+
+##### `hook`<sup>Required</sup> <a name="hook" id="@thoroc/projen-typescript-git-hooks.HuskyHookFileOptions.property.hook"></a>
+
+```typescript
+public readonly hook: GitClientHook;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a>
+
+---
+
 ### HuskyOptions <a name="HuskyOptions" id="@thoroc/projen-typescript-git-hooks.HuskyOptions"></a>
 
 #### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.HuskyOptions.Initializer"></a>
@@ -6892,6 +6931,192 @@ public readonly lintStaged: LintStaged;
 ```
 
 - *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LintStaged">LintStaged</a>
+
+---
+
+
+### HuskyHookFile <a name="HuskyHookFile" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer"></a>
+
+```typescript
+import { HuskyHookFile } from '@thoroc/projen-typescript-git-hooks'
+
+new HuskyHookFile(project: Project, options: HuskyHookFileOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFileOptions">HuskyHookFileOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFileOptions">HuskyHookFileOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.synthesize">synthesize</a></code> | Writes the file to the project's output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.addLine">addLine</a></code> | Adds a line to the text file. |
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Writes the file to the project's output directory.
+
+##### `addLine` <a name="addLine" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.addLine"></a>
+
+```typescript
+public addLine(line: string): void
+```
+
+Adds a line to the text file.
+
+###### `line`<sup>Required</sup> <a name="line" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.addLine.parameter.line"></a>
+
+- *Type:* string
+
+the line to add (can use tokens).
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.absolutePath">absolutePath</a></code> | <code>string</code> | The absolute path of this file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.path">path</a></code> | <code>string</code> | The file path, relative to the project root. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.changed">changed</a></code> | <code>boolean</code> | Indicates if the file has been changed during synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.marker">marker</a></code> | <code>string</code> | The projen marker, used to identify files as projen-generated. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.executable">executable</a></code> | <code>boolean</code> | Indicates if the file should be marked as executable. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.readonly">readonly</a></code> | <code>boolean</code> | Indicates if the file should be read-only or read-write. |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `absolutePath`<sup>Required</sup> <a name="absolutePath" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.absolutePath"></a>
+
+```typescript
+public readonly absolutePath: string;
+```
+
+- *Type:* string
+
+The absolute path of this file.
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.path"></a>
+
+```typescript
+public readonly path: string;
+```
+
+- *Type:* string
+
+The file path, relative to the project root.
+
+---
+
+##### `changed`<sup>Optional</sup> <a name="changed" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.changed"></a>
+
+```typescript
+public readonly changed: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file has been changed during synthesis.
+
+This property is
+only available in `postSynthesize()` hooks. If this is `undefined`, the
+file has not been synthesized yet.
+
+---
+
+##### `marker`<sup>Optional</sup> <a name="marker" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.marker"></a>
+
+```typescript
+public readonly marker: string;
+```
+
+- *Type:* string
+
+The projen marker, used to identify files as projen-generated.
+
+Value is undefined if the project is being ejected.
+
+---
+
+##### `executable`<sup>Required</sup> <a name="executable" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.executable"></a>
+
+```typescript
+public readonly executable: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file should be marked as executable.
+
+---
+
+##### `readonly`<sup>Required</sup> <a name="readonly" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.readonly"></a>
+
+```typescript
+public readonly readonly: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file should be read-only or read-write.
 
 ---
 
