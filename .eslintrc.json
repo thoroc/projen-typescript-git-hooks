@@ -7,16 +7,24 @@
   "root": true,
   "plugins": [
     "@typescript-eslint",
-    "import"
+    "import",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
-    "project": "./tsconfig.dev.json"
+    "project": "tsconfig.dev.json"
   },
   "extends": [
-    "plugin:import/typescript"
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended",
+    "prettier"
   ],
   "settings": {
     "import/parsers": {
@@ -28,117 +36,22 @@
     "import/resolver": {
       "node": {},
       "typescript": {
-        "project": "./tsconfig.dev.json",
+        "project": "./tsconfig.json",
         "alwaysTryTypes": true
       }
     }
   },
   "ignorePatterns": [
     "*.js",
+    "!.projenrc.js",
     "*.d.ts",
     "node_modules/",
     "*.generated.ts",
-    "coverage",
-    "!.projenrc.ts",
-    "!projenrc/**/*.ts"
+    "coverage"
   ],
   "rules": {
-    "indent": [
-      "error",
-      2,
-      {
-        "SwitchCase": 1
-      }
-    ],
-    "@typescript-eslint/indent": [
-      "error",
-      2
-    ],
-    "quotes": [
-      2,
-      "double",
-      {
-        "avoidEscape": true
-      }
-    ],
-    "comma-dangle": [
-      "error",
-      "always-multiline"
-    ],
-    "comma-spacing": [
-      "error",
-      {
-        "before": false,
-        "after": true
-      }
-    ],
-    "no-multi-spaces": [
-      "error",
-      {
-        "ignoreEOLComments": false
-      }
-    ],
-    "array-bracket-spacing": [
-      "error",
-      "never"
-    ],
-    "array-bracket-newline": [
-      "error",
-      "consistent"
-    ],
-    "object-curly-spacing": [
-      "error",
-      "always"
-    ],
-    "object-curly-newline": [
-      "error",
-      {
-        "multiline": true,
-        "consistent": true
-      }
-    ],
-    "object-property-newline": [
-      "error",
-      {
-        "allowAllPropertiesOnSameLine": true
-      }
-    ],
-    "keyword-spacing": [
+    "prettier/prettier": [
       "error"
-    ],
-    "brace-style": [
-      "error",
-      "1tbs",
-      {
-        "allowSingleLine": true
-      }
-    ],
-    "space-before-blocks": [
-      "error"
-    ],
-    "curly": [
-      "error",
-      "multi-line",
-      "consistent"
-    ],
-    "@typescript-eslint/member-delimiter-style": [
-      "error"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "max-len": [
-      "warn",
-      {
-        "code": 110,
-        "tabWidth": 2,
-        "ignoreUrls": true
-      }
-    ],
-    "quote-props": [
-      "error",
-      "consistent-as-needed"
     ],
     "@typescript-eslint/no-require-imports": [
       "error"
@@ -248,7 +161,22 @@
         "allowTemplateLiterals": true
       }
     ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
     "linebreak-style": 1,
+    "max-len": [
+      "warn",
+      {
+        "code": 110,
+        "tabWidth": 2,
+        "ignoreUrls": true
+      }
+    ],
     "no-empty-function": "off",
     "no-tabs": [
       "error",
@@ -256,17 +184,30 @@
         "allowIndentationTabs": true
       }
     ],
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "quotes": [
+      2,
+      "double",
+      {
+        "avoidEscape": true
+      }
+    ]
   },
   "overrides": [
     {
       "files": [
-        ".projenrc.ts"
+        ".projenrc.js"
       ],
       "rules": {
         "@typescript-eslint/no-require-imports": "off",
         "import/no-extraneous-dependencies": "off"
       }
+    },
+    {
+      "files": [
+        "*.md"
+      ],
+      "parser": "eslint-plugin-markdownlint/parser"
     }
   ]
 }

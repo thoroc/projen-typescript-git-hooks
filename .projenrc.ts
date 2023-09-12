@@ -1,6 +1,7 @@
 import { YamlFile, cdk } from "projen";
 import { Eslint } from "./src/components/codestandards/eslint";
 import { Prettier } from "./src/components/codestandards/prettier";
+import { Husky } from "./src/components/githooksmanager";
 
 const project = new cdk.JsiiProject({
   author: "thoroc",
@@ -20,7 +21,9 @@ const project = new cdk.JsiiProject({
   npmDistTag: "latest",
   npmRegistryUrl: "https:///npm.pkg.github.com",
 
-  prettierOptions: Prettier.defaultPrettierOptions,
+  eslint: false,
+  prettier: false,
+  // prettierOptions: Prettier.defaultPrettierOptions,
 });
 
 project.eslint?.addRules(Eslint.defaultEslintRules);
@@ -50,5 +53,9 @@ new YamlFile(project, ".github/workflows/pull-request-comments.yml", {
     },
   },
 });
+
+new Husky(project);
+new Eslint(project, { dirs: ["src", "test"], prettier: true });
+new Prettier(project);
 
 project.synth();
