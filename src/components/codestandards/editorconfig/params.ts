@@ -1,4 +1,4 @@
-import { ISerializer } from "../../../utils/serializer";
+import { ISerializer } from "../../../utils";
 
 export interface EditorConfigParamsOptions {
   readonly indentStyle?: string;
