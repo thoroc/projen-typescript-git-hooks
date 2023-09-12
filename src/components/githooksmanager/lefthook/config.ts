@@ -1,6 +1,6 @@
 import { LefthookAction } from "./action";
 import { LefthookCommand } from "./command";
-import { ISerializer } from "../../../utils/serializer";
+import { ISerializer } from "../../../utils";
 
 export interface LefthookConfigOptions {
   readonly actions: Array<LefthookAction>;
