@@ -7325,6 +7325,7 @@ Returns the singletone Jest component of a project or undefined if there is none
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.config">config</a></code> | <code>any</code> | Escape hatch. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.jestVersion">jestVersion</a></code> | <code>string</code> | Jest version, including `@` symbol, like `@^29`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.file">file</a></code> | <code>projen.JsonFile</code> | Jest config file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.configFilePath">configFilePath</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -7373,6 +7374,16 @@ public readonly file: JsonFile;
 Jest config file.
 
 `undefined` if settings are written to `package.json`
+
+---
+
+##### `configFilePath`<sup>Optional</sup> <a name="configFilePath" id="@thoroc/projen-typescript-git-hooks.Jest.property.configFilePath"></a>
+
+```typescript
+public readonly configFilePath: string;
+```
+
+- *Type:* string
 
 ---
 
