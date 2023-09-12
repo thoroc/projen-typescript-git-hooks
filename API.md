@@ -2417,79 +2417,6 @@ gitHooksManagerEnabled options.
 
 ---
 
-### GitHooksManagerOptions <a name="GitHooksManagerOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksManagerOptions"></a>
-
-#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.GitHooksManagerOptions.Initializer"></a>
-
-```typescript
-import { GitHooksManagerOptions } from '@thoroc/projen-typescript-git-hooks'
-
-const gitHooksManagerOptions: GitHooksManagerOptions = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManagerOptions.property.commitizen">commitizen</a></code> | <code>boolean</code> | Enable commitizen and re-adding of staged files pre commit. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManagerOptions.property.commitizenOptions">commitizenOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a></code> | Set rules for commitizen. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManagerOptions.property.markdownlint">markdownlint</a></code> | <code>boolean</code> | Enable markdownlint. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManagerOptions.property.markdownlintOptions">markdownlintOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a></code> | Markdownlint options. |
-
----
-
-##### `commitizen`<sup>Optional</sup> <a name="commitizen" id="@thoroc/projen-typescript-git-hooks.GitHooksManagerOptions.property.commitizen"></a>
-
-```typescript
-public readonly commitizen: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Enable commitizen and re-adding of staged files pre commit.
-
----
-
-##### `commitizenOptions`<sup>Optional</sup> <a name="commitizenOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksManagerOptions.property.commitizenOptions"></a>
-
-```typescript
-public readonly commitizenOptions: CommitizenOptions;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a>
-- *Default:* {}
-
-Set rules for commitizen.
-
----
-
-##### `markdownlint`<sup>Optional</sup> <a name="markdownlint" id="@thoroc/projen-typescript-git-hooks.GitHooksManagerOptions.property.markdownlint"></a>
-
-```typescript
-public readonly markdownlint: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Enable markdownlint.
-
----
-
-##### `markdownlintOptions`<sup>Optional</sup> <a name="markdownlintOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksManagerOptions.property.markdownlintOptions"></a>
-
-```typescript
-public readonly markdownlintOptions: MarkdownlintOptions;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a>
-- *Default:* {}
-
-Markdownlint options.
-
----
-
 ### HuskyOptions <a name="HuskyOptions" id="@thoroc/projen-typescript-git-hooks.HuskyOptions"></a>
 
 #### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.HuskyOptions.Initializer"></a>
@@ -2504,64 +2431,8 @@ const huskyOptions: HuskyOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyOptions.property.commitizen">commitizen</a></code> | <code>boolean</code> | Enable commitizen and re-adding of staged files pre commit. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyOptions.property.commitizenOptions">commitizenOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a></code> | Set rules for commitizen. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyOptions.property.markdownlint">markdownlint</a></code> | <code>boolean</code> | Enable markdownlint. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyOptions.property.markdownlintOptions">markdownlintOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a></code> | Markdownlint options. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyOptions.property.lintStaged">lintStaged</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged">LintStaged</a></code> | Enable linting and re-adding of staged files pre commit. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyOptions.property.lintStagedOptions">lintStagedOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LintStagedOptions">LintStagedOptions</a></code> | Set rules for lint-staged. |
-
----
-
-##### `commitizen`<sup>Optional</sup> <a name="commitizen" id="@thoroc/projen-typescript-git-hooks.HuskyOptions.property.commitizen"></a>
-
-```typescript
-public readonly commitizen: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Enable commitizen and re-adding of staged files pre commit.
-
----
-
-##### `commitizenOptions`<sup>Optional</sup> <a name="commitizenOptions" id="@thoroc/projen-typescript-git-hooks.HuskyOptions.property.commitizenOptions"></a>
-
-```typescript
-public readonly commitizenOptions: CommitizenOptions;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a>
-- *Default:* {}
-
-Set rules for commitizen.
-
----
-
-##### `markdownlint`<sup>Optional</sup> <a name="markdownlint" id="@thoroc/projen-typescript-git-hooks.HuskyOptions.property.markdownlint"></a>
-
-```typescript
-public readonly markdownlint: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Enable markdownlint.
-
----
-
-##### `markdownlintOptions`<sup>Optional</sup> <a name="markdownlintOptions" id="@thoroc/projen-typescript-git-hooks.HuskyOptions.property.markdownlintOptions"></a>
-
-```typescript
-public readonly markdownlintOptions: MarkdownlintOptions;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a>
-- *Default:* {}
-
-Markdownlint options.
 
 ---
 
@@ -2777,63 +2648,7 @@ const lefthookOptions: LefthookOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookOptions.property.commitizen">commitizen</a></code> | <code>boolean</code> | Enable commitizen and re-adding of staged files pre commit. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookOptions.property.commitizenOptions">commitizenOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a></code> | Set rules for commitizen. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookOptions.property.markdownlint">markdownlint</a></code> | <code>boolean</code> | Enable markdownlint. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookOptions.property.markdownlintOptions">markdownlintOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a></code> | Markdownlint options. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookOptions.property.config">config</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookConfig">LefthookConfig</a></code> | *No description.* |
-
----
-
-##### `commitizen`<sup>Optional</sup> <a name="commitizen" id="@thoroc/projen-typescript-git-hooks.LefthookOptions.property.commitizen"></a>
-
-```typescript
-public readonly commitizen: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Enable commitizen and re-adding of staged files pre commit.
-
----
-
-##### `commitizenOptions`<sup>Optional</sup> <a name="commitizenOptions" id="@thoroc/projen-typescript-git-hooks.LefthookOptions.property.commitizenOptions"></a>
-
-```typescript
-public readonly commitizenOptions: CommitizenOptions;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a>
-- *Default:* {}
-
-Set rules for commitizen.
-
----
-
-##### `markdownlint`<sup>Optional</sup> <a name="markdownlint" id="@thoroc/projen-typescript-git-hooks.LefthookOptions.property.markdownlint"></a>
-
-```typescript
-public readonly markdownlint: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Enable markdownlint.
-
----
-
-##### `markdownlintOptions`<sup>Optional</sup> <a name="markdownlintOptions" id="@thoroc/projen-typescript-git-hooks.LefthookOptions.property.markdownlintOptions"></a>
-
-```typescript
-public readonly markdownlintOptions: MarkdownlintOptions;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a>
-- *Default:* {}
-
-Markdownlint options.
 
 ---
 
@@ -6872,25 +6687,18 @@ this task should synthesize the project files.
 ```typescript
 import { GitHooksManager } from '@thoroc/projen-typescript-git-hooks'
 
-new GitHooksManager(project: GitHooksEnabledProject, options?: GitHooksManagerOptions)
+new GitHooksManager(project: GitHooksEnabledProject)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManagerOptions">GitHooksManagerOptions</a></code> | *No description.* |
 
 ---
 
 ##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.Initializer.parameter.project"></a>
 
 - *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksManagerOptions">GitHooksManagerOptions</a>
 
 ---
 
@@ -6936,7 +6744,6 @@ Synthesizes files to the project output directory.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.property.markdownlint">markdownlint</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint">Markdownlint</a></code> | *No description.* |
 
 ---
 
@@ -6947,16 +6754,6 @@ public readonly project: Project;
 ```
 
 - *Type:* projen.Project
-
----
-
-##### `markdownlint`<sup>Optional</sup> <a name="markdownlint" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.property.markdownlint"></a>
-
-```typescript
-public readonly markdownlint: Markdownlint;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.Markdownlint">Markdownlint</a>
 
 ---
 
@@ -7074,8 +6871,6 @@ Returns the singletone component of a project or undefined if there is none.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.property.markdownlint">markdownlint</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint">Markdownlint</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.property.commitizen">commitizen</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen">Commitizen</a></code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.property.lintStaged">lintStaged</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged">LintStaged</a></code> | *No description.* |
 
 ---
@@ -7087,26 +6882,6 @@ public readonly project: Project;
 ```
 
 - *Type:* projen.Project
-
----
-
-##### `markdownlint`<sup>Optional</sup> <a name="markdownlint" id="@thoroc/projen-typescript-git-hooks.Husky.property.markdownlint"></a>
-
-```typescript
-public readonly markdownlint: Markdownlint;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.Markdownlint">Markdownlint</a>
-
----
-
-##### `commitizen`<sup>Optional</sup> <a name="commitizen" id="@thoroc/projen-typescript-git-hooks.Husky.property.commitizen"></a>
-
-```typescript
-public readonly commitizen: Commitizen;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.Commitizen">Commitizen</a>
 
 ---
 
@@ -7509,7 +7284,6 @@ Returns the singletone component of a project or undefined if there is none.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.property.markdownlint">markdownlint</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint">Markdownlint</a></code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.property.config">config</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookConfig">LefthookConfig</a></code> | *No description.* |
 
 ---
@@ -7521,16 +7295,6 @@ public readonly project: Project;
 ```
 
 - *Type:* projen.Project
-
----
-
-##### `markdownlint`<sup>Optional</sup> <a name="markdownlint" id="@thoroc/projen-typescript-git-hooks.Lefthook.property.markdownlint"></a>
-
-```typescript
-public readonly markdownlint: Markdownlint;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.Markdownlint">Markdownlint</a>
 
 ---
 
