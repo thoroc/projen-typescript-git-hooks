@@ -10,15 +10,6 @@ export interface LefthookCommandOptions {
   readonly stagedFiles?: boolean;
 }
 
-export type LefthookCommandType = {
-  run?: string;
-  files?: string;
-  exclude?: string;
-  glob?: string;
-  tags?: string;
-  [key: string]: string | undefined; // Add a string index signature
-};
-
 export class LefthookCommand implements ISerializer {
   readonly name: string;
   readonly run: string;
@@ -38,7 +29,7 @@ export class LefthookCommand implements ISerializer {
     this.stagedFiles = options.stagedFiles ?? true;
   }
 
-  asRecords(): LefthookCommandType {
+  asRecords(): object {
     const records: { [key: string]: string | undefined } = {};
     const excludes: Array<string> = ["name", "stagedFiles"];
 
