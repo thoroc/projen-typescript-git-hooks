@@ -1,28 +1,31 @@
-import { Project } from "projen";
 import { Jest as BaseJest, JestOptions, NodePackageManager } from "projen/lib/javascript";
 import { GitClientHook, Husky } from "./githooksmanager";
 import { GitHooksEnabledProject } from "../typescript/githooks-enabled-project";
 
 export class Jest extends BaseJest {
-  readonly project: Project;
+  readonly configFilePath?: string;
 
   constructor(project: GitHooksEnabledProject, options?: JestOptions) {
     super(project, options);
 
     project.addDevDeps("ts-jest", "@types/jest");
 
+    this.configFilePath = options?.configFilePath;
+
     const script = project.package.packageManager === NodePackageManager.YARN ? "yarn test" : "npm run test";
 
     Husky.of(project)?.createHook(GitClientHook.PRE_PUSH, [script]);
-
-    this.project = project;
   }
 
   preSynthesize(): void {
-    const packageJson = this.project.tryFindObjectFile("package.json");
+    console.log(this.config);
 
-    packageJson?.addDeletionOverride("jest.globals");
-    packageJson?.addOverride("jest.transform", {
+    const deletionGlobals = this.configFilePath ? "globals" : "jest.globals";
+    const overrideTransform = this.configFilePath ? "transform" : "jest.transform";
+    const config = this.project.tryFindObjectFile(this.configFilePath ?? "package.json");
+
+    config?.addDeletionOverride(deletionGlobals);
+    config?.addOverride(overrideTransform, {
       "^.+\\.ts?$": [
         "ts-jest",
         {

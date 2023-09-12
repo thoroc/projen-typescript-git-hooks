@@ -2,9 +2,9 @@ import { cdk } from "projen";
 import { Eslint } from "./src/components/codestandards/eslint";
 import { Prettier } from "./src/components/codestandards/prettier";
 import { Husky } from "./src/components/githooksmanager";
-import { Commitizen } from "./src";
 import { PullRequestJestCoverageComment } from "./src/components/githubactions/pull-request-comment";
 import { GitHub } from "projen/lib/github";
+import { Commitizen, Jest } from "./src";
 
 const project = new cdk.JsiiProject({
   author: "thoroc",
@@ -26,9 +26,7 @@ const project = new cdk.JsiiProject({
 
   eslint: false,
   prettier: false,
-  jestOptions: {
-    configFilePath: "jest.config.json",
-  },
+  jest: false,
 });
 
 project.eslint?.addRules(Eslint.defaultEslintRules);
@@ -36,6 +34,7 @@ project.eslint?.addRules(Eslint.defaultEslintRules);
 const github = project.github ?? new GitHub(project);
 new PullRequestJestCoverageComment(github);
 new Husky(project);
+new Jest(project, { configFilePath: "jest.config.json" });
 new Eslint(project, { dirs: ["src", "test"], prettier: true });
 new Prettier(project);
 new Commitizen(project, { json: true });
