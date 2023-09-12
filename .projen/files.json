@@ -1,5 +1,6 @@
 {
   "files": [
+    ".czrc",
     ".eslintrc.json",
     ".gitattributes",
     ".github/pull_request_template.md",
@@ -9,11 +10,16 @@
     ".github/workflows/release.yml",
     ".github/workflows/upgrade-main.yml",
     ".gitignore",
+    ".husky/pre-commit",
+    ".husky/prepare-commit-msg",
     ".mergify.yml",
     ".npmrc",
+    ".prettierignore",
+    ".prettierrc.json",
     ".projen/deps.json",
     ".projen/files.json",
     ".projen/tasks.json",
+    "jest.config.json",
     "LICENSE",
     "tsconfig.dev.json"
   ],

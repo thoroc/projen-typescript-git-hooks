@@ -2,12 +2,11 @@ import { Component, Project, javascript } from "projen";
 import { EslintOptions } from "projen/lib/javascript";
 import { Prettier } from "./prettier";
 import { GitHooksEnabledProject } from "../..";
-import { GitClientHook, Lefthook } from "../githooksmanager";
-import { LintStaged } from "../githooksmanager/lintstaged";
+import { GitClientHook } from "../githooksmanager";
+import { LintStaged } from "../githooksmanager/husky";
+import { Lefthook } from "../githooksmanager/lefthook";
 
-export interface EslintRules {
-
-}
+export interface EslintRules {}
 
 export class Eslint extends javascript.Eslint {
   public static defaultOptions: EslintOptions = { dirs: ["src", "test"], prettier: false };
@@ -46,7 +45,7 @@ export class Eslint extends javascript.Eslint {
         peerDependencies: true,
       },
     ],
-    "indent": ["error", 2, { SwitchCase: 1 }],
+    indent: ["error", 2, { SwitchCase: 1 }],
     "linebreak-style": 1,
     "max-len": [
       "warn",
@@ -64,7 +63,7 @@ export class Eslint extends javascript.Eslint {
       },
     ],
     "no-unused-vars": "off",
-    "quotes": [2, "double", { avoidEscape: true }],
+    quotes: [2, "double", { avoidEscape: true }],
   };
 
   /**
@@ -101,7 +100,9 @@ export class Eslint extends javascript.Eslint {
     );
 
     if (options?.prettier || Prettier.of(project)) {
-      if ((this.project as GitHooksEnabledProject).debug) console.log("Eslint: Prettier enabled. Adding dev dependencies and extends");
+      if ((this.project as GitHooksEnabledProject).debug) {
+        console.log("Eslint: Prettier enabled. Adding dev dependencies and extends");
+      }
       (this.project as GitHooksEnabledProject).addDevDeps("eslint-config-prettier", "eslint-plugin-prettier");
       this.eslintExtendsOverride.push("plugin:prettier/recommended", "prettier");
     }
@@ -119,25 +120,27 @@ export class Eslint extends javascript.Eslint {
     });
 
     LintStaged.of(this.project as GitHooksEnabledProject)?.addRule({
-      filePattern: "src/**/*.{ts,tsx}",
+      filePattern: "src/**/*.ts",
       commands: ["eslint --cache --fix", "npx prettier --write"],
     });
 
     Lefthook.of(this.project as GitHooksEnabledProject)?.addCommand(GitClientHook.PRE_COMMIT, {
       name: "eslint",
-      glob: "src/**/*.{ts,tsx}",
+      glob: "src/**/*.ts",
       run: "eslint --cache --fix",
     });
     Lefthook.of(this.project as GitHooksEnabledProject)?.addCommand(GitClientHook.PRE_COMMIT, {
       name: "prettier",
-      glob: "src/**/*.{ts,tsx}",
+      glob: "src/**/*.ts",
       run: "npx prettier --write",
     });
   }
 
   preSynthesize(): void {
     if (this.eslintExtendsOverride && this.eslintExtendsOverride.length > 0) {
-      if ((this.project as GitHooksEnabledProject).debug) console.log(`${this.constructor.name}: sorting out the extends section.`);
+      if ((this.project as GitHooksEnabledProject).debug) {
+        console.log(`${this.constructor.name}: sorting out the extends section.`);
+      }
 
       const eslintConfig = this.project.tryFindObjectFile(".eslintrc.json");
       const eslintExtends = [...new Set(this.eslintExtendsOverride)];

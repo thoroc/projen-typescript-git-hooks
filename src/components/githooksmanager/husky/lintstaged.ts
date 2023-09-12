@@ -1,7 +1,8 @@
 import { Component, Project } from "projen";
-import { LintStagedRule, LintStagedRuleOptions } from "./rules";
-import { GitClientHook, Husky } from "..";
+import { LintStagedRule, LintStagedRuleOptions } from "./lintstagedrule";
+import { Husky } from "..";
 import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
+import { GitClientHook } from "../githookmanager";
 
 export interface LintStagedOptions {
   readonly rules?: Array<LintStagedRule>;
@@ -33,7 +34,8 @@ export class LintStaged extends Component {
 
     (this.project as GitHooksEnabledProject).addDevDeps("lint-staged");
 
-    Husky.of(this.project as GitHooksEnabledProject)?.createHook(GitClientHook.PRE_COMMIT, ["npx lint-staged"]);
+    const husky = Husky.of(this.project as GitHooksEnabledProject);
+    husky?.createHook(GitClientHook.PRE_COMMIT, ["npx lint-staged"]);
   }
 
   public addRule(rule: LintStagedRuleOptions): void {
@@ -49,9 +51,13 @@ export class LintStaged extends Component {
 
       existingRule.commands = [...existingCommands, ...newCommands];
 
-      if ((this.project as GitHooksEnabledProject).debug) { console.log(`${this.constructor.name}: Added commands to existing rule ${rule.filePattern}.`); }
+      if ((this.project as GitHooksEnabledProject).debug) {
+        console.log(`${this.constructor.name}: Added commands to existing rule ${rule.filePattern}.`);
+      }
     } else {
-      if ((this.project as GitHooksEnabledProject).debug) { console.log(`${this.constructor.name}: Rule ${rule.filePattern} doesn't exist, adding it now.`); }
+      if ((this.project as GitHooksEnabledProject).debug) {
+        console.log(`${this.constructor.name}: Rule ${rule.filePattern} doesn't exist, adding it now.`);
+      }
       this.rules.push(new LintStagedRule(rule));
     }
   }
@@ -78,5 +84,3 @@ export class LintStaged extends Component {
     return {};
   }
 }
-
-export * from "./rules";

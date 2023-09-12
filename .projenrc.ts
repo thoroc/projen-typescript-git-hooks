@@ -1,6 +1,8 @@
 import { YamlFile, cdk } from "projen";
 import { Eslint } from "./src/components/codestandards/eslint";
 import { Prettier } from "./src/components/codestandards/prettier";
+import { Husky } from "./src/components/githooksmanager";
+import { Commitizen } from "./src";
 
 const project = new cdk.JsiiProject({
   author: "thoroc",
@@ -12,15 +14,19 @@ const project = new cdk.JsiiProject({
   repositoryUrl: "https://github.com/thoroc/projen-typescript-git-hooks.git",
 
   docgen: true,
-  deps: ["projen", "yaml", "type-fest"],
+  deps: ["projen", "yaml", "type-fest", "change-case"],
   devDeps: ["projen"],
-  bundledDeps: ["yaml", "type-fest"],
+  bundledDeps: ["yaml", "type-fest", "change-case"],
   peerDeps: ["projen"],
 
   npmDistTag: "latest",
   npmRegistryUrl: "https:///npm.pkg.github.com",
 
-  prettierOptions: Prettier.defaultPrettierOptions,
+  eslint: false,
+  prettier: false,
+  jestOptions: {
+    configFilePath: "jest.config.json",
+  },
 });
 
 project.eslint?.addRules(Eslint.defaultEslintRules);
@@ -50,5 +56,10 @@ new YamlFile(project, ".github/workflows/pull-request-comments.yml", {
     },
   },
 });
+
+new Husky(project);
+new Eslint(project, { dirs: ["src", "test"], prettier: true });
+new Prettier(project);
+new Commitizen(project, { json: true });
 
 project.synth();

@@ -73,6 +73,15 @@
       ],
       "condition": "git diff --exit-code > /dev/null"
     },
+    "commitizen": {
+      "name": "commitizen",
+      "description": "Commitizen's commit",
+      "steps": [
+        {
+          "exec": "cz"
+        }
+      ]
+    },
     "compat": {
       "name": "compat",
       "description": "Perform API compatibility check against latest version",
@@ -126,7 +135,16 @@
       "description": "Runs eslint against the codebase",
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools projenrc .projenrc.ts"
+          "exec": "eslint --ext .ts --fix --no-error-on-unmatched-pattern src test .projenrc.js"
+        }
+      ]
+    },
+    "format": {
+      "name": "format",
+      "description": "Runs Prettier",
+      "steps": [
+        {
+          "exec": "npx prettier --write \"{src,projenrc}/**/*.ts\""
         }
       ]
     },
@@ -265,13 +283,13 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,jsii-diff,jsii-docgen,jsii-pacmak,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript,type-fest,yaml"
+          "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@commitlint/cli,@commitlint/config-conventional,@types/jest,@types/node,@types/prettier,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,commitizen,cz-conventional-changelog,eslint-config-airbnb-typescript,eslint-config-prettier,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-markdownlint,eslint-plugin-prettier,eslint-plugin-testing-library,eslint,husky,jest,jest-junit,jsii-diff,jsii-docgen,jsii-pacmak,lint-staged,npm-check-updates,prettier,projen,standard-version,ts-jest,ts-node,typescript,change-case,type-fest,yaml"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak npm-check-updates projen standard-version ts-jest ts-node typescript type-fest yaml"
+          "exec": "yarn upgrade @commitlint/cli @commitlint/config-conventional @types/jest @types/node @types/prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser commitizen cz-conventional-changelog eslint-config-airbnb-typescript eslint-config-prettier eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-markdownlint eslint-plugin-prettier eslint-plugin-testing-library eslint husky jest jest-junit jsii-diff jsii-docgen jsii-pacmak lint-staged npm-check-updates prettier projen standard-version ts-jest ts-node typescript change-case type-fest yaml"
         },
         {
           "exec": "npx projen"

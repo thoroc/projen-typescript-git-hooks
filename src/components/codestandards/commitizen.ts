@@ -1,6 +1,6 @@
 import { Component, JsonFile, Project } from "projen";
 import { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
-import { GitClientHook, Husky } from "../githooksmanager";
+import { GitClientHook, Husky, Lefthook } from "../githooksmanager";
 
 export interface CommitizenOptions {
   readonly json?: boolean;
@@ -46,13 +46,17 @@ export class Commitizen extends Component {
 
   preSynthesize(): void {
     if (this.options?.json) {
-      if ((this.project as GitHooksEnabledProject).debug) console.log(`${this.constructor.name}: Saving config in .czrc.`);
+      if ((this.project as GitHooksEnabledProject).debug) {
+        console.log(`${this.constructor.name}: Saving config in .czrc.`);
+      }
 
       new JsonFile(this.project, ".czrc", {
         obj: Commitizen.config,
       });
     } else {
-      if ((this.project as GitHooksEnabledProject).debug) console.log(`${this.constructor.name}: Saving config in package.json.`);
+      if ((this.project as GitHooksEnabledProject).debug) {
+        console.log(`${this.constructor.name}: Saving config in package.json.`);
+      }
 
       const packageJson = this.project.tryFindObjectFile("package.json");
 
@@ -64,5 +68,10 @@ export class Commitizen extends Component {
     Husky.of(this.project as GitHooksEnabledProject)?.createHook(GitClientHook.PRE_COMMIT_MESSAGE, [
       "exec < /dev/tty && npx cz --hook || true",
     ]);
+
+    Lefthook.of(this.project as GitHooksEnabledProject)?.addCommand(GitClientHook.PRE_COMMIT_MESSAGE, {
+      name: "commitizen",
+      run: "exec < /dev/tty && npx cz --hook || true",
+    });
   }
 }

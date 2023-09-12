@@ -129,8 +129,8 @@ describe("Custom Eslint", () => {
     const config = snapshot["package.json"]["lint-staged"];
 
     // Assert
-    expect(Object.keys(config)).toContain("src/**/*.{ts,tsx}");
-    expect(config["src/**/*.{ts,tsx}"]).toContain("eslint --cache --fix");
+    expect(Object.keys(config)).toContain("src/**/*.ts");
+    expect(config["src/**/*.ts"]).toContain("eslint --cache --fix");
   });
 
   it("has new pre-commit rule with lefthook enabled", () => {
@@ -156,7 +156,7 @@ describe("Custom Eslint", () => {
     // Assert
     expect(filteredCommands[0]).toEqual({
       eslint: {
-        glob: "src/**/*.{ts,tsx}",
+        glob: "src/**/*.ts",
         run: "eslint --cache --fix {staged_files}",
       },
     });

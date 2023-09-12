@@ -33,6 +33,7 @@ jspm_packages/
 !/.projenrc.js
 /test-reports/
 junit.xml
+!/jest.config.json
 /coverage/
 !/.github/workflows/build.yml
 /dist/changelog.md
@@ -47,8 +48,13 @@ junit.xml
 !/src/
 /lib
 /dist/
-!/.eslintrc.json
 .jsii
 tsconfig.json
 !/API.md
 !/.github/workflows/pull-request-comments.yml
+!/.husky/pre-commit
+!/.eslintrc.json
+!/.prettierignore
+!/.prettierrc.json
+!/.czrc
+!/.husky/prepare-commit-msg

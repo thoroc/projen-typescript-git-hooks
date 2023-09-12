@@ -1,8 +1,9 @@
 import { Project, javascript } from "projen";
 import { PrettierOptions, ProseWrap, QuoteProps, TrailingComma } from "projen/lib/javascript";
 import { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
-import { GitClientHook, Lefthook } from "../githooksmanager";
-import { LintStaged } from "../githooksmanager/lintstaged";
+import { GitClientHook } from "../githooksmanager";
+import { LintStaged } from "../githooksmanager/husky";
+import { Lefthook } from "../githooksmanager/lefthook";
 
 export class Prettier extends javascript.Prettier {
   static defaultPrettierOptions: PrettierOptions = {
@@ -38,7 +39,7 @@ export class Prettier extends javascript.Prettier {
 
     this.project.addTask("format", {
       description: "Runs Prettier",
-      exec: 'npx prettier --write "{src,projenrc}/**/*.{js,jsx,ts,tsx}"',
+      exec: 'npx prettier --write "{src,projenrc}/**/*.ts"',
     });
 
     this.ignoreFile?.addPatterns("tsconfig.dev.json", "tsconfig.json", "node_modules", "build", "coverage");

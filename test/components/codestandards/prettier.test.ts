@@ -41,7 +41,7 @@ describe("Custom Prettier", () => {
       description: "Runs Prettier",
       steps: [
         {
-          exec: 'npx prettier --write "{src,projenrc}/**/*.{js,jsx,ts,tsx}"',
+          exec: 'npx prettier --write "{src,projenrc}/**/*.ts"',
         },
       ],
     });
@@ -80,8 +80,9 @@ describe("Custom Prettier", () => {
     const config = snapshot["package.json"]["lint-staged"];
 
     // Assert
-    expect(Object.keys(config)).toContain("src/**/*.{ts,tsx}");
-    expect(config["src/**/*.{ts,tsx}"]).toContain("npx prettier --write");
+    expect(Object.keys(config)).toContain("src/**/*.ts");
+    expect(Object.keys(config)).toContain("*.md");
+    expect(config["src/**/*.ts"]).toContain("npx prettier --write");
   });
 
   it("Adds new prec-commmit rule for markdown with Lefthook enabled", () => {
@@ -135,7 +136,7 @@ describe("Custom Prettier", () => {
     expect(filteredCommands[0]).toEqual({
       prettier: {
         run: "npx prettier --write {staged_files}",
-        glob: "src/**/*.{ts,tsx}",
+        glob: "src/**/*.ts",
       },
     });
   });
