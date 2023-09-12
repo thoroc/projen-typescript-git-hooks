@@ -2,8 +2,10 @@ import { Component, Project, javascript } from "projen";
 import { EslintOptions } from "projen/lib/javascript";
 import { Prettier } from "./prettier";
 import { GitHooksEnabledProject } from "../..";
-import { GitClientHook, Lefthook } from "../githooksmanager";
-import { LintStaged } from "../githooksmanager/lintstaged";
+import { GitClientHook } from "../githooksmanager";
+import { LintStaged } from "../githooksmanager/husky";
+import { Lefthook } from "../githooksmanager/lefthook";
+
 
 export interface EslintRules {
 

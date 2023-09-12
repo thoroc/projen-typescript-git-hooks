@@ -1,11 +1,10 @@
 import { Component, Project, TextFile } from "projen";
 import { NodePackageManager } from "projen/lib/javascript/node-package";
-import { GitClientHook, GitHooksManager, GitHooksManagerOptions } from ".";
 import { LintStaged, LintStagedOptions } from "./lintstaged";
-import { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
-import { Commitizen } from "../codestandards/commitizen";
+import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
+import { GitHooksManager, GitClientHook } from "../githookmanager";
 
-export interface HuskyOptions extends GitHooksManagerOptions {
+export interface HuskyOptions {
   /**
    * Enable linting and re-adding of staged files pre commit.
    *
@@ -30,7 +29,6 @@ export class Husky extends GitHooksManager {
   }
 
   readonly lintStaged?: LintStaged;
-  readonly commitizen?: Commitizen;
 
   constructor(project: GitHooksEnabledProject, options?: HuskyOptions) {
     super(project);
@@ -41,16 +39,13 @@ export class Husky extends GitHooksManager {
 
     (this.project as GitHooksEnabledProject).addDevDeps("husky");
 
-    if ((this.project as GitHooksEnabledProject).debug) console.log(`Husky Options: ${JSON.stringify(options, undefined, 2)}`);
+    if ((this.project as GitHooksEnabledProject).debug) {
+      console.log(`Husky Options: ${JSON.stringify(options, undefined, 2)}`);
+    }
 
     if (options?.lintStaged ?? true) {
       if ((this.project as GitHooksEnabledProject).debug) console.log("LintStaged enabled");
       this.lintStaged = new LintStaged(this.project as GitHooksEnabledProject, options?.lintStagedOptions);
-    }
-
-    if (options?.commitizen ?? true) {
-      if ((this.project as GitHooksEnabledProject).debug) console.log("Commitizen enabled");
-      this.commitizen = new Commitizen(this.project as GitHooksEnabledProject, options?.commitizenOptions);
     }
   }
 
@@ -59,7 +54,9 @@ export class Husky extends GitHooksManager {
     const gitHookFile = this.project.tryFindFile(gitHookFilename);
 
     if (gitHookFile === undefined) {
-      if ((this.project as GitHooksEnabledProject).debug) { console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`); }
+      if ((this.project as GitHooksEnabledProject).debug) {
+        console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`);
+      }
 
       new TextFile(this.project, gitHookFilename, {
         executable: true,
@@ -69,8 +66,8 @@ export class Husky extends GitHooksManager {
   }
 
   preSynthesize(): void {
-    const script =
-      (this.project as GitHooksEnabledProject).package.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
-    (this.project as GitHooksEnabledProject).package.setScript(script, "npx husky install");
+    const pkg = (this.project as GitHooksEnabledProject).package;
+    const script = pkg.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
+    pkg.setScript(script, "npx husky install");
   }
 }
