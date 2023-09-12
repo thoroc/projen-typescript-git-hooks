@@ -16,7 +16,7 @@ const project = new cdk.JsiiProject({
   docgen: true,
   deps: ["projen", "yaml", "type-fest", "change-case"],
   devDeps: ["projen"],
-  bundledDeps: ["yaml", "type-fest"],
+  bundledDeps: ["yaml", "type-fest", "change-case"],
   peerDeps: ["projen"],
 
   npmDistTag: "latest",

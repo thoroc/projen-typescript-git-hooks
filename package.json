@@ -82,6 +82,7 @@
     "yaml": "^2.3.2"
   },
   "bundledDependencies": [
+    "change-case",
     "type-fest",
     "yaml"
   ],

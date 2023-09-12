@@ -146,6 +146,10 @@
       "type": "build"
     },
     {
+      "name": "change-case",
+      "type": "bundled"
+    },
+    {
       "name": "type-fest",
       "type": "bundled"
     },
