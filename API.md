@@ -2515,9 +2515,9 @@ const lefthookAction: LefthookAction = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookAction.property.actionName">actionName</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookAction.property.commands">commands</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions">LefthookCommandOptions</a>[]</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookAction.property.scripts">scripts</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookScriptOptions">LefthookScriptOptions</a>[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookAction.property.actionName">actionName</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a></code> | Action name. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookAction.property.commands">commands</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions">LefthookCommandOptions</a>[]</code> | Array of Lefthook command. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookAction.property.scripts">scripts</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookScriptOptions">LefthookScriptOptions</a>[]</code> | Array of Lefthook script. |
 
 ---
 
@@ -2529,6 +2529,8 @@ public readonly actionName: GitClientHook;
 
 - *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a>
 
+Action name.
+
 ---
 
 ##### `commands`<sup>Optional</sup> <a name="commands" id="@thoroc/projen-typescript-git-hooks.LefthookAction.property.commands"></a>
@@ -2538,6 +2540,9 @@ public readonly commands: LefthookCommandOptions[];
 ```
 
 - *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions">LefthookCommandOptions</a>[]
+- *Default:* []
+
+Array of Lefthook command.
 
 ---
 
@@ -2548,6 +2553,9 @@ public readonly scripts: LefthookScriptOptions[];
 ```
 
 - *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LefthookScriptOptions">LefthookScriptOptions</a>[]
+- *Default:* []
+
+Array of Lefthook script.
 
 ---
 
@@ -2565,13 +2573,13 @@ const lefthookCommandOptions: LefthookCommandOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.run">run</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.exclude">exclude</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.files">files</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.glob">glob</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.stagedFiles">stagedFiles</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.tags">tags</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.name">name</a></code> | <code>string</code> | Command's name. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.run">run</a></code> | <code>string</code> | This is a mandatory option for a command. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.exclude">exclude</a></code> | <code>string</code> | You can provide a regular expression to exclude some files from being passed to run command. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.files">files</a></code> | <code>string</code> | A custom git command for files to be referenced in {files} template for run setting. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.glob">glob</a></code> | <code>string</code> | You can set a glob to filter files for your command. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.stagedFiles">stagedFiles</a></code> | <code>boolean</code> | Staged files which you try to commit. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.tags">tags</a></code> | <code>string</code> | You can specify tags for commands and scripts. |
 
 ---
 
@@ -2583,6 +2591,8 @@ public readonly name: string;
 
 - *Type:* string
 
+Command's name.
+
 ---
 
 ##### `run`<sup>Required</sup> <a name="run" id="@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.run"></a>
@@ -2592,6 +2602,12 @@ public readonly run: string;
 ```
 
 - *Type:* string
+
+This is a mandatory option for a command.
+
+This is actually a command that is executed for the hook.
+
+> [https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#run](https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#run)
 
 ---
 
@@ -2603,6 +2619,10 @@ public readonly exclude: string;
 
 - *Type:* string
 
+You can provide a regular expression to exclude some files from being passed to run command.
+
+> [https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#exclude](https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#exclude)
+
 ---
 
 ##### `files`<sup>Optional</sup> <a name="files" id="@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.files"></a>
@@ -2612,6 +2632,10 @@ public readonly files: string;
 ```
 
 - *Type:* string
+
+A custom git command for files to be referenced in {files} template for run setting.
+
+> [https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#files](https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#files)
 
 ---
 
@@ -2623,6 +2647,10 @@ public readonly glob: string;
 
 - *Type:* string
 
+You can set a glob to filter files for your command.
+
+> [https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#glob](https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#glob)
+
 ---
 
 ##### `stagedFiles`<sup>Optional</sup> <a name="stagedFiles" id="@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.stagedFiles"></a>
@@ -2633,6 +2661,10 @@ public readonly stagedFiles: boolean;
 
 - *Type:* boolean
 
+Staged files which you try to commit.
+
+> [https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#run](https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#run)
+
 ---
 
 ##### `tags`<sup>Optional</sup> <a name="tags" id="@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.tags"></a>
@@ -2642,6 +2674,10 @@ public readonly tags: string;
 ```
 
 - *Type:* string
+
+You can specify tags for commands and scripts.
+
+> [https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#tags](https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#tags)
 
 ---
 
@@ -2659,7 +2695,7 @@ const lefthookConfigOptions: LefthookConfigOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookConfigOptions.property.actions">actions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookAction">LefthookAction</a>[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookConfigOptions.property.actions">actions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookAction">LefthookAction</a>[]</code> | Array of lefthook action. |
 
 ---
 
@@ -2670,6 +2706,8 @@ public readonly actions: LefthookAction[];
 ```
 
 - *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LefthookAction">LefthookAction</a>[]
+
+Array of lefthook action.
 
 ---
 
@@ -2687,7 +2725,7 @@ const lefthookOptions: LefthookOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookOptions.property.config">config</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookConfig">LefthookConfig</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookOptions.property.config">config</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookConfig">LefthookConfig</a></code> | Lefthook config. |
 
 ---
 
@@ -2698,6 +2736,8 @@ public readonly config: LefthookConfig;
 ```
 
 - *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LefthookConfig">LefthookConfig</a>
+
+Lefthook config.
 
 ---
 
@@ -7573,7 +7613,7 @@ new LefthookCommand(options: LefthookCommandOptions)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommand.asRecords">asRecords</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommand.asRecords">asRecords</a></code> | Transform the LefthookCommand to a lefthook friend object. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommand.serialize">serialize</a></code> | *No description.* |
 
 ---
@@ -7583,6 +7623,8 @@ new LefthookCommand(options: LefthookCommandOptions)
 ```typescript
 public asRecords(): object
 ```
+
+Transform the LefthookCommand to a lefthook friend object.
 
 ##### `serialize` <a name="serialize" id="@thoroc/projen-typescript-git-hooks.LefthookCommand.serialize"></a>
 

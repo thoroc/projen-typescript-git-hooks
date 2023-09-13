@@ -7,6 +7,9 @@ import { GitClientHook, GitHooksManager } from "..";
 import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
 
 export interface LefthookOptions {
+  /**
+   * Lefthook config
+   */
   readonly config?: LefthookConfig;
 }
 
