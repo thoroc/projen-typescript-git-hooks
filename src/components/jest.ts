@@ -18,8 +18,6 @@ export class Jest extends BaseJest {
   }
 
   preSynthesize(): void {
-    console.log(this.config);
-
     const deletionGlobals = this.configFilePath ? "globals" : "jest.globals";
     const overrideTransform = this.configFilePath ? "transform" : "jest.transform";
     const config = this.project.tryFindObjectFile(this.configFilePath ?? "package.json");
