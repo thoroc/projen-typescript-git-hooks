@@ -27,6 +27,9 @@ const project = new cdk.JsiiProject({
   eslint: false,
   prettier: false,
   jest: false,
+
+  autoApproveOptions: { allowedUsernames: ["thoroc"] },
+  autoMerge: true,
 });
 
 project.eslint?.addRules(Eslint.defaultEslintRules);
