@@ -1,12 +1,40 @@
 import { ISerializer } from "../../../utils";
 
 export interface LefthookCommandOptions {
+  /**
+   * Command's name
+   */
   readonly name: string;
+  /**
+   * This is a mandatory option for a command.
+   * This is actually a command that is executed for the hook.
+   * @see https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#run
+   */
   readonly run: string;
+  /**
+   * A custom git command for files to be referenced in {files} template for run setting.
+   * @see https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#files
+   */
   readonly files?: string;
+  /**
+   * You can provide a regular expression to exclude some files from being passed to run command.
+   * @see https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#exclude
+   */
   readonly exclude?: string;
+  /**
+   * You can set a glob to filter files for your command.
+   * @see https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#glob
+   */
   readonly glob?: string;
+  /**
+   * You can specify tags for commands and scripts
+   * @see https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#tags
+   */
   readonly tags?: string;
+  /**
+   * Staged files which you try to commit.
+   * @see https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#run
+   */
   readonly stagedFiles?: boolean;
 }
 
@@ -29,6 +57,10 @@ export class LefthookCommand implements ISerializer {
     this.stagedFiles = options.stagedFiles ?? true;
   }
 
+  /**
+   * Transform the LefthookCommand to a lefthook friend object
+   * @returns object
+   */
   asRecords(): object {
     const records: { [key: string]: string | undefined } = {};
     const excludes: Array<string> = ["name", "stagedFiles"];
