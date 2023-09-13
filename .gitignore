@@ -31,10 +31,6 @@ jspm_packages/
 .yarn-integrity
 .cache
 !/.projenrc.js
-/test-reports/
-junit.xml
-!/jest.config.json
-/coverage/
 !/.github/workflows/build.yml
 /dist/changelog.md
 /dist/version.txt
@@ -53,6 +49,11 @@ tsconfig.json
 !/API.md
 !/.github/workflows/pull-request-comments.yml
 !/.husky/pre-commit
+/test-reports/
+junit.xml
+!/jest.config.json
+/coverage/
+!/.husky/pre-push
 !/.eslintrc.json
 !/.prettierignore
 !/.prettierrc.json
