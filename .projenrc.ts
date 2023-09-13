@@ -1,8 +1,10 @@
-import { YamlFile, cdk } from "projen";
+import { cdk } from "projen";
 import { Eslint } from "./src/components/codestandards/eslint";
 import { Prettier } from "./src/components/codestandards/prettier";
 import { Husky } from "./src/components/githooksmanager";
 import { Commitizen } from "./src";
+import { PullRequestJestCoverageComment } from "./src/components/githubactions/pull-request-comment";
+import { GitHub } from "projen/lib/github";
 
 const project = new cdk.JsiiProject({
   author: "thoroc",
@@ -31,32 +33,8 @@ const project = new cdk.JsiiProject({
 
 project.eslint?.addRules(Eslint.defaultEslintRules);
 
-new YamlFile(project, ".github/workflows/pull-request-comments.yml", {
-  obj: {
-    name: "Jest Coverage Comment",
-    on: { pull_request: {} },
-    jobs: {
-      build: {
-        "runs-on": "ubuntu-latest",
-        "env": { CI: "true" },
-        "steps": [
-          {
-            name: "Checkout",
-            uses: "actions/checkout@v3",
-            with: {
-              ref: "${{ github.event.pull_request.head.ref }}",
-              repository: "${{ github.event.pull_request.head.repo.full_name }}",
-            },
-          },
-          { name: "Install dependencies", run: "yarn install --check-files" },
-          { name: "Run tests", run: "npx jest --coverage --coverageReporters json-summary" },
-          { name: "Jest Coverage Comment", uses: "MishaKav/jest-coverage-comment@main" },
-        ],
-      },
-    },
-  },
-});
-
+const github = project.github ?? new GitHub(project);
+new PullRequestJestCoverageComment(github);
 new Husky(project);
 new Eslint(project, { dirs: ["src", "test"], prettier: true });
 new Prettier(project);
