@@ -118,6 +118,14 @@
         }
       ]
     },
+    "docs": {
+      "name": "docs",
+      "steps": [
+        {
+          "exec": "mkdocs serve"
+        }
+      ]
+    },
     "eject": {
       "name": "eject",
       "description": "Remove projen from the project",
