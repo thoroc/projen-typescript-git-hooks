@@ -48,6 +48,8 @@ jspm_packages/
 tsconfig.json
 !/API.md
 !/.github/workflows/pull-request-comments.yml
+!/.github/workflows/pull-request-labeler.yml
+!/.github/labeler.yml
 !/.husky/pre-commit
 /test-reports/
 junit.xml

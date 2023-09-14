@@ -2,7 +2,7 @@ import { cdk } from "projen";
 import { Eslint } from "./src/components/codestandards/eslint";
 import { Prettier } from "./src/components/codestandards/prettier";
 import { Husky } from "./src/components/githooksmanager";
-import { PullRequestJestCoverageComment } from "./src/components/githubactions/pull-request-comment";
+import { PullRequestJestCoverageComment, PullRequestLabeler } from "./src/components/githubactions";
 import { GitHub } from "projen/lib/github";
 import { Commitizen, Jest } from "./src";
 
@@ -38,6 +38,7 @@ project.eslint?.addRules(Eslint.defaultEslintRules);
 
 const github = project.github ?? new GitHub(project);
 new PullRequestJestCoverageComment(github);
+new PullRequestLabeler(github);
 new Husky(project);
 new Jest(project, { configFilePath: "jest.config.json" });
 new Eslint(project, { dirs: ["src", "test"], prettier: true });
