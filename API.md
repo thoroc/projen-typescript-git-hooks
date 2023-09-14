@@ -8427,6 +8427,84 @@ public readonly project: Project;
 ---
 
 
+### PullRequestLabeler <a name="PullRequestLabeler" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.Initializer"></a>
+
+```typescript
+import { PullRequestLabeler } from '@thoroc/projen-typescript-git-hooks'
+
+new PullRequestLabeler(github: GitHub)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
+
+---
+
+##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.Initializer.parameter.github"></a>
+
+- *Type:* projen.github.GitHub
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
 ## Protocols <a name="Protocols" id="Protocols"></a>
 
 ### ISerializer <a name="ISerializer" id="@thoroc/projen-typescript-git-hooks.ISerializer"></a>
