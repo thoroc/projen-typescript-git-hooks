@@ -51,6 +51,7 @@ tsconfig.json
 !/.github/workflows/pull-request-labeler.yml
 !/.github/labeler.yml
 !/.github/workflows/mkdocs.yml
+!/mkdocs.yml
 !/.husky/pre-commit
 /test-reports/
 junit.xml
