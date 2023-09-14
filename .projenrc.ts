@@ -31,6 +31,7 @@ const project = new cdk.JsiiProject({
   autoApproveOptions: { allowedUsernames: ["thoroc"] },
   autoMerge: true,
   githubOptions: { mergify: false },
+  depsUpgradeOptions: { workflowOptions: { labels: ["auto-approve"] } },
 });
 
 project.eslint?.addRules(Eslint.defaultEslintRules);
