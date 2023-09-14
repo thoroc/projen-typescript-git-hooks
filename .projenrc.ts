@@ -30,6 +30,7 @@ const project = new cdk.JsiiProject({
 
   autoApproveOptions: { allowedUsernames: ["thoroc"] },
   autoMerge: true,
+  githubOptions: { mergify: false },
 });
 
 project.eslint?.addRules(Eslint.defaultEslintRules);
