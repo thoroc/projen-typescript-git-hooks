@@ -39,7 +39,14 @@ project.eslint?.addRules(Eslint.defaultEslintRules);
 const github = project.github ?? new GitHub(project);
 new PullRequestJestCoverageComment(github);
 new PullRequestLabeler(github);
-new Mkdocs(github);
+new Mkdocs(github, {
+  siteName: "Projen - Docs",
+  siteUrl: "https://projen.io/",
+  repositoryUrl: "https://github.com/projen/projen",
+  siteDescription:
+    "Projen is Project Structure as a code. Define and maintain complex project configuration through code.",
+  logo: "https://raw.githubusercontent.com/projen/projen/main/logo/projen.svg",
+});
 new Husky(project);
 new Jest(project, { configFilePath: "jest.config.json" });
 new Eslint(project, { dirs: ["src", "test"], prettier: true });

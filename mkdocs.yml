@@ -11,28 +11,25 @@ nav:
   - Get Started:
       - Overview: index.md
   - Projen Types:
-      - AWS CDK Applications: projen-types/awscdk-apps.md
-      - AWS CDK Construct Library: projen-types/awscdk-construct.md
-      - AWS Cloud Projects: projen-types/awscdk.md
-      - Build: projen-types/build.md
-      - Bundling: projen-types/bunding.md
-      - Components: projen-types/componen]s.md
-      - CDK8s: projen-types/cdk8s.md
-      - CircleCI: projen-types/circ]eci.md
-      - Dependencies: projen-types/deps.md
-      - Escape hatches: projen-types/esca]e-hatches.md
-      - Ejecting: projen-types/eject.md
-      - GitHub: projen-types/github.md
-      - GitLab: projen-types/gitlab.md
-      - Java Projects: projen-types/jva.md
-      - Node.js Projects: projen-types/nod.md
-      - Programmatic API: projen-types/programatic-api.md
-      - Publishing Modules: projen-types/publisher.md
-      - Python Projects: projen-types/python.md
-      - Releases and Versioning: projen-types/releases.md
-      - Subprojects: projen-types/subproject.md
-      - Tasks: projen-types/tasks.md
-      - TypeScript Projects: projen]types/typescript.md
+      AWS CDK app in Java.: projen-types/awscdk-app-java
+      AWS CDK app in Python.: projen-types/awscdk-app-py
+      AWS CDK app in TypeScript.: projen-types/awscdk-app-ts
+      AWS CDK construct library project.: projen-types/awscdk-construct
+      CDK8s app in Python.: projen-types/cdk8s-app-py
+      CDK8s app in TypeScript.: projen-types/cdk8s-app-ts
+      CDK8s construct library project.: projen-types/cdk8s-construct
+      CDKTF construct library project.: projen-types/cdktf-construct
+      Java project.: projen-types/java
+      Multi-language jsii library project.: projen-types/jsii
+      Next.js project without TypeScript.: projen-types/nextjs
+      Next.js project with TypeScript.: projen-types/nextjs-ts
+      Node.js project.: projen-types/node
+      Base project.: projen-types/project
+      Python project.: projen-types/python
+      React project without TypeScript.: projen-types/react
+      React project with TypeScript.: projen-types/react-ts
+      TypeScript project.: projen-types/typescript
+      TypeScript app.: projen-types/typescript-app
   - API: api/API.md
 plugins:
   - search

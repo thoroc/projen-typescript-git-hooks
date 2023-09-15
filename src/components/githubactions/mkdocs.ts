@@ -1,11 +1,35 @@
-import { Component, Project, YamlFile } from "projen";
+import { Component, YamlFile } from "projen";
 import { GitHub } from "projen/lib/github";
 import { JobPermission } from "projen/lib/github/workflows-model";
 import { discover } from "projen/lib/inventory";
 
+export interface MkdocsOptions {
+  readonly siteName?: string;
+  readonly siteUrl?: string;
+  readonly repositoryUrl?: string;
+  readonly siteDescription?: string;
+  readonly logo?: string;
+  readonly mkdocsPlugins?: Array<string>;
+}
+
 export class Mkdocs extends Component {
-  constructor(github: GitHub, options?: MkdocsConfigOptions) {
+  readonly siteName?: string;
+  readonly siteUrl?: string;
+  readonly repositoryUrl?: string;
+  readonly siteDescription?: string;
+  readonly logo?: string;
+  readonly mkdocsPlugins?: Array<string>;
+  projectTypes: Record<string, string> = {};
+
+  constructor(github: GitHub, options?: MkdocsOptions) {
     super(github.project);
+
+    this.siteName = options?.siteName;
+    this.siteUrl = options?.siteUrl;
+    this.repositoryUrl = options?.repositoryUrl;
+    this.siteDescription = options?.siteDescription;
+    this.logo = options?.logo;
+    this.mkdocsPlugins = options?.mkdocsPlugins;
 
     github.project.addTask("docs", { exec: "mkdocs serve" });
 
@@ -33,85 +57,34 @@ export class Mkdocs extends Component {
       ],
     });
 
-    new MkdocsConfig(
-      github.project,
-      options ?? {
-        siteName: "Projen - Docs",
-        siteUrl: "https://projen.io/",
-        repositoryUrl: "https://github.com/projen/projen",
-        siteDescription:
-          "Projen is Project Structure as a code. Define and maintain complex project configuration through code.",
-        logo: "https://raw.githubusercontent.com/projen/projen/main/logo/projen.svg",
-      },
-    );
-  }
-}
-
-export interface MkdocsConfigOptions {
-  readonly siteName?: string;
-  readonly siteUrl?: string;
-  readonly repositoryUrl?: string;
-  readonly siteDescription?: string;
-  readonly logo?: string;
-  readonly mkdocsPlugins?: Array<string>;
-}
-
-export class MkdocsConfig extends Component {
-  projectTypes: Array<Record<string, string>> = [];
-  constructor(project: Project, options?: MkdocsConfigOptions) {
-    super(project);
-
     for (const p of discover()) {
-      console.log(`* ${p.docs}: projen-types/${p.pjid}.md`);
-      // console.log(`* [${p.pjid}](${p.docsurl}) - ${p.docs}`);
-      // this.projectTypes.push({ `${p.docs}`: `projen-types/${p.pjid}` });
+      this.projectTypes[p.docs as string] = `projen-types/${p.pjid}`;
     }
+  }
 
-    new YamlFile(project, "mkdocs.yml", {
+  preSynthesize(): void {
+    new YamlFile(this.project, "mkdocs.yml", {
       obj: {
-        site_name: options?.siteName,
-        site_url: options?.siteUrl,
-        repo_url: options?.repositoryUrl,
-        site_description: options?.siteDescription,
+        site_name: this.siteName,
+        site_url: this.siteUrl,
+        repo_url: this.repositoryUrl,
+        site_description: this.siteDescription,
         theme: {
           name: "material",
-          logo: options?.logo,
+          logo: this.logo,
         },
         nav: [
           {
             "Get Started": [{ Overview: "index.md" }],
           },
           {
-            "Projen Types": [
-              { "AWS CDK Applications": "projen-types/awscdk-apps.md" },
-              { "AWS CDK Construct Library": "projen-types/awscdk-construct.md" },
-              { "AWS Cloud Projects": "projen-types/awscdk.md" },
-              { Build: "projen-types/build.md" },
-              { Bundling: "projen-types/bunding.md" },
-              { Components: "projen-types/componen]s.md" },
-              { CDK8s: "projen-types/cdk8s.md" },
-              { CircleCI: "projen-types/circ]eci.md" },
-              { Dependencies: "projen-types/deps.md" },
-              { "Escape hatches": "projen-types/esca]e-hatches.md" },
-              { Ejecting: "projen-types/eject.md" },
-              { GitHub: "projen-types/github.md" },
-              { GitLab: "projen-types/gitlab.md" },
-              { "Java Projects": "projen-types/jva.md" },
-              { "Node.js Projects": "projen-types/nod.md" },
-              { "Programmatic API": "projen-types/programatic-api.md" },
-              { "Publishing Modules": "projen-types/publisher.md" },
-              { "Python Projects": "projen-types/python.md" },
-              { "Releases and Versioning": "projen-types/releases.md" },
-              { Subprojects: "projen-types/subproject.md" },
-              { Tasks: "projen-types/tasks.md" },
-              { "TypeScript Projects": "projen]types/typescript.md" },
-            ],
+            "Projen Types": this.projectTypes,
           },
           {
             API: "api/API.md",
           },
         ],
-        plugins: options?.mkdocsPlugins ?? ["search", "mkdocs-video"],
+        plugins: this.mkdocsPlugins ?? ["search", "mkdocs-video"],
       },
     });
   }

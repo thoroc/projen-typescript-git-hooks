@@ -12,3 +12,4 @@ Inspiration:
 - <https://github.com/mountain-pass/cool-bits-for-projen>
 - <https://github.com/seeebiii/projen-test>
 - <https://github.com/kcwinner/projen-github-demo>
+- <https://github.com/moltar/projen-turborepo>
