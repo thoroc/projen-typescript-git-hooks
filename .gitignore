@@ -50,6 +50,7 @@ tsconfig.json
 !/.github/workflows/pull-request-comments.yml
 !/.github/workflows/pull-request-labeler.yml
 !/.github/labeler.yml
+!/.github/workflows/close-stale-issue.yml
 !/.husky/pre-commit
 /test-reports/
 junit.xml
