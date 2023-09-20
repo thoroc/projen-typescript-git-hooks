@@ -1,4 +1,5 @@
 export * from "./serializer";
+export * from "./fetch";
 
 // Shamelessly lifted from https://stackoverflow.com/questions/17781472/how-to-get-a-subset-of-a-javascript-objects-properties
 

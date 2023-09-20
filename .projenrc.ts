@@ -4,7 +4,7 @@ import { Prettier } from "./src/components/codestandards/prettier";
 import { Husky } from "./src/components/githooksmanager";
 import { CloseStaleIssue, PullRequestJestCoverageComment, PullRequestLabeler } from "./src/components/githubactions";
 import { GitHub } from "projen/lib/github";
-import { Commitizen, Jest } from "./src";
+import { CodeOfConduct, Commitizen, Jest } from "./src";
 
 const project = new cdk.JsiiProject({
   author: "thoroc",
@@ -45,5 +45,6 @@ new Jest(project, { configFilePath: "jest.config.json" });
 new Eslint(project, { dirs: ["src", "test"], prettier: true });
 new Prettier(project);
 new Commitizen(project, { json: true });
+new CodeOfConduct(project, { author: "thomas.a.roche@gmail.com" });
 
 project.synth();

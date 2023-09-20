@@ -18,6 +18,45 @@ Inspiration:
 
 ## Structs <a name="Structs" id="Structs"></a>
 
+### CodeOfConductOptions <a name="CodeOfConductOptions" id="@thoroc/projen-typescript-git-hooks.CodeOfConductOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.CodeOfConductOptions.Initializer"></a>
+
+```typescript
+import { CodeOfConductOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const codeOfConductOptions: CodeOfConductOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConductOptions.property.author">author</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConductOptions.property.version">version</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `author`<sup>Required</sup> <a name="author" id="@thoroc/projen-typescript-git-hooks.CodeOfConductOptions.property.author"></a>
+
+```typescript
+public readonly author: string;
+```
+
+- *Type:* string
+
+---
+
+##### `version`<sup>Optional</sup> <a name="version" id="@thoroc/projen-typescript-git-hooks.CodeOfConductOptions.property.version"></a>
+
+```typescript
+public readonly version: string;
+```
+
+- *Type:* string
+
+---
+
 ### CommitizenConfig <a name="CommitizenConfig" id="@thoroc/projen-typescript-git-hooks.CommitizenConfig"></a>
 
 #### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.CommitizenConfig.Initializer"></a>
@@ -4709,6 +4748,113 @@ public readonly project: Project;
 ```
 
 - *Type:* projen.Project
+
+---
+
+
+### CodeOfConduct <a name="CodeOfConduct" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer"></a>
+
+```typescript
+import { CodeOfConduct } from '@thoroc/projen-typescript-git-hooks'
+
+new CodeOfConduct(project: Project, options?: CodeOfConductOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConductOptions">CodeOfConductOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.CodeOfConductOptions">CodeOfConductOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.author">author</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.version">version</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `author`<sup>Required</sup> <a name="author" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.author"></a>
+
+```typescript
+public readonly author: string;
+```
+
+- *Type:* string
+
+---
+
+##### `version`<sup>Required</sup> <a name="version" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.version"></a>
+
+```typescript
+public readonly version: string;
+```
+
+- *Type:* string
 
 ---
 
