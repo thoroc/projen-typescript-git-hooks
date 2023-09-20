@@ -1,5 +1,5 @@
 import { Project, TextFile } from "projen";
-import { GitClientHook } from "../githookmanager";
+import { GitClientHook } from "../githooks-manager";
 
 export interface HuskyHookFileOptions {
   readonly hook: GitClientHook;

@@ -1,8 +1,8 @@
 import { cdk } from "projen";
-import { Eslint } from "./src/components/codestandards/eslint";
-import { Prettier } from "./src/components/codestandards/prettier";
-import { Husky } from "./src/components/githooksmanager";
-import { CloseStaleIssue, PullRequestJestCoverageComment, PullRequestLabeler } from "./src/components/githubactions";
+import { Eslint } from "./src/components/code-standards/eslint";
+import { Prettier } from "./src/components/code-standards/prettier";
+import { Husky } from "./src/components/githooks-manager";
+import { CloseStaleIssue, PullRequestJestCoverageComment, PullRequestLabeler } from "./src/components/github-actions";
 import { GitHub } from "projen/lib/github";
 import { CodeOfConduct, Commitizen, Jest } from "./src";
 

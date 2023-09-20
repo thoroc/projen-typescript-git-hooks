@@ -1,14 +1,14 @@
 import { typescript, javascript } from "projen";
 import { TypeScriptModuleResolution, TypescriptConfigOptions } from "projen/lib/javascript";
-import { Eslint, Prettier } from "../components/codestandards";
-import { EditorConfig, EditorConfigOptions } from "../components/codestandards/editorconfig";
+import { Eslint, Prettier } from "../components/code-standards";
+import { EditorConfig, EditorConfigOptions } from "../components/code-standards/editorconfig";
 import {
   GitHooksManagerType,
   Husky,
   HuskyOptions,
   Lefthook,
   LefthookOptions,
-} from "../components/githooksmanager";
+} from "../components/githooks-manager";
 import { Jest } from "../components/jest";
 
 export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProjectOptions {
