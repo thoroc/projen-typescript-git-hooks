@@ -1,7 +1,7 @@
 import { NodeProject } from "projen/lib/javascript";
 import { synthSnapshot } from "projen/lib/util/synth";
 import { GitClientHook } from "../../../../src";
-import { HuskyHookFile } from "../../../../src/components/githooksmanager/husky/huskyhook";
+import { HuskyHookFile } from "../../../../src/components/githooks-manager/husky/huskyhook";
 
 describe("Husky hook file", () => {
   it("creates a new hook for Husky", () => {
