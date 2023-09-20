@@ -1,6 +1,6 @@
 import { Component, JsonFile, Project } from "projen";
 import { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
-import { GitClientHook, Husky, Lefthook } from "../githooksmanager";
+import { GitClientHook, Husky, Lefthook } from "../githooks-manager";
 
 export interface CommitizenOptions {
   readonly json?: boolean;

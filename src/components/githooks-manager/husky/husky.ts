@@ -3,7 +3,7 @@ import { NodePackageManager } from "projen/lib/javascript/node-package";
 import { HuskyHookFile } from "./huskyhook";
 import { LintStaged, LintStagedOptions } from "./lintstaged";
 import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
-import { GitHooksManager, GitClientHook } from "../githookmanager";
+import { GitHooksManager, GitClientHook } from "../githooks-manager";
 
 export interface HuskyOptions {
   /**

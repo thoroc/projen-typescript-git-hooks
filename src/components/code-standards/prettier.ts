@@ -1,9 +1,9 @@
 import { Project, javascript } from "projen";
 import { PrettierOptions, ProseWrap, QuoteProps, TrailingComma } from "projen/lib/javascript";
 import { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
-import { GitClientHook } from "../githooksmanager";
-import { LintStaged } from "../githooksmanager/husky";
-import { Lefthook } from "../githooksmanager/lefthook";
+import { GitClientHook } from "../githooks-manager";
+import { LintStaged } from "../githooks-manager/husky";
+import { Lefthook } from "../githooks-manager/lefthook";
 
 export class Prettier extends javascript.Prettier {
   static defaultPrettierOptions: PrettierOptions = {

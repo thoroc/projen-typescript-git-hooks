@@ -1,3 +1,3 @@
-export * from "./githookmanager";
+export * from "./githooks-manager";
 export * from "./husky";
 export * from "./lefthook";

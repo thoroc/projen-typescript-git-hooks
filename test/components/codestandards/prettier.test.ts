@@ -1,7 +1,7 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import * as yaml from "yaml";
 import { GitHooksEnabledProject } from "../../../src";
-import { GitHooksManagerType, LefthookCommandOptions } from "../../../src/components/githooksmanager";
+import { GitHooksManagerType, LefthookCommandOptions } from "../../../src/components/githooks-manager";
 
 describe("Custom Prettier", () => {
   it("Adds new dev dependencie", () => {

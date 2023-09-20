@@ -1,6 +1,6 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import { GitHooksEnabledProject } from "../../../src";
-import { GitHooksManagerType } from "../../../src/components/githooksmanager";
+import { GitHooksManagerType } from "../../../src/components/githooks-manager";
 
 describe("Lefthook", () => {
   it("has a config file", () => {

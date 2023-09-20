@@ -1,6 +1,6 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import { GitHooksEnabledProject } from "../../../../src";
-import { GitHooksManagerType, Husky } from "../../../../src/components/githooksmanager";
+import { GitHooksManagerType, Husky } from "../../../../src/components/githooks-manager";
 
 describe("Husky", () => {
   it("Retuns a singleton", () => {

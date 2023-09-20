@@ -1,6 +1,6 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import { Commitizen, GitHooksEnabledProject } from "../../../src";
-import { GitHooksManagerType } from "../../../src/components/githooksmanager";
+import { GitHooksManagerType } from "../../../src/components/githooks-manager";
 
 describe("Commitizen Component", () => {
   it("Adds new dev dependencie", () => {
