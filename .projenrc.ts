@@ -45,6 +45,6 @@ new Jest(project, { configFilePath: "jest.config.json" });
 new Eslint(project, { dirs: ["src", "test"], prettier: true });
 new Prettier(project);
 new Commitizen(project, { json: true });
-new CodeOfConduct(project, { author: "thomas.roche@gmail.com" });
+new CodeOfConduct(project, { author: "thomas.a.roche@gmail.com" });
 
 project.synth();

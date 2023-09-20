@@ -1,4 +1,4 @@
-import { Component, Project, SampleFile } from "projen";
+import { Component, Project, TextFile } from "projen";
 import { getContent } from "../../utils/fetch";
 
 export interface CodeOfConductOptions {
@@ -23,13 +23,11 @@ export class CodeOfConduct extends Component {
     )
       .then((data) => {
         const body: string = data;
-        body.replace("[INSERT CONTACT METHOD]", this.author);
-
-        console.log(body);
-
-        new SampleFile(project, "CODE_OF_CONDUCT.md", {
-          contents: body,
+        const pattern = /\[INSERT CONTACT METHOD\]/g;
+        const document = new TextFile(project, "CODE_OF_CONDUCT.md", {
+          lines: body.replace(pattern, this.author).split("\n"),
         });
+        document.synthesize();
 
         console.log("retrieving CODE_OF_CONDUCT.md content");
       })
