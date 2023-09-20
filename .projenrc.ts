@@ -32,6 +32,9 @@ const project = new cdk.JsiiProject({
   autoMerge: true,
   githubOptions: { mergify: false },
   depsUpgradeOptions: { workflowOptions: { labels: ["auto-approve"] } },
+
+  // pullRequestTemplate
+  pullRequestTemplateContents: ["# What", "", "# Why"]
 });
 
 project.eslint?.addRules(Eslint.defaultEslintRules);
