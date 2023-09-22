@@ -29,7 +29,7 @@ const project = new cdk.JsiiProject({
   prettier: false,
   jest: false,
 
-  autoApproveOptions: { allowedUsernames: ["thoroc"] },
+  autoApproveOptions: { allowedUsernames: ["thoroc", "dependabot[bot]"] },
   autoMerge: true,
   githubOptions: { mergify: false },
   depsUpgradeOptions: { workflowOptions: { labels: ["auto-approve"] } },
