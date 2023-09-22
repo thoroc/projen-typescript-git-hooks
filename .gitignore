@@ -52,6 +52,7 @@ tsconfig.json
 !/.github/labeler.yml
 !/.github/workflows/close-stale-issue.yml
 !/.github/issue_template.md
+!/.github/workflows/auto-merge.yml
 !/.husky/pre-commit
 /test-reports/
 junit.xml

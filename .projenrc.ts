@@ -2,7 +2,7 @@ import { cdk } from "projen";
 import { GitHub } from "projen/lib/github";
 import { Eslint, Prettier } from "./src/components/code-standards";
 import { Husky } from "./src/components/githooks-manager";
-import { CloseStaleIssue, PullRequestJestCoverageComment, PullRequestLabeler } from "./src/components/github-actions";
+import { AutoMerge, CloseStaleIssue, PullRequestJestCoverageComment, PullRequestLabeler } from "./src/components/github-actions";
 import { CodeOfConduct } from "./src/components/documentation";
 import { IssueTemplate } from "./src/components/github-templates";
 import { Commitizen, Jest } from "./src";
@@ -29,7 +29,7 @@ const project = new cdk.JsiiProject({
   prettier: false,
   jest: false,
 
-  autoApproveOptions: { allowedUsernames: ["thoroc"] },
+  autoApproveOptions: { allowedUsernames: ["thoroc", "dependabot[bot]"] },
   autoMerge: true,
   githubOptions: { mergify: false },
   depsUpgradeOptions: { workflowOptions: { labels: ["auto-approve"] } },
@@ -44,6 +44,7 @@ new PullRequestJestCoverageComment(github);
 new PullRequestLabeler(github);
 new CloseStaleIssue(github);
 new IssueTemplate(github);
+new AutoMerge(github);
 new Husky(project);
 new Jest(project, { configFilePath: "jest.config.json" });
 new Eslint(project, { dirs: ["src", "test"], prettier: true });

@@ -4674,6 +4674,84 @@ Ignored definitions.
 
 ## Classes <a name="Classes" id="Classes"></a>
 
+### AutoMerge <a name="AutoMerge" id="@thoroc/projen-typescript-git-hooks.AutoMerge"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.AutoMerge.Initializer"></a>
+
+```typescript
+import { AutoMerge } from '@thoroc/projen-typescript-git-hooks'
+
+new AutoMerge(github: GitHub)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
+
+---
+
+##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.AutoMerge.Initializer.parameter.github"></a>
+
+- *Type:* projen.github.GitHub
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.AutoMerge.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.AutoMerge.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.AutoMerge.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AutoMerge.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
 ### CloseStaleIssue <a name="CloseStaleIssue" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue"></a>
 
 #### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.Initializer"></a>
