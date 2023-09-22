@@ -7,7 +7,7 @@ export class PullRequestJestCoverageComment extends Component {
   constructor(github: GitHub) {
     super(github.project);
 
-    const workflow = github.addWorkflow("pull-request-comments");
+    const workflow = github.addWorkflow("pull-request-comment");
     workflow.on({
       pullRequest: {},
     });
