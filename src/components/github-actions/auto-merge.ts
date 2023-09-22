@@ -2,6 +2,9 @@ import { Component } from "projen";
 import { GitHub } from "projen/lib/github";
 import { JobPermission } from "projen/lib/github/workflows-model";
 
+/**
+ * Represents AutoMerge configuration
+ */
 export class AutoMerge extends Component {
   constructor(github: GitHub) {
     super(github.project);

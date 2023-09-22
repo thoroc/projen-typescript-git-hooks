@@ -10,7 +10,7 @@
     ".github/workflows/auto-merge.yml",
     ".github/workflows/build.yml",
     ".github/workflows/close-stale-issue.yml",
-    ".github/workflows/pull-request-comments.yml",
+    ".github/workflows/pull-request-comment.yml",
     ".github/workflows/pull-request-labeler.yml",
     ".github/workflows/pull-request-lint.yml",
     ".github/workflows/release.yml",

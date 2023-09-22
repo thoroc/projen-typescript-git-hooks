@@ -3,11 +3,14 @@ import { GitHub } from "projen/lib/github";
 import { JobPermission } from "projen/lib/github/workflows-model";
 import { NodePackageManager, NodeProject } from "projen/lib/javascript";
 
+/**
+ * Represents PullRequestJestCoverageComment configuration
+ */
 export class PullRequestJestCoverageComment extends Component {
   constructor(github: GitHub) {
     super(github.project);
 
-    const workflow = github.addWorkflow("pull-request-comments");
+    const workflow = github.addWorkflow("pull-request-comment");
     workflow.on({
       pullRequest: {},
     });

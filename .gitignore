@@ -47,7 +47,7 @@ jspm_packages/
 .jsii
 tsconfig.json
 !/API.md
-!/.github/workflows/pull-request-comments.yml
+!/.github/workflows/pull-request-comment.yml
 !/.github/workflows/pull-request-labeler.yml
 !/.github/labeler.yml
 !/.github/workflows/close-stale-issue.yml

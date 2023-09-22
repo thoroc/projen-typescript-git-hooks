@@ -2,6 +2,9 @@ import { Component, Project, YamlFile } from "projen";
 import { GitHub } from "projen/lib/github";
 import { JobPermission } from "projen/lib/github/workflows-model";
 
+/**
+ * Represents PullRequestLabeler configuration
+ */
 export class PullRequestLabeler extends Component {
   constructor(github: GitHub) {
     super(github.project);
@@ -24,18 +27,40 @@ export class PullRequestLabeler extends Component {
 
     new LabelerConfig(github.project, {
       documentation: ["*.md"],
-      "github action": [".github/**"],
+      githubAction: [".github/**"],
       component: ["src/components/**"],
       test: ["test/**/*.test.ts"],
     });
   }
 }
 
-class LabelerConfig extends Component {
-  constructor(project: Project, config: {}) {
+export interface LabelerConfigOptions {
+  /**
+   * documentation glob
+   */
+  readonly documentation: Array<string>;
+  /**
+   * github action glob
+   */
+  readonly githubAction: Array<string>;
+  /**
+   * component glob
+   */
+  readonly component: Array<string>;
+  /**
+   * test glob
+   */
+  readonly test: Array<string>;
+}
+
+/**
+ * Represents LabelerConfig configuration
+ */
+export class LabelerConfig extends Component {
+  constructor(project: Project, options: LabelerConfigOptions) {
     super(project);
     new YamlFile(project, ".github/labeler.yml", {
-      obj: config,
+      obj: options,
     });
   }
 }
