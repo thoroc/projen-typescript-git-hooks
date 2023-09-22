@@ -52,7 +52,7 @@ jobs:
 
 documentation:
   - "*.md"
-github action:
+githubAction:
   - .github/**
 component:
   - src/components/**

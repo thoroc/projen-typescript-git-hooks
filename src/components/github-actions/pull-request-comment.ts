@@ -3,6 +3,9 @@ import { GitHub } from "projen/lib/github";
 import { JobPermission } from "projen/lib/github/workflows-model";
 import { NodePackageManager, NodeProject } from "projen/lib/javascript";
 
+/**
+ * Represents PullRequestJestCoverageComment configuration
+ */
 export class PullRequestJestCoverageComment extends Component {
   constructor(github: GitHub) {
     super(github.project);
