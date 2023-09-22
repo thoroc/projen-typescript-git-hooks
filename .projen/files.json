@@ -3,6 +3,7 @@
     ".czrc",
     ".eslintrc.json",
     ".gitattributes",
+    ".github/issue_template.md",
     ".github/labeler.yml",
     ".github/pull_request_template.md",
     ".github/workflows/auto-approve.yml",

@@ -148,6 +148,15 @@
         }
       ]
     },
+    "format:markdown": {
+      "name": "format:markdown",
+      "description": "Runs Prettier on Markdown",
+      "steps": [
+        {
+          "exec": "npx prettier --write --prose-wrap always *.md"
+        }
+      ]
+    },
     "install": {
       "name": "install",
       "description": "Install project dependencies and update lockfile (non-frozen)",
