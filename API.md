@@ -7398,6 +7398,185 @@ Indicates if the file should be read-only or read-write.
 ---
 
 
+### IssueTemplate <a name="IssueTemplate" id="@thoroc/projen-typescript-git-hooks.IssueTemplate"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.Initializer"></a>
+
+```typescript
+import { IssueTemplate } from '@thoroc/projen-typescript-git-hooks'
+
+new IssueTemplate(github: GitHub)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
+
+---
+
+##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.Initializer.parameter.github"></a>
+
+- *Type:* projen.github.GitHub
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.synthesize">synthesize</a></code> | Writes the file to the project's output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.addLine">addLine</a></code> | Adds a line to the text file. |
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Writes the file to the project's output directory.
+
+##### `addLine` <a name="addLine" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.addLine"></a>
+
+```typescript
+public addLine(line: string): void
+```
+
+Adds a line to the text file.
+
+###### `line`<sup>Required</sup> <a name="line" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.addLine.parameter.line"></a>
+
+- *Type:* string
+
+the line to add (can use tokens).
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.absolutePath">absolutePath</a></code> | <code>string</code> | The absolute path of this file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.path">path</a></code> | <code>string</code> | The file path, relative to the project root. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.changed">changed</a></code> | <code>boolean</code> | Indicates if the file has been changed during synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.marker">marker</a></code> | <code>string</code> | The projen marker, used to identify files as projen-generated. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.executable">executable</a></code> | <code>boolean</code> | Indicates if the file should be marked as executable. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.readonly">readonly</a></code> | <code>boolean</code> | Indicates if the file should be read-only or read-write. |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `absolutePath`<sup>Required</sup> <a name="absolutePath" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.absolutePath"></a>
+
+```typescript
+public readonly absolutePath: string;
+```
+
+- *Type:* string
+
+The absolute path of this file.
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.path"></a>
+
+```typescript
+public readonly path: string;
+```
+
+- *Type:* string
+
+The file path, relative to the project root.
+
+---
+
+##### `changed`<sup>Optional</sup> <a name="changed" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.changed"></a>
+
+```typescript
+public readonly changed: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file has been changed during synthesis.
+
+This property is
+only available in `postSynthesize()` hooks. If this is `undefined`, the
+file has not been synthesized yet.
+
+---
+
+##### `marker`<sup>Optional</sup> <a name="marker" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.marker"></a>
+
+```typescript
+public readonly marker: string;
+```
+
+- *Type:* string
+
+The projen marker, used to identify files as projen-generated.
+
+Value is undefined if the project is being ejected.
+
+---
+
+##### `executable`<sup>Required</sup> <a name="executable" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.executable"></a>
+
+```typescript
+public readonly executable: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file should be marked as executable.
+
+---
+
+##### `readonly`<sup>Required</sup> <a name="readonly" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.readonly"></a>
+
+```typescript
+public readonly readonly: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file should be read-only or read-write.
+
+---
+
+
 ### Jest <a name="Jest" id="@thoroc/projen-typescript-git-hooks.Jest"></a>
 
 #### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Jest.Initializer"></a>

@@ -42,7 +42,19 @@ export class Prettier extends javascript.Prettier {
       exec: 'npx prettier --write "{src,projenrc}/**/*.ts"',
     });
 
-    this.ignoreFile?.addPatterns("tsconfig.dev.json", "tsconfig.json", "node_modules", "build", "coverage");
+    this.project.addTask("format:markdown", {
+      description: "Runs Prettier on Markdown",
+      exec: "npx prettier --write --prose-wrap always *.md",
+    });
+
+    this.ignoreFile?.addPatterns(
+      "tsconfig.dev.json",
+      "tsconfig.json",
+      "node_modules",
+      "build",
+      "coverage",
+      ".github/*",
+    );
 
     LintStaged.of(this.project as GitHooksEnabledProject)?.addRule({
       filePattern: "*.md",
