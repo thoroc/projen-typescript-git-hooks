@@ -2553,6 +2553,75 @@ Set rules for lint-staged.
 
 ---
 
+### LabelerConfigOptions <a name="LabelerConfigOptions" id="@thoroc/projen-typescript-git-hooks.LabelerConfigOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.LabelerConfigOptions.Initializer"></a>
+
+```typescript
+import { LabelerConfigOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const labelerConfigOptions: LabelerConfigOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfigOptions.property.component">component</a></code> | <code>string[]</code> | component glob. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfigOptions.property.documentation">documentation</a></code> | <code>string[]</code> | documentation glob. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfigOptions.property.githubAction">githubAction</a></code> | <code>string[]</code> | github action glob. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfigOptions.property.test">test</a></code> | <code>string[]</code> | test glob. |
+
+---
+
+##### `component`<sup>Required</sup> <a name="component" id="@thoroc/projen-typescript-git-hooks.LabelerConfigOptions.property.component"></a>
+
+```typescript
+public readonly component: string[];
+```
+
+- *Type:* string[]
+
+component glob.
+
+---
+
+##### `documentation`<sup>Required</sup> <a name="documentation" id="@thoroc/projen-typescript-git-hooks.LabelerConfigOptions.property.documentation"></a>
+
+```typescript
+public readonly documentation: string[];
+```
+
+- *Type:* string[]
+
+documentation glob.
+
+---
+
+##### `githubAction`<sup>Required</sup> <a name="githubAction" id="@thoroc/projen-typescript-git-hooks.LabelerConfigOptions.property.githubAction"></a>
+
+```typescript
+public readonly githubAction: string[];
+```
+
+- *Type:* string[]
+
+github action glob.
+
+---
+
+##### `test`<sup>Required</sup> <a name="test" id="@thoroc/projen-typescript-git-hooks.LabelerConfigOptions.property.test"></a>
+
+```typescript
+public readonly test: string[];
+```
+
+- *Type:* string[]
+
+test glob.
+
+---
+
 ### LefthookAction <a name="LefthookAction" id="@thoroc/projen-typescript-git-hooks.LefthookAction"></a>
 
 #### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.LefthookAction.Initializer"></a>
@@ -4676,6 +4745,8 @@ Ignored definitions.
 
 ### AutoMerge <a name="AutoMerge" id="@thoroc/projen-typescript-git-hooks.AutoMerge"></a>
 
+Represents AutoMerge configuration.
+
 #### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.AutoMerge.Initializer"></a>
 
 ```typescript
@@ -4753,6 +4824,8 @@ public readonly project: Project;
 
 
 ### CloseStaleIssue <a name="CloseStaleIssue" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue"></a>
+
+Represents CloseStaleIssue configuration.
 
 #### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.Initializer"></a>
 
@@ -7922,6 +7995,93 @@ public readonly configFilePath: string;
 ---
 
 
+### LabelerConfig <a name="LabelerConfig" id="@thoroc/projen-typescript-git-hooks.LabelerConfig"></a>
+
+Represents LabelerConfig configuration.
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer"></a>
+
+```typescript
+import { LabelerConfig } from '@thoroc/projen-typescript-git-hooks'
+
+new LabelerConfig(project: Project, options: LabelerConfigOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfigOptions">LabelerConfigOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LabelerConfigOptions">LabelerConfigOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
 ### Lefthook <a name="Lefthook" id="@thoroc/projen-typescript-git-hooks.Lefthook"></a>
 
 #### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Lefthook.Initializer"></a>
@@ -8832,6 +8992,8 @@ public readonly defaultPrettierOptions: PrettierOptions;
 
 ### PullRequestJestCoverageComment <a name="PullRequestJestCoverageComment" id="@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment"></a>
 
+Represents PullRequestJestCoverageComment configuration.
+
 #### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment.Initializer"></a>
 
 ```typescript
@@ -8909,6 +9071,8 @@ public readonly project: Project;
 
 
 ### PullRequestLabeler <a name="PullRequestLabeler" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler"></a>
+
+Represents PullRequestLabeler configuration.
 
 #### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.Initializer"></a>
 
