@@ -4672,7 +4672,7 @@ jsesc@^2.5.1:
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-2.5.2.tgz#80564d2e483dacf6e8ef209650a67df3f0c283a4"
   integrity sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
 
-jsii-diff@^1.89.0:
+jsii-diff@^1.90.0:
   version "1.90.0"
   resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.90.0.tgz#c3eff659f3da133e9dd7025d1afe2b9af0544072"
   integrity sha512-74GxSLjdjVEU7Qfvdroyhih1DcdpoG7ZAeYBkdcbri2bH5RzqtjcVOwhvyqIjGBlvS45md8/ftURbWVWmbMhsA==
