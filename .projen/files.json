@@ -19,7 +19,6 @@
     ".husky/pre-commit",
     ".husky/pre-push",
     ".husky/prepare-commit-msg",
-    ".npmrc",
     ".prettierignore",
     ".prettierrc.json",
     ".projen/deps.json",
