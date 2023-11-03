@@ -20,7 +20,7 @@ const project = new cdk.JsiiProject({
   deps: ["projen", "yaml", "type-fest", "change-case"],
   devDeps: ["projen"],
   bundledDeps: ["yaml", "type-fest", "change-case"],
-  peerDeps: ["projen"],
+  peerDeps: ["projen", "constructs"],
 
   npmDistTag: "latest",
   npmRegistryUrl: "https:///npm.pkg.github.com",
