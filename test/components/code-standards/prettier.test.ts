@@ -1,17 +1,20 @@
 import { synthSnapshot } from "projen/lib/util/synth";
-import * as yaml from "yaml";
-import { GitHooksEnabledProject } from "../../../src";
-import { GitHooksManagerType, LefthookCommandOptions } from "../../../src/components/githooks-manager";
+import { GitHooksEnabledProject, GitHooksManagerType } from "../../../src";
 
 describe("Custom Prettier", () => {
-  it("Adds new dev dependencie", () => {
-    // Arrange
-    const project = new GitHooksEnabledProject({
+  let project: GitHooksEnabledProject;
+
+  beforeEach(() => {
+    project = new GitHooksEnabledProject({
       name: "test",
       defaultReleaseBranch: "main",
       prettier: true,
       gitHooksManager: GitHooksManagerType.HUSKY,
     });
+  });
+
+  it("Adds new dev dependencie", () => {
+    // Arrange
 
     // Act
     const snapshot = synthSnapshot(project);
@@ -21,14 +24,8 @@ describe("Custom Prettier", () => {
     expect(Object.keys(config)).toContain("@types/prettier");
   });
 
-  it("Adds new Task", () => {
+  it("Adds new format Task", () => {
     // Arrange
-    const project = new GitHooksEnabledProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-      prettier: true,
-      gitHooksManager: GitHooksManagerType.HUSKY,
-    });
 
     // Act
     const snapshot = synthSnapshot(project);
@@ -48,96 +45,42 @@ describe("Custom Prettier", () => {
     expect(packageJson.scripts.format).toEqual("npx projen format");
   });
 
-  it("Adds new lint-staged rule for markdown with Husky enabled", () => {
+  it("Adds new format:markdown Task", () => {
     // Arrange
-    const project = new GitHooksEnabledProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-      prettier: true,
-      gitHooksManager: GitHooksManagerType.HUSKY,
-    });
 
     // Act
     const snapshot = synthSnapshot(project);
-    const config = snapshot["package.json"]["lint-staged"];
+    const config = snapshot[".projen/tasks.json"];
+    const packageJson = snapshot["package.json"];
 
     // Assert
-    expect(Object.keys(config)).toContain("*.md");
-    expect(config["*.md"]).toContain("npx prettier --write --prose-wrap always");
+    expect(config.tasks["format:markdown"]).toEqual({
+      name: "format:markdown",
+      description: "Runs Prettier on Markdown",
+      steps: [
+        {
+          exec: "npx prettier --write --prose-wrap always *.md",
+        },
+      ],
+    });
+    expect(packageJson.scripts["format:markdown"]).toEqual("npx projen format:markdown");
   });
 
-  it("Adds new lint-staged rule for prettier with Husky enabled", () => {
+  it("Adds files to be ignored", () => {
     // Arrange
-    const project = new GitHooksEnabledProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-      prettier: true,
-      gitHooksManager: GitHooksManagerType.HUSKY,
-    });
 
     // Act
     const snapshot = synthSnapshot(project);
-    const config = snapshot["package.json"]["lint-staged"];
+    const config = snapshot[".prettierignore"];
+
+    console.log(config);
 
     // Assert
-    expect(Object.keys(config)).toContain("src/**/*.ts");
-    expect(Object.keys(config)).toContain("*.md");
-    expect(config["src/**/*.ts"]).toContain("npx prettier --write");
-  });
-
-  it("Adds new prec-commmit rule for markdown with Lefthook enabled", () => {
-    // Arrange
-    const project = new GitHooksEnabledProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-      prettier: true,
-      gitHooksManager: GitHooksManagerType.LEFTHOOK,
-    });
-
-    // Act
-    const snapshot = synthSnapshot(project);
-    const config = yaml.parse(snapshot["lefthook.yml"]);
-    const commands = config["pre-commit"].commands;
-
-    const filteredCommands = commands.filter((command: LefthookCommandOptions) => {
-      const keys: Array<string> = Object.keys(command);
-      return keys[0] === "markdown-prettier";
-    });
-
-    // Assert
-    expect(filteredCommands[0]).toEqual({
-      "markdown-prettier": {
-        run: "npx prettier --write --prose-wrap always {staged_files}",
-        glob: "*.md",
-      },
-    });
-  });
-
-  it("Adds new pre-commit rule for prettier with Lefthook enabled", () => {
-    // Arrange
-    const project = new GitHooksEnabledProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-      prettier: true,
-      gitHooksManager: GitHooksManagerType.LEFTHOOK,
-    });
-
-    // Act
-    const snapshot = synthSnapshot(project);
-    const config = yaml.parse(snapshot["lefthook.yml"]);
-    const commands = config["pre-commit"].commands;
-
-    const filteredCommands = commands.filter((command: LefthookCommandOptions) => {
-      const keys: Array<string> = Object.keys(command);
-      return keys[0] === "prettier";
-    });
-
-    // Assert
-    expect(filteredCommands[0]).toEqual({
-      prettier: {
-        run: "npx prettier --write {staged_files}",
-        glob: "src/**/*.ts",
-      },
-    });
+    expect(config).toContain("tsconfig.dev.json");
+    expect(config).toContain("tsconfig.json");
+    expect(config).toContain("node_modules");
+    expect(config).toContain("build");
+    expect(config).toContain("coverage");
+    expect(config).toContain(".github/*");
   });
 });

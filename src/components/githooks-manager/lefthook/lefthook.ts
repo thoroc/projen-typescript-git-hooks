@@ -3,7 +3,7 @@ import { NodePackageManager } from "projen/lib/javascript";
 import { LefthookCommand, LefthookCommandOptions } from "./command";
 import { LefthookConfig } from "./config";
 import { LefthookScriptOptions } from "./script";
-import { GitClientHook, GitHooksManager } from "..";
+import { GitClientHook, GitHooksManager, RegistrableComponent } from "..";
 import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
 
 export interface LefthookOptions {
@@ -69,6 +69,15 @@ export class Lefthook extends GitHooksManager {
     }
 
     action?.scripts?.push(script);
+  }
+
+  register(component: RegistrableComponent): void {
+    const options = component.githookOptions;
+    this.addCommand(options.actionType ?? GitClientHook.PRE_COMMIT, {
+      name: options.name ?? "New Command",
+      glob: options.glob,
+      run: options.exec,
+    });
   }
 
   preSynthesize(): void {

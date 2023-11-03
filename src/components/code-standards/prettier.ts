@@ -1,11 +1,9 @@
-import { Project, javascript } from "projen";
+import { javascript } from "projen";
 import { PrettierOptions, ProseWrap, QuoteProps, TrailingComma } from "projen/lib/javascript";
 import { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
-import { GitClientHook } from "../githooks-manager";
-import { LintStaged } from "../githooks-manager/husky";
-import { Lefthook } from "../githooks-manager/lefthook";
+import { GitClientHook, Registrable, RegistrableComponent } from "../githooks-manager";
 
-export class Prettier extends javascript.Prettier {
+export class Prettier extends javascript.Prettier implements RegistrableComponent {
   static defaultPrettierOptions: PrettierOptions = {
     settings: {
       bracketSpacing: true,
@@ -28,13 +26,18 @@ export class Prettier extends javascript.Prettier {
       },
     ],
   };
-
-  readonly project: Project;
+  readonly githookOptions: Registrable;
 
   constructor(project: GitHooksEnabledProject, options?: PrettierOptions) {
     super(project as javascript.NodeProject, options ?? Prettier.defaultPrettierOptions);
 
-    this.project = project;
+    this.githookOptions = {
+      glob: "*.md",
+      exec: "npx prettier --write --prose-wrap always",
+      name: "markdown-prettier",
+      actionType: GitClientHook.PRE_COMMIT,
+    };
+
     (this.project as GitHooksEnabledProject).addDevDeps("@types/prettier");
 
     this.project.addTask("format", {
@@ -55,16 +58,5 @@ export class Prettier extends javascript.Prettier {
       "coverage",
       ".github/*",
     );
-
-    LintStaged.of(this.project as GitHooksEnabledProject)?.addRule({
-      filePattern: "*.md",
-      commands: "npx prettier --write --prose-wrap always",
-    });
-
-    Lefthook.of(this.project as GitHooksEnabledProject)?.addCommand(GitClientHook.PRE_COMMIT, {
-      name: "markdown-prettier",
-      glob: "*.md",
-      run: "npx prettier --write --prose-wrap always",
-    });
   }
 }

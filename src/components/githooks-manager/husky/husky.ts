@@ -3,7 +3,7 @@ import { NodePackageManager } from "projen/lib/javascript/node-package";
 import { HuskyHookFile } from "./huskyhook";
 import { LintStaged, LintStagedOptions } from "./lintstaged";
 import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
-import { GitHooksManager, GitClientHook } from "../githooks-manager";
+import { GitHooksManager, GitClientHook, RegistrableComponent } from "../githooks-manager";
 
 export interface HuskyOptions {
   /**
@@ -61,6 +61,14 @@ export class Husky extends GitHooksManager {
 
       new HuskyHookFile(this.project, { hook: hook, command: command.join("\n") });
     }
+  }
+
+  register(component: RegistrableComponent): void {
+    const options = component.githookOptions;
+    this.lintStaged?.addRule({
+      filePattern: options.glob,
+      commands: options.exec,
+    });
   }
 
   preSynthesize(): void {
