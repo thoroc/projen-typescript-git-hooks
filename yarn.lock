@@ -4219,12 +4219,12 @@ jsii-rosetta@^1.92.0:
     yargs "^16.2.0"
 
 jsii-rosetta@~5.0.0:
-  version "5.0.27"
-  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.0.27.tgz#84cba414127d1c364ab72e943cc369f6ad041ffd"
-  integrity sha512-rnvj7n9IS2RkftTDRcgkJLn4P5JvhRTIwNgGVPPbVjd3F1RD2ElGsaOOdP3G/jHaJxLYOF8S6Q+n5/vJMmIMmA==
+  version "5.0.28"
+  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.0.28.tgz#cf16ed079a15df7e1d2f81b0a32eae56d4e8015b"
+  integrity sha512-KS16xbOgvr68aYvs4VNL3GlK/M0H4JCqxwnI8Y/oJ8DIz6s/Q5v68HIdcg5eX/kojEFcZZ3TyyJbdUNqD8wtEw==
   dependencies:
-    "@jsii/check-node" "1.92.0"
-    "@jsii/spec" "^1.92.0"
+    "@jsii/check-node" "1.93.0"
+    "@jsii/spec" "^1.93.0"
     "@xmldom/xmldom" "^0.8.10"
     chalk "^4"
     commonmark "^0.30.0"
