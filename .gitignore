@@ -31,7 +31,6 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
-!/.projenrc.js
 !/.github/workflows/build.yml
 /dist/changelog.md
 /dist/version.txt
@@ -61,5 +60,6 @@ junit.xml
 !/.eslintrc.json
 !/.prettierignore
 !/.prettierrc.json
+!/.projenrc.ts
 !/.czrc
 !/.husky/prepare-commit-msg
