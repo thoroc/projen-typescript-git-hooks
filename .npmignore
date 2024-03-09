@@ -22,3 +22,7 @@ junit.xml
 /jest.config.json
 /coverage/
 /.eslintrc.json
+/.prettierignore
+/.prettierrc.json
+/.gitattributes
+/.projenrc.ts
