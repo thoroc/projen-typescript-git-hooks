@@ -38,8 +38,8 @@
     "organization": false
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.8.1",
-    "@commitlint/config-conventional": "^17.8.1",
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
     "@types/jest": "^29.5.11",
     "@types/node": "^20.0.0",
     "@types/prettier": "^3.0.0",
