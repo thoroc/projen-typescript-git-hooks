@@ -316,9 +316,9 @@
     yargs "^17.0.0"
 
 "@commitlint/config-conventional@^19.0.0":
-  version "19.0.3"
-  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-19.0.3.tgz#28b8b9e7561366bf663c2955e4fe8e3fd954675d"
-  integrity sha512-vh0L8XeLaEzTe8VCxSd0gAFvfTK0RFolrzw4o431bIuWJfi/yRCHJlsDwus7wW2eJaFFDR0VFXJyjGyDQhi4vA==
+  version "19.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-19.1.0.tgz#6b4b7938aa3bc308214a683247520f602e55961e"
+  integrity sha512-KIKD2xrp6Uuk+dcZVj3++MlzIr/Su6zLE8crEDQCZNvWHNQSeeGbzOlNtsR32TUy6H3JbP7nWgduAHCaiGQ6EA==
   dependencies:
     "@commitlint/types" "^19.0.3"
     conventional-changelog-conventionalcommits "^7.0.2"
@@ -823,14 +823,6 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@jsii/check-node@1.94.0":
-  version "1.94.0"
-  resolved "https://registry.yarnpkg.com/@jsii/check-node/-/check-node-1.94.0.tgz#cf6caf02004ed27eef0ade7d01e69bf5020bdc2d"
-  integrity sha512-46W+V1oTFvF9ZpKpPYy//1WUmhZ8AD8O0ElmQtv9mundLHccZm+q7EmCYhozr7rlK5uSjU9/WHfbIx2DwynuJw==
-  dependencies:
-    chalk "^4.1.2"
-    semver "^7.5.4"
-
 "@jsii/check-node@1.95.0":
   version "1.95.0"
   resolved "https://registry.yarnpkg.com/@jsii/check-node/-/check-node-1.95.0.tgz#7cfc3c3792f199ab205ea9411223ee9ea1c37658"
@@ -839,7 +831,7 @@
     chalk "^4.1.2"
     semver "^7.5.4"
 
-"@jsii/spec@1.95.0", "@jsii/spec@^1.94.0", "@jsii/spec@^1.95.0":
+"@jsii/spec@1.95.0", "@jsii/spec@^1.95.0":
   version "1.95.0"
   resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.95.0.tgz#b523504c5e4d3d5d941f58121caab24cfdf257ee"
   integrity sha512-gQtNQHAvSYIsuOEt/Et256SNFJJhG4mpm4k6bwJ5BX2ibEAN4t0amAKjYslrYLhJo8iSGcMedh/YC9hOReL2Iw==
