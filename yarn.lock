@@ -4435,12 +4435,12 @@ jsii@1.96.0:
     yargs "^16.2.0"
 
 jsii@~5.3.0:
-  version "5.3.29"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.3.29.tgz#1af1777b48f90f1188f375b5d9677fd75e8b0781"
-  integrity sha512-vEEOtjD8s/C8ORHvN87Bt9jHcY1diJoC1sS+TVnCkeb4V9q5fOEVr4gl/FsU5ea8dSWZHdd7VqCtr0jYAwKleg==
+  version "5.3.31"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.3.31.tgz#a870e84a83d9714cef14ec5697add6048e6c74cb"
+  integrity sha512-dIWAKLcaseBDDB3BVjFSbXTfy6qp8hKdUoopkXO4HlMQ/pz0P2SZWHmSP1LLp2XGTSB775QT0LEi3wpWtYVENg==
   dependencies:
-    "@jsii/check-node" "1.95.0"
-    "@jsii/spec" "^1.95.0"
+    "@jsii/check-node" "1.96.0"
+    "@jsii/spec" "^1.96.0"
     case "^1.6.3"
     chalk "^4"
     downlevel-dts "^0.11.0"
