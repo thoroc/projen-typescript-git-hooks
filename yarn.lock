@@ -790,7 +790,7 @@
     chalk "^4.1.2"
     semver "^7.5.4"
 
-"@jsii/spec@^1.96.0", "@jsii/spec@^1.97.0", "@jsii/spec@^1.98.0":
+"@jsii/spec@^1.96.0", "@jsii/spec@^1.98.0":
   version "1.98.0"
   resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.98.0.tgz#7495f2d123b95b67ba0da4d3a18cac763d401da2"
   integrity sha512-5FCJedjFrxKt0wrcSnXetHHTXQV6OQM2NlE/WJNvjwqlk+RYfw+BwZOBYHsoaQx1Qh0pTwN7ZM9WmEusN3GdNw==
@@ -4304,16 +4304,16 @@ jsii-diff@^1.92.0:
     yargs "^16.2.0"
 
 jsii-docgen@^10.0.0:
-  version "10.4.3"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-10.4.3.tgz#ab71ca4d635651b561bb0286e7982fec170f7043"
-  integrity sha512-y0VxnjNCMg4wt9y8OhMCR4sloWNvnvqCahZI1ygJgzk0WuwVzf6MAJnCifbWm8rcNxOsHOxxhFbMu/C4vBGRBg==
+  version "10.4.4"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-10.4.4.tgz#404507d99d8d73db6e6a3c2b684a9e33cf89f414"
+  integrity sha512-WsrY9xRlknfGwlTCu+DQWiADpO5H317YcL4kYubGuR6b+DA8AsSdrGG3T6Xr8RfkJ5GY6maJbk3q6HbQsqhpuQ==
   dependencies:
-    "@jsii/spec" "^1.97.0"
+    "@jsii/spec" "^1.98.0"
     case "^1.6.3"
     fs-extra "^10.1.0"
     glob "^8.1.0"
     glob-promise "^6.0.5"
-    jsii-reflect "^1.97.0"
+    jsii-reflect "^1.98.0"
     semver "^7.6.0"
     yargs "^16.2.0"
 
@@ -4335,7 +4335,7 @@ jsii-pacmak@^1.92.0:
     xmlbuilder "^15.1.1"
     yargs "^16.2.0"
 
-jsii-reflect@^1.97.0, jsii-reflect@^1.98.0:
+jsii-reflect@^1.98.0:
   version "1.98.0"
   resolved "https://registry.yarnpkg.com/jsii-reflect/-/jsii-reflect-1.98.0.tgz#e370e901d2e93ec8d5ea7bc6348e2dba498a8cf1"
   integrity sha512-HulKk6pQOk0zkqJXRaweV5PezvAghZAX4cuB7i0sBA0/kz1ypqB1KFhBiZ1PLeeMzAfb1/WmCF2UTu9xzQit4w==
