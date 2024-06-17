@@ -4323,12 +4323,12 @@ jsii-reflect@^1.100.0, jsii-reflect@^1.99.0:
     yargs "^16.2.0"
 
 jsii-rosetta@~5.3.0:
-  version "5.3.40"
-  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.3.40.tgz#ed82703640a2cd4d0eb6e26daf3ac662c44431e6"
-  integrity sha512-GFObwDgHzpO12folsuJB93bXTjcjQF7IE8M/DvwX4/XWTU6d51srZk6IAUkGMhAQGy41dcmw7Rxnu74Q+4Ukzg==
+  version "5.3.41"
+  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.3.41.tgz#2bc90d76bae008d4f5cd7878eea83c4cbdffa98b"
+  integrity sha512-aA36pXMli211lZiN1M3LuYrkYQijnN9TBVWIZ7iMwJih3FbKBPXRlxEnbYwJPxg+Txi99btMB4Zd4r61QyJOng==
   dependencies:
-    "@jsii/check-node" "1.99.0"
-    "@jsii/spec" "^1.99.0"
+    "@jsii/check-node" "1.100.0"
+    "@jsii/spec" "^1.100.0"
     "@xmldom/xmldom" "^0.8.10"
     chalk "^4"
     commonmark "^0.31.0"
