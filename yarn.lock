@@ -4055,10 +4055,10 @@ jsii-reflect@^1.102.0:
     oo-ascii-tree "^1.102.0"
     yargs "^16.2.0"
 
-jsii-rosetta@~5.3.0:
-  version "5.3.48"
-  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.3.48.tgz#a9e21340ea69754603c802fce401f153a8264aac"
-  integrity sha512-I+gesXuL35ZxGaEY42tn5bZ8Rxw9DHkOFxhJptVrAlOnUL0S4K9YPJBRvWkfjpnJetZugPOFTmh77YUiQWtwQg==
+jsii-rosetta@~5.4.0:
+  version "5.4.29"
+  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.4.29.tgz#1529ffae4684bd7f7980557c742880c50b445d41"
+  integrity sha512-6/eQFAS+O1szcdczogAn+P6yqjJu88kqZbpGPL0Ks9LxA94EbwNxiAPwsh1g3GvY+ETDVKfND7iEE0tiVpvTsA==
   dependencies:
     "@jsii/check-node" "1.102.0"
     "@jsii/spec" "^1.102.0"
@@ -4066,11 +4066,11 @@ jsii-rosetta@~5.3.0:
     chalk "^4"
     commonmark "^0.31.1"
     fast-glob "^3.3.2"
-    jsii "~5.3.0"
+    jsii "~5.4.0"
     semver "^7.6.3"
     semver-intersect "^1.5.0"
     stream-json "^1.8.0"
-    typescript "~5.3"
+    typescript "~5.4"
     workerpool "^6.5.1"
     yargs "^17.7.2"
 
@@ -4091,6 +4091,25 @@ jsii@~5.3.0:
     sort-json "^2.0.1"
     spdx-license-list "^6.9.0"
     typescript "~5.3"
+    yargs "^17.7.2"
+
+jsii@~5.4.0:
+  version "5.4.31"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.4.31.tgz#afe7ff63182421965cab53f055904b559e47e842"
+  integrity sha512-qxiV/NMucgvHHupZJ36QACejcgZ3qY1FzjVHMOBmDHm+dISZ39p7dH7Hiq2ErMEwCDzdvQgR1OwCsUnrBH6oVQ==
+  dependencies:
+    "@jsii/check-node" "1.102.0"
+    "@jsii/spec" "^1.102.0"
+    case "^1.6.3"
+    chalk "^4"
+    downlevel-dts "^0.11.0"
+    fast-deep-equal "^3.1.3"
+    log4js "^6.9.1"
+    semver "^7.6.3"
+    semver-intersect "^1.5.0"
+    sort-json "^2.0.1"
+    spdx-license-list "^6.9.0"
+    typescript "~5.4"
     yargs "^17.7.2"
 
 json-buffer@3.0.1:
@@ -5915,6 +5934,11 @@ typescript@~5.3:
   version "5.3.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.3.3.tgz#b3ce6ba258e72e6305ba66f5c9b452aaee3ffe37"
   integrity sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==
+
+typescript@~5.4:
+  version "5.4.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.5.tgz#42ccef2c571fdbd0f6718b1d1f5e6e5ef006f611"
+  integrity sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==
 
 uc.micro@^1.0.1, uc.micro@^1.0.5:
   version "1.0.6"
