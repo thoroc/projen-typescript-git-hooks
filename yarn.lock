@@ -4012,9 +4012,9 @@ jsii-diff@^1.92.0:
     yargs "^16.2.0"
 
 jsii-docgen@^10.0.0:
-  version "10.4.20"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-10.4.20.tgz#c99debea02439081c54f706f02b73e58767f3589"
-  integrity sha512-Tl+Ehhy/VMBQgklpZCTs5K+bQI0GvcfdizcjpQjt85cttjDbhIdb8Xhd+IHO2OHRhKqTsNmGYbTFzManwLLXxw==
+  version "10.5.0"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-10.5.0.tgz#0e9d34383800a892ca7a7cd11f8dbeab20144154"
+  integrity sha512-mgR8xrqOAUzUq3EdcF7iZGceqzFD43usWNaP7ZomeMP0mZqXi1rNSKsVHdCACZgTZgKQDIv6tVbHoIDZEGTk0w==
   dependencies:
     "@jsii/spec" "^1.102.0"
     case "^1.6.3"
