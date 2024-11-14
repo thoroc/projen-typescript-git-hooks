@@ -4332,12 +4332,12 @@ jsii-rosetta@~5.3.0:
     yargs "^17.7.2"
 
 jsii@~5.3.0:
-  version "5.3.55"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.3.55.tgz#a220d9bffdad9331cb4c4345e8b3192258755c4c"
-  integrity sha512-CCM5ch6a+TDSDMt3VwUP3M5qHS2dC0sXciT1X7hv2uZpn88Yjh6gulCukrzS31Ndvgz4zS9xZ5ij6PSMIbUwLg==
+  version "5.3.59"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.3.59.tgz#a13d0ebcdfe951025caeadcd8932f03f693f0b4b"
+  integrity sha512-iyCZ8L28On420aiSoNGYH4FkQ0a871u1ewL08QfWmTGoFSZalM1763fVdkW8Irio4mofzOYKO/XtTWGdb6Otvw==
   dependencies:
-    "@jsii/check-node" "1.103.1"
-    "@jsii/spec" "^1.103.1"
+    "@jsii/check-node" "1.104.0"
+    "@jsii/spec" "^1.104.0"
     case "^1.6.3"
     chalk "^4"
     downlevel-dts "^0.11.0"
