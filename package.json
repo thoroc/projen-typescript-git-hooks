@@ -48,7 +48,7 @@
     "commitizen": "^4.3.0",
     "constructs": "^10.0.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8",
+    "eslint": "^9.0.0",
     "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
