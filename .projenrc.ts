@@ -1,11 +1,11 @@
 import { cdk } from "projen";
 import { GitHub } from "projen/lib/github";
-import { Eslint, Prettier } from "./src/components/code-standards";
-import { Husky } from "./src/components/githooks-manager";
-import { AutoMerge, CloseStaleIssue, PullRequestJestCoverageComment, PullRequestLabeler } from "./src/components/github-actions";
-import { CodeOfConduct } from "./src/components/documentation";
-import { IssueTemplate } from "./src/components/github-templates";
 import { Commitizen, Jest } from "./src";
+import { Eslint, Prettier } from "./src/components/code-standards";
+import { CodeOfConduct } from "./src/components/documentation";
+import { Husky } from "./src/components/githooks-manager";
+import { PullRequestJestCoverageComment, PullRequestLabeler } from "./src/components/github-actions";
+import { IssueTemplate } from "./src/components/github-templates";
 
 const project = new cdk.JsiiProject({
   author: "thoroc",
@@ -29,12 +29,12 @@ const project = new cdk.JsiiProject({
   prettier: false,
   jest: false,
 
-  autoApproveOptions: { allowedUsernames: ["thoroc", "dependabot[bot]"] },
-  autoMerge: true,
+  autoApproveOptions: { allowedUsernames: ["thoroc", "dependabot[bot]", "renovate"] },
+  autoMerge: false,
   githubOptions: { mergify: false },
   depsUpgradeOptions: { workflowOptions: { labels: ["auto-approve"] } },
 
-  pullRequestTemplateContents: ["# Title", "", "## What", "", "## Why"]
+  pullRequestTemplateContents: ["# Title", "", "## What", "", "## Why"],
 });
 
 project.eslint?.addRules(Eslint.defaultEslintRules);
@@ -42,9 +42,7 @@ project.eslint?.addRules(Eslint.defaultEslintRules);
 const github = project.github ?? new GitHub(project);
 new PullRequestJestCoverageComment(github);
 new PullRequestLabeler(github);
-new CloseStaleIssue(github);
 new IssueTemplate(github);
-new AutoMerge(github);
 new Husky(project);
 new Jest(project, { configFilePath: "jest.config.json" });
 new Eslint(project, { dirs: ["src", "test"], prettier: true });

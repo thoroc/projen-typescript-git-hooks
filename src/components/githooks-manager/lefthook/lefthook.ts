@@ -1,9 +1,9 @@
 import { Component, Project, YamlFile } from "projen";
 import { NodePackageManager } from "projen/lib/javascript";
+import { GitClientHook, GitHooksManager } from "..";
 import { LefthookCommand, LefthookCommandOptions } from "./command";
 import { LefthookConfig } from "./config";
 import { LefthookScriptOptions } from "./script";
-import { GitClientHook, GitHooksManager } from "..";
 import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
 
 export interface LefthookOptions {
@@ -73,7 +73,7 @@ export class Lefthook extends GitHooksManager {
 
   preSynthesize(): void {
     const pkg = (this.project as GitHooksEnabledProject).package;
-    const script = pkg.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
+    const script = pkg.packageManager === NodePackageManager.YARN_BERRY ? "postinstall" : "prepare";
     pkg.setScript(script, "npx lefthook install");
 
     if ((this.project as GitHooksEnabledProject).debug)
