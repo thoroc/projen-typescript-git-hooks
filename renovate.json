@@ -3,5 +3,35 @@
   "extends": [
     "config:recommended"
   ],
-  "autoApprove": true
+  "labels": [
+    "dependencies",
+    "renovate"
+  ],
+  "autoApprove": true,
+  "automerge": true,
+  "automergeStrategy": "squash",
+  "automergeType": "pr",
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": true,
+      "automergeStrategy": "squash",
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch-pin-digest"
+    },
+    {
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "automerge": true,
+      "automergeStrategy": "squash",
+      "groupName": "all non-major dev dependencies",
+      "groupSlug": "all-dev-deps"
+    }
+  ]
 }
