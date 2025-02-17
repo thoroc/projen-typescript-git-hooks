@@ -9,7 +9,7 @@ describe("pull-request-comment", () => {
     const project = new NodeProject({
       name: "test",
       defaultReleaseBranch: "main",
-      packageManager: NodePackageManager.YARN,
+      packageManager: NodePackageManager.YARN_BERRY,
     });
     const github = project.github ?? new GitHub(project);
     new PullRequestJestCoverageComment(github);

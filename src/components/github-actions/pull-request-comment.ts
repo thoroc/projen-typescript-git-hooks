@@ -17,7 +17,7 @@ export class PullRequestJestCoverageComment extends Component {
 
     const pkg = (this.project as NodeProject).package;
     const installationScript =
-      pkg.packageManager === NodePackageManager.YARN ? "yarn install --check-files" : "npm ci";
+      pkg.packageManager === NodePackageManager.YARN_BERRY ? "yarn install --check-files" : "npm ci";
 
     workflow.addJob("build", {
       permissions: { pullRequests: JobPermission.WRITE },

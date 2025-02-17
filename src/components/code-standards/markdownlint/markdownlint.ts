@@ -71,7 +71,7 @@ export class Markdownlint extends Component {
     (this.project as GitHooksEnabledProject).addDevDeps("markdownlint-cli2");
 
     if (Object.keys(this.rules).length > 0) {
-      const transformedRules = objectKeyCaseConverter(this.rules, cc.paramCase);
+      const transformedRules = objectKeyCaseConverter(this.rules, cc.kebabCase);
 
       new YamlFile(this.project, "markdownlint.yml", {
         obj: transformedRules,

@@ -1,9 +1,9 @@
 import { Component, Project } from "projen";
 import { NodePackageManager } from "projen/lib/javascript/node-package";
+import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
+import { GitClientHook, GitHooksManager } from "../githooks-manager";
 import { HuskyHookFile } from "./huskyhook";
 import { LintStaged, LintStagedOptions } from "./lintstaged";
-import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
-import { GitHooksManager, GitClientHook } from "../githooks-manager";
 
 export interface HuskyOptions {
   /**
@@ -65,7 +65,7 @@ export class Husky extends GitHooksManager {
 
   preSynthesize(): void {
     const pkg = (this.project as GitHooksEnabledProject).package;
-    const script = pkg.packageManager === NodePackageManager.YARN ? "postinstall" : "prepare";
+    const script = pkg.packageManager === NodePackageManager.YARN_BERRY ? "postinstall" : "prepare";
     pkg.setScript(script, "npx husky install");
   }
 }

@@ -12,7 +12,8 @@ export class Jest extends BaseJest {
 
     this.configFilePath = options?.configFilePath;
 
-    const script = project.package.packageManager === NodePackageManager.YARN ? "yarn test" : "npm run test";
+    const script =
+      project.package.packageManager === NodePackageManager.YARN_BERRY ? "yarn test" : "npm run test";
 
     Husky.of(project)?.createHook(GitClientHook.PRE_PUSH, [script]);
   }
