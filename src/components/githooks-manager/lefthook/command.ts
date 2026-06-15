@@ -66,7 +66,7 @@ export class LefthookCommand implements ISerializer {
     const excludes: Array<string> = ["name", "stagedFiles"];
 
     for (const propName in this) {
-      if (Object.hasOwn(this, propName)) {
+      if (Object.prototype.hasOwnProperty.call(this, propName)) {
         const name: string = propName;
         const value: unknown = this[name as keyof LefthookCommand];
         const isNotExcluded: boolean = !excludes.includes(name);

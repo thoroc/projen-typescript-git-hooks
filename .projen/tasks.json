@@ -163,7 +163,7 @@
       "description": "Install project dependencies and update lockfile (non-frozen)",
       "steps": [
         {
-          "exec": "yarn install --check-files"
+          "exec": "bun install"
         }
       ]
     },
@@ -172,7 +172,7 @@
       "description": "Install project dependencies using frozen lockfile",
       "steps": [
         {
-          "exec": "yarn install --check-files --frozen-lockfile"
+          "exec": "bun install --frozen-lockfile"
         }
       ]
     },
@@ -287,13 +287,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@commitlint/cli,@commitlint/config-conventional,@eslint/eslintrc,@eslint/js,@types/jest,@types/prettier,commitizen,cz-conventional-changelog,eslint-config-airbnb-typescript,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-markdownlint,eslint-plugin-prettier,eslint-plugin-testing-library,jest,jsii-diff,jsii-docgen,jsii-pacmak,lefthook,prettier,projen,ts-jest,ts-node,typescript,change-case,type-fest,yaml"
+          "exec": "bunx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@commitlint/cli,@commitlint/config-conventional,@eslint/eslintrc,@eslint/js,@types/jest,@types/prettier,commitizen,cz-conventional-changelog,eslint-config-airbnb-typescript,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-markdownlint,eslint-plugin-prettier,eslint-plugin-testing-library,jest,jsii-diff,jsii-docgen,jsii-pacmak,jsii-rosetta,jsii,lefthook,prettier,projen,ts-jest,ts-node,typescript,change-case,type-fest,yaml"
         },
         {
-          "exec": "yarn install --check-files"
+          "exec": "bun install"
         },
         {
-          "exec": "yarn upgrade @commitlint/cli @commitlint/config-conventional @eslint/eslintrc @eslint/js @types/jest @types/node @types/prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser commitizen constructs cz-conventional-changelog eslint-config-airbnb-typescript eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-markdownlint eslint-plugin-prettier eslint-plugin-testing-library eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii lefthook prettier projen standard-version ts-jest ts-node typescript change-case type-fest yaml"
+          "exec": "bun update @commitlint/cli @commitlint/config-conventional @eslint/eslintrc @eslint/js @types/jest @types/node @types/prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser commitizen constructs cz-conventional-changelog eslint-config-airbnb-typescript eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-markdownlint eslint-plugin-prettier eslint-plugin-testing-library eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii lefthook prettier projen standard-version ts-jest ts-node typescript change-case type-fest yaml"
         },
         {
           "exec": "npx projen"
