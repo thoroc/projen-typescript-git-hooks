@@ -2,6 +2,7 @@ import { synthSnapshot } from "projen/lib/util/synth";
 import * as yaml from "yaml";
 import { GitHooksEnabledProject } from "../../../src";
 import { GitHooksManagerType } from "../../../src/components/githooks-manager";
+import type { PrettierSortImportsOptions } from "./prettier-sort-imports-options";
 
 describe("Custom Prettier", () => {
   it("Adds new dev dependencie", () => {
@@ -127,5 +128,68 @@ describe("Custom Prettier", () => {
       glob: "src/**/*.ts",
       stage_fixed: true,
     });
+  });
+});
+
+describe("PrettierSortImports", () => {
+  const makeProject = (sortImportsOptions?: PrettierSortImportsOptions) =>
+    new GitHooksEnabledProject({
+      name: "test",
+      defaultReleaseBranch: "main",
+      prettier: true,
+      prettierSortImportsOptions: sortImportsOptions,
+    });
+
+  it("does not add plugin when prettierSortImportsOptions is omitted", () => {
+    const snapshot = synthSnapshot(makeProject());
+    expect(snapshot[".prettierrc.json"].plugins).toBeUndefined();
+  });
+
+  it("adds @trivago/prettier-plugin-sort-imports as devDependency", () => {
+    const snapshot = synthSnapshot(makeProject({}));
+    expect(Object.keys(snapshot["package.json"].devDependencies)).toContain(
+      "@trivago/prettier-plugin-sort-imports",
+    );
+  });
+
+  it("adds plugin entry to prettier config", () => {
+    const snapshot = synthSnapshot(makeProject({}));
+    expect(snapshot[".prettierrc.json"].plugins).toContain("@trivago/prettier-plugin-sort-imports");
+  });
+
+  it("uses default importOrder when none specified", () => {
+    const snapshot = synthSnapshot(makeProject({}));
+    expect(snapshot[".prettierrc.json"].importOrder).toEqual(["<THIRD_PARTY_MODULES>", "^[./]"]);
+  });
+
+  it("uses custom importOrder when specified", () => {
+    const order = ["^@myorg/(.*)$", "^@(.*)$", "^[./]"];
+    const snapshot = synthSnapshot(makeProject({ importOrder: order }));
+    expect(snapshot[".prettierrc.json"].importOrder).toEqual(order);
+  });
+
+  it("defaults importOrderSeparation to true", () => {
+    const snapshot = synthSnapshot(makeProject({}));
+    expect(snapshot[".prettierrc.json"].importOrderSeparation).toBe(true);
+  });
+
+  it("respects importOrderSeparation: false", () => {
+    const snapshot = synthSnapshot(makeProject({ importOrderSeparation: false }));
+    expect(snapshot[".prettierrc.json"].importOrderSeparation).toBe(false);
+  });
+
+  it("defaults importOrderSortSpecifiers to true", () => {
+    const snapshot = synthSnapshot(makeProject({}));
+    expect(snapshot[".prettierrc.json"].importOrderSortSpecifiers).toBe(true);
+  });
+
+  it("does not set importOrderCaseInsensitive when omitted", () => {
+    const snapshot = synthSnapshot(makeProject({}));
+    expect(snapshot[".prettierrc.json"].importOrderCaseInsensitive).toBeUndefined();
+  });
+
+  it("sets importOrderCaseInsensitive when specified", () => {
+    const snapshot = synthSnapshot(makeProject({ importOrderCaseInsensitive: true }));
+    expect(snapshot[".prettierrc.json"].importOrderCaseInsensitive).toBe(true);
   });
 });

@@ -4,6 +4,7 @@ import type { GitHooksEnabledProject } from "../../typescript/githooks-enabled-p
 import { GitClientHook } from "../githooks-manager";
 import { LintStaged } from "../githooks-manager/husky";
 import { Lefthook } from "../githooks-manager/lefthook";
+import type { PrettierSortImportsOptions } from "./prettier-sort-imports-options";
 
 export class Prettier extends javascript.Prettier {
   static defaultPrettierOptions: PrettierOptions = {
@@ -31,7 +32,11 @@ export class Prettier extends javascript.Prettier {
 
   readonly project: Project;
 
-  constructor(project: GitHooksEnabledProject, options?: PrettierOptions) {
+  constructor(
+    project: GitHooksEnabledProject,
+    options?: PrettierOptions,
+    sortImports?: PrettierSortImportsOptions,
+  ) {
     super(project as javascript.NodeProject, options ?? Prettier.defaultPrettierOptions);
 
     this.project = project;
@@ -67,5 +72,17 @@ export class Prettier extends javascript.Prettier {
       run: "npx prettier --write --prose-wrap always",
       stageFixed: true,
     });
+
+    if (sortImports) {
+      project.addDevDeps("@trivago/prettier-plugin-sort-imports");
+      const config = this.project.tryFindObjectFile(".prettierrc.json");
+      config?.addToArray("plugins", "@trivago/prettier-plugin-sort-imports");
+      config?.addOverride("importOrder", sortImports.importOrder ?? ["<THIRD_PARTY_MODULES>", "^[./]"]);
+      config?.addOverride("importOrderSeparation", sortImports.importOrderSeparation ?? true);
+      config?.addOverride("importOrderSortSpecifiers", sortImports.importOrderSortSpecifiers ?? true);
+      if (sortImports.importOrderCaseInsensitive !== undefined) {
+        config?.addOverride("importOrderCaseInsensitive", sortImports.importOrderCaseInsensitive);
+      }
+    }
   }
 }

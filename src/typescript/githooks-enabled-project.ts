@@ -1,6 +1,6 @@
 import { type javascript, typescript } from "projen";
 import { TypeScriptModuleResolution, type TypescriptConfigOptions } from "projen/lib/javascript";
-import { Eslint, Prettier } from "../components/code-standards";
+import { Eslint, Prettier, type PrettierSortImportsOptions } from "../components/code-standards";
 import { EditorConfig, type EditorConfigOptions } from "../components/code-standards/editorconfig";
 import {
   GitHooksManagerType,
@@ -36,6 +36,11 @@ export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProj
    * EditorConfig options
    */
   readonly editorConfigOptions?: EditorConfigOptions;
+  /**
+   * Enable @trivago/prettier-plugin-sort-imports and configure it.
+   * Providing this option (even as an empty object) activates the plugin.
+   */
+  readonly prettierSortImportsOptions?: PrettierSortImportsOptions;
 }
 
 export class GitHooksEnabledProject extends typescript.TypeScriptProject {
@@ -95,7 +100,11 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
     }
 
     if (options.prettier ?? true) {
-      this.prettier = new Prettier(this, options.prettierOptions) as javascript.Prettier;
+      this.prettier = new Prettier(
+        this,
+        options.prettierOptions,
+        options.prettierSortImportsOptions,
+      ) as javascript.Prettier;
     }
 
     if (options.eslint ?? true) {
