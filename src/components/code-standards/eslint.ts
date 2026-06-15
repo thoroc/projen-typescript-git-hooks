@@ -116,11 +116,13 @@ export class Eslint extends javascript.Eslint {
       name: "eslint",
       glob: "src/**/*.ts",
       run: "npx eslint --cache --fix",
+      stageFixed: true,
     });
     Lefthook.of(this.project as GitHooksEnabledProject)?.addCommand(GitClientHook.PRE_COMMIT, {
       name: "prettier",
       glob: "src/**/*.ts",
       run: "npx prettier --write",
+      stageFixed: true,
     });
   }
 

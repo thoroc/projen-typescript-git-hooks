@@ -152,3 +152,8 @@
 {"ts":1781531344115,"files":["/Users/thomas.roche/Projects/github/thoroc/projen-typescript-git-hooks/src/components/agentic-harnesses/opencode.test.ts"]}
 {"ts":1781531351751,"files":["/Users/thomas.roche/Projects/github/thoroc/projen-typescript-git-hooks/src/components/agentic-harnesses/openai-codex.test.ts"]}
 {"ts":1781531358296,"files":["/Users/thomas.roche/Projects/github/thoroc/projen-typescript-git-hooks/src/components/agentic-harnesses/mistral-vibe.test.ts"]}
+{"ts":1781532159514,"files":["/Users/thomas.roche/Projects/github/thoroc/projen-typescript-git-hooks/src/components/githooks-manager/lefthook/command.ts"]}
+{"ts":1781532171627,"files":["/Users/thomas.roche/Projects/github/thoroc/projen-typescript-git-hooks/src/components/githooks-manager/lefthook/command.ts"]}
+{"ts":1781532180810,"files":["/Users/thomas.roche/Projects/github/thoroc/projen-typescript-git-hooks/src/components/githooks-manager/lefthook/command.ts"]}
+{"ts":1781532200198,"files":["/Users/thomas.roche/Projects/github/thoroc/projen-typescript-git-hooks/src/components/code-standards/prettier.ts"]}
+{"ts":1781532217423,"files":["/Users/thomas.roche/Projects/github/thoroc/projen-typescript-git-hooks/src/components/code-standards/eslint.ts"]}

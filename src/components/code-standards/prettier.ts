@@ -65,6 +65,7 @@ export class Prettier extends javascript.Prettier {
       name: "markdown-prettier",
       glob: "*.md",
       run: "npx prettier --write --prose-wrap always",
+      stageFixed: true,
     });
   }
 }

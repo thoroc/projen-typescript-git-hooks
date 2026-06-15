@@ -36,6 +36,13 @@ export interface LefthookCommandOptions {
    * @see https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#run
    */
   readonly stagedFiles?: boolean;
+  /**
+   * Re-stage files modified by the command after it runs.
+   * Required when the command auto-fixes files (e.g. eslint --fix, prettier --write)
+   * so that the fixed versions are included in the commit.
+   * @see https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#stage_fix
+   */
+  readonly stageFixed?: boolean;
 }
 
 export class LefthookCommand implements ISerializer {
@@ -46,6 +53,7 @@ export class LefthookCommand implements ISerializer {
   readonly glob?: string;
   readonly tags?: string;
   readonly stagedFiles: boolean;
+  readonly stageFixed: boolean;
 
   constructor(options: LefthookCommandOptions) {
     this.name = options.name;
@@ -55,6 +63,7 @@ export class LefthookCommand implements ISerializer {
     this.glob = options.glob;
     this.tags = options.tags;
     this.stagedFiles = options.stagedFiles ?? true;
+    this.stageFixed = options.stageFixed ?? false;
   }
 
   /**
@@ -62,8 +71,8 @@ export class LefthookCommand implements ISerializer {
    * @returns object
    */
   asRecords(): object {
-    const records: { [key: string]: string | undefined } = {};
-    const excludes: Array<string> = ["name", "stagedFiles"];
+    const records: { [key: string]: string | boolean | undefined } = {};
+    const excludes: Array<string> = ["name", "stagedFiles", "stageFixed"];
 
     for (const propName in this) {
       if (Object.prototype.hasOwnProperty.call(this, propName)) {
@@ -79,6 +88,10 @@ export class LefthookCommand implements ISerializer {
           }
         }
       }
+    }
+
+    if (this.stageFixed) {
+      records["stage_fix"] = true;
     }
 
     return records;
