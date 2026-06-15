@@ -1,6 +1,6 @@
 import { Jest as BaseJest, type JestOptions, NodePackageManager } from "projen/lib/javascript";
-import type { GitHooksEnabledProject } from "../typescript/githooks-enabled-project";
-import { GitClientHook, Husky } from "./githooks-manager";
+import type { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
+import { GitClientHook, Husky } from "../githooks-manager";
 
 export class Jest extends BaseJest {
   readonly configFilePath?: string;

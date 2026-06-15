@@ -1,6 +1,6 @@
 import { Component, SampleFile, type Project } from "projen";
 import { NodePackageManager, NodeProject } from "projen/lib/javascript";
-import { GitClientHook, Husky, Lefthook } from "./githooks-manager";
+import { GitClientHook, Husky, Lefthook } from "../githooks-manager";
 
 export interface VitestOptions {
   /** Enable coverage collection. Defaults to true. */

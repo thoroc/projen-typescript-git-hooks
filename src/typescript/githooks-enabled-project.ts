@@ -9,8 +9,7 @@ import {
   Lefthook,
   type LefthookOptions,
 } from "../components/githooks-manager";
-import { Jest } from "../components/jest";
-import { Vitest, type VitestOptions } from "../components/vitest";
+import { Jest, Vitest, type VitestOptions } from "../components/testing";
 
 export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProjectOptions {
   /**

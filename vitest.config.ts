@@ -5,12 +5,7 @@ export default defineConfig({
     globals: true,
     include: ["src/**/*.test.ts"],
     testTimeout: 15000,
-    pool: "threads",
-    poolOptions: {
-      threads: {
-        maxThreads: 4,
-      },
-    },
+    maxWorkers: 4,
     coverage: {
       provider: "v8",
       reporter: ["text", "lcov"],
