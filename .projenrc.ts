@@ -10,6 +10,7 @@ import {
 	PullRequestLabeler,
 } from "./src/components/github-actions";
 import { IssueTemplate } from "./src/components/github-templates";
+import { Renovate } from "./src/components/renovate";
 
 const project = new cdk.JsiiProject({
 	author: "thoroc",
@@ -63,5 +64,6 @@ new Eslint(project, { dirs: ["src", "test"], prettier: true });
 new Prettier(project);
 new Commitizen(project, { json: true });
 new CodeOfConduct(project, { author: "thomas.a.roche@gmail.com" });
+new Renovate(project);
 
 project.synth();
