@@ -1,8 +1,8 @@
 import type { Component, Project } from "projen";
 import { NodePackageManager } from "projen/lib/javascript/node-package";
 import type { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
-import { type GitClientHook, GitHooksManager } from "../githooks-manager";
-import { HuskyHookFile } from "./huskyhook";
+import { type GitClientHook, GitHooksManager } from "..";
+import { HuskyHookFile } from "./hook-file";
 import { LintStaged, type LintStagedOptions } from "./lintstaged";
 
 export interface HuskyOptions {
@@ -40,10 +40,6 @@ export class Husky extends GitHooksManager {
 
     (this.project as GitHooksEnabledProject).addDevDeps("husky");
 
-    if ((this.project as GitHooksEnabledProject).debug) {
-      console.log(`Husky Options: ${JSON.stringify(options, undefined, 2)}`);
-    }
-
     if (options?.lintStaged ?? true) {
       this.lintStaged = new LintStaged(this.project as GitHooksEnabledProject, options?.lintStagedOptions);
     }
@@ -54,10 +50,6 @@ export class Husky extends GitHooksManager {
     const gitHookFile = this.project.tryFindFile(gitHookFilename);
 
     if (gitHookFile === undefined) {
-      if ((this.project as GitHooksEnabledProject).debug) {
-        console.log(`${this.constructor.name}: Creating new husky hook for ${hook} hook.`);
-      }
-
       new HuskyHookFile(this.project, {
         hook: hook,
         command: command.join("\n"),

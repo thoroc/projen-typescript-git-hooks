@@ -1,7 +1,6 @@
 import { Component, type Project } from "projen";
 import type { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
-import { Husky } from "..";
-import { GitClientHook } from "../githooks-manager";
+import { GitClientHook, Husky } from "..";
 import { LintStagedRule, type LintStagedRuleOptions } from "./lintstagedrule";
 
 export interface LintStagedOptions {
@@ -50,14 +49,7 @@ export class LintStaged extends Component {
       const newCommands = Array.isArray(rule.commands) ? rule.commands : [rule.commands];
 
       existingRule.commands = [...existingCommands, ...newCommands];
-
-      if ((this.project as GitHooksEnabledProject).debug) {
-        console.log(`${this.constructor.name}: Added commands to existing rule ${rule.filePattern}.`);
-      }
     } else {
-      if ((this.project as GitHooksEnabledProject).debug) {
-        console.log(`${this.constructor.name}: Rule ${rule.filePattern} doesn't exist, adding it now.`);
-      }
       this.rules.push(new LintStagedRule(rule));
     }
   }

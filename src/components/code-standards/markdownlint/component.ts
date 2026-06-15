@@ -3,7 +3,7 @@ import { Component, IgnoreFile, type Project, SourceCode, YamlFile } from "proje
 import type { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
 import { objectKeyCaseConverter } from "../../../utils/serializer";
 import { Husky, LintStaged } from "../../githooks-manager/husky";
-import type { MarkdownlintRules } from "./markdownlint-rules";
+import type { MarkdownlintRules } from "./rules-config";
 
 export interface MarkdownlintOptions {
   /**
@@ -77,6 +77,13 @@ export class Markdownlint extends Component {
         obj: transformedRules,
       });
     }
+
+    if ((this.project as GitHooksEnabledProject).gitHooksManager instanceof Husky) {
+      LintStaged.of(this.project as GitHooksEnabledProject)?.addRule({
+        filePattern: "*.md",
+        commands: ["markdownlint-cli2 --fix"],
+      });
+    }
   }
 
   /**
@@ -95,12 +102,5 @@ export class Markdownlint extends Component {
     this.project.components.filter(isSourceCode).forEach((c) => {
       this.addIgnorePattern(c.filePath);
     });
-
-    if ((this.project as GitHooksEnabledProject).gitHooksManager instanceof Husky) {
-      LintStaged.of(this.project as GitHooksEnabledProject)?.addRule({
-        filePattern: "*.md",
-        commands: ["markdownlint-cli2 --fix"],
-      });
-    }
   }
 }

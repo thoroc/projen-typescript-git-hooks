@@ -81,17 +81,14 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
 
     this.debug = options.debug ?? false;
 
-    if (this.debug)
-      switch (options.gitHooksManager) {
-        case GitHooksManagerType.HUSKY:
-          this.gitHooksManager = new Husky(this, options.gitHooksManagerOptions as HuskyOptions);
-          break;
-        case GitHooksManagerType.LEFTHOOK:
-          this.gitHooksManager = new Lefthook(this, options.gitHooksManagerOptions as LefthookOptions);
-          break;
-        default:
-          throw Error(`Unable to initiate a git hook manager: "${options.gitHooksManager}"`);
-      }
+    switch (options.gitHooksManager) {
+      case GitHooksManagerType.HUSKY:
+        this.gitHooksManager = new Husky(this, options.gitHooksManagerOptions as HuskyOptions);
+        break;
+      case GitHooksManagerType.LEFTHOOK:
+        this.gitHooksManager = new Lefthook(this, options.gitHooksManagerOptions as LefthookOptions);
+        break;
+    }
 
     if (options.jest ?? true) {
       this.jest = new Jest(this, options.jestOptions) as javascript.Jest;

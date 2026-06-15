@@ -1,3 +1,3 @@
-export * from "./typescript/githooks-enabled-project";
+export * from "./typescript";
 export * from "./components";
 export * from "./utils";

@@ -1,3 +1,3 @@
-export * from "./markdownlint";
-export * from "./markdownlint-rules";
+export * from "./component";
 export * from "./rules";
+export * from "./rules-config";

@@ -31,8 +31,11 @@
       }
     ]
   ],
+  "transformIgnorePatterns": [
+    "/node_modules/(?!(change-case)/)"
+  ],
   "transform": {
-    "^.+\\.ts?$": [
+    "^.+\\.[jt]s?$": [
       "ts-jest",
       {
         "tsconfig": "tsconfig.dev.json"

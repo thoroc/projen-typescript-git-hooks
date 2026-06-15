@@ -12,8 +12,13 @@ export class Jest extends BaseJest {
 
     this.configFilePath = options?.configFilePath;
 
-    const script =
-      project.package.packageManager === NodePackageManager.YARN_BERRY ? "yarn test" : "npm run test";
+    const yarnManagers = [
+      NodePackageManager.YARN,
+      NodePackageManager.YARN2,
+      NodePackageManager.YARN_CLASSIC,
+      NodePackageManager.YARN_BERRY,
+    ];
+    const script = yarnManagers.includes(project.package.packageManager) ? "yarn test" : "npm run test";
 
     Husky.of(project)?.createHook(GitClientHook.PRE_PUSH, [script]);
   }
@@ -24,8 +29,9 @@ export class Jest extends BaseJest {
     const config = this.project.tryFindObjectFile(this.configFilePath ?? "package.json");
 
     config?.addDeletionOverride(deletionGlobals);
+    config?.addOverride("transformIgnorePatterns", ["/node_modules/(?!(change-case)/)"]);
     config?.addOverride(overrideTransform, {
-      "^.+\\.ts?$": [
+      "^.+\\.[jt]s?$": [
         "ts-jest",
         {
           tsconfig: "tsconfig.dev.json",

@@ -37,18 +37,10 @@ export class Lefthook extends GitHooksManager {
         actions: [],
       },
     );
-
-    if ((this.project as GitHooksEnabledProject).debug) {
-      console.log("Initiating Lefthook");
-    }
   }
 
   public addCommand(hookName: GitClientHook, command: LefthookCommandOptions) {
     const action = this.config.actions?.find((hook) => hook.actionName === hookName);
-
-    if ((this.project as GitHooksEnabledProject).debug) {
-      console.log(`${this.constructor.name}: Adding new Command: ${action?.actionName}.`);
-    }
 
     if (!action) {
       this.config.actions.push({
@@ -78,10 +70,9 @@ export class Lefthook extends GitHooksManager {
     const script = pkg.packageManager === NodePackageManager.YARN_BERRY ? "postinstall" : "prepare";
     pkg.setScript(script, "npx lefthook install");
 
-    if ((this.project as GitHooksEnabledProject).debug)
-      new YamlFile(this.project, "lefthook.yml", {
-        executable: true,
-        obj: this.config.serialize(),
-      });
+    new YamlFile(this.project, "lefthook.yml", {
+      executable: true,
+      obj: this.config.serialize(),
+    });
   }
 }
