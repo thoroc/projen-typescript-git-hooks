@@ -1,13 +1,8 @@
 import * as fs from "fs";
 import * as path from "path";
-import { Component, SampleFile, TomlFile, type Project } from "projen";
+import { Component, TomlFile, type Project } from "projen";
+import { AgentsMd } from "./agents-md";
 import { McpServer } from "./mcp-server";
-
-const AGENTS_MD_CONTENT = `# Agent Instructions
-
-This file contains shared instructions for AI coding assistants.
-Add your project-specific guidelines, conventions, and context here.
-`;
 
 export interface MistralVibeOptions {
   readonly model?: string;
@@ -28,6 +23,7 @@ export class MistralVibe extends Component {
   constructor(project: Project, options?: MistralVibeOptions) {
     super(project);
     this.options = options;
+    void (AgentsMd.of(project) ?? new AgentsMd(project));
   }
 
   preSynthesize(): void {
@@ -51,7 +47,6 @@ export class MistralVibe extends Component {
       },
     });
 
-    new SampleFile(this.project, "AGENTS.md", { contents: AGENTS_MD_CONTENT });
   }
 
   postSynthesize(): void {

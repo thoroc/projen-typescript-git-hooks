@@ -1,13 +1,8 @@
 import * as fs from "fs";
 import * as path from "path";
-import { Component, JsonFile, SampleFile, type Project } from "projen";
+import { Component, JsonFile, type Project } from "projen";
+import { AgentsMd } from "./agents-md";
 import { McpServer } from "./mcp-server";
-
-const AGENTS_MD_CONTENT = `# Agent Instructions
-
-This file contains shared instructions for AI coding assistants.
-Add your project-specific guidelines, conventions, and context here.
-`;
 
 export interface OpenCodeOptions {
   readonly model?: string;
@@ -30,6 +25,7 @@ export class OpenCode extends Component {
   constructor(project: Project, options?: OpenCodeOptions) {
     super(project);
     this.options = options;
+    void (AgentsMd.of(project) ?? new AgentsMd(project));
   }
 
   preSynthesize(): void {
@@ -57,7 +53,6 @@ export class OpenCode extends Component {
       readonly: false,
     });
 
-    new SampleFile(this.project, "AGENTS.md", { contents: AGENTS_MD_CONTENT });
   }
 
   postSynthesize(): void {

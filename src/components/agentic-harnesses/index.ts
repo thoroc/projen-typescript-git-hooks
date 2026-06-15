@@ -1,3 +1,4 @@
+export * from "./agents-md";
 export * from "./claude-code";
 export * from "./gemini-cli";
 export * from "./mcp-config";

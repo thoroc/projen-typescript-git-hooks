@@ -1,13 +1,8 @@
 import * as fs from "fs";
 import * as path from "path";
-import { Component, JsonFile, type Project, SampleFile } from "projen";
+import { Component, JsonFile, type Project } from "projen";
+import { AgentsMd } from "./agents-md";
 import type { McpServer } from "./mcp-server";
-
-const AGENTS_MD_CONTENT = `# Agent Instructions
-
-This file contains shared instructions for AI coding assistants.
-Add your project-specific guidelines, conventions, and context here.
-`;
 
 export interface ClaudeCodePermissions {
   readonly allow?: Array<string>;
@@ -34,6 +29,7 @@ export class ClaudeCode extends Component {
   constructor(project: Project, options?: ClaudeCodeOptions) {
     super(project);
     this.options = options;
+    void (AgentsMd.of(project) ?? new AgentsMd(project));
   }
 
   preSynthesize(): void {
@@ -62,7 +58,6 @@ export class ClaudeCode extends Component {
       readonly: false,
     });
 
-    new SampleFile(this.project, "AGENTS.md", { contents: AGENTS_MD_CONTENT });
   }
 
   postSynthesize(): void {
