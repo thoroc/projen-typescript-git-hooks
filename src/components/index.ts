@@ -5,3 +5,4 @@ export * from "./githooks-manager";
 export * from "./github-actions";
 export * from "./github-templates";
 export * from "./jest";
+export * from "./renovate";
