@@ -51,4 +51,11 @@ describe("ClaudeCode", () => {
     expect(settings.permissions).toEqual({ allow: ["Bash"] });
     expect(settings.env).toEqual({ TOKEN: "abc" });
   });
+
+  it("creates AGENTS.md when instantiated", () => {
+    const project = new Project({ name: "test" });
+    new ClaudeCode(project);
+    const snapshot = synthSnapshot(project);
+    expect(snapshot["AGENTS.md"]).toBeDefined();
+  });
 });

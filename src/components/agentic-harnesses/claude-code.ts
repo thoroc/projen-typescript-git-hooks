@@ -1,4 +1,12 @@
-import { Component, JsonFile, type Project } from "projen";
+import * as fs from "fs";
+import * as path from "path";
+import { Component, JsonFile, SampleFile, type Project } from "projen";
+
+const AGENTS_MD_CONTENT = `# Agent Instructions
+
+This file contains shared instructions for AI coding assistants.
+Add your project-specific guidelines, conventions, and context here.
+`;
 
 export interface ClaudeCodePermissions {
   readonly allow?: Array<string>;
@@ -12,6 +20,7 @@ export interface ClaudeCodeOptions {
 
 export class ClaudeCode extends Component {
   static readonly settingsPath = ".claude/settings.json";
+  static readonly contextFile = "CLAUDE.md";
 
   public static of(project: Project): ClaudeCode | undefined {
     const singleton = (c: Component): c is ClaudeCode => c instanceof ClaudeCode;
@@ -36,5 +45,16 @@ export class ClaudeCode extends Component {
       },
       readonly: false,
     });
+
+    new SampleFile(this.project, "AGENTS.md", { contents: AGENTS_MD_CONTENT });
+  }
+
+  postSynthesize(): void {
+    const symlinkPath = path.join(this.project.outdir, ClaudeCode.contextFile);
+    if (fs.existsSync(symlinkPath)) {
+      if (fs.lstatSync(symlinkPath).isSymbolicLink()) return;
+      return;
+    }
+    fs.symlinkSync("AGENTS.md", symlinkPath);
   }
 }
