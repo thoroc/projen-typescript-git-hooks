@@ -25,7 +25,7 @@ pre-commit:
         run: npx prettier --write --prose-wrap always {staged_files}
         glob: "*.md"
     - eslint:
-        run: eslint --cache --fix {staged_files}
+        run: npx eslint --cache --fix {staged_files}
         glob: src/**/*.ts
     - prettier:
         run: npx prettier --write {staged_files}

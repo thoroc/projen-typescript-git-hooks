@@ -86,10 +86,6 @@
       "type": "build"
     },
     {
-      "name": "husky",
-      "type": "build"
-    },
-    {
       "name": "jest",
       "type": "build"
     },
@@ -121,7 +117,7 @@
       "type": "build"
     },
     {
-      "name": "lint-staged",
+      "name": "lefthook",
       "type": "build"
     },
     {

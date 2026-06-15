@@ -49,16 +49,14 @@ tsconfig.json
 !/.github/workflows/pull-request-labeler.yml
 !/.github/labeler.yml
 !/.github/issue_template.md
-!/.husky/pre-commit
 /test-reports/
 junit.xml
 !/jest.config.json
 /coverage/
-!/.husky/pre-push
 !/.eslintrc.json
 !/.prettierignore
 !/.prettierrc.json
 !/.projenrc.ts
+!/lefthook.yml
 !/eslint.config.js
 !/.czrc
-!/.husky/prepare-commit-msg

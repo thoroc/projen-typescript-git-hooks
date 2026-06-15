@@ -15,9 +15,6 @@
 /.github/workflows/release.yml linguist-generated
 /.github/workflows/upgrade-main.yml linguist-generated
 /.gitignore linguist-generated
-/.husky/pre-commit linguist-generated
-/.husky/pre-push linguist-generated
-/.husky/prepare-commit-msg linguist-generated
 /.npmignore linguist-generated
 /.prettierignore linguist-generated
 /.prettierrc.json linguist-generated
@@ -28,6 +25,7 @@
 /API.md linguist-generated
 /eslint.config.js linguist-generated
 /jest.config.json linguist-generated
+/lefthook.yml linguist-generated
 /LICENSE linguist-generated
 /package.json linguist-generated
 /tsconfig.dev.json linguist-generated

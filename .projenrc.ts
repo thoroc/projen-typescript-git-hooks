@@ -3,7 +3,7 @@ import { GitHub } from "projen/lib/github";
 import { Commitizen, Jest } from "./src";
 import { Eslint, Prettier } from "./src/components/code-standards";
 import { CodeOfConduct } from "./src/components/documentation";
-import { Husky } from "./src/components/githooks-manager";
+import { GitClientHook, Lefthook } from "./src/components/githooks-manager";
 import {
 	PullRequestJestCoverageComment,
 	PullRequestLabeler,
@@ -50,7 +50,12 @@ const github = project.github ?? new GitHub(project);
 new PullRequestJestCoverageComment(github);
 new PullRequestLabeler(github);
 new IssueTemplate(github);
-new Husky(project);
+const lefthook = new Lefthook(project);
+lefthook.addCommand(GitClientHook.PRE_PUSH, {
+	name: "test",
+	run: "npm run test",
+	stagedFiles: false,
+});
 new Jest(project, { configFilePath: "jest.config.json" });
 new Eslint(project, { dirs: ["src", "test"], prettier: true });
 new Prettier(project);

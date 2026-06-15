@@ -115,6 +115,24 @@ describe("Commitizen Component", () => {
     );
   });
 
+  it("adds commitizen command to lefthook.yml when using Lefthook manager", () => {
+    // Arrange
+    const project = new GitHooksEnabledProject({
+      name: "test",
+      defaultReleaseBranch: "main",
+      gitHooksManager: GitHooksManagerType.LEFTHOOK,
+    });
+    new Commitizen(project);
+
+    // Act
+    const snapshot = synthSnapshot(project);
+    const config = snapshot["lefthook.yml"];
+
+    // Assert
+    expect(config).toContain("commitizen:");
+    expect(config).toContain("exec < /dev/tty && npx cz --hook || true");
+  });
+
   it("returns the instance via Commitizen.of()", () => {
     const project = new GitHooksEnabledProject({
       name: "test",

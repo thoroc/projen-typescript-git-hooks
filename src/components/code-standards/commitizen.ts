@@ -44,6 +44,16 @@ export class Commitizen extends Component {
       description: "Commitizen's commit",
       exec: "cz",
     });
+
+    Husky.of(this.project as GitHooksEnabledProject)?.createHook(GitClientHook.PRE_COMMIT_MESSAGE, [
+      "exec < /dev/tty && npx cz --hook || true",
+    ]);
+
+    Lefthook.of(this.project as GitHooksEnabledProject)?.addCommand(GitClientHook.PRE_COMMIT_MESSAGE, {
+      name: "commitizen",
+      run: "exec < /dev/tty && npx cz --hook || true",
+      stagedFiles: false,
+    });
   }
 
   preSynthesize(): void {
@@ -58,14 +68,5 @@ export class Commitizen extends Component {
         commitizen: Commitizen.config,
       });
     }
-
-    Husky.of(this.project as GitHooksEnabledProject)?.createHook(GitClientHook.PRE_COMMIT_MESSAGE, [
-      "exec < /dev/tty && npx cz --hook || true",
-    ]);
-
-    Lefthook.of(this.project as GitHooksEnabledProject)?.addCommand(GitClientHook.PRE_COMMIT_MESSAGE, {
-      name: "commitizen",
-      run: "exec < /dev/tty && npx cz --hook || true",
-    });
   }
 }

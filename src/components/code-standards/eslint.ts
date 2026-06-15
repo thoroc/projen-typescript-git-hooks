@@ -115,7 +115,7 @@ export class Eslint extends javascript.Eslint {
     Lefthook.of(this.project as GitHooksEnabledProject)?.addCommand(GitClientHook.PRE_COMMIT, {
       name: "eslint",
       glob: "src/**/*.ts",
-      run: "eslint --cache --fix",
+      run: "npx eslint --cache --fix",
     });
     Lefthook.of(this.project as GitHooksEnabledProject)?.addCommand(GitClientHook.PRE_COMMIT, {
       name: "prettier",
