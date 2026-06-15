@@ -68,12 +68,15 @@ pre-commit:
     markdown-prettier:
       run: npx prettier --write --prose-wrap always {staged_files}
       glob: "*.md"
+      stage_fixed: true
     eslint:
       run: npx eslint --cache --fix {staged_files}
       glob: src/**/*.ts
+      stage_fixed: true
     prettier:
       run: npx prettier --write {staged_files}
       glob: src/**/*.ts
+      stage_fixed: true
 `);
   });
 });

@@ -40,7 +40,7 @@ export interface LefthookCommandOptions {
    * Re-stage files modified by the command after it runs.
    * Required when the command auto-fixes files (e.g. eslint --fix, prettier --write)
    * so that the fixed versions are included in the commit.
-   * @see https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#stage_fix
+   * @see https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#stage_fixed
    */
   readonly stageFixed?: boolean;
 }
@@ -91,7 +91,7 @@ export class LefthookCommand implements ISerializer {
     }
 
     if (this.stageFixed) {
-      records.stage_fix = true;
+      records.stage_fixed = true;
     }
 
     return records;
