@@ -1,7 +1,7 @@
-import { Component, Project, TomlFile } from "projen";
+import { Component, type Project, TomlFile } from "projen";
+import type { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
 import { EditorConfigParams } from "./params";
-import { EditorConfigSection, EditorConfigSectionOptions } from "./section";
-import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
+import { EditorConfigSection, type EditorConfigSectionOptions } from "./section";
 
 export interface EditorConfigOptions {
   readonly sections: Array<EditorConfigSection>;

@@ -1,6 +1,6 @@
-import { LefthookCommandOptions } from "./command";
-import { LefthookScriptOptions } from "./script";
-import { GitClientHook } from "..";
+import type { GitClientHook } from "..";
+import type { LefthookCommandOptions } from "./command";
+import type { LefthookScriptOptions } from "./script";
 
 export interface LefthookAction {
   /**

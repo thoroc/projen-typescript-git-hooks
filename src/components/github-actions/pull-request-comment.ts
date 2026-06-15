@@ -1,7 +1,7 @@
 import { Component } from "projen";
-import { GitHub } from "projen/lib/github";
+import type { GitHub } from "projen/lib/github";
 import { JobPermission } from "projen/lib/github/workflows-model";
-import { NodePackageManager, NodeProject } from "projen/lib/javascript";
+import { NodePackageManager, type NodeProject } from "projen/lib/javascript";
 
 /**
  * Represents PullRequestJestCoverageComment configuration
@@ -33,8 +33,14 @@ export class PullRequestJestCoverageComment extends Component {
           },
         },
         { name: "Install dependencies", run: installationScript },
-        { name: "Run tests", run: "npx jest --coverage --coverageReporters json-summary" },
-        { name: "Jest Coverage Comment", uses: "MishaKav/jest-coverage-comment@main" },
+        {
+          name: "Run tests",
+          run: "npx jest --coverage --coverageReporters json-summary",
+        },
+        {
+          name: "Jest Coverage Comment",
+          uses: "MishaKav/jest-coverage-comment@main",
+        },
       ],
     });
   }

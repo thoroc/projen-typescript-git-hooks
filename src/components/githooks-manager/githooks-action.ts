@@ -1,4 +1,4 @@
-import { GitClientHook } from "./githooks-manager";
+import type { GitClientHook } from "./githooks-manager";
 
 export interface GitHooksAction {
   readonly glob: string;

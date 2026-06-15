@@ -1,9 +1,9 @@
 import * as cc from "change-case";
-import { Component, IgnoreFile, Project, SourceCode, YamlFile } from "projen";
-import { MarkdownlintRules } from "./markdownlint-rules";
-import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
+import { Component, IgnoreFile, type Project, SourceCode, YamlFile } from "projen";
+import type { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
 import { objectKeyCaseConverter } from "../../../utils/serializer";
 import { Husky, LintStaged } from "../../githooks-manager/husky";
+import type { MarkdownlintRules } from "./markdownlint-rules";
 
 export interface MarkdownlintOptions {
   /**

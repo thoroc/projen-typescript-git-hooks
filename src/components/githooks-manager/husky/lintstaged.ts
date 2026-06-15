@@ -1,8 +1,8 @@
-import { Component, Project } from "projen";
-import { LintStagedRule, LintStagedRuleOptions } from "./lintstagedrule";
+import { Component, type Project } from "projen";
+import type { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
 import { Husky } from "..";
-import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
 import { GitClientHook } from "../githooks-manager";
+import { LintStagedRule, type LintStagedRuleOptions } from "./lintstagedrule";
 
 export interface LintStagedOptions {
   readonly rules?: Array<LintStagedRule>;

@@ -20,8 +20,7 @@ export async function getContent(url: string): Promise<string> {
         return reject(new Error(response.statusMessage));
       }
 
-      // handle redirects
-      if (code > 300 && code < 400 && !!response.headers.location) {
+      if (code > 300 && code < 400 && response.headers.location) {
         return resolve(getContent(response.headers.location));
       }
 
@@ -42,24 +41,23 @@ export async function getContent(url: string): Promise<string> {
     /***
      * handles the errors on the request
      */
-    request.on("error", (err) => {
-      console.log(err);
+    request.on("error", (err: Error) => {
+      console.error(err);
       reject(err);
     });
 
     /***
      * handles the timeout error
      */
-    request.on("timeout", (err: string) => {
-      console.log(err);
+    request.on("timeout", () => {
       request.destroy();
     });
 
     /***
      * unhandle errors on the request
      */
-    request.on("uncaughtException", (err) => {
-      console.log(err);
+    request.on("uncaughtException", (err: Error) => {
+      console.error(err);
       request.destroy();
     });
 

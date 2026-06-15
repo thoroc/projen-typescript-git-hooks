@@ -1,13 +1,13 @@
-import { typescript, javascript } from "projen";
-import { TypeScriptModuleResolution, TypescriptConfigOptions } from "projen/lib/javascript";
+import { type javascript, typescript } from "projen";
+import { TypeScriptModuleResolution, type TypescriptConfigOptions } from "projen/lib/javascript";
 import { Eslint, Prettier } from "../components/code-standards";
-import { EditorConfig, EditorConfigOptions } from "../components/code-standards/editorconfig";
+import { EditorConfig, type EditorConfigOptions } from "../components/code-standards/editorconfig";
 import {
   GitHooksManagerType,
   Husky,
-  HuskyOptions,
+  type HuskyOptions,
   Lefthook,
-  LefthookOptions,
+  type LefthookOptions,
 } from "../components/githooks-manager";
 import { Jest } from "../components/jest";
 
@@ -81,37 +81,36 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
 
     this.debug = options.debug ?? false;
 
-    if (this.debug) console.log(`Synthesising with options: ${JSON.stringify(options, undefined, 2)}`);
-
-    switch (options.gitHooksManager) {
-      case GitHooksManagerType.HUSKY:
-        this.gitHooksManager = new Husky(this, options.gitHooksManagerOptions as HuskyOptions);
-        break;
-      case GitHooksManagerType.LEFTHOOK:
-        this.gitHooksManager = new Lefthook(this, options.gitHooksManagerOptions as LefthookOptions);
-        break;
-      default:
-        throw Error(`Unable to initiate a git hook manager: "${options.gitHooksManager}"`);
-    }
+    if (this.debug)
+      switch (options.gitHooksManager) {
+        case GitHooksManagerType.HUSKY:
+          this.gitHooksManager = new Husky(this, options.gitHooksManagerOptions as HuskyOptions);
+          break;
+        case GitHooksManagerType.LEFTHOOK:
+          this.gitHooksManager = new Lefthook(this, options.gitHooksManagerOptions as LefthookOptions);
+          break;
+        default:
+          throw Error(`Unable to initiate a git hook manager: "${options.gitHooksManager}"`);
+      }
 
     if (options.jest ?? true) {
-      if (this.debug) console.log("Jest enabled");
       this.jest = new Jest(this, options.jestOptions) as javascript.Jest;
     }
 
     if (options.prettier ?? true) {
-      if (this.debug) console.log("Prettier enabled");
       this.prettier = new Prettier(this, options.prettierOptions) as javascript.Prettier;
     }
 
     if (options.eslint ?? true) {
-      if (this.debug) console.log("Eslint enabled");
-      const eslintOptions = { dirs: ["src", "test"], prettier: options.prettier, ...options.eslintOptions };
+      const eslintOptions = {
+        dirs: ["src", "test"],
+        prettier: options.prettier,
+        ...options.eslintOptions,
+      };
       this.eslint = new Eslint(this, eslintOptions) as javascript.Eslint;
     }
 
     if (options.editorConfig ?? true) {
-      if (this.debug) console.log("EditorConfig enabled");
       this.editorConfig = new EditorConfig(this, options.editorConfigOptions);
     }
 

@@ -1,10 +1,10 @@
-import { Component, Project, YamlFile } from "projen";
+import { type Component, type Project, YamlFile } from "projen";
 import { NodePackageManager } from "projen/lib/javascript";
-import { GitClientHook, GitHooksManager } from "..";
-import { LefthookCommand, LefthookCommandOptions } from "./command";
+import type { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
+import { type GitClientHook, GitHooksManager } from "..";
+import { LefthookCommand, type LefthookCommandOptions } from "./command";
 import { LefthookConfig } from "./config";
-import { LefthookScriptOptions } from "./script";
-import { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
+import type { LefthookScriptOptions } from "./script";
 
 export interface LefthookOptions {
   /**
@@ -38,7 +38,9 @@ export class Lefthook extends GitHooksManager {
       },
     );
 
-    if ((this.project as GitHooksEnabledProject).debug) console.log("Initiating Lefthook");
+    if ((this.project as GitHooksEnabledProject).debug) {
+      console.log("Initiating Lefthook");
+    }
   }
 
   public addCommand(hookName: GitClientHook, command: LefthookCommandOptions) {
@@ -77,11 +79,9 @@ export class Lefthook extends GitHooksManager {
     pkg.setScript(script, "npx lefthook install");
 
     if ((this.project as GitHooksEnabledProject).debug)
-      console.log(`${this.constructor.name}: Creating new Lefthook config file.`);
-
-    new YamlFile(this.project, "lefthook.yml", {
-      executable: true,
-      obj: this.config.serialize(),
-    });
+      new YamlFile(this.project, "lefthook.yml", {
+        executable: true,
+        obj: this.config.serialize(),
+      });
   }
 }

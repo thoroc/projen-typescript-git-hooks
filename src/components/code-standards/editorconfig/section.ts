@@ -1,4 +1,4 @@
-import { EditorConfigParamsOptions } from "./params";
+import type { EditorConfigParamsOptions } from "./params";
 
 export interface EditorConfigSectionOptions {
   readonly name: string;

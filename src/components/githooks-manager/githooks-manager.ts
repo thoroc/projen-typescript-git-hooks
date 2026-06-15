@@ -1,5 +1,5 @@
 import { Component } from "projen";
-import { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
+import type { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
 
 /**
  * The list of git cient-side hooks

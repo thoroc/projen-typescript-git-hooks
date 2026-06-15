@@ -1,4 +1,4 @@
-import { Component, Project, TextFile } from "projen";
+import { Component, type Project, TextFile } from "projen";
 import { getContent } from "../../utils/fetch";
 
 export interface CodeOfConductOptions {
@@ -28,8 +28,6 @@ export class CodeOfConduct extends Component {
           lines: body.replace(pattern, this.author).split("\n"),
         });
         document.synthesize();
-
-        console.log("retrieving CODE_OF_CONDUCT.md content");
       })
       .catch((err) => console.error(err));
   }

@@ -1,3 +1,4 @@
+export * from "./agentic-harnesses";
 export * from "./code-standards";
 export * from "./documentation";
 export * from "./githooks-manager";

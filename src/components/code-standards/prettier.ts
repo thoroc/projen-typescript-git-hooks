@@ -1,6 +1,6 @@
-import { Project, javascript } from "projen";
-import { PrettierOptions, ProseWrap, QuoteProps, TrailingComma } from "projen/lib/javascript";
-import { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
+import { javascript, type Project } from "projen";
+import { type PrettierOptions, ProseWrap, QuoteProps, TrailingComma } from "projen/lib/javascript";
+import type { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
 import { GitClientHook } from "../githooks-manager";
 import { LintStaged } from "../githooks-manager/husky";
 import { Lefthook } from "../githooks-manager/lefthook";

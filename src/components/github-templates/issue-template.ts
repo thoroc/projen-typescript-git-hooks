@@ -1,5 +1,5 @@
 import { TextFile } from "projen";
-import { GitHub } from "projen/lib/github";
+import type { GitHub } from "projen/lib/github";
 
 export class IssueTemplate extends TextFile {
   constructor(github: GitHub) {

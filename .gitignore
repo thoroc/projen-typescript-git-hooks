@@ -31,7 +31,6 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
-!/.projenrc.js
 !/.github/workflows/build.yml
 /dist/changelog.md
 /dist/version.txt
@@ -49,9 +48,7 @@ tsconfig.json
 !/.github/workflows/pull-request-comment.yml
 !/.github/workflows/pull-request-labeler.yml
 !/.github/labeler.yml
-!/.github/workflows/close-stale-issue.yml
 !/.github/issue_template.md
-!/.github/workflows/auto-merge.yml
 !/.husky/pre-commit
 /test-reports/
 junit.xml
@@ -61,5 +58,7 @@ junit.xml
 !/.eslintrc.json
 !/.prettierignore
 !/.prettierrc.json
+!/.projenrc.ts
+!/eslint.config.js
 !/.czrc
 !/.husky/prepare-commit-msg

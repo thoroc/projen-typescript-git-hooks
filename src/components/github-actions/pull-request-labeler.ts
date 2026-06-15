@@ -1,5 +1,5 @@
-import { Component, Project, YamlFile } from "projen";
-import { GitHub } from "projen/lib/github";
+import { Component, type Project, YamlFile } from "projen";
+import type { GitHub } from "projen/lib/github";
 import { JobPermission } from "projen/lib/github/workflows-model";
 
 /**
@@ -15,7 +15,10 @@ export class PullRequestLabeler extends Component {
     });
 
     workflow.addJob("triage", {
-      permissions: { pullRequests: JobPermission.WRITE, contents: JobPermission.READ },
+      permissions: {
+        pullRequests: JobPermission.WRITE,
+        contents: JobPermission.READ,
+      },
       runsOn: ["ubuntu-latest"],
       steps: [
         {

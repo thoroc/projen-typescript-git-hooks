@@ -1,5 +1,5 @@
-import { Component, JsonFile, Project } from "projen";
-import { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
+import { Component, JsonFile, type Project } from "projen";
+import type { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
 import { GitClientHook, Husky, Lefthook } from "../githooks-manager";
 
 export interface CommitizenOptions {
@@ -11,7 +11,9 @@ export interface CommitizenConfig {
 }
 
 export class Commitizen extends Component {
-  public static config: CommitizenConfig = { path: "./node_modules/cz-conventional-changelog" };
+  public static config: CommitizenConfig = {
+    path: "./node_modules/cz-conventional-changelog",
+  };
 
   /**
    * Returns the singletone component of a project or undefined if there is none.

@@ -4,37 +4,44 @@ import { Commitizen, Jest } from "./src";
 import { Eslint, Prettier } from "./src/components/code-standards";
 import { CodeOfConduct } from "./src/components/documentation";
 import { Husky } from "./src/components/githooks-manager";
-import { PullRequestJestCoverageComment, PullRequestLabeler } from "./src/components/github-actions";
+import {
+	PullRequestJestCoverageComment,
+	PullRequestLabeler,
+} from "./src/components/github-actions";
 import { IssueTemplate } from "./src/components/github-templates";
 
 const project = new cdk.JsiiProject({
-  author: "thoroc",
-  authorAddress: "thomas.a.roche@gmail.com",
-  defaultReleaseBranch: "main",
-  jsiiVersion: "~5.0.0",
-  name: "@thoroc/projen-typescript-git-hooks",
-  projenrcTs: true,
-  repositoryUrl: "https://github.com/thoroc/projen-typescript-git-hooks.git",
+	author: "thoroc",
+	authorAddress: "thomas.a.roche@gmail.com",
+	defaultReleaseBranch: "main",
+	jsiiVersion: "~5.0.0",
+	name: "@thoroc/projen-typescript-git-hooks",
+	projenrcTs: true,
+	repositoryUrl: "https://github.com/thoroc/projen-typescript-git-hooks.git",
 
-  docgen: true,
-  deps: ["projen", "yaml", "type-fest", "change-case"],
-  devDeps: ["projen"],
-  bundledDeps: ["yaml", "type-fest", "change-case"],
-  peerDeps: ["projen"],
+	docgen: true,
+	deps: ["projen", "yaml", "type-fest", "change-case"],
+	devDeps: ["projen"],
+	bundledDeps: ["yaml", "type-fest", "change-case"],
+	peerDeps: ["projen"],
 
-  npmDistTag: "latest",
-  npmRegistryUrl: "https:///npm.pkg.github.com",
+	npmDistTag: "latest",
+	npmRegistryUrl: "https:///npm.pkg.github.com",
 
-  eslint: false,
-  prettier: false,
-  jest: false,
+	eslint: false,
+	prettier: false,
+	jest: false,
 
-  autoApproveOptions: { allowedUsernames: ["thoroc", "dependabot[bot]", "renovate"] },
-  autoMerge: false,
-  githubOptions: { mergify: false },
-  depsUpgradeOptions: { workflowOptions: { labels: ["auto-approve"] } },
+	autoApproveOptions: {
+		allowedUsernames: ["thoroc", "dependabot[bot]", "renovate"],
+	},
+	autoMerge: false,
+	githubOptions: { mergify: false },
+	depsUpgradeOptions: { workflowOptions: { labels: ["auto-approve"] } },
 
-  pullRequestTemplateContents: ["# Title", "", "## What", "", "## Why"],
+	pullRequestTemplateContents: ["# Title", "", "## What", "", "## Why"],
+
+	tsconfigDev: { compilerOptions: { lib: ["es2022", "dom"], types: ["node", "jest"] } },
 });
 
 project.eslint?.addRules(Eslint.defaultEslintRules);

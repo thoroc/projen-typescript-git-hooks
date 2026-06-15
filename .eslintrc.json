@@ -134,28 +134,11 @@
         "default": "generic"
       }
     ],
-    "@typescript-eslint/ban-types": [
-      "error",
-      {
-        "extendDefaults": true,
-        "types": {
-          "{}": false
-        }
-      }
-    ],
     "@typescript-eslint/no-empty-function": [
       "error"
     ],
     "@typescript-eslint/no-unused-vars": [
       "error"
-    ],
-    "@typescript-eslint/quotes": [
-      "error",
-      "double",
-      {
-        "avoidEscape": true,
-        "allowTemplateLiterals": true
-      }
     ],
     "indent": [
       "error",

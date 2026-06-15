@@ -1,4 +1,4 @@
-import { ISerializer } from "../../../utils";
+import type { ISerializer } from "../../../utils";
 
 export interface LefthookCommandOptions {
   /**
@@ -66,7 +66,7 @@ export class LefthookCommand implements ISerializer {
     const excludes: Array<string> = ["name", "stagedFiles"];
 
     for (const propName in this) {
-      if (Object.prototype.hasOwnProperty.call(this, propName)) {
+      if (Object.hasOwn(this, propName)) {
         const name: string = propName;
         const value: unknown = this[name as keyof LefthookCommand];
         const isNotExcluded: boolean = !excludes.includes(name);

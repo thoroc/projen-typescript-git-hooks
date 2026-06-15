@@ -1,5 +1,5 @@
 import { Component } from "projen";
-import { GitHub } from "projen/lib/github";
+import type { GitHub } from "projen/lib/github";
 import { JobPermission } from "projen/lib/github/workflows-model";
 
 /**
