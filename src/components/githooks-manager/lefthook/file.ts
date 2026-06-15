@@ -10,7 +10,7 @@ export class LefthookFile extends YamlFile {
     if (raw == null) return raw;
 
     const lines = raw.split("\n");
-    const output: string[] = [];
+    const output: Array<string> = [];
     let pastFirstSection = false;
 
     for (const line of lines) {
