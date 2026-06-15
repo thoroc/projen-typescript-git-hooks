@@ -23,18 +23,15 @@ export class LefthookConfig implements ISerializer {
       const name = action.actionName;
 
       if (action.commands && action.commands.length > 0) {
-        const transformedCommands: Array<object> = [];
+        const commandsMap: { [key: string]: object } = {};
 
         for (const cmd of action.commands) {
-          if (cmd instanceof LefthookCommand) {
-            transformedCommands.push(cmd.serialize());
-          } else {
-            transformedCommands.push(new LefthookCommand(cmd).serialize());
-          }
+          const command = cmd instanceof LefthookCommand ? cmd : new LefthookCommand(cmd);
+          commandsMap[command.name] = command.asRecords();
         }
 
         transfomed[name] = {
-          commands: transformedCommands,
+          commands: commandsMap,
         };
       }
     }

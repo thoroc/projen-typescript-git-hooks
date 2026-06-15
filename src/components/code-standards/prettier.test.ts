@@ -1,7 +1,7 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import * as yaml from "yaml";
 import { GitHooksEnabledProject } from "../../../src";
-import { GitHooksManagerType, LefthookCommandOptions } from "../../../src/components/githooks-manager";
+import { GitHooksManagerType } from "../../../src/components/githooks-manager";
 
 describe("Custom Prettier", () => {
   it("Adds new dev dependencie", () => {
@@ -99,17 +99,10 @@ describe("Custom Prettier", () => {
     const config = yaml.parse(snapshot["lefthook.yml"]);
     const commands = config["pre-commit"].commands;
 
-    const filteredCommands = commands.filter((command: LefthookCommandOptions) => {
-      const keys: Array<string> = Object.keys(command);
-      return keys[0] === "markdown-prettier";
-    });
-
     // Assert
-    expect(filteredCommands[0]).toEqual({
-      "markdown-prettier": {
-        run: "npx prettier --write --prose-wrap always {staged_files}",
-        glob: "*.md",
-      },
+    expect(commands["markdown-prettier"]).toEqual({
+      run: "npx prettier --write --prose-wrap always {staged_files}",
+      glob: "*.md",
     });
   });
 
@@ -127,17 +120,10 @@ describe("Custom Prettier", () => {
     const config = yaml.parse(snapshot["lefthook.yml"]);
     const commands = config["pre-commit"].commands;
 
-    const filteredCommands = commands.filter((command: LefthookCommandOptions) => {
-      const keys: Array<string> = Object.keys(command);
-      return keys[0] === "prettier";
-    });
-
     // Assert
-    expect(filteredCommands[0]).toEqual({
-      prettier: {
-        run: "npx prettier --write {staged_files}",
-        glob: "src/**/*.ts",
-      },
+    expect(commands.prettier).toEqual({
+      run: "npx prettier --write {staged_files}",
+      glob: "src/**/*.ts",
     });
   });
 });

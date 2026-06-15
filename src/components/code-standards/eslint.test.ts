@@ -2,7 +2,7 @@ import { synthSnapshot } from "projen/lib/util/synth";
 import * as yaml from "yaml";
 import { GitHooksEnabledProject } from "../../../src";
 import { Eslint } from "../../../src/components/code-standards";
-import { GitHooksManagerType, LefthookCommandOptions } from "../../../src/components/githooks-manager";
+import { GitHooksManagerType } from "../../../src/components/githooks-manager";
 
 describe("Custom Eslint", () => {
   it("Retuns a singleton", () => {
@@ -148,17 +148,10 @@ describe("Custom Eslint", () => {
     const config = yaml.parse(snapshot["lefthook.yml"]);
     const commands = config["pre-commit"].commands;
 
-    const filteredCommands = commands.filter((command: LefthookCommandOptions) => {
-      const keys: Array<string> = Object.keys(command);
-      return keys[0] === "eslint";
-    });
-
     // Assert
-    expect(filteredCommands[0]).toEqual({
-      eslint: {
-        glob: "src/**/*.ts",
-        run: "npx eslint --cache --fix {staged_files}",
-      },
+    expect(commands.eslint).toEqual({
+      glob: "src/**/*.ts",
+      run: "npx eslint --cache --fix {staged_files}",
     });
   });
 });
