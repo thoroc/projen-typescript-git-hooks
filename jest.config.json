@@ -13,7 +13,8 @@
     "/node_modules/"
   ],
   "testPathIgnorePatterns": [
-    "/node_modules/"
+    "/node_modules/",
+    "/lib/"
   ],
   "watchPathIgnorePatterns": [
     "/node_modules/"
@@ -38,7 +39,7 @@
     "^.+\\.[jt]s?$": [
       "ts-jest",
       {
-        "tsconfig": "tsconfig.dev.json"
+        "tsconfig": "tsconfig.test.json"
       }
     ]
   },

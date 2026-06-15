@@ -152,6 +152,7 @@ describe("Custom Eslint", () => {
     expect(commands.eslint).toEqual({
       glob: "src/**/*.ts",
       run: "npx eslint --cache --fix {staged_files}",
+      stage_fixed: true,
     });
   });
 });

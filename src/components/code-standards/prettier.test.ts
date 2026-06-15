@@ -103,6 +103,7 @@ describe("Custom Prettier", () => {
     expect(commands["markdown-prettier"]).toEqual({
       run: "npx prettier --write --prose-wrap always {staged_files}",
       glob: "*.md",
+      stage_fixed: true,
     });
   });
 
@@ -124,6 +125,7 @@ describe("Custom Prettier", () => {
     expect(commands.prettier).toEqual({
       run: "npx prettier --write {staged_files}",
       glob: "src/**/*.ts",
+      stage_fixed: true,
     });
   });
 });

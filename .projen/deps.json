@@ -86,12 +86,13 @@
       "type": "build"
     },
     {
-      "name": "jest",
+      "name": "jest-junit",
+      "version": "^15",
       "type": "build"
     },
     {
-      "name": "jest-junit",
-      "version": "^15",
+      "name": "jest",
+      "version": "^29.7.0",
       "type": "build"
     },
     {
@@ -135,6 +136,7 @@
     },
     {
       "name": "ts-jest",
+      "version": "^29.2.0",
       "type": "build"
     },
     {
