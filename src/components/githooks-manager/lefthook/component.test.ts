@@ -63,6 +63,8 @@ describe("Lefthook", () => {
 
 pre-commit:
   commands:
+    typecheck:
+      run: npx tsc --noEmit -p tsconfig.dev.json
     markdown-prettier:
       run: npx prettier --write --prose-wrap always {staged_files}
       glob: "*.md"

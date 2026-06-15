@@ -1,7 +1,7 @@
 import { type Component, type Project } from "projen";
 import { NodePackageManager } from "projen/lib/javascript";
 import type { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
-import { type GitClientHook, GitHooksManager } from "..";
+import { GitClientHook, GitHooksManager } from "..";
 import { LefthookFile } from "./file";
 import { LefthookCommand, type LefthookCommandOptions } from "./command";
 import { LefthookConfig } from "./config";
@@ -38,6 +38,12 @@ export class Lefthook extends GitHooksManager {
         actions: [],
       },
     );
+
+    this.addCommand(GitClientHook.PRE_COMMIT, {
+      name: "typecheck",
+      run: "npx tsc --noEmit -p tsconfig.dev.json",
+      stagedFiles: false,
+    });
   }
 
   public addCommand(hookName: GitClientHook, command: LefthookCommandOptions) {
