@@ -4,6 +4,7 @@ pre-push:
   commands:
     test:
       run: npm run test
+
 pre-commit:
   commands:
     eslint:
@@ -15,6 +16,7 @@ pre-commit:
     markdown-prettier:
       run: npx prettier --write --prose-wrap always {staged_files}
       glob: "*.md"
+
 prepare-commit-msg:
   commands:
     commitizen:

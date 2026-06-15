@@ -1,7 +1,8 @@
-import { type Component, type Project, YamlFile } from "projen";
+import { type Component, type Project } from "projen";
 import { NodePackageManager } from "projen/lib/javascript";
 import type { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
 import { type GitClientHook, GitHooksManager } from "..";
+import { LefthookFile } from "./file";
 import { LefthookCommand, type LefthookCommandOptions } from "./command";
 import { LefthookConfig } from "./config";
 import type { LefthookScriptOptions } from "./script";
@@ -70,9 +71,6 @@ export class Lefthook extends GitHooksManager {
     const script = pkg.packageManager === NodePackageManager.YARN_BERRY ? "postinstall" : "prepare";
     pkg.setScript(script, "npx lefthook install");
 
-    new YamlFile(this.project, "lefthook.yml", {
-      executable: true,
-      obj: this.config.serialize(),
-    });
+    new LefthookFile(this.project, this.config.serialize());
   }
 }
