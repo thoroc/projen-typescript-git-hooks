@@ -77,6 +77,6 @@ describe("ClaudeCode", () => {
     const server = new McpServer("shared", { command: "npx", args: ["-y", "shared-mcp"] });
     new ClaudeCode(project, { mcpServers: [server] });
     const snapshot = synthSnapshot(project);
-    expect(snapshot[".claude/settings.json"].mcpServers["shared"]).toBeDefined();
+    expect(snapshot[".claude/settings.json"].mcpServers.shared).toBeDefined();
   });
 });

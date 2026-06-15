@@ -11,7 +11,7 @@ export interface OpenAICodexOptions {
   readonly model?: string;
   readonly approvalPolicy?: "suggest" | "auto-edit" | "full-auto";
   readonly sandboxMode?: "read-only" | "workspace-write" | "danger-full-access";
-  readonly mcpServers?: McpServer[];
+  readonly mcpServers?: Array<McpServer>;
 }
 
 export class OpenAICodex extends Component {

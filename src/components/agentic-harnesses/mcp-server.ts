@@ -1,13 +1,13 @@
 export interface McpServerConfig {
   readonly command: string;
-  readonly args?: string[];
+  readonly args?: Array<string>;
   readonly env?: Record<string, string>;
 }
 
 export class McpServer {
   readonly name: string;
   readonly command: string;
-  readonly args?: string[];
+  readonly args?: Array<string>;
   readonly env?: Record<string, string>;
 
   constructor(name: string, options: McpServerConfig) {

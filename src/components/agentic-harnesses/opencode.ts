@@ -13,7 +13,7 @@ export interface OpenCodeOptions {
   readonly model?: string;
   readonly autoupdate?: boolean;
   readonly permission?: Record<string, "allow" | "ask" | "deny">;
-  readonly mcpServers?: McpServer[];
+  readonly mcpServers?: Array<McpServer>;
 }
 
 export class OpenCode extends Component {

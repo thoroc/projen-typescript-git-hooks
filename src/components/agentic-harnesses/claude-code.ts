@@ -17,7 +17,7 @@ export interface ClaudeCodePermissions {
 export interface ClaudeCodeOptions {
   readonly permissions?: ClaudeCodePermissions;
   readonly env?: Record<string, string>;
-  readonly mcpServers?: McpServer[];
+  readonly mcpServers?: Array<McpServer>;
 }
 
 export class ClaudeCode extends Component {

@@ -11,7 +11,7 @@ Add your project-specific guidelines, conventions, and context here.
 
 export interface MistralVibeOptions {
   readonly model?: string;
-  readonly mcpServers?: McpServer[];
+  readonly mcpServers?: Array<McpServer>;
 }
 
 export class MistralVibe extends Component {

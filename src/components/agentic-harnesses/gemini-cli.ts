@@ -13,7 +13,7 @@ export interface GeminiCliOptions {
   readonly theme?: string;
   readonly model?: string;
   readonly contextFileNames?: Array<string>;
-  readonly mcpServers?: McpServer[];
+  readonly mcpServers?: Array<McpServer>;
 }
 
 export class GeminiCli extends Component {

@@ -2,7 +2,7 @@ import { Component, JsonFile, type Project } from "projen";
 import { McpServer } from "./mcp-server";
 
 export interface McpConfigOptions {
-  readonly servers: McpServer[];
+  readonly servers: Array<McpServer>;
 }
 
 export class McpConfig extends Component {
@@ -13,7 +13,7 @@ export class McpConfig extends Component {
     return project.components.find(singleton);
   }
 
-  readonly servers: McpServer[];
+  readonly servers: Array<McpServer>;
 
   constructor(project: Project, options: McpConfigOptions) {
     super(project);
