@@ -91,7 +91,7 @@ export class LefthookCommand implements ISerializer {
     }
 
     if (this.stageFixed) {
-      records["stage_fix"] = true;
+      records.stage_fix = true;
     }
 
     return records;
