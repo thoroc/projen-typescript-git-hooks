@@ -48,18 +48,10 @@ export class Commitizen extends Component {
 
   preSynthesize(): void {
     if (this.options?.json) {
-      if ((this.project as GitHooksEnabledProject).debug) {
-        console.log(`${this.constructor.name}: Saving config in .czrc.`);
-      }
-
       new JsonFile(this.project, ".czrc", {
         obj: Commitizen.config,
       });
     } else {
-      if ((this.project as GitHooksEnabledProject).debug) {
-        console.log(`${this.constructor.name}: Saving config in package.json.`);
-      }
-
       const packageJson = this.project.tryFindObjectFile("package.json");
 
       packageJson?.addOverride("config", {

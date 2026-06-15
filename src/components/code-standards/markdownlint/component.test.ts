@@ -70,4 +70,48 @@ describe("Markdownlint", () => {
     expect(Object.keys(lintStaged)).toContain("*.md");
     expect(lintStaged["*.md"]).toContain("markdownlint-cli2 --fix");
   });
+
+  it("returns the instance via Markdownlint.of()", () => {
+    const project = new GitHooksEnabledProject({
+      name: "test",
+      defaultReleaseBranch: "main",
+    });
+    const markdownlint = new Markdownlint(project);
+
+    expect(Markdownlint.of(project)).toBe(markdownlint);
+  });
+
+  it("returns undefined via Markdownlint.of() when not present", () => {
+    const project = new GitHooksEnabledProject({
+      name: "test",
+      defaultReleaseBranch: "main",
+    });
+
+    expect(Markdownlint.of(project)).toBeUndefined();
+  });
+
+  it("addIgnorePattern adds pattern to .markdownlintignore", () => {
+    const project = new GitHooksEnabledProject({
+      name: "test",
+      defaultReleaseBranch: "main",
+    });
+    const markdownlint = new Markdownlint(project);
+    markdownlint.addIgnorePattern("docs/generated/**");
+
+    const snapshot = synthSnapshot(project);
+
+    expect(snapshot[".markdownlintignore"]).toContain("docs/generated/**");
+  });
+
+  it("preSynthesize adds SourceCode file paths to .markdownlintignore", () => {
+    const project = new GitHooksEnabledProject({
+      name: "test",
+      defaultReleaseBranch: "main",
+    });
+    new Markdownlint(project);
+
+    const snapshot = synthSnapshot(project);
+
+    expect(snapshot[".markdownlintignore"]).toBeDefined();
+  });
 });

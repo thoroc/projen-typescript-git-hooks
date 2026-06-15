@@ -114,4 +114,25 @@ describe("Commitizen Component", () => {
       '#!/bin/sh\n. "$(dirname "$0")/_/husky.sh"\n\nexec < /dev/tty && npx cz --hook || true',
     );
   });
+
+  it("returns the instance via Commitizen.of()", () => {
+    const project = new GitHooksEnabledProject({
+      name: "test",
+      defaultReleaseBranch: "main",
+      gitHooksManager: GitHooksManagerType.HUSKY,
+    });
+    const commitizen = new Commitizen(project);
+
+    expect(Commitizen.of(project)).toBe(commitizen);
+  });
+
+  it("returns undefined via Commitizen.of() when not present", () => {
+    const project = new GitHooksEnabledProject({
+      name: "test",
+      defaultReleaseBranch: "main",
+      gitHooksManager: GitHooksManagerType.HUSKY,
+    });
+
+    expect(Commitizen.of(project)).toBeUndefined();
+  });
 });
