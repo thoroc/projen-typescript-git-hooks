@@ -17,10 +17,6 @@ dist
 /.projenrc.js
 tsconfig.tsbuildinfo
 !.jsii
-/test-reports/
-junit.xml
-/jest.config.json
-/coverage/
 /.eslintrc.json
 /.prettierignore
 /.prettierrc.json

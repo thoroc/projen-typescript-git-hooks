@@ -49,10 +49,6 @@ tsconfig.json
 !/.github/workflows/pull-request-labeler.yml
 !/.github/labeler.yml
 !/.github/issue_template.md
-/test-reports/
-junit.xml
-!/jest.config.json
-/coverage/
 !/.eslintrc.json
 !/.prettierignore
 !/.prettierrc.json

@@ -10,6 +10,7 @@ import {
   type LefthookOptions,
 } from "../components/githooks-manager";
 import { Jest } from "../components/jest";
+import { Vitest, type VitestOptions } from "../components/vitest";
 
 export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProjectOptions {
   /**
@@ -41,6 +42,16 @@ export interface GitHooksEnabledProjectOptions extends typescript.TypeScriptProj
    * Providing this option (even as an empty object) activates the plugin.
    */
   readonly prettierSortImportsOptions?: PrettierSortImportsOptions;
+  /**
+   * Enable Vitest instead of Jest.
+   * When true, jest is automatically disabled.
+   * @default false
+   */
+  readonly vitest?: boolean;
+  /**
+   * Vitest options. Only used when vitest is true.
+   */
+  readonly vitestOptions?: VitestOptions;
 }
 
 export class GitHooksEnabledProject extends typescript.TypeScriptProject {
@@ -56,6 +67,7 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
 
   readonly gitHooksManager?: Husky | Lefthook;
   readonly jest?: javascript.Jest;
+  readonly vitest?: Vitest;
   readonly eslint?: javascript.Eslint;
   readonly prettier?: javascript.Prettier;
   readonly debug?: boolean;
@@ -95,7 +107,9 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
         break;
     }
 
-    if (options.jest ?? true) {
+    if (options.vitest) {
+      this.vitest = new Vitest(this, options.vitestOptions);
+    } else if (options.jest ?? true) {
       this.jest = new Jest(this, options.jestOptions) as javascript.Jest;
     }
 

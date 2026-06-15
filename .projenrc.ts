@@ -1,10 +1,10 @@
 import { cdk } from "projen";
 import { NodePackageManager } from "projen/lib/javascript";
 import { GitHub } from "projen/lib/github";
-import { Commitizen, Jest } from "./src";
+import { Commitizen, Vitest } from "./src";
 import { Eslint, Prettier } from "./src/components/code-standards";
 import { CodeOfConduct } from "./src/components/documentation";
-import { GitClientHook, Lefthook } from "./src/components/githooks-manager";
+import { Lefthook } from "./src/components/githooks-manager";
 import {
 	PullRequestJestCoverageComment,
 	PullRequestLabeler,
@@ -44,7 +44,7 @@ const project = new cdk.JsiiProject({
 
 	pullRequestTemplateContents: ["# Title", "", "## What", "", "## Why"],
 
-	tsconfigDev: { compilerOptions: { lib: ["es2022", "dom"], types: ["node", "jest"] } },
+	tsconfigDev: { compilerOptions: { lib: ["es2022", "dom"], types: ["node", "vitest/globals"] } },
 });
 
 project.eslint?.addRules(Eslint.defaultEslintRules);
@@ -53,13 +53,8 @@ const github = project.github ?? new GitHub(project);
 new PullRequestJestCoverageComment(github);
 new PullRequestLabeler(github);
 new IssueTemplate(github);
-const lefthook = new Lefthook(project);
-lefthook.addCommand(GitClientHook.PRE_PUSH, {
-	name: "test",
-	run: "npm run test",
-	stagedFiles: false,
-});
-new Jest(project, { configFilePath: "jest.config.json" });
+new Lefthook(project);
+new Vitest(project);
 new Eslint(project, { dirs: ["src", "test"], prettier: true });
 new Prettier(project);
 new Commitizen(project, { json: true });

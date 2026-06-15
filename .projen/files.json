@@ -20,7 +20,6 @@
     ".projen/files.json",
     ".projen/tasks.json",
     "eslint.config.js",
-    "jest.config.json",
     "lefthook.yml",
     "LICENSE",
     "renovate.json",

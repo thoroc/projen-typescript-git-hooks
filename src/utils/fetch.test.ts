@@ -1,15 +1,19 @@
 import { EventEmitter } from "events";
 import * as https from "https";
+import type { Mocked } from "vitest";
 import { getContent } from "./fetch";
 
-jest.mock("https");
+vi.mock("https");
 
-const mockedHttps = https as jest.Mocked<typeof https>;
+const mockedHttps = https as Mocked<typeof https>;
 
 const makeMockRequest = () => {
-  const req = new EventEmitter() as EventEmitter & { destroy: jest.Mock; end: jest.Mock };
-  req.destroy = jest.fn();
-  req.end = jest.fn().mockImplementation((cb?: () => void) => {
+  const req = new EventEmitter() as EventEmitter & {
+    destroy: ReturnType<typeof vi.fn>;
+    end: ReturnType<typeof vi.fn>;
+  };
+  req.destroy = vi.fn();
+  req.end = vi.fn().mockImplementation((cb?: () => void) => {
     cb?.();
     return req;
   });
@@ -21,17 +25,17 @@ const makeMockResponse = (statusCode: number, headers: Record<string, string> = 
     statusCode: number;
     statusMessage: string;
     headers: Record<string, string>;
-    setEncoding: jest.Mock;
+    setEncoding: ReturnType<typeof vi.fn>;
   };
   res.statusCode = statusCode;
   res.statusMessage = statusCode >= 400 ? "Not Found" : "OK";
   res.headers = headers;
-  res.setEncoding = jest.fn();
+  res.setEncoding = vi.fn();
   return res;
 };
 
 describe("getContent", () => {
-  beforeEach(() => jest.clearAllMocks());
+  beforeEach(() => vi.clearAllMocks());
 
   it("resolves with body on 200 response", async () => {
     const req = makeMockRequest();
