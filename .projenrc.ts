@@ -58,8 +58,7 @@ lefthook.addCommand(GitClientHook.PRE_PUSH, {
 });
 new Jest(project, { configFilePath: "jest.config.json" });
 new Eslint(project, { dirs: ["src", "test"], prettier: true });
-const prettier = new Prettier(project);
-prettier.ignoreFile?.addPatterns("CODE_OF_CONDUCT.md", "API.md", "CHANGELOG.md");
+new Prettier(project);
 new Commitizen(project, { json: true });
 new CodeOfConduct(project, { author: "thomas.a.roche@gmail.com" });
 

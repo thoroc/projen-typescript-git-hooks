@@ -1,4 +1,4 @@
-import { Component, type Project, TextFile } from "projen";
+import { Component, javascript, type Project, TextFile } from "projen";
 import { getContent } from "../../utils/fetch";
 
 export interface CodeOfConductOptions {
@@ -14,6 +14,8 @@ export class CodeOfConduct extends Component {
 
     this.version = options?.version ?? "2.1";
     this.author = options?.author ?? "";
+
+    javascript.Prettier.of(project)?.ignoreFile?.addPatterns("CODE_OF_CONDUCT.md");
 
     const majorVersion = this.version.split(".")[0];
     const minorVersion = this.version.split(".")[1];
