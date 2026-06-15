@@ -5,3 +5,6 @@ node_modules
 build
 coverage
 .github/*
+CODE_OF_CONDUCT.md
+API.md
+CHANGELOG.md
