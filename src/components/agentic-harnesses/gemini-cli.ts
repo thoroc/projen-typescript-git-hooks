@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { Component, JsonFile, SampleFile, type Project } from "projen";
+import { McpServer } from "./mcp-server";
 
 const AGENTS_MD_CONTENT = `# Agent Instructions
 
@@ -12,6 +13,7 @@ export interface GeminiCliOptions {
   readonly theme?: string;
   readonly model?: string;
   readonly contextFileNames?: Array<string>;
+  readonly mcpServers?: McpServer[];
 }
 
 export class GeminiCli extends Component {
@@ -31,10 +33,24 @@ export class GeminiCli extends Component {
   }
 
   preSynthesize(): void {
+    const mcpServersObj =
+      this.options?.mcpServers &&
+      Object.fromEntries(
+        this.options.mcpServers.map((s) => [
+          s.name,
+          {
+            command: s.command,
+            ...(s.args && { args: s.args }),
+            ...(s.env && { env: s.env }),
+          },
+        ]),
+      );
+
     new JsonFile(this.project, GeminiCli.settingsPath, {
       obj: {
         $schema:
           "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/schemas/settings.schema.json",
+        ...(mcpServersObj && { mcpServers: mcpServersObj }),
         ...(this.options?.theme && { ui: { theme: this.options.theme } }),
         ...(this.options?.model && { model: { name: this.options.model } }),
         ...(this.options?.contextFileNames && {

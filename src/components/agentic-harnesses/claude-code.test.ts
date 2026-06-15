@@ -1,6 +1,7 @@
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
 import { ClaudeCode } from "./claude-code";
+import { McpServer } from "./mcp-server";
 
 describe("ClaudeCode", () => {
   it("returns undefined when not present on project", () => {
@@ -22,6 +23,7 @@ describe("ClaudeCode", () => {
     expect(settings.$schema).toBe("https://json.schemastore.org/claude-code-settings.json");
     expect(settings.permissions).toBeUndefined();
     expect(settings.env).toBeUndefined();
+    expect(settings.mcpServers).toBeUndefined();
   });
 
   it("includes permissions in settings when provided", () => {
@@ -57,5 +59,24 @@ describe("ClaudeCode", () => {
     new ClaudeCode(project);
     const snapshot = synthSnapshot(project);
     expect(snapshot["AGENTS.md"]).toBeDefined();
+  });
+
+  it("includes mcpServers in settings when provided", () => {
+    const project = new Project({ name: "test" });
+    new ClaudeCode(project, {
+      mcpServers: [new McpServer("my-server", { command: "npx", args: ["-y", "my-mcp-server"] })],
+    });
+    const snapshot = synthSnapshot(project);
+    expect(snapshot[".claude/settings.json"].mcpServers).toEqual({
+      "my-server": { command: "npx", args: ["-y", "my-mcp-server"] },
+    });
+  });
+
+  it("shares a McpServer instance across multiple harnesses", () => {
+    const project = new Project({ name: "test" });
+    const server = new McpServer("shared", { command: "npx", args: ["-y", "shared-mcp"] });
+    new ClaudeCode(project, { mcpServers: [server] });
+    const snapshot = synthSnapshot(project);
+    expect(snapshot[".claude/settings.json"].mcpServers["shared"]).toBeDefined();
   });
 });

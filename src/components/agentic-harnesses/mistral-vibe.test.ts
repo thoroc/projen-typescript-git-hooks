@@ -1,5 +1,6 @@
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
+import { McpServer } from "./mcp-server";
 import { MistralVibe } from "./mistral-vibe";
 
 describe("MistralVibe", () => {
@@ -33,5 +34,22 @@ describe("MistralVibe", () => {
     new MistralVibe(project, { model: "mistral-large-latest" });
     const snapshot = synthSnapshot(project);
     expect(snapshot[".vibe/config.toml"]).toContain("model");
+  });
+
+  it("includes mcp_servers when mcpServers provided", () => {
+    const project = new Project({ name: "test" });
+    new MistralVibe(project, {
+      mcpServers: [new McpServer("my-server", { command: "npx", args: ["-y", "my-mcp-server"] })],
+    });
+    const snapshot = synthSnapshot(project);
+    expect(snapshot[".vibe/config.toml"]).toContain("mcp_servers");
+    expect(snapshot[".vibe/config.toml"]).toContain("my-server");
+  });
+
+  it("does not include mcp_servers when no mcpServers provided", () => {
+    const project = new Project({ name: "test" });
+    new MistralVibe(project);
+    const snapshot = synthSnapshot(project);
+    expect(snapshot[".vibe/config.toml"]).not.toContain("mcp_servers");
   });
 });

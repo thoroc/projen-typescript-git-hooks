@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { Component, JsonFile, SampleFile, type Project } from "projen";
+import { McpServer } from "./mcp-server";
 
 const AGENTS_MD_CONTENT = `# Agent Instructions
 
@@ -12,6 +13,7 @@ export interface OpenCodeOptions {
   readonly model?: string;
   readonly autoupdate?: boolean;
   readonly permission?: Record<string, "allow" | "ask" | "deny">;
+  readonly mcpServers?: McpServer[];
 }
 
 export class OpenCode extends Component {
@@ -31,9 +33,23 @@ export class OpenCode extends Component {
   }
 
   preSynthesize(): void {
+    const mcp =
+      this.options?.mcpServers &&
+      Object.fromEntries(
+        this.options.mcpServers.map((s) => [
+          s.name,
+          {
+            type: "local" as const,
+            command: [s.command, ...(s.args ?? [])],
+            ...(s.env && { environment: s.env }),
+          },
+        ]),
+      );
+
     new JsonFile(this.project, OpenCode.settingsPath, {
       obj: {
         $schema: "https://opencode.ai/config.json",
+        ...(mcp && { mcp }),
         ...(this.options?.model && { model: this.options.model }),
         ...(this.options?.autoupdate !== undefined && { autoupdate: this.options.autoupdate }),
         ...(this.options?.permission && { permission: this.options.permission }),

@@ -1,6 +1,7 @@
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
 import { GeminiCli } from "./gemini-cli";
+import { McpServer } from "./mcp-server";
 
 describe("GeminiCli", () => {
   it("returns undefined when not present on project", () => {
@@ -25,6 +26,7 @@ describe("GeminiCli", () => {
     expect(settings.ui).toBeUndefined();
     expect(settings.model).toBeUndefined();
     expect(settings.context).toBeUndefined();
+    expect(settings.mcpServers).toBeUndefined();
   });
 
   it("creates AGENTS.md when instantiated", () => {
@@ -55,5 +57,23 @@ describe("GeminiCli", () => {
     expect(snapshot[".gemini/settings.json"].context).toEqual({
       fileName: ["AGENTS.md", "GEMINI.md"],
     });
+  });
+
+  it("includes mcpServers when provided", () => {
+    const project = new Project({ name: "test" });
+    new GeminiCli(project, {
+      mcpServers: [new McpServer("my-server", { command: "npx", args: ["-y", "my-mcp-server"] })],
+    });
+    const snapshot = synthSnapshot(project);
+    expect(snapshot[".gemini/settings.json"].mcpServers).toEqual({
+      "my-server": { command: "npx", args: ["-y", "my-mcp-server"] },
+    });
+  });
+
+  it("does not include mcpServers when none provided", () => {
+    const project = new Project({ name: "test" });
+    new GeminiCli(project);
+    const snapshot = synthSnapshot(project);
+    expect(snapshot[".gemini/settings.json"].mcpServers).toBeUndefined();
   });
 });

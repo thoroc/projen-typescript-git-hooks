@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
-import { Component, JsonFile, SampleFile, type Project } from "projen";
+import { Component, JsonFile, type Project, SampleFile } from "projen";
+import type { McpServer } from "./mcp-server";
 
 const AGENTS_MD_CONTENT = `# Agent Instructions
 
@@ -16,6 +17,7 @@ export interface ClaudeCodePermissions {
 export interface ClaudeCodeOptions {
   readonly permissions?: ClaudeCodePermissions;
   readonly env?: Record<string, string>;
+  readonly mcpServers?: McpServer[];
 }
 
 export class ClaudeCode extends Component {
@@ -35,6 +37,19 @@ export class ClaudeCode extends Component {
   }
 
   preSynthesize(): void {
+    const mcpServersObj =
+      this.options?.mcpServers &&
+      Object.fromEntries(
+        this.options.mcpServers.map((s) => [
+          s.name,
+          {
+            command: s.command,
+            ...(s.args && { args: s.args }),
+            ...(s.env && { env: s.env }),
+          },
+        ]),
+      );
+
     new JsonFile(this.project, ClaudeCode.settingsPath, {
       obj: {
         $schema: "https://json.schemastore.org/claude-code-settings.json",
@@ -42,6 +57,7 @@ export class ClaudeCode extends Component {
           permissions: this.options.permissions,
         }),
         ...(this.options?.env && { env: this.options.env }),
+        ...(mcpServersObj && { mcpServers: mcpServersObj }),
       },
       readonly: false,
     });

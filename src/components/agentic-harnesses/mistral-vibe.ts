@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { Component, SampleFile, TomlFile, type Project } from "projen";
+import { McpServer } from "./mcp-server";
 
 const AGENTS_MD_CONTENT = `# Agent Instructions
 
@@ -10,6 +11,7 @@ Add your project-specific guidelines, conventions, and context here.
 
 export interface MistralVibeOptions {
   readonly model?: string;
+  readonly mcpServers?: McpServer[];
 }
 
 export class MistralVibe extends Component {
@@ -29,9 +31,23 @@ export class MistralVibe extends Component {
   }
 
   preSynthesize(): void {
+    const mcpServersObj =
+      this.options?.mcpServers &&
+      Object.fromEntries(
+        this.options.mcpServers.map((s) => [
+          s.name,
+          {
+            command: s.command,
+            ...(s.args && { args: s.args }),
+            ...(s.env && { env: s.env }),
+          },
+        ]),
+      );
+
     new TomlFile(this.project, MistralVibe.settingsPath, {
       obj: {
         ...(this.options?.model && { model: this.options.model }),
+        ...(mcpServersObj && { mcp_servers: mcpServersObj }),
       },
     });
 

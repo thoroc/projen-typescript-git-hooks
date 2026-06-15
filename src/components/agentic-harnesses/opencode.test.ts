@@ -1,5 +1,6 @@
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
+import { McpServer } from "./mcp-server";
 import { OpenCode } from "./opencode";
 
 describe("OpenCode", () => {
@@ -23,6 +24,7 @@ describe("OpenCode", () => {
     expect(settings.model).toBeUndefined();
     expect(settings.autoupdate).toBeUndefined();
     expect(settings.permission).toBeUndefined();
+    expect(settings.mcp).toBeUndefined();
   });
 
   it("creates AGENTS.md when instantiated", () => {
@@ -51,5 +53,32 @@ describe("OpenCode", () => {
     new OpenCode(project, { permission: { bash: "allow", network: "deny" } });
     const snapshot = synthSnapshot(project);
     expect(snapshot["opencode.json"].permission).toEqual({ bash: "allow", network: "deny" });
+  });
+
+  it("includes mcp when mcpServers provided", () => {
+    const project = new Project({ name: "test" });
+    new OpenCode(project, {
+      mcpServers: [new McpServer("my-server", { command: "npx", args: ["-y", "my-mcp-server"] })],
+    });
+    const snapshot = synthSnapshot(project);
+    expect(snapshot["opencode.json"].mcp).toEqual({
+      "my-server": { type: "local", command: ["npx", "-y", "my-mcp-server"] },
+    });
+  });
+
+  it("includes environment in mcp server when env provided", () => {
+    const project = new Project({ name: "test" });
+    new OpenCode(project, {
+      mcpServers: [new McpServer("my-server", { command: "npx", env: { API_KEY: "secret" } })],
+    });
+    const snapshot = synthSnapshot(project);
+    expect(snapshot["opencode.json"].mcp["my-server"].environment).toEqual({ API_KEY: "secret" });
+  });
+
+  it("does not include mcp when no mcpServers provided", () => {
+    const project = new Project({ name: "test" });
+    new OpenCode(project);
+    const snapshot = synthSnapshot(project);
+    expect(snapshot["opencode.json"].mcp).toBeUndefined();
   });
 });
