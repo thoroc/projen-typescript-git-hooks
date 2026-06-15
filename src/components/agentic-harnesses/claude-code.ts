@@ -57,7 +57,6 @@ export class ClaudeCode extends Component {
       },
       readonly: false,
     });
-
   }
 
   postSynthesize(): void {

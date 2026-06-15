@@ -55,7 +55,6 @@ export class GeminiCli extends Component {
       },
       readonly: false,
     });
-
   }
 
   postSynthesize(): void {

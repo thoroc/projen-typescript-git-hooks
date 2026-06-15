@@ -48,6 +48,5 @@ export class OpenAICodex extends Component {
         ...(mcpServersObj && { mcp_servers: mcpServersObj }),
       },
     });
-
   }
 }

@@ -52,7 +52,6 @@ export class OpenCode extends Component {
       },
       readonly: false,
     });
-
   }
 
   postSynthesize(): void {

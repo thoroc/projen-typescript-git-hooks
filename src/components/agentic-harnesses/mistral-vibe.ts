@@ -46,7 +46,6 @@ export class MistralVibe extends Component {
         ...(mcpServersObj && { mcp_servers: mcpServersObj }),
       },
     });
-
   }
 
   postSynthesize(): void {
