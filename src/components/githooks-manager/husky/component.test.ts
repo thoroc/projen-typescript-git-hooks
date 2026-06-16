@@ -67,7 +67,7 @@ describe("Husky", () => {
 
 		// Assert
 		expect(config).toEqual(
-			'#!/bin/sh\n. "$(dirname "$0")/_/husky.sh"\n\nyarn test',
+			'#!/bin/sh\n. "$(dirname "$0")/_/husky.sh"\n\nyarn test --frozen-lockfile',
 		);
 	});
 });
