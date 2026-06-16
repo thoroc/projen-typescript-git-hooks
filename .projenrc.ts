@@ -2,7 +2,7 @@ import { cdk } from "projen";
 import { GitHub } from "projen/lib/github";
 import { NodePackageManager } from "projen/lib/javascript";
 import { Commitizen, Vitest } from "./src";
-import { Eslint, Prettier } from "./src/components/code-standards";
+import { Biome } from "./src/components/code-standards";
 import { CodeOfConduct } from "./src/components/documentation";
 import { Lefthook } from "./src/components/githooks-manager";
 import {
@@ -24,10 +24,10 @@ const project = new cdk.JsiiProject({
 	repositoryUrl: "https://github.com/thoroc/projen-typescript-git-hooks.git",
 
 	docgen: true,
-	deps: ["projen", "yaml", "type-fest", "change-case"],
-	devDeps: ["projen"],
+	deps: ["projen@^0.99.0", "yaml", "type-fest", "change-case"],
+	devDeps: ["projen@^0.99.0"],
 	bundledDeps: ["yaml", "type-fest", "change-case"],
-	peerDeps: ["projen"],
+	peerDeps: ["projen@^0.99.0"],
 
 	npmDistTag: "latest",
 	npmRegistryUrl: "https:///npm.pkg.github.com",
@@ -65,16 +65,13 @@ const project = new cdk.JsiiProject({
 	},
 });
 
-project.eslint?.addRules(Eslint.defaultEslintRules);
-
 const github = project.github ?? new GitHub(project);
 new PullRequestJestCoverageComment(github);
 new PullRequestLabeler(github);
 new IssueTemplate(github);
 new Lefthook(project);
 new Vitest(project);
-new Eslint(project, { dirs: ["src", "test"], prettier: true });
-new Prettier(project);
+new Biome(project);
 new Commitizen(project, { json: true });
 new CodeOfConduct(project, { author: "thomas.a.roche@gmail.com" });
 new Renovate(project);

@@ -49,11 +49,8 @@ tsconfig.json
 !/.github/workflows/pull-request-labeler.yml
 !/.github/labeler.yml
 !/.github/issue_template.md
-!/.eslintrc.json
-!/.prettierignore
-!/.prettierrc.json
+!/biome.jsonc
 !/renovate.json
 !/.projenrc.ts
 !/lefthook.yml
-!/eslint.config.js
 !/.czrc

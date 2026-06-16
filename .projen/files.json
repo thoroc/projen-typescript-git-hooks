@@ -1,7 +1,6 @@
 {
   "files": [
     ".czrc",
-    ".eslintrc.json",
     ".gitattributes",
     ".github/issue_template.md",
     ".github/labeler.yml",
@@ -14,12 +13,9 @@
     ".github/workflows/release.yml",
     ".github/workflows/upgrade-main.yml",
     ".gitignore",
-    ".prettierignore",
-    ".prettierrc.json",
     ".projen/deps.json",
     ".projen/files.json",
     ".projen/tasks.json",
-    "eslint.config.js",
     "lefthook.yml",
     "LICENSE",
     "renovate.json",

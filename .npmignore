@@ -17,8 +17,6 @@ dist
 /.projenrc.js
 tsconfig.tsbuildinfo
 !.jsii
-/.eslintrc.json
-/.prettierignore
-/.prettierrc.json
 /.gitattributes
 /.projenrc.ts
+/projenrc

@@ -1,3 +1,4 @@
+export * from "./biome";
 export * from "./commitizen";
 export * from "./editorconfig";
 export * from "./eslint";

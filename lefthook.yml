@@ -4,17 +4,9 @@ pre-commit:
   commands:
     typecheck:
       run: npx tsc --noEmit -p tsconfig.dev.json
-    eslint:
-      run: npx eslint --cache --fix {staged_files}
+    biome:
+      run: biome check --write {staged_files}
       glob: src/**/*.ts
-      stage_fixed: true
-    prettier:
-      run: npx prettier --write {staged_files}
-      glob: src/**/*.ts
-      stage_fixed: true
-    markdown-prettier:
-      run: npx prettier --write --prose-wrap always {staged_files}
-      glob: "*.md"
       stage_fixed: true
 
 pre-push:

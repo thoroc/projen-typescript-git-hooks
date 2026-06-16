@@ -1,5 +1,15 @@
 {
   "tasks": {
+    "biome": {
+      "name": "biome",
+      "description": "Runs Biome against the codebase",
+      "steps": [
+        {
+          "exec": "biome check --no-errors-on-unmatched --write",
+          "receiveArgs": true
+        }
+      ]
+    },
     "build": {
       "name": "build",
       "description": "Full release build",
@@ -32,14 +42,15 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": ""
+        "RELEASE_TAG_PREFIX": "",
+        "BUMP_PACKAGE": "commit-and-tag-version@^12"
       },
       "steps": [
         {
           "builtin": "release/bump-version"
         }
       ],
-      "condition": "! git log --oneline -1 | grep -q \"chore(release):\""
+      "condition": "git log --oneline -1 | grep -qv \"chore(release):\""
     },
     "clobber": {
       "name": "clobber",
@@ -130,34 +141,6 @@
         }
       ]
     },
-    "eslint": {
-      "name": "eslint",
-      "description": "Runs eslint against the codebase",
-      "steps": [
-        {
-          "exec": "eslint --ext .ts --fix --no-error-on-unmatched-pattern $@ src test .projenrc.js",
-          "receiveArgs": true
-        }
-      ]
-    },
-    "format": {
-      "name": "format",
-      "description": "Runs Prettier",
-      "steps": [
-        {
-          "exec": "npx prettier --write \"{src,projenrc}/**/*.ts\""
-        }
-      ]
-    },
-    "format:markdown": {
-      "name": "format:markdown",
-      "description": "Runs Prettier on Markdown",
-      "steps": [
-        {
-          "exec": "npx prettier --write --prose-wrap always *.md"
-        }
-      ]
-    },
     "install": {
       "name": "install",
       "description": "Install project dependencies and update lockfile (non-frozen)",
@@ -181,7 +164,12 @@
       "description": "Creates the distribution package",
       "steps": [
         {
-          "exec": "if [ ! -z ${CI} ]; then rsync -a . .repo --exclude .git --exclude node_modules && rm -rf dist && mv .repo dist; else bunx projen package-all; fi"
+          "spawn": "package:js",
+          "condition": "node -e \"if (!process.env.CI) process.exit(1)\""
+        },
+        {
+          "spawn": "package-all",
+          "condition": "node -e \"if (process.env.CI) process.exit(1)\""
         }
       ]
     },
@@ -262,7 +250,8 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": ""
+        "RELEASE_TAG_PREFIX": "",
+        "BUMP_PACKAGE": "commit-and-tag-version@^12"
       },
       "steps": [
         {
@@ -278,13 +267,13 @@
       },
       "steps": [
         {
-          "exec": "bunx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@commitlint/cli,@commitlint/config-conventional,@eslint/eslintrc,@eslint/js,@types/prettier,@vitest/coverage-v8,commitizen,cz-conventional-changelog,eslint-config-airbnb-typescript,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-markdownlint,eslint-plugin-prettier,eslint-plugin-testing-library,jsii-diff,jsii-docgen,jsii-pacmak,jsii-rosetta,jsii,lefthook,prettier,projen,ts-node,typescript,vite-tsconfig-paths,vitest,change-case,type-fest,yaml"
+          "exec": "bunx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@commitlint/cli,@commitlint/config-conventional,@types/node,@vitest/coverage-v8,commitizen,cz-conventional-changelog,jsii-diff,jsii-pacmak,lefthook,projen,ts-node,typescript,vite-tsconfig-paths,vitest,change-case,type-fest,yaml"
         },
         {
           "exec": "bun install"
         },
         {
-          "exec": "bun update @commitlint/cli @commitlint/config-conventional @eslint/eslintrc @eslint/js @types/node @types/prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser @vitest/coverage-v8 commitizen constructs cz-conventional-changelog eslint-config-airbnb-typescript eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-markdownlint eslint-plugin-prettier eslint-plugin-testing-library eslint jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii lefthook prettier projen standard-version ts-node typescript vite-tsconfig-paths vitest change-case type-fest yaml"
+          "exec": "bun update @biomejs/biome @commitlint/cli @commitlint/config-conventional @types/node @vitest/coverage-v8 commit-and-tag-version commitizen constructs cz-conventional-changelog jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii lefthook projen ts-node typescript vite-tsconfig-paths vitest change-case type-fest yaml"
         },
         {
           "exec": "bunx projen"
@@ -305,7 +294,7 @@
     }
   },
   "env": {
-    "PATH": "$(npx -c \"node --print process.env.PATH\")"
+    "PATH": "$(bun --eval \"console.log(process.env.PATH)\")"
   },
   "//": "~~ Generated by projen. To modify, edit .projenrc.ts and run \"bunx projen\"."
 }
