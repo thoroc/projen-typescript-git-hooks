@@ -1,7 +1,7 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import * as yaml from "yaml";
-import { GitHooksEnabledProject } from "../../../src";
-import { GitHooksManagerType } from "../../../src/components/githooks-manager";
+import { GitHooksEnabledProject } from "@thoroc/projen-typescript-git-hooks";
+import { GitHooksManagerType } from "@thoroc/githooks-manager";
 import type { PrettierSortImportsOptions } from "./prettier-sort-imports-options";
 
 describe("Custom Prettier", () => {

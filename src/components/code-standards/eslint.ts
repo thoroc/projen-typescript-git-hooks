@@ -98,6 +98,11 @@ export class Eslint extends javascript.Eslint {
     // making sure the tests are being linted
     this.config.parserOptions.project = "tsconfig.dev.json";
 
+    // use tsconfig.dev.json so the import resolver honours path aliases defined there
+    (project as javascript.NodeProject)
+      .tryFindObjectFile(".eslintrc.json")
+      ?.addOverride("settings.import/resolver.typescript.project", "./tsconfig.dev.json");
+
     this.addRules(Eslint.defaultEslintRules);
 
     // eslint-plugin-markdownlint

@@ -1,7 +1,7 @@
 import { synthSnapshot } from "projen/lib/util/synth";
-import { GitHooksEnabledProject } from "../../../src";
-import { CodeOfConduct } from "../../../src/components/documentation";
-import { GitHooksManagerType } from "../../../src/components/githooks-manager";
+import { GitHooksEnabledProject } from "@thoroc/projen-typescript-git-hooks";
+import { CodeOfConduct } from "@thoroc/documentation";
+import { GitHooksManagerType } from "@thoroc/githooks-manager";
 
 describe("CodeOfConduct", () => {
   it("adds CODE_OF_CONDUCT.md to .prettierignore when Prettier is present", () => {

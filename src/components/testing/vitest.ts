@@ -9,9 +9,11 @@ export interface VitestOptions {
   readonly coverageProvider?: "v8" | "istanbul";
 }
 
-const VITEST_CONFIG_CONTENT = `import { defineConfig } from "vitest/config";
+const VITEST_CONFIG_CONTENT = `import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
+  plugins: [tsconfigPaths({ projects: ["./tsconfig.dev.json"] })],
   test: {
     globals: true,
     include: ["src/**/*.test.ts"],
@@ -32,7 +34,7 @@ export class Vitest extends Component {
   constructor(project: NodeProject, options: VitestOptions = {}) {
     super(project);
 
-    project.addDevDeps("vitest");
+    project.addDevDeps("vitest", "vite-tsconfig-paths");
 
     const { coverage = true, coverageProvider = "v8" } = options;
     if (coverage) {

@@ -44,7 +44,24 @@ const project = new cdk.JsiiProject({
 
 	pullRequestTemplateContents: ["# Title", "", "## What", "", "## Why"],
 
-	tsconfigDev: { compilerOptions: { lib: ["es2022", "dom"], types: ["node", "vitest/globals"] } },
+	tsconfigDev: {
+		compilerOptions: {
+			lib: ["es2022", "dom"],
+			types: ["node", "vitest/globals"],
+			paths: {
+				"@thoroc/projen-typescript-git-hooks": ["./src"],
+				"@thoroc/githooks-manager": ["./src/components/githooks-manager"],
+				"@thoroc/github-actions": ["./src/components/github-actions"],
+				"@thoroc/github-actions/*": ["./src/components/github-actions/*"],
+				"@thoroc/github-templates": ["./src/components/github-templates"],
+				"@thoroc/documentation": ["./src/components/documentation"],
+				"@thoroc/code-standards": ["./src/components/code-standards"],
+				"@thoroc/testing": ["./src/components/testing"],
+				"@thoroc/renovate": ["./src/components/renovate"],
+				"@thoroc/agentic-harnesses": ["./src/components/agentic-harnesses"],
+			},
+		},
+	},
 });
 
 project.eslint?.addRules(Eslint.defaultEslintRules);

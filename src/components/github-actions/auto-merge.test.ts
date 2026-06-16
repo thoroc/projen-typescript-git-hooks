@@ -1,7 +1,7 @@
 import { Project } from "projen";
 import { GitHub } from "projen/lib/github";
 import { synthSnapshot } from "projen/lib/util/synth";
-import { AutoMerge } from "../../../src/components/github-actions/auto-merge";
+import { AutoMerge } from "@thoroc/github-actions/auto-merge";
 
 describe("auto-merge", () => {
   it("Adds a new github workflow", () => {

@@ -1,8 +1,8 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import * as yaml from "yaml";
-import { GitHooksEnabledProject } from "../../../src";
-import { Eslint } from "../../../src/components/code-standards";
-import { GitHooksManagerType } from "../../../src/components/githooks-manager";
+import { GitHooksEnabledProject } from "@thoroc/projen-typescript-git-hooks";
+import { Eslint } from "@thoroc/code-standards";
+import { GitHooksManagerType } from "@thoroc/githooks-manager";
 
 describe("Custom Eslint", () => {
   it("Retuns a singleton", () => {

@@ -1,7 +1,7 @@
 import { GitHub } from "projen/lib/github";
 import { Project } from "projen/lib/project";
 import { synthSnapshot } from "projen/lib/util/synth";
-import { CloseStaleIssue } from "../../../src/components/github-actions/close-stale-issue";
+import { CloseStaleIssue } from "@thoroc/github-actions/close-stale-issue";
 
 describe("close-stale-issue", () => {
   it("Adds a new github workflow", () => {

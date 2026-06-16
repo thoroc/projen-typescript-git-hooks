@@ -1,7 +1,7 @@
 import { Project } from "projen";
 import { GitHub } from "projen/lib/github";
 import { synthSnapshot } from "projen/lib/util/synth";
-import { PullRequestLabeler } from "../../../src/components/github-actions/pull-request-labeler";
+import { PullRequestLabeler } from "@thoroc/github-actions/pull-request-labeler";
 
 describe("pull-request-labeler", () => {
   it("Adds a new github workflow", () => {

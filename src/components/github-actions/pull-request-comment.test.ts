@@ -1,7 +1,7 @@
 import { GitHub } from "projen/lib/github";
 import { NodePackageManager, NodeProject } from "projen/lib/javascript";
 import { synthSnapshot } from "projen/lib/util/synth";
-import { PullRequestJestCoverageComment } from "../../../src/components/github-actions/pull-request-comment";
+import { PullRequestJestCoverageComment } from "@thoroc/github-actions/pull-request-comment";
 
 describe("pull-request-comment", () => {
   it("Adds a new github workflow with YARN", () => {

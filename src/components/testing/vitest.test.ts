@@ -1,7 +1,7 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import { NodePackageManager } from "projen/lib/javascript";
-import { GitHooksEnabledProject } from "../../../src";
-import { GitHooksManagerType } from "../../../src/components/githooks-manager";
+import { GitHooksEnabledProject } from "@thoroc/projen-typescript-git-hooks";
+import { GitHooksManagerType } from "@thoroc/githooks-manager";
 import { Vitest } from "./vitest";
 
 const makeProject = (gitHooksManager = GitHooksManagerType.LEFTHOOK) =>

@@ -1,6 +1,6 @@
 import { synthSnapshot } from "projen/lib/util/synth";
-import { Commitizen, GitHooksEnabledProject } from "../../../src";
-import { GitHooksManagerType } from "../../../src/components/githooks-manager";
+import { Commitizen, GitHooksEnabledProject } from "@thoroc/projen-typescript-git-hooks";
+import { GitHooksManagerType } from "@thoroc/githooks-manager";
 
 describe("Commitizen Component", () => {
   it("Adds new dev dependencie", () => {
