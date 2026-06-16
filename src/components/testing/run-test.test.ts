@@ -14,4 +14,8 @@ describe("runTest", () => {
 	])("returns correct script for %s", (manager, expected) => {
 		expect(runTest(manager)).toBe(expected);
 	});
+
+	it("falls back to npm ci for unknown package managers", () => {
+		expect(runTest("unknown" as NodePackageManager)).toBe("npm ci");
+	});
 });

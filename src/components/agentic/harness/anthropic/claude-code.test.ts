@@ -1,10 +1,26 @@
+import * as fs from "fs";
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { AgentsMd } from "../../agents-md";
 import { McpServer } from "../../mcp";
 import { ClaudeCode } from "./claude-code";
 
+vi.mock("fs", async (importOriginal) => {
+	const actual = await importOriginal<typeof import("fs")>();
+	return {
+		...actual,
+		existsSync: vi.fn(),
+		lstatSync: vi.fn(),
+		symlinkSync: vi.fn(),
+	};
+});
+
 describe("ClaudeCode", () => {
+	afterEach(() => {
+		vi.resetAllMocks();
+	});
+
 	it("returns undefined when not present on project", () => {
 		const project = new Project({ name: "test" });
 		expect(ClaudeCode.of(project)).toBeUndefined();
@@ -94,5 +110,55 @@ describe("ClaudeCode", () => {
 		new ClaudeCode(project, { mcpServers: [server] });
 		const snapshot = synthSnapshot(project);
 		expect(snapshot[".claude/settings.json"].mcpServers.shared).toBeDefined();
+	});
+
+	it("reuses existing AgentsMd when already present on project", () => {
+		const project = new Project({ name: "test" });
+		new AgentsMd(project);
+		new ClaudeCode(project);
+		const instances = project.components.filter((c) => c instanceof AgentsMd);
+		expect(instances).toHaveLength(1);
+	});
+
+	describe("postSynthesize", () => {
+		it("creates a symlink when the context file does not exist", () => {
+			vi.mocked(fs.existsSync).mockReturnValue(false);
+			vi.mocked(fs.symlinkSync).mockImplementation(() => {});
+
+			const project = new Project({ name: "test" });
+			const cc = new ClaudeCode(project);
+			cc.postSynthesize();
+
+			expect(fs.symlinkSync).toHaveBeenCalledWith(
+				"AGENTS.md",
+				expect.stringContaining("CLAUDE.md"),
+			);
+		});
+
+		it("does nothing when the context file already exists as a symlink", () => {
+			vi.mocked(fs.existsSync).mockReturnValue(true);
+			vi.mocked(fs.lstatSync).mockReturnValue({
+				isSymbolicLink: () => true,
+			} as ReturnType<typeof fs.lstatSync>);
+
+			const project = new Project({ name: "test" });
+			const cc = new ClaudeCode(project);
+			cc.postSynthesize();
+
+			expect(fs.symlinkSync).not.toHaveBeenCalled();
+		});
+
+		it("does nothing when the context file exists but is not a symlink", () => {
+			vi.mocked(fs.existsSync).mockReturnValue(true);
+			vi.mocked(fs.lstatSync).mockReturnValue({
+				isSymbolicLink: () => false,
+			} as ReturnType<typeof fs.lstatSync>);
+
+			const project = new Project({ name: "test" });
+			const cc = new ClaudeCode(project);
+			cc.postSynthesize();
+
+			expect(fs.symlinkSync).not.toHaveBeenCalled();
+		});
 	});
 });

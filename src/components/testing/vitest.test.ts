@@ -104,6 +104,20 @@ describe("Vitest", () => {
 			const snapshot = synthSnapshot(project);
 			expect(snapshot[".husky/pre-push"]).toContain("npm run test");
 		});
+
+		it("uses yarn test script for yarn package manager", () => {
+			const project = new GitHooksEnabledProject({
+				name: "test",
+				defaultReleaseBranch: "main",
+				jest: false,
+				packageManager: NodePackageManager.YARN,
+				gitHooksManager: GitHooksManagerType.HUSKY,
+			});
+			new Vitest(project);
+
+			const snapshot = synthSnapshot(project);
+			expect(snapshot[".husky/pre-push"]).toContain("yarn test");
+		});
 	});
 
 	describe("singleton", () => {

@@ -1,10 +1,25 @@
+import * as fs from "node:fs";
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { McpServer } from "../../mcp";
 import { OpenCode } from "./component";
 
+vi.mock("node:fs", async (importOriginal) => {
+	const actual = await importOriginal<typeof import("node:fs")>();
+	return {
+		...actual,
+		existsSync: vi.fn(),
+		lstatSync: vi.fn(),
+		symlinkSync: vi.fn(),
+	};
+});
+
 describe("OpenCode", () => {
+	afterEach(() => {
+		vi.resetAllMocks();
+	});
+
 	it("returns undefined when not present on project", () => {
 		const project = new Project({ name: "test" });
 		expect(OpenCode.of(project)).toBeUndefined();
@@ -95,5 +110,47 @@ describe("OpenCode", () => {
 		new OpenCode(project);
 		const snapshot = synthSnapshot(project);
 		expect(snapshot["opencode.json"].plugin).toBeUndefined();
+	});
+
+	describe("postSynthesize", () => {
+		it("creates a symlink when the context file does not exist", () => {
+			vi.mocked(fs.existsSync).mockReturnValue(false);
+			vi.mocked(fs.symlinkSync).mockImplementation(() => {});
+
+			const project = new Project({ name: "test" });
+			const oc = new OpenCode(project);
+			oc.postSynthesize();
+
+			expect(fs.symlinkSync).toHaveBeenCalledWith(
+				"AGENTS.md",
+				expect.stringContaining("OPENCODE.md"),
+			);
+		});
+
+		it("does nothing when the context file already exists as a symlink", () => {
+			vi.mocked(fs.existsSync).mockReturnValue(true);
+			vi.mocked(fs.lstatSync).mockReturnValue({
+				isSymbolicLink: () => true,
+			} as ReturnType<typeof fs.lstatSync>);
+
+			const project = new Project({ name: "test" });
+			const oc = new OpenCode(project);
+			oc.postSynthesize();
+
+			expect(fs.symlinkSync).not.toHaveBeenCalled();
+		});
+
+		it("does nothing when the context file exists but is not a symlink", () => {
+			vi.mocked(fs.existsSync).mockReturnValue(true);
+			vi.mocked(fs.lstatSync).mockReturnValue({
+				isSymbolicLink: () => false,
+			} as ReturnType<typeof fs.lstatSync>);
+
+			const project = new Project({ name: "test" });
+			const oc = new OpenCode(project);
+			oc.postSynthesize();
+
+			expect(fs.symlinkSync).not.toHaveBeenCalled();
+		});
 	});
 });

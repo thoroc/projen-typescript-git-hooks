@@ -1,10 +1,26 @@
+import * as fs from "node:fs";
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { AgentsMd } from "../../agents-md";
 import { McpServer } from "../../mcp";
 import { GeminiCli } from "./gemini-cli";
 
+vi.mock("node:fs", async (importOriginal) => {
+	const actual = await importOriginal<typeof import("node:fs")>();
+	return {
+		...actual,
+		existsSync: vi.fn(),
+		lstatSync: vi.fn(),
+		symlinkSync: vi.fn(),
+	};
+});
+
 describe("GeminiCli", () => {
+	afterEach(() => {
+		vi.resetAllMocks();
+	});
+
 	it("returns undefined when not present on project", () => {
 		const project = new Project({ name: "test" });
 		expect(GeminiCli.of(project)).toBeUndefined();
@@ -36,6 +52,7 @@ describe("GeminiCli", () => {
 		const snapshot = synthSnapshot(project);
 		expect(snapshot["AGENTS.md"]).toBeDefined();
 	});
+
 	it("includes theme in ui when provided", () => {
 		const project = new Project({ name: "test" });
 		new GeminiCli(project, { theme: "dark" });
@@ -60,6 +77,7 @@ describe("GeminiCli", () => {
 			fileName: ["AGENTS.md", "GEMINI.md"],
 		});
 	});
+
 	it("includes mcpServers when provided", () => {
 		const project = new Project({ name: "test" });
 		new GeminiCli(project, {
@@ -82,6 +100,7 @@ describe("GeminiCli", () => {
 		const snapshot = synthSnapshot(project);
 		expect(snapshot[".gemini/settings.json"].mcpServers).toBeUndefined();
 	});
+
 	it("addMcpServer registers a server dynamically", () => {
 		const project = new Project({ name: "test" });
 		const gc = new GeminiCli(project);
@@ -116,5 +135,55 @@ describe("GeminiCli", () => {
 		new GeminiCli(project);
 		const snapshot = synthSnapshot(project);
 		expect(snapshot[".gemini/settings.json"].hooks).toBeUndefined();
+	});
+
+	it("reuses existing AgentsMd when already present on project", () => {
+		const project = new Project({ name: "test" });
+		new AgentsMd(project);
+		new GeminiCli(project);
+		const instances = project.components.filter((c) => c instanceof AgentsMd);
+		expect(instances).toHaveLength(1);
+	});
+
+	describe("postSynthesize", () => {
+		it("creates a symlink when the context file does not exist", () => {
+			vi.mocked(fs.existsSync).mockReturnValue(false);
+			vi.mocked(fs.symlinkSync).mockImplementation(() => {});
+
+			const project = new Project({ name: "test" });
+			const gc = new GeminiCli(project);
+			gc.postSynthesize();
+
+			expect(fs.symlinkSync).toHaveBeenCalledWith(
+				"AGENTS.md",
+				expect.stringContaining("GEMINI.md"),
+			);
+		});
+
+		it("does nothing when the context file already exists as a symlink", () => {
+			vi.mocked(fs.existsSync).mockReturnValue(true);
+			vi.mocked(fs.lstatSync).mockReturnValue({
+				isSymbolicLink: () => true,
+			} as ReturnType<typeof fs.lstatSync>);
+
+			const project = new Project({ name: "test" });
+			const gc = new GeminiCli(project);
+			gc.postSynthesize();
+
+			expect(fs.symlinkSync).not.toHaveBeenCalled();
+		});
+
+		it("does nothing when the context file exists but is not a symlink", () => {
+			vi.mocked(fs.existsSync).mockReturnValue(true);
+			vi.mocked(fs.lstatSync).mockReturnValue({
+				isSymbolicLink: () => false,
+			} as ReturnType<typeof fs.lstatSync>);
+
+			const project = new Project({ name: "test" });
+			const gc = new GeminiCli(project);
+			gc.postSynthesize();
+
+			expect(fs.symlinkSync).not.toHaveBeenCalled();
+		});
 	});
 });

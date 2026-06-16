@@ -1,10 +1,7 @@
-import {
-	Jest as BaseJest,
-	type JestOptions,
-	NodePackageManager,
-} from "projen/lib/javascript";
+import { Jest as BaseJest, type JestOptions } from "projen/lib/javascript";
 import type { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
 import { GitClientHook, Husky } from "../githooks-manager";
+import { runTest } from ".";
 
 export class Jest extends BaseJest {
 	readonly configFilePath?: string;
@@ -16,15 +13,7 @@ export class Jest extends BaseJest {
 
 		this.configFilePath = options?.configFilePath;
 
-		const yarnManagers = [
-			NodePackageManager.YARN,
-			NodePackageManager.YARN2,
-			NodePackageManager.YARN_CLASSIC,
-			NodePackageManager.YARN_BERRY,
-		];
-		const script = yarnManagers.includes(project.package.packageManager)
-			? "yarn test"
-			: "npm run test";
+		const script = runTest(project.package.packageManager);
 
 		Husky.of(project)?.createHook(GitClientHook.PRE_PUSH, [script]);
 	}
