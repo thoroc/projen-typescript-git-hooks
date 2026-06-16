@@ -1,7 +1,8 @@
 import { Component } from "projen";
 import type { GitHub } from "projen/lib/github";
 import { JobPermission } from "projen/lib/github/workflows-model";
-import { NodePackageManager, type NodeProject } from "projen/lib/javascript";
+import type { NodeProject } from "projen/lib/javascript";
+import { installScript } from "./install-script";
 
 /**
  * Represents PullRequestJestCoverageComment configuration
@@ -16,10 +17,7 @@ export class PullRequestJestCoverageComment extends Component {
 		});
 
 		const pkg = (this.project as NodeProject).package;
-		const installationScript =
-			pkg.packageManager === NodePackageManager.YARN_BERRY
-				? "yarn install --check-files"
-				: "npm ci";
+		const installationScript = installScript(pkg.packageManager);
 
 		workflow.addJob("build", {
 			permissions: { pullRequests: JobPermission.WRITE },
@@ -28,7 +26,7 @@ export class PullRequestJestCoverageComment extends Component {
 			steps: [
 				{
 					name: "Checkout",
-					uses: "actions/checkout@v3",
+					uses: "actions/checkout@v4",
 					with: {
 						ref: "${{ github.event.pull_request.head.ref }}",
 						repository: "${{ github.event.pull_request.head.repo.full_name }}",
@@ -41,7 +39,7 @@ export class PullRequestJestCoverageComment extends Component {
 				},
 				{
 					name: "Jest Coverage Comment",
-					uses: "MishaKav/jest-coverage-comment@main",
+					uses: "MishaKav/jest-coverage-comment@v1",
 				},
 			],
 		});

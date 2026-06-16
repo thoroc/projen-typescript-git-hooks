@@ -22,7 +22,7 @@ export class PullRequestLabeler extends Component {
 			runsOn: ["ubuntu-latest"],
 			steps: [
 				{
-					uses: "actions/labeler@v4",
+					uses: "actions/labeler@v5",
 					with: { dot: true },
 				},
 			],
