@@ -1,6 +1,6 @@
 import { cdk } from "projen";
-import { NodePackageManager } from "projen/lib/javascript";
 import { GitHub } from "projen/lib/github";
+import { NodePackageManager } from "projen/lib/javascript";
 import { Commitizen, Vitest } from "./src";
 import { Eslint, Prettier } from "./src/components/code-standards";
 import { CodeOfConduct } from "./src/components/documentation";
@@ -19,6 +19,7 @@ const project = new cdk.JsiiProject({
 	jsiiVersion: "~5.0.0",
 	name: "@thoroc/projen-typescript-git-hooks",
 	packageManager: NodePackageManager.BUN,
+	projenCommand: "bunx projen",
 	projenrcTs: true,
 	repositoryUrl: "https://github.com/thoroc/projen-typescript-git-hooks.git",
 
