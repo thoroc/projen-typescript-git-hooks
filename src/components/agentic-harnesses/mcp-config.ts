@@ -1,40 +1,40 @@
 import { Component, JsonFile, type Project } from "projen";
-import { McpServer } from "./mcp-server";
+import type { McpServer } from "./mcp-server";
 
 export interface McpConfigOptions {
-  readonly servers: Array<McpServer>;
+	readonly servers: Array<McpServer>;
 }
 
 export class McpConfig extends Component {
-  static readonly configPath = ".mcp.json";
+	static readonly configPath = ".mcp.json";
 
-  public static of(project: Project): McpConfig | undefined {
-    const singleton = (c: Component): c is McpConfig => c instanceof McpConfig;
-    return project.components.find(singleton);
-  }
+	public static of(project: Project): McpConfig | undefined {
+		const singleton = (c: Component): c is McpConfig => c instanceof McpConfig;
+		return project.components.find(singleton);
+	}
 
-  readonly servers: Array<McpServer>;
+	readonly servers: Array<McpServer>;
 
-  constructor(project: Project, options: McpConfigOptions) {
-    super(project);
-    this.servers = options.servers;
-  }
+	constructor(project: Project, options: McpConfigOptions) {
+		super(project);
+		this.servers = options.servers;
+	}
 
-  preSynthesize(): void {
-    new JsonFile(this.project, McpConfig.configPath, {
-      obj: {
-        mcpServers: Object.fromEntries(
-          this.servers.map((s) => [
-            s.name,
-            {
-              command: s.command,
-              ...(s.args && { args: s.args }),
-              ...(s.env && { env: s.env }),
-            },
-          ]),
-        ),
-      },
-      readonly: false,
-    });
-  }
+	preSynthesize(): void {
+		new JsonFile(this.project, McpConfig.configPath, {
+			obj: {
+				mcpServers: Object.fromEntries(
+					this.servers.map((s) => [
+						s.name,
+						{
+							command: s.command,
+							...(s.args && { args: s.args }),
+							...(s.env && { env: s.env }),
+						},
+					]),
+				),
+			},
+			readonly: false,
+		});
+	}
 }

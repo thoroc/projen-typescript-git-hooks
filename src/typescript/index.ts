@@ -1,1 +1,4 @@
-export { GitHooksEnabledProject, GitHooksEnabledProjectOptions } from "./githooks-enabled-project";
+export {
+	GitHooksEnabledProject,
+	GitHooksEnabledProjectOptions,
+} from "./githooks-enabled-project";

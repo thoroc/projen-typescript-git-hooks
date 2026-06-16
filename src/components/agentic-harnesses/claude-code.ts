@@ -5,66 +5,67 @@ import { AgentsMd } from "./agents-md";
 import type { McpServer } from "./mcp-server";
 
 export interface ClaudeCodePermissions {
-  readonly allow?: Array<string>;
-  readonly deny?: Array<string>;
+	readonly allow?: Array<string>;
+	readonly deny?: Array<string>;
 }
 
 export interface ClaudeCodeOptions {
-  readonly permissions?: ClaudeCodePermissions;
-  readonly env?: Record<string, string>;
-  readonly mcpServers?: Array<McpServer>;
+	readonly permissions?: ClaudeCodePermissions;
+	readonly env?: Record<string, string>;
+	readonly mcpServers?: Array<McpServer>;
 }
 
 export class ClaudeCode extends Component {
-  static readonly settingsPath = ".claude/settings.json";
-  static readonly contextFile = "CLAUDE.md";
+	static readonly settingsPath = ".claude/settings.json";
+	static readonly contextFile = "CLAUDE.md";
 
-  public static of(project: Project): ClaudeCode | undefined {
-    const singleton = (c: Component): c is ClaudeCode => c instanceof ClaudeCode;
-    return project.components.find(singleton);
-  }
+	public static of(project: Project): ClaudeCode | undefined {
+		const singleton = (c: Component): c is ClaudeCode =>
+			c instanceof ClaudeCode;
+		return project.components.find(singleton);
+	}
 
-  readonly options?: ClaudeCodeOptions;
+	readonly options?: ClaudeCodeOptions;
 
-  constructor(project: Project, options?: ClaudeCodeOptions) {
-    super(project);
-    this.options = options;
-    void (AgentsMd.of(project) ?? new AgentsMd(project));
-  }
+	constructor(project: Project, options?: ClaudeCodeOptions) {
+		super(project);
+		this.options = options;
+		void (AgentsMd.of(project) ?? new AgentsMd(project));
+	}
 
-  preSynthesize(): void {
-    const mcpServersObj =
-      this.options?.mcpServers &&
-      Object.fromEntries(
-        this.options.mcpServers.map((s) => [
-          s.name,
-          {
-            command: s.command,
-            ...(s.args && { args: s.args }),
-            ...(s.env && { env: s.env }),
-          },
-        ]),
-      );
+	preSynthesize(): void {
+		const mcpServersObj =
+			this.options?.mcpServers &&
+			Object.fromEntries(
+				this.options.mcpServers.map((s) => [
+					s.name,
+					{
+						command: s.command,
+						...(s.args && { args: s.args }),
+						...(s.env && { env: s.env }),
+					},
+				]),
+			);
 
-    new JsonFile(this.project, ClaudeCode.settingsPath, {
-      obj: {
-        $schema: "https://json.schemastore.org/claude-code-settings.json",
-        ...(this.options?.permissions && {
-          permissions: this.options.permissions,
-        }),
-        ...(this.options?.env && { env: this.options.env }),
-        ...(mcpServersObj && { mcpServers: mcpServersObj }),
-      },
-      readonly: false,
-    });
-  }
+		new JsonFile(this.project, ClaudeCode.settingsPath, {
+			obj: {
+				$schema: "https://json.schemastore.org/claude-code-settings.json",
+				...(this.options?.permissions && {
+					permissions: this.options.permissions,
+				}),
+				...(this.options?.env && { env: this.options.env }),
+				...(mcpServersObj && { mcpServers: mcpServersObj }),
+			},
+			readonly: false,
+		});
+	}
 
-  postSynthesize(): void {
-    const symlinkPath = path.join(this.project.outdir, ClaudeCode.contextFile);
-    if (fs.existsSync(symlinkPath)) {
-      if (fs.lstatSync(symlinkPath).isSymbolicLink()) return;
-      return;
-    }
-    fs.symlinkSync("AGENTS.md", symlinkPath);
-  }
+	postSynthesize(): void {
+		const symlinkPath = path.join(this.project.outdir, ClaudeCode.contextFile);
+		if (fs.existsSync(symlinkPath)) {
+			if (fs.lstatSync(symlinkPath).isSymbolicLink()) return;
+			return;
+		}
+		fs.symlinkSync("AGENTS.md", symlinkPath);
+	}
 }

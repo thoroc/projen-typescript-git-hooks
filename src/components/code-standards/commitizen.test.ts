@@ -1,156 +1,163 @@
-import { synthSnapshot } from "projen/lib/util/synth";
-import { Commitizen, GitHooksEnabledProject } from "@thoroc/projen-typescript-git-hooks";
 import { GitHooksManagerType } from "@thoroc/githooks-manager";
+import {
+	Commitizen,
+	GitHooksEnabledProject,
+} from "@thoroc/projen-typescript-git-hooks";
+import { synthSnapshot } from "projen/lib/util/synth";
 
 describe("Commitizen Component", () => {
-  it("Adds new dev dependencie", () => {
-    // Arrange
-    const project = new GitHooksEnabledProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-      prettier: true,
-      gitHooksManager: GitHooksManagerType.HUSKY,
-    });
-    new Commitizen(project);
+	it("Adds new dev dependencie", () => {
+		// Arrange
+		const project = new GitHooksEnabledProject({
+			name: "test",
+			defaultReleaseBranch: "main",
+			prettier: true,
+			gitHooksManager: GitHooksManagerType.HUSKY,
+		});
+		new Commitizen(project);
 
-    // Act
-    const snapshot = synthSnapshot(project);
-    const config = snapshot["package.json"];
+		// Act
+		const snapshot = synthSnapshot(project);
+		const config = snapshot["package.json"];
 
-    // Assert
-    expect(Object.keys(config.devDependencies)).toContain("@commitlint/cli");
-    expect(Object.keys(config.devDependencies)).toContain("@commitlint/config-conventional");
-    expect(Object.keys(config.devDependencies)).toContain("commitizen");
-    expect(Object.keys(config.devDependencies)).toContain("cz-conventional-changelog");
-  });
+		// Assert
+		expect(Object.keys(config.devDependencies)).toContain("@commitlint/cli");
+		expect(Object.keys(config.devDependencies)).toContain(
+			"@commitlint/config-conventional",
+		);
+		expect(Object.keys(config.devDependencies)).toContain("commitizen");
+		expect(Object.keys(config.devDependencies)).toContain(
+			"cz-conventional-changelog",
+		);
+	});
 
-  it("Adds new task", () => {
-    // Arrange
-    const project = new GitHooksEnabledProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-      prettier: true,
-      gitHooksManager: GitHooksManagerType.HUSKY,
-    });
-    new Commitizen(project);
+	it("Adds new task", () => {
+		// Arrange
+		const project = new GitHooksEnabledProject({
+			name: "test",
+			defaultReleaseBranch: "main",
+			prettier: true,
+			gitHooksManager: GitHooksManagerType.HUSKY,
+		});
+		new Commitizen(project);
 
-    // Act
-    const snapshot = synthSnapshot(project);
-    const config = snapshot[".projen/tasks.json"];
-    const packageJson = snapshot["package.json"];
+		// Act
+		const snapshot = synthSnapshot(project);
+		const config = snapshot[".projen/tasks.json"];
+		const packageJson = snapshot["package.json"];
 
-    // Assert
-    expect(config.tasks.commitizen).toEqual({
-      name: "commitizen",
-      description: "Commitizen's commit",
-      steps: [
-        {
-          exec: "cz",
-        },
-      ],
-    });
-    expect(packageJson.scripts.commitizen).toEqual("npx projen commitizen");
-  });
+		// Assert
+		expect(config.tasks.commitizen).toEqual({
+			name: "commitizen",
+			description: "Commitizen's commit",
+			steps: [
+				{
+					exec: "cz",
+				},
+			],
+		});
+		expect(packageJson.scripts.commitizen).toEqual("npx projen commitizen");
+	});
 
-  it("Adds new config to package.json", () => {
-    // Arrange
-    const project = new GitHooksEnabledProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-      prettier: true,
-      gitHooksManager: GitHooksManagerType.HUSKY,
-    });
-    new Commitizen(project);
+	it("Adds new config to package.json", () => {
+		// Arrange
+		const project = new GitHooksEnabledProject({
+			name: "test",
+			defaultReleaseBranch: "main",
+			prettier: true,
+			gitHooksManager: GitHooksManagerType.HUSKY,
+		});
+		new Commitizen(project);
 
-    // Act
-    const snapshot = synthSnapshot(project);
-    const config = snapshot["package.json"];
+		// Act
+		const snapshot = synthSnapshot(project);
+		const config = snapshot["package.json"];
 
-    // Assert
-    expect(config.config).toEqual({
-      commitizen: {
-        path: "./node_modules/cz-conventional-changelog",
-      },
-    });
-  });
+		// Assert
+		expect(config.config).toEqual({
+			commitizen: {
+				path: "./node_modules/cz-conventional-changelog",
+			},
+		});
+	});
 
-  it("Adds new config", () => {
-    // Arrange
-    const project = new GitHooksEnabledProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-      prettier: true,
-      gitHooksManager: GitHooksManagerType.HUSKY,
-    });
-    new Commitizen(project, { json: true });
+	it("Adds new config", () => {
+		// Arrange
+		const project = new GitHooksEnabledProject({
+			name: "test",
+			defaultReleaseBranch: "main",
+			prettier: true,
+			gitHooksManager: GitHooksManagerType.HUSKY,
+		});
+		new Commitizen(project, { json: true });
 
-    // Act
-    const snapshot = synthSnapshot(project);
-    const config = snapshot[".czrc"];
+		// Act
+		const snapshot = synthSnapshot(project);
+		const config = snapshot[".czrc"];
 
-    // Assert
-    expect(JSON.parse(config)).toEqual({
-      path: "./node_modules/cz-conventional-changelog",
-      "//": '~~ Generated by projen. To modify, edit .projenrc.js and run "npx projen".',
-    });
-  });
+		// Assert
+		expect(JSON.parse(config)).toEqual({
+			path: "./node_modules/cz-conventional-changelog",
+			"//": '~~ Generated by projen. To modify, edit .projenrc.js and run "npx projen".',
+		});
+	});
 
-  it("has a new prepare-commit-message file", () => {
-    // Arrange
-    const project = new GitHooksEnabledProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-      prettier: true,
-      gitHooksManager: GitHooksManagerType.HUSKY,
-    });
-    new Commitizen(project);
+	it("has a new prepare-commit-message file", () => {
+		// Arrange
+		const project = new GitHooksEnabledProject({
+			name: "test",
+			defaultReleaseBranch: "main",
+			prettier: true,
+			gitHooksManager: GitHooksManagerType.HUSKY,
+		});
+		new Commitizen(project);
 
-    // Act
-    const snapshot = synthSnapshot(project);
-    const config = snapshot[".husky/prepare-commit-msg"];
+		// Act
+		const snapshot = synthSnapshot(project);
+		const config = snapshot[".husky/prepare-commit-msg"];
 
-    // Assert
-    expect(config).toEqual(
-      '#!/bin/sh\n. "$(dirname "$0")/_/husky.sh"\n\nexec < /dev/tty && npx cz --hook || true',
-    );
-  });
+		// Assert
+		expect(config).toEqual(
+			'#!/bin/sh\n. "$(dirname "$0")/_/husky.sh"\n\nexec < /dev/tty && npx cz --hook || true',
+		);
+	});
 
-  it("adds commitizen command to lefthook.yml when using Lefthook manager", () => {
-    // Arrange
-    const project = new GitHooksEnabledProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-      gitHooksManager: GitHooksManagerType.LEFTHOOK,
-    });
-    new Commitizen(project);
+	it("adds commitizen command to lefthook.yml when using Lefthook manager", () => {
+		// Arrange
+		const project = new GitHooksEnabledProject({
+			name: "test",
+			defaultReleaseBranch: "main",
+			gitHooksManager: GitHooksManagerType.LEFTHOOK,
+		});
+		new Commitizen(project);
 
-    // Act
-    const snapshot = synthSnapshot(project);
-    const config = snapshot["lefthook.yml"];
+		// Act
+		const snapshot = synthSnapshot(project);
+		const config = snapshot["lefthook.yml"];
 
-    // Assert
-    expect(config).toContain("commitizen:");
-    expect(config).toContain("exec < /dev/tty && npx cz --hook || true");
-  });
+		// Assert
+		expect(config).toContain("commitizen:");
+		expect(config).toContain("exec < /dev/tty && npx cz --hook || true");
+	});
 
-  it("returns the instance via Commitizen.of()", () => {
-    const project = new GitHooksEnabledProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-      gitHooksManager: GitHooksManagerType.HUSKY,
-    });
-    const commitizen = new Commitizen(project);
+	it("returns the instance via Commitizen.of()", () => {
+		const project = new GitHooksEnabledProject({
+			name: "test",
+			defaultReleaseBranch: "main",
+			gitHooksManager: GitHooksManagerType.HUSKY,
+		});
+		const commitizen = new Commitizen(project);
 
-    expect(Commitizen.of(project)).toBe(commitizen);
-  });
+		expect(Commitizen.of(project)).toBe(commitizen);
+	});
 
-  it("returns undefined via Commitizen.of() when not present", () => {
-    const project = new GitHooksEnabledProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-      gitHooksManager: GitHooksManagerType.HUSKY,
-    });
+	it("returns undefined via Commitizen.of() when not present", () => {
+		const project = new GitHooksEnabledProject({
+			name: "test",
+			defaultReleaseBranch: "main",
+			gitHooksManager: GitHooksManagerType.HUSKY,
+		});
 
-    expect(Commitizen.of(project)).toBeUndefined();
-  });
+		expect(Commitizen.of(project)).toBeUndefined();
+	});
 });

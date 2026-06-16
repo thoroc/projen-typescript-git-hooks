@@ -1,28 +1,30 @@
+import { GitClientHook } from "@thoroc/projen-typescript-git-hooks";
 import { NodeProject } from "projen/lib/javascript";
 import { synthSnapshot } from "projen/lib/util/synth";
-import { GitClientHook } from "@thoroc/projen-typescript-git-hooks";
 import { HuskyHookFile } from "./hook-file";
 
 describe("Husky hook file", () => {
-  it("creates a new hook for Husky", () => {
-    // Arrange
-    const project = new NodeProject({
-      name: "test",
-      defaultReleaseBranch: "main",
-    });
-    const hook = GitClientHook.PRE_COMMIT;
-    const command = "Something else";
+	it("creates a new hook for Husky", () => {
+		// Arrange
+		const project = new NodeProject({
+			name: "test",
+			defaultReleaseBranch: "main",
+		});
+		const hook = GitClientHook.PRE_COMMIT;
+		const command = "Something else";
 
-    new HuskyHookFile(project, {
-      hook: hook,
-      command: command,
-    });
+		new HuskyHookFile(project, {
+			hook: hook,
+			command: command,
+		});
 
-    // Act
-    const snapshot = synthSnapshot(project);
-    const config = snapshot[`.husky/${hook}`];
+		// Act
+		const snapshot = synthSnapshot(project);
+		const config = snapshot[`.husky/${hook}`];
 
-    // Assert
-    expect(config).toEqual(`#!/bin/sh\n. "$(dirname "$0")/_/husky.sh"\n\n${command}`);
-  });
+		// Assert
+		expect(config).toEqual(
+			`#!/bin/sh\n. "$(dirname "$0")/_/husky.sh"\n\n${command}`,
+		);
+	});
 });

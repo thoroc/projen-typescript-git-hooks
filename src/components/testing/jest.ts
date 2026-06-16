@@ -1,55 +1,70 @@
-import { Jest as BaseJest, type JestOptions, NodePackageManager } from "projen/lib/javascript";
+import {
+	Jest as BaseJest,
+	type JestOptions,
+	NodePackageManager,
+} from "projen/lib/javascript";
 import type { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
 import { GitClientHook, Husky } from "../githooks-manager";
 
 export class Jest extends BaseJest {
-  readonly configFilePath?: string;
+	readonly configFilePath?: string;
 
-  constructor(project: GitHooksEnabledProject, options?: JestOptions) {
-    super(project, { jestVersion: "^29.7.0", ...options });
+	constructor(project: GitHooksEnabledProject, options?: JestOptions) {
+		super(project, { jestVersion: "^29.7.0", ...options });
 
-    project.addDevDeps("ts-jest@^29.2.0", "@types/jest");
+		project.addDevDeps("ts-jest@^29.2.0", "@types/jest");
 
-    this.configFilePath = options?.configFilePath;
+		this.configFilePath = options?.configFilePath;
 
-    const yarnManagers = [
-      NodePackageManager.YARN,
-      NodePackageManager.YARN2,
-      NodePackageManager.YARN_CLASSIC,
-      NodePackageManager.YARN_BERRY,
-    ];
-    const script = yarnManagers.includes(project.package.packageManager) ? "yarn test" : "npm run test";
+		const yarnManagers = [
+			NodePackageManager.YARN,
+			NodePackageManager.YARN2,
+			NodePackageManager.YARN_CLASSIC,
+			NodePackageManager.YARN_BERRY,
+		];
+		const script = yarnManagers.includes(project.package.packageManager)
+			? "yarn test"
+			: "npm run test";
 
-    Husky.of(project)?.createHook(GitClientHook.PRE_PUSH, [script]);
-  }
+		Husky.of(project)?.createHook(GitClientHook.PRE_PUSH, [script]);
+	}
 
-  preSynthesize(): void {
-    const deletionGlobals = this.configFilePath ? "globals" : "jest.globals";
-    const overrideTransform = this.configFilePath ? "transform" : "jest.transform";
-    const overrideTestPathIgnorePatterns = this.configFilePath
-      ? "testPathIgnorePatterns"
-      : "jest.testPathIgnorePatterns";
-    const config = this.project.tryFindObjectFile(this.configFilePath ?? "package.json");
+	preSynthesize(): void {
+		const deletionGlobals = this.configFilePath ? "globals" : "jest.globals";
+		const overrideTransform = this.configFilePath
+			? "transform"
+			: "jest.transform";
+		const overrideTestPathIgnorePatterns = this.configFilePath
+			? "testPathIgnorePatterns"
+			: "jest.testPathIgnorePatterns";
+		const config = this.project.tryFindObjectFile(
+			this.configFilePath ?? "package.json",
+		);
 
-    config?.addDeletionOverride(deletionGlobals);
-    config?.addOverride(overrideTestPathIgnorePatterns, ["/node_modules/", "/lib/"]);
-    config?.addOverride("transformIgnorePatterns", ["/node_modules/(?!(change-case)/)"]);
-    config?.addOverride(overrideTransform, {
-      "^.+\\.[jt]s?$": [
-        "ts-jest",
-        {
-          tsconfig: "tsconfig.test.json",
-        },
-      ],
-    });
+		config?.addDeletionOverride(deletionGlobals);
+		config?.addOverride(overrideTestPathIgnorePatterns, [
+			"/node_modules/",
+			"/lib/",
+		]);
+		config?.addOverride("transformIgnorePatterns", [
+			"/node_modules/(?!(change-case)/)",
+		]);
+		config?.addOverride(overrideTransform, {
+			"^.+\\.[jt]s?$": [
+				"ts-jest",
+				{
+					tsconfig: "tsconfig.test.json",
+				},
+			],
+		});
 
-    const tasksJson = this.project.tryFindObjectFile(".projen/tasks.json");
+		const tasksJson = this.project.tryFindObjectFile(".projen/tasks.json");
 
-    tasksJson?.addOverride("tasks.test.steps", [
-      {
-        exec: "jest --passWithNoTests --updateSnapshot",
-        receiveArgs: true,
-      },
-    ]);
-  }
+		tasksJson?.addOverride("tasks.test.steps", [
+			{
+				exec: "jest --passWithNoTests --updateSnapshot",
+				receiveArgs: true,
+			},
+		]);
+	}
 }

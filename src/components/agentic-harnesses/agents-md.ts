@@ -1,4 +1,4 @@
-import { Component, SampleFile, type Project } from "projen";
+import { Component, type Project, SampleFile } from "projen";
 
 const AGENTS_MD_CONTENT = `# Agent Instructions
 
@@ -7,18 +7,20 @@ Add your project-specific guidelines, conventions, and context here.
 `;
 
 export class AgentsMd extends Component {
-  static readonly fileName = "AGENTS.md";
+	static readonly fileName = "AGENTS.md";
 
-  public static of(project: Project): AgentsMd | undefined {
-    const singleton = (c: Component): c is AgentsMd => c instanceof AgentsMd;
-    return project.components.find(singleton);
-  }
+	public static of(project: Project): AgentsMd | undefined {
+		const singleton = (c: Component): c is AgentsMd => c instanceof AgentsMd;
+		return project.components.find(singleton);
+	}
 
-  constructor(project: Project) {
-    super(project);
-  }
+	constructor(project: Project) {
+		super(project);
+	}
 
-  preSynthesize(): void {
-    new SampleFile(this.project, AgentsMd.fileName, { contents: AGENTS_MD_CONTENT });
-  }
+	preSynthesize(): void {
+		new SampleFile(this.project, AgentsMd.fileName, {
+			contents: AGENTS_MD_CONTENT,
+		});
+	}
 }
