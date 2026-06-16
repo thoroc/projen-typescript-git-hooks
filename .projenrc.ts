@@ -76,4 +76,6 @@ new Commitizen(project, { json: true });
 new CodeOfConduct(project, { author: "thomas.a.roche@gmail.com" });
 new Renovate(project);
 
+project.gitignore.addPatterns("test-reports/");
+
 project.synth();
