@@ -4,6 +4,7 @@ import {
 	GitHooksEnabledProject,
 } from "@thoroc/projen-typescript-git-hooks";
 import { synthSnapshot } from "projen/lib/util/synth";
+import { describe, expect, it } from "vitest";
 
 describe("Commitizen Component", () => {
 	it("Adds new dev dependencie", () => {

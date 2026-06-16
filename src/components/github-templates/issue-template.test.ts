@@ -1,6 +1,7 @@
 import { Project } from "projen";
 import { GitHub } from "projen/lib/github";
 import { synthSnapshot } from "projen/lib/util/synth";
+import { describe, expect, it } from "vitest";
 import { IssueTemplate } from "./issue-template";
 
 describe("IssueTemplate", () => {

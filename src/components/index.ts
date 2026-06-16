@@ -1,4 +1,4 @@
-export * from "./agentic-harnesses";
+export * from "./agentic";
 export * from "./code-standards";
 export * from "./documentation";
 export * from "./githooks-manager";

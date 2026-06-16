@@ -1,6 +1,7 @@
 import { GitClientHook, GitHooksManagerType } from "@thoroc/githooks-manager";
 import { GitHooksEnabledProject } from "@thoroc/projen-typescript-git-hooks";
 import { synthSnapshot } from "projen/lib/util/synth";
+import { describe, expect, it } from "vitest";
 import { Lefthook } from "./component";
 
 const makeProject = () =>

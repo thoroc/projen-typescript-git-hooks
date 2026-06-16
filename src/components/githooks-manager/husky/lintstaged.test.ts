@@ -5,6 +5,7 @@ import {
 } from "@thoroc/githooks-manager";
 import { GitHooksEnabledProject } from "@thoroc/projen-typescript-git-hooks";
 import { synthSnapshot } from "projen/lib/util/synth";
+import { describe, expect, it } from "vitest";
 
 describe("Husky", () => {
 	it("Retuns a singleton", () => {

@@ -1,5 +1,6 @@
 import { GitHooksEnabledProject } from "@thoroc/projen-typescript-git-hooks";
 import { synthSnapshot } from "projen/lib/util/synth";
+import { describe, expect, it } from "vitest";
 
 describe("EditorConfig", () => {
 	it("creates an .editorconfig file by default", () => {

@@ -1,6 +1,7 @@
 import { GitClientHook } from "@thoroc/projen-typescript-git-hooks";
 import { NodeProject } from "projen/lib/javascript";
 import { synthSnapshot } from "projen/lib/util/synth";
+import { describe, expect, it } from "vitest";
 import { HuskyHookFile } from "./hook-file";
 
 describe("Husky hook file", () => {

@@ -2,6 +2,7 @@ import { CloseStaleIssue } from "@thoroc/github-actions/close-stale-issue";
 import { GitHub } from "projen/lib/github";
 import { Project } from "projen/lib/project";
 import { synthSnapshot } from "projen/lib/util/synth";
+import { describe, expect, it } from "vitest";
 
 describe("close-stale-issue", () => {
 	it("Adds a new github workflow", () => {
