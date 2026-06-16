@@ -83,4 +83,40 @@ describe("GeminiCli", () => {
 		const snapshot = synthSnapshot(project);
 		expect(snapshot[".gemini/settings.json"].mcpServers).toBeUndefined();
 	});
+
+	it("addMcpServer registers a server dynamically", () => {
+		const project = new Project({ name: "test" });
+		const gc = new GeminiCli(project);
+		gc.addMcpServer(
+			new McpServer("dynamic-server", { command: "dynamic-cmd" }),
+		);
+		const snapshot = synthSnapshot(project);
+		expect(
+			snapshot[".gemini/settings.json"].mcpServers?.["dynamic-server"],
+		).toEqual({
+			command: "dynamic-cmd",
+		});
+	});
+
+	it("addHook registers a hook group dynamically", () => {
+		const project = new Project({ name: "test" });
+		const gc = new GeminiCli(project);
+		gc.addHook("BeforeTool", {
+			matcher: "run_shell_command",
+			hooks: [{ type: "command", command: "my-tool hook gemini beforetool" }],
+		});
+		const snapshot = synthSnapshot(project);
+		const hooks = snapshot[".gemini/settings.json"].hooks;
+		expect(hooks?.BeforeTool?.[0].matcher).toBe("run_shell_command");
+		expect(hooks?.BeforeTool?.[0].hooks[0].command).toBe(
+			"my-tool hook gemini beforetool",
+		);
+	});
+
+	it("does not include hooks when none added", () => {
+		const project = new Project({ name: "test" });
+		new GeminiCli(project);
+		const snapshot = synthSnapshot(project);
+		expect(snapshot[".gemini/settings.json"].hooks).toBeUndefined();
+	});
 });

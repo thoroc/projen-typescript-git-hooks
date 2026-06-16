@@ -96,4 +96,39 @@ describe("OpenCode", () => {
 		const snapshot = synthSnapshot(project);
 		expect(snapshot["opencode.json"].mcp).toBeUndefined();
 	});
+
+	it("addMcpServer registers a server dynamically", () => {
+		const project = new Project({ name: "test" });
+		const oc = new OpenCode(project);
+		oc.addMcpServer(
+			new McpServer("dynamic-server", { command: "dynamic-cmd" }),
+		);
+		const snapshot = synthSnapshot(project);
+		expect(snapshot["opencode.json"].mcp?.["dynamic-server"]).toEqual({
+			type: "local",
+			command: ["dynamic-cmd"],
+		});
+	});
+
+	it("addPlugin adds plugin to the plugin array", () => {
+		const project = new Project({ name: "test" });
+		const oc = new OpenCode(project);
+		oc.addPlugin("my-plugin");
+		const snapshot = synthSnapshot(project);
+		expect(snapshot["opencode.json"].plugin).toContain("my-plugin");
+	});
+
+	it("includes plugins from options", () => {
+		const project = new Project({ name: "test" });
+		new OpenCode(project, { plugins: ["plugin-a", "plugin-b"] });
+		const snapshot = synthSnapshot(project);
+		expect(snapshot["opencode.json"].plugin).toEqual(["plugin-a", "plugin-b"]);
+	});
+
+	it("does not include plugin when none added", () => {
+		const project = new Project({ name: "test" });
+		new OpenCode(project);
+		const snapshot = synthSnapshot(project);
+		expect(snapshot["opencode.json"].plugin).toBeUndefined();
+	});
 });

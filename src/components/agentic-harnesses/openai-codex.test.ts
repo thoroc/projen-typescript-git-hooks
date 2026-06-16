@@ -64,4 +64,38 @@ describe("OpenAICodex", () => {
 		const snapshot = synthSnapshot(project);
 		expect(snapshot[".codex/config.toml"]).not.toContain("mcp_servers");
 	});
+
+	it("addMcpServer registers a server dynamically", () => {
+		const project = new Project({ name: "test" });
+		const codex = new OpenAICodex(project);
+		codex.addMcpServer(
+			new McpServer("dynamic-server", { command: "dynamic-cmd" }),
+		);
+		const snapshot = synthSnapshot(project);
+		expect(snapshot[".codex/config.toml"]).toContain("dynamic-server");
+	});
+
+	it("addHook creates hooks.json and enables hooks feature", () => {
+		const project = new Project({ name: "test" });
+		const codex = new OpenAICodex(project);
+		codex.addHook("PreToolUse", {
+			matcher: "Bash",
+			hooks: [{ type: "command", command: "my-tool hook codex pretooluse" }],
+		});
+		const snapshot = synthSnapshot(project);
+		expect(snapshot[".codex/config.toml"]).toContain("hooks = true");
+		expect(snapshot[".codex/hooks.json"].hooks.PreToolUse[0].matcher).toBe(
+			"Bash",
+		);
+		expect(
+			snapshot[".codex/hooks.json"].hooks.PreToolUse[0].hooks[0].command,
+		).toBe("my-tool hook codex pretooluse");
+	});
+
+	it("does not create hooks.json when no hooks added", () => {
+		const project = new Project({ name: "test" });
+		new OpenAICodex(project);
+		const snapshot = synthSnapshot(project);
+		expect(snapshot[".codex/hooks.json"]).toBeUndefined();
+	});
 });

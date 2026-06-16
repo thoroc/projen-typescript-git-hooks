@@ -13,18 +13,26 @@ export class McpConfig extends Component {
 		return project.components.find(singleton);
 	}
 
-	readonly servers: Array<McpServer>;
+	private readonly _servers: Array<McpServer>;
+
+	get servers(): ReadonlyArray<McpServer> {
+		return this._servers;
+	}
 
 	constructor(project: Project, options: McpConfigOptions) {
 		super(project);
-		this.servers = options.servers;
+		this._servers = [...options.servers];
+	}
+
+	addServer(server: McpServer): void {
+		this._servers.push(server);
 	}
 
 	preSynthesize(): void {
 		new JsonFile(this.project, McpConfig.configPath, {
 			obj: {
 				mcpServers: Object.fromEntries(
-					this.servers.map((s) => [
+					this._servers.map((s) => [
 						s.name,
 						{
 							command: s.command,

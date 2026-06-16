@@ -9,10 +9,22 @@ export interface ClaudeCodePermissions {
 	readonly deny?: Array<string>;
 }
 
+export interface ClaudeCodeHookEntry {
+	readonly type: "command";
+	readonly command: string;
+	readonly timeout?: number;
+}
+
+export interface ClaudeCodeHookGroup {
+	readonly matcher?: string;
+	readonly hooks: Array<ClaudeCodeHookEntry>;
+}
+
 export interface ClaudeCodeOptions {
 	readonly permissions?: ClaudeCodePermissions;
 	readonly env?: Record<string, string>;
 	readonly mcpServers?: Array<McpServer>;
+	readonly hooks?: Record<string, Array<ClaudeCodeHookGroup>>;
 }
 
 export class ClaudeCode extends Component {
@@ -26,18 +38,33 @@ export class ClaudeCode extends Component {
 	}
 
 	readonly options?: ClaudeCodeOptions;
+	private readonly _mcpServers: Array<McpServer>;
+	private readonly _hooks: Record<string, Array<ClaudeCodeHookGroup>>;
 
 	constructor(project: Project, options?: ClaudeCodeOptions) {
 		super(project);
 		this.options = options;
+		this._mcpServers = [...(options?.mcpServers ?? [])];
+		this._hooks = Object.fromEntries(
+			Object.entries(options?.hooks ?? {}).map(([k, v]) => [k, [...v]]),
+		);
 		void (AgentsMd.of(project) ?? new AgentsMd(project));
+	}
+
+	addMcpServer(server: McpServer): void {
+		this._mcpServers.push(server);
+	}
+
+	addHook(event: string, group: ClaudeCodeHookGroup): void {
+		if (!this._hooks[event]) this._hooks[event] = [];
+		this._hooks[event].push(group);
 	}
 
 	preSynthesize(): void {
 		const mcpServersObj =
-			this.options?.mcpServers &&
+			this._mcpServers.length > 0 &&
 			Object.fromEntries(
-				this.options.mcpServers.map((s) => [
+				this._mcpServers.map((s) => [
 					s.name,
 					{
 						command: s.command,
@@ -47,6 +74,9 @@ export class ClaudeCode extends Component {
 				]),
 			);
 
+		const hooksObj =
+			Object.keys(this._hooks).length > 0 ? this._hooks : undefined;
+
 		new JsonFile(this.project, ClaudeCode.settingsPath, {
 			obj: {
 				$schema: "https://json.schemastore.org/claude-code-settings.json",
@@ -55,6 +85,7 @@ export class ClaudeCode extends Component {
 				}),
 				...(this.options?.env && { env: this.options.env }),
 				...(mcpServersObj && { mcpServers: mcpServersObj }),
+				...(hooksObj && { hooks: hooksObj }),
 			},
 			readonly: false,
 		});

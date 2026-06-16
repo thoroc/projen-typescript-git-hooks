@@ -9,6 +9,7 @@ export interface OpenCodeOptions {
 	readonly autoupdate?: boolean;
 	readonly permission?: Record<string, "allow" | "ask" | "deny">;
 	readonly mcpServers?: Array<McpServer>;
+	readonly plugins?: Array<string>;
 }
 
 export class OpenCode extends Component {
@@ -21,18 +22,30 @@ export class OpenCode extends Component {
 	}
 
 	readonly options?: OpenCodeOptions;
+	private readonly _mcpServers: Array<McpServer>;
+	private readonly _plugins: Array<string>;
 
 	constructor(project: Project, options?: OpenCodeOptions) {
 		super(project);
 		this.options = options;
+		this._mcpServers = [...(options?.mcpServers ?? [])];
+		this._plugins = [...(options?.plugins ?? [])];
 		void (AgentsMd.of(project) ?? new AgentsMd(project));
+	}
+
+	addMcpServer(server: McpServer): void {
+		this._mcpServers.push(server);
+	}
+
+	addPlugin(name: string): void {
+		this._plugins.push(name);
 	}
 
 	preSynthesize(): void {
 		const mcp =
-			this.options?.mcpServers &&
+			this._mcpServers.length > 0 &&
 			Object.fromEntries(
-				this.options.mcpServers.map((s) => [
+				this._mcpServers.map((s) => [
 					s.name,
 					{
 						type: "local" as const,
@@ -46,6 +59,7 @@ export class OpenCode extends Component {
 			obj: {
 				$schema: "https://opencode.ai/config.json",
 				...(mcp && { mcp }),
+				...(this._plugins.length > 0 && { plugin: this._plugins }),
 				...(this.options?.model && { model: this.options.model }),
 				...(this.options?.autoupdate !== undefined && {
 					autoupdate: this.options.autoupdate,
