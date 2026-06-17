@@ -1,7 +1,7 @@
 import { cdk } from "projen";
 import { GitHub } from "projen/lib/github";
 import { NodePackageManager } from "projen/lib/javascript";
-import { Commitizen, Vitest } from "./src";
+import { AgenticHarnesses, Commitizen, HarnessType, Vitest } from "./src";
 import { Biome } from "./src/components/code-standards";
 import { CodeOfConduct } from "./src/components/documentation";
 import { Lefthook } from "./src/components/githooks-manager";
@@ -77,6 +77,15 @@ new Commitizen(project, { json: true });
 new CodeOfConduct(project, { author: "thomas.a.roche@gmail.com" });
 new Renovate(project);
 new ReleasePlease(github);
+new AgenticHarnesses(project, {
+	harnesses: [
+		HarnessType.CLAUDE_CODE,
+		HarnessType.CODEX,
+		HarnessType.OPENCODE,
+		HarnessType.GEMINI,
+		HarnessType.VIBE,
+	],
+});
 
 project.gitignore.addPatterns("test-reports/");
 

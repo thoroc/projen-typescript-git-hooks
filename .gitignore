@@ -56,3 +56,8 @@ test-reports/
 !/.projenrc.ts
 !/lefthook.yml
 !/.czrc
+!/.claude/settings.json
+!/.codex/config.toml
+!/opencode.json
+!/.gemini/settings.json
+!/.vibe/config.toml
