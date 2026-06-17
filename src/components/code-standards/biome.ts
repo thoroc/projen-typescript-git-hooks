@@ -13,15 +13,19 @@ export class Biome extends javascript.Biome {
 
 		this.addFilePattern("**");
 
+		// Biome 2.x deprecated `recommended: true` in favour of `preset: "recommended"`
+		this.file.addDeletionOverride("linter.rules.recommended");
+		this.file.addOverride("linter.rules.preset", "recommended");
+
 		LintStaged.of(project)?.addRule({
 			filePattern: "src/**/*.ts",
-			commands: ["biome check --write"],
+			commands: ["bunx biome check --write"],
 		});
 
 		Lefthook.of(project)?.addCommand(GitClientHook.PRE_COMMIT, {
 			name: "biome",
 			glob: "src/**/*.ts",
-			run: "biome check --write",
+			run: "bunx biome check --write",
 			stageFixed: true,
 		});
 	}

@@ -19,6 +19,7 @@
       "!.github/workflows/pull-request-comment.yml",
       "!.github/workflows/pull-request-labeler.yml",
       "!.github/workflows/pull-request-lint.yml",
+      "!.github/workflows/release-please.yml",
       "!.github/workflows/release.yml",
       "!.github/workflows/upgrade-main.yml",
       "!.gitignore",
@@ -42,7 +43,7 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "preset": "recommended"
     }
   },
   "vcs": {
