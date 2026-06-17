@@ -3,13 +3,20 @@ import type { GitHub } from "projen/lib/github";
 import { JobPermission } from "projen/lib/github/workflows-model";
 import type { NodeProject } from "projen/lib/javascript";
 import { installSteps } from "./install-steps";
+import { jestStep } from "./jest-step";
 import { vitestStep } from "./vitest-step";
+
+export type TestRunner = "vitest" | "jest";
+
+export interface PullRequestCoverageCommentOptions {
+	readonly testRunner?: TestRunner;
+}
 
 /**
  * Represents PullRequestCoverageComment configuration
  */
 export class PullRequestCoverageComment extends Component {
-	constructor(github: GitHub) {
+	constructor(github: GitHub, options: PullRequestCoverageCommentOptions = {}) {
 		super(github.project);
 
 		const workflow = github.addWorkflow("pull-request-comment");
@@ -18,6 +25,10 @@ export class PullRequestCoverageComment extends Component {
 		});
 
 		const { packageManager } = (this.project as NodeProject).package;
+		const testStep =
+			options.testRunner === "jest"
+				? jestStep(packageManager)
+				: vitestStep(packageManager);
 
 		workflow.addJob("build", {
 			permissions: { pullRequests: JobPermission.WRITE },
@@ -33,9 +44,9 @@ export class PullRequestCoverageComment extends Component {
 					},
 				},
 				...installSteps(packageManager),
-				vitestStep(packageManager),
+				testStep,
 				{
-					name: "Vitest Coverage Comment",
+					name: "Coverage Comment",
 					uses: "MishaKav/jest-coverage-comment@v1",
 				},
 			],
