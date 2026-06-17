@@ -1,11 +1,7 @@
-import { Component, type Project, SampleFile } from "projen";
+import { Component, type Project } from "projen";
 import { AgentsMd } from "../../../agents-md";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
-import {
-	INSTALL_BINARY,
-	INSTRUCTIONS_CONTENT,
-	INSTRUCTIONS_PATH,
-} from "./constants";
+import { INSTALL_BINARY, INSTRUCTIONS_CONTENT } from "./constants";
 
 export class RtkProxy extends Component {
 	public static of(project: Project): RtkProxy | undefined {
@@ -31,11 +27,7 @@ export class RtkProxy extends Component {
 
 		OpenCode.of(project)?.addPlugin("rtk");
 
-		new SampleFile(project, INSTRUCTIONS_PATH, {
-			contents: INSTRUCTIONS_CONTENT,
-		});
-		const agentsMd = AgentsMd.of(project) ?? new AgentsMd(project);
-		agentsMd.addInstruction(INSTRUCTIONS_PATH);
+		AgentsMd.registerInstructions(project, "rtk", INSTRUCTIONS_CONTENT);
 
 		const installTask = project.tasks.addTask("rtk:install", {
 			description: "Install RTK binary and initialise agent hooks",

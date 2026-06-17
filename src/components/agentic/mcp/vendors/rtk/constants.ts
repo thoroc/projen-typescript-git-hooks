@@ -1,5 +1,3 @@
-export const INSTRUCTIONS_PATH = ".agents/instructions/rtk.md";
-
 export const INSTRUCTIONS_CONTENT = `# RTK - Rust Token Killer
 
 **Usage**: Token-optimized CLI proxy for shell commands.

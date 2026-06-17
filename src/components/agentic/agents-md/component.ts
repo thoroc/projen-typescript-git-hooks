@@ -5,10 +5,22 @@ import { AGENTS_MD_CONTENT } from "./constants";
 
 export class AgentsMd extends Component {
 	static readonly fileName = "AGENTS.md";
+	static readonly instructionsDir = ".agents/instructions";
 
 	public static of(project: Project): AgentsMd | undefined {
 		const singleton = (c: Component): c is AgentsMd => c instanceof AgentsMd;
 		return project.components.find(singleton);
+	}
+
+	public static registerInstructions(
+		project: Project,
+		name: string,
+		content: string,
+	): void {
+		const agentsMd = AgentsMd.of(project) ?? new AgentsMd(project);
+		const filePath = `${AgentsMd.instructionsDir}/${name}.md`;
+		new SampleFile(project, filePath, { contents: content });
+		agentsMd.addInstruction(filePath);
 	}
 
 	private readonly _instructions: string[];

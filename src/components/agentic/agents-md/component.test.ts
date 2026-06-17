@@ -53,6 +53,40 @@ describe("AgentsMd", () => {
 		expect(snapshot["AGENTS.md"]).toContain("# Agent Instructions");
 	});
 
+	describe("registerInstructions", () => {
+		it("creates the instruction file under instructionsDir", () => {
+			const project = new Project({ name: "test" });
+			AgentsMd.registerInstructions(project, "my-vendor", "# My Vendor\n");
+			const snapshot = synthSnapshot(project);
+			expect(
+				snapshot[`${AgentsMd.instructionsDir}/my-vendor.md`],
+			).toBeDefined();
+		});
+
+		it("creates AgentsMd when absent", () => {
+			const project = new Project({ name: "test" });
+			AgentsMd.registerInstructions(project, "my-vendor", "# My Vendor\n");
+			expect(AgentsMd.of(project)).toBeDefined();
+		});
+
+		it("reuses existing AgentsMd when present", () => {
+			const project = new Project({ name: "test" });
+			const existing = new AgentsMd(project);
+			AgentsMd.registerInstructions(project, "my-vendor", "# My Vendor\n");
+			expect(AgentsMd.of(project)).toBe(existing);
+		});
+
+		it("registers the path for postSynthesize", () => {
+			vi.mocked(fs.existsSync).mockReturnValue(true);
+			vi.mocked(fs.readFileSync).mockReturnValue("# Agent Instructions\n");
+			const project = new Project({ name: "test" });
+			AgentsMd.registerInstructions(project, "my-vendor", "# My Vendor\n");
+			AgentsMd.of(project)!.postSynthesize();
+			const written = vi.mocked(fs.writeFileSync).mock.calls[0][1] as string;
+			expect(written).toContain(`@${AgentsMd.instructionsDir}/my-vendor.md`);
+		});
+	});
+
 	describe("addInstruction", () => {
 		it("registers an instruction path", () => {
 			vi.mocked(fs.existsSync).mockReturnValue(true);
