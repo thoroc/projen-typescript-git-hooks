@@ -1,6 +1,7 @@
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
+import { AgentsMd } from "../../../agents-md";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
 import { McpConfig } from "../..";
 import { AislopMcpServer } from "./component";
@@ -135,5 +136,52 @@ describe("AislopMcpServer", () => {
 		});
 		new AislopMcpServer(project, { config: { telemetry: { enabled: false } } });
 		expect(AislopConfig.of(project)).toBe(existing);
+	});
+
+	describe("install task", () => {
+		it("creates aislop:install task", () => {
+			const project = new Project({ name: "test" });
+			new AislopMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			expect(
+				snapshot[".projen/tasks.json"].tasks["aislop:install"],
+			).toBeDefined();
+		});
+
+		it("install task runs install-binary then baseline steps", () => {
+			const project = new Project({ name: "test" });
+			new AislopMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			const steps =
+				snapshot[".projen/tasks.json"].tasks["aislop:install"].steps;
+			expect(steps[0].name).toBe("install-binary");
+			expect(steps[0].exec).toContain("aislop");
+			expect(steps[1].name).toBe("baseline");
+			expect(steps[1].exec).toBe("aislop hook baseline");
+		});
+	});
+
+	describe("agent instructions", () => {
+		it("creates .agents/instructions/aislop.md", () => {
+			const project = new Project({ name: "test" });
+			new AislopMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			expect(snapshot[`${AgentsMd.instructionsDir}/aislop.md`]).toBeDefined();
+		});
+
+		it("instructions file contains severity and MCP tool content", () => {
+			const project = new Project({ name: "test" });
+			new AislopMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			const content = snapshot[`${AgentsMd.instructionsDir}/aislop.md`];
+			expect(content).toContain("aislop_scan");
+			expect(content).toContain("regressed");
+		});
+
+		it("registers AgentsMd on the project", () => {
+			const project = new Project({ name: "test" });
+			new AislopMcpServer(project);
+			expect(AgentsMd.of(project)).toBeDefined();
+		});
 	});
 });

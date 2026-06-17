@@ -1,7 +1,9 @@
 import { Component, type Project } from "projen";
+import { AgentsMd } from "../../../agents-md";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
 import { McpConfig, McpServer } from "../..";
 import { AislopConfig, type AislopConfigOptions } from "./config";
+import { INSTALL_BINARY, INSTRUCTIONS_CONTENT } from "./constants";
 
 export interface AislopMcpServerOptions {
 	readonly config?: AislopConfigOptions;
@@ -40,5 +42,17 @@ export class AislopMcpServer extends Component {
 		GeminiCli.of(project)?.addMcpServer(server);
 		OpenAICodex.of(project)?.addMcpServer(server);
 		OpenCode.of(project)?.addMcpServer(server);
+
+		AgentsMd.registerInstructions(
+			project,
+			AislopMcpServer.serverName,
+			INSTRUCTIONS_CONTENT,
+		);
+
+		const installTask = project.tasks.addTask("aislop:install", {
+			description: "Install aislop binary and capture initial baseline",
+		});
+		installTask.exec(INSTALL_BINARY, { name: "install-binary" });
+		installTask.exec("aislop hook baseline", { name: "baseline" });
 	}
 }
