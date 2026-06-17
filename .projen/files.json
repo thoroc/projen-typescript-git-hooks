@@ -1,5 +1,6 @@
 {
   "files": [
+    ".codex/config.toml",
     ".czrc",
     ".gitattributes",
     ".github/issue_template.md",
@@ -17,6 +18,7 @@
     ".projen/deps.json",
     ".projen/files.json",
     ".projen/tasks.json",
+    ".vibe/config.toml",
     "lefthook.yml",
     "LICENSE",
     "renovate.json",
