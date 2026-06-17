@@ -59,5 +59,20 @@ export class AgenticHarnesses extends Component {
 		if (harnesses.includes(HarnessType.VIBE)) {
 			new MistralVibe(project, options?.vibe);
 		}
+
+		const installTask = project.tasks.addTask("harnesses:install", {
+			description: "Install all enabled harness tools",
+		});
+		const subTaskNames: Record<HarnessType, string> = {
+			[HarnessType.CLAUDE_CODE]: "claude-code:install",
+			[HarnessType.CODEX]: "codex:install",
+			[HarnessType.OPENCODE]: "opencode:install",
+			[HarnessType.GEMINI]: "gemini:install",
+			[HarnessType.VIBE]: "vibe:install",
+		};
+		for (const harness of harnesses) {
+			const sub = project.tasks.tryFind(subTaskNames[harness]);
+			if (sub) installTask.spawn(sub);
+		}
 	}
 }

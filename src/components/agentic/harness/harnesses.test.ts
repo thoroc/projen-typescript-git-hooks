@@ -1,4 +1,4 @@
-import * as fs from "node:fs";
+import * as fs from "fs";
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
 import { afterEach, describe, expect, it, vi } from "vitest";
@@ -9,24 +9,14 @@ import { MistralVibe } from "./mistral/vibe";
 import { OpenAICodex } from "./openai/codex";
 import { OpenCode } from "./opencode/component";
 
-vi.mock("node:fs", async (importOriginal) => {
-	const actual = await importOriginal<typeof import("node:fs")>();
-	return {
-		...actual,
-		existsSync: vi.fn(),
-		lstatSync: vi.fn(),
-		symlinkSync: vi.fn(),
-	};
-});
-
 const mockFsNotExists = (): void => {
-	vi.mocked(fs.existsSync).mockReturnValue(false);
-	vi.mocked(fs.symlinkSync).mockImplementation(() => {});
+	vi.spyOn(fs, "existsSync").mockReturnValue(false);
+	vi.spyOn(fs, "symlinkSync").mockImplementation(() => {});
 };
 
 describe("AgenticHarnesses", () => {
 	afterEach(() => {
-		vi.resetAllMocks();
+		vi.restoreAllMocks();
 	});
 
 	describe("singleton", () => {
@@ -150,6 +140,75 @@ describe("AgenticHarnesses", () => {
 			new AgenticHarnesses(project, { harnesses: [HarnessType.VIBE] });
 			const snapshot = synthSnapshot(project);
 			expect(snapshot[".vibe/config.toml"]).toBeDefined();
+		});
+	});
+
+	describe("harnesses:install task", () => {
+		it("creates harnesses:install task", () => {
+			mockFsNotExists();
+			const project = new Project({ name: "test" });
+			new AgenticHarnesses(project);
+			const snapshot = synthSnapshot(project);
+			expect(
+				snapshot[".projen/tasks.json"].tasks["harnesses:install"],
+			).toBeDefined();
+		});
+
+		it("spawns claude-code:install by default", () => {
+			mockFsNotExists();
+			const project = new Project({ name: "test" });
+			new AgenticHarnesses(project);
+			const snapshot = synthSnapshot(project);
+			const steps =
+				snapshot[".projen/tasks.json"].tasks["harnesses:install"].steps;
+			expect(
+				steps.some(
+					(s: { spawn?: string }) => s.spawn === "claude-code:install",
+				),
+			).toBe(true);
+		});
+
+		it("spawns only enabled harness tasks", () => {
+			const project = new Project({ name: "test" });
+			new AgenticHarnesses(project, {
+				harnesses: [HarnessType.CODEX, HarnessType.VIBE],
+			});
+			const snapshot = synthSnapshot(project);
+			const steps =
+				snapshot[".projen/tasks.json"].tasks["harnesses:install"].steps;
+			const spawned = steps
+				.filter((s: { spawn?: string }) => s.spawn)
+				.map((s: { spawn?: string }) => s.spawn);
+			expect(spawned).toContain("codex:install");
+			expect(spawned).toContain("vibe:install");
+			expect(spawned).not.toContain("claude-code:install");
+			expect(spawned).not.toContain("gemini:install");
+			expect(spawned).not.toContain("opencode:install");
+		});
+
+		it("spawns all five tasks when all harnesses enabled", () => {
+			mockFsNotExists();
+			const project = new Project({ name: "test" });
+			new AgenticHarnesses(project, {
+				harnesses: [
+					HarnessType.CLAUDE_CODE,
+					HarnessType.CODEX,
+					HarnessType.OPENCODE,
+					HarnessType.GEMINI,
+					HarnessType.VIBE,
+				],
+			});
+			const snapshot = synthSnapshot(project);
+			const steps =
+				snapshot[".projen/tasks.json"].tasks["harnesses:install"].steps;
+			const spawned = steps
+				.filter((s: { spawn?: string }) => s.spawn)
+				.map((s: { spawn?: string }) => s.spawn);
+			expect(spawned).toContain("claude-code:install");
+			expect(spawned).toContain("codex:install");
+			expect(spawned).toContain("opencode:install");
+			expect(spawned).toContain("gemini:install");
+			expect(spawned).toContain("vibe:install");
 		});
 	});
 

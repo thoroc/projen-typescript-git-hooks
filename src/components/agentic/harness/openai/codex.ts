@@ -1,6 +1,7 @@
 import { Component, JsonFile, type Project, TomlFile } from "projen";
 import { AgentsMd } from "../../agents-md";
 import type { McpServer } from "../../mcp";
+import { INSTALL_BINARY } from "./constants";
 import type { OpenAICodexHookGroup, OpenAICodexOptions } from "./types";
 
 export class OpenAICodex extends Component {
@@ -26,6 +27,11 @@ export class OpenAICodex extends Component {
 			Object.entries(options?.hooks ?? {}).map(([k, v]) => [k, [...v]]),
 		);
 		void (AgentsMd.of(project) ?? new AgentsMd(project));
+
+		const installTask = project.tasks.addTask("codex:install", {
+			description: "Install OpenAI Codex CLI",
+		});
+		installTask.exec(INSTALL_BINARY, { name: "install-binary" });
 	}
 
 	addMcpServer(server: McpServer): void {

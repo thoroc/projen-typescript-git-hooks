@@ -1,8 +1,9 @@
-import * as fs from "node:fs";
-import * as path from "node:path";
+import * as fs from "fs";
+import * as path from "path";
 import { Component, JsonFile, type Project } from "projen";
 import { AgentsMd } from "../../agents-md";
 import type { McpServer } from "../../mcp";
+import { INSTALL_BINARY } from "./constants";
 import type { GeminiCliHookGroup, GeminiCliOptions } from "./types";
 
 export class GeminiCli extends Component {
@@ -26,7 +27,13 @@ export class GeminiCli extends Component {
 			Object.entries(options?.hooks ?? {}).map(([k, v]) => [k, [...v]]),
 		);
 		void (AgentsMd.of(project) ?? new AgentsMd(project));
+
+		const installTask = project.tasks.addTask("gemini:install", {
+			description: "Install Gemini CLI",
+		});
+		installTask.exec(INSTALL_BINARY, { name: "install-binary" });
 	}
+
 	addMcpServer(server: McpServer): void {
 		this._mcpServers.push(server);
 	}

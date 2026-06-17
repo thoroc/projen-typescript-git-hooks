@@ -1,8 +1,9 @@
-import * as fs from "node:fs";
-import * as path from "node:path";
+import * as fs from "fs";
+import * as path from "path";
 import { Component, JsonFile, type Project } from "projen";
 import { AgentsMd } from "../../agents-md";
 import type { McpServer } from "../../mcp";
+import { INSTALL_BINARY } from "./constants";
 import type { OpenCodeOptions } from "./types";
 
 export class OpenCode extends Component {
@@ -24,6 +25,11 @@ export class OpenCode extends Component {
 		this._mcpServers = [...(options?.mcpServers ?? [])];
 		this._plugins = [...(options?.plugins ?? [])];
 		void (AgentsMd.of(project) ?? new AgentsMd(project));
+
+		const installTask = project.tasks.addTask("opencode:install", {
+			description: "Install OpenCode CLI",
+		});
+		installTask.exec(INSTALL_BINARY, { name: "install-binary" });
 	}
 
 	addMcpServer(server: McpServer): void {

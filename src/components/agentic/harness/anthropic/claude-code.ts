@@ -3,6 +3,7 @@ import * as path from "path";
 import { Component, JsonFile, type Project } from "projen";
 import { AgentsMd } from "../../agents-md";
 import type { McpServer } from "../../mcp";
+import { INSTALL_BINARY } from "./constants";
 import type { ClaudeCodeHookGroup, ClaudeCodeOptions } from "./types";
 
 export class ClaudeCode extends Component {
@@ -27,6 +28,11 @@ export class ClaudeCode extends Component {
 			Object.entries(options?.hooks ?? {}).map(([k, v]) => [k, [...v]]),
 		);
 		void (AgentsMd.of(project) ?? new AgentsMd(project));
+
+		const installTask = project.tasks.addTask("claude-code:install", {
+			description: "Install Claude Code CLI",
+		});
+		installTask.exec(INSTALL_BINARY, { name: "install-binary" });
 	}
 
 	addMcpServer(server: McpServer): void {

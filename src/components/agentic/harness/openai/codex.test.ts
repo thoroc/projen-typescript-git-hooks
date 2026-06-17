@@ -99,4 +99,25 @@ describe("OpenAICodex", () => {
 		const snapshot = synthSnapshot(project);
 		expect(snapshot[".codex/hooks.json"]).toBeUndefined();
 	});
+
+	describe("install task", () => {
+		it("creates codex:install task", () => {
+			const project = new Project({ name: "test" });
+			new OpenAICodex(project);
+			const snapshot = synthSnapshot(project);
+			expect(
+				snapshot[".projen/tasks.json"].tasks["codex:install"],
+			).toBeDefined();
+		});
+
+		it("install task runs the install-binary step with idempotency guard", () => {
+			const project = new Project({ name: "test" });
+			new OpenAICodex(project);
+			const snapshot = synthSnapshot(project);
+			const steps = snapshot[".projen/tasks.json"].tasks["codex:install"].steps;
+			expect(steps[0].name).toBe("install-binary");
+			expect(steps[0].exec).toContain("command -v codex");
+			expect(steps[0].exec).toContain("@openai/codex");
+		});
+	});
 });

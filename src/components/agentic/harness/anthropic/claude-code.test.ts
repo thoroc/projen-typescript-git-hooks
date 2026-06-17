@@ -6,19 +6,9 @@ import { AgentsMd } from "../../agents-md";
 import { McpServer } from "../../mcp";
 import { ClaudeCode } from "./claude-code";
 
-vi.mock("fs", async (importOriginal) => {
-	const actual = await importOriginal<typeof import("fs")>();
-	return {
-		...actual,
-		existsSync: vi.fn(),
-		lstatSync: vi.fn(),
-		symlinkSync: vi.fn(),
-	};
-});
-
 describe("ClaudeCode", () => {
 	afterEach(() => {
-		vi.resetAllMocks();
+		vi.restoreAllMocks();
 	});
 
 	it("returns undefined when not present on project", () => {
@@ -120,45 +110,75 @@ describe("ClaudeCode", () => {
 		expect(instances).toHaveLength(1);
 	});
 
+	describe("install task", () => {
+		it("creates claude-code:install task", () => {
+			const project = new Project({ name: "test" });
+			new ClaudeCode(project);
+			const snapshot = synthSnapshot(project);
+			expect(
+				snapshot[".projen/tasks.json"].tasks["claude-code:install"],
+			).toBeDefined();
+		});
+
+		it("install task runs the install-binary step with idempotency guard", () => {
+			const project = new Project({ name: "test" });
+			new ClaudeCode(project);
+			const snapshot = synthSnapshot(project);
+			const steps =
+				snapshot[".projen/tasks.json"].tasks["claude-code:install"].steps;
+			expect(steps[0].name).toBe("install-binary");
+			expect(steps[0].exec).toContain("command -v claude");
+			expect(steps[0].exec).toContain("@anthropic-ai/claude-code");
+		});
+	});
+
 	describe("postSynthesize", () => {
 		it("creates a symlink when the context file does not exist", () => {
-			vi.mocked(fs.existsSync).mockReturnValue(false);
-			vi.mocked(fs.symlinkSync).mockImplementation(() => {});
+			vi.spyOn(fs, "existsSync").mockReturnValue(false);
+			const symlinkSpy = vi
+				.spyOn(fs, "symlinkSync")
+				.mockImplementation(() => {});
 
 			const project = new Project({ name: "test" });
 			const cc = new ClaudeCode(project);
 			cc.postSynthesize();
 
-			expect(fs.symlinkSync).toHaveBeenCalledWith(
+			expect(symlinkSpy).toHaveBeenCalledWith(
 				"AGENTS.md",
 				expect.stringContaining("CLAUDE.md"),
 			);
 		});
 
 		it("does nothing when the context file already exists as a symlink", () => {
-			vi.mocked(fs.existsSync).mockReturnValue(true);
-			vi.mocked(fs.lstatSync).mockReturnValue({
+			vi.spyOn(fs, "existsSync").mockReturnValue(true);
+			vi.spyOn(fs, "lstatSync").mockReturnValue({
 				isSymbolicLink: () => true,
 			} as ReturnType<typeof fs.lstatSync>);
+			const symlinkSpy = vi
+				.spyOn(fs, "symlinkSync")
+				.mockImplementation(() => {});
 
 			const project = new Project({ name: "test" });
 			const cc = new ClaudeCode(project);
 			cc.postSynthesize();
 
-			expect(fs.symlinkSync).not.toHaveBeenCalled();
+			expect(symlinkSpy).not.toHaveBeenCalled();
 		});
 
 		it("does nothing when the context file exists but is not a symlink", () => {
-			vi.mocked(fs.existsSync).mockReturnValue(true);
-			vi.mocked(fs.lstatSync).mockReturnValue({
+			vi.spyOn(fs, "existsSync").mockReturnValue(true);
+			vi.spyOn(fs, "lstatSync").mockReturnValue({
 				isSymbolicLink: () => false,
 			} as ReturnType<typeof fs.lstatSync>);
+			const symlinkSpy = vi
+				.spyOn(fs, "symlinkSync")
+				.mockImplementation(() => {});
 
 			const project = new Project({ name: "test" });
 			const cc = new ClaudeCode(project);
 			cc.postSynthesize();
 
-			expect(fs.symlinkSync).not.toHaveBeenCalled();
+			expect(symlinkSpy).not.toHaveBeenCalled();
 		});
 	});
 });

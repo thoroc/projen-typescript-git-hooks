@@ -1,7 +1,8 @@
-import * as fs from "node:fs";
-import * as path from "node:path";
+import * as fs from "fs";
+import * as path from "path";
 import { Component, type Project, TomlFile } from "projen";
 import { AgentsMd } from "../../agents-md";
+import { INSTALL_BINARY } from "./constants";
 import type { MistralVibeOptions } from "./types";
 
 export class MistralVibe extends Component {
@@ -20,6 +21,11 @@ export class MistralVibe extends Component {
 		super(project);
 		this.options = options;
 		void (AgentsMd.of(project) ?? new AgentsMd(project));
+
+		const installTask = project.tasks.addTask("vibe:install", {
+			description: "Install Mistral Vibe CLI",
+		});
+		installTask.exec(INSTALL_BINARY, { name: "install-binary" });
 	}
 
 	preSynthesize(): void {
