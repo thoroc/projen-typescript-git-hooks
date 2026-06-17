@@ -29,7 +29,7 @@
 /bun.lockb linguist-generated
 /lefthook.yml linguist-generated
 /LICENSE linguist-generated
-/opencode.json linguist-generated
+/opencode.jsonc linguist-generated linguist-language=JSON-with-Comments
 /package.json linguist-generated
 /renovate.json linguist-generated
 /tsconfig.dev.json linguist-generated linguist-language=JSON-with-Comments

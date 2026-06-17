@@ -58,6 +58,6 @@ test-reports/
 !/.czrc
 !/.claude/settings.json
 !/.codex/config.toml
-!/opencode.json
+!/opencode.jsonc
 !/.gemini/settings.json
 !/.vibe/config.toml
