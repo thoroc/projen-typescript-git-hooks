@@ -71,3 +71,8 @@ When spawning subagents (Agent/Task tool), the routing block is automatically in
 | \`ctx doctor\` | Call the \`ctx_doctor\` MCP tool, run the returned shell command, display as checklist |
 | \`ctx upgrade\` | Call the \`ctx_upgrade\` MCP tool, run the returned shell command, display as checklist |
 `;
+
+export const INSTALL_BINARY =
+	"command -v context-mode >/dev/null 2>&1 || " +
+	"(command -v mise >/dev/null 2>&1 && mise use -g npm:context-mode) || " +
+	"npm install -g context-mode";

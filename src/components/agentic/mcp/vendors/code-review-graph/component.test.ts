@@ -96,6 +96,29 @@ describe("CodeReviewGraphMcpServer", () => {
 		expect(OpenCode.of(project)).toBeUndefined();
 	});
 
+	describe("install task", () => {
+		it("creates code-review-graph:install task", () => {
+			const project = new Project({ name: "test" });
+			new CodeReviewGraphMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			expect(
+				snapshot[".projen/tasks.json"].tasks["code-review-graph:install"],
+			).toBeDefined();
+		});
+
+		it("install task runs install-binary then build-graph steps", () => {
+			const project = new Project({ name: "test" });
+			new CodeReviewGraphMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			const steps =
+				snapshot[".projen/tasks.json"].tasks["code-review-graph:install"].steps;
+			expect(steps[0].name).toBe("install-binary");
+			expect(steps[0].exec).toContain("code-review-graph");
+			expect(steps[1].name).toBe("build-graph");
+			expect(steps[1].exec).toBe("code-review-graph build");
+		});
+	});
+
 	describe("agent instructions", () => {
 		it("creates .agents/instructions/code-review-graph.md", () => {
 			const project = new Project({ name: "test" });

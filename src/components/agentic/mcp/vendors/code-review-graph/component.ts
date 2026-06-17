@@ -2,7 +2,7 @@ import { Component, type Project } from "projen";
 import { AgentsMd } from "../../../agents-md";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
 import { McpConfig, McpServer } from "../..";
-import { INSTRUCTIONS_CONTENT } from "./constants";
+import { INSTALL_BINARY, INSTRUCTIONS_CONTENT } from "./constants";
 
 export class CodeReviewGraphMcpServer extends Component {
 	static readonly serverName = "code-review-graph";
@@ -33,5 +33,11 @@ export class CodeReviewGraphMcpServer extends Component {
 			CodeReviewGraphMcpServer.serverName,
 			INSTRUCTIONS_CONTENT,
 		);
+
+		const installTask = project.tasks.addTask("code-review-graph:install", {
+			description: "Install code-review-graph binary and build initial graph",
+		});
+		installTask.exec(INSTALL_BINARY, { name: "install-binary" });
+		installTask.exec("code-review-graph build", { name: "build-graph" });
 	}
 }

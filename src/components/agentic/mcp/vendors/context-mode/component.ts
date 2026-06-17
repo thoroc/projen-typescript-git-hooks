@@ -12,7 +12,7 @@ import {
 } from "../../../harness";
 import { McpConfig, McpServer } from "../..";
 import { SharedSimpleHookEvents } from "../hooks";
-import { INSTRUCTIONS_CONTENT } from "./constants";
+import { INSTALL_BINARY, INSTRUCTIONS_CONTENT } from "./constants";
 
 export class ContextModeMcpServer extends Component {
 	static readonly serverName = "context-mode";
@@ -121,5 +121,10 @@ export class ContextModeMcpServer extends Component {
 			"context-mode",
 			INSTRUCTIONS_CONTENT,
 		);
+
+		const installTask = project.tasks.addTask("context-mode:install", {
+			description: "Install context-mode binary",
+		});
+		installTask.exec(INSTALL_BINARY, { name: "install-binary" });
 	}
 }

@@ -53,6 +53,24 @@ describe("QmdMcpServer", () => {
 		expect(ClaudeCode.of(project)).toBeUndefined();
 	});
 
+	describe("install task", () => {
+		it("creates qmd:install task", () => {
+			const project = new Project({ name: "test" });
+			new QmdMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			expect(snapshot[".projen/tasks.json"].tasks["qmd:install"]).toBeDefined();
+		});
+
+		it("install task runs the install-binary step", () => {
+			const project = new Project({ name: "test" });
+			new QmdMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			const steps = snapshot[".projen/tasks.json"].tasks["qmd:install"].steps;
+			expect(steps[0].name).toBe("install-binary");
+			expect(steps[0].exec).toContain("@tobilu/qmd");
+		});
+	});
+
 	describe("agent instructions", () => {
 		it("creates .agents/instructions/qmd.md", () => {
 			const project = new Project({ name: "test" });

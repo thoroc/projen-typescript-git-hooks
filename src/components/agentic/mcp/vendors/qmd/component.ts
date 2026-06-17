@@ -2,7 +2,7 @@ import { Component, type Project } from "projen";
 import { AgentsMd } from "../../../agents-md";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
 import { McpConfig, McpServer } from "../..";
-import { INSTRUCTIONS_CONTENT } from "./constants";
+import { INSTALL_BINARY, INSTRUCTIONS_CONTENT } from "./constants";
 
 export class QmdMcpServer extends Component {
 	static readonly serverName = "qmd";
@@ -28,5 +28,10 @@ export class QmdMcpServer extends Component {
 		OpenCode.of(project)?.addMcpServer(server);
 
 		AgentsMd.registerInstructions(project, "qmd", INSTRUCTIONS_CONTENT);
+
+		const installTask = project.tasks.addTask("qmd:install", {
+			description: "Install QMD binary",
+		});
+		installTask.exec(INSTALL_BINARY, { name: "install-binary" });
 	}
 }

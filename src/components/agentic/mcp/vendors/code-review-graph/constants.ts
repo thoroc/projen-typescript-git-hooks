@@ -37,3 +37,9 @@ Fall back to Grep/Glob/Read **only** when the graph doesn't cover what you need.
 3. Use \`get_affected_flows\` to understand impact.
 4. Use \`query_graph\` pattern="tests_for" to check coverage.
 `;
+
+export const INSTALL_BINARY =
+	"command -v code-review-graph >/dev/null 2>&1 || " +
+	"(command -v pipx >/dev/null 2>&1 && pipx install code-review-graph) || " +
+	"(command -v uv >/dev/null 2>&1 && uv tool install code-review-graph) || " +
+	"pip install code-review-graph";

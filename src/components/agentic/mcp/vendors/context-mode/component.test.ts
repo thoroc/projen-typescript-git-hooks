@@ -145,6 +145,27 @@ describe("ContextModeMcpServer", () => {
 		expect(OpenCode.of(project)).toBeUndefined();
 	});
 
+	describe("install task", () => {
+		it("creates context-mode:install task", () => {
+			const project = new Project({ name: "test" });
+			new ContextModeMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			expect(
+				snapshot[".projen/tasks.json"].tasks["context-mode:install"],
+			).toBeDefined();
+		});
+
+		it("install task runs the install-binary step", () => {
+			const project = new Project({ name: "test" });
+			new ContextModeMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			const steps =
+				snapshot[".projen/tasks.json"].tasks["context-mode:install"].steps;
+			expect(steps[0].name).toBe("install-binary");
+			expect(steps[0].exec).toContain("context-mode");
+		});
+	});
+
 	describe("agent instructions", () => {
 		it("creates .agents/instructions/context-mode.md", () => {
 			const project = new Project({ name: "test" });

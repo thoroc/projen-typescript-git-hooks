@@ -70,3 +70,8 @@ Remove orphaned cache entries periodically:
 qmd cleanup
 \`\`\`
 `;
+
+export const INSTALL_BINARY =
+	"command -v qmd >/dev/null 2>&1 || " +
+	"(command -v mise >/dev/null 2>&1 && mise use -g npm:@tobilu/qmd) || " +
+	"npm install -g @tobilu/qmd";
