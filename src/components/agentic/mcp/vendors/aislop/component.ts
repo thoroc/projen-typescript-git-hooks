@@ -1,6 +1,11 @@
 import { Component, type Project } from "projen";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
 import { McpConfig, McpServer } from "../..";
+import { AislopConfig, type AislopConfigOptions } from "./config";
+
+export interface AislopMcpServerOptions {
+	readonly config?: AislopConfigOptions;
+}
 
 export class AislopMcpServer extends Component {
 	static readonly serverName = "aislop";
@@ -11,7 +16,7 @@ export class AislopMcpServer extends Component {
 		return project.components.find(singleton);
 	}
 
-	constructor(project: Project) {
+	constructor(project: Project, options?: AislopMcpServerOptions) {
 		super(project);
 		const server = new McpServer(AislopMcpServer.serverName, {
 			command: "npx",
@@ -27,6 +32,10 @@ export class AislopMcpServer extends Component {
 			matcher: "Edit|Write|MultiEdit",
 			hooks: [{ type: "command", command: "aislop hook claude" }],
 		});
+
+		if (options?.config !== undefined && !AislopConfig.of(project)) {
+			new AislopConfig(project, options.config);
+		}
 
 		GeminiCli.of(project)?.addMcpServer(server);
 		OpenAICodex.of(project)?.addMcpServer(server);

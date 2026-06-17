@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
 import { McpConfig } from "../..";
 import { AislopMcpServer } from "./component";
+import { AislopConfig } from "./config";
 
 describe("AislopMcpServer", () => {
 	it("returns undefined when not present on project", () => {
@@ -111,5 +112,28 @@ describe("AislopMcpServer", () => {
 		const project = new Project({ name: "test" });
 		new AislopMcpServer(project);
 		expect(OpenCode.of(project)).toBeUndefined();
+	});
+
+	it("does not create AislopConfig when no config option is provided", () => {
+		const project = new Project({ name: "test" });
+		new AislopMcpServer(project);
+		const snapshot = synthSnapshot(project);
+		expect(snapshot[".aislop/config.yml"]).toBeUndefined();
+	});
+
+	it("creates AislopConfig when config option is provided", () => {
+		const project = new Project({ name: "test" });
+		new AislopMcpServer(project, { config: { telemetry: { enabled: false } } });
+		const snapshot = synthSnapshot(project);
+		expect(snapshot[".aislop/config.yml"]).toContain("enabled: false");
+	});
+
+	it("uses existing AislopConfig when already present on project", () => {
+		const project = new Project({ name: "test" });
+		const existing = new AislopConfig(project, {
+			telemetry: { enabled: true },
+		});
+		new AislopMcpServer(project, { config: { telemetry: { enabled: false } } });
+		expect(AislopConfig.of(project)).toBe(existing);
 	});
 });
