@@ -1,6 +1,8 @@
 import { Component, type Project } from "projen";
+import { AgentsMd } from "../../../agents-md";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
 import { McpConfig, McpServer } from "../..";
+import { INSTALL_BINARY, INSTRUCTIONS_CONTENT } from "./constants";
 
 export class NeuledgeContextMcpServer extends Component {
 	static readonly serverName = "neuledge-context";
@@ -24,5 +26,16 @@ export class NeuledgeContextMcpServer extends Component {
 		GeminiCli.of(project)?.addMcpServer(server);
 		OpenAICodex.of(project)?.addMcpServer(server);
 		OpenCode.of(project)?.addMcpServer(server);
+
+		AgentsMd.registerInstructions(
+			project,
+			NeuledgeContextMcpServer.serverName,
+			INSTRUCTIONS_CONTENT,
+		);
+
+		const installTask = project.tasks.addTask("neuledge-context:install", {
+			description: "Install neuledge/context binary",
+		});
+		installTask.exec(INSTALL_BINARY, { name: "install-binary" });
 	}
 }
