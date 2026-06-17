@@ -1,15 +1,10 @@
-import * as fs from "fs";
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { McpServer } from "../../mcp";
 import { MistralVibe } from "./vibe";
 
 describe("MistralVibe", () => {
-	afterEach(() => {
-		vi.restoreAllMocks();
-	});
-
 	it("returns undefined when not present on project", () => {
 		const project = new Project({ name: "test" });
 		expect(MistralVibe.of(project)).toBeUndefined();
@@ -87,51 +82,43 @@ describe("MistralVibe", () => {
 
 	describe("postSynthesize", () => {
 		it("creates a symlink when the context file does not exist", () => {
-			vi.spyOn(fs, "existsSync").mockReturnValue(false);
-			const symlinkSpy = vi
-				.spyOn(fs, "symlinkSync")
-				.mockImplementation(() => {});
+			const existsSync = vi.fn().mockReturnValue(false);
+			const symlinkSync = vi.fn();
 
 			const project = new Project({ name: "test" });
 			const mv = new MistralVibe(project);
-			mv.postSynthesize();
+			mv.postSynthesize({ existsSync, symlinkSync });
 
-			expect(symlinkSpy).toHaveBeenCalledWith(
+			expect(symlinkSync).toHaveBeenCalledWith(
 				"AGENTS.md",
 				expect.stringContaining("VIBE.md"),
 			);
 		});
 
 		it("does nothing when the context file already exists as a symlink", () => {
-			vi.spyOn(fs, "existsSync").mockReturnValue(true);
-			vi.spyOn(fs, "lstatSync").mockReturnValue({
-				isSymbolicLink: () => true,
-			} as ReturnType<typeof fs.lstatSync>);
-			const symlinkSpy = vi
-				.spyOn(fs, "symlinkSync")
-				.mockImplementation(() => {});
+			const existsSync = vi.fn().mockReturnValue(true);
+			const lstatSync = vi.fn().mockReturnValue({ isSymbolicLink: () => true });
+			const symlinkSync = vi.fn();
 
 			const project = new Project({ name: "test" });
 			const mv = new MistralVibe(project);
-			mv.postSynthesize();
+			mv.postSynthesize({ existsSync, lstatSync, symlinkSync });
 
-			expect(symlinkSpy).not.toHaveBeenCalled();
+			expect(symlinkSync).not.toHaveBeenCalled();
 		});
 
 		it("does nothing when the context file exists but is not a symlink", () => {
-			vi.spyOn(fs, "existsSync").mockReturnValue(true);
-			vi.spyOn(fs, "lstatSync").mockReturnValue({
-				isSymbolicLink: () => false,
-			} as ReturnType<typeof fs.lstatSync>);
-			const symlinkSpy = vi
-				.spyOn(fs, "symlinkSync")
-				.mockImplementation(() => {});
+			const existsSync = vi.fn().mockReturnValue(true);
+			const lstatSync = vi
+				.fn()
+				.mockReturnValue({ isSymbolicLink: () => false });
+			const symlinkSync = vi.fn();
 
 			const project = new Project({ name: "test" });
 			const mv = new MistralVibe(project);
-			mv.postSynthesize();
+			mv.postSynthesize({ existsSync, lstatSync, symlinkSync });
 
-			expect(symlinkSpy).not.toHaveBeenCalled();
+			expect(symlinkSync).not.toHaveBeenCalled();
 		});
 	});
 });

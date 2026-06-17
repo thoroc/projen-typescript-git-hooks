@@ -1,7 +1,6 @@
-import * as fs from "fs";
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { ClaudeCode } from "./anthropic/claude-code";
 import { GeminiCli } from "./google/gemini-cli";
 import { AgenticHarnesses, HarnessType } from "./harnesses";
@@ -9,16 +8,7 @@ import { MistralVibe } from "./mistral/vibe";
 import { OpenAICodex } from "./openai/codex";
 import { OpenCode } from "./opencode/component";
 
-const mockFsNotExists = (): void => {
-	vi.spyOn(fs, "existsSync").mockReturnValue(false);
-	vi.spyOn(fs, "symlinkSync").mockImplementation(() => {});
-};
-
 describe("AgenticHarnesses", () => {
-	afterEach(() => {
-		vi.restoreAllMocks();
-	});
-
 	describe("singleton", () => {
 		it("returns undefined when not present on project", () => {
 			const project = new Project({ name: "test" });
@@ -27,7 +17,6 @@ describe("AgenticHarnesses", () => {
 
 		it("returns the instance when present on project", () => {
 			const project = new Project({ name: "test" });
-			mockFsNotExists();
 			const harnesses = new AgenticHarnesses(project);
 			expect(AgenticHarnesses.of(project)).toBe(harnesses);
 		});
@@ -35,14 +24,12 @@ describe("AgenticHarnesses", () => {
 
 	describe("defaults", () => {
 		it("instantiates ClaudeCode when no options given", () => {
-			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project);
 			expect(ClaudeCode.of(project)).toBeDefined();
 		});
 
 		it("does not instantiate other harnesses by default", () => {
-			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project);
 			expect(OpenAICodex.of(project)).toBeUndefined();
@@ -52,7 +39,6 @@ describe("AgenticHarnesses", () => {
 		});
 
 		it("falls back to ClaudeCode when harnesses is an empty array", () => {
-			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project, { harnesses: [] });
 			expect(ClaudeCode.of(project)).toBeDefined();
@@ -71,7 +57,6 @@ describe("AgenticHarnesses", () => {
 		});
 
 		it("instantiates multiple specified harnesses", () => {
-			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project, {
 				harnesses: [HarnessType.CLAUDE_CODE, HarnessType.GEMINI],
@@ -84,7 +69,6 @@ describe("AgenticHarnesses", () => {
 		});
 
 		it("instantiates all five harnesses when all specified", () => {
-			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project, {
 				harnesses: [
@@ -105,7 +89,6 @@ describe("AgenticHarnesses", () => {
 
 	describe("config file generation", () => {
 		it("generates .claude/settings.json for ClaudeCode", () => {
-			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project);
 			const snapshot = synthSnapshot(project);
@@ -120,7 +103,6 @@ describe("AgenticHarnesses", () => {
 		});
 
 		it("generates opencode.jsonc for OpenCode", () => {
-			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project, { harnesses: [HarnessType.OPENCODE] });
 			const snapshot = synthSnapshot(project);
@@ -128,7 +110,6 @@ describe("AgenticHarnesses", () => {
 		});
 
 		it("generates .gemini/settings.json for GeminiCli", () => {
-			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project, { harnesses: [HarnessType.GEMINI] });
 			const snapshot = synthSnapshot(project);
@@ -145,7 +126,6 @@ describe("AgenticHarnesses", () => {
 
 	describe("harnesses:install task", () => {
 		it("creates harnesses:install task", () => {
-			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project);
 			const snapshot = synthSnapshot(project);
@@ -155,7 +135,6 @@ describe("AgenticHarnesses", () => {
 		});
 
 		it("spawns claude-code:install by default", () => {
-			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project);
 			const snapshot = synthSnapshot(project);
@@ -187,7 +166,6 @@ describe("AgenticHarnesses", () => {
 		});
 
 		it("spawns all five tasks when all harnesses enabled", () => {
-			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project, {
 				harnesses: [
@@ -214,7 +192,6 @@ describe("AgenticHarnesses", () => {
 
 	describe("per-harness options", () => {
 		it("passes claudeCode options to ClaudeCode", () => {
-			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project, {
 				claudeCode: { permissions: { allow: ["Bash"] } },
@@ -236,7 +213,6 @@ describe("AgenticHarnesses", () => {
 		});
 
 		it("passes gemini options to GeminiCli", () => {
-			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project, {
 				harnesses: [HarnessType.GEMINI],

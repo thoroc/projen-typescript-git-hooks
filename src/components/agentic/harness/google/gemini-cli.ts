@@ -76,12 +76,23 @@ export class GeminiCli extends Component {
 		});
 	}
 
-	postSynthesize(): void {
+	postSynthesize(
+		deps: {
+			existsSync?: (p: string) => boolean;
+			lstatSync?: (p: string) => { isSymbolicLink(): boolean };
+			symlinkSync?: (target: string, p: string) => void;
+		} = {},
+	): void {
+		const {
+			existsSync = fs.existsSync,
+			lstatSync = fs.lstatSync,
+			symlinkSync = fs.symlinkSync,
+		} = deps;
 		const symlinkPath = path.join(this.project.outdir, GeminiCli.contextFile);
-		if (fs.existsSync(symlinkPath)) {
-			if (fs.lstatSync(symlinkPath).isSymbolicLink()) return;
+		if (existsSync(symlinkPath)) {
+			if (lstatSync(symlinkPath).isSymbolicLink()) return;
 			return;
 		}
-		fs.symlinkSync("AGENTS.md", symlinkPath);
+		symlinkSync("AGENTS.md", symlinkPath);
 	}
 }
