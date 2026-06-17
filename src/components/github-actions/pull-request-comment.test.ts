@@ -43,8 +43,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --check-files
       - name: Run tests
-        run: npx jest --coverage --coverageReporters json-summary
-      - name: Jest Coverage Comment
+        run: npx vitest run --coverage
+      - name: Vitest Coverage Comment
         uses: MishaKav/jest-coverage-comment@v1
 `);
 	});
@@ -87,8 +87,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run tests
-        run: npx jest --coverage --coverageReporters json-summary
-      - name: Jest Coverage Comment
+        run: npx vitest run --coverage
+      - name: Vitest Coverage Comment
         uses: MishaKav/jest-coverage-comment@v1
 `);
 	});
@@ -131,8 +131,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Run tests
-        run: npx jest --coverage --coverageReporters json-summary
-      - name: Jest Coverage Comment
+        run: npx vitest run --coverage
+      - name: Vitest Coverage Comment
         uses: MishaKav/jest-coverage-comment@v1
 `);
 	});
@@ -172,11 +172,15 @@ jobs:
         with:
           ref: \${{ github.event.pull_request.head.ref }}
           repository: \${{ github.event.pull_request.head.repo.full_name }}
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
       - name: Install dependencies
         run: bun install
       - name: Run tests
-        run: npx jest --coverage --coverageReporters json-summary
-      - name: Jest Coverage Comment
+        run: bunx vitest run --coverage
+      - name: Vitest Coverage Comment
         uses: MishaKav/jest-coverage-comment@v1
 `);
 	});

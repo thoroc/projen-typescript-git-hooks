@@ -32,7 +32,7 @@ export class PullRequestLabeler extends Component {
 			documentation: ["*.md"],
 			githubAction: [".github/**"],
 			component: ["src/components/**"],
-			test: ["test/**/*.test.ts"],
+			test: ["src/**/*.test.ts"],
 		});
 	}
 }
@@ -62,8 +62,18 @@ export interface LabelerConfigOptions {
 export class LabelerConfig extends Component {
 	constructor(project: Project, options: LabelerConfigOptions) {
 		super(project);
+
+		const toV5 = (globs: string[]) => [
+			{ "changed-files": [{ "any-glob-to-any-file": globs }] },
+		];
+
 		new YamlFile(project, ".github/labeler.yml", {
-			obj: options,
+			obj: {
+				documentation: toV5(options.documentation),
+				githubAction: toV5(options.githubAction),
+				component: toV5(options.component),
+				test: toV5(options.test),
+			},
 		});
 	}
 }

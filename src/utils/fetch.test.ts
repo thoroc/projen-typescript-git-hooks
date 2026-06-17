@@ -1,7 +1,6 @@
 import { EventEmitter } from "events";
 import * as https from "https";
-import type { Mocked } from "vitest";
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, type Mocked, vi } from "vitest";
 import { getContent } from "./fetch";
 
 vi.mock("https");
