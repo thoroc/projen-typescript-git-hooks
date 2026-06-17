@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import * as fs from "node:fs";
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
 import { afterEach, describe, expect, it, vi } from "vitest";
