@@ -8,6 +8,7 @@ import { Lefthook } from "./src/components/githooks-manager";
 import {
 	PullRequestJestCoverageComment,
 	PullRequestLabeler,
+	ReleasePlease,
 } from "./src/components/github-actions";
 import { IssueTemplate } from "./src/components/github-templates";
 import { Renovate } from "./src/components/renovate";
@@ -75,6 +76,7 @@ new Biome(project);
 new Commitizen(project, { json: true });
 new CodeOfConduct(project, { author: "thomas.a.roche@gmail.com" });
 new Renovate(project);
+new ReleasePlease(github);
 
 project.gitignore.addPatterns("test-reports/");
 
