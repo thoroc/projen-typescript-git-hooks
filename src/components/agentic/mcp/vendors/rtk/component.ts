@@ -1,49 +1,11 @@
 import { Component, type Project, SampleFile } from "projen";
 import { AgentsMd } from "../../../agents-md";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
-
-const INSTRUCTIONS_PATH = ".agents/instructions/rtk.md";
-
-const INSTRUCTIONS_CONTENT = `# RTK - Rust Token Killer
-
-**Usage**: Token-optimized CLI proxy for shell commands.
-
-## Rule
-
-Always prefix shell commands with \`rtk\`.
-
-Examples:
-
-\`\`\`bash
-rtk git status
-rtk cargo test
-rtk npm run build
-rtk pytest -q
-\`\`\`
-
-## Meta Commands
-
-\`\`\`bash
-rtk gain            # Token savings analytics
-rtk gain --history  # Recent command savings history
-rtk proxy <cmd>     # Run raw command without filtering
-\`\`\`
-
-## Verification
-
-\`\`\`bash
-rtk --version
-rtk gain
-which rtk
-\`\`\`
-`;
-
-const INSTALL_BINARY =
-	"command -v rtk >/dev/null 2>&1 || " +
-	"(command -v mise >/dev/null 2>&1 && mise use rtk) || " +
-	"(command -v brew >/dev/null 2>&1 && brew install rtk) || " +
-	"(curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh) || " +
-	"cargo install rtk";
+import {
+	INSTALL_BINARY,
+	INSTRUCTIONS_CONTENT,
+	INSTRUCTIONS_PATH,
+} from "./constants";
 
 export class RtkProxy extends Component {
 	public static of(project: Project): RtkProxy | undefined {
