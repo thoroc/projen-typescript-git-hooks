@@ -52,6 +52,16 @@
       ],
       "condition": "git log --oneline -1 | grep -qv \"chore(release):\""
     },
+    "claude-code:install": {
+      "name": "claude-code:install",
+      "description": "Install Claude Code CLI",
+      "steps": [
+        {
+          "exec": "command -v claude >/dev/null 2>&1 || npm install -g @anthropic-ai/claude-code",
+          "name": "install-binary"
+        }
+      ]
+    },
     "clobber": {
       "name": "clobber",
       "description": "hard resets to HEAD of origin and cleans the local repo",
@@ -83,6 +93,16 @@
         }
       ],
       "condition": "git diff --exit-code > /dev/null"
+    },
+    "codex:install": {
+      "name": "codex:install",
+      "description": "Install OpenAI Codex CLI",
+      "steps": [
+        {
+          "exec": "command -v codex >/dev/null 2>&1 || npm install -g @openai/codex",
+          "name": "install-binary"
+        }
+      ]
     },
     "commitizen": {
       "name": "commitizen",
@@ -141,6 +161,37 @@
         }
       ]
     },
+    "gemini:install": {
+      "name": "gemini:install",
+      "description": "Install Gemini CLI",
+      "steps": [
+        {
+          "exec": "command -v gemini >/dev/null 2>&1 || npm install -g @google/gemini-cli",
+          "name": "install-binary"
+        }
+      ]
+    },
+    "harnesses:install": {
+      "name": "harnesses:install",
+      "description": "Install all enabled harness tools",
+      "steps": [
+        {
+          "spawn": "claude-code:install"
+        },
+        {
+          "spawn": "codex:install"
+        },
+        {
+          "spawn": "opencode:install"
+        },
+        {
+          "spawn": "gemini:install"
+        },
+        {
+          "spawn": "vibe:install"
+        }
+      ]
+    },
     "install": {
       "name": "install",
       "description": "Install project dependencies and update lockfile (non-frozen)",
@@ -156,6 +207,16 @@
       "steps": [
         {
           "exec": "bun install --frozen-lockfile"
+        }
+      ]
+    },
+    "opencode:install": {
+      "name": "opencode:install",
+      "description": "Install OpenCode CLI",
+      "steps": [
+        {
+          "exec": "command -v opencode >/dev/null 2>&1 || npm install -g opencode",
+          "name": "install-binary"
         }
       ]
     },
@@ -280,6 +341,16 @@
         },
         {
           "spawn": "post-upgrade"
+        }
+      ]
+    },
+    "vibe:install": {
+      "name": "vibe:install",
+      "description": "Install Mistral Vibe CLI",
+      "steps": [
+        {
+          "exec": "command -v vibe >/dev/null 2>&1 || npm install -g @mistralai/vibe",
+          "name": "install-binary"
         }
       ]
     },
