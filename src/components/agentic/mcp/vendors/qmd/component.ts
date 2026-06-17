@@ -1,6 +1,8 @@
 import { Component, type Project } from "projen";
+import { AgentsMd } from "../../../agents-md";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
 import { McpConfig, McpServer } from "../..";
+import { INSTRUCTIONS_CONTENT } from "./constants";
 
 export class QmdMcpServer extends Component {
 	static readonly serverName = "qmd";
@@ -24,5 +26,7 @@ export class QmdMcpServer extends Component {
 		GeminiCli.of(project)?.addMcpServer(server);
 		OpenAICodex.of(project)?.addMcpServer(server);
 		OpenCode.of(project)?.addMcpServer(server);
+
+		AgentsMd.registerInstructions(project, "qmd", INSTRUCTIONS_CONTENT);
 	}
 }
