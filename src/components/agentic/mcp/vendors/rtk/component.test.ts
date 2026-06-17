@@ -1,7 +1,7 @@
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
-import { ClaudeCode, GeminiCli, OpenCode } from "../../../harness";
+import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
 import { RtkProxy } from "./component";
 
 describe("RtkProxy", () => {
@@ -82,5 +82,74 @@ describe("RtkProxy", () => {
 		const project = new Project({ name: "test" });
 		new RtkProxy(project);
 		expect(OpenCode.of(project)).toBeUndefined();
+	});
+
+	describe("rtk:install task", () => {
+		it("creates the rtk:install task", () => {
+			const project = new Project({ name: "test" });
+			new RtkProxy(project);
+			expect(project.tasks.tryFind("rtk:install")).toBeDefined();
+		});
+
+		it("install-binary step tries mise, brew, curl, cargo in order", () => {
+			const project = new Project({ name: "test" });
+			new RtkProxy(project);
+			const task = project.tasks.tryFind("rtk:install");
+			const step = task?.steps.find((s) => s.name === "install-binary");
+			expect(step?.exec).toContain("mise use rtk");
+			expect(step?.exec).toContain("brew install rtk");
+			expect(step?.exec).toContain("curl -fsSL");
+			expect(step?.exec).toContain("cargo install rtk");
+		});
+
+		it("skips binary install when rtk is already on PATH", () => {
+			const project = new Project({ name: "test" });
+			new RtkProxy(project);
+			const task = project.tasks.tryFind("rtk:install");
+			const step = task?.steps.find((s) => s.name === "install-binary");
+			expect(step?.exec).toContain("command -v rtk >/dev/null 2>&1");
+		});
+
+		it("always includes rtk init -g step for Claude", () => {
+			const project = new Project({ name: "test" });
+			new RtkProxy(project);
+			const task = project.tasks.tryFind("rtk:install");
+			const step = task?.steps.find((s) => s.name === "init-claude");
+			expect(step?.exec).toBe("rtk init -g");
+		});
+
+		it("adds rtk init --gemini step when GeminiCli is present", () => {
+			const project = new Project({ name: "test" });
+			new GeminiCli(project);
+			new RtkProxy(project);
+			const task = project.tasks.tryFind("rtk:install");
+			const step = task?.steps.find((s) => s.name === "init-gemini");
+			expect(step?.exec).toBe("rtk init -g --gemini");
+		});
+
+		it("omits rtk init --gemini step when GeminiCli is absent", () => {
+			const project = new Project({ name: "test" });
+			new RtkProxy(project);
+			const task = project.tasks.tryFind("rtk:install");
+			const step = task?.steps.find((s) => s.name === "init-gemini");
+			expect(step).toBeUndefined();
+		});
+
+		it("adds rtk init --codex step when OpenAICodex is present", () => {
+			const project = new Project({ name: "test" });
+			new OpenAICodex(project);
+			new RtkProxy(project);
+			const task = project.tasks.tryFind("rtk:install");
+			const step = task?.steps.find((s) => s.name === "init-codex");
+			expect(step?.exec).toBe("rtk init -g --codex");
+		});
+
+		it("omits rtk init --codex step when OpenAICodex is absent", () => {
+			const project = new Project({ name: "test" });
+			new RtkProxy(project);
+			const task = project.tasks.tryFind("rtk:install");
+			const step = task?.steps.find((s) => s.name === "init-codex");
+			expect(step).toBeUndefined();
+		});
 	});
 });
