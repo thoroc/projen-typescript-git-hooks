@@ -1,6 +1,7 @@
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
+import { AgentsMd } from "../../../agents-md";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
 import { RtkProxy } from "./component";
 
@@ -82,6 +83,31 @@ describe("RtkProxy", () => {
 		const project = new Project({ name: "test" });
 		new RtkProxy(project);
 		expect(OpenCode.of(project)).toBeUndefined();
+	});
+
+	describe("agent instructions", () => {
+		it("creates .agents/instructions/rtk.md", () => {
+			const project = new Project({ name: "test" });
+			new RtkProxy(project);
+			const snapshot = synthSnapshot(project);
+			expect(snapshot[".agents/instructions/rtk.md"]).toBeDefined();
+		});
+
+		it("instructions file contains RTK rule content", () => {
+			const project = new Project({ name: "test" });
+			new RtkProxy(project);
+			const snapshot = synthSnapshot(project);
+			const content = snapshot[".agents/instructions/rtk.md"];
+			expect(content).toContain("rtk git status");
+			expect(content).toContain("rtk gain");
+		});
+
+		it("registers the instruction with AgentsMd", () => {
+			const project = new Project({ name: "test" });
+			new RtkProxy(project);
+			const agentsMd = AgentsMd.of(project);
+			expect(agentsMd).toBeDefined();
+		});
 	});
 
 	describe("rtk:install task", () => {
