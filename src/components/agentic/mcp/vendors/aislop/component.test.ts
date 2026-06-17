@@ -105,7 +105,7 @@ describe("AislopMcpServer", () => {
 		new OpenCode(project);
 		new AislopMcpServer(project);
 		const snapshot = synthSnapshot(project);
-		expect(snapshot["opencode.json"].mcp?.["aislop"]).toBeDefined();
+		expect(snapshot["opencode.jsonc"].mcp?.["aislop"]).toBeDefined();
 	});
 
 	it("does not configure OpenCode when it is absent", () => {

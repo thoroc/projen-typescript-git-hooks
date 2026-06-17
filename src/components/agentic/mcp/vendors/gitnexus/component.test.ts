@@ -82,6 +82,6 @@ describe("GitNexusMcpServer", () => {
 		new OpenCode(project);
 		new GitNexusMcpServer(project);
 		const snapshot = synthSnapshot(project);
-		expect(snapshot["opencode.json"].mcp?.gitnexus).toBeDefined();
+		expect(snapshot["opencode.jsonc"].mcp?.gitnexus).toBeDefined();
 	});
 });

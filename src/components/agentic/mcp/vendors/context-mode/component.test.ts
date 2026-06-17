@@ -134,8 +134,8 @@ describe("ContextModeMcpServer", () => {
 		new OpenCode(project);
 		new ContextModeMcpServer(project);
 		const snapshot = synthSnapshot(project);
-		expect(snapshot["opencode.json"].plugin).toContain("context-mode");
-		expect(snapshot["opencode.json"].mcp?.["context-mode"]).toBeUndefined();
+		expect(snapshot["opencode.jsonc"].plugin).toContain("context-mode");
+		expect(snapshot["opencode.jsonc"].mcp?.["context-mode"]).toBeUndefined();
 	});
 
 	it("does not configure OpenCode when it is absent", () => {

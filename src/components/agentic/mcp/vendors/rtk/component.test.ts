@@ -75,7 +75,7 @@ describe("RtkProxy", () => {
 		new OpenCode(project);
 		new RtkProxy(project);
 		const snapshot = synthSnapshot(project);
-		expect(snapshot["opencode.json"].plugin).toContain("rtk");
+		expect(snapshot["opencode.jsonc"].plugin).toContain("rtk");
 	});
 
 	it("does not configure OpenCode when it is absent", () => {

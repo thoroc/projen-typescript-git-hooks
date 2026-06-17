@@ -57,7 +57,7 @@ describe("Biome", () => {
 
 		expect(commands.biome).toEqual({
 			glob: "src/**/*.ts",
-			run: "biome check --write {staged_files}",
+			run: "bunx biome check --write {staged_files}",
 			stage_fixed: true,
 		});
 	});
@@ -74,7 +74,7 @@ describe("Biome", () => {
 		const config = snapshot["package.json"]["lint-staged"];
 
 		expect(Object.keys(config)).toContain("src/**/*.ts");
-		expect(config["src/**/*.ts"]).toContain("biome check --write");
+		expect(config["src/**/*.ts"]).toContain("bunx biome check --write");
 	});
 
 	it("does not add eslint or prettier when biome is enabled", () => {
