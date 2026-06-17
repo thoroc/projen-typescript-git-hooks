@@ -6,9 +6,9 @@ import { installSteps } from "./install-steps";
 import { vitestStep } from "./vitest-step";
 
 /**
- * Represents PullRequestJestCoverageComment configuration
+ * Represents PullRequestCoverageComment configuration
  */
-export class PullRequestJestCoverageComment extends Component {
+export class PullRequestCoverageComment extends Component {
 	constructor(github: GitHub) {
 		super(github.project);
 

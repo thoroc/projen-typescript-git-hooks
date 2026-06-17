@@ -1,4 +1,4 @@
-import { PullRequestJestCoverageComment } from "@thoroc/github-actions/pull-request-comment";
+import { PullRequestCoverageComment } from "@thoroc/github-actions/pull-request-comment";
 import { GitHub } from "projen/lib/github";
 import { NodePackageManager, NodeProject } from "projen/lib/javascript";
 import { synthSnapshot } from "projen/lib/util/synth";
@@ -13,7 +13,7 @@ describe("pull-request-comment", () => {
 			packageManager: NodePackageManager.YARN_BERRY,
 		});
 		const github = project.github ?? new GitHub(project);
-		new PullRequestJestCoverageComment(github);
+		new PullRequestCoverageComment(github);
 
 		// Act
 		const snapshot = synthSnapshot(project);
@@ -57,7 +57,7 @@ jobs:
 			packageManager: NodePackageManager.NPM,
 		});
 		const github = project.github ?? new GitHub(project);
-		new PullRequestJestCoverageComment(github);
+		new PullRequestCoverageComment(github);
 
 		// Act
 		const snapshot = synthSnapshot(project);
@@ -101,7 +101,7 @@ jobs:
 			packageManager: NodePackageManager.PNPM,
 		});
 		const github = project.github ?? new GitHub(project);
-		new PullRequestJestCoverageComment(github);
+		new PullRequestCoverageComment(github);
 
 		// Act
 		const snapshot = synthSnapshot(project);
@@ -145,7 +145,7 @@ jobs:
 			packageManager: NodePackageManager.BUN,
 		});
 		const github = project.github ?? new GitHub(project);
-		new PullRequestJestCoverageComment(github);
+		new PullRequestCoverageComment(github);
 
 		// Act
 		const snapshot = synthSnapshot(project);

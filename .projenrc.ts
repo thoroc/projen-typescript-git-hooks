@@ -6,7 +6,7 @@ import { Biome } from "./src/components/code-standards";
 import { CodeOfConduct } from "./src/components/documentation";
 import { Lefthook } from "./src/components/githooks-manager";
 import {
-	PullRequestJestCoverageComment,
+	PullRequestCoverageComment,
 	PullRequestLabeler,
 	ReleasePlease,
 } from "./src/components/github-actions";
@@ -67,7 +67,7 @@ const project = new cdk.JsiiProject({
 });
 
 const github = project.github ?? new GitHub(project);
-new PullRequestJestCoverageComment(github);
+new PullRequestCoverageComment(github);
 new PullRequestLabeler(github);
 new IssueTemplate(github);
 new Lefthook(project);
