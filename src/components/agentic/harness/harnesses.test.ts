@@ -129,12 +129,12 @@ describe("AgenticHarnesses", () => {
 			expect(snapshot[".codex/config.toml"]).toBeDefined();
 		});
 
-		it("generates opencode.json for OpenCode", () => {
+		it("generates opencode.jsonc for OpenCode", () => {
 			mockFsNotExists();
 			const project = new Project({ name: "test" });
 			new AgenticHarnesses(project, { harnesses: [HarnessType.OPENCODE] });
 			const snapshot = synthSnapshot(project);
-			expect(snapshot["opencode.json"]).toBeDefined();
+			expect(snapshot["opencode.jsonc"]).toBeDefined();
 		});
 
 		it("generates .gemini/settings.json for GeminiCli", () => {

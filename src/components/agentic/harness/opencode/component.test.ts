@@ -31,11 +31,11 @@ describe("OpenCode", () => {
 		expect(OpenCode.of(project)).toBe(oc);
 	});
 
-	it("creates opencode.json with schema only when no options given", () => {
+	it("creates opencode.jsonc with schema only when no options given", () => {
 		const project = new Project({ name: "test" });
 		new OpenCode(project);
 		const snapshot = synthSnapshot(project);
-		const settings = snapshot["opencode.json"];
+		const settings = snapshot["opencode.jsonc"];
 		expect(settings.$schema).toBe("https://opencode.ai/config.json");
 		expect(settings.model).toBeUndefined();
 		expect(settings.autoupdate).toBeUndefined();
@@ -54,21 +54,21 @@ describe("OpenCode", () => {
 		const project = new Project({ name: "test" });
 		new OpenCode(project, { model: "anthropic/claude-opus-4-5" });
 		const snapshot = synthSnapshot(project);
-		expect(snapshot["opencode.json"].model).toBe("anthropic/claude-opus-4-5");
+		expect(snapshot["opencode.jsonc"].model).toBe("anthropic/claude-opus-4-5");
 	});
 
 	it("includes autoupdate when provided", () => {
 		const project = new Project({ name: "test" });
 		new OpenCode(project, { autoupdate: false });
 		const snapshot = synthSnapshot(project);
-		expect(snapshot["opencode.json"].autoupdate).toBe(false);
+		expect(snapshot["opencode.jsonc"].autoupdate).toBe(false);
 	});
 
 	it("includes permission when provided", () => {
 		const project = new Project({ name: "test" });
 		new OpenCode(project, { permission: { bash: "allow", network: "deny" } });
 		const snapshot = synthSnapshot(project);
-		expect(snapshot["opencode.json"].permission).toEqual({
+		expect(snapshot["opencode.jsonc"].permission).toEqual({
 			bash: "allow",
 			network: "deny",
 		});
@@ -85,7 +85,7 @@ describe("OpenCode", () => {
 			],
 		});
 		const snapshot = synthSnapshot(project);
-		expect(snapshot["opencode.json"].mcp).toEqual({
+		expect(snapshot["opencode.jsonc"].mcp).toEqual({
 			"my-server": { type: "local", command: ["npx", "-y", "my-mcp-server"] },
 		});
 	});
@@ -94,7 +94,7 @@ describe("OpenCode", () => {
 		const project = new Project({ name: "test" });
 		new OpenCode(project);
 		const snapshot = synthSnapshot(project);
-		expect(snapshot["opencode.json"].mcp).toBeUndefined();
+		expect(snapshot["opencode.jsonc"].mcp).toBeUndefined();
 	});
 
 	it("addPlugin adds plugin", () => {
@@ -102,14 +102,14 @@ describe("OpenCode", () => {
 		const oc = new OpenCode(project);
 		oc.addPlugin("my-plugin");
 		const snapshot = synthSnapshot(project);
-		expect(snapshot["opencode.json"].plugin).toContain("my-plugin");
+		expect(snapshot["opencode.jsonc"].plugin).toContain("my-plugin");
 	});
 
 	it("does not include plugin when none added", () => {
 		const project = new Project({ name: "test" });
 		new OpenCode(project);
 		const snapshot = synthSnapshot(project);
-		expect(snapshot["opencode.json"].plugin).toBeUndefined();
+		expect(snapshot["opencode.jsonc"].plugin).toBeUndefined();
 	});
 
 	describe("postSynthesize", () => {

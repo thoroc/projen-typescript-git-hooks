@@ -6,7 +6,7 @@ import type { McpServer } from "../../mcp";
 import type { OpenCodeOptions } from "./types";
 
 export class OpenCode extends Component {
-	static readonly settingsPath = "opencode.json";
+	static readonly settingsPath = "opencode.jsonc";
 	static readonly contextFile = "OPENCODE.md";
 
 	public static of(project: Project): OpenCode | undefined {
@@ -61,6 +61,7 @@ export class OpenCode extends Component {
 					permission: this.options.permission,
 				}),
 			},
+			allowComments: true,
 			readonly: false,
 		});
 	}
