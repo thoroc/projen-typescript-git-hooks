@@ -1,6 +1,7 @@
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
+import { AgentsMd } from "../../../agents-md";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
 import { McpConfig } from "../..";
 import { GitNexusMcpServer } from "./component";
@@ -83,5 +84,52 @@ describe("GitNexusMcpServer", () => {
 		new GitNexusMcpServer(project);
 		const snapshot = synthSnapshot(project);
 		expect(snapshot["opencode.jsonc"].mcp?.gitnexus).toBeDefined();
+	});
+
+	describe("install task", () => {
+		it("creates gitnexus:install task", () => {
+			const project = new Project({ name: "test" });
+			new GitNexusMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			expect(
+				snapshot[".projen/tasks.json"].tasks["gitnexus:install"],
+			).toBeDefined();
+		});
+
+		it("install task runs install-binary then analyze steps", () => {
+			const project = new Project({ name: "test" });
+			new GitNexusMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			const steps =
+				snapshot[".projen/tasks.json"].tasks["gitnexus:install"].steps;
+			expect(steps[0].name).toBe("install-binary");
+			expect(steps[0].exec).toContain("gitnexus");
+			expect(steps[1].name).toBe("analyze");
+			expect(steps[1].exec).toBe("gitnexus analyze");
+		});
+	});
+
+	describe("agent instructions", () => {
+		it("creates .agents/instructions/gitnexus.md", () => {
+			const project = new Project({ name: "test" });
+			new GitNexusMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			expect(snapshot[`${AgentsMd.instructionsDir}/gitnexus.md`]).toBeDefined();
+		});
+
+		it("instructions file contains graph tool content", () => {
+			const project = new Project({ name: "test" });
+			new GitNexusMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			const content = snapshot[`${AgentsMd.instructionsDir}/gitnexus.md`];
+			expect(content).toContain("query");
+			expect(content).toContain("impact");
+		});
+
+		it("registers AgentsMd on the project", () => {
+			const project = new Project({ name: "test" });
+			new GitNexusMcpServer(project);
+			expect(AgentsMd.of(project)).toBeDefined();
+		});
 	});
 });

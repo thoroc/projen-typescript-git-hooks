@@ -1,6 +1,8 @@
 import { Component, type Project } from "projen";
+import { AgentsMd } from "../../../agents-md";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
 import { McpConfig, McpServer } from "../..";
+import { INSTALL_BINARY, INSTRUCTIONS_CONTENT } from "./constants";
 
 export class GitNexusMcpServer extends Component {
 	static readonly serverName = "gitnexus";
@@ -24,5 +26,17 @@ export class GitNexusMcpServer extends Component {
 		GeminiCli.of(project)?.addMcpServer(server);
 		OpenAICodex.of(project)?.addMcpServer(server);
 		OpenCode.of(project)?.addMcpServer(server);
+
+		AgentsMd.registerInstructions(
+			project,
+			GitNexusMcpServer.serverName,
+			INSTRUCTIONS_CONTENT,
+		);
+
+		const installTask = project.tasks.addTask("gitnexus:install", {
+			description: "Install GitNexus binary and build initial code graph",
+		});
+		installTask.exec(INSTALL_BINARY, { name: "install-binary" });
+		installTask.exec("gitnexus analyze", { name: "analyze" });
 	}
 }
