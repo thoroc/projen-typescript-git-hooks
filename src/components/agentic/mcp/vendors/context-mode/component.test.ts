@@ -1,6 +1,7 @@
 import { Project } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
+import { AgentsMd } from "../../../agents-md";
 import { ClaudeCode, GeminiCli, OpenAICodex, OpenCode } from "../../../harness";
 import { McpConfig } from "../..";
 import { ContextModeMcpServer } from "./component";
@@ -142,5 +143,31 @@ describe("ContextModeMcpServer", () => {
 		const project = new Project({ name: "test" });
 		new ContextModeMcpServer(project);
 		expect(OpenCode.of(project)).toBeUndefined();
+	});
+
+	describe("agent instructions", () => {
+		it("creates .agents/instructions/context-mode.md", () => {
+			const project = new Project({ name: "test" });
+			new ContextModeMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			expect(
+				snapshot[`${AgentsMd.instructionsDir}/context-mode.md`],
+			).toBeDefined();
+		});
+
+		it("instructions file contains context-mode routing content", () => {
+			const project = new Project({ name: "test" });
+			new ContextModeMcpServer(project);
+			const snapshot = synthSnapshot(project);
+			const content = snapshot[`${AgentsMd.instructionsDir}/context-mode.md`];
+			expect(content).toContain("ctx_batch_execute");
+			expect(content).toContain("ctx_fetch_and_index");
+		});
+
+		it("registers AgentsMd on the project", () => {
+			const project = new Project({ name: "test" });
+			new ContextModeMcpServer(project);
+			expect(AgentsMd.of(project)).toBeDefined();
+		});
 	});
 });

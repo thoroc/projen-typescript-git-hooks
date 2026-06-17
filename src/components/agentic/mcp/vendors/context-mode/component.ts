@@ -1,4 +1,5 @@
 import { Component, type Project } from "projen";
+import { AgentsMd } from "../../../agents-md";
 import {
 	ClaudeCode,
 	ClaudePreToolUseMatcherValues,
@@ -11,6 +12,7 @@ import {
 } from "../../../harness";
 import { McpConfig, McpServer } from "../..";
 import { SharedSimpleHookEvents } from "../hooks";
+import { INSTRUCTIONS_CONTENT } from "./constants";
 
 export class ContextModeMcpServer extends Component {
 	static readonly serverName = "context-mode";
@@ -113,5 +115,11 @@ export class ContextModeMcpServer extends Component {
 		}
 
 		OpenCode.of(project)?.addPlugin(ContextModeMcpServer.serverName);
+
+		AgentsMd.registerInstructions(
+			project,
+			"context-mode",
+			INSTRUCTIONS_CONTENT,
+		);
 	}
 }
