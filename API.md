@@ -1,22 +1,11001 @@
-# replace this
-
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-
-Documentation: <https://thoroc.github.io/projen-typescript-git-hooks/index.html>
-
-Inspiration:
-
-- <https://github.com/mnoumanshahzad/projen-types>
-- <https://github.com/AllyMurray/projen-modules>
-- <https://github.com/gplassard/projen-extensions>
-- <https://github.com/mountain-pass/cool-bits-for-projen>
-- <https://github.com/seeebiii/projen-test>
-- <https://github.com/kcwinner/projen-github-demo>
-
 # API Reference <a name="API Reference" id="api-reference"></a>
+
+## Constructs <a name="Constructs" id="Constructs"></a>
+
+### AgenticHarnesses <a name="AgenticHarnesses" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.Initializer"></a>
+
+```typescript
+import { AgenticHarnesses } from '@thoroc/projen-typescript-git-hooks'
+
+new AgenticHarnesses(project: Project, options?: AgenticHarnessesOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions">AgenticHarnessesOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions">AgenticHarnessesOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.isConstruct"></a>
+
+```typescript
+import { AgenticHarnesses } from '@thoroc/projen-typescript-git-hooks'
+
+AgenticHarnesses.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.isComponent"></a>
+
+```typescript
+import { AgenticHarnesses } from '@thoroc/projen-typescript-git-hooks'
+
+AgenticHarnesses.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.of"></a>
+
+```typescript
+import { AgenticHarnesses } from '@thoroc/projen-typescript-git-hooks'
+
+AgenticHarnesses.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
+### AgentsMd <a name="AgentsMd" id="@thoroc/projen-typescript-git-hooks.AgentsMd"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.AgentsMd.Initializer"></a>
+
+```typescript
+import { AgentsMd } from '@thoroc/projen-typescript-git-hooks'
+
+new AgentsMd(project: Project)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AgentsMd.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.addInstruction">addInstruction</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.AgentsMd.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.AgentsMd.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.AgentsMd.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.AgentsMd.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `addInstruction` <a name="addInstruction" id="@thoroc/projen-typescript-git-hooks.AgentsMd.addInstruction"></a>
+
+```typescript
+public addInstruction(filePath: string): void
+```
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="@thoroc/projen-typescript-git-hooks.AgentsMd.addInstruction.parameter.filePath"></a>
+
+- *Type:* string
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.of">of</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.registerInstructions">registerInstructions</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.AgentsMd.isConstruct"></a>
+
+```typescript
+import { AgentsMd } from '@thoroc/projen-typescript-git-hooks'
+
+AgentsMd.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.AgentsMd.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.AgentsMd.isComponent"></a>
+
+```typescript
+import { AgentsMd } from '@thoroc/projen-typescript-git-hooks'
+
+AgentsMd.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.AgentsMd.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.AgentsMd.of"></a>
+
+```typescript
+import { AgentsMd } from '@thoroc/projen-typescript-git-hooks'
+
+AgentsMd.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AgentsMd.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `registerInstructions` <a name="registerInstructions" id="@thoroc/projen-typescript-git-hooks.AgentsMd.registerInstructions"></a>
+
+```typescript
+import { AgentsMd } from '@thoroc/projen-typescript-git-hooks'
+
+AgentsMd.registerInstructions(project: Project, name: string, content: string)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AgentsMd.registerInstructions.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+###### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.AgentsMd.registerInstructions.parameter.name"></a>
+
+- *Type:* string
+
+---
+
+###### `content`<sup>Required</sup> <a name="content" id="@thoroc/projen-typescript-git-hooks.AgentsMd.registerInstructions.parameter.content"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.AgentsMd.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AgentsMd.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.property.fileName">fileName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.property.instructionsDir">instructionsDir</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `fileName`<sup>Required</sup> <a name="fileName" id="@thoroc/projen-typescript-git-hooks.AgentsMd.property.fileName"></a>
+
+```typescript
+public readonly fileName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `instructionsDir`<sup>Required</sup> <a name="instructionsDir" id="@thoroc/projen-typescript-git-hooks.AgentsMd.property.instructionsDir"></a>
+
+```typescript
+public readonly instructionsDir: string;
+```
+
+- *Type:* string
+
+---
+
+### AislopConfig <a name="AislopConfig" id="@thoroc/projen-typescript-git-hooks.AislopConfig"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.AislopConfig.Initializer"></a>
+
+```typescript
+import { AislopConfig } from '@thoroc/projen-typescript-git-hooks'
+
+new AislopConfig(project: Project, options?: AislopConfigOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions">AislopConfigOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AislopConfig.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.AislopConfig.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions">AislopConfigOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.AislopConfig.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.AislopConfig.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.AislopConfig.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.AislopConfig.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.AislopConfig.isConstruct"></a>
+
+```typescript
+import { AislopConfig } from '@thoroc/projen-typescript-git-hooks'
+
+AislopConfig.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.AislopConfig.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.AislopConfig.isComponent"></a>
+
+```typescript
+import { AislopConfig } from '@thoroc/projen-typescript-git-hooks'
+
+AislopConfig.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.AislopConfig.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.AislopConfig.of"></a>
+
+```typescript
+import { AislopConfig } from '@thoroc/projen-typescript-git-hooks'
+
+AislopConfig.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AislopConfig.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.AislopConfig.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AislopConfig.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.property.configPath">configPath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.property.version">version</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `configPath`<sup>Required</sup> <a name="configPath" id="@thoroc/projen-typescript-git-hooks.AislopConfig.property.configPath"></a>
+
+```typescript
+public readonly configPath: string;
+```
+
+- *Type:* string
+
+---
+
+##### `version`<sup>Required</sup> <a name="version" id="@thoroc/projen-typescript-git-hooks.AislopConfig.property.version"></a>
+
+```typescript
+public readonly version: number;
+```
+
+- *Type:* number
+
+---
+
+### AislopMcpServer <a name="AislopMcpServer" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.Initializer"></a>
+
+```typescript
+import { AislopMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+new AislopMcpServer(project: Project, options?: AislopMcpServerOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServerOptions">AislopMcpServerOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServerOptions">AislopMcpServerOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.isConstruct"></a>
+
+```typescript
+import { AislopMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+AislopMcpServer.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.isComponent"></a>
+
+```typescript
+import { AislopMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+AislopMcpServer.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.of"></a>
+
+```typescript
+import { AislopMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+AislopMcpServer.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.property.serverName">serverName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `serverName`<sup>Required</sup> <a name="serverName" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.property.serverName"></a>
+
+```typescript
+public readonly serverName: string;
+```
+
+- *Type:* string
+
+---
+
+### AutoMerge <a name="AutoMerge" id="@thoroc/projen-typescript-git-hooks.AutoMerge"></a>
+
+Represents AutoMerge configuration.
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.AutoMerge.Initializer"></a>
+
+```typescript
+import { AutoMerge } from '@thoroc/projen-typescript-git-hooks'
+
+new AutoMerge(github: GitHub)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
+
+---
+
+##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.AutoMerge.Initializer.parameter.github"></a>
+
+- *Type:* projen.github.GitHub
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.AutoMerge.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.AutoMerge.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.AutoMerge.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.AutoMerge.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.AutoMerge.isConstruct"></a>
+
+```typescript
+import { AutoMerge } from '@thoroc/projen-typescript-git-hooks'
+
+AutoMerge.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.AutoMerge.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.AutoMerge.isComponent"></a>
+
+```typescript
+import { AutoMerge } from '@thoroc/projen-typescript-git-hooks'
+
+AutoMerge.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.AutoMerge.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.AutoMerge.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AutoMerge.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
+### Biome <a name="Biome" id="@thoroc/projen-typescript-git-hooks.Biome"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Biome.Initializer"></a>
+
+```typescript
+import { Biome } from '@thoroc/projen-typescript-git-hooks'
+
+new Biome(project: GitHooksEnabledProject, options?: BiomeOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.Initializer.parameter.options">options</a></code> | <code>projen.javascript.BiomeOptions</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Biome.Initializer.parameter.project"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Biome.Initializer.parameter.options"></a>
+
+- *Type:* projen.javascript.BiomeOptions
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.addFilePattern">addFilePattern</a></code> | Add a file pattern to biome. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.addOverride">addOverride</a></code> | Add a biome override to set rules for a specific file pattern. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.expandLinterRules">expandLinterRules</a></code> | Expand the linting rules applied. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.Biome.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Biome.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Biome.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Biome.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `addFilePattern` <a name="addFilePattern" id="@thoroc/projen-typescript-git-hooks.Biome.addFilePattern"></a>
+
+```typescript
+public addFilePattern(pattern: string): void
+```
+
+Add a file pattern to biome.
+
+Use ! or !! to ignore a file pattern.
+
+> [https://biomejs.dev/guides/configure-biome/#control-files-via-configuration](https://biomejs.dev/guides/configure-biome/#control-files-via-configuration)
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Biome.addFilePattern.parameter.pattern"></a>
+
+- *Type:* string
+
+Biome glob pattern.
+
+---
+
+##### `addOverride` <a name="addOverride" id="@thoroc/projen-typescript-git-hooks.Biome.addOverride"></a>
+
+```typescript
+public addOverride(override: OverridePattern): void
+```
+
+Add a biome override to set rules for a specific file pattern.
+
+> [https://biomejs.dev/reference/configuration/#overrides](https://biomejs.dev/reference/configuration/#overrides)
+
+###### `override`<sup>Required</sup> <a name="override" id="@thoroc/projen-typescript-git-hooks.Biome.addOverride.parameter.override"></a>
+
+- *Type:* projen.javascript.biome_config.OverridePattern
+
+Override object.
+
+---
+
+##### `expandLinterRules` <a name="expandLinterRules" id="@thoroc/projen-typescript-git-hooks.Biome.expandLinterRules"></a>
+
+```typescript
+public expandLinterRules(rules: Rules): void
+```
+
+Expand the linting rules applied.
+
+Use `undefined` to remove the rule or group.
+
+> [https://biomejs.dev/reference/configuration/#linterrulesgroup](https://biomejs.dev/reference/configuration/#linterrulesgroup)
+
+*Example*
+
+```typescript
+biome.expandLintingRules({
+  style: undefined,
+  suspicious: {
+    noExplicitAny: undefined,
+    noDuplicateCase: "info",
+  }
+})
+```
+
+
+###### `rules`<sup>Required</sup> <a name="rules" id="@thoroc/projen-typescript-git-hooks.Biome.expandLinterRules.parameter.rules"></a>
+
+- *Type:* projen.javascript.biome_config.Rules
+
+Rules to apply.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.Biome.isConstruct"></a>
+
+```typescript
+import { Biome } from '@thoroc/projen-typescript-git-hooks'
+
+Biome.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Biome.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.Biome.isComponent"></a>
+
+```typescript
+import { Biome } from '@thoroc/projen-typescript-git-hooks'
+
+Biome.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Biome.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Biome.of"></a>
+
+```typescript
+import { Biome } from '@thoroc/projen-typescript-git-hooks'
+
+Biome.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Biome.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.property.file">file</a></code> | <code>projen.JsonFile</code> | Biome configuration file content. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.property.task">task</a></code> | <code>projen.Task</code> | Biome task. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.Biome.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Biome.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `file`<sup>Required</sup> <a name="file" id="@thoroc/projen-typescript-git-hooks.Biome.property.file"></a>
+
+```typescript
+public readonly file: JsonFile;
+```
+
+- *Type:* projen.JsonFile
+
+Biome configuration file content.
+
+---
+
+##### `task`<sup>Required</sup> <a name="task" id="@thoroc/projen-typescript-git-hooks.Biome.property.task"></a>
+
+```typescript
+public readonly task: Task;
+```
+
+- *Type:* projen.Task
+
+Biome task.
+
+---
+
+
+### ClaudeCode <a name="ClaudeCode" id="@thoroc/projen-typescript-git-hooks.ClaudeCode"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.Initializer"></a>
+
+```typescript
+import { ClaudeCode } from '@thoroc/projen-typescript-git-hooks'
+
+new ClaudeCode(project: Project, options?: ClaudeCodeOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions">ClaudeCodeOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions">ClaudeCodeOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.addHook">addHook</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.addMcpServer">addMcpServer</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `addHook` <a name="addHook" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.addHook"></a>
+
+```typescript
+public addHook(event: string, group: ClaudeCodeHookGroup): void
+```
+
+###### `event`<sup>Required</sup> <a name="event" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.addHook.parameter.event"></a>
+
+- *Type:* string
+
+---
+
+###### `group`<sup>Required</sup> <a name="group" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.addHook.parameter.group"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeHookGroup">ClaudeCodeHookGroup</a>
+
+---
+
+##### `addMcpServer` <a name="addMcpServer" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.addMcpServer"></a>
+
+```typescript
+public addMcpServer(server: McpServer): void
+```
+
+###### `server`<sup>Required</sup> <a name="server" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.addMcpServer.parameter.server"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.isConstruct"></a>
+
+```typescript
+import { ClaudeCode } from '@thoroc/projen-typescript-git-hooks'
+
+ClaudeCode.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.isComponent"></a>
+
+```typescript
+import { ClaudeCode } from '@thoroc/projen-typescript-git-hooks'
+
+ClaudeCode.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.of"></a>
+
+```typescript
+import { ClaudeCode } from '@thoroc/projen-typescript-git-hooks'
+
+ClaudeCode.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.property.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions">ClaudeCodeOptions</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.property.options"></a>
+
+```typescript
+public readonly options: ClaudeCodeOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions">ClaudeCodeOptions</a>
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.property.contextFile">contextFile</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.property.settingsPath">settingsPath</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `contextFile`<sup>Required</sup> <a name="contextFile" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.property.contextFile"></a>
+
+```typescript
+public readonly contextFile: string;
+```
+
+- *Type:* string
+
+---
+
+##### `settingsPath`<sup>Required</sup> <a name="settingsPath" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.property.settingsPath"></a>
+
+```typescript
+public readonly settingsPath: string;
+```
+
+- *Type:* string
+
+---
+
+### CloseStaleIssue <a name="CloseStaleIssue" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue"></a>
+
+Represents CloseStaleIssue configuration.
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.Initializer"></a>
+
+```typescript
+import { CloseStaleIssue } from '@thoroc/projen-typescript-git-hooks'
+
+new CloseStaleIssue(github: GitHub)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
+
+---
+
+##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.Initializer.parameter.github"></a>
+
+- *Type:* projen.github.GitHub
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.isConstruct"></a>
+
+```typescript
+import { CloseStaleIssue } from '@thoroc/projen-typescript-git-hooks'
+
+CloseStaleIssue.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.isComponent"></a>
+
+```typescript
+import { CloseStaleIssue } from '@thoroc/projen-typescript-git-hooks'
+
+CloseStaleIssue.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
+### CodeOfConduct <a name="CodeOfConduct" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer"></a>
+
+```typescript
+import { CodeOfConduct } from '@thoroc/projen-typescript-git-hooks'
+
+new CodeOfConduct(project: Project, options?: CodeOfConductOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConductOptions">CodeOfConductOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.CodeOfConductOptions">CodeOfConductOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.isConstruct"></a>
+
+```typescript
+import { CodeOfConduct } from '@thoroc/projen-typescript-git-hooks'
+
+CodeOfConduct.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.isComponent"></a>
+
+```typescript
+import { CodeOfConduct } from '@thoroc/projen-typescript-git-hooks'
+
+CodeOfConduct.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.author">author</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.version">version</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `author`<sup>Required</sup> <a name="author" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.author"></a>
+
+```typescript
+public readonly author: string;
+```
+
+- *Type:* string
+
+---
+
+##### `version`<sup>Required</sup> <a name="version" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.version"></a>
+
+```typescript
+public readonly version: string;
+```
+
+- *Type:* string
+
+---
+
+
+### CodeReviewGraphMcpServer <a name="CodeReviewGraphMcpServer" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.Initializer"></a>
+
+```typescript
+import { CodeReviewGraphMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+new CodeReviewGraphMcpServer(project: Project)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.isConstruct"></a>
+
+```typescript
+import { CodeReviewGraphMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+CodeReviewGraphMcpServer.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.isComponent"></a>
+
+```typescript
+import { CodeReviewGraphMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+CodeReviewGraphMcpServer.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.of"></a>
+
+```typescript
+import { CodeReviewGraphMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+CodeReviewGraphMcpServer.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.property.serverName">serverName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `serverName`<sup>Required</sup> <a name="serverName" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.property.serverName"></a>
+
+```typescript
+public readonly serverName: string;
+```
+
+- *Type:* string
+
+---
+
+### Commitizen <a name="Commitizen" id="@thoroc/projen-typescript-git-hooks.Commitizen"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Commitizen.Initializer"></a>
+
+```typescript
+import { Commitizen } from '@thoroc/projen-typescript-git-hooks'
+
+new Commitizen(project: GitHooksEnabledProject, options?: CommitizenOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Commitizen.Initializer.parameter.project"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Commitizen.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.Commitizen.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Commitizen.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Commitizen.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Commitizen.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.of">of</a></code> | Returns the singletone component of a project or undefined if there is none. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.Commitizen.isConstruct"></a>
+
+```typescript
+import { Commitizen } from '@thoroc/projen-typescript-git-hooks'
+
+Commitizen.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Commitizen.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.Commitizen.isComponent"></a>
+
+```typescript
+import { Commitizen } from '@thoroc/projen-typescript-git-hooks'
+
+Commitizen.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Commitizen.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Commitizen.of"></a>
+
+```typescript
+import { Commitizen } from '@thoroc/projen-typescript-git-hooks'
+
+Commitizen.of(project: GitHooksEnabledProject)
+```
+
+Returns the singletone component of a project or undefined if there is none.
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Commitizen.of.parameter.project"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.property.config">config</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.CommitizenConfig">CommitizenConfig</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.property.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.Commitizen.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Commitizen.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `config`<sup>Required</sup> <a name="config" id="@thoroc/projen-typescript-git-hooks.Commitizen.property.config"></a>
+
+```typescript
+public readonly config: CommitizenConfig;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.CommitizenConfig">CommitizenConfig</a>
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Commitizen.property.options"></a>
+
+```typescript
+public readonly options: CommitizenOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a>
+
+---
+
+
+### ContextModeMcpServer <a name="ContextModeMcpServer" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.Initializer"></a>
+
+```typescript
+import { ContextModeMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+new ContextModeMcpServer(project: Project)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.isConstruct"></a>
+
+```typescript
+import { ContextModeMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+ContextModeMcpServer.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.isComponent"></a>
+
+```typescript
+import { ContextModeMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+ContextModeMcpServer.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.of"></a>
+
+```typescript
+import { ContextModeMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+ContextModeMcpServer.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.property.serverName">serverName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `serverName`<sup>Required</sup> <a name="serverName" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.property.serverName"></a>
+
+```typescript
+public readonly serverName: string;
+```
+
+- *Type:* string
+
+---
+
+### EditorConfig <a name="EditorConfig" id="@thoroc/projen-typescript-git-hooks.EditorConfig"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.EditorConfig.Initializer"></a>
+
+```typescript
+import { EditorConfig } from '@thoroc/projen-typescript-git-hooks'
+
+new EditorConfig(project: GitHooksEnabledProject, options?: EditorConfigOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfigOptions">EditorConfigOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.EditorConfig.Initializer.parameter.project"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.EditorConfig.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.EditorConfigOptions">EditorConfigOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.EditorConfig.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.EditorConfig.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.EditorConfig.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.EditorConfig.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.EditorConfig.isConstruct"></a>
+
+```typescript
+import { EditorConfig } from '@thoroc/projen-typescript-git-hooks'
+
+EditorConfig.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.EditorConfig.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.EditorConfig.isComponent"></a>
+
+```typescript
+import { EditorConfig } from '@thoroc/projen-typescript-git-hooks'
+
+EditorConfig.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.EditorConfig.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.property.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfigOptions">EditorConfigOptions</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.EditorConfig.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.EditorConfig.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.EditorConfig.property.options"></a>
+
+```typescript
+public readonly options: EditorConfigOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.EditorConfigOptions">EditorConfigOptions</a>
+
+---
+
+
+### Eslint <a name="Eslint" id="@thoroc/projen-typescript-git-hooks.Eslint"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Eslint.Initializer"></a>
+
+```typescript
+import { Eslint } from '@thoroc/projen-typescript-git-hooks'
+
+new Eslint(project: GitHooksEnabledProject, options?: EslintOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.Initializer.parameter.options">options</a></code> | <code>projen.javascript.EslintOptions</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Eslint.Initializer.parameter.project"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Eslint.Initializer.parameter.options"></a>
+
+- *Type:* projen.javascript.EslintOptions
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.addExtends">addExtends</a></code> | Adds an `extends` item to the eslint configuration. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.addIgnorePattern">addIgnorePattern</a></code> | Do not lint these files. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.addLintPattern">addLintPattern</a></code> | Add a file, glob pattern or directory with source files to lint (e.g. [ "src" ]). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.addOverride">addOverride</a></code> | Add an eslint override. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.addPlugins">addPlugins</a></code> | Adds an eslint plugin. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.addRules">addRules</a></code> | Add an eslint rule. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.allowDevDeps">allowDevDeps</a></code> | Add a glob file pattern which allows importing dev dependencies. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.Eslint.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Eslint.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Eslint.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Eslint.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `addExtends` <a name="addExtends" id="@thoroc/projen-typescript-git-hooks.Eslint.addExtends"></a>
+
+```typescript
+public addExtends(extendList: ...string[]): void
+```
+
+Adds an `extends` item to the eslint configuration.
+
+###### `extendList`<sup>Required</sup> <a name="extendList" id="@thoroc/projen-typescript-git-hooks.Eslint.addExtends.parameter.extendList"></a>
+
+- *Type:* ...string[]
+
+The list of "extends" to add.
+
+---
+
+##### `addIgnorePattern` <a name="addIgnorePattern" id="@thoroc/projen-typescript-git-hooks.Eslint.addIgnorePattern"></a>
+
+```typescript
+public addIgnorePattern(pattern: string): void
+```
+
+Do not lint these files.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Eslint.addIgnorePattern.parameter.pattern"></a>
+
+- *Type:* string
+
+---
+
+##### `addLintPattern` <a name="addLintPattern" id="@thoroc/projen-typescript-git-hooks.Eslint.addLintPattern"></a>
+
+```typescript
+public addLintPattern(pattern: string): void
+```
+
+Add a file, glob pattern or directory with source files to lint (e.g. [ "src" ]).
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Eslint.addLintPattern.parameter.pattern"></a>
+
+- *Type:* string
+
+---
+
+##### `addOverride` <a name="addOverride" id="@thoroc/projen-typescript-git-hooks.Eslint.addOverride"></a>
+
+```typescript
+public addOverride(override: EslintOverride): void
+```
+
+Add an eslint override.
+
+###### `override`<sup>Required</sup> <a name="override" id="@thoroc/projen-typescript-git-hooks.Eslint.addOverride.parameter.override"></a>
+
+- *Type:* projen.javascript.EslintOverride
+
+---
+
+##### `addPlugins` <a name="addPlugins" id="@thoroc/projen-typescript-git-hooks.Eslint.addPlugins"></a>
+
+```typescript
+public addPlugins(plugins: ...string[]): void
+```
+
+Adds an eslint plugin.
+
+###### `plugins`<sup>Required</sup> <a name="plugins" id="@thoroc/projen-typescript-git-hooks.Eslint.addPlugins.parameter.plugins"></a>
+
+- *Type:* ...string[]
+
+The names of plugins to add.
+
+---
+
+##### `addRules` <a name="addRules" id="@thoroc/projen-typescript-git-hooks.Eslint.addRules"></a>
+
+```typescript
+public addRules(rules: {[ key: string ]: any}): void
+```
+
+Add an eslint rule.
+
+###### `rules`<sup>Required</sup> <a name="rules" id="@thoroc/projen-typescript-git-hooks.Eslint.addRules.parameter.rules"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `allowDevDeps` <a name="allowDevDeps" id="@thoroc/projen-typescript-git-hooks.Eslint.allowDevDeps"></a>
+
+```typescript
+public allowDevDeps(pattern: string): void
+```
+
+Add a glob file pattern which allows importing dev dependencies.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Eslint.allowDevDeps.parameter.pattern"></a>
+
+- *Type:* string
+
+glob pattern.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.of">of</a></code> | Returns the singletone component of a project or undefined if there is none. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.Eslint.isConstruct"></a>
+
+```typescript
+import { Eslint } from '@thoroc/projen-typescript-git-hooks'
+
+Eslint.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Eslint.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.Eslint.isComponent"></a>
+
+```typescript
+import { Eslint } from '@thoroc/projen-typescript-git-hooks'
+
+Eslint.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Eslint.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Eslint.of"></a>
+
+```typescript
+import { Eslint } from '@thoroc/projen-typescript-git-hooks'
+
+Eslint.of(project: Project)
+```
+
+Returns the singletone component of a project or undefined if there is none.
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Eslint.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.config">config</a></code> | <code>any</code> | Direct access to the eslint configuration (escape hatch). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.eslintTask">eslintTask</a></code> | <code>projen.Task</code> | eslint task. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.file">file</a></code> | <code>projen.ObjectFile</code> | The underlying config file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.ignorePatterns">ignorePatterns</a></code> | <code>string[]</code> | File patterns that should not be linted. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.lintPatterns">lintPatterns</a></code> | <code>string[]</code> | Returns an immutable copy of the lintPatterns being used by this eslint configuration. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.overrides">overrides</a></code> | <code>projen.javascript.EslintOverride[]</code> | eslint overrides. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.rules">rules</a></code> | <code>{[ key: string ]: any}</code> | eslint rules. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.defaultEslintRules">defaultEslintRules</a></code> | <code>{[ key: string ]: any}</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.defaultOptions">defaultOptions</a></code> | <code>projen.javascript.EslintOptions</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.Eslint.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Eslint.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `config`<sup>Required</sup> <a name="config" id="@thoroc/projen-typescript-git-hooks.Eslint.property.config"></a>
+
+```typescript
+public readonly config: any;
+```
+
+- *Type:* any
+
+Direct access to the eslint configuration (escape hatch).
+
+---
+
+##### `eslintTask`<sup>Required</sup> <a name="eslintTask" id="@thoroc/projen-typescript-git-hooks.Eslint.property.eslintTask"></a>
+
+```typescript
+public readonly eslintTask: Task;
+```
+
+- *Type:* projen.Task
+
+eslint task.
+
+---
+
+##### `file`<sup>Required</sup> <a name="file" id="@thoroc/projen-typescript-git-hooks.Eslint.property.file"></a>
+
+```typescript
+public readonly file: ObjectFile;
+```
+
+- *Type:* projen.ObjectFile
+
+The underlying config file.
+
+---
+
+##### `ignorePatterns`<sup>Required</sup> <a name="ignorePatterns" id="@thoroc/projen-typescript-git-hooks.Eslint.property.ignorePatterns"></a>
+
+```typescript
+public readonly ignorePatterns: string[];
+```
+
+- *Type:* string[]
+
+File patterns that should not be linted.
+
+---
+
+##### `lintPatterns`<sup>Required</sup> <a name="lintPatterns" id="@thoroc/projen-typescript-git-hooks.Eslint.property.lintPatterns"></a>
+
+```typescript
+public readonly lintPatterns: string[];
+```
+
+- *Type:* string[]
+
+Returns an immutable copy of the lintPatterns being used by this eslint configuration.
+
+---
+
+##### `overrides`<sup>Required</sup> <a name="overrides" id="@thoroc/projen-typescript-git-hooks.Eslint.property.overrides"></a>
+
+```typescript
+public readonly overrides: EslintOverride[];
+```
+
+- *Type:* projen.javascript.EslintOverride[]
+
+eslint overrides.
+
+---
+
+##### `rules`<sup>Required</sup> <a name="rules" id="@thoroc/projen-typescript-git-hooks.Eslint.property.rules"></a>
+
+```typescript
+public readonly rules: {[ key: string ]: any};
+```
+
+- *Type:* {[ key: string ]: any}
+
+eslint rules.
+
+---
+
+##### `defaultEslintRules`<sup>Required</sup> <a name="defaultEslintRules" id="@thoroc/projen-typescript-git-hooks.Eslint.property.defaultEslintRules"></a>
+
+```typescript
+public readonly defaultEslintRules: {[ key: string ]: any};
+```
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `defaultOptions`<sup>Required</sup> <a name="defaultOptions" id="@thoroc/projen-typescript-git-hooks.Eslint.property.defaultOptions"></a>
+
+```typescript
+public readonly defaultOptions: EslintOptions;
+```
+
+- *Type:* projen.javascript.EslintOptions
+
+---
+
+
+### GeminiCli <a name="GeminiCli" id="@thoroc/projen-typescript-git-hooks.GeminiCli"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.GeminiCli.Initializer"></a>
+
+```typescript
+import { GeminiCli } from '@thoroc/projen-typescript-git-hooks'
+
+new GeminiCli(project: Project, options?: GeminiCliOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCliOptions">GeminiCliOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.GeminiCli.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.GeminiCli.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GeminiCliOptions">GeminiCliOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.addHook">addHook</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.addMcpServer">addMcpServer</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.GeminiCli.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.GeminiCli.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.GeminiCli.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.GeminiCli.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `addHook` <a name="addHook" id="@thoroc/projen-typescript-git-hooks.GeminiCli.addHook"></a>
+
+```typescript
+public addHook(event: string, group: GeminiCliHookGroup): void
+```
+
+###### `event`<sup>Required</sup> <a name="event" id="@thoroc/projen-typescript-git-hooks.GeminiCli.addHook.parameter.event"></a>
+
+- *Type:* string
+
+---
+
+###### `group`<sup>Required</sup> <a name="group" id="@thoroc/projen-typescript-git-hooks.GeminiCli.addHook.parameter.group"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GeminiCliHookGroup">GeminiCliHookGroup</a>
+
+---
+
+##### `addMcpServer` <a name="addMcpServer" id="@thoroc/projen-typescript-git-hooks.GeminiCli.addMcpServer"></a>
+
+```typescript
+public addMcpServer(server: McpServer): void
+```
+
+###### `server`<sup>Required</sup> <a name="server" id="@thoroc/projen-typescript-git-hooks.GeminiCli.addMcpServer.parameter.server"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.GeminiCli.isConstruct"></a>
+
+```typescript
+import { GeminiCli } from '@thoroc/projen-typescript-git-hooks'
+
+GeminiCli.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.GeminiCli.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.GeminiCli.isComponent"></a>
+
+```typescript
+import { GeminiCli } from '@thoroc/projen-typescript-git-hooks'
+
+GeminiCli.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.GeminiCli.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.GeminiCli.of"></a>
+
+```typescript
+import { GeminiCli } from '@thoroc/projen-typescript-git-hooks'
+
+GeminiCli.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.GeminiCli.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.property.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCliOptions">GeminiCliOptions</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.GeminiCli.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.GeminiCli.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.GeminiCli.property.options"></a>
+
+```typescript
+public readonly options: GeminiCliOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GeminiCliOptions">GeminiCliOptions</a>
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.property.contextFile">contextFile</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.property.settingsPath">settingsPath</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `contextFile`<sup>Required</sup> <a name="contextFile" id="@thoroc/projen-typescript-git-hooks.GeminiCli.property.contextFile"></a>
+
+```typescript
+public readonly contextFile: string;
+```
+
+- *Type:* string
+
+---
+
+##### `settingsPath`<sup>Required</sup> <a name="settingsPath" id="@thoroc/projen-typescript-git-hooks.GeminiCli.property.settingsPath"></a>
+
+```typescript
+public readonly settingsPath: string;
+```
+
+- *Type:* string
+
+---
+
+### GitHooksEnabledProject <a name="GitHooksEnabledProject" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.Initializer"></a>
+
+```typescript
+import { GitHooksEnabledProject } from '@thoroc/projen-typescript-git-hooks'
+
+new GitHooksEnabledProject(options: GitHooksEnabledProjectOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions">GitHooksEnabledProjectOptions</a></code> | *No description.* |
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions">GitHooksEnabledProjectOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTask">addTask</a></code> | Adds a new task to this project. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.removeTask">removeTask</a></code> | Removes a task from a project. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBins">addBins</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addExcludeFromCleanup"></a>
+
+```typescript
+public addExcludeFromCleanup(globs: ...string[]): void
+```
+
+Exclude the matching files from pre-synth cleanup.
+
+Can be used when, for example, some
+source files include the projen marker and we don't want them to be erased during synth.
+
+###### `globs`<sup>Required</sup> <a name="globs" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addExcludeFromCleanup.parameter.globs"></a>
+
+- *Type:* ...string[]
+
+The glob patterns to match.
+
+---
+
+##### `addGitIgnore` <a name="addGitIgnore" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addGitIgnore"></a>
+
+```typescript
+public addGitIgnore(pattern: string): void
+```
+
+Adds a .gitignore pattern.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addGitIgnore.parameter.pattern"></a>
+
+- *Type:* string
+
+The glob pattern to ignore.
+
+---
+
+##### `addPackageIgnore` <a name="addPackageIgnore" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPackageIgnore"></a>
+
+```typescript
+public addPackageIgnore(pattern: string): void
+```
+
+Adds patterns to be ignored by npm.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPackageIgnore.parameter.pattern"></a>
+
+- *Type:* string
+
+The pattern to ignore.
+
+---
+
+##### `addTask` <a name="addTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTask"></a>
+
+```typescript
+public addTask(name: string, props?: TaskOptions): Task
+```
+
+Adds a new task to this project.
+
+This will fail if the project already has
+a task with this name.
+
+###### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTask.parameter.name"></a>
+
+- *Type:* string
+
+The task name to add.
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTask.parameter.props"></a>
+
+- *Type:* projen.TaskOptions
+
+Task properties.
+
+---
+
+##### ~~`addTip`~~ <a name="addTip" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTip"></a>
+
+```typescript
+public addTip(message: string): void
+```
+
+Prints a "tip" message during synthesis.
+
+###### `message`<sup>Required</sup> <a name="message" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTip.parameter.message"></a>
+
+- *Type:* string
+
+The message.
+
+---
+
+##### `annotateGenerated` <a name="annotateGenerated" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.annotateGenerated"></a>
+
+```typescript
+public annotateGenerated(glob: string): void
+```
+
+Marks the provided file(s) as being generated.
+
+This is achieved using the
+github-linguist attributes. Generated files do not count against the
+repository statistics and language breakdown.
+
+> [https://github.com/github/linguist/blob/master/docs/overrides.md](https://github.com/github/linguist/blob/master/docs/overrides.md)
+
+###### `glob`<sup>Required</sup> <a name="glob" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.annotateGenerated.parameter.glob"></a>
+
+- *Type:* string
+
+the glob pattern to match (could be a file path).
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after all components are synthesized.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before all components are synthesized.
+
+##### `removeTask` <a name="removeTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.removeTask"></a>
+
+```typescript
+public removeTask(name: string): Task
+```
+
+Removes a task from a project.
+
+###### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.removeTask.parameter.name"></a>
+
+- *Type:* string
+
+The name of the task to remove.
+
+---
+
+##### `runTaskCommand` <a name="runTaskCommand" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.runTaskCommand"></a>
+
+```typescript
+public runTaskCommand(task: Task): string
+```
+
+Returns the shell command to execute in order to run a task.
+
+This will
+typically be `npx projen TASK`.
+
+###### `task`<sup>Required</sup> <a name="task" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.runTaskCommand.parameter.task"></a>
+
+- *Type:* projen.Task
+
+The task for which the command is required.
+
+---
+
+##### `synth` <a name="synth" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.synth"></a>
+
+```typescript
+public synth(): void
+```
+
+Synthesize all project files into `outdir`.
+
+1. Call "this.preSynthesize()"
+2. Delete all generated files
+3. Synthesize all subprojects
+4. Synthesize all components of this project
+5. Call "postSynthesize()" for all components of this project
+6. Call "this.postSynthesize()"
+
+##### `tryFindFile` <a name="tryFindFile" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindFile"></a>
+
+```typescript
+public tryFindFile(filePath: string): FileBase
+```
+
+Finds a file at the specified relative path within this project and all its subprojects.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+If this path is relative, it will be resolved
+from the root of _this_ project.
+
+---
+
+##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindJsonFile"></a>
+
+```typescript
+public tryFindJsonFile(filePath: string): JsonFile
+```
+
+Finds a json file by name.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindJsonFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+---
+
+##### `tryFindObjectFile` <a name="tryFindObjectFile" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindObjectFile"></a>
+
+```typescript
+public tryFindObjectFile(filePath: string): ObjectFile
+```
+
+Finds an object file (like JsonFile, YamlFile, etc.) by name.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindObjectFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+---
+
+##### `tryRemoveFile` <a name="tryRemoveFile" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryRemoveFile"></a>
+
+```typescript
+public tryRemoveFile(filePath: string): FileBase
+```
+
+Finds a file at the specified relative path within this project and removes it.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryRemoveFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+If this path is relative, it will be
+resolved from the root of _this_ project.
+
+---
+
+##### `addBins` <a name="addBins" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBins"></a>
+
+```typescript
+public addBins(bins: {[ key: string ]: string}): void
+```
+
+###### `bins`<sup>Required</sup> <a name="bins" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBins.parameter.bins"></a>
+
+- *Type:* {[ key: string ]: string}
+
+---
+
+##### `addBundledDeps` <a name="addBundledDeps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBundledDeps"></a>
+
+```typescript
+public addBundledDeps(deps: ...string[]): void
+```
+
+Defines bundled dependencies.
+
+Bundled dependencies will be added as normal dependencies as well as to the
+`bundledDependencies` section of your `package.json`.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBundledDeps.parameter.deps"></a>
+
+- *Type:* ...string[]
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addCompileCommand"></a>
+
+```typescript
+public addCompileCommand(commands: ...string[]): void
+```
+
+DEPRECATED.
+
+###### `commands`<sup>Required</sup> <a name="commands" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addCompileCommand.parameter.commands"></a>
+
+- *Type:* ...string[]
+
+---
+
+##### `addDeps` <a name="addDeps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDeps"></a>
+
+```typescript
+public addDeps(deps: ...string[]): void
+```
+
+Defines normal dependencies.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDeps.parameter.deps"></a>
+
+- *Type:* ...string[]
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addDevDeps` <a name="addDevDeps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDevDeps"></a>
+
+```typescript
+public addDevDeps(deps: ...string[]): void
+```
+
+Defines development/test dependencies.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDevDeps.parameter.deps"></a>
+
+- *Type:* ...string[]
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addFields` <a name="addFields" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addFields"></a>
+
+```typescript
+public addFields(fields: {[ key: string ]: any}): void
+```
+
+Directly set fields in `package.json`.
+
+###### `fields`<sup>Required</sup> <a name="fields" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addFields.parameter.fields"></a>
+
+- *Type:* {[ key: string ]: any}
+
+The fields to set.
+
+---
+
+##### `addKeywords` <a name="addKeywords" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addKeywords"></a>
+
+```typescript
+public addKeywords(keywords: ...string[]): void
+```
+
+Adds keywords to package.json (deduplicated).
+
+###### `keywords`<sup>Required</sup> <a name="keywords" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addKeywords.parameter.keywords"></a>
+
+- *Type:* ...string[]
+
+The keywords to add.
+
+---
+
+##### `addPeerDeps` <a name="addPeerDeps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPeerDeps"></a>
+
+```typescript
+public addPeerDeps(deps: ...string[]): void
+```
+
+Defines peer dependencies.
+
+When adding peer dependencies, a devDependency will also be added on the
+pinned version of the declared peer. This will ensure that you are testing
+your code against the minimum version required from your consumers.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPeerDeps.parameter.deps"></a>
+
+- *Type:* ...string[]
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addScripts` <a name="addScripts" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addScripts"></a>
+
+```typescript
+public addScripts(scripts: {[ key: string ]: string}): void
+```
+
+Replaces the contents of multiple npm package.json scripts.
+
+###### `scripts`<sup>Required</sup> <a name="scripts" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addScripts.parameter.scripts"></a>
+
+- *Type:* {[ key: string ]: string}
+
+The scripts to set.
+
+---
+
+##### ~~`addTestCommand`~~ <a name="addTestCommand" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTestCommand"></a>
+
+```typescript
+public addTestCommand(commands: ...string[]): void
+```
+
+DEPRECATED.
+
+###### `commands`<sup>Required</sup> <a name="commands" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTestCommand.parameter.commands"></a>
+
+- *Type:* ...string[]
+
+---
+
+##### ~~`hasScript`~~ <a name="hasScript" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.hasScript"></a>
+
+```typescript
+public hasScript(name: string): boolean
+```
+
+Indicates if a script by the name name is defined.
+
+###### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.hasScript.parameter.name"></a>
+
+- *Type:* string
+
+The name of the script.
+
+---
+
+##### `removeScript` <a name="removeScript" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.removeScript"></a>
+
+```typescript
+public removeScript(name: string): void
+```
+
+Removes the npm script (always successful).
+
+###### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.removeScript.parameter.name"></a>
+
+- *Type:* string
+
+The name of the script.
+
+---
+
+##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.renderWorkflowSetup"></a>
+
+```typescript
+public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
+```
+
+Returns the set of workflow steps which should be executed to bootstrap a workflow.
+
+###### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.renderWorkflowSetup.parameter.options"></a>
+
+- *Type:* projen.javascript.RenderWorkflowSetupOptions
+
+Options.
+
+---
+
+##### `setScript` <a name="setScript" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.setScript"></a>
+
+```typescript
+public setScript(name: string, command: string): void
+```
+
+Replaces the contents of an npm package.json script.
+
+###### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.setScript.parameter.name"></a>
+
+- *Type:* string
+
+The script name.
+
+---
+
+###### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.setScript.parameter.command"></a>
+
+- *Type:* string
+
+The command to execute.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.isProject">isProject</a></code> | Test whether the given construct is a project. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.of">of</a></code> | Find the closest ancestor project for given construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.isConstruct"></a>
+
+```typescript
+import { GitHooksEnabledProject } from '@thoroc/projen-typescript-git-hooks'
+
+GitHooksEnabledProject.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isProject` <a name="isProject" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.isProject"></a>
+
+```typescript
+import { GitHooksEnabledProject } from '@thoroc/projen-typescript-git-hooks'
+
+GitHooksEnabledProject.isProject(x: any)
+```
+
+Test whether the given construct is a project.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.isProject.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.of"></a>
+
+```typescript
+import { GitHooksEnabledProject } from '@thoroc/projen-typescript-git-hooks'
+
+GitHooksEnabledProject.of(construct: IConstruct)
+```
+
+Find the closest ancestor project for given construct.
+
+When given a project, this it the project itself.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.of.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.name">name</a></code> | <code>string</code> | Project name. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.biome">biome</a></code> | <code>projen.javascript.Biome</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version supported by this package. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.defaultTsConfig">defaultTsConfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.debug">debug</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.editorConfig">editorConfig</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig">EditorConfig</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitHooksManager">gitHooksManager</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.Husky">Husky</a> \| <a href="#@thoroc/projen-typescript-git-hooks.Lefthook">Lefthook</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.vitest">vitest</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest">Vitest</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `buildTask`<sup>Required</sup> <a name="buildTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.buildTask"></a>
+
+```typescript
+public readonly buildTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.commitGenerated"></a>
+
+```typescript
+public readonly commitGenerated: boolean;
+```
+
+- *Type:* boolean
+
+Whether to commit the managed files by default.
+
+---
+
+##### `compileTask`<sup>Required</sup> <a name="compileTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.compileTask"></a>
+
+```typescript
+public readonly compileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `components`<sup>Required</sup> <a name="components" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.components"></a>
+
+```typescript
+public readonly components: Component[];
+```
+
+- *Type:* projen.Component[]
+
+Returns all the components within this project.
+
+---
+
+##### `deps`<sup>Required</sup> <a name="deps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.deps"></a>
+
+```typescript
+public readonly deps: Dependencies;
+```
+
+- *Type:* projen.Dependencies
+
+Project dependencies.
+
+---
+
+##### `ejected`<sup>Required</sup> <a name="ejected" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.ejected"></a>
+
+```typescript
+public readonly ejected: boolean;
+```
+
+- *Type:* boolean
+
+Whether or not the project is being ejected.
+
+---
+
+##### `files`<sup>Required</sup> <a name="files" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.files"></a>
+
+```typescript
+public readonly files: FileBase[];
+```
+
+- *Type:* projen.FileBase[]
+
+All files in this project.
+
+---
+
+##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitattributes"></a>
+
+```typescript
+public readonly gitattributes: GitAttributesFile;
+```
+
+- *Type:* projen.GitAttributesFile
+
+The .gitattributes file for this repository.
+
+---
+
+##### `gitignore`<sup>Required</sup> <a name="gitignore" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitignore"></a>
+
+```typescript
+public readonly gitignore: IgnoreFile;
+```
+
+- *Type:* projen.IgnoreFile
+
+.gitignore.
+
+---
+
+##### `logger`<sup>Required</sup> <a name="logger" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.logger"></a>
+
+```typescript
+public readonly logger: Logger;
+```
+
+- *Type:* projen.Logger
+
+Logging utilities.
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Project name.
+
+---
+
+##### `outdir`<sup>Required</sup> <a name="outdir" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.outdir"></a>
+
+```typescript
+public readonly outdir: string;
+```
+
+- *Type:* string
+
+Absolute output directory of this project.
+
+---
+
+##### `packageTask`<sup>Required</sup> <a name="packageTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.packageTask"></a>
+
+```typescript
+public readonly packageTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.postCompileTask"></a>
+
+```typescript
+public readonly postCompileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.preCompileTask"></a>
+
+```typescript
+public readonly preCompileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projectBuild"></a>
+
+```typescript
+public readonly projectBuild: ProjectBuild;
+```
+
+- *Type:* projen.ProjectBuild
+
+Manages the build process of the project.
+
+---
+
+##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projenCommand"></a>
+
+```typescript
+public readonly projenCommand: string;
+```
+
+- *Type:* string
+
+The command to use in order to run the projen CLI.
+
+---
+
+##### `root`<sup>Required</sup> <a name="root" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.root"></a>
+
+```typescript
+public readonly root: Project;
+```
+
+- *Type:* projen.Project
+
+The root project.
+
+---
+
+##### `subprojects`<sup>Required</sup> <a name="subprojects" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.subprojects"></a>
+
+```typescript
+public readonly subprojects: Project[];
+```
+
+- *Type:* projen.Project[]
+
+Returns all the subprojects within this project.
+
+---
+
+##### `tasks`<sup>Required</sup> <a name="tasks" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tasks"></a>
+
+```typescript
+public readonly tasks: Tasks;
+```
+
+- *Type:* projen.Tasks
+
+Project tasks.
+
+---
+
+##### `testTask`<sup>Required</sup> <a name="testTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.testTask"></a>
+
+```typescript
+public readonly testTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.defaultTask"></a>
+
+```typescript
+public readonly defaultTask: Task;
+```
+
+- *Type:* projen.Task
+
+This is the "default" task, the one that executes "projen".
+
+Undefined if
+the project is being ejected.
+
+---
+
+##### `initProject`<sup>Optional</sup> <a name="initProject" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.initProject"></a>
+
+```typescript
+public readonly initProject: InitProject;
+```
+
+- *Type:* projen.InitProject
+
+The options used when this project is bootstrapped via `projen new`.
+
+It
+includes the original set of options passed to the CLI and also the JSII
+FQN of the project type.
+
+---
+
+##### `parent`<sup>Optional</sup> <a name="parent" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.parent"></a>
+
+```typescript
+public readonly parent: Project;
+```
+
+- *Type:* projen.Project
+
+A parent project.
+
+If undefined, this is the root project.
+
+---
+
+##### `projectType`<sup>Required</sup> <a name="projectType" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projectType"></a>
+
+```typescript
+public readonly projectType: ProjectType;
+```
+
+- *Type:* projen.ProjectType
+
+---
+
+##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.autoApprove"></a>
+
+```typescript
+public readonly autoApprove: AutoApprove;
+```
+
+- *Type:* projen.github.AutoApprove
+
+Auto approve set up for this project.
+
+---
+
+##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.devContainer"></a>
+
+```typescript
+public readonly devContainer: DevContainer;
+```
+
+- *Type:* projen.vscode.DevContainer
+
+Access for .devcontainer.json (used for GitHub Codespaces).
+
+This will be `undefined` if devContainer boolean is false
+
+---
+
+##### `github`<sup>Optional</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.github"></a>
+
+```typescript
+public readonly github: GitHub;
+```
+
+- *Type:* projen.github.GitHub
+
+Access all github components.
+
+This will be `undefined` for subprojects.
+
+---
+
+##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitpod"></a>
+
+```typescript
+public readonly gitpod: Gitpod;
+```
+
+- *Type:* projen.Gitpod
+
+Access for Gitpod.
+
+This will be `undefined` if gitpod boolean is false
+
+---
+
+##### `vscode`<sup>Optional</sup> <a name="vscode" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.vscode"></a>
+
+```typescript
+public readonly vscode: VsCode;
+```
+
+- *Type:* projen.vscode.VsCode
+
+Access all VSCode components.
+
+This will be `undefined` for subprojects.
+
+---
+
+##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.allowLibraryDependencies"></a>
+
+- *Deprecated:* use `package.allowLibraryDependencies`
+
+```typescript
+public readonly allowLibraryDependencies: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.artifactsDirectory"></a>
+
+```typescript
+public readonly artifactsDirectory: string;
+```
+
+- *Type:* string
+
+The build output directory.
+
+An npm tarball will be created under the `js`
+subdirectory. For example, if this is set to `dist` (the default), the npm
+tarball will be placed under `dist/js/boom-boom-1.2.3.tg`.
+
+---
+
+##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.artifactsJavascriptDirectory"></a>
+
+```typescript
+public readonly artifactsJavascriptDirectory: string;
+```
+
+- *Type:* string
+
+The location of the npm tarball after build (`${artifactsDirectory}/js`).
+
+---
+
+##### `bundler`<sup>Required</sup> <a name="bundler" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.bundler"></a>
+
+```typescript
+public readonly bundler: Bundler;
+```
+
+- *Type:* projen.javascript.Bundler
+
+---
+
+##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.entrypoint"></a>
+
+- *Deprecated:* use `package.entrypoint`
+
+```typescript
+public readonly entrypoint: string;
+```
+
+- *Type:* string
+
+---
+
+##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.manifest"></a>
+
+- *Deprecated:* use `package.addField(x, y)`
+
+```typescript
+public readonly manifest: any;
+```
+
+- *Type:* any
+
+---
+
+##### `npmrc`<sup>Required</sup> <a name="npmrc" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.npmrc"></a>
+
+```typescript
+public readonly npmrc: NpmConfig;
+```
+
+- *Type:* projen.javascript.NpmConfig
+
+The .npmrc file.
+
+---
+
+##### `package`<sup>Required</sup> <a name="package" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.package"></a>
+
+```typescript
+public readonly package: NodePackage;
+```
+
+- *Type:* projen.javascript.NodePackage
+
+API for managing the node package.
+
+---
+
+##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.packageManager"></a>
+
+- *Deprecated:* use `package.packageManager`
+
+```typescript
+public readonly packageManager: NodePackageManager;
+```
+
+- *Type:* projen.javascript.NodePackageManager
+
+The package manager to use.
+
+---
+
+##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.runScriptCommand"></a>
+
+```typescript
+public readonly runScriptCommand: string;
+```
+
+- *Type:* string
+
+The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager).
+
+---
+
+##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.autoMerge"></a>
+
+```typescript
+public readonly autoMerge: AutoMerge;
+```
+
+- *Type:* projen.github.AutoMerge
+
+Component that sets up mergify for merging approved pull requests.
+
+---
+
+##### `biome`<sup>Optional</sup> <a name="biome" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.biome"></a>
+
+```typescript
+public readonly biome: Biome;
+```
+
+- *Type:* projen.javascript.Biome
+
+---
+
+##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.buildWorkflow"></a>
+
+```typescript
+public readonly buildWorkflow: BuildWorkflow;
+```
+
+- *Type:* projen.build.BuildWorkflow
+
+The PR build GitHub workflow.
+
+`undefined` if `buildWorkflow` is disabled.
+
+---
+
+##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.buildWorkflowJobId"></a>
+
+```typescript
+public readonly buildWorkflowJobId: string;
+```
+
+- *Type:* string
+
+The job ID of the build workflow.
+
+---
+
+##### `jest`<sup>Optional</sup> <a name="jest" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.jest"></a>
+
+```typescript
+public readonly jest: Jest;
+```
+
+- *Type:* projen.javascript.Jest
+
+The Jest configuration (if enabled).
+
+---
+
+##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.maxNodeVersion"></a>
+
+```typescript
+public readonly maxNodeVersion: string;
+```
+
+- *Type:* string
+
+Maximum node version supported by this package.
+
+The value indicates the package is incompatible with newer versions.
+
+---
+
+##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.minNodeVersion"></a>
+
+```typescript
+public readonly minNodeVersion: string;
+```
+
+- *Type:* string
+
+The minimum node version required by this package to function.
+
+This value indicates the package is incompatible with older versions.
+
+---
+
+##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.npmignore"></a>
+
+```typescript
+public readonly npmignore: IgnoreFile;
+```
+
+- *Type:* projen.IgnoreFile
+
+The .npmignore file.
+
+---
+
+##### `prettier`<sup>Optional</sup> <a name="prettier" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.prettier"></a>
+
+```typescript
+public readonly prettier: Prettier;
+```
+
+- *Type:* projen.javascript.Prettier
+
+---
+
+##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.publisher"></a>
+
+- *Deprecated:* use `release.publisher`.
+
+```typescript
+public readonly publisher: Publisher;
+```
+
+- *Type:* projen.release.Publisher
+
+Package publisher.
+
+This will be `undefined` if the project does not have a
+release workflow.
+
+---
+
+##### `release`<sup>Optional</sup> <a name="release" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.release"></a>
+
+```typescript
+public readonly release: Release;
+```
+
+- *Type:* projen.release.Release
+
+Release management.
+
+---
+
+##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.upgradeWorkflow"></a>
+
+```typescript
+public readonly upgradeWorkflow: UpgradeDependencies;
+```
+
+- *Type:* projen.javascript.UpgradeDependencies
+
+The upgrade workflow.
+
+---
+
+##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.docsDirectory"></a>
+
+```typescript
+public readonly docsDirectory: string;
+```
+
+- *Type:* string
+
+---
+
+##### `libdir`<sup>Required</sup> <a name="libdir" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.libdir"></a>
+
+```typescript
+public readonly libdir: string;
+```
+
+- *Type:* string
+
+The directory in which compiled .js files reside.
+
+---
+
+##### `srcdir`<sup>Required</sup> <a name="srcdir" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.srcdir"></a>
+
+```typescript
+public readonly srcdir: string;
+```
+
+- *Type:* string
+
+The directory in which the .ts sources reside.
+
+---
+
+##### `testdir`<sup>Required</sup> <a name="testdir" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.testdir"></a>
+
+```typescript
+public readonly testdir: string;
+```
+
+- *Type:* string
+
+The directory in which tests reside.
+
+---
+
+##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tsconfigDev"></a>
+
+```typescript
+public readonly tsconfigDev: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+A typescript configuration file which covers all files (sources, tests, projen).
+
+---
+
+##### `watchTask`<sup>Required</sup> <a name="watchTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.watchTask"></a>
+
+```typescript
+public readonly watchTask: Task;
+```
+
+- *Type:* projen.Task
+
+The "watch" task.
+
+---
+
+##### `docgen`<sup>Optional</sup> <a name="docgen" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.docgen"></a>
+
+```typescript
+public readonly docgen: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `eslint`<sup>Optional</sup> <a name="eslint" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.eslint"></a>
+
+```typescript
+public readonly eslint: Eslint;
+```
+
+- *Type:* projen.javascript.Eslint
+
+---
+
+##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tsconfig"></a>
+
+```typescript
+public readonly tsconfig: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+---
+
+##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tsconfigEslint"></a>
+
+```typescript
+public readonly tsconfigEslint: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+---
+
+##### `defaultTsConfig`<sup>Required</sup> <a name="defaultTsConfig" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.defaultTsConfig"></a>
+
+```typescript
+public readonly defaultTsConfig: TypescriptConfigOptions;
+```
+
+- *Type:* projen.javascript.TypescriptConfigOptions
+
+---
+
+##### `debug`<sup>Optional</sup> <a name="debug" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.debug"></a>
+
+```typescript
+public readonly debug: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `editorConfig`<sup>Optional</sup> <a name="editorConfig" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.editorConfig"></a>
+
+```typescript
+public readonly editorConfig: EditorConfig;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.EditorConfig">EditorConfig</a>
+
+---
+
+##### `gitHooksManager`<sup>Optional</sup> <a name="gitHooksManager" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitHooksManager"></a>
+
+```typescript
+public readonly gitHooksManager: Husky | Lefthook;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.Husky">Husky</a> | <a href="#@thoroc/projen-typescript-git-hooks.Lefthook">Lefthook</a>
+
+---
+
+##### `vitest`<sup>Optional</sup> <a name="vitest" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.vitest"></a>
+
+```typescript
+public readonly vitest: Vitest;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.Vitest">Vitest</a>
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN">DEFAULT_TS_JEST_TRANFORM_PATTERN</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.DEFAULT_TASK"></a>
+
+```typescript
+public readonly DEFAULT_TASK: string;
+```
+
+- *Type:* string
+
+The name of the default task (the task executed when `projen` is run without arguments).
+
+Normally
+this task should synthesize the project files.
+
+---
+
+##### `DEFAULT_TS_JEST_TRANFORM_PATTERN`<sup>Required</sup> <a name="DEFAULT_TS_JEST_TRANFORM_PATTERN" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN"></a>
+
+```typescript
+public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
+```
+
+- *Type:* string
+
+---
+
+### GitHooksManager <a name="GitHooksManager" id="@thoroc/projen-typescript-git-hooks.GitHooksManager"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.Initializer"></a>
+
+```typescript
+import { GitHooksManager } from '@thoroc/projen-typescript-git-hooks'
+
+new GitHooksManager(project: GitHooksEnabledProject)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.Initializer.parameter.project"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.isConstruct"></a>
+
+```typescript
+import { GitHooksManager } from '@thoroc/projen-typescript-git-hooks'
+
+GitHooksManager.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.isComponent"></a>
+
+```typescript
+import { GitHooksManager } from '@thoroc/projen-typescript-git-hooks'
+
+GitHooksManager.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
+### GitNexusMcpServer <a name="GitNexusMcpServer" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.Initializer"></a>
+
+```typescript
+import { GitNexusMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+new GitNexusMcpServer(project: Project)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.isConstruct"></a>
+
+```typescript
+import { GitNexusMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+GitNexusMcpServer.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.isComponent"></a>
+
+```typescript
+import { GitNexusMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+GitNexusMcpServer.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.of"></a>
+
+```typescript
+import { GitNexusMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+GitNexusMcpServer.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.property.serverName">serverName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `serverName`<sup>Required</sup> <a name="serverName" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.property.serverName"></a>
+
+```typescript
+public readonly serverName: string;
+```
+
+- *Type:* string
+
+---
+
+### Husky <a name="Husky" id="@thoroc/projen-typescript-git-hooks.Husky"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Husky.Initializer"></a>
+
+```typescript
+import { Husky } from '@thoroc/projen-typescript-git-hooks'
+
+new Husky(project: GitHooksEnabledProject, options?: HuskyOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyOptions">HuskyOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Husky.Initializer.parameter.project"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Husky.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.HuskyOptions">HuskyOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.createHook">createHook</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.Husky.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Husky.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Husky.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Husky.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `createHook` <a name="createHook" id="@thoroc/projen-typescript-git-hooks.Husky.createHook"></a>
+
+```typescript
+public createHook(hook: GitClientHook, command: string[]): void
+```
+
+###### `hook`<sup>Required</sup> <a name="hook" id="@thoroc/projen-typescript-git-hooks.Husky.createHook.parameter.hook"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a>
+
+---
+
+###### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.Husky.createHook.parameter.command"></a>
+
+- *Type:* string[]
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.of">of</a></code> | Returns the singletone component of a project or undefined if there is none. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.Husky.isConstruct"></a>
+
+```typescript
+import { Husky } from '@thoroc/projen-typescript-git-hooks'
+
+Husky.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Husky.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.Husky.isComponent"></a>
+
+```typescript
+import { Husky } from '@thoroc/projen-typescript-git-hooks'
+
+Husky.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Husky.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Husky.of"></a>
+
+```typescript
+import { Husky } from '@thoroc/projen-typescript-git-hooks'
+
+Husky.of(project: Project)
+```
+
+Returns the singletone component of a project or undefined if there is none.
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Husky.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.property.lintStaged">lintStaged</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged">LintStaged</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.Husky.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Husky.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `lintStaged`<sup>Optional</sup> <a name="lintStaged" id="@thoroc/projen-typescript-git-hooks.Husky.property.lintStaged"></a>
+
+```typescript
+public readonly lintStaged: LintStaged;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LintStaged">LintStaged</a>
+
+---
+
+
+### HuskyHookFile <a name="HuskyHookFile" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer"></a>
+
+```typescript
+import { HuskyHookFile } from '@thoroc/projen-typescript-git-hooks'
+
+new HuskyHookFile(project: Project, options: HuskyHookFileOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFileOptions">HuskyHookFileOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFileOptions">HuskyHookFileOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.synthesize">synthesize</a></code> | Writes the file to the project's output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.addLine">addLine</a></code> | Adds a line to the text file. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Writes the file to the project's output directory.
+
+##### `addLine` <a name="addLine" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.addLine"></a>
+
+```typescript
+public addLine(line: string): void
+```
+
+Adds a line to the text file.
+
+###### `line`<sup>Required</sup> <a name="line" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.addLine.parameter.line"></a>
+
+- *Type:* string
+
+the line to add (can use tokens).
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.isConstruct"></a>
+
+```typescript
+import { HuskyHookFile } from '@thoroc/projen-typescript-git-hooks'
+
+HuskyHookFile.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.isComponent"></a>
+
+```typescript
+import { HuskyHookFile } from '@thoroc/projen-typescript-git-hooks'
+
+HuskyHookFile.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.absolutePath">absolutePath</a></code> | <code>string</code> | The absolute path of this file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.path">path</a></code> | <code>string</code> | The file path, relative to the project's outdir. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.changed">changed</a></code> | <code>boolean</code> | Indicates if the file has been changed during synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.marker">marker</a></code> | <code>string</code> | The projen marker, used to identify files as projen-generated. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.executable">executable</a></code> | <code>boolean</code> | Indicates if the file should be marked as executable. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.readonly">readonly</a></code> | <code>boolean</code> | Indicates if the file should be read-only or read-write. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `absolutePath`<sup>Required</sup> <a name="absolutePath" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.absolutePath"></a>
+
+```typescript
+public readonly absolutePath: string;
+```
+
+- *Type:* string
+
+The absolute path of this file.
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.path"></a>
+
+```typescript
+public readonly path: string;
+```
+
+- *Type:* string
+
+The file path, relative to the project's outdir.
+
+---
+
+##### `changed`<sup>Optional</sup> <a name="changed" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.changed"></a>
+
+```typescript
+public readonly changed: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file has been changed during synthesis.
+
+This property is
+only available in `postSynthesize()` hooks. If this is `undefined`, the
+file has not been synthesized yet.
+
+---
+
+##### `marker`<sup>Optional</sup> <a name="marker" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.marker"></a>
+
+```typescript
+public readonly marker: string;
+```
+
+- *Type:* string
+
+The projen marker, used to identify files as projen-generated.
+
+Value is undefined if the project is being ejected.
+
+---
+
+##### `executable`<sup>Required</sup> <a name="executable" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.executable"></a>
+
+```typescript
+public readonly executable: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file should be marked as executable.
+
+---
+
+##### `readonly`<sup>Required</sup> <a name="readonly" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.readonly"></a>
+
+```typescript
+public readonly readonly: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file should be read-only or read-write.
+
+---
+
+
+### IssueTemplate <a name="IssueTemplate" id="@thoroc/projen-typescript-git-hooks.IssueTemplate"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.Initializer"></a>
+
+```typescript
+import { IssueTemplate } from '@thoroc/projen-typescript-git-hooks'
+
+new IssueTemplate(github: GitHub)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
+
+---
+
+##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.Initializer.parameter.github"></a>
+
+- *Type:* projen.github.GitHub
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.synthesize">synthesize</a></code> | Writes the file to the project's output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.addLine">addLine</a></code> | Adds a line to the text file. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Writes the file to the project's output directory.
+
+##### `addLine` <a name="addLine" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.addLine"></a>
+
+```typescript
+public addLine(line: string): void
+```
+
+Adds a line to the text file.
+
+###### `line`<sup>Required</sup> <a name="line" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.addLine.parameter.line"></a>
+
+- *Type:* string
+
+the line to add (can use tokens).
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.isConstruct"></a>
+
+```typescript
+import { IssueTemplate } from '@thoroc/projen-typescript-git-hooks'
+
+IssueTemplate.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.isComponent"></a>
+
+```typescript
+import { IssueTemplate } from '@thoroc/projen-typescript-git-hooks'
+
+IssueTemplate.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.absolutePath">absolutePath</a></code> | <code>string</code> | The absolute path of this file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.path">path</a></code> | <code>string</code> | The file path, relative to the project's outdir. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.changed">changed</a></code> | <code>boolean</code> | Indicates if the file has been changed during synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.marker">marker</a></code> | <code>string</code> | The projen marker, used to identify files as projen-generated. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.executable">executable</a></code> | <code>boolean</code> | Indicates if the file should be marked as executable. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.readonly">readonly</a></code> | <code>boolean</code> | Indicates if the file should be read-only or read-write. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `absolutePath`<sup>Required</sup> <a name="absolutePath" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.absolutePath"></a>
+
+```typescript
+public readonly absolutePath: string;
+```
+
+- *Type:* string
+
+The absolute path of this file.
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.path"></a>
+
+```typescript
+public readonly path: string;
+```
+
+- *Type:* string
+
+The file path, relative to the project's outdir.
+
+---
+
+##### `changed`<sup>Optional</sup> <a name="changed" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.changed"></a>
+
+```typescript
+public readonly changed: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file has been changed during synthesis.
+
+This property is
+only available in `postSynthesize()` hooks. If this is `undefined`, the
+file has not been synthesized yet.
+
+---
+
+##### `marker`<sup>Optional</sup> <a name="marker" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.marker"></a>
+
+```typescript
+public readonly marker: string;
+```
+
+- *Type:* string
+
+The projen marker, used to identify files as projen-generated.
+
+Value is undefined if the project is being ejected.
+
+---
+
+##### `executable`<sup>Required</sup> <a name="executable" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.executable"></a>
+
+```typescript
+public readonly executable: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file should be marked as executable.
+
+---
+
+##### `readonly`<sup>Required</sup> <a name="readonly" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.readonly"></a>
+
+```typescript
+public readonly readonly: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file should be read-only or read-write.
+
+---
+
+
+### Jest <a name="Jest" id="@thoroc/projen-typescript-git-hooks.Jest"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Jest.Initializer"></a>
+
+```typescript
+import { Jest } from '@thoroc/projen-typescript-git-hooks'
+
+new Jest(project: GitHooksEnabledProject, options?: JestOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.Initializer.parameter.options">options</a></code> | <code>projen.javascript.JestOptions</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Jest.Initializer.parameter.project"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Jest.Initializer.parameter.options"></a>
+
+- *Type:* projen.javascript.JestOptions
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addIgnorePattern">addIgnorePattern</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addModuleNameMappers">addModuleNameMappers</a></code> | Adds one or more moduleNameMapper entries to Jest's configuration. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addModulePaths">addModulePaths</a></code> | Adds one or more modulePaths to Jest's configuration. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addReporter">addReporter</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addRoots">addRoots</a></code> | Adds one or more roots to Jest's configuration. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addSetupFile">addSetupFile</a></code> | Adds a a setup file to Jest's setupFiles configuration. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addSetupFileAfterEnv">addSetupFileAfterEnv</a></code> | Adds a a setup file to Jest's setupFilesAfterEnv configuration. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addSnapshotResolver">addSnapshotResolver</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addTestMatch">addTestMatch</a></code> | Adds a test match pattern. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addWatchIgnorePattern">addWatchIgnorePattern</a></code> | Adds a watch ignore pattern. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.discoverTestMatchPatternsForDirs">discoverTestMatchPatternsForDirs</a></code> | Build standard test match patterns for a directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.Jest.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Jest.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Jest.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Jest.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `addIgnorePattern` <a name="addIgnorePattern" id="@thoroc/projen-typescript-git-hooks.Jest.addIgnorePattern"></a>
+
+```typescript
+public addIgnorePattern(pattern: string): void
+```
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Jest.addIgnorePattern.parameter.pattern"></a>
+
+- *Type:* string
+
+---
+
+##### `addModuleNameMappers` <a name="addModuleNameMappers" id="@thoroc/projen-typescript-git-hooks.Jest.addModuleNameMappers"></a>
+
+```typescript
+public addModuleNameMappers(moduleNameMapperAdditions: {[ key: string ]: string | string[]}): void
+```
+
+Adds one or more moduleNameMapper entries to Jest's configuration.
+
+Will overwrite if the same key is used as a pre-existing one.
+
+###### `moduleNameMapperAdditions`<sup>Required</sup> <a name="moduleNameMapperAdditions" id="@thoroc/projen-typescript-git-hooks.Jest.addModuleNameMappers.parameter.moduleNameMapperAdditions"></a>
+
+- *Type:* {[ key: string ]: string | string[]}
+
+A map from regular expressions to module names or to arrays of module names that allow to stub out resources, like images or styles with a single module.
+
+---
+
+##### `addModulePaths` <a name="addModulePaths" id="@thoroc/projen-typescript-git-hooks.Jest.addModulePaths"></a>
+
+```typescript
+public addModulePaths(modulePaths: ...string[]): void
+```
+
+Adds one or more modulePaths to Jest's configuration.
+
+###### `modulePaths`<sup>Required</sup> <a name="modulePaths" id="@thoroc/projen-typescript-git-hooks.Jest.addModulePaths.parameter.modulePaths"></a>
+
+- *Type:* ...string[]
+
+An array of absolute paths to additional locations to search when resolving modules   *.
+
+---
+
+##### `addReporter` <a name="addReporter" id="@thoroc/projen-typescript-git-hooks.Jest.addReporter"></a>
+
+```typescript
+public addReporter(reporter: JestReporter): void
+```
+
+###### `reporter`<sup>Required</sup> <a name="reporter" id="@thoroc/projen-typescript-git-hooks.Jest.addReporter.parameter.reporter"></a>
+
+- *Type:* projen.javascript.JestReporter
+
+---
+
+##### `addRoots` <a name="addRoots" id="@thoroc/projen-typescript-git-hooks.Jest.addRoots"></a>
+
+```typescript
+public addRoots(roots: ...string[]): void
+```
+
+Adds one or more roots to Jest's configuration.
+
+###### `roots`<sup>Required</sup> <a name="roots" id="@thoroc/projen-typescript-git-hooks.Jest.addRoots.parameter.roots"></a>
+
+- *Type:* ...string[]
+
+A list of paths to directories that Jest should use to search for files in.
+
+---
+
+##### `addSetupFile` <a name="addSetupFile" id="@thoroc/projen-typescript-git-hooks.Jest.addSetupFile"></a>
+
+```typescript
+public addSetupFile(file: string): void
+```
+
+Adds a a setup file to Jest's setupFiles configuration.
+
+###### `file`<sup>Required</sup> <a name="file" id="@thoroc/projen-typescript-git-hooks.Jest.addSetupFile.parameter.file"></a>
+
+- *Type:* string
+
+File path to setup file.
+
+---
+
+##### `addSetupFileAfterEnv` <a name="addSetupFileAfterEnv" id="@thoroc/projen-typescript-git-hooks.Jest.addSetupFileAfterEnv"></a>
+
+```typescript
+public addSetupFileAfterEnv(file: string): void
+```
+
+Adds a a setup file to Jest's setupFilesAfterEnv configuration.
+
+###### `file`<sup>Required</sup> <a name="file" id="@thoroc/projen-typescript-git-hooks.Jest.addSetupFileAfterEnv.parameter.file"></a>
+
+- *Type:* string
+
+File path to setup file.
+
+---
+
+##### `addSnapshotResolver` <a name="addSnapshotResolver" id="@thoroc/projen-typescript-git-hooks.Jest.addSnapshotResolver"></a>
+
+```typescript
+public addSnapshotResolver(file: string): void
+```
+
+###### `file`<sup>Required</sup> <a name="file" id="@thoroc/projen-typescript-git-hooks.Jest.addSnapshotResolver.parameter.file"></a>
+
+- *Type:* string
+
+---
+
+##### `addTestMatch` <a name="addTestMatch" id="@thoroc/projen-typescript-git-hooks.Jest.addTestMatch"></a>
+
+```typescript
+public addTestMatch(pattern: string): void
+```
+
+Adds a test match pattern.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Jest.addTestMatch.parameter.pattern"></a>
+
+- *Type:* string
+
+glob pattern to match for tests.
+
+---
+
+##### `addWatchIgnorePattern` <a name="addWatchIgnorePattern" id="@thoroc/projen-typescript-git-hooks.Jest.addWatchIgnorePattern"></a>
+
+```typescript
+public addWatchIgnorePattern(pattern: string): void
+```
+
+Adds a watch ignore pattern.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Jest.addWatchIgnorePattern.parameter.pattern"></a>
+
+- *Type:* string
+
+The pattern (regular expression).
+
+---
+
+##### `discoverTestMatchPatternsForDirs` <a name="discoverTestMatchPatternsForDirs" id="@thoroc/projen-typescript-git-hooks.Jest.discoverTestMatchPatternsForDirs"></a>
+
+```typescript
+public discoverTestMatchPatternsForDirs(dirs: string[], options?: JestDiscoverTestMatchPatternsForDirsOptions): void
+```
+
+Build standard test match patterns for a directory.
+
+###### `dirs`<sup>Required</sup> <a name="dirs" id="@thoroc/projen-typescript-git-hooks.Jest.discoverTestMatchPatternsForDirs.parameter.dirs"></a>
+
+- *Type:* string[]
+
+The directories to add test matches for.
+
+Matches any folder if not specified or an empty array.
+
+---
+
+###### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Jest.discoverTestMatchPatternsForDirs.parameter.options"></a>
+
+- *Type:* projen.javascript.JestDiscoverTestMatchPatternsForDirsOptions
+
+Options for building test match patterns.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.of">of</a></code> | Returns the singleton Jest component of a project or undefined if there is none. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.Jest.isConstruct"></a>
+
+```typescript
+import { Jest } from '@thoroc/projen-typescript-git-hooks'
+
+Jest.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Jest.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.Jest.isComponent"></a>
+
+```typescript
+import { Jest } from '@thoroc/projen-typescript-git-hooks'
+
+Jest.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Jest.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Jest.of"></a>
+
+```typescript
+import { Jest } from '@thoroc/projen-typescript-git-hooks'
+
+Jest.of(project: Project)
+```
+
+Returns the singleton Jest component of a project or undefined if there is none.
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Jest.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.project">project</a></code> | <code>projen.javascript.NodeProject</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.config">config</a></code> | <code>any</code> | Escape hatch. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.jestVersion">jestVersion</a></code> | <code>string</code> | Jest version, including `@` symbol, like `@^29`. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.file">file</a></code> | <code>projen.JsonFile</code> | Jest config file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.configFilePath">configFilePath</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.Jest.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Jest.property.project"></a>
+
+```typescript
+public readonly project: NodeProject;
+```
+
+- *Type:* projen.javascript.NodeProject
+
+---
+
+##### `config`<sup>Required</sup> <a name="config" id="@thoroc/projen-typescript-git-hooks.Jest.property.config"></a>
+
+```typescript
+public readonly config: any;
+```
+
+- *Type:* any
+
+Escape hatch.
+
+---
+
+##### `jestVersion`<sup>Required</sup> <a name="jestVersion" id="@thoroc/projen-typescript-git-hooks.Jest.property.jestVersion"></a>
+
+```typescript
+public readonly jestVersion: string;
+```
+
+- *Type:* string
+
+Jest version, including `@` symbol, like `@^29`.
+
+---
+
+##### `file`<sup>Optional</sup> <a name="file" id="@thoroc/projen-typescript-git-hooks.Jest.property.file"></a>
+
+```typescript
+public readonly file: JsonFile;
+```
+
+- *Type:* projen.JsonFile
+
+Jest config file.
+
+`undefined` if settings are written to `package.json`
+
+---
+
+##### `configFilePath`<sup>Optional</sup> <a name="configFilePath" id="@thoroc/projen-typescript-git-hooks.Jest.property.configFilePath"></a>
+
+```typescript
+public readonly configFilePath: string;
+```
+
+- *Type:* string
+
+---
+
+
+### LabelerConfig <a name="LabelerConfig" id="@thoroc/projen-typescript-git-hooks.LabelerConfig"></a>
+
+Represents LabelerConfig configuration.
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer"></a>
+
+```typescript
+import { LabelerConfig } from '@thoroc/projen-typescript-git-hooks'
+
+new LabelerConfig(project: Project, options: LabelerConfigOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfigOptions">LabelerConfigOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LabelerConfigOptions">LabelerConfigOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.isConstruct"></a>
+
+```typescript
+import { LabelerConfig } from '@thoroc/projen-typescript-git-hooks'
+
+LabelerConfig.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.isComponent"></a>
+
+```typescript
+import { LabelerConfig } from '@thoroc/projen-typescript-git-hooks'
+
+LabelerConfig.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
+### Lefthook <a name="Lefthook" id="@thoroc/projen-typescript-git-hooks.Lefthook"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Lefthook.Initializer"></a>
+
+```typescript
+import { Lefthook } from '@thoroc/projen-typescript-git-hooks'
+
+new Lefthook(project: GitHooksEnabledProject, options?: LefthookOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookOptions">LefthookOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Lefthook.Initializer.parameter.project"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Lefthook.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LefthookOptions">LefthookOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.addCommand">addCommand</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.addScript">addScript</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.Lefthook.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Lefthook.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Lefthook.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Lefthook.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `addCommand` <a name="addCommand" id="@thoroc/projen-typescript-git-hooks.Lefthook.addCommand"></a>
+
+```typescript
+public addCommand(hookName: GitClientHook, command: LefthookCommandOptions): void
+```
+
+###### `hookName`<sup>Required</sup> <a name="hookName" id="@thoroc/projen-typescript-git-hooks.Lefthook.addCommand.parameter.hookName"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a>
+
+---
+
+###### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.Lefthook.addCommand.parameter.command"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions">LefthookCommandOptions</a>
+
+---
+
+##### `addScript` <a name="addScript" id="@thoroc/projen-typescript-git-hooks.Lefthook.addScript"></a>
+
+```typescript
+public addScript(hookName: GitClientHook, script: LefthookScriptOptions): void
+```
+
+###### `hookName`<sup>Required</sup> <a name="hookName" id="@thoroc/projen-typescript-git-hooks.Lefthook.addScript.parameter.hookName"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a>
+
+---
+
+###### `script`<sup>Required</sup> <a name="script" id="@thoroc/projen-typescript-git-hooks.Lefthook.addScript.parameter.script"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LefthookScriptOptions">LefthookScriptOptions</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.of">of</a></code> | Returns the singletone component of a project or undefined if there is none. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.Lefthook.isConstruct"></a>
+
+```typescript
+import { Lefthook } from '@thoroc/projen-typescript-git-hooks'
+
+Lefthook.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Lefthook.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.Lefthook.isComponent"></a>
+
+```typescript
+import { Lefthook } from '@thoroc/projen-typescript-git-hooks'
+
+Lefthook.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Lefthook.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Lefthook.of"></a>
+
+```typescript
+import { Lefthook } from '@thoroc/projen-typescript-git-hooks'
+
+Lefthook.of(project: Project)
+```
+
+Returns the singletone component of a project or undefined if there is none.
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Lefthook.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.property.config">config</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookConfig">LefthookConfig</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.Lefthook.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Lefthook.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `config`<sup>Required</sup> <a name="config" id="@thoroc/projen-typescript-git-hooks.Lefthook.property.config"></a>
+
+```typescript
+public readonly config: LefthookConfig;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LefthookConfig">LefthookConfig</a>
+
+---
+
+
+### LefthookFile <a name="LefthookFile" id="@thoroc/projen-typescript-git-hooks.LefthookFile"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.LefthookFile.Initializer"></a>
+
+```typescript
+import { LefthookFile } from '@thoroc/projen-typescript-git-hooks'
+
+new LefthookFile(project: Project, obj: object)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.Initializer.parameter.obj">obj</a></code> | <code>object</code> | The output object. |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LefthookFile.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `obj`<sup>Required</sup> <a name="obj" id="@thoroc/projen-typescript-git-hooks.LefthookFile.Initializer.parameter.obj"></a>
+
+- *Type:* object
+
+The output object.
+
+This object can be mutated until the project is
+synthesized.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.synthesize">synthesize</a></code> | Writes the file to the project's output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.addOverride">addOverride</a></code> | Adds an override to the synthesized object file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.addToArray">addToArray</a></code> | Adds to an array in the synthesized object file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.patch">patch</a></code> | Applies an RFC 6902 JSON-patch to the synthesized object file. See https://datatracker.ietf.org/doc/html/rfc6902 for more information. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.LefthookFile.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.LefthookFile.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.LefthookFile.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.LefthookFile.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Writes the file to the project's output directory.
+
+##### `addDeletionOverride` <a name="addDeletionOverride" id="@thoroc/projen-typescript-git-hooks.LefthookFile.addDeletionOverride"></a>
+
+```typescript
+public addDeletionOverride(path: string): void
+```
+
+Syntactic sugar for `addOverride(path, undefined)`.
+
+###### `path`<sup>Required</sup> <a name="path" id="@thoroc/projen-typescript-git-hooks.LefthookFile.addDeletionOverride.parameter.path"></a>
+
+- *Type:* string
+
+The path of the value to delete.
+
+---
+
+##### `addOverride` <a name="addOverride" id="@thoroc/projen-typescript-git-hooks.LefthookFile.addOverride"></a>
+
+```typescript
+public addOverride(path: string, value: any): void
+```
+
+Adds an override to the synthesized object file.
+
+If the override is nested, separate each nested level using a dot (.) in the path parameter.
+If there is an array as part of the nesting, specify the index in the path.
+
+To include a literal `.` in the property name, prefix with a `\`. In most
+programming languages you will need to write this as `"\\."` because the
+`\` itself will need to be escaped.
+
+For example,
+```typescript
+project.tsconfig.file.addOverride('compilerOptions.alwaysStrict', true);
+project.tsconfig.file.addOverride('compilerOptions.lib', ['dom', 'dom.iterable', 'esnext']);
+```
+would add the overrides
+```json
+"compilerOptions": {
+  "alwaysStrict": true,
+  "lib": [
+    "dom",
+    "dom.iterable",
+    "esnext"
+  ]
+  ...
+}
+...
+```
+
+###### `path`<sup>Required</sup> <a name="path" id="@thoroc/projen-typescript-git-hooks.LefthookFile.addOverride.parameter.path"></a>
+
+- *Type:* string
+
+The path of the property, you can use dot notation to override values in complex types.
+
+Any intermediate keys
+will be created as needed.
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="@thoroc/projen-typescript-git-hooks.LefthookFile.addOverride.parameter.value"></a>
+
+- *Type:* any
+
+The value.
+
+Could be primitive or complex.
+
+---
+
+##### `addToArray` <a name="addToArray" id="@thoroc/projen-typescript-git-hooks.LefthookFile.addToArray"></a>
+
+```typescript
+public addToArray(path: string, values: ...any[]): void
+```
+
+Adds to an array in the synthesized object file.
+
+If the array is nested, separate each nested level using a dot (.) in the path parameter.
+If there is an array as part of the nesting, specify the index in the path.
+
+To include a literal `.` in the property name, prefix with a `\`. In most
+programming languages you will need to write this as `"\\."` because the
+`\` itself will need to be escaped.
+
+For example, with the following object file
+```json
+"compilerOptions": {
+  "exclude": ["node_modules"],
+  "lib": ["es2020"]
+  ...
+}
+...
+```
+
+```typescript
+project.tsconfig.file.addToArray('compilerOptions.exclude', 'coverage');
+project.tsconfig.file.addToArray('compilerOptions.lib', 'dom', 'dom.iterable', 'esnext');
+```
+would result in the following object file
+```json
+"compilerOptions": {
+  "exclude": ["node_modules", "coverage"],
+  "lib": ["es2020", "dom", "dom.iterable", "esnext"]
+  ...
+}
+...
+```
+
+###### `path`<sup>Required</sup> <a name="path" id="@thoroc/projen-typescript-git-hooks.LefthookFile.addToArray.parameter.path"></a>
+
+- *Type:* string
+
+The path of the property, you can use dot notation to att to arrays in complex types.
+
+Any intermediate keys
+will be created as needed.
+
+---
+
+###### `values`<sup>Required</sup> <a name="values" id="@thoroc/projen-typescript-git-hooks.LefthookFile.addToArray.parameter.values"></a>
+
+- *Type:* ...any[]
+
+The values to add.
+
+Could be primitive or complex.
+
+---
+
+##### `patch` <a name="patch" id="@thoroc/projen-typescript-git-hooks.LefthookFile.patch"></a>
+
+```typescript
+public patch(patches: ...JsonPatch[]): void
+```
+
+Applies an RFC 6902 JSON-patch to the synthesized object file. See https://datatracker.ietf.org/doc/html/rfc6902 for more information.
+
+For example, with the following object file
+```json
+"compilerOptions": {
+  "exclude": ["node_modules"],
+  "lib": ["es2020"]
+  ...
+}
+...
+```
+
+```typescript
+project.tsconfig.file.patch(JsonPatch.add("/compilerOptions/exclude/-", "coverage"));
+project.tsconfig.file.patch(JsonPatch.replace("/compilerOptions/lib", ["dom", "dom.iterable", "esnext"]));
+```
+would result in the following object file
+```json
+"compilerOptions": {
+  "exclude": ["node_modules", "coverage"],
+  "lib": ["dom", "dom.iterable", "esnext"]
+  ...
+}
+...
+```
+
+###### `patches`<sup>Required</sup> <a name="patches" id="@thoroc/projen-typescript-git-hooks.LefthookFile.patch.parameter.patches"></a>
+
+- *Type:* ...projen.JsonPatch[]
+
+The patch operations to apply.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.LefthookFile.isConstruct"></a>
+
+```typescript
+import { LefthookFile } from '@thoroc/projen-typescript-git-hooks'
+
+LefthookFile.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.LefthookFile.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.LefthookFile.isComponent"></a>
+
+```typescript
+import { LefthookFile } from '@thoroc/projen-typescript-git-hooks'
+
+LefthookFile.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.LefthookFile.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.absolutePath">absolutePath</a></code> | <code>string</code> | The absolute path of this file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.path">path</a></code> | <code>string</code> | The file path, relative to the project's outdir. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.changed">changed</a></code> | <code>boolean</code> | Indicates if the file has been changed during synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.marker">marker</a></code> | <code>string</code> | The projen marker, used to identify files as projen-generated. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.executable">executable</a></code> | <code>boolean</code> | Indicates if the file should be marked as executable. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.readonly">readonly</a></code> | <code>boolean</code> | Indicates if the file should be read-only or read-write. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.omitEmpty">omitEmpty</a></code> | <code>boolean</code> | Indicates if empty objects and arrays are omitted from the output object. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.lineWidth">lineWidth</a></code> | <code>number</code> | Maximum line width (set to 0 to disable folding). |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.LefthookFile.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LefthookFile.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `absolutePath`<sup>Required</sup> <a name="absolutePath" id="@thoroc/projen-typescript-git-hooks.LefthookFile.property.absolutePath"></a>
+
+```typescript
+public readonly absolutePath: string;
+```
+
+- *Type:* string
+
+The absolute path of this file.
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="@thoroc/projen-typescript-git-hooks.LefthookFile.property.path"></a>
+
+```typescript
+public readonly path: string;
+```
+
+- *Type:* string
+
+The file path, relative to the project's outdir.
+
+---
+
+##### `changed`<sup>Optional</sup> <a name="changed" id="@thoroc/projen-typescript-git-hooks.LefthookFile.property.changed"></a>
+
+```typescript
+public readonly changed: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file has been changed during synthesis.
+
+This property is
+only available in `postSynthesize()` hooks. If this is `undefined`, the
+file has not been synthesized yet.
+
+---
+
+##### `marker`<sup>Optional</sup> <a name="marker" id="@thoroc/projen-typescript-git-hooks.LefthookFile.property.marker"></a>
+
+```typescript
+public readonly marker: string;
+```
+
+- *Type:* string
+
+The projen marker, used to identify files as projen-generated.
+
+Value is undefined if the project is being ejected.
+
+---
+
+##### `executable`<sup>Required</sup> <a name="executable" id="@thoroc/projen-typescript-git-hooks.LefthookFile.property.executable"></a>
+
+```typescript
+public readonly executable: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file should be marked as executable.
+
+---
+
+##### `readonly`<sup>Required</sup> <a name="readonly" id="@thoroc/projen-typescript-git-hooks.LefthookFile.property.readonly"></a>
+
+```typescript
+public readonly readonly: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file should be read-only or read-write.
+
+---
+
+##### `omitEmpty`<sup>Required</sup> <a name="omitEmpty" id="@thoroc/projen-typescript-git-hooks.LefthookFile.property.omitEmpty"></a>
+
+```typescript
+public readonly omitEmpty: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if empty objects and arrays are omitted from the output object.
+
+---
+
+##### `lineWidth`<sup>Required</sup> <a name="lineWidth" id="@thoroc/projen-typescript-git-hooks.LefthookFile.property.lineWidth"></a>
+
+```typescript
+public readonly lineWidth: number;
+```
+
+- *Type:* number
+
+Maximum line width (set to 0 to disable folding).
+
+---
+
+
+### LintStaged <a name="LintStaged" id="@thoroc/projen-typescript-git-hooks.LintStaged"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.LintStaged.Initializer"></a>
+
+```typescript
+import { LintStaged } from '@thoroc/projen-typescript-git-hooks'
+
+new LintStaged(project: GitHooksEnabledProject, options?: LintStagedOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LintStagedOptions">LintStagedOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LintStaged.Initializer.parameter.project"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.LintStaged.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LintStagedOptions">LintStagedOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.addRule">addRule</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.LintStaged.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.LintStaged.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.LintStaged.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.LintStaged.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `addRule` <a name="addRule" id="@thoroc/projen-typescript-git-hooks.LintStaged.addRule"></a>
+
+```typescript
+public addRule(rule: LintStagedRuleOptions): void
+```
+
+###### `rule`<sup>Required</sup> <a name="rule" id="@thoroc/projen-typescript-git-hooks.LintStaged.addRule.parameter.rule"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LintStagedRuleOptions">LintStagedRuleOptions</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.of">of</a></code> | Returns the singletone component of a project or undefined if there is none. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.LintStaged.isConstruct"></a>
+
+```typescript
+import { LintStaged } from '@thoroc/projen-typescript-git-hooks'
+
+LintStaged.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.LintStaged.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.LintStaged.isComponent"></a>
+
+```typescript
+import { LintStaged } from '@thoroc/projen-typescript-git-hooks'
+
+LintStaged.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.LintStaged.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.LintStaged.of"></a>
+
+```typescript
+import { LintStaged } from '@thoroc/projen-typescript-git-hooks'
+
+LintStaged.of(project: GitHooksEnabledProject)
+```
+
+Returns the singletone component of a project or undefined if there is none.
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LintStaged.of.parameter.project"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.property.rules">rules</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LintStagedRule">LintStagedRule</a>[]</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.LintStaged.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LintStaged.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `rules`<sup>Required</sup> <a name="rules" id="@thoroc/projen-typescript-git-hooks.LintStaged.property.rules"></a>
+
+```typescript
+public readonly rules: LintStagedRule[];
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LintStagedRule">LintStagedRule</a>[]
+
+---
+
+
+### Markdownlint <a name="Markdownlint" id="@thoroc/projen-typescript-git-hooks.Markdownlint"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Markdownlint.Initializer"></a>
+
+```typescript
+import { Markdownlint } from '@thoroc/projen-typescript-git-hooks'
+
+new Markdownlint(project: GitHooksEnabledProject, options?: MarkdownlintOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Markdownlint.Initializer.parameter.project"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Markdownlint.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.addIgnorePattern">addIgnorePattern</a></code> | Defines Markdownlint ignore Patterns these patterns will be added to the file .markdownlintignore. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.Markdownlint.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Markdownlint.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Markdownlint.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Markdownlint.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `addIgnorePattern` <a name="addIgnorePattern" id="@thoroc/projen-typescript-git-hooks.Markdownlint.addIgnorePattern"></a>
+
+```typescript
+public addIgnorePattern(pattern: string): void
+```
+
+Defines Markdownlint ignore Patterns these patterns will be added to the file .markdownlintignore.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Markdownlint.addIgnorePattern.parameter.pattern"></a>
+
+- *Type:* string
+
+filepatterns so exclude from Markdownlint formatting.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.of">of</a></code> | Returns the singletone component of a project or undefined if there is none. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.Markdownlint.isConstruct"></a>
+
+```typescript
+import { Markdownlint } from '@thoroc/projen-typescript-git-hooks'
+
+Markdownlint.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Markdownlint.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.Markdownlint.isComponent"></a>
+
+```typescript
+import { Markdownlint } from '@thoroc/projen-typescript-git-hooks'
+
+Markdownlint.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Markdownlint.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Markdownlint.of"></a>
+
+```typescript
+import { Markdownlint } from '@thoroc/projen-typescript-git-hooks'
+
+Markdownlint.of(project: Project)
+```
+
+Returns the singletone component of a project or undefined if there is none.
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Markdownlint.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.property.defaultRules">defaultRules</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintRules">MarkdownlintRules</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.property.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.property.ignoreFile">ignoreFile</a></code> | <code>projen.IgnoreFile</code> | The .markdownlintignore file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.property.rules">rules</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintRules">MarkdownlintRules</a></code> | Direct access to the markdownlint rules (escape hatch). |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.Markdownlint.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Markdownlint.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `defaultRules`<sup>Required</sup> <a name="defaultRules" id="@thoroc/projen-typescript-git-hooks.Markdownlint.property.defaultRules"></a>
+
+```typescript
+public readonly defaultRules: MarkdownlintRules;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintRules">MarkdownlintRules</a>
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Markdownlint.property.options"></a>
+
+```typescript
+public readonly options: MarkdownlintOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a>
+
+---
+
+##### `ignoreFile`<sup>Optional</sup> <a name="ignoreFile" id="@thoroc/projen-typescript-git-hooks.Markdownlint.property.ignoreFile"></a>
+
+```typescript
+public readonly ignoreFile: IgnoreFile;
+```
+
+- *Type:* projen.IgnoreFile
+
+The .markdownlintignore file.
+
+---
+
+##### `rules`<sup>Required</sup> <a name="rules" id="@thoroc/projen-typescript-git-hooks.Markdownlint.property.rules"></a>
+
+```typescript
+public readonly rules: MarkdownlintRules;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintRules">MarkdownlintRules</a>
+
+Direct access to the markdownlint rules (escape hatch).
+
+---
+
+
+### McpConfig <a name="McpConfig" id="@thoroc/projen-typescript-git-hooks.McpConfig"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.McpConfig.Initializer"></a>
+
+```typescript
+import { McpConfig } from '@thoroc/projen-typescript-git-hooks'
+
+new McpConfig(project: Project, options: McpConfigOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfigOptions">McpConfigOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.McpConfig.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.McpConfig.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpConfigOptions">McpConfigOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.addServer">addServer</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.McpConfig.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.McpConfig.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.McpConfig.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.McpConfig.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `addServer` <a name="addServer" id="@thoroc/projen-typescript-git-hooks.McpConfig.addServer"></a>
+
+```typescript
+public addServer(server: McpServer): void
+```
+
+###### `server`<sup>Required</sup> <a name="server" id="@thoroc/projen-typescript-git-hooks.McpConfig.addServer.parameter.server"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.McpConfig.isConstruct"></a>
+
+```typescript
+import { McpConfig } from '@thoroc/projen-typescript-git-hooks'
+
+McpConfig.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.McpConfig.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.McpConfig.isComponent"></a>
+
+```typescript
+import { McpConfig } from '@thoroc/projen-typescript-git-hooks'
+
+McpConfig.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.McpConfig.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.McpConfig.of"></a>
+
+```typescript
+import { McpConfig } from '@thoroc/projen-typescript-git-hooks'
+
+McpConfig.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.McpConfig.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.property.servers">servers</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.McpConfig.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.McpConfig.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `servers`<sup>Required</sup> <a name="servers" id="@thoroc/projen-typescript-git-hooks.McpConfig.property.servers"></a>
+
+```typescript
+public readonly servers: McpServer[];
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.property.configPath">configPath</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `configPath`<sup>Required</sup> <a name="configPath" id="@thoroc/projen-typescript-git-hooks.McpConfig.property.configPath"></a>
+
+```typescript
+public readonly configPath: string;
+```
+
+- *Type:* string
+
+---
+
+### MistralVibe <a name="MistralVibe" id="@thoroc/projen-typescript-git-hooks.MistralVibe"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.MistralVibe.Initializer"></a>
+
+```typescript
+import { MistralVibe } from '@thoroc/projen-typescript-git-hooks'
+
+new MistralVibe(project: Project, options?: MistralVibeOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibeOptions">MistralVibeOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.MistralVibe.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.MistralVibe.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MistralVibeOptions">MistralVibeOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.MistralVibe.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.MistralVibe.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.MistralVibe.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.MistralVibe.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.MistralVibe.isConstruct"></a>
+
+```typescript
+import { MistralVibe } from '@thoroc/projen-typescript-git-hooks'
+
+MistralVibe.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.MistralVibe.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.MistralVibe.isComponent"></a>
+
+```typescript
+import { MistralVibe } from '@thoroc/projen-typescript-git-hooks'
+
+MistralVibe.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.MistralVibe.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.MistralVibe.of"></a>
+
+```typescript
+import { MistralVibe } from '@thoroc/projen-typescript-git-hooks'
+
+MistralVibe.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.MistralVibe.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.property.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibeOptions">MistralVibeOptions</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.MistralVibe.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.MistralVibe.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.MistralVibe.property.options"></a>
+
+```typescript
+public readonly options: MistralVibeOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MistralVibeOptions">MistralVibeOptions</a>
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.property.contextFile">contextFile</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.property.settingsPath">settingsPath</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `contextFile`<sup>Required</sup> <a name="contextFile" id="@thoroc/projen-typescript-git-hooks.MistralVibe.property.contextFile"></a>
+
+```typescript
+public readonly contextFile: string;
+```
+
+- *Type:* string
+
+---
+
+##### `settingsPath`<sup>Required</sup> <a name="settingsPath" id="@thoroc/projen-typescript-git-hooks.MistralVibe.property.settingsPath"></a>
+
+```typescript
+public readonly settingsPath: string;
+```
+
+- *Type:* string
+
+---
+
+### NeuledgeContextMcpServer <a name="NeuledgeContextMcpServer" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.Initializer"></a>
+
+```typescript
+import { NeuledgeContextMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+new NeuledgeContextMcpServer(project: Project)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.isConstruct"></a>
+
+```typescript
+import { NeuledgeContextMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+NeuledgeContextMcpServer.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.isComponent"></a>
+
+```typescript
+import { NeuledgeContextMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+NeuledgeContextMcpServer.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.of"></a>
+
+```typescript
+import { NeuledgeContextMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+NeuledgeContextMcpServer.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.property.serverName">serverName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `serverName`<sup>Required</sup> <a name="serverName" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.property.serverName"></a>
+
+```typescript
+public readonly serverName: string;
+```
+
+- *Type:* string
+
+---
+
+### OpenAICodex <a name="OpenAICodex" id="@thoroc/projen-typescript-git-hooks.OpenAICodex"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.Initializer"></a>
+
+```typescript
+import { OpenAICodex } from '@thoroc/projen-typescript-git-hooks'
+
+new OpenAICodex(project: Project, options?: OpenAICodexOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexOptions">OpenAICodexOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexOptions">OpenAICodexOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.addHook">addHook</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.addMcpServer">addMcpServer</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `addHook` <a name="addHook" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.addHook"></a>
+
+```typescript
+public addHook(event: string, group: OpenAICodexHookGroup): void
+```
+
+###### `event`<sup>Required</sup> <a name="event" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.addHook.parameter.event"></a>
+
+- *Type:* string
+
+---
+
+###### `group`<sup>Required</sup> <a name="group" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.addHook.parameter.group"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexHookGroup">OpenAICodexHookGroup</a>
+
+---
+
+##### `addMcpServer` <a name="addMcpServer" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.addMcpServer"></a>
+
+```typescript
+public addMcpServer(server: McpServer): void
+```
+
+###### `server`<sup>Required</sup> <a name="server" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.addMcpServer.parameter.server"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.isConstruct"></a>
+
+```typescript
+import { OpenAICodex } from '@thoroc/projen-typescript-git-hooks'
+
+OpenAICodex.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.isComponent"></a>
+
+```typescript
+import { OpenAICodex } from '@thoroc/projen-typescript-git-hooks'
+
+OpenAICodex.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.of"></a>
+
+```typescript
+import { OpenAICodex } from '@thoroc/projen-typescript-git-hooks'
+
+OpenAICodex.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.property.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexOptions">OpenAICodexOptions</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.property.options"></a>
+
+```typescript
+public readonly options: OpenAICodexOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexOptions">OpenAICodexOptions</a>
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.property.contextFile">contextFile</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.property.hooksPath">hooksPath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.property.settingsPath">settingsPath</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `contextFile`<sup>Required</sup> <a name="contextFile" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.property.contextFile"></a>
+
+```typescript
+public readonly contextFile: string;
+```
+
+- *Type:* string
+
+---
+
+##### `hooksPath`<sup>Required</sup> <a name="hooksPath" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.property.hooksPath"></a>
+
+```typescript
+public readonly hooksPath: string;
+```
+
+- *Type:* string
+
+---
+
+##### `settingsPath`<sup>Required</sup> <a name="settingsPath" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.property.settingsPath"></a>
+
+```typescript
+public readonly settingsPath: string;
+```
+
+- *Type:* string
+
+---
+
+### OpenCode <a name="OpenCode" id="@thoroc/projen-typescript-git-hooks.OpenCode"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.OpenCode.Initializer"></a>
+
+```typescript
+import { OpenCode } from '@thoroc/projen-typescript-git-hooks'
+
+new OpenCode(project: Project, options?: OpenCodeOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCodeOptions">OpenCodeOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.OpenCode.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.OpenCode.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.OpenCodeOptions">OpenCodeOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.addMcpServer">addMcpServer</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.addPlugin">addPlugin</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.OpenCode.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.OpenCode.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.OpenCode.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.OpenCode.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `addMcpServer` <a name="addMcpServer" id="@thoroc/projen-typescript-git-hooks.OpenCode.addMcpServer"></a>
+
+```typescript
+public addMcpServer(server: McpServer): void
+```
+
+###### `server`<sup>Required</sup> <a name="server" id="@thoroc/projen-typescript-git-hooks.OpenCode.addMcpServer.parameter.server"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>
+
+---
+
+##### `addPlugin` <a name="addPlugin" id="@thoroc/projen-typescript-git-hooks.OpenCode.addPlugin"></a>
+
+```typescript
+public addPlugin(name: string): void
+```
+
+###### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.OpenCode.addPlugin.parameter.name"></a>
+
+- *Type:* string
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.OpenCode.isConstruct"></a>
+
+```typescript
+import { OpenCode } from '@thoroc/projen-typescript-git-hooks'
+
+OpenCode.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.OpenCode.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.OpenCode.isComponent"></a>
+
+```typescript
+import { OpenCode } from '@thoroc/projen-typescript-git-hooks'
+
+OpenCode.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.OpenCode.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.OpenCode.of"></a>
+
+```typescript
+import { OpenCode } from '@thoroc/projen-typescript-git-hooks'
+
+OpenCode.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.OpenCode.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.property.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCodeOptions">OpenCodeOptions</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.OpenCode.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.OpenCode.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.OpenCode.property.options"></a>
+
+```typescript
+public readonly options: OpenCodeOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.OpenCodeOptions">OpenCodeOptions</a>
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.property.contextFile">contextFile</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.property.settingsPath">settingsPath</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `contextFile`<sup>Required</sup> <a name="contextFile" id="@thoroc/projen-typescript-git-hooks.OpenCode.property.contextFile"></a>
+
+```typescript
+public readonly contextFile: string;
+```
+
+- *Type:* string
+
+---
+
+##### `settingsPath`<sup>Required</sup> <a name="settingsPath" id="@thoroc/projen-typescript-git-hooks.OpenCode.property.settingsPath"></a>
+
+```typescript
+public readonly settingsPath: string;
+```
+
+- *Type:* string
+
+---
+
+### Prettier <a name="Prettier" id="@thoroc/projen-typescript-git-hooks.Prettier"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Prettier.Initializer"></a>
+
+```typescript
+import { Prettier } from '@thoroc/projen-typescript-git-hooks'
+
+new Prettier(project: GitHooksEnabledProject, options?: PrettierOptions, sortImports?: PrettierSortImportsOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.Initializer.parameter.options">options</a></code> | <code>projen.javascript.PrettierOptions</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.Initializer.parameter.sortImports">sortImports</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions">PrettierSortImportsOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Prettier.Initializer.parameter.project"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Prettier.Initializer.parameter.options"></a>
+
+- *Type:* projen.javascript.PrettierOptions
+
+---
+
+##### `sortImports`<sup>Optional</sup> <a name="sortImports" id="@thoroc/projen-typescript-git-hooks.Prettier.Initializer.parameter.sortImports"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions">PrettierSortImportsOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.addIgnorePattern">addIgnorePattern</a></code> | Defines Prettier ignore Patterns these patterns will be added to the file .prettierignore. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.addOverride">addOverride</a></code> | Add a prettier override. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.Prettier.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Prettier.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Prettier.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Prettier.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `addIgnorePattern` <a name="addIgnorePattern" id="@thoroc/projen-typescript-git-hooks.Prettier.addIgnorePattern"></a>
+
+```typescript
+public addIgnorePattern(pattern: string): void
+```
+
+Defines Prettier ignore Patterns these patterns will be added to the file .prettierignore.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Prettier.addIgnorePattern.parameter.pattern"></a>
+
+- *Type:* string
+
+filepatterns so exclude from prettier formatting.
+
+---
+
+##### `addOverride` <a name="addOverride" id="@thoroc/projen-typescript-git-hooks.Prettier.addOverride"></a>
+
+```typescript
+public addOverride(override: PrettierOverride): void
+```
+
+Add a prettier override.
+
+> [https://prettier.io/docs/en/configuration.html#configuration-overrides](https://prettier.io/docs/en/configuration.html#configuration-overrides)
+
+###### `override`<sup>Required</sup> <a name="override" id="@thoroc/projen-typescript-git-hooks.Prettier.addOverride.parameter.override"></a>
+
+- *Type:* projen.javascript.PrettierOverride
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.Prettier.isConstruct"></a>
+
+```typescript
+import { Prettier } from '@thoroc/projen-typescript-git-hooks'
+
+Prettier.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Prettier.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.Prettier.isComponent"></a>
+
+```typescript
+import { Prettier } from '@thoroc/projen-typescript-git-hooks'
+
+Prettier.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Prettier.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Prettier.of"></a>
+
+```typescript
+import { Prettier } from '@thoroc/projen-typescript-git-hooks'
+
+Prettier.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Prettier.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.property.overrides">overrides</a></code> | <code>projen.javascript.PrettierOverride[]</code> | Returns all Prettier overrides. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.property.settings">settings</a></code> | <code>projen.javascript.PrettierSettings</code> | Direct access to the prettier settings. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.property.ignoreFile">ignoreFile</a></code> | <code>projen.IgnoreFile</code> | The .prettierIgnore file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.property.defaultPrettierOptions">defaultPrettierOptions</a></code> | <code>projen.javascript.PrettierOptions</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.Prettier.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Prettier.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `overrides`<sup>Required</sup> <a name="overrides" id="@thoroc/projen-typescript-git-hooks.Prettier.property.overrides"></a>
+
+```typescript
+public readonly overrides: PrettierOverride[];
+```
+
+- *Type:* projen.javascript.PrettierOverride[]
+
+Returns all Prettier overrides.
+
+---
+
+##### `settings`<sup>Required</sup> <a name="settings" id="@thoroc/projen-typescript-git-hooks.Prettier.property.settings"></a>
+
+```typescript
+public readonly settings: PrettierSettings;
+```
+
+- *Type:* projen.javascript.PrettierSettings
+
+Direct access to the prettier settings.
+
+---
+
+##### `ignoreFile`<sup>Optional</sup> <a name="ignoreFile" id="@thoroc/projen-typescript-git-hooks.Prettier.property.ignoreFile"></a>
+
+```typescript
+public readonly ignoreFile: IgnoreFile;
+```
+
+- *Type:* projen.IgnoreFile
+
+The .prettierIgnore file.
+
+---
+
+##### `defaultPrettierOptions`<sup>Required</sup> <a name="defaultPrettierOptions" id="@thoroc/projen-typescript-git-hooks.Prettier.property.defaultPrettierOptions"></a>
+
+```typescript
+public readonly defaultPrettierOptions: PrettierOptions;
+```
+
+- *Type:* projen.javascript.PrettierOptions
+
+---
+
+
+### PullRequestCoverageComment <a name="PullRequestCoverageComment" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment"></a>
+
+Represents PullRequestCoverageComment configuration.
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.Initializer"></a>
+
+```typescript
+import { PullRequestCoverageComment } from '@thoroc/projen-typescript-git-hooks'
+
+new PullRequestCoverageComment(github: GitHub, options?: PullRequestCoverageCommentOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageCommentOptions">PullRequestCoverageCommentOptions</a></code> | *No description.* |
+
+---
+
+##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.Initializer.parameter.github"></a>
+
+- *Type:* projen.github.GitHub
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageCommentOptions">PullRequestCoverageCommentOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.isConstruct"></a>
+
+```typescript
+import { PullRequestCoverageComment } from '@thoroc/projen-typescript-git-hooks'
+
+PullRequestCoverageComment.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.isComponent"></a>
+
+```typescript
+import { PullRequestCoverageComment } from '@thoroc/projen-typescript-git-hooks'
+
+PullRequestCoverageComment.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
+### PullRequestLabeler <a name="PullRequestLabeler" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler"></a>
+
+Represents PullRequestLabeler configuration.
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.Initializer"></a>
+
+```typescript
+import { PullRequestLabeler } from '@thoroc/projen-typescript-git-hooks'
+
+new PullRequestLabeler(github: GitHub)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
+
+---
+
+##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.Initializer.parameter.github"></a>
+
+- *Type:* projen.github.GitHub
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.isConstruct"></a>
+
+```typescript
+import { PullRequestLabeler } from '@thoroc/projen-typescript-git-hooks'
+
+PullRequestLabeler.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.isComponent"></a>
+
+```typescript
+import { PullRequestLabeler } from '@thoroc/projen-typescript-git-hooks'
+
+PullRequestLabeler.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
+### QmdMcpServer <a name="QmdMcpServer" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.Initializer"></a>
+
+```typescript
+import { QmdMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+new QmdMcpServer(project: Project)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.isConstruct"></a>
+
+```typescript
+import { QmdMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+QmdMcpServer.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.isComponent"></a>
+
+```typescript
+import { QmdMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+QmdMcpServer.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.of"></a>
+
+```typescript
+import { QmdMcpServer } from '@thoroc/projen-typescript-git-hooks'
+
+QmdMcpServer.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.property.serverName">serverName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `serverName`<sup>Required</sup> <a name="serverName" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.property.serverName"></a>
+
+```typescript
+public readonly serverName: string;
+```
+
+- *Type:* string
+
+---
+
+### ReleasePlease <a name="ReleasePlease" id="@thoroc/projen-typescript-git-hooks.ReleasePlease"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.Initializer"></a>
+
+```typescript
+import { ReleasePlease } from '@thoroc/projen-typescript-git-hooks'
+
+new ReleasePlease(github: GitHub, options?: ReleasePleaseOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions">ReleasePleaseOptions</a></code> | *No description.* |
+
+---
+
+##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.Initializer.parameter.github"></a>
+
+- *Type:* projen.github.GitHub
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions">ReleasePleaseOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.isConstruct"></a>
+
+```typescript
+import { ReleasePlease } from '@thoroc/projen-typescript-git-hooks'
+
+ReleasePlease.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.isComponent"></a>
+
+```typescript
+import { ReleasePlease } from '@thoroc/projen-typescript-git-hooks'
+
+ReleasePlease.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
+### Renovate <a name="Renovate" id="@thoroc/projen-typescript-git-hooks.Renovate"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Renovate.Initializer"></a>
+
+```typescript
+import { Renovate } from '@thoroc/projen-typescript-git-hooks'
+
+new Renovate(project: Project, options?: RenovateOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.RenovateOptions">RenovateOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Renovate.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Renovate.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.RenovateOptions">RenovateOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.Renovate.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Renovate.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Renovate.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Renovate.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.Renovate.isConstruct"></a>
+
+```typescript
+import { Renovate } from '@thoroc/projen-typescript-git-hooks'
+
+Renovate.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Renovate.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.Renovate.isComponent"></a>
+
+```typescript
+import { Renovate } from '@thoroc/projen-typescript-git-hooks'
+
+Renovate.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Renovate.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.Renovate.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Renovate.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
+### RtkProxy <a name="RtkProxy" id="@thoroc/projen-typescript-git-hooks.RtkProxy"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.RtkProxy.Initializer"></a>
+
+```typescript
+import { RtkProxy } from '@thoroc/projen-typescript-git-hooks'
+
+new RtkProxy(project: Project)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.RtkProxy.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.RtkProxy.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.RtkProxy.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.RtkProxy.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.RtkProxy.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.RtkProxy.isConstruct"></a>
+
+```typescript
+import { RtkProxy } from '@thoroc/projen-typescript-git-hooks'
+
+RtkProxy.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.RtkProxy.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.RtkProxy.isComponent"></a>
+
+```typescript
+import { RtkProxy } from '@thoroc/projen-typescript-git-hooks'
+
+RtkProxy.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.RtkProxy.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.RtkProxy.of"></a>
+
+```typescript
+import { RtkProxy } from '@thoroc/projen-typescript-git-hooks'
+
+RtkProxy.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.RtkProxy.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.RtkProxy.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.RtkProxy.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
+### Vitest <a name="Vitest" id="@thoroc/projen-typescript-git-hooks.Vitest"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Vitest.Initializer"></a>
+
+```typescript
+import { Vitest } from '@thoroc/projen-typescript-git-hooks'
+
+new Vitest(project: NodeProject, options?: VitestOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.Initializer.parameter.project">project</a></code> | <code>projen.javascript.NodeProject</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.VitestOptions">VitestOptions</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Vitest.Initializer.parameter.project"></a>
+
+- *Type:* projen.javascript.NodeProject
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Vitest.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.VitestOptions">VitestOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.Vitest.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Vitest.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Vitest.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Vitest.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.of">of</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.Vitest.isConstruct"></a>
+
+```typescript
+import { Vitest } from '@thoroc/projen-typescript-git-hooks'
+
+Vitest.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Vitest.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.Vitest.isComponent"></a>
+
+```typescript
+import { Vitest } from '@thoroc/projen-typescript-git-hooks'
+
+Vitest.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.Vitest.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Vitest.of"></a>
+
+```typescript
+import { Vitest } from '@thoroc/projen-typescript-git-hooks'
+
+Vitest.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Vitest.of.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.Vitest.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Vitest.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
 
 
 ## Structs <a name="Structs" id="Structs"></a>
+
+### AgenticHarnessesOptions <a name="AgenticHarnessesOptions" id="@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions.Initializer"></a>
+
+```typescript
+import { AgenticHarnessesOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const agenticHarnessesOptions: AgenticHarnessesOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions.property.claudeCode">claudeCode</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions">ClaudeCodeOptions</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions.property.codex">codex</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexOptions">OpenAICodexOptions</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions.property.gemini">gemini</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCliOptions">GeminiCliOptions</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions.property.harnesses">harnesses</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions.property.opencode">opencode</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCodeOptions">OpenCodeOptions</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions.property.vibe">vibe</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibeOptions">MistralVibeOptions</a></code> | *No description.* |
+
+---
+
+##### `claudeCode`<sup>Optional</sup> <a name="claudeCode" id="@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions.property.claudeCode"></a>
+
+```typescript
+public readonly claudeCode: ClaudeCodeOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions">ClaudeCodeOptions</a>
+
+---
+
+##### `codex`<sup>Optional</sup> <a name="codex" id="@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions.property.codex"></a>
+
+```typescript
+public readonly codex: OpenAICodexOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexOptions">OpenAICodexOptions</a>
+
+---
+
+##### `gemini`<sup>Optional</sup> <a name="gemini" id="@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions.property.gemini"></a>
+
+```typescript
+public readonly gemini: GeminiCliOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GeminiCliOptions">GeminiCliOptions</a>
+
+---
+
+##### `harnesses`<sup>Optional</sup> <a name="harnesses" id="@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions.property.harnesses"></a>
+
+```typescript
+public readonly harnesses: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `opencode`<sup>Optional</sup> <a name="opencode" id="@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions.property.opencode"></a>
+
+```typescript
+public readonly opencode: OpenCodeOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.OpenCodeOptions">OpenCodeOptions</a>
+
+---
+
+##### `vibe`<sup>Optional</sup> <a name="vibe" id="@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions.property.vibe"></a>
+
+```typescript
+public readonly vibe: MistralVibeOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MistralVibeOptions">MistralVibeOptions</a>
+
+---
+
+### AislopCi <a name="AislopCi" id="@thoroc/projen-typescript-git-hooks.AislopCi"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.AislopCi.Initializer"></a>
+
+```typescript
+import { AislopCi } from '@thoroc/projen-typescript-git-hooks'
+
+const aislopCi: AislopCi = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopCi.property.failBelow">failBelow</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopCi.property.format">format</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `failBelow`<sup>Optional</sup> <a name="failBelow" id="@thoroc/projen-typescript-git-hooks.AislopCi.property.failBelow"></a>
+
+```typescript
+public readonly failBelow: number;
+```
+
+- *Type:* number
+
+---
+
+##### `format`<sup>Optional</sup> <a name="format" id="@thoroc/projen-typescript-git-hooks.AislopCi.property.format"></a>
+
+```typescript
+public readonly format: string;
+```
+
+- *Type:* string
+
+---
+
+### AislopConfigOptions <a name="AislopConfigOptions" id="@thoroc/projen-typescript-git-hooks.AislopConfigOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.AislopConfigOptions.Initializer"></a>
+
+```typescript
+import { AislopConfigOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const aislopConfigOptions: AislopConfigOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.ci">ci</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopCi">AislopCi</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.engines">engines</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopEngines">AislopEngines</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.extends">extends</a></code> | <code>string \| string[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.maxFileLoc">maxFileLoc</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.maxFunctionLoc">maxFunctionLoc</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.maxNesting">maxNesting</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.maxParams">maxParams</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.scoring">scoring</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoring">AislopScoring</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.security">security</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopSecurityOptions">AislopSecurityOptions</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.telemetry">telemetry</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopTelemetry">AislopTelemetry</a></code> | *No description.* |
+
+---
+
+##### `ci`<sup>Optional</sup> <a name="ci" id="@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.ci"></a>
+
+```typescript
+public readonly ci: AislopCi;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.AislopCi">AislopCi</a>
+
+---
+
+##### `engines`<sup>Optional</sup> <a name="engines" id="@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.engines"></a>
+
+```typescript
+public readonly engines: AislopEngines;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.AislopEngines">AislopEngines</a>
+
+---
+
+##### `extends`<sup>Optional</sup> <a name="extends" id="@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.extends"></a>
+
+```typescript
+public readonly extends: string | string[];
+```
+
+- *Type:* string | string[]
+
+---
+
+##### `maxFileLoc`<sup>Optional</sup> <a name="maxFileLoc" id="@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.maxFileLoc"></a>
+
+```typescript
+public readonly maxFileLoc: number;
+```
+
+- *Type:* number
+
+---
+
+##### `maxFunctionLoc`<sup>Optional</sup> <a name="maxFunctionLoc" id="@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.maxFunctionLoc"></a>
+
+```typescript
+public readonly maxFunctionLoc: number;
+```
+
+- *Type:* number
+
+---
+
+##### `maxNesting`<sup>Optional</sup> <a name="maxNesting" id="@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.maxNesting"></a>
+
+```typescript
+public readonly maxNesting: number;
+```
+
+- *Type:* number
+
+---
+
+##### `maxParams`<sup>Optional</sup> <a name="maxParams" id="@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.maxParams"></a>
+
+```typescript
+public readonly maxParams: number;
+```
+
+- *Type:* number
+
+---
+
+##### `scoring`<sup>Optional</sup> <a name="scoring" id="@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.scoring"></a>
+
+```typescript
+public readonly scoring: AislopScoring;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.AislopScoring">AislopScoring</a>
+
+---
+
+##### `security`<sup>Optional</sup> <a name="security" id="@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.security"></a>
+
+```typescript
+public readonly security: AislopSecurityOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.AislopSecurityOptions">AislopSecurityOptions</a>
+
+---
+
+##### `telemetry`<sup>Optional</sup> <a name="telemetry" id="@thoroc/projen-typescript-git-hooks.AislopConfigOptions.property.telemetry"></a>
+
+```typescript
+public readonly telemetry: AislopTelemetry;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.AislopTelemetry">AislopTelemetry</a>
+
+---
+
+### AislopEngines <a name="AislopEngines" id="@thoroc/projen-typescript-git-hooks.AislopEngines"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.AislopEngines.Initializer"></a>
+
+```typescript
+import { AislopEngines } from '@thoroc/projen-typescript-git-hooks'
+
+const aislopEngines: AislopEngines = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopEngines.property.aiSlop">aiSlop</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopEngines.property.architecture">architecture</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopEngines.property.codeQuality">codeQuality</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopEngines.property.format">format</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopEngines.property.lint">lint</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopEngines.property.security">security</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `aiSlop`<sup>Optional</sup> <a name="aiSlop" id="@thoroc/projen-typescript-git-hooks.AislopEngines.property.aiSlop"></a>
+
+```typescript
+public readonly aiSlop: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `architecture`<sup>Optional</sup> <a name="architecture" id="@thoroc/projen-typescript-git-hooks.AislopEngines.property.architecture"></a>
+
+```typescript
+public readonly architecture: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `codeQuality`<sup>Optional</sup> <a name="codeQuality" id="@thoroc/projen-typescript-git-hooks.AislopEngines.property.codeQuality"></a>
+
+```typescript
+public readonly codeQuality: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `format`<sup>Optional</sup> <a name="format" id="@thoroc/projen-typescript-git-hooks.AislopEngines.property.format"></a>
+
+```typescript
+public readonly format: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `lint`<sup>Optional</sup> <a name="lint" id="@thoroc/projen-typescript-git-hooks.AislopEngines.property.lint"></a>
+
+```typescript
+public readonly lint: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `security`<sup>Optional</sup> <a name="security" id="@thoroc/projen-typescript-git-hooks.AislopEngines.property.security"></a>
+
+```typescript
+public readonly security: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+### AislopMcpServerOptions <a name="AislopMcpServerOptions" id="@thoroc/projen-typescript-git-hooks.AislopMcpServerOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.AislopMcpServerOptions.Initializer"></a>
+
+```typescript
+import { AislopMcpServerOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const aislopMcpServerOptions: AislopMcpServerOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServerOptions.property.config">config</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions">AislopConfigOptions</a></code> | *No description.* |
+
+---
+
+##### `config`<sup>Optional</sup> <a name="config" id="@thoroc/projen-typescript-git-hooks.AislopMcpServerOptions.property.config"></a>
+
+```typescript
+public readonly config: AislopConfigOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.AislopConfigOptions">AislopConfigOptions</a>
+
+---
+
+### AislopScoring <a name="AislopScoring" id="@thoroc/projen-typescript-git-hooks.AislopScoring"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.AislopScoring.Initializer"></a>
+
+```typescript
+import { AislopScoring } from '@thoroc/projen-typescript-git-hooks'
+
+const aislopScoring: AislopScoring = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoring.property.maxPerRule">maxPerRule</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoring.property.smoothing">smoothing</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoring.property.thresholds">thresholds</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoringThresholds">AislopScoringThresholds</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoring.property.weights">weights</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoringWeights">AislopScoringWeights</a></code> | *No description.* |
+
+---
+
+##### `maxPerRule`<sup>Optional</sup> <a name="maxPerRule" id="@thoroc/projen-typescript-git-hooks.AislopScoring.property.maxPerRule"></a>
+
+```typescript
+public readonly maxPerRule: number;
+```
+
+- *Type:* number
+
+---
+
+##### `smoothing`<sup>Optional</sup> <a name="smoothing" id="@thoroc/projen-typescript-git-hooks.AislopScoring.property.smoothing"></a>
+
+```typescript
+public readonly smoothing: number;
+```
+
+- *Type:* number
+
+---
+
+##### `thresholds`<sup>Optional</sup> <a name="thresholds" id="@thoroc/projen-typescript-git-hooks.AislopScoring.property.thresholds"></a>
+
+```typescript
+public readonly thresholds: AislopScoringThresholds;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.AislopScoringThresholds">AislopScoringThresholds</a>
+
+---
+
+##### `weights`<sup>Optional</sup> <a name="weights" id="@thoroc/projen-typescript-git-hooks.AislopScoring.property.weights"></a>
+
+```typescript
+public readonly weights: AislopScoringWeights;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.AislopScoringWeights">AislopScoringWeights</a>
+
+---
+
+### AislopScoringThresholds <a name="AislopScoringThresholds" id="@thoroc/projen-typescript-git-hooks.AislopScoringThresholds"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.AislopScoringThresholds.Initializer"></a>
+
+```typescript
+import { AislopScoringThresholds } from '@thoroc/projen-typescript-git-hooks'
+
+const aislopScoringThresholds: AislopScoringThresholds = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoringThresholds.property.good">good</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoringThresholds.property.ok">ok</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `good`<sup>Optional</sup> <a name="good" id="@thoroc/projen-typescript-git-hooks.AislopScoringThresholds.property.good"></a>
+
+```typescript
+public readonly good: number;
+```
+
+- *Type:* number
+
+---
+
+##### `ok`<sup>Optional</sup> <a name="ok" id="@thoroc/projen-typescript-git-hooks.AislopScoringThresholds.property.ok"></a>
+
+```typescript
+public readonly ok: number;
+```
+
+- *Type:* number
+
+---
+
+### AislopScoringWeights <a name="AislopScoringWeights" id="@thoroc/projen-typescript-git-hooks.AislopScoringWeights"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.AislopScoringWeights.Initializer"></a>
+
+```typescript
+import { AislopScoringWeights } from '@thoroc/projen-typescript-git-hooks'
+
+const aislopScoringWeights: AislopScoringWeights = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoringWeights.property.aiSlop">aiSlop</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoringWeights.property.architecture">architecture</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoringWeights.property.codeQuality">codeQuality</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoringWeights.property.format">format</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoringWeights.property.lint">lint</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopScoringWeights.property.security">security</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `aiSlop`<sup>Optional</sup> <a name="aiSlop" id="@thoroc/projen-typescript-git-hooks.AislopScoringWeights.property.aiSlop"></a>
+
+```typescript
+public readonly aiSlop: number;
+```
+
+- *Type:* number
+
+---
+
+##### `architecture`<sup>Optional</sup> <a name="architecture" id="@thoroc/projen-typescript-git-hooks.AislopScoringWeights.property.architecture"></a>
+
+```typescript
+public readonly architecture: number;
+```
+
+- *Type:* number
+
+---
+
+##### `codeQuality`<sup>Optional</sup> <a name="codeQuality" id="@thoroc/projen-typescript-git-hooks.AislopScoringWeights.property.codeQuality"></a>
+
+```typescript
+public readonly codeQuality: number;
+```
+
+- *Type:* number
+
+---
+
+##### `format`<sup>Optional</sup> <a name="format" id="@thoroc/projen-typescript-git-hooks.AislopScoringWeights.property.format"></a>
+
+```typescript
+public readonly format: number;
+```
+
+- *Type:* number
+
+---
+
+##### `lint`<sup>Optional</sup> <a name="lint" id="@thoroc/projen-typescript-git-hooks.AislopScoringWeights.property.lint"></a>
+
+```typescript
+public readonly lint: number;
+```
+
+- *Type:* number
+
+---
+
+##### `security`<sup>Optional</sup> <a name="security" id="@thoroc/projen-typescript-git-hooks.AislopScoringWeights.property.security"></a>
+
+```typescript
+public readonly security: number;
+```
+
+- *Type:* number
+
+---
+
+### AislopSecurityOptions <a name="AislopSecurityOptions" id="@thoroc/projen-typescript-git-hooks.AislopSecurityOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.AislopSecurityOptions.Initializer"></a>
+
+```typescript
+import { AislopSecurityOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const aislopSecurityOptions: AislopSecurityOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopSecurityOptions.property.audit">audit</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopSecurityOptions.property.auditTimeout">auditTimeout</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `audit`<sup>Optional</sup> <a name="audit" id="@thoroc/projen-typescript-git-hooks.AislopSecurityOptions.property.audit"></a>
+
+```typescript
+public readonly audit: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `auditTimeout`<sup>Optional</sup> <a name="auditTimeout" id="@thoroc/projen-typescript-git-hooks.AislopSecurityOptions.property.auditTimeout"></a>
+
+```typescript
+public readonly auditTimeout: number;
+```
+
+- *Type:* number
+
+---
+
+### AislopTelemetry <a name="AislopTelemetry" id="@thoroc/projen-typescript-git-hooks.AislopTelemetry"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.AislopTelemetry.Initializer"></a>
+
+```typescript
+import { AislopTelemetry } from '@thoroc/projen-typescript-git-hooks'
+
+const aislopTelemetry: AislopTelemetry = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopTelemetry.property.enabled">enabled</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `enabled`<sup>Optional</sup> <a name="enabled" id="@thoroc/projen-typescript-git-hooks.AislopTelemetry.property.enabled"></a>
+
+```typescript
+public readonly enabled: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+### ClaudeCodeHookEntry <a name="ClaudeCodeHookEntry" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeHookEntry"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeHookEntry.Initializer"></a>
+
+```typescript
+import { ClaudeCodeHookEntry } from '@thoroc/projen-typescript-git-hooks'
+
+const claudeCodeHookEntry: ClaudeCodeHookEntry = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeHookEntry.property.command">command</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeHookEntry.property.type">type</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeHookEntry.property.timeout">timeout</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeHookEntry.property.command"></a>
+
+```typescript
+public readonly command: string;
+```
+
+- *Type:* string
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeHookEntry.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+---
+
+##### `timeout`<sup>Optional</sup> <a name="timeout" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeHookEntry.property.timeout"></a>
+
+```typescript
+public readonly timeout: number;
+```
+
+- *Type:* number
+
+---
+
+### ClaudeCodeHookGroup <a name="ClaudeCodeHookGroup" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeHookGroup"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeHookGroup.Initializer"></a>
+
+```typescript
+import { ClaudeCodeHookGroup } from '@thoroc/projen-typescript-git-hooks'
+
+const claudeCodeHookGroup: ClaudeCodeHookGroup = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeHookGroup.property.hooks">hooks</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeHookEntry">ClaudeCodeHookEntry</a>[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeHookGroup.property.matcher">matcher</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `hooks`<sup>Required</sup> <a name="hooks" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeHookGroup.property.hooks"></a>
+
+```typescript
+public readonly hooks: ClaudeCodeHookEntry[];
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeHookEntry">ClaudeCodeHookEntry</a>[]
+
+---
+
+##### `matcher`<sup>Optional</sup> <a name="matcher" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeHookGroup.property.matcher"></a>
+
+```typescript
+public readonly matcher: string;
+```
+
+- *Type:* string
+
+---
+
+### ClaudeCodeOptions <a name="ClaudeCodeOptions" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions.Initializer"></a>
+
+```typescript
+import { ClaudeCodeOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const claudeCodeOptions: ClaudeCodeOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions.property.env">env</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions.property.hooks">hooks</a></code> | <code>{[ key: string ]: <a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeHookGroup">ClaudeCodeHookGroup</a>[]}</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions.property.mcpServers">mcpServers</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions.property.permissions">permissions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodePermissions">ClaudeCodePermissions</a></code> | *No description.* |
+
+---
+
+##### `env`<sup>Optional</sup> <a name="env" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions.property.env"></a>
+
+```typescript
+public readonly env: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+---
+
+##### `hooks`<sup>Optional</sup> <a name="hooks" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions.property.hooks"></a>
+
+```typescript
+public readonly hooks: {[ key: string ]: ClaudeCodeHookGroup[]};
+```
+
+- *Type:* {[ key: string ]: <a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodeHookGroup">ClaudeCodeHookGroup</a>[]}
+
+---
+
+##### `mcpServers`<sup>Optional</sup> <a name="mcpServers" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions.property.mcpServers"></a>
+
+```typescript
+public readonly mcpServers: McpServer[];
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]
+
+---
+
+##### `permissions`<sup>Optional</sup> <a name="permissions" id="@thoroc/projen-typescript-git-hooks.ClaudeCodeOptions.property.permissions"></a>
+
+```typescript
+public readonly permissions: ClaudeCodePermissions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodePermissions">ClaudeCodePermissions</a>
+
+---
+
+### ClaudeCodePermissions <a name="ClaudeCodePermissions" id="@thoroc/projen-typescript-git-hooks.ClaudeCodePermissions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.ClaudeCodePermissions.Initializer"></a>
+
+```typescript
+import { ClaudeCodePermissions } from '@thoroc/projen-typescript-git-hooks'
+
+const claudeCodePermissions: ClaudeCodePermissions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodePermissions.property.allow">allow</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCodePermissions.property.deny">deny</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `allow`<sup>Optional</sup> <a name="allow" id="@thoroc/projen-typescript-git-hooks.ClaudeCodePermissions.property.allow"></a>
+
+```typescript
+public readonly allow: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `deny`<sup>Optional</sup> <a name="deny" id="@thoroc/projen-typescript-git-hooks.ClaudeCodePermissions.property.deny"></a>
+
+```typescript
+public readonly deny: string[];
+```
+
+- *Type:* string[]
+
+---
 
 ### CodeOfConductOptions <a name="CodeOfConductOptions" id="@thoroc/projen-typescript-git-hooks.CodeOfConductOptions"></a>
 
@@ -252,16 +11231,216 @@ public readonly params: EditorConfigParamsOptions;
 
 ---
 
-### EslintRules <a name="EslintRules" id="@thoroc/projen-typescript-git-hooks.EslintRules"></a>
+### GeminiCliHookEntry <a name="GeminiCliHookEntry" id="@thoroc/projen-typescript-git-hooks.GeminiCliHookEntry"></a>
 
-#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.EslintRules.Initializer"></a>
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.GeminiCliHookEntry.Initializer"></a>
 
 ```typescript
-import { EslintRules } from '@thoroc/projen-typescript-git-hooks'
+import { GeminiCliHookEntry } from '@thoroc/projen-typescript-git-hooks'
 
-const eslintRules: EslintRules = { ... }
+const geminiCliHookEntry: GeminiCliHookEntry = { ... }
 ```
 
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCliHookEntry.property.command">command</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCliHookEntry.property.type">type</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.GeminiCliHookEntry.property.command"></a>
+
+```typescript
+public readonly command: string;
+```
+
+- *Type:* string
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="@thoroc/projen-typescript-git-hooks.GeminiCliHookEntry.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+---
+
+### GeminiCliHookGroup <a name="GeminiCliHookGroup" id="@thoroc/projen-typescript-git-hooks.GeminiCliHookGroup"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.GeminiCliHookGroup.Initializer"></a>
+
+```typescript
+import { GeminiCliHookGroup } from '@thoroc/projen-typescript-git-hooks'
+
+const geminiCliHookGroup: GeminiCliHookGroup = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCliHookGroup.property.hooks">hooks</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCliHookEntry">GeminiCliHookEntry</a>[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCliHookGroup.property.matcher">matcher</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `hooks`<sup>Required</sup> <a name="hooks" id="@thoroc/projen-typescript-git-hooks.GeminiCliHookGroup.property.hooks"></a>
+
+```typescript
+public readonly hooks: GeminiCliHookEntry[];
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GeminiCliHookEntry">GeminiCliHookEntry</a>[]
+
+---
+
+##### `matcher`<sup>Optional</sup> <a name="matcher" id="@thoroc/projen-typescript-git-hooks.GeminiCliHookGroup.property.matcher"></a>
+
+```typescript
+public readonly matcher: string;
+```
+
+- *Type:* string
+
+---
+
+### GeminiCliOptions <a name="GeminiCliOptions" id="@thoroc/projen-typescript-git-hooks.GeminiCliOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.GeminiCliOptions.Initializer"></a>
+
+```typescript
+import { GeminiCliOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const geminiCliOptions: GeminiCliOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCliOptions.property.contextFileNames">contextFileNames</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCliOptions.property.hooks">hooks</a></code> | <code>{[ key: string ]: <a href="#@thoroc/projen-typescript-git-hooks.GeminiCliHookGroup">GeminiCliHookGroup</a>[]}</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCliOptions.property.mcpServers">mcpServers</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCliOptions.property.model">model</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCliOptions.property.theme">theme</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `contextFileNames`<sup>Optional</sup> <a name="contextFileNames" id="@thoroc/projen-typescript-git-hooks.GeminiCliOptions.property.contextFileNames"></a>
+
+```typescript
+public readonly contextFileNames: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `hooks`<sup>Optional</sup> <a name="hooks" id="@thoroc/projen-typescript-git-hooks.GeminiCliOptions.property.hooks"></a>
+
+```typescript
+public readonly hooks: {[ key: string ]: GeminiCliHookGroup[]};
+```
+
+- *Type:* {[ key: string ]: <a href="#@thoroc/projen-typescript-git-hooks.GeminiCliHookGroup">GeminiCliHookGroup</a>[]}
+
+---
+
+##### `mcpServers`<sup>Optional</sup> <a name="mcpServers" id="@thoroc/projen-typescript-git-hooks.GeminiCliOptions.property.mcpServers"></a>
+
+```typescript
+public readonly mcpServers: McpServer[];
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]
+
+---
+
+##### `model`<sup>Optional</sup> <a name="model" id="@thoroc/projen-typescript-git-hooks.GeminiCliOptions.property.model"></a>
+
+```typescript
+public readonly model: string;
+```
+
+- *Type:* string
+
+---
+
+##### `theme`<sup>Optional</sup> <a name="theme" id="@thoroc/projen-typescript-git-hooks.GeminiCliOptions.property.theme"></a>
+
+```typescript
+public readonly theme: string;
+```
+
+- *Type:* string
+
+---
+
+### GitHooksAction <a name="GitHooksAction" id="@thoroc/projen-typescript-git-hooks.GitHooksAction"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.GitHooksAction.Initializer"></a>
+
+```typescript
+import { GitHooksAction } from '@thoroc/projen-typescript-git-hooks'
+
+const gitHooksAction: GitHooksAction = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksAction.property.commands">commands</a></code> | <code>string \| string[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksAction.property.githookType">githookType</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksAction.property.glob">glob</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksAction.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `commands`<sup>Required</sup> <a name="commands" id="@thoroc/projen-typescript-git-hooks.GitHooksAction.property.commands"></a>
+
+```typescript
+public readonly commands: string | string[];
+```
+
+- *Type:* string | string[]
+
+---
+
+##### `githookType`<sup>Required</sup> <a name="githookType" id="@thoroc/projen-typescript-git-hooks.GitHooksAction.property.githookType"></a>
+
+```typescript
+public readonly githookType: GitClientHook;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a>
+
+---
+
+##### `glob`<sup>Required</sup> <a name="glob" id="@thoroc/projen-typescript-git-hooks.GitHooksAction.property.glob"></a>
+
+```typescript
+public readonly glob: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksAction.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
 
 ### GitHooksEnabledProjectOptions <a name="GitHooksEnabledProjectOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions"></a>
 
@@ -316,6 +11495,7 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.bundledDeps">bundledDeps</a></code> | <code>string[]</code> | List of dependencies to bundle into this module. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.bunVersion">bunVersion</a></code> | <code>string</code> | The version of Bun to use if using Bun as a package manager. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.deps">deps</a></code> | <code>string[]</code> | Runtime dependencies of this module. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.description">description</a></code> | <code>string</code> | The description is just a string that helps people understand the purpose of the package. |
@@ -325,12 +11505,14 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.keywords">keywords</a></code> | <code>string[]</code> | Keywords to include in `package.json`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.license">license</a></code> | <code>string</code> | License's SPDX identifier. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.licensed">licensed</a></code> | <code>boolean</code> | Indicates if a license should be added. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Minimum node.js version to require via `engines` (inclusive). |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum Node.js version to require via package.json `engines` (inclusive). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | The maximum node version supported by this package. Most projects should not use this option. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. Most projects should not use this option. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmRegistry">npmRegistry</a></code> | <code>string</code> | The host name of the npm registry to publish to. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The Node Package Manager used to execute scripts. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.packageName">packageName</a></code> | <code>string</code> | The "name" in package.json. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.peerDependencyOptions">peerDependencyOptions</a></code> | <code>projen.javascript.PeerDependencyOptions</code> | Options for `peerDeps`. |
@@ -341,9 +11523,12 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.scripts">scripts</a></code> | <code>{[ key: string ]: string}</code> | npm scripts to include. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.stability">stability</a></code> | <code>string</code> | Package's Stability. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.bumpPackage">bumpPackage</a></code> | <code>string</code> | The `commit-and-tag-version` compatible package used to bump the package version, as a dependency string. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.jsiiReleaseVersion">jsiiReleaseVersion</a></code> | <code>string</code> | Version requirement of `publib` which is used to publish modules to npm. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.majorVersion">majorVersion</a></code> | <code>number</code> | Major version to release from the default branch. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.nextVersionCommand">nextVersionCommand</a></code> | <code>string</code> | A shell command to control the next version to release. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.postBuildSteps">postBuildSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Steps to execute after build as part of the release workflow. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.prerelease">prerelease</a></code> | <code>string</code> | Bump versions from the default branch as pre-releases (e.g. "beta", "alpha", "pre"). |
@@ -351,26 +11536,34 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.publishTasks">publishTasks</a></code> | <code>boolean</code> | Define publishing tasks that can be executed manually as well as workflows. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releasableCommits">releasableCommits</a></code> | <code>projen.ReleasableCommits</code> | Find commits that should be considered releasable Used to decide if a release is required. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseEnvironment">releaseEnvironment</a></code> | <code>string</code> | The GitHub Actions environment used for the release. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseEveryCommit">releaseEveryCommit</a></code> | <code>boolean</code> | Automatically release new versions every commit to one of branches in `releaseBranches`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseFailureIssueLabel">releaseFailureIssueLabel</a></code> | <code>string</code> | The label to apply to issues indicating publish failures. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseSchedule">releaseSchedule</a></code> | <code>string</code> | CRON schedule to trigger new releases. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseTagPrefix">releaseTagPrefix</a></code> | <code>string</code> | Automatically add the given prefix to release tags. Useful if you are releasing on multiple branches with overlapping version numbers. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseTrigger">releaseTrigger</a></code> | <code>projen.release.ReleaseTrigger</code> | The release trigger to use. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseWorkflowEnv">releaseWorkflowEnv</a></code> | <code>{[ key: string ]: string}</code> | Build environment variables for release workflows. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseWorkflowName">releaseWorkflowName</a></code> | <code>string</code> | The name of the default release workflow. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseWorkflowSetupSteps">releaseWorkflowSetupSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | A set of workflow steps to execute in order to setup the workflow container. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with standard-version package. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowContainerImage">workflowContainerImage</a></code> | <code>string</code> | Container image to use for GitHub workflows. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.auditDeps">auditDeps</a></code> | <code>boolean</code> | Run security audit on dependencies. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.auditDepsOptions">auditDepsOptions</a></code> | <code>projen.javascript.AuditOptions</code> | Security audit options. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.biome">biome</a></code> | <code>boolean</code> | Setup Biome. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.biomeOptions">biomeOptions</a></code> | <code>projen.javascript.BiomeOptions</code> | Biome options. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.buildWorkflow">buildWorkflow</a></code> | <code>boolean</code> | Define a GitHub workflow for building PRs. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.buildWorkflowOptions">buildWorkflowOptions</a></code> | <code>projen.javascript.BuildWorkflowOptions</code> | Options for PR build workflow. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.buildWorkflowTriggers">buildWorkflowTriggers</a></code> | <code>projen.github.workflows.Triggers</code> | Build workflow triggers. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.bundlerOptions">bundlerOptions</a></code> | <code>projen.javascript.BundlerOptions</code> | Options for `Bundler`. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v3 A secret is required for private repos. Configured with `@codeCovTokenSecret`. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token A secret is required to send coverage for private repositories. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.copyrightOwner">copyrightOwner</a></code> | <code>string</code> | License copyright owner. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.copyrightPeriod">copyrightPeriod</a></code> | <code>string</code> | The copyright years to put in the LICENSE file. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.dependabot">dependabot</a></code> | <code>boolean</code> | Use dependabot to handle dependency upgrades. |
@@ -398,7 +11591,7 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseWorkflow">releaseWorkflow</a></code> | <code>boolean</code> | DEPRECATED: renamed to `release`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowBootstrapSteps">workflowBootstrapSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Workflow steps to use in order to bootstrap this repo. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version to use in GitHub workflows. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.disableTsconfig">disableTsconfig</a></code> | <code>boolean</code> | Do not generate a `tsconfig.json` file (used by jsii projects since tsconfig.json is generated by the jsii compiler). |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.disableTsconfigDev">disableTsconfigDev</a></code> | <code>boolean</code> | Do not generate a `tsconfig.dev.json` file. |
@@ -416,12 +11609,16 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom TSConfig. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom tsconfig options for the development tsconfig.json file (used for testing). |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.tsJestOptions">tsJestOptions</a></code> | <code>projen.typescript.TsJestOptions</code> | Options for ts-jest. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.debug">debug</a></code> | <code>boolean</code> | Printing out debug statement. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.editorConfig">editorConfig</a></code> | <code>boolean</code> | Enable editorConfig. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.editorConfigOptions">editorConfigOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfigOptions">EditorConfigOptions</a></code> | EditorConfig options. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.gitHooksManager">gitHooksManager</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManagerType">GitHooksManagerType</a></code> | Setup gitHooksManager. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.gitHooksManagerOptions">gitHooksManagerOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyOptions">HuskyOptions</a> \| <a href="#@thoroc/projen-typescript-git-hooks.LefthookOptions">LefthookOptions</a></code> | gitHooksManagerEnabled options. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.prettierSortImportsOptions">prettierSortImportsOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions">PrettierSortImportsOptions</a></code> | Enable @trivago/prettier-plugin-sort-imports and configure it. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable Vitest instead of Jest. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.vitestOptions">vitestOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.VitestOptions">VitestOptions</a></code> | Vitest options. |
 
 ---
 
@@ -503,7 +11700,7 @@ Relative to this directory, all files are synthesized.
 
 If this project has a parent, this directory is relative to the parent
 directory and it cannot be the same as the parent or any of it's other
-sub-projects.
+subprojects.
 
 ---
 
@@ -979,6 +12176,19 @@ this will be what you `package.json` will eventually include.
 
 ---
 
+##### `bunVersion`<sup>Optional</sup> <a name="bunVersion" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.bunVersion"></a>
+
+```typescript
+public readonly bunVersion: string;
+```
+
+- *Type:* string
+- *Default:* "latest"
+
+The version of Bun to use if using Bun as a package manager.
+
+---
+
 ##### `codeArtifactOptions`<sup>Optional</sup> <a name="codeArtifactOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.codeArtifactOptions"></a>
 
 ```typescript
@@ -1142,9 +12352,15 @@ public readonly maxNodeVersion: string;
 ```
 
 - *Type:* string
-- *Default:* no max
+- *Default:* no maximum version is enforced
 
-Minimum node.js version to require via `engines` (inclusive).
+The maximum node version supported by this package. Most projects should not use this option.
+
+The value indicates that the package is incompatible with any newer versions of node.
+This requirement is enforced via the engines field.
+
+You will normally not need to set this option.
+Consider this option only if your package is known to not function with newer versions of node.
 
 ---
 
@@ -1155,9 +12371,19 @@ public readonly minNodeVersion: string;
 ```
 
 - *Type:* string
-- *Default:* no "engines" specified
+- *Default:* no minimum version is enforced
 
-Minimum Node.js version to require via package.json `engines` (inclusive).
+The minimum node version required by this package to function. Most projects should not use this option.
+
+The value indicates that the package is incompatible with any older versions of node.
+This requirement is enforced via the engines field.
+
+You will normally not need to set this option, even if your package is incompatible with EOL versions of node.
+Consider this option only if your package depends on a specific feature, that is not available in other LTS versions.
+Setting this option has very high impact on the consumers of your package,
+as package managers will actively prevent usage with node versions you have marked as incompatible.
+
+To change the node version of your CI/CD workflows, use `workflowNodeVersion`.
 
 ---
 
@@ -1171,6 +12397,27 @@ public readonly npmAccess: NpmAccess;
 - *Default:* for scoped packages (e.g. `foo@bar`), the default is `NpmAccess.RESTRICTED`, for non-scoped packages, the default is `NpmAccess.PUBLIC`.
 
 Access level of the npm package.
+
+---
+
+##### `npmProvenance`<sup>Optional</sup> <a name="npmProvenance" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmProvenance"></a>
+
+```typescript
+public readonly npmProvenance: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true for public packages, false otherwise
+
+Should provenance statements be generated when the package is published.
+
+A supported package manager is required to publish a package with npm provenance statements and
+you will need to use a supported CI/CD provider.
+
+Note that the projen `Release` and `Publisher` components are using `publib` to publish packages,
+which is using npm internally and supports provenance statements independently of the package manager used.
+
+> [https://docs.npmjs.com/generating-provenance-statements](https://docs.npmjs.com/generating-provenance-statements)
 
 ---
 
@@ -1218,6 +12465,19 @@ GitHub secret which contains the NPM token to use when publishing packages.
 
 ---
 
+##### `npmTrustedPublishing`<sup>Optional</sup> <a name="npmTrustedPublishing" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmTrustedPublishing"></a>
+
+```typescript
+public readonly npmTrustedPublishing: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+
+---
+
 ##### `packageManager`<sup>Optional</sup> <a name="packageManager" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.packageManager"></a>
 
 ```typescript
@@ -1225,7 +12485,7 @@ public readonly packageManager: NodePackageManager;
 ```
 
 - *Type:* projen.javascript.NodePackageManager
-- *Default:* NodePackageManager.YARN
+- *Default:* NodePackageManager.YARN_CLASSIC
 
 The Node Package Manager used to execute scripts.
 
@@ -1290,7 +12550,7 @@ public readonly pnpmVersion: string;
 ```
 
 - *Type:* string
-- *Default:* "7"
+- *Default:* "9"
 
 The version of PNPM to use if using PNPM as a package manager.
 
@@ -1366,6 +12626,34 @@ Package's Stability.
 
 ---
 
+##### `yarnBerryOptions`<sup>Optional</sup> <a name="yarnBerryOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.yarnBerryOptions"></a>
+
+```typescript
+public readonly yarnBerryOptions: YarnBerryOptions;
+```
+
+- *Type:* projen.javascript.YarnBerryOptions
+- *Default:* Yarn Berry v4 with all default options
+
+Options for Yarn Berry.
+
+---
+
+##### `bumpPackage`<sup>Optional</sup> <a name="bumpPackage" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.bumpPackage"></a>
+
+```typescript
+public readonly bumpPackage: string;
+```
+
+- *Type:* string
+- *Default:* A recent version of "commit-and-tag-version"
+
+The `commit-and-tag-version` compatible package used to bump the package version, as a dependency string.
+
+This can be any compatible package version, including the deprecated `standard-version@9`.
+
+---
+
 ##### `jsiiReleaseVersion`<sup>Optional</sup> <a name="jsiiReleaseVersion" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.jsiiReleaseVersion"></a>
 
 ```typescript
@@ -1410,6 +12698,38 @@ This can be useful to set to 1, as breaking changes before the 1.x major
 release are not incrementing the major version number.
 
 Can not be set together with `majorVersion`.
+
+---
+
+##### `nextVersionCommand`<sup>Optional</sup> <a name="nextVersionCommand" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.nextVersionCommand"></a>
+
+```typescript
+public readonly nextVersionCommand: string;
+```
+
+- *Type:* string
+- *Default:* The next version will be determined based on the commit history and project settings.
+
+A shell command to control the next version to release.
+
+If present, this shell command will be run before the bump is executed, and
+it determines what version to release. It will be executed in the following
+environment:
+
+- Working directory: the project directory.
+- `$VERSION`: the current version. Looks like `1.2.3`.
+- `$LATEST_TAG`: the most recent tag. Looks like `prefix-v1.2.3`, or may be unset.
+- `$SUGGESTED_BUMP`: the suggested bump action based on commits. One of `major|minor|patch|none`.
+
+The command should print one of the following to `stdout`:
+
+- Nothing: the next version number will be determined based on commit history.
+- `x.y.z`: the next version number will be `x.y.z`.
+- `major|minor|patch`: the next version number will be the current version number
+  with the indicated component bumped.
+
+This setting cannot be specified together with `minMajorVersion`; the invoked
+script can be used to achieve the effects of `minMajorVersion`.
 
 ---
 
@@ -1517,6 +12837,25 @@ be provided for the default branch.
 
 ---
 
+##### `releaseEnvironment`<sup>Optional</sup> <a name="releaseEnvironment" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseEnvironment"></a>
+
+```typescript
+public readonly releaseEnvironment: string;
+```
+
+- *Type:* string
+- *Default:* no environment used, unless set at the artifact level
+
+The GitHub Actions environment used for the release.
+
+This can be used to add an explicit approval step to the release
+or limit who can initiate a release through environment protection rules.
+
+When multiple artifacts are released, the environment can be overwritten
+on a per artifact basis.
+
+---
+
 ##### ~~`releaseEveryCommit`~~<sup>Optional</sup> <a name="releaseEveryCommit" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseEveryCommit"></a>
 
 - *Deprecated:* Use `releaseTrigger: ReleaseTrigger.continuous()` instead
@@ -1606,6 +12945,19 @@ The release trigger to use.
 
 ---
 
+##### `releaseWorkflowEnv`<sup>Optional</sup> <a name="releaseWorkflowEnv" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseWorkflowEnv"></a>
+
+```typescript
+public readonly releaseWorkflowEnv: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+- *Default:* {}
+
+Build environment variables for release workflows.
+
+---
+
 ##### `releaseWorkflowName`<sup>Optional</sup> <a name="releaseWorkflowName" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseWorkflowName"></a>
 
 ```typescript
@@ -1613,7 +12965,7 @@ public readonly releaseWorkflowName: string;
 ```
 
 - *Type:* string
-- *Default:* "Release"
+- *Default:* "release"
 
 The name of the default release workflow.
 
@@ -1640,7 +12992,7 @@ public readonly versionrcOptions: {[ key: string ]: any};
 - *Type:* {[ key: string ]: any}
 - *Default:* standard configuration applicable for GitHub repositories
 
-Custom configuration used when creating changelog with standard-version package.
+Custom configuration used when creating changelog with commit-and-tag-version package.
 
 Given values either append to default configuration or overwrite values in it.
 
@@ -1710,6 +13062,36 @@ A directory which will contain build artifacts.
 
 ---
 
+##### `auditDeps`<sup>Optional</sup> <a name="auditDeps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.auditDeps"></a>
+
+```typescript
+public readonly auditDeps: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Run security audit on dependencies.
+
+When enabled, creates an "audit" task that checks for known security vulnerabilities
+in dependencies. By default, runs during every build and checks for "high" severity
+vulnerabilities or above in all dependencies (including dev dependencies).
+
+---
+
+##### `auditDepsOptions`<sup>Optional</sup> <a name="auditDepsOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.auditDepsOptions"></a>
+
+```typescript
+public readonly auditDepsOptions: AuditOptions;
+```
+
+- *Type:* projen.javascript.AuditOptions
+- *Default:* default options
+
+Security audit options.
+
+---
+
 ##### `autoApproveUpgrades`<sup>Optional</sup> <a name="autoApproveUpgrades" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.autoApproveUpgrades"></a>
 
 ```typescript
@@ -1719,9 +13101,35 @@ public readonly autoApproveUpgrades: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued).
+Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured).
 
 Throw if set to true but `autoApproveOptions` are not defined.
+
+---
+
+##### `biome`<sup>Optional</sup> <a name="biome" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.biome"></a>
+
+```typescript
+public readonly biome: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Setup Biome.
+
+---
+
+##### `biomeOptions`<sup>Optional</sup> <a name="biomeOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.biomeOptions"></a>
+
+```typescript
+public readonly biomeOptions: BiomeOptions;
+```
+
+- *Type:* projen.javascript.BiomeOptions
+- *Default:* default options
+
+Biome options.
 
 ---
 
@@ -1738,7 +13146,21 @@ Define a GitHub workflow for building PRs.
 
 ---
 
-##### `buildWorkflowTriggers`<sup>Optional</sup> <a name="buildWorkflowTriggers" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.buildWorkflowTriggers"></a>
+##### `buildWorkflowOptions`<sup>Optional</sup> <a name="buildWorkflowOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.buildWorkflowOptions"></a>
+
+```typescript
+public readonly buildWorkflowOptions: BuildWorkflowOptions;
+```
+
+- *Type:* projen.javascript.BuildWorkflowOptions
+
+Options for PR build workflow.
+
+---
+
+##### ~~`buildWorkflowTriggers`~~<sup>Optional</sup> <a name="buildWorkflowTriggers" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.buildWorkflowTriggers"></a>
+
+- *Deprecated:* - Use `buildWorkflowOptions.workflowTriggers`
 
 ```typescript
 public readonly buildWorkflowTriggers: Triggers;
@@ -1763,6 +13185,21 @@ Options for `Bundler`.
 
 ---
 
+##### `checkLicenses`<sup>Optional</sup> <a name="checkLicenses" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.checkLicenses"></a>
+
+```typescript
+public readonly checkLicenses: LicenseCheckerOptions;
+```
+
+- *Type:* projen.javascript.LicenseCheckerOptions
+- *Default:* no license checks are run during the build and all licenses will be accepted
+
+Configure which licenses should be deemed acceptable for use by dependencies.
+
+This setting will cause the build to fail, if any prohibited or not allowed licenses ares encountered.
+
+---
+
 ##### `codeCov`<sup>Optional</sup> <a name="codeCov" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.codeCov"></a>
 
 ```typescript
@@ -1772,7 +13209,7 @@ public readonly codeCov: boolean;
 - *Type:* boolean
 - *Default:* false
 
-Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v3 A secret is required for private repos. Configured with `@codeCovTokenSecret`.
+Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
 
 ---
 
@@ -1783,9 +13220,9 @@ public readonly codeCovTokenSecret: string;
 ```
 
 - *Type:* string
-- *Default:* if this option is not specified, only public repositories are supported
+- *Default:* OIDC auth is used
 
-Define the secret name for a specified https://codecov.io/ token A secret is required to send coverage for private repositories.
+Define the secret name for a specified https://codecov.io/ token.
 
 ---
 
@@ -1850,7 +13287,7 @@ public readonly depsUpgrade: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true
+- *Default:* `true` for root projects, `false` for subprojects
 
 Use tasks and github workflows to handle dependency upgrades.
 
@@ -1909,7 +13346,9 @@ Jest options.
 
 ---
 
-##### `mutableBuild`<sup>Optional</sup> <a name="mutableBuild" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.mutableBuild"></a>
+##### ~~`mutableBuild`~~<sup>Optional</sup> <a name="mutableBuild" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.mutableBuild"></a>
+
+- *Deprecated:* - Use `buildWorkflowOptions.mutableBuild`
 
 ```typescript
 public readonly mutableBuild: boolean;
@@ -2013,7 +13452,7 @@ public readonly projenDevDependency: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true
+- *Default:* true if not a subproject
 
 Indicates of "projen" should be installed as a devDependency.
 
@@ -2145,7 +13584,7 @@ public readonly workflowGitIdentity: GitIdentity;
 ```
 
 - *Type:* projen.github.GitIdentity
-- *Default:* GitHub Actions
+- *Default:* default GitHub Actions user
 
 The git identity to use in workflows.
 
@@ -2158,9 +13597,11 @@ public readonly workflowNodeVersion: string;
 ```
 
 - *Type:* string
-- *Default:* same as `minNodeVersion`
+- *Default:* `minNodeVersion` if set, otherwise `lts/*`.
 
-The node version to use in GitHub workflows.
+The node version used in GitHub Actions workflows.
+
+Always use this option if your GitHub Actions workflows require a specific to run.
 
 ---
 
@@ -2249,7 +13690,7 @@ public readonly eslint: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true
+- *Default:* true, unless biome is enabled
 
 Setup eslint.
 
@@ -2389,6 +13830,18 @@ The name of the development tsconfig.json file.
 
 ---
 
+##### `tsJestOptions`<sup>Optional</sup> <a name="tsJestOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.tsJestOptions"></a>
+
+```typescript
+public readonly tsJestOptions: TsJestOptions;
+```
+
+- *Type:* projen.typescript.TsJestOptions
+
+Options for ts-jest.
+
+---
+
 ##### `typescriptVersion`<sup>Optional</sup> <a name="typescriptVersion" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.typescriptVersion"></a>
 
 ```typescript
@@ -2466,6 +13919,49 @@ public readonly gitHooksManagerOptions: HuskyOptions | LefthookOptions;
 - *Default:* default options
 
 gitHooksManagerEnabled options.
+
+---
+
+##### `prettierSortImportsOptions`<sup>Optional</sup> <a name="prettierSortImportsOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.prettierSortImportsOptions"></a>
+
+```typescript
+public readonly prettierSortImportsOptions: PrettierSortImportsOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions">PrettierSortImportsOptions</a>
+
+Enable @trivago/prettier-plugin-sort-imports and configure it.
+
+Providing this option (even as an empty object) activates the plugin.
+
+---
+
+##### `vitest`<sup>Optional</sup> <a name="vitest" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.vitest"></a>
+
+```typescript
+public readonly vitest: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Enable Vitest instead of Jest.
+
+When true, jest is automatically disabled.
+
+---
+
+##### `vitestOptions`<sup>Optional</sup> <a name="vitestOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.vitestOptions"></a>
+
+```typescript
+public readonly vitestOptions: VitestOptions;
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.VitestOptions">VitestOptions</a>
+
+Vitest options.
+
+Only used when vitest is true.
 
 ---
 
@@ -2700,6 +14196,7 @@ const lefthookCommandOptions: LefthookCommandOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.files">files</a></code> | <code>string</code> | A custom git command for files to be referenced in {files} template for run setting. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.glob">glob</a></code> | <code>string</code> | You can set a glob to filter files for your command. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.stagedFiles">stagedFiles</a></code> | <code>boolean</code> | Staged files which you try to commit. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.stageFixed">stageFixed</a></code> | <code>boolean</code> | Re-stage files modified by the command after it runs. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.tags">tags</a></code> | <code>string</code> | You can specify tags for commands and scripts. |
 
 ---
@@ -2785,6 +14282,23 @@ public readonly stagedFiles: boolean;
 Staged files which you try to commit.
 
 > [https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#run](https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#run)
+
+---
+
+##### `stageFixed`<sup>Optional</sup> <a name="stageFixed" id="@thoroc/projen-typescript-git-hooks.LefthookCommandOptions.property.stageFixed"></a>
+
+```typescript
+public readonly stageFixed: boolean;
+```
+
+- *Type:* boolean
+
+Re-stage files modified by the command after it runs.
+
+Required when the command auto-fixes files (e.g. eslint --fix, prettier --write)
+so that the fixed versions are included in the commit.
+
+> [https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#stage_fixed](https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md#stage_fixed)
 
 ---
 
@@ -3657,6 +15171,84 @@ MD053 - Link and image reference definitions should be needed.
 
 ---
 
+### McpConfigOptions <a name="McpConfigOptions" id="@thoroc/projen-typescript-git-hooks.McpConfigOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.McpConfigOptions.Initializer"></a>
+
+```typescript
+import { McpConfigOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const mcpConfigOptions: McpConfigOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfigOptions.property.servers">servers</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]</code> | *No description.* |
+
+---
+
+##### `servers`<sup>Required</sup> <a name="servers" id="@thoroc/projen-typescript-git-hooks.McpConfigOptions.property.servers"></a>
+
+```typescript
+public readonly servers: McpServer[];
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]
+
+---
+
+### McpServerConfig <a name="McpServerConfig" id="@thoroc/projen-typescript-git-hooks.McpServerConfig"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.McpServerConfig.Initializer"></a>
+
+```typescript
+import { McpServerConfig } from '@thoroc/projen-typescript-git-hooks'
+
+const mcpServerConfig: McpServerConfig = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpServerConfig.property.command">command</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpServerConfig.property.args">args</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpServerConfig.property.env">env</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+
+---
+
+##### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.McpServerConfig.property.command"></a>
+
+```typescript
+public readonly command: string;
+```
+
+- *Type:* string
+
+---
+
+##### `args`<sup>Optional</sup> <a name="args" id="@thoroc/projen-typescript-git-hooks.McpServerConfig.property.args"></a>
+
+```typescript
+public readonly args: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `env`<sup>Optional</sup> <a name="env" id="@thoroc/projen-typescript-git-hooks.McpServerConfig.property.env"></a>
+
+```typescript
+public readonly env: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+---
+
 ### Md003 <a name="Md003" id="@thoroc/projen-typescript-git-hooks.Md003"></a>
 
 #### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.Md003.Initializer"></a>
@@ -4435,6 +16027,37 @@ Horizontal rule style.
 
 ---
 
+### Md036 <a name="Md036" id="@thoroc/projen-typescript-git-hooks.Md036"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.Md036.Initializer"></a>
+
+```typescript
+import { Md036 } from '@thoroc/projen-typescript-git-hooks'
+
+const md036: Md036 = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Md036.property.punctuation">punctuation</a></code> | <code>string</code> | Punctuation characters. |
+
+---
+
+##### `punctuation`<sup>Optional</sup> <a name="punctuation" id="@thoroc/projen-typescript-git-hooks.Md036.property.punctuation"></a>
+
+```typescript
+public readonly punctuation: string;
+```
+
+- *Type:* string
+- *Default:* .,;:!?。，；：！？
+
+Punctuation characters.
+
+---
+
 ### Md040 <a name="Md040" id="@thoroc/projen-typescript-git-hooks.Md040"></a>
 
 #### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.Md040.Initializer"></a>
@@ -4583,6 +16206,65 @@ public readonly matchCase: boolean;
 - *Default:* false
 
 Match case of headings.
+
+---
+
+### Md044 <a name="Md044" id="@thoroc/projen-typescript-git-hooks.Md044"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.Md044.Initializer"></a>
+
+```typescript
+import { Md044 } from '@thoroc/projen-typescript-git-hooks'
+
+const md044: Md044 = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Md044.property.codeBlocks">codeBlocks</a></code> | <code>boolean</code> | Include code blocks. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Md044.property.htmlElements">htmlElements</a></code> | <code>boolean</code> | Include HTML elements. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Md044.property.names">names</a></code> | <code>string[]</code> | List of proper names. |
+
+---
+
+##### `codeBlocks`<sup>Optional</sup> <a name="codeBlocks" id="@thoroc/projen-typescript-git-hooks.Md044.property.codeBlocks"></a>
+
+```typescript
+public readonly codeBlocks: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Include code blocks.
+
+---
+
+##### `htmlElements`<sup>Optional</sup> <a name="htmlElements" id="@thoroc/projen-typescript-git-hooks.Md044.property.htmlElements"></a>
+
+```typescript
+public readonly htmlElements: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Include HTML elements.
+
+---
+
+##### `names`<sup>Optional</sup> <a name="names" id="@thoroc/projen-typescript-git-hooks.Md044.property.names"></a>
+
+```typescript
+public readonly names: string[];
+```
+
+- *Type:* string[]
+- *Default:* []
+
+List of proper names.
 
 ---
 
@@ -4741,500 +16423,780 @@ Ignored definitions.
 
 ---
 
+### MistralVibeOptions <a name="MistralVibeOptions" id="@thoroc/projen-typescript-git-hooks.MistralVibeOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.MistralVibeOptions.Initializer"></a>
+
+```typescript
+import { MistralVibeOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const mistralVibeOptions: MistralVibeOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibeOptions.property.mcpServers">mcpServers</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibeOptions.property.model">model</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `mcpServers`<sup>Optional</sup> <a name="mcpServers" id="@thoroc/projen-typescript-git-hooks.MistralVibeOptions.property.mcpServers"></a>
+
+```typescript
+public readonly mcpServers: McpServer[];
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]
+
+---
+
+##### `model`<sup>Optional</sup> <a name="model" id="@thoroc/projen-typescript-git-hooks.MistralVibeOptions.property.model"></a>
+
+```typescript
+public readonly model: string;
+```
+
+- *Type:* string
+
+---
+
+### OpenAICodexHookEntry <a name="OpenAICodexHookEntry" id="@thoroc/projen-typescript-git-hooks.OpenAICodexHookEntry"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.OpenAICodexHookEntry.Initializer"></a>
+
+```typescript
+import { OpenAICodexHookEntry } from '@thoroc/projen-typescript-git-hooks'
+
+const openAICodexHookEntry: OpenAICodexHookEntry = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexHookEntry.property.command">command</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexHookEntry.property.type">type</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.OpenAICodexHookEntry.property.command"></a>
+
+```typescript
+public readonly command: string;
+```
+
+- *Type:* string
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="@thoroc/projen-typescript-git-hooks.OpenAICodexHookEntry.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+---
+
+### OpenAICodexHookGroup <a name="OpenAICodexHookGroup" id="@thoroc/projen-typescript-git-hooks.OpenAICodexHookGroup"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.OpenAICodexHookGroup.Initializer"></a>
+
+```typescript
+import { OpenAICodexHookGroup } from '@thoroc/projen-typescript-git-hooks'
+
+const openAICodexHookGroup: OpenAICodexHookGroup = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexHookGroup.property.hooks">hooks</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexHookEntry">OpenAICodexHookEntry</a>[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexHookGroup.property.matcher">matcher</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `hooks`<sup>Required</sup> <a name="hooks" id="@thoroc/projen-typescript-git-hooks.OpenAICodexHookGroup.property.hooks"></a>
+
+```typescript
+public readonly hooks: OpenAICodexHookEntry[];
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexHookEntry">OpenAICodexHookEntry</a>[]
+
+---
+
+##### `matcher`<sup>Optional</sup> <a name="matcher" id="@thoroc/projen-typescript-git-hooks.OpenAICodexHookGroup.property.matcher"></a>
+
+```typescript
+public readonly matcher: string;
+```
+
+- *Type:* string
+
+---
+
+### OpenAICodexOptions <a name="OpenAICodexOptions" id="@thoroc/projen-typescript-git-hooks.OpenAICodexOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.OpenAICodexOptions.Initializer"></a>
+
+```typescript
+import { OpenAICodexOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const openAICodexOptions: OpenAICodexOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexOptions.property.approvalPolicy">approvalPolicy</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexOptions.property.hooks">hooks</a></code> | <code>{[ key: string ]: <a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexHookGroup">OpenAICodexHookGroup</a>[]}</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexOptions.property.mcpServers">mcpServers</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexOptions.property.model">model</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexOptions.property.sandboxMode">sandboxMode</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `approvalPolicy`<sup>Optional</sup> <a name="approvalPolicy" id="@thoroc/projen-typescript-git-hooks.OpenAICodexOptions.property.approvalPolicy"></a>
+
+```typescript
+public readonly approvalPolicy: string;
+```
+
+- *Type:* string
+
+---
+
+##### `hooks`<sup>Optional</sup> <a name="hooks" id="@thoroc/projen-typescript-git-hooks.OpenAICodexOptions.property.hooks"></a>
+
+```typescript
+public readonly hooks: {[ key: string ]: OpenAICodexHookGroup[]};
+```
+
+- *Type:* {[ key: string ]: <a href="#@thoroc/projen-typescript-git-hooks.OpenAICodexHookGroup">OpenAICodexHookGroup</a>[]}
+
+---
+
+##### `mcpServers`<sup>Optional</sup> <a name="mcpServers" id="@thoroc/projen-typescript-git-hooks.OpenAICodexOptions.property.mcpServers"></a>
+
+```typescript
+public readonly mcpServers: McpServer[];
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]
+
+---
+
+##### `model`<sup>Optional</sup> <a name="model" id="@thoroc/projen-typescript-git-hooks.OpenAICodexOptions.property.model"></a>
+
+```typescript
+public readonly model: string;
+```
+
+- *Type:* string
+
+---
+
+##### `sandboxMode`<sup>Optional</sup> <a name="sandboxMode" id="@thoroc/projen-typescript-git-hooks.OpenAICodexOptions.property.sandboxMode"></a>
+
+```typescript
+public readonly sandboxMode: string;
+```
+
+- *Type:* string
+
+---
+
+### OpenCodeOptions <a name="OpenCodeOptions" id="@thoroc/projen-typescript-git-hooks.OpenCodeOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.OpenCodeOptions.Initializer"></a>
+
+```typescript
+import { OpenCodeOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const openCodeOptions: OpenCodeOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCodeOptions.property.autoupdate">autoupdate</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCodeOptions.property.mcpServers">mcpServers</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCodeOptions.property.model">model</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCodeOptions.property.permission">permission</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCodeOptions.property.plugins">plugins</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `autoupdate`<sup>Optional</sup> <a name="autoupdate" id="@thoroc/projen-typescript-git-hooks.OpenCodeOptions.property.autoupdate"></a>
+
+```typescript
+public readonly autoupdate: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `mcpServers`<sup>Optional</sup> <a name="mcpServers" id="@thoroc/projen-typescript-git-hooks.OpenCodeOptions.property.mcpServers"></a>
+
+```typescript
+public readonly mcpServers: McpServer[];
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpServer">McpServer</a>[]
+
+---
+
+##### `model`<sup>Optional</sup> <a name="model" id="@thoroc/projen-typescript-git-hooks.OpenCodeOptions.property.model"></a>
+
+```typescript
+public readonly model: string;
+```
+
+- *Type:* string
+
+---
+
+##### `permission`<sup>Optional</sup> <a name="permission" id="@thoroc/projen-typescript-git-hooks.OpenCodeOptions.property.permission"></a>
+
+```typescript
+public readonly permission: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+---
+
+##### `plugins`<sup>Optional</sup> <a name="plugins" id="@thoroc/projen-typescript-git-hooks.OpenCodeOptions.property.plugins"></a>
+
+```typescript
+public readonly plugins: string[];
+```
+
+- *Type:* string[]
+
+---
+
+### PackageRule <a name="PackageRule" id="@thoroc/projen-typescript-git-hooks.PackageRule"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.PackageRule.Initializer"></a>
+
+```typescript
+import { PackageRule } from '@thoroc/projen-typescript-git-hooks'
+
+const packageRule: PackageRule = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PackageRule.property.automerge">automerge</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PackageRule.property.automergeStrategy">automergeStrategy</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PackageRule.property.groupName">groupName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PackageRule.property.groupSlug">groupSlug</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PackageRule.property.matchDepTypes">matchDepTypes</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PackageRule.property.matchUpdateTypes">matchUpdateTypes</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `automerge`<sup>Optional</sup> <a name="automerge" id="@thoroc/projen-typescript-git-hooks.PackageRule.property.automerge"></a>
+
+```typescript
+public readonly automerge: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `automergeStrategy`<sup>Optional</sup> <a name="automergeStrategy" id="@thoroc/projen-typescript-git-hooks.PackageRule.property.automergeStrategy"></a>
+
+```typescript
+public readonly automergeStrategy: string;
+```
+
+- *Type:* string
+
+---
+
+##### `groupName`<sup>Optional</sup> <a name="groupName" id="@thoroc/projen-typescript-git-hooks.PackageRule.property.groupName"></a>
+
+```typescript
+public readonly groupName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `groupSlug`<sup>Optional</sup> <a name="groupSlug" id="@thoroc/projen-typescript-git-hooks.PackageRule.property.groupSlug"></a>
+
+```typescript
+public readonly groupSlug: string;
+```
+
+- *Type:* string
+
+---
+
+##### `matchDepTypes`<sup>Optional</sup> <a name="matchDepTypes" id="@thoroc/projen-typescript-git-hooks.PackageRule.property.matchDepTypes"></a>
+
+```typescript
+public readonly matchDepTypes: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `matchUpdateTypes`<sup>Optional</sup> <a name="matchUpdateTypes" id="@thoroc/projen-typescript-git-hooks.PackageRule.property.matchUpdateTypes"></a>
+
+```typescript
+public readonly matchUpdateTypes: string[];
+```
+
+- *Type:* string[]
+
+---
+
+### PrettierSortImportsOptions <a name="PrettierSortImportsOptions" id="@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions"></a>
+
+Options for @trivago/prettier-plugin-sort-imports.
+
+Providing this object enables the plugin.
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions.Initializer"></a>
+
+```typescript
+import { PrettierSortImportsOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const prettierSortImportsOptions: PrettierSortImportsOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions.property.importOrder">importOrder</a></code> | <code>string[]</code> | Regex patterns defining import group order. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions.property.importOrderCaseInsensitive">importOrderCaseInsensitive</a></code> | <code>boolean</code> | Use case-insensitive ordering. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions.property.importOrderSeparation">importOrderSeparation</a></code> | <code>boolean</code> | Insert a blank line between each import group. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions.property.importOrderSortSpecifiers">importOrderSortSpecifiers</a></code> | <code>boolean</code> | Sort named specifiers within each import alphabetically. |
+
+---
+
+##### `importOrder`<sup>Optional</sup> <a name="importOrder" id="@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions.property.importOrder"></a>
+
+```typescript
+public readonly importOrder: string[];
+```
+
+- *Type:* string[]
+- *Default:* ["<THIRD_PARTY_MODULES>", "^[./]"]
+
+Regex patterns defining import group order.
+
+---
+
+##### `importOrderCaseInsensitive`<sup>Optional</sup> <a name="importOrderCaseInsensitive" id="@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions.property.importOrderCaseInsensitive"></a>
+
+```typescript
+public readonly importOrderCaseInsensitive: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Use case-insensitive ordering.
+
+---
+
+##### `importOrderSeparation`<sup>Optional</sup> <a name="importOrderSeparation" id="@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions.property.importOrderSeparation"></a>
+
+```typescript
+public readonly importOrderSeparation: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Insert a blank line between each import group.
+
+---
+
+##### `importOrderSortSpecifiers`<sup>Optional</sup> <a name="importOrderSortSpecifiers" id="@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions.property.importOrderSortSpecifiers"></a>
+
+```typescript
+public readonly importOrderSortSpecifiers: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Sort named specifiers within each import alphabetically.
+
+---
+
+### PullRequestCoverageCommentOptions <a name="PullRequestCoverageCommentOptions" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageCommentOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageCommentOptions.Initializer"></a>
+
+```typescript
+import { PullRequestCoverageCommentOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const pullRequestCoverageCommentOptions: PullRequestCoverageCommentOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageCommentOptions.property.testRunner">testRunner</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `testRunner`<sup>Optional</sup> <a name="testRunner" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageCommentOptions.property.testRunner"></a>
+
+```typescript
+public readonly testRunner: string;
+```
+
+- *Type:* string
+
+---
+
+### ReleasePleaseOptions <a name="ReleasePleaseOptions" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.Initializer"></a>
+
+```typescript
+import { ReleasePleaseOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const releasePleaseOptions: ReleasePleaseOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.bumpMinorPreMajor">bumpMinorPreMajor</a></code> | <code>boolean</code> | Bump minor version for breaking changes before v1.0. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.bumpPatchForMinorPreMajor">bumpPatchForMinorPreMajor</a></code> | <code>boolean</code> | Bump patch version for feature changes before v1.0. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.component">component</a></code> | <code>string</code> | The component name used in tagging and PR titles. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.configFile">configFile</a></code> | <code>string</code> | Path to the release-please config file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.includeComponentInTag">includeComponentInTag</a></code> | <code>boolean</code> | Whether to include the component name in the git tag. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.includeVInTag">includeVInTag</a></code> | <code>boolean</code> | Whether to include the "v" prefix in the git tag. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.manifestFile">manifestFile</a></code> | <code>string</code> | Path to the release-please manifest file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.pullRequestTitlePattern">pullRequestTitlePattern</a></code> | <code>string</code> | Pattern for release PR titles (e.g. "chore: release \${version}"). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.releaseType">releaseType</a></code> | <code>string</code> | The release type (e.g. "node", "python", "rust"). Defaults to "node". |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.skipGithubPullRequest">skipGithubPullRequest</a></code> | <code>boolean</code> | Skip creating or updating the release pull request. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.skipGithubRelease">skipGithubRelease</a></code> | <code>boolean</code> | Skip creating the GitHub Release. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.targetBranch">targetBranch</a></code> | <code>string</code> | The branch to target for releases. |
+
+---
+
+##### `bumpMinorPreMajor`<sup>Optional</sup> <a name="bumpMinorPreMajor" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.bumpMinorPreMajor"></a>
+
+```typescript
+public readonly bumpMinorPreMajor: boolean;
+```
+
+- *Type:* boolean
+
+Bump minor version for breaking changes before v1.0.
+
+---
+
+##### `bumpPatchForMinorPreMajor`<sup>Optional</sup> <a name="bumpPatchForMinorPreMajor" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.bumpPatchForMinorPreMajor"></a>
+
+```typescript
+public readonly bumpPatchForMinorPreMajor: boolean;
+```
+
+- *Type:* boolean
+
+Bump patch version for feature changes before v1.0.
+
+---
+
+##### `component`<sup>Optional</sup> <a name="component" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.component"></a>
+
+```typescript
+public readonly component: string;
+```
+
+- *Type:* string
+
+The component name used in tagging and PR titles.
+
+---
+
+##### `configFile`<sup>Optional</sup> <a name="configFile" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.configFile"></a>
+
+```typescript
+public readonly configFile: string;
+```
+
+- *Type:* string
+
+Path to the release-please config file.
+
+---
+
+##### `includeComponentInTag`<sup>Optional</sup> <a name="includeComponentInTag" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.includeComponentInTag"></a>
+
+```typescript
+public readonly includeComponentInTag: boolean;
+```
+
+- *Type:* boolean
+
+Whether to include the component name in the git tag.
+
+---
+
+##### `includeVInTag`<sup>Optional</sup> <a name="includeVInTag" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.includeVInTag"></a>
+
+```typescript
+public readonly includeVInTag: boolean;
+```
+
+- *Type:* boolean
+
+Whether to include the "v" prefix in the git tag.
+
+---
+
+##### `manifestFile`<sup>Optional</sup> <a name="manifestFile" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.manifestFile"></a>
+
+```typescript
+public readonly manifestFile: string;
+```
+
+- *Type:* string
+
+Path to the release-please manifest file.
+
+---
+
+##### `pullRequestTitlePattern`<sup>Optional</sup> <a name="pullRequestTitlePattern" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.pullRequestTitlePattern"></a>
+
+```typescript
+public readonly pullRequestTitlePattern: string;
+```
+
+- *Type:* string
+
+Pattern for release PR titles (e.g. "chore: release \${version}").
+
+---
+
+##### `releaseType`<sup>Optional</sup> <a name="releaseType" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.releaseType"></a>
+
+```typescript
+public readonly releaseType: string;
+```
+
+- *Type:* string
+
+The release type (e.g. "node", "python", "rust"). Defaults to "node".
+
+---
+
+##### `skipGithubPullRequest`<sup>Optional</sup> <a name="skipGithubPullRequest" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.skipGithubPullRequest"></a>
+
+```typescript
+public readonly skipGithubPullRequest: boolean;
+```
+
+- *Type:* boolean
+
+Skip creating or updating the release pull request.
+
+---
+
+##### `skipGithubRelease`<sup>Optional</sup> <a name="skipGithubRelease" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.skipGithubRelease"></a>
+
+```typescript
+public readonly skipGithubRelease: boolean;
+```
+
+- *Type:* boolean
+
+Skip creating the GitHub Release.
+
+---
+
+##### `targetBranch`<sup>Optional</sup> <a name="targetBranch" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.targetBranch"></a>
+
+```typescript
+public readonly targetBranch: string;
+```
+
+- *Type:* string
+
+The branch to target for releases.
+
+Defaults to "main".
+
+---
+
+### RenovateOptions <a name="RenovateOptions" id="@thoroc/projen-typescript-git-hooks.RenovateOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.RenovateOptions.Initializer"></a>
+
+```typescript
+import { RenovateOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const renovateOptions: RenovateOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RenovateOptions.property.automerge">automerge</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RenovateOptions.property.automergeStrategy">automergeStrategy</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RenovateOptions.property.automergeType">automergeType</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RenovateOptions.property.labels">labels</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RenovateOptions.property.minimumReleaseAge">minimumReleaseAge</a></code> | <code>string</code> | Minimum age a release must be before Renovate raises a PR. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RenovateOptions.property.packageRules">packageRules</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.PackageRule">PackageRule</a>[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RenovateOptions.property.rebaseWhen">rebaseWhen</a></code> | <code>string</code> | When to rebase open PRs. |
+
+---
+
+##### `automerge`<sup>Optional</sup> <a name="automerge" id="@thoroc/projen-typescript-git-hooks.RenovateOptions.property.automerge"></a>
+
+```typescript
+public readonly automerge: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `automergeStrategy`<sup>Optional</sup> <a name="automergeStrategy" id="@thoroc/projen-typescript-git-hooks.RenovateOptions.property.automergeStrategy"></a>
+
+```typescript
+public readonly automergeStrategy: string;
+```
+
+- *Type:* string
+
+---
+
+##### `automergeType`<sup>Optional</sup> <a name="automergeType" id="@thoroc/projen-typescript-git-hooks.RenovateOptions.property.automergeType"></a>
+
+```typescript
+public readonly automergeType: string;
+```
+
+- *Type:* string
+
+---
+
+##### `labels`<sup>Optional</sup> <a name="labels" id="@thoroc/projen-typescript-git-hooks.RenovateOptions.property.labels"></a>
+
+```typescript
+public readonly labels: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `minimumReleaseAge`<sup>Optional</sup> <a name="minimumReleaseAge" id="@thoroc/projen-typescript-git-hooks.RenovateOptions.property.minimumReleaseAge"></a>
+
+```typescript
+public readonly minimumReleaseAge: string;
+```
+
+- *Type:* string
+
+Minimum age a release must be before Renovate raises a PR.
+
+Defaults to "7 days".
+
+---
+
+##### `packageRules`<sup>Optional</sup> <a name="packageRules" id="@thoroc/projen-typescript-git-hooks.RenovateOptions.property.packageRules"></a>
+
+```typescript
+public readonly packageRules: PackageRule[];
+```
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.PackageRule">PackageRule</a>[]
+
+---
+
+##### `rebaseWhen`<sup>Optional</sup> <a name="rebaseWhen" id="@thoroc/projen-typescript-git-hooks.RenovateOptions.property.rebaseWhen"></a>
+
+```typescript
+public readonly rebaseWhen: string;
+```
+
+- *Type:* string
+
+When to rebase open PRs.
+
+Defaults to "auto".
+
+---
+
+### VitestOptions <a name="VitestOptions" id="@thoroc/projen-typescript-git-hooks.VitestOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.VitestOptions.Initializer"></a>
+
+```typescript
+import { VitestOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const vitestOptions: VitestOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.VitestOptions.property.coverage">coverage</a></code> | <code>boolean</code> | Enable coverage collection. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.VitestOptions.property.coverageProvider">coverageProvider</a></code> | <code>string</code> | Coverage provider. |
+
+---
+
+##### `coverage`<sup>Optional</sup> <a name="coverage" id="@thoroc/projen-typescript-git-hooks.VitestOptions.property.coverage"></a>
+
+```typescript
+public readonly coverage: boolean;
+```
+
+- *Type:* boolean
+
+Enable coverage collection.
+
+Defaults to true.
+
+---
+
+##### `coverageProvider`<sup>Optional</sup> <a name="coverageProvider" id="@thoroc/projen-typescript-git-hooks.VitestOptions.property.coverageProvider"></a>
+
+```typescript
+public readonly coverageProvider: string;
+```
+
+- *Type:* string
+
+Coverage provider.
+
+Defaults to 'v8'.
+
+---
+
 ## Classes <a name="Classes" id="Classes"></a>
-
-### AutoMerge <a name="AutoMerge" id="@thoroc/projen-typescript-git-hooks.AutoMerge"></a>
-
-Represents AutoMerge configuration.
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.AutoMerge.Initializer"></a>
-
-```typescript
-import { AutoMerge } from '@thoroc/projen-typescript-git-hooks'
-
-new AutoMerge(github: GitHub)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
-
----
-
-##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.AutoMerge.Initializer.parameter.github"></a>
-
-- *Type:* projen.github.GitHub
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.AutoMerge.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.AutoMerge.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.AutoMerge.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.AutoMerge.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-
-### CloseStaleIssue <a name="CloseStaleIssue" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue"></a>
-
-Represents CloseStaleIssue configuration.
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.Initializer"></a>
-
-```typescript
-import { CloseStaleIssue } from '@thoroc/projen-typescript-git-hooks'
-
-new CloseStaleIssue(github: GitHub)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
-
----
-
-##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.Initializer.parameter.github"></a>
-
-- *Type:* projen.github.GitHub
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-
-### CodeOfConduct <a name="CodeOfConduct" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct"></a>
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer"></a>
-
-```typescript
-import { CodeOfConduct } from '@thoroc/projen-typescript-git-hooks'
-
-new CodeOfConduct(project: Project, options?: CodeOfConductOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConductOptions">CodeOfConductOptions</a></code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer.parameter.project"></a>
-
-- *Type:* projen.Project
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.CodeOfConductOptions">CodeOfConductOptions</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.author">author</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.version">version</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-##### `author`<sup>Required</sup> <a name="author" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.author"></a>
-
-```typescript
-public readonly author: string;
-```
-
-- *Type:* string
-
----
-
-##### `version`<sup>Required</sup> <a name="version" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.property.version"></a>
-
-```typescript
-public readonly version: string;
-```
-
-- *Type:* string
-
----
-
-
-### Commitizen <a name="Commitizen" id="@thoroc/projen-typescript-git-hooks.Commitizen"></a>
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Commitizen.Initializer"></a>
-
-```typescript
-import { Commitizen } from '@thoroc/projen-typescript-git-hooks'
-
-new Commitizen(project: GitHooksEnabledProject, options?: CommitizenOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a></code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Commitizen.Initializer.parameter.project"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Commitizen.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Commitizen.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Commitizen.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Commitizen.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.of">of</a></code> | Returns the singletone component of a project or undefined if there is none. |
-
----
-
-##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Commitizen.of"></a>
-
-```typescript
-import { Commitizen } from '@thoroc/projen-typescript-git-hooks'
-
-Commitizen.of(project: GitHooksEnabledProject)
-```
-
-Returns the singletone component of a project or undefined if there is none.
-
-###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Commitizen.of.parameter.project"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.property.config">config</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.CommitizenConfig">CommitizenConfig</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.property.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a></code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Commitizen.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-##### `config`<sup>Required</sup> <a name="config" id="@thoroc/projen-typescript-git-hooks.Commitizen.property.config"></a>
-
-```typescript
-public readonly config: CommitizenConfig;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.CommitizenConfig">CommitizenConfig</a>
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Commitizen.property.options"></a>
-
-```typescript
-public readonly options: CommitizenOptions;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.CommitizenOptions">CommitizenOptions</a>
-
----
-
-
-### EditorConfig <a name="EditorConfig" id="@thoroc/projen-typescript-git-hooks.EditorConfig"></a>
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.EditorConfig.Initializer"></a>
-
-```typescript
-import { EditorConfig } from '@thoroc/projen-typescript-git-hooks'
-
-new EditorConfig(project: GitHooksEnabledProject, options?: EditorConfigOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfigOptions">EditorConfigOptions</a></code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.EditorConfig.Initializer.parameter.project"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.EditorConfig.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.EditorConfigOptions">EditorConfigOptions</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.EditorConfig.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.EditorConfig.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.EditorConfig.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.property.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfigOptions">EditorConfigOptions</a></code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.EditorConfig.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.EditorConfig.property.options"></a>
-
-```typescript
-public readonly options: EditorConfigOptions;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.EditorConfigOptions">EditorConfigOptions</a>
-
----
-
 
 ### EditorConfigParams <a name="EditorConfigParams" id="@thoroc/projen-typescript-git-hooks.EditorConfigParams"></a>
 
@@ -5403,2842 +17365,6 @@ public readonly params: EditorConfigParamsOptions;
 ---
 
 
-### Eslint <a name="Eslint" id="@thoroc/projen-typescript-git-hooks.Eslint"></a>
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Eslint.Initializer"></a>
-
-```typescript
-import { Eslint } from '@thoroc/projen-typescript-git-hooks'
-
-new Eslint(project: GitHooksEnabledProject, options?: EslintOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.Initializer.parameter.options">options</a></code> | <code>projen.javascript.EslintOptions</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Eslint.Initializer.parameter.project"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Eslint.Initializer.parameter.options"></a>
-
-- *Type:* projen.javascript.EslintOptions
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.addExtends">addExtends</a></code> | Adds an `extends` item to the eslint configuration. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.addIgnorePattern">addIgnorePattern</a></code> | Do not lint these files. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.addLintPattern">addLintPattern</a></code> | Add a file, glob pattern or directory with source files to lint (e.g. [ "src" ]). |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.addOverride">addOverride</a></code> | Add an eslint override. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.addPlugins">addPlugins</a></code> | Adds an eslint plugin. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.addRules">addRules</a></code> | Add an eslint rule. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.allowDevDeps">allowDevDeps</a></code> | Add a glob file pattern which allows importing dev dependencies. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Eslint.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Eslint.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Eslint.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-##### `addExtends` <a name="addExtends" id="@thoroc/projen-typescript-git-hooks.Eslint.addExtends"></a>
-
-```typescript
-public addExtends(extendList: string): void
-```
-
-Adds an `extends` item to the eslint configuration.
-
-###### `extendList`<sup>Required</sup> <a name="extendList" id="@thoroc/projen-typescript-git-hooks.Eslint.addExtends.parameter.extendList"></a>
-
-- *Type:* string
-
-The list of "extends" to add.
-
----
-
-##### `addIgnorePattern` <a name="addIgnorePattern" id="@thoroc/projen-typescript-git-hooks.Eslint.addIgnorePattern"></a>
-
-```typescript
-public addIgnorePattern(pattern: string): void
-```
-
-Do not lint these files.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Eslint.addIgnorePattern.parameter.pattern"></a>
-
-- *Type:* string
-
----
-
-##### `addLintPattern` <a name="addLintPattern" id="@thoroc/projen-typescript-git-hooks.Eslint.addLintPattern"></a>
-
-```typescript
-public addLintPattern(pattern: string): void
-```
-
-Add a file, glob pattern or directory with source files to lint (e.g. [ "src" ]).
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Eslint.addLintPattern.parameter.pattern"></a>
-
-- *Type:* string
-
----
-
-##### `addOverride` <a name="addOverride" id="@thoroc/projen-typescript-git-hooks.Eslint.addOverride"></a>
-
-```typescript
-public addOverride(override: EslintOverride): void
-```
-
-Add an eslint override.
-
-###### `override`<sup>Required</sup> <a name="override" id="@thoroc/projen-typescript-git-hooks.Eslint.addOverride.parameter.override"></a>
-
-- *Type:* projen.javascript.EslintOverride
-
----
-
-##### `addPlugins` <a name="addPlugins" id="@thoroc/projen-typescript-git-hooks.Eslint.addPlugins"></a>
-
-```typescript
-public addPlugins(plugins: string): void
-```
-
-Adds an eslint plugin.
-
-###### `plugins`<sup>Required</sup> <a name="plugins" id="@thoroc/projen-typescript-git-hooks.Eslint.addPlugins.parameter.plugins"></a>
-
-- *Type:* string
-
-The names of plugins to add.
-
----
-
-##### `addRules` <a name="addRules" id="@thoroc/projen-typescript-git-hooks.Eslint.addRules"></a>
-
-```typescript
-public addRules(rules: {[ key: string ]: any}): void
-```
-
-Add an eslint rule.
-
-###### `rules`<sup>Required</sup> <a name="rules" id="@thoroc/projen-typescript-git-hooks.Eslint.addRules.parameter.rules"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
-
-##### `allowDevDeps` <a name="allowDevDeps" id="@thoroc/projen-typescript-git-hooks.Eslint.allowDevDeps"></a>
-
-```typescript
-public allowDevDeps(pattern: string): void
-```
-
-Add a glob file pattern which allows importing dev dependencies.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Eslint.allowDevDeps.parameter.pattern"></a>
-
-- *Type:* string
-
-glob pattern.
-
----
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.of">of</a></code> | Returns the singletone component of a project or undefined if there is none. |
-
----
-
-##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Eslint.of"></a>
-
-```typescript
-import { Eslint } from '@thoroc/projen-typescript-git-hooks'
-
-Eslint.of(project: Project)
-```
-
-Returns the singletone component of a project or undefined if there is none.
-
-###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Eslint.of.parameter.project"></a>
-
-- *Type:* projen.Project
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.config">config</a></code> | <code>any</code> | Direct access to the eslint configuration (escape hatch). |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.eslintTask">eslintTask</a></code> | <code>projen.Task</code> | eslint task. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.ignorePatterns">ignorePatterns</a></code> | <code>string[]</code> | File patterns that should not be linted. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.overrides">overrides</a></code> | <code>projen.javascript.EslintOverride[]</code> | eslint overrides. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.rules">rules</a></code> | <code>{[ key: string ]: any[]}</code> | eslint rules. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.defaultEslintRules">defaultEslintRules</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.EslintRules">EslintRules</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.property.defaultOptions">defaultOptions</a></code> | <code>projen.javascript.EslintOptions</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Eslint.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-##### `config`<sup>Required</sup> <a name="config" id="@thoroc/projen-typescript-git-hooks.Eslint.property.config"></a>
-
-```typescript
-public readonly config: any;
-```
-
-- *Type:* any
-
-Direct access to the eslint configuration (escape hatch).
-
----
-
-##### `eslintTask`<sup>Required</sup> <a name="eslintTask" id="@thoroc/projen-typescript-git-hooks.Eslint.property.eslintTask"></a>
-
-```typescript
-public readonly eslintTask: Task;
-```
-
-- *Type:* projen.Task
-
-eslint task.
-
----
-
-##### `ignorePatterns`<sup>Required</sup> <a name="ignorePatterns" id="@thoroc/projen-typescript-git-hooks.Eslint.property.ignorePatterns"></a>
-
-```typescript
-public readonly ignorePatterns: string[];
-```
-
-- *Type:* string[]
-
-File patterns that should not be linted.
-
----
-
-##### `overrides`<sup>Required</sup> <a name="overrides" id="@thoroc/projen-typescript-git-hooks.Eslint.property.overrides"></a>
-
-```typescript
-public readonly overrides: EslintOverride[];
-```
-
-- *Type:* projen.javascript.EslintOverride[]
-
-eslint overrides.
-
----
-
-##### `rules`<sup>Required</sup> <a name="rules" id="@thoroc/projen-typescript-git-hooks.Eslint.property.rules"></a>
-
-```typescript
-public readonly rules: {[ key: string ]: any[]};
-```
-
-- *Type:* {[ key: string ]: any[]}
-
-eslint rules.
-
----
-
-##### `defaultEslintRules`<sup>Required</sup> <a name="defaultEslintRules" id="@thoroc/projen-typescript-git-hooks.Eslint.property.defaultEslintRules"></a>
-
-```typescript
-public readonly defaultEslintRules: EslintRules;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.EslintRules">EslintRules</a>
-
----
-
-##### `defaultOptions`<sup>Required</sup> <a name="defaultOptions" id="@thoroc/projen-typescript-git-hooks.Eslint.property.defaultOptions"></a>
-
-```typescript
-public readonly defaultOptions: EslintOptions;
-```
-
-- *Type:* projen.javascript.EslintOptions
-
----
-
-
-### GitHooksEnabledProject <a name="GitHooksEnabledProject" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject"></a>
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.Initializer"></a>
-
-```typescript
-import { GitHooksEnabledProject } from '@thoroc/projen-typescript-git-hooks'
-
-new GitHooksEnabledProject(options: GitHooksEnabledProjectOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions">GitHooksEnabledProjectOptions</a></code> | *No description.* |
-
----
-
-##### `options`<sup>Required</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions">GitHooksEnabledProjectOptions</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPackageIgnore">addPackageIgnore</a></code> | Exclude these files from the bundled package. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTask">addTask</a></code> | Adds a new task to this project. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.removeTask">removeTask</a></code> | Removes a task from a project. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBins">addBins</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
-
----
-
-##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addExcludeFromCleanup"></a>
-
-```typescript
-public addExcludeFromCleanup(globs: string): void
-```
-
-Exclude the matching files from pre-synth cleanup.
-
-Can be used when, for example, some
-source files include the projen marker and we don't want them to be erased during synth.
-
-###### `globs`<sup>Required</sup> <a name="globs" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addExcludeFromCleanup.parameter.globs"></a>
-
-- *Type:* string
-
-The glob patterns to match.
-
----
-
-##### `addGitIgnore` <a name="addGitIgnore" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addGitIgnore"></a>
-
-```typescript
-public addGitIgnore(pattern: string): void
-```
-
-Adds a .gitignore pattern.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addGitIgnore.parameter.pattern"></a>
-
-- *Type:* string
-
-The glob pattern to ignore.
-
----
-
-##### `addPackageIgnore` <a name="addPackageIgnore" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPackageIgnore"></a>
-
-```typescript
-public addPackageIgnore(pattern: string): void
-```
-
-Exclude these files from the bundled package.
-
-Implemented by project types based on the
-packaging mechanism. For example, `NodeProject` delegates this to `.npmignore`.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPackageIgnore.parameter.pattern"></a>
-
-- *Type:* string
-
----
-
-##### `addTask` <a name="addTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTask"></a>
-
-```typescript
-public addTask(name: string, props?: TaskOptions): Task
-```
-
-Adds a new task to this project.
-
-This will fail if the project already has
-a task with this name.
-
-###### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTask.parameter.name"></a>
-
-- *Type:* string
-
-The task name to add.
-
----
-
-###### `props`<sup>Optional</sup> <a name="props" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTask.parameter.props"></a>
-
-- *Type:* projen.TaskOptions
-
-Task properties.
-
----
-
-##### ~~`addTip`~~ <a name="addTip" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTip"></a>
-
-```typescript
-public addTip(message: string): void
-```
-
-Prints a "tip" message during synthesis.
-
-###### `message`<sup>Required</sup> <a name="message" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTip.parameter.message"></a>
-
-- *Type:* string
-
-The message.
-
----
-
-##### `annotateGenerated` <a name="annotateGenerated" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.annotateGenerated"></a>
-
-```typescript
-public annotateGenerated(glob: string): void
-```
-
-Marks the provided file(s) as being generated.
-
-This is achieved using the
-github-linguist attributes. Generated files do not count against the
-repository statistics and language breakdown.
-
-> [https://github.com/github/linguist/blob/master/docs/overrides.md](https://github.com/github/linguist/blob/master/docs/overrides.md)
-
-###### `glob`<sup>Required</sup> <a name="glob" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.annotateGenerated.parameter.glob"></a>
-
-- *Type:* string
-
-the glob pattern to match (could be a file path).
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after all components are synthesized.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before all components are synthesized.
-
-##### `removeTask` <a name="removeTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.removeTask"></a>
-
-```typescript
-public removeTask(name: string): Task
-```
-
-Removes a task from a project.
-
-###### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.removeTask.parameter.name"></a>
-
-- *Type:* string
-
-The name of the task to remove.
-
----
-
-##### `runTaskCommand` <a name="runTaskCommand" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.runTaskCommand"></a>
-
-```typescript
-public runTaskCommand(task: Task): string
-```
-
-Returns the shell command to execute in order to run a task.
-
-This will
-typically be `npx projen TASK`.
-
-###### `task`<sup>Required</sup> <a name="task" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.runTaskCommand.parameter.task"></a>
-
-- *Type:* projen.Task
-
-The task for which the command is required.
-
----
-
-##### `synth` <a name="synth" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.synth"></a>
-
-```typescript
-public synth(): void
-```
-
-Synthesize all project files into `outdir`.
-
-1. Call "this.preSynthesize()"
-2. Delete all generated files
-3. Synthesize all sub-projects
-4. Synthesize all components of this project
-5. Call "postSynthesize()" for all components of this project
-6. Call "this.postSynthesize()"
-
-##### `tryFindFile` <a name="tryFindFile" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindFile"></a>
-
-```typescript
-public tryFindFile(filePath: string): FileBase
-```
-
-Finds a file at the specified relative path within this project and all its subprojects.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
-If this path is relative, it will be resolved
-from the root of _this_ project.
-
----
-
-##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindJsonFile"></a>
-
-```typescript
-public tryFindJsonFile(filePath: string): JsonFile
-```
-
-Finds a json file by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindJsonFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
----
-
-##### `tryFindObjectFile` <a name="tryFindObjectFile" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindObjectFile"></a>
-
-```typescript
-public tryFindObjectFile(filePath: string): ObjectFile
-```
-
-Finds an object file (like JsonFile, YamlFile, etc.) by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindObjectFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
----
-
-##### `tryRemoveFile` <a name="tryRemoveFile" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryRemoveFile"></a>
-
-```typescript
-public tryRemoveFile(filePath: string): FileBase
-```
-
-Finds a file at the specified relative path within this project and removes it.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryRemoveFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
-If this path is relative, it will be
-resolved from the root of _this_ project.
-
----
-
-##### `addBins` <a name="addBins" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBins"></a>
-
-```typescript
-public addBins(bins: {[ key: string ]: string}): void
-```
-
-###### `bins`<sup>Required</sup> <a name="bins" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBins.parameter.bins"></a>
-
-- *Type:* {[ key: string ]: string}
-
----
-
-##### `addBundledDeps` <a name="addBundledDeps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBundledDeps"></a>
-
-```typescript
-public addBundledDeps(deps: string): void
-```
-
-Defines bundled dependencies.
-
-Bundled dependencies will be added as normal dependencies as well as to the
-`bundledDependencies` section of your `package.json`.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBundledDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addCompileCommand"></a>
-
-```typescript
-public addCompileCommand(commands: string): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addCompileCommand.parameter.commands"></a>
-
-- *Type:* string
-
----
-
-##### `addDeps` <a name="addDeps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDeps"></a>
-
-```typescript
-public addDeps(deps: string): void
-```
-
-Defines normal dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addDevDeps` <a name="addDevDeps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDevDeps"></a>
-
-```typescript
-public addDevDeps(deps: string): void
-```
-
-Defines development/test dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDevDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addFields` <a name="addFields" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addFields"></a>
-
-```typescript
-public addFields(fields: {[ key: string ]: any}): void
-```
-
-Directly set fields in `package.json`.
-
-###### `fields`<sup>Required</sup> <a name="fields" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addFields.parameter.fields"></a>
-
-- *Type:* {[ key: string ]: any}
-
-The fields to set.
-
----
-
-##### `addKeywords` <a name="addKeywords" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addKeywords"></a>
-
-```typescript
-public addKeywords(keywords: string): void
-```
-
-Adds keywords to package.json (deduplicated).
-
-###### `keywords`<sup>Required</sup> <a name="keywords" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addKeywords.parameter.keywords"></a>
-
-- *Type:* string
-
-The keywords to add.
-
----
-
-##### `addPeerDeps` <a name="addPeerDeps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPeerDeps"></a>
-
-```typescript
-public addPeerDeps(deps: string): void
-```
-
-Defines peer dependencies.
-
-When adding peer dependencies, a devDependency will also be added on the
-pinned version of the declared peer. This will ensure that you are testing
-your code against the minimum version required from your consumers.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPeerDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addScripts` <a name="addScripts" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addScripts"></a>
-
-```typescript
-public addScripts(scripts: {[ key: string ]: string}): void
-```
-
-Replaces the contents of multiple npm package.json scripts.
-
-###### `scripts`<sup>Required</sup> <a name="scripts" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addScripts.parameter.scripts"></a>
-
-- *Type:* {[ key: string ]: string}
-
-The scripts to set.
-
----
-
-##### ~~`addTestCommand`~~ <a name="addTestCommand" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTestCommand"></a>
-
-```typescript
-public addTestCommand(commands: string): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTestCommand.parameter.commands"></a>
-
-- *Type:* string
-
----
-
-##### ~~`hasScript`~~ <a name="hasScript" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.hasScript"></a>
-
-```typescript
-public hasScript(name: string): boolean
-```
-
-Indicates if a script by the name name is defined.
-
-###### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.hasScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
-
----
-
-##### `removeScript` <a name="removeScript" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.removeScript"></a>
-
-```typescript
-public removeScript(name: string): void
-```
-
-Removes the npm script (always successful).
-
-###### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.removeScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
-
----
-
-##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.renderWorkflowSetup"></a>
-
-```typescript
-public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
-```
-
-Returns the set of workflow steps which should be executed to bootstrap a workflow.
-
-###### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.renderWorkflowSetup.parameter.options"></a>
-
-- *Type:* projen.javascript.RenderWorkflowSetupOptions
-
-Options.
-
----
-
-##### `setScript` <a name="setScript" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.setScript"></a>
-
-```typescript
-public setScript(name: string, command: string): void
-```
-
-Replaces the contents of an npm package.json script.
-
-###### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.setScript.parameter.name"></a>
-
-- *Type:* string
-
-The script name.
-
----
-
-###### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.setScript.parameter.command"></a>
-
-- *Type:* string
-
-The command to execute.
-
----
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.name">name</a></code> | <code>string</code> | Project name. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version required by this package. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum node.js version required by this package. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.defaultTsConfig">defaultTsConfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.debug">debug</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.editorConfig">editorConfig</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig">EditorConfig</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitHooksManager">gitHooksManager</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.Husky">Husky</a> \| <a href="#@thoroc/projen-typescript-git-hooks.Lefthook">Lefthook</a></code> | *No description.* |
-
----
-
-##### `buildTask`<sup>Required</sup> <a name="buildTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.buildTask"></a>
-
-```typescript
-public readonly buildTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.commitGenerated"></a>
-
-```typescript
-public readonly commitGenerated: boolean;
-```
-
-- *Type:* boolean
-
-Whether to commit the managed files by default.
-
----
-
-##### `compileTask`<sup>Required</sup> <a name="compileTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.compileTask"></a>
-
-```typescript
-public readonly compileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `components`<sup>Required</sup> <a name="components" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.components"></a>
-
-```typescript
-public readonly components: Component[];
-```
-
-- *Type:* projen.Component[]
-
-Returns all the components within this project.
-
----
-
-##### `deps`<sup>Required</sup> <a name="deps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.deps"></a>
-
-```typescript
-public readonly deps: Dependencies;
-```
-
-- *Type:* projen.Dependencies
-
-Project dependencies.
-
----
-
-##### `ejected`<sup>Required</sup> <a name="ejected" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.ejected"></a>
-
-```typescript
-public readonly ejected: boolean;
-```
-
-- *Type:* boolean
-
-Whether or not the project is being ejected.
-
----
-
-##### `files`<sup>Required</sup> <a name="files" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.files"></a>
-
-```typescript
-public readonly files: FileBase[];
-```
-
-- *Type:* projen.FileBase[]
-
-All files in this project.
-
----
-
-##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitattributes"></a>
-
-```typescript
-public readonly gitattributes: GitAttributesFile;
-```
-
-- *Type:* projen.GitAttributesFile
-
-The .gitattributes file for this repository.
-
----
-
-##### `gitignore`<sup>Required</sup> <a name="gitignore" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitignore"></a>
-
-```typescript
-public readonly gitignore: IgnoreFile;
-```
-
-- *Type:* projen.IgnoreFile
-
-.gitignore.
-
----
-
-##### `logger`<sup>Required</sup> <a name="logger" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.logger"></a>
-
-```typescript
-public readonly logger: Logger;
-```
-
-- *Type:* projen.Logger
-
-Logging utilities.
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
-Project name.
-
----
-
-##### `outdir`<sup>Required</sup> <a name="outdir" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.outdir"></a>
-
-```typescript
-public readonly outdir: string;
-```
-
-- *Type:* string
-
-Absolute output directory of this project.
-
----
-
-##### `packageTask`<sup>Required</sup> <a name="packageTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.packageTask"></a>
-
-```typescript
-public readonly packageTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.postCompileTask"></a>
-
-```typescript
-public readonly postCompileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.preCompileTask"></a>
-
-```typescript
-public readonly preCompileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projectBuild"></a>
-
-```typescript
-public readonly projectBuild: ProjectBuild;
-```
-
-- *Type:* projen.ProjectBuild
-
-Manages the build process of the project.
-
----
-
-##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projenCommand"></a>
-
-```typescript
-public readonly projenCommand: string;
-```
-
-- *Type:* string
-
-The command to use in order to run the projen CLI.
-
----
-
-##### `root`<sup>Required</sup> <a name="root" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.root"></a>
-
-```typescript
-public readonly root: Project;
-```
-
-- *Type:* projen.Project
-
-The root project.
-
----
-
-##### `subprojects`<sup>Required</sup> <a name="subprojects" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.subprojects"></a>
-
-```typescript
-public readonly subprojects: Project[];
-```
-
-- *Type:* projen.Project[]
-
-Returns all the subprojects within this project.
-
----
-
-##### `tasks`<sup>Required</sup> <a name="tasks" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tasks"></a>
-
-```typescript
-public readonly tasks: Tasks;
-```
-
-- *Type:* projen.Tasks
-
-Project tasks.
-
----
-
-##### `testTask`<sup>Required</sup> <a name="testTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.testTask"></a>
-
-```typescript
-public readonly testTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.defaultTask"></a>
-
-```typescript
-public readonly defaultTask: Task;
-```
-
-- *Type:* projen.Task
-
-This is the "default" task, the one that executes "projen".
-
-Undefined if
-the project is being ejected.
-
----
-
-##### `initProject`<sup>Optional</sup> <a name="initProject" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.initProject"></a>
-
-```typescript
-public readonly initProject: InitProject;
-```
-
-- *Type:* projen.InitProject
-
-The options used when this project is bootstrapped via `projen new`.
-
-It
-includes the original set of options passed to the CLI and also the JSII
-FQN of the project type.
-
----
-
-##### `parent`<sup>Optional</sup> <a name="parent" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.parent"></a>
-
-```typescript
-public readonly parent: Project;
-```
-
-- *Type:* projen.Project
-
-A parent project.
-
-If undefined, this is the root project.
-
----
-
-##### `projectType`<sup>Required</sup> <a name="projectType" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projectType"></a>
-
-```typescript
-public readonly projectType: ProjectType;
-```
-
-- *Type:* projen.ProjectType
-
----
-
-##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.autoApprove"></a>
-
-```typescript
-public readonly autoApprove: AutoApprove;
-```
-
-- *Type:* projen.github.AutoApprove
-
-Auto approve set up for this project.
-
----
-
-##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.devContainer"></a>
-
-```typescript
-public readonly devContainer: DevContainer;
-```
-
-- *Type:* projen.vscode.DevContainer
-
-Access for .devcontainer.json (used for GitHub Codespaces).
-
-This will be `undefined` if devContainer boolean is false
-
----
-
-##### `github`<sup>Optional</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.github"></a>
-
-```typescript
-public readonly github: GitHub;
-```
-
-- *Type:* projen.github.GitHub
-
-Access all github components.
-
-This will be `undefined` for subprojects.
-
----
-
-##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitpod"></a>
-
-```typescript
-public readonly gitpod: Gitpod;
-```
-
-- *Type:* projen.Gitpod
-
-Access for Gitpod.
-
-This will be `undefined` if gitpod boolean is false
-
----
-
-##### `vscode`<sup>Optional</sup> <a name="vscode" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.vscode"></a>
-
-```typescript
-public readonly vscode: VsCode;
-```
-
-- *Type:* projen.vscode.VsCode
-
-Access all VSCode components.
-
-This will be `undefined` for subprojects.
-
----
-
-##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.allowLibraryDependencies"></a>
-
-- *Deprecated:* use `package.allowLibraryDependencies`
-
-```typescript
-public readonly allowLibraryDependencies: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.artifactsDirectory"></a>
-
-```typescript
-public readonly artifactsDirectory: string;
-```
-
-- *Type:* string
-
-The build output directory.
-
-An npm tarball will be created under the `js`
-subdirectory. For example, if this is set to `dist` (the default), the npm
-tarball will be placed under `dist/js/boom-boom-1.2.3.tg`.
-
----
-
-##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.artifactsJavascriptDirectory"></a>
-
-```typescript
-public readonly artifactsJavascriptDirectory: string;
-```
-
-- *Type:* string
-
-The location of the npm tarball after build (`${artifactsDirectory}/js`).
-
----
-
-##### `bundler`<sup>Required</sup> <a name="bundler" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.bundler"></a>
-
-```typescript
-public readonly bundler: Bundler;
-```
-
-- *Type:* projen.javascript.Bundler
-
----
-
-##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.entrypoint"></a>
-
-- *Deprecated:* use `package.entrypoint`
-
-```typescript
-public readonly entrypoint: string;
-```
-
-- *Type:* string
-
----
-
-##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.manifest"></a>
-
-- *Deprecated:* use `package.addField(x, y)`
-
-```typescript
-public readonly manifest: any;
-```
-
-- *Type:* any
-
----
-
-##### `npmrc`<sup>Required</sup> <a name="npmrc" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.npmrc"></a>
-
-```typescript
-public readonly npmrc: NpmConfig;
-```
-
-- *Type:* projen.javascript.NpmConfig
-
-The .npmrc file.
-
----
-
-##### `package`<sup>Required</sup> <a name="package" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.package"></a>
-
-```typescript
-public readonly package: NodePackage;
-```
-
-- *Type:* projen.javascript.NodePackage
-
-API for managing the node package.
-
----
-
-##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.packageManager"></a>
-
-- *Deprecated:* use `package.packageManager`
-
-```typescript
-public readonly packageManager: NodePackageManager;
-```
-
-- *Type:* projen.javascript.NodePackageManager
-
-The package manager to use.
-
----
-
-##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.runScriptCommand"></a>
-
-```typescript
-public readonly runScriptCommand: string;
-```
-
-- *Type:* string
-
-The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager).
-
----
-
-##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.autoMerge"></a>
-
-```typescript
-public readonly autoMerge: AutoMerge;
-```
-
-- *Type:* projen.github.AutoMerge
-
-Component that sets up mergify for merging approved pull requests.
-
----
-
-##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.buildWorkflow"></a>
-
-```typescript
-public readonly buildWorkflow: BuildWorkflow;
-```
-
-- *Type:* projen.build.BuildWorkflow
-
-The PR build GitHub workflow.
-
-`undefined` if `buildWorkflow` is disabled.
-
----
-
-##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.buildWorkflowJobId"></a>
-
-```typescript
-public readonly buildWorkflowJobId: string;
-```
-
-- *Type:* string
-
-The job ID of the build workflow.
-
----
-
-##### `jest`<sup>Optional</sup> <a name="jest" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.jest"></a>
-
-```typescript
-public readonly jest: Jest;
-```
-
-- *Type:* projen.javascript.Jest
-
-The Jest configuration (if enabled).
-
----
-
-##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.maxNodeVersion"></a>
-
-```typescript
-public readonly maxNodeVersion: string;
-```
-
-- *Type:* string
-
-Maximum node version required by this package.
-
----
-
-##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.minNodeVersion"></a>
-
-```typescript
-public readonly minNodeVersion: string;
-```
-
-- *Type:* string
-
-Minimum node.js version required by this package.
-
----
-
-##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.npmignore"></a>
-
-```typescript
-public readonly npmignore: IgnoreFile;
-```
-
-- *Type:* projen.IgnoreFile
-
-The .npmignore file.
-
----
-
-##### `prettier`<sup>Optional</sup> <a name="prettier" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.prettier"></a>
-
-```typescript
-public readonly prettier: Prettier;
-```
-
-- *Type:* projen.javascript.Prettier
-
----
-
-##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.publisher"></a>
-
-- *Deprecated:* use `release.publisher`.
-
-```typescript
-public readonly publisher: Publisher;
-```
-
-- *Type:* projen.release.Publisher
-
-Package publisher.
-
-This will be `undefined` if the project does not have a
-release workflow.
-
----
-
-##### `release`<sup>Optional</sup> <a name="release" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.release"></a>
-
-```typescript
-public readonly release: Release;
-```
-
-- *Type:* projen.release.Release
-
-Release management.
-
----
-
-##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.upgradeWorkflow"></a>
-
-```typescript
-public readonly upgradeWorkflow: UpgradeDependencies;
-```
-
-- *Type:* projen.javascript.UpgradeDependencies
-
-The upgrade workflow.
-
----
-
-##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.docsDirectory"></a>
-
-```typescript
-public readonly docsDirectory: string;
-```
-
-- *Type:* string
-
----
-
-##### `libdir`<sup>Required</sup> <a name="libdir" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.libdir"></a>
-
-```typescript
-public readonly libdir: string;
-```
-
-- *Type:* string
-
-The directory in which compiled .js files reside.
-
----
-
-##### `srcdir`<sup>Required</sup> <a name="srcdir" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.srcdir"></a>
-
-```typescript
-public readonly srcdir: string;
-```
-
-- *Type:* string
-
-The directory in which the .ts sources reside.
-
----
-
-##### `testdir`<sup>Required</sup> <a name="testdir" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.testdir"></a>
-
-```typescript
-public readonly testdir: string;
-```
-
-- *Type:* string
-
-The directory in which tests reside.
-
----
-
-##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tsconfigDev"></a>
-
-```typescript
-public readonly tsconfigDev: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
-A typescript configuration file which covers all files (sources, tests, projen).
-
----
-
-##### `watchTask`<sup>Required</sup> <a name="watchTask" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.watchTask"></a>
-
-```typescript
-public readonly watchTask: Task;
-```
-
-- *Type:* projen.Task
-
-The "watch" task.
-
----
-
-##### `docgen`<sup>Optional</sup> <a name="docgen" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.docgen"></a>
-
-```typescript
-public readonly docgen: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `eslint`<sup>Optional</sup> <a name="eslint" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.eslint"></a>
-
-```typescript
-public readonly eslint: Eslint;
-```
-
-- *Type:* projen.javascript.Eslint
-
----
-
-##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tsconfig"></a>
-
-```typescript
-public readonly tsconfig: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
----
-
-##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.tsconfigEslint"></a>
-
-```typescript
-public readonly tsconfigEslint: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
----
-
-##### `defaultTsConfig`<sup>Required</sup> <a name="defaultTsConfig" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.defaultTsConfig"></a>
-
-```typescript
-public readonly defaultTsConfig: TypescriptConfigOptions;
-```
-
-- *Type:* projen.javascript.TypescriptConfigOptions
-
----
-
-##### `debug`<sup>Optional</sup> <a name="debug" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.debug"></a>
-
-```typescript
-public readonly debug: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `editorConfig`<sup>Optional</sup> <a name="editorConfig" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.editorConfig"></a>
-
-```typescript
-public readonly editorConfig: EditorConfig;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.EditorConfig">EditorConfig</a>
-
----
-
-##### `gitHooksManager`<sup>Optional</sup> <a name="gitHooksManager" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitHooksManager"></a>
-
-```typescript
-public readonly gitHooksManager: Husky | Lefthook;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.Husky">Husky</a> | <a href="#@thoroc/projen-typescript-git-hooks.Lefthook">Lefthook</a>
-
----
-
-#### Constants <a name="Constants" id="Constants"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
-
----
-
-##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.DEFAULT_TASK"></a>
-
-```typescript
-public readonly DEFAULT_TASK: string;
-```
-
-- *Type:* string
-
-The name of the default task (the task executed when `projen` is run without arguments).
-
-Normally
-this task should synthesize the project files.
-
----
-
-### GitHooksManager <a name="GitHooksManager" id="@thoroc/projen-typescript-git-hooks.GitHooksManager"></a>
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.Initializer"></a>
-
-```typescript
-import { GitHooksManager } from '@thoroc/projen-typescript-git-hooks'
-
-new GitHooksManager(project: GitHooksEnabledProject)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.Initializer.parameter.project"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-
-### Husky <a name="Husky" id="@thoroc/projen-typescript-git-hooks.Husky"></a>
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Husky.Initializer"></a>
-
-```typescript
-import { Husky } from '@thoroc/projen-typescript-git-hooks'
-
-new Husky(project: GitHooksEnabledProject, options?: HuskyOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyOptions">HuskyOptions</a></code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Husky.Initializer.parameter.project"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Husky.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.HuskyOptions">HuskyOptions</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.createHook">createHook</a></code> | *No description.* |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Husky.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Husky.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Husky.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-##### `createHook` <a name="createHook" id="@thoroc/projen-typescript-git-hooks.Husky.createHook"></a>
-
-```typescript
-public createHook(hook: GitClientHook, command: string[]): void
-```
-
-###### `hook`<sup>Required</sup> <a name="hook" id="@thoroc/projen-typescript-git-hooks.Husky.createHook.parameter.hook"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a>
-
----
-
-###### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.Husky.createHook.parameter.command"></a>
-
-- *Type:* string[]
-
----
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.of">of</a></code> | Returns the singletone component of a project or undefined if there is none. |
-
----
-
-##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Husky.of"></a>
-
-```typescript
-import { Husky } from '@thoroc/projen-typescript-git-hooks'
-
-Husky.of(project: Project)
-```
-
-Returns the singletone component of a project or undefined if there is none.
-
-###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Husky.of.parameter.project"></a>
-
-- *Type:* projen.Project
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.property.lintStaged">lintStaged</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged">LintStaged</a></code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Husky.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-##### `lintStaged`<sup>Optional</sup> <a name="lintStaged" id="@thoroc/projen-typescript-git-hooks.Husky.property.lintStaged"></a>
-
-```typescript
-public readonly lintStaged: LintStaged;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LintStaged">LintStaged</a>
-
----
-
-
-### HuskyHookFile <a name="HuskyHookFile" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile"></a>
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer"></a>
-
-```typescript
-import { HuskyHookFile } from '@thoroc/projen-typescript-git-hooks'
-
-new HuskyHookFile(project: Project, options: HuskyHookFileOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFileOptions">HuskyHookFileOptions</a></code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer.parameter.project"></a>
-
-- *Type:* projen.Project
-
----
-
-##### `options`<sup>Required</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFileOptions">HuskyHookFileOptions</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.synthesize">synthesize</a></code> | Writes the file to the project's output directory. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.addLine">addLine</a></code> | Adds a line to the text file. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Writes the file to the project's output directory.
-
-##### `addLine` <a name="addLine" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.addLine"></a>
-
-```typescript
-public addLine(line: string): void
-```
-
-Adds a line to the text file.
-
-###### `line`<sup>Required</sup> <a name="line" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.addLine.parameter.line"></a>
-
-- *Type:* string
-
-the line to add (can use tokens).
-
----
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.absolutePath">absolutePath</a></code> | <code>string</code> | The absolute path of this file. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.path">path</a></code> | <code>string</code> | The file path, relative to the project root. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.changed">changed</a></code> | <code>boolean</code> | Indicates if the file has been changed during synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.marker">marker</a></code> | <code>string</code> | The projen marker, used to identify files as projen-generated. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.executable">executable</a></code> | <code>boolean</code> | Indicates if the file should be marked as executable. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.readonly">readonly</a></code> | <code>boolean</code> | Indicates if the file should be read-only or read-write. |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-##### `absolutePath`<sup>Required</sup> <a name="absolutePath" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.absolutePath"></a>
-
-```typescript
-public readonly absolutePath: string;
-```
-
-- *Type:* string
-
-The absolute path of this file.
-
----
-
-##### `path`<sup>Required</sup> <a name="path" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.path"></a>
-
-```typescript
-public readonly path: string;
-```
-
-- *Type:* string
-
-The file path, relative to the project root.
-
----
-
-##### `changed`<sup>Optional</sup> <a name="changed" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.changed"></a>
-
-```typescript
-public readonly changed: boolean;
-```
-
-- *Type:* boolean
-
-Indicates if the file has been changed during synthesis.
-
-This property is
-only available in `postSynthesize()` hooks. If this is `undefined`, the
-file has not been synthesized yet.
-
----
-
-##### `marker`<sup>Optional</sup> <a name="marker" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.marker"></a>
-
-```typescript
-public readonly marker: string;
-```
-
-- *Type:* string
-
-The projen marker, used to identify files as projen-generated.
-
-Value is undefined if the project is being ejected.
-
----
-
-##### `executable`<sup>Required</sup> <a name="executable" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.executable"></a>
-
-```typescript
-public readonly executable: boolean;
-```
-
-- *Type:* boolean
-
-Indicates if the file should be marked as executable.
-
----
-
-##### `readonly`<sup>Required</sup> <a name="readonly" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.readonly"></a>
-
-```typescript
-public readonly readonly: boolean;
-```
-
-- *Type:* boolean
-
-Indicates if the file should be read-only or read-write.
-
----
-
-
-### IssueTemplate <a name="IssueTemplate" id="@thoroc/projen-typescript-git-hooks.IssueTemplate"></a>
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.Initializer"></a>
-
-```typescript
-import { IssueTemplate } from '@thoroc/projen-typescript-git-hooks'
-
-new IssueTemplate(github: GitHub)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
-
----
-
-##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.Initializer.parameter.github"></a>
-
-- *Type:* projen.github.GitHub
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.synthesize">synthesize</a></code> | Writes the file to the project's output directory. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.addLine">addLine</a></code> | Adds a line to the text file. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Writes the file to the project's output directory.
-
-##### `addLine` <a name="addLine" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.addLine"></a>
-
-```typescript
-public addLine(line: string): void
-```
-
-Adds a line to the text file.
-
-###### `line`<sup>Required</sup> <a name="line" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.addLine.parameter.line"></a>
-
-- *Type:* string
-
-the line to add (can use tokens).
-
----
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.absolutePath">absolutePath</a></code> | <code>string</code> | The absolute path of this file. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.path">path</a></code> | <code>string</code> | The file path, relative to the project root. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.changed">changed</a></code> | <code>boolean</code> | Indicates if the file has been changed during synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.marker">marker</a></code> | <code>string</code> | The projen marker, used to identify files as projen-generated. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.executable">executable</a></code> | <code>boolean</code> | Indicates if the file should be marked as executable. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.readonly">readonly</a></code> | <code>boolean</code> | Indicates if the file should be read-only or read-write. |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-##### `absolutePath`<sup>Required</sup> <a name="absolutePath" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.absolutePath"></a>
-
-```typescript
-public readonly absolutePath: string;
-```
-
-- *Type:* string
-
-The absolute path of this file.
-
----
-
-##### `path`<sup>Required</sup> <a name="path" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.path"></a>
-
-```typescript
-public readonly path: string;
-```
-
-- *Type:* string
-
-The file path, relative to the project root.
-
----
-
-##### `changed`<sup>Optional</sup> <a name="changed" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.changed"></a>
-
-```typescript
-public readonly changed: boolean;
-```
-
-- *Type:* boolean
-
-Indicates if the file has been changed during synthesis.
-
-This property is
-only available in `postSynthesize()` hooks. If this is `undefined`, the
-file has not been synthesized yet.
-
----
-
-##### `marker`<sup>Optional</sup> <a name="marker" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.marker"></a>
-
-```typescript
-public readonly marker: string;
-```
-
-- *Type:* string
-
-The projen marker, used to identify files as projen-generated.
-
-Value is undefined if the project is being ejected.
-
----
-
-##### `executable`<sup>Required</sup> <a name="executable" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.executable"></a>
-
-```typescript
-public readonly executable: boolean;
-```
-
-- *Type:* boolean
-
-Indicates if the file should be marked as executable.
-
----
-
-##### `readonly`<sup>Required</sup> <a name="readonly" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.readonly"></a>
-
-```typescript
-public readonly readonly: boolean;
-```
-
-- *Type:* boolean
-
-Indicates if the file should be read-only or read-write.
-
----
-
-
-### Jest <a name="Jest" id="@thoroc/projen-typescript-git-hooks.Jest"></a>
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Jest.Initializer"></a>
-
-```typescript
-import { Jest } from '@thoroc/projen-typescript-git-hooks'
-
-new Jest(project: GitHooksEnabledProject, options?: JestOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.Initializer.parameter.options">options</a></code> | <code>projen.javascript.JestOptions</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Jest.Initializer.parameter.project"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Jest.Initializer.parameter.options"></a>
-
-- *Type:* projen.javascript.JestOptions
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addIgnorePattern">addIgnorePattern</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addReporter">addReporter</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addSetupFile">addSetupFile</a></code> | Adds a a setup file to Jest's setupFiles configuration. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addSetupFileAfterEnv">addSetupFileAfterEnv</a></code> | Adds a a setup file to Jest's setupFilesAfterEnv configuration. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addSnapshotResolver">addSnapshotResolver</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addTestMatch">addTestMatch</a></code> | Adds a test match pattern. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.addWatchIgnorePattern">addWatchIgnorePattern</a></code> | Adds a watch ignore pattern. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Jest.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Jest.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Jest.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-##### `addIgnorePattern` <a name="addIgnorePattern" id="@thoroc/projen-typescript-git-hooks.Jest.addIgnorePattern"></a>
-
-```typescript
-public addIgnorePattern(pattern: string): void
-```
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Jest.addIgnorePattern.parameter.pattern"></a>
-
-- *Type:* string
-
----
-
-##### `addReporter` <a name="addReporter" id="@thoroc/projen-typescript-git-hooks.Jest.addReporter"></a>
-
-```typescript
-public addReporter(reporter: JestReporter): void
-```
-
-###### `reporter`<sup>Required</sup> <a name="reporter" id="@thoroc/projen-typescript-git-hooks.Jest.addReporter.parameter.reporter"></a>
-
-- *Type:* projen.javascript.JestReporter
-
----
-
-##### `addSetupFile` <a name="addSetupFile" id="@thoroc/projen-typescript-git-hooks.Jest.addSetupFile"></a>
-
-```typescript
-public addSetupFile(file: string): void
-```
-
-Adds a a setup file to Jest's setupFiles configuration.
-
-###### `file`<sup>Required</sup> <a name="file" id="@thoroc/projen-typescript-git-hooks.Jest.addSetupFile.parameter.file"></a>
-
-- *Type:* string
-
-File path to setup file.
-
----
-
-##### `addSetupFileAfterEnv` <a name="addSetupFileAfterEnv" id="@thoroc/projen-typescript-git-hooks.Jest.addSetupFileAfterEnv"></a>
-
-```typescript
-public addSetupFileAfterEnv(file: string): void
-```
-
-Adds a a setup file to Jest's setupFilesAfterEnv configuration.
-
-###### `file`<sup>Required</sup> <a name="file" id="@thoroc/projen-typescript-git-hooks.Jest.addSetupFileAfterEnv.parameter.file"></a>
-
-- *Type:* string
-
-File path to setup file.
-
----
-
-##### `addSnapshotResolver` <a name="addSnapshotResolver" id="@thoroc/projen-typescript-git-hooks.Jest.addSnapshotResolver"></a>
-
-```typescript
-public addSnapshotResolver(file: string): void
-```
-
-###### `file`<sup>Required</sup> <a name="file" id="@thoroc/projen-typescript-git-hooks.Jest.addSnapshotResolver.parameter.file"></a>
-
-- *Type:* string
-
----
-
-##### `addTestMatch` <a name="addTestMatch" id="@thoroc/projen-typescript-git-hooks.Jest.addTestMatch"></a>
-
-```typescript
-public addTestMatch(pattern: string): void
-```
-
-Adds a test match pattern.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Jest.addTestMatch.parameter.pattern"></a>
-
-- *Type:* string
-
-glob pattern to match for tests.
-
----
-
-##### `addWatchIgnorePattern` <a name="addWatchIgnorePattern" id="@thoroc/projen-typescript-git-hooks.Jest.addWatchIgnorePattern"></a>
-
-```typescript
-public addWatchIgnorePattern(pattern: string): void
-```
-
-Adds a watch ignore pattern.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Jest.addWatchIgnorePattern.parameter.pattern"></a>
-
-- *Type:* string
-
-The pattern (regular expression).
-
----
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.of">of</a></code> | Returns the singletone Jest component of a project or undefined if there is none. |
-
----
-
-##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Jest.of"></a>
-
-```typescript
-import { Jest } from '@thoroc/projen-typescript-git-hooks'
-
-Jest.of(project: Project)
-```
-
-Returns the singletone Jest component of a project or undefined if there is none.
-
-###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Jest.of.parameter.project"></a>
-
-- *Type:* projen.Project
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.config">config</a></code> | <code>any</code> | Escape hatch. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.jestVersion">jestVersion</a></code> | <code>string</code> | Jest version, including `@` symbol, like `@^29`. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.file">file</a></code> | <code>projen.JsonFile</code> | Jest config file. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.property.configFilePath">configFilePath</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Jest.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-##### `config`<sup>Required</sup> <a name="config" id="@thoroc/projen-typescript-git-hooks.Jest.property.config"></a>
-
-```typescript
-public readonly config: any;
-```
-
-- *Type:* any
-
-Escape hatch.
-
----
-
-##### `jestVersion`<sup>Required</sup> <a name="jestVersion" id="@thoroc/projen-typescript-git-hooks.Jest.property.jestVersion"></a>
-
-```typescript
-public readonly jestVersion: string;
-```
-
-- *Type:* string
-
-Jest version, including `@` symbol, like `@^29`.
-
----
-
-##### `file`<sup>Optional</sup> <a name="file" id="@thoroc/projen-typescript-git-hooks.Jest.property.file"></a>
-
-```typescript
-public readonly file: JsonFile;
-```
-
-- *Type:* projen.JsonFile
-
-Jest config file.
-
-`undefined` if settings are written to `package.json`
-
----
-
-##### `configFilePath`<sup>Optional</sup> <a name="configFilePath" id="@thoroc/projen-typescript-git-hooks.Jest.property.configFilePath"></a>
-
-```typescript
-public readonly configFilePath: string;
-```
-
-- *Type:* string
-
----
-
-
-### LabelerConfig <a name="LabelerConfig" id="@thoroc/projen-typescript-git-hooks.LabelerConfig"></a>
-
-Represents LabelerConfig configuration.
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer"></a>
-
-```typescript
-import { LabelerConfig } from '@thoroc/projen-typescript-git-hooks'
-
-new LabelerConfig(project: Project, options: LabelerConfigOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfigOptions">LabelerConfigOptions</a></code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer.parameter.project"></a>
-
-- *Type:* projen.Project
-
----
-
-##### `options`<sup>Required</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LabelerConfigOptions">LabelerConfigOptions</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-
-### Lefthook <a name="Lefthook" id="@thoroc/projen-typescript-git-hooks.Lefthook"></a>
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Lefthook.Initializer"></a>
-
-```typescript
-import { Lefthook } from '@thoroc/projen-typescript-git-hooks'
-
-new Lefthook(project: GitHooksEnabledProject, options?: LefthookOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookOptions">LefthookOptions</a></code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Lefthook.Initializer.parameter.project"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Lefthook.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LefthookOptions">LefthookOptions</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.addCommand">addCommand</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.addScript">addScript</a></code> | *No description.* |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Lefthook.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Lefthook.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Lefthook.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-##### `addCommand` <a name="addCommand" id="@thoroc/projen-typescript-git-hooks.Lefthook.addCommand"></a>
-
-```typescript
-public addCommand(hookName: GitClientHook, command: LefthookCommandOptions): void
-```
-
-###### `hookName`<sup>Required</sup> <a name="hookName" id="@thoroc/projen-typescript-git-hooks.Lefthook.addCommand.parameter.hookName"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a>
-
----
-
-###### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.Lefthook.addCommand.parameter.command"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LefthookCommandOptions">LefthookCommandOptions</a>
-
----
-
-##### `addScript` <a name="addScript" id="@thoroc/projen-typescript-git-hooks.Lefthook.addScript"></a>
-
-```typescript
-public addScript(hookName: GitClientHook, script: LefthookScriptOptions): void
-```
-
-###### `hookName`<sup>Required</sup> <a name="hookName" id="@thoroc/projen-typescript-git-hooks.Lefthook.addScript.parameter.hookName"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a>
-
----
-
-###### `script`<sup>Required</sup> <a name="script" id="@thoroc/projen-typescript-git-hooks.Lefthook.addScript.parameter.script"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LefthookScriptOptions">LefthookScriptOptions</a>
-
----
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.of">of</a></code> | Returns the singletone component of a project or undefined if there is none. |
-
----
-
-##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Lefthook.of"></a>
-
-```typescript
-import { Lefthook } from '@thoroc/projen-typescript-git-hooks'
-
-Lefthook.of(project: Project)
-```
-
-Returns the singletone component of a project or undefined if there is none.
-
-###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Lefthook.of.parameter.project"></a>
-
-- *Type:* projen.Project
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.property.config">config</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookConfig">LefthookConfig</a></code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Lefthook.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-##### `config`<sup>Required</sup> <a name="config" id="@thoroc/projen-typescript-git-hooks.Lefthook.property.config"></a>
-
-```typescript
-public readonly config: LefthookConfig;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LefthookConfig">LefthookConfig</a>
-
----
-
-
 ### LefthookCommand <a name="LefthookCommand" id="@thoroc/projen-typescript-git-hooks.LefthookCommand"></a>
 
 - *Implements:* <a href="#@thoroc/projen-typescript-git-hooks.ISerializer">ISerializer</a>
@@ -8294,6 +17420,7 @@ public serialize(): object
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommand.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommand.property.run">run</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommand.property.stagedFiles">stagedFiles</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommand.property.stageFixed">stageFixed</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommand.property.exclude">exclude</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommand.property.files">files</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookCommand.property.glob">glob</a></code> | <code>string</code> | *No description.* |
@@ -8325,6 +17452,16 @@ public readonly run: string;
 
 ```typescript
 public readonly stagedFiles: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `stageFixed`<sup>Required</sup> <a name="stageFixed" id="@thoroc/projen-typescript-git-hooks.LefthookCommand.property.stageFixed"></a>
+
+```typescript
+public readonly stageFixed: boolean;
 ```
 
 - *Type:* boolean
@@ -8430,138 +17567,6 @@ public readonly actions: LefthookAction[];
 ---
 
 
-### LintStaged <a name="LintStaged" id="@thoroc/projen-typescript-git-hooks.LintStaged"></a>
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.LintStaged.Initializer"></a>
-
-```typescript
-import { LintStaged } from '@thoroc/projen-typescript-git-hooks'
-
-new LintStaged(project: GitHooksEnabledProject, options?: LintStagedOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LintStagedOptions">LintStagedOptions</a></code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LintStaged.Initializer.parameter.project"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.LintStaged.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LintStagedOptions">LintStagedOptions</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.addRule">addRule</a></code> | *No description.* |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.LintStaged.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.LintStaged.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.LintStaged.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-##### `addRule` <a name="addRule" id="@thoroc/projen-typescript-git-hooks.LintStaged.addRule"></a>
-
-```typescript
-public addRule(rule: LintStagedRuleOptions): void
-```
-
-###### `rule`<sup>Required</sup> <a name="rule" id="@thoroc/projen-typescript-git-hooks.LintStaged.addRule.parameter.rule"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LintStagedRuleOptions">LintStagedRuleOptions</a>
-
----
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.of">of</a></code> | Returns the singletone component of a project or undefined if there is none. |
-
----
-
-##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.LintStaged.of"></a>
-
-```typescript
-import { LintStaged } from '@thoroc/projen-typescript-git-hooks'
-
-LintStaged.of(project: GitHooksEnabledProject)
-```
-
-Returns the singletone component of a project or undefined if there is none.
-
-###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LintStaged.of.parameter.project"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.property.rules">rules</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.LintStagedRule">LintStagedRule</a>[]</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.LintStaged.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-##### `rules`<sup>Required</sup> <a name="rules" id="@thoroc/projen-typescript-git-hooks.LintStaged.property.rules"></a>
-
-```typescript
-public readonly rules: LintStagedRule[];
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.LintStagedRule">LintStagedRule</a>[]
-
----
-
-
 ### LintStagedRule <a name="LintStagedRule" id="@thoroc/projen-typescript-git-hooks.LintStagedRule"></a>
 
 #### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.LintStagedRule.Initializer"></a>
@@ -8627,390 +17632,103 @@ public readonly last: boolean;
 ---
 
 
-### Markdownlint <a name="Markdownlint" id="@thoroc/projen-typescript-git-hooks.Markdownlint"></a>
+### McpServer <a name="McpServer" id="@thoroc/projen-typescript-git-hooks.McpServer"></a>
 
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Markdownlint.Initializer"></a>
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.McpServer.Initializer"></a>
 
 ```typescript
-import { Markdownlint } from '@thoroc/projen-typescript-git-hooks'
+import { McpServer } from '@thoroc/projen-typescript-git-hooks'
 
-new Markdownlint(project: GitHooksEnabledProject, options?: MarkdownlintOptions)
+new McpServer(name: string, options: McpServerConfig)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a></code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpServer.Initializer.parameter.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpServer.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.McpServerConfig">McpServerConfig</a></code> | *No description.* |
 
 ---
 
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Markdownlint.Initializer.parameter.project"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Markdownlint.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.addIgnorePattern">addIgnorePattern</a></code> | Defines Markdownlint ignore Patterns these patterns will be added to the file .markdownlintignore. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Markdownlint.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Markdownlint.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Markdownlint.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-##### `addIgnorePattern` <a name="addIgnorePattern" id="@thoroc/projen-typescript-git-hooks.Markdownlint.addIgnorePattern"></a>
-
-```typescript
-public addIgnorePattern(pattern: string): void
-```
-
-Defines Markdownlint ignore Patterns these patterns will be added to the file .markdownlintignore.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Markdownlint.addIgnorePattern.parameter.pattern"></a>
+##### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.McpServer.Initializer.parameter.name"></a>
 
 - *Type:* string
 
-filepatterns so exclude from Markdownlint formatting.
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.McpServer.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.McpServerConfig">McpServerConfig</a>
 
 ---
 
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.of">of</a></code> | Returns the singletone component of a project or undefined if there is none. |
-
----
-
-##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Markdownlint.of"></a>
-
-```typescript
-import { Markdownlint } from '@thoroc/projen-typescript-git-hooks'
-
-Markdownlint.of(project: Project)
-```
-
-Returns the singletone component of a project or undefined if there is none.
-
-###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Markdownlint.of.parameter.project"></a>
-
-- *Type:* projen.Project
-
----
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.property.defaultRules">defaultRules</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintRules">MarkdownlintRules</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.property.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.property.ignoreFile">ignoreFile</a></code> | <code>projen.IgnoreFile</code> | The .markdownlintignore file. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.property.rules">rules</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintRules">MarkdownlintRules</a></code> | Direct access to the markdownlint rules (escape hatch). |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpServer.property.command">command</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpServer.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpServer.property.args">args</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpServer.property.env">env</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
 
 ---
 
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Markdownlint.property.project"></a>
+##### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.McpServer.property.command"></a>
 
 ```typescript
-public readonly project: Project;
+public readonly command: string;
 ```
-
-- *Type:* projen.Project
-
----
-
-##### `defaultRules`<sup>Required</sup> <a name="defaultRules" id="@thoroc/projen-typescript-git-hooks.Markdownlint.property.defaultRules"></a>
-
-```typescript
-public readonly defaultRules: MarkdownlintRules;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintRules">MarkdownlintRules</a>
-
----
-
-##### `options`<sup>Required</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Markdownlint.property.options"></a>
-
-```typescript
-public readonly options: MarkdownlintOptions;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintOptions">MarkdownlintOptions</a>
-
----
-
-##### `ignoreFile`<sup>Optional</sup> <a name="ignoreFile" id="@thoroc/projen-typescript-git-hooks.Markdownlint.property.ignoreFile"></a>
-
-```typescript
-public readonly ignoreFile: IgnoreFile;
-```
-
-- *Type:* projen.IgnoreFile
-
-The .markdownlintignore file.
-
----
-
-##### `rules`<sup>Required</sup> <a name="rules" id="@thoroc/projen-typescript-git-hooks.Markdownlint.property.rules"></a>
-
-```typescript
-public readonly rules: MarkdownlintRules;
-```
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.MarkdownlintRules">MarkdownlintRules</a>
-
-Direct access to the markdownlint rules (escape hatch).
-
----
-
-
-### Prettier <a name="Prettier" id="@thoroc/projen-typescript-git-hooks.Prettier"></a>
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Prettier.Initializer"></a>
-
-```typescript
-import { Prettier } from '@thoroc/projen-typescript-git-hooks'
-
-new Prettier(project: GitHooksEnabledProject, options?: PrettierOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.Initializer.parameter.project">project</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a></code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.Initializer.parameter.options">options</a></code> | <code>projen.javascript.PrettierOptions</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Prettier.Initializer.parameter.project"></a>
-
-- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject">GitHooksEnabledProject</a>
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.Prettier.Initializer.parameter.options"></a>
-
-- *Type:* projen.javascript.PrettierOptions
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.addIgnorePattern">addIgnorePattern</a></code> | Defines Prettier ignore Patterns these patterns will be added to the file .prettierignore. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.addOverride">addOverride</a></code> | Add a prettier override. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Prettier.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.Prettier.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.Prettier.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-##### `addIgnorePattern` <a name="addIgnorePattern" id="@thoroc/projen-typescript-git-hooks.Prettier.addIgnorePattern"></a>
-
-```typescript
-public addIgnorePattern(pattern: string): void
-```
-
-Defines Prettier ignore Patterns these patterns will be added to the file .prettierignore.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="@thoroc/projen-typescript-git-hooks.Prettier.addIgnorePattern.parameter.pattern"></a>
 
 - *Type:* string
 
-filepatterns so exclude from prettier formatting.
-
 ---
 
-##### `addOverride` <a name="addOverride" id="@thoroc/projen-typescript-git-hooks.Prettier.addOverride"></a>
+##### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.McpServer.property.name"></a>
 
 ```typescript
-public addOverride(override: PrettierOverride): void
+public readonly name: string;
 ```
 
-Add a prettier override.
-
-> [https://prettier.io/docs/en/configuration.html#configuration-overrides](https://prettier.io/docs/en/configuration.html#configuration-overrides)
-
-###### `override`<sup>Required</sup> <a name="override" id="@thoroc/projen-typescript-git-hooks.Prettier.addOverride.parameter.override"></a>
-
-- *Type:* projen.javascript.PrettierOverride
+- *Type:* string
 
 ---
 
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.of">of</a></code> | *No description.* |
-
----
-
-##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.Prettier.of"></a>
+##### `args`<sup>Optional</sup> <a name="args" id="@thoroc/projen-typescript-git-hooks.McpServer.property.args"></a>
 
 ```typescript
-import { Prettier } from '@thoroc/projen-typescript-git-hooks'
-
-Prettier.of(project: Project)
+public readonly args: string[];
 ```
 
-###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Prettier.of.parameter.project"></a>
-
-- *Type:* projen.Project
+- *Type:* string[]
 
 ---
 
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.property.overrides">overrides</a></code> | <code>projen.javascript.PrettierOverride[]</code> | Returns all Prettier overrides. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.property.settings">settings</a></code> | <code>projen.javascript.PrettierSettings</code> | Direct access to the prettier settings. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.property.ignoreFile">ignoreFile</a></code> | <code>projen.IgnoreFile</code> | The .prettierIgnore file. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.property.defaultPrettierOptions">defaultPrettierOptions</a></code> | <code>projen.javascript.PrettierOptions</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.Prettier.property.project"></a>
+##### `env`<sup>Optional</sup> <a name="env" id="@thoroc/projen-typescript-git-hooks.McpServer.property.env"></a>
 
 ```typescript
-public readonly project: Project;
+public readonly env: {[ key: string ]: string};
 ```
 
-- *Type:* projen.Project
-
----
-
-##### `overrides`<sup>Required</sup> <a name="overrides" id="@thoroc/projen-typescript-git-hooks.Prettier.property.overrides"></a>
-
-```typescript
-public readonly overrides: PrettierOverride[];
-```
-
-- *Type:* projen.javascript.PrettierOverride[]
-
-Returns all Prettier overrides.
-
----
-
-##### `settings`<sup>Required</sup> <a name="settings" id="@thoroc/projen-typescript-git-hooks.Prettier.property.settings"></a>
-
-```typescript
-public readonly settings: PrettierSettings;
-```
-
-- *Type:* projen.javascript.PrettierSettings
-
-Direct access to the prettier settings.
-
----
-
-##### `ignoreFile`<sup>Optional</sup> <a name="ignoreFile" id="@thoroc/projen-typescript-git-hooks.Prettier.property.ignoreFile"></a>
-
-```typescript
-public readonly ignoreFile: IgnoreFile;
-```
-
-- *Type:* projen.IgnoreFile
-
-The .prettierIgnore file.
-
----
-
-##### `defaultPrettierOptions`<sup>Required</sup> <a name="defaultPrettierOptions" id="@thoroc/projen-typescript-git-hooks.Prettier.property.defaultPrettierOptions"></a>
-
-```typescript
-public readonly defaultPrettierOptions: PrettierOptions;
-```
-
-- *Type:* projen.javascript.PrettierOptions
+- *Type:* {[ key: string ]: string}
 
 ---
 
 
-### PullRequestJestCoverageComment <a name="PullRequestJestCoverageComment" id="@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment"></a>
+### Rule <a name="Rule" id="@thoroc/projen-typescript-git-hooks.Rule"></a>
 
-Represents PullRequestJestCoverageComment configuration.
+- *Implements:* <a href="#@thoroc/projen-typescript-git-hooks.ISerializer">ISerializer</a>
 
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment.Initializer"></a>
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.Rule.Initializer"></a>
 
 ```typescript
-import { PullRequestJestCoverageComment } from '@thoroc/projen-typescript-git-hooks'
+import { Rule } from '@thoroc/projen-typescript-git-hooks'
 
-new PullRequestJestCoverageComment(github: GitHub)
+new Rule()
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
-
----
-
-##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment.Initializer.parameter.github"></a>
-
-- *Type:* projen.github.GitHub
 
 ---
 
@@ -9018,143 +17736,24 @@ new PullRequestJestCoverageComment(github: GitHub)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Rule.serialize">serialize</a></code> | *No description.* |
 
 ---
 
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment.postSynthesize"></a>
+##### `serialize` <a name="serialize" id="@thoroc/projen-typescript-git-hooks.Rule.serialize"></a>
 
 ```typescript
-public postSynthesize(): void
+public serialize(): object
 ```
 
-Called after synthesis.
 
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.PullRequestJestCoverageComment.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-
-### PullRequestLabeler <a name="PullRequestLabeler" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler"></a>
-
-Represents PullRequestLabeler configuration.
-
-#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.Initializer"></a>
-
-```typescript
-import { PullRequestLabeler } from '@thoroc/projen-typescript-git-hooks'
-
-new PullRequestLabeler(github: GitHub)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
-
----
-
-##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.Initializer.parameter.github"></a>
-
-- *Type:* projen.github.GitHub
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
 
 
 ## Protocols <a name="Protocols" id="Protocols"></a>
 
 ### ISerializer <a name="ISerializer" id="@thoroc/projen-typescript-git-hooks.ISerializer"></a>
 
-- *Implemented By:* <a href="#@thoroc/projen-typescript-git-hooks.EditorConfigParams">EditorConfigParams</a>, <a href="#@thoroc/projen-typescript-git-hooks.LefthookCommand">LefthookCommand</a>, <a href="#@thoroc/projen-typescript-git-hooks.LefthookConfig">LefthookConfig</a>, <a href="#@thoroc/projen-typescript-git-hooks.ISerializer">ISerializer</a>
+- *Implemented By:* <a href="#@thoroc/projen-typescript-git-hooks.EditorConfigParams">EditorConfigParams</a>, <a href="#@thoroc/projen-typescript-git-hooks.LefthookCommand">LefthookCommand</a>, <a href="#@thoroc/projen-typescript-git-hooks.LefthookConfig">LefthookConfig</a>, <a href="#@thoroc/projen-typescript-git-hooks.Rule">Rule</a>, <a href="#@thoroc/projen-typescript-git-hooks.ISerializer">ISerializer</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 

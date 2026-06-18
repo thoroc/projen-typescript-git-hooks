@@ -1,0 +1,13 @@
+{
+  "schema": "aislop.baseline.v2",
+  "updatedAt": "2026-06-17T16:44:56.022Z",
+  "score": 100,
+  "byEngine": {
+    "format": 100,
+    "lint": 100,
+    "code-quality": 100,
+    "ai-slop": 100
+  },
+  "fileCount": 143,
+  "findingFingerprints": []
+}

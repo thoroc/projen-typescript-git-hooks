@@ -1,5 +1,15 @@
 {
   "tasks": {
+    "biome": {
+      "name": "biome",
+      "description": "Runs Biome against the codebase",
+      "steps": [
+        {
+          "exec": "biome check --no-errors-on-unmatched --write",
+          "receiveArgs": true
+        }
+      ]
+    },
     "build": {
       "name": "build",
       "description": "Full release build",
@@ -32,14 +42,25 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": ""
+        "RELEASE_TAG_PREFIX": "",
+        "BUMP_PACKAGE": "commit-and-tag-version@^12"
       },
       "steps": [
         {
           "builtin": "release/bump-version"
         }
       ],
-      "condition": "! git log --oneline -1 | grep -q \"chore(release):\""
+      "condition": "git log --oneline -1 | grep -qv \"chore(release):\""
+    },
+    "claude-code:install": {
+      "name": "claude-code:install",
+      "description": "Install Claude Code CLI",
+      "steps": [
+        {
+          "exec": "command -v claude >/dev/null 2>&1 || npm install -g @anthropic-ai/claude-code",
+          "name": "install-binary"
+        }
+      ]
     },
     "clobber": {
       "name": "clobber",
@@ -72,6 +93,16 @@
         }
       ],
       "condition": "git diff --exit-code > /dev/null"
+    },
+    "codex:install": {
+      "name": "codex:install",
+      "description": "Install OpenAI Codex CLI",
+      "steps": [
+        {
+          "exec": "command -v codex >/dev/null 2>&1 || npm install -g @openai/codex",
+          "name": "install-binary"
+        }
+      ]
     },
     "commitizen": {
       "name": "commitizen",
@@ -130,30 +161,34 @@
         }
       ]
     },
-    "eslint": {
-      "name": "eslint",
-      "description": "Runs eslint against the codebase",
+    "gemini:install": {
+      "name": "gemini:install",
+      "description": "Install Gemini CLI",
       "steps": [
         {
-          "exec": "eslint --ext .ts --fix --no-error-on-unmatched-pattern src test .projenrc.js"
+          "exec": "command -v gemini >/dev/null 2>&1 || npm install -g @google/gemini-cli",
+          "name": "install-binary"
         }
       ]
     },
-    "format": {
-      "name": "format",
-      "description": "Runs Prettier",
+    "harnesses:install": {
+      "name": "harnesses:install",
+      "description": "Install all enabled harness tools",
       "steps": [
         {
-          "exec": "npx prettier --write \"{src,projenrc}/**/*.ts\""
-        }
-      ]
-    },
-    "format:markdown": {
-      "name": "format:markdown",
-      "description": "Runs Prettier on Markdown",
-      "steps": [
+          "spawn": "claude-code:install"
+        },
         {
-          "exec": "npx prettier --write --prose-wrap always *.md"
+          "spawn": "codex:install"
+        },
+        {
+          "spawn": "opencode:install"
+        },
+        {
+          "spawn": "gemini:install"
+        },
+        {
+          "spawn": "vibe:install"
         }
       ]
     },
@@ -162,7 +197,7 @@
       "description": "Install project dependencies and update lockfile (non-frozen)",
       "steps": [
         {
-          "exec": "yarn install --check-files"
+          "exec": "bun install"
         }
       ]
     },
@@ -171,7 +206,17 @@
       "description": "Install project dependencies using frozen lockfile",
       "steps": [
         {
-          "exec": "yarn install --check-files --frozen-lockfile"
+          "exec": "bun install --frozen-lockfile"
+        }
+      ]
+    },
+    "opencode:install": {
+      "name": "opencode:install",
+      "description": "Install OpenCode CLI",
+      "steps": [
+        {
+          "exec": "command -v opencode >/dev/null 2>&1 || npm install -g opencode",
+          "name": "install-binary"
         }
       ]
     },
@@ -180,7 +225,12 @@
       "description": "Creates the distribution package",
       "steps": [
         {
-          "exec": "if [ ! -z ${CI} ]; then rsync -a . .repo --exclude .git --exclude node_modules && rm -rf dist && mv .repo dist; else npx projen package-all; fi"
+          "spawn": "package:js",
+          "condition": "node -e \"if (!process.env.CI) process.exit(1)\""
+        },
+        {
+          "spawn": "package-all",
+          "condition": "node -e \"if (process.env.CI) process.exit(1)\""
         }
       ]
     },
@@ -248,17 +298,8 @@
       "description": "Run tests",
       "steps": [
         {
-          "exec": "jest --passWithNoTests --updateSnapshot",
+          "exec": "vitest run",
           "receiveArgs": true
-        }
-      ]
-    },
-    "test:watch": {
-      "name": "test:watch",
-      "description": "Run jest in watch mode",
-      "steps": [
-        {
-          "exec": "jest --watch"
         }
       ]
     },
@@ -270,7 +311,8 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": ""
+        "RELEASE_TAG_PREFIX": "",
+        "BUMP_PACKAGE": "commit-and-tag-version@^12"
       },
       "steps": [
         {
@@ -286,19 +328,29 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@commitlint/cli,@commitlint/config-conventional,@types/jest,@types/node,@types/prettier,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,commitizen,constructs,cz-conventional-changelog,eslint-config-airbnb-typescript,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-markdownlint,eslint-plugin-prettier,eslint-plugin-testing-library,eslint,husky,jest,jest-junit,jsii-diff,jsii-docgen,jsii-pacmak,lint-staged,prettier,projen,standard-version,ts-jest,ts-node,typescript,change-case,type-fest,yaml"
+          "exec": "bunx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@commitlint/cli,@commitlint/config-conventional,@types/node,@vitest/coverage-v8,commitizen,cz-conventional-changelog,jsii-diff,jsii-pacmak,lefthook,projen,ts-node,typescript,vite-tsconfig-paths,vitest,change-case,type-fest,yaml"
         },
         {
-          "exec": "yarn install --check-files"
+          "exec": "bun install"
         },
         {
-          "exec": "yarn upgrade @commitlint/cli @commitlint/config-conventional @types/jest @types/node @types/prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser commitizen constructs cz-conventional-changelog eslint-config-airbnb-typescript eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-markdownlint eslint-plugin-prettier eslint-plugin-testing-library eslint husky jest jest-junit jsii-diff jsii-docgen jsii-pacmak lint-staged prettier projen standard-version ts-jest ts-node typescript change-case type-fest yaml"
+          "exec": "bun update @biomejs/biome @commitlint/cli @commitlint/config-conventional @types/node @vitest/coverage-v8 commit-and-tag-version commitizen constructs cz-conventional-changelog jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii lefthook projen ts-node typescript vite-tsconfig-paths vitest change-case type-fest yaml"
         },
         {
-          "exec": "npx projen"
+          "exec": "bunx projen"
         },
         {
           "spawn": "post-upgrade"
+        }
+      ]
+    },
+    "vibe:install": {
+      "name": "vibe:install",
+      "description": "Install Mistral Vibe CLI",
+      "steps": [
+        {
+          "exec": "command -v vibe >/dev/null 2>&1 || npm install -g @mistralai/vibe",
+          "name": "install-binary"
         }
       ]
     },
@@ -313,7 +365,7 @@
     }
   },
   "env": {
-    "PATH": "$(npx -c \"node --print process.env.PATH\")"
+    "PATH": "$(bun --eval \"console.log(process.env.PATH)\")"
   },
-  "//": "~~ Generated by projen. To modify, edit .projenrc.ts and run \"npx projen\"."
+  "//": "~~ Generated by projen. To modify, edit .projenrc.ts and run \"bunx projen\"."
 }

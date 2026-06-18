@@ -1,11 +1,11 @@
-import { ISerializer } from "../../../../utils";
+import type { ISerializer } from "../../../../utils";
 
 export abstract class Rule implements ISerializer {
-  serialize(): object {
-    return {
-      classNameAsPascalCase: {
-        "props-as-kebab-case": "value",
-      },
-    };
-  }
+	serialize(): object {
+		return {
+			classNameAsPascalCase: {
+				"props-as-kebab-case": "value",
+			},
+		};
+	}
 }
