@@ -15,8 +15,8 @@ export class McpConfig extends Component {
 
 	private readonly _servers: Array<McpServer>;
 
-	get servers(): ReadonlyArray<McpServer> {
-		return this._servers;
+	get servers(): Array<McpServer> {
+		return [...this._servers];
 	}
 
 	constructor(project: Project, options: McpConfigOptions) {

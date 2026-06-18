@@ -72,7 +72,12 @@ export class OpenCode extends Component {
 		});
 	}
 
-	postSynthesize(
+	override postSynthesize(): void {
+		this._postSynthesize({});
+	}
+
+	/** @internal */
+	_postSynthesize(
 		deps: {
 			existsSync?: (p: string) => boolean;
 			lstatSync?: (p: string) => { isSymbolicLink(): boolean };

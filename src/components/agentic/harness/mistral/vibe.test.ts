@@ -87,7 +87,7 @@ describe("MistralVibe", () => {
 
 			const project = new Project({ name: "test" });
 			const mv = new MistralVibe(project);
-			mv.postSynthesize({ existsSync, symlinkSync });
+			mv._postSynthesize({ existsSync, symlinkSync });
 
 			expect(symlinkSync).toHaveBeenCalledWith(
 				"AGENTS.md",
@@ -102,7 +102,7 @@ describe("MistralVibe", () => {
 
 			const project = new Project({ name: "test" });
 			const mv = new MistralVibe(project);
-			mv.postSynthesize({ existsSync, lstatSync, symlinkSync });
+			mv._postSynthesize({ existsSync, lstatSync, symlinkSync });
 
 			expect(symlinkSync).not.toHaveBeenCalled();
 		});
@@ -116,7 +116,7 @@ describe("MistralVibe", () => {
 
 			const project = new Project({ name: "test" });
 			const mv = new MistralVibe(project);
-			mv.postSynthesize({ existsSync, lstatSync, symlinkSync });
+			mv._postSynthesize({ existsSync, lstatSync, symlinkSync });
 
 			expect(symlinkSync).not.toHaveBeenCalled();
 		});

@@ -5,7 +5,6 @@ import {
 } from "projen/lib/javascript";
 import {
 	Biome,
-	type BiomeOptions,
 	Eslint,
 	Prettier,
 	type PrettierSortImportsOptions,
@@ -49,15 +48,6 @@ export interface GitHooksEnabledProjectOptions
 	 * EditorConfig options
 	 */
 	readonly editorConfigOptions?: EditorConfigOptions;
-	/**
-	 * Enable Biome as the formatter and linter, replacing ESLint and Prettier.
-	 * @default false
-	 */
-	readonly biome?: boolean;
-	/**
-	 * Biome options. Only used when biome is true.
-	 */
-	readonly biomeOptions?: BiomeOptions;
 	/**
 	 * Enable @trivago/prettier-plugin-sort-imports and configure it.
 	 * Providing this option (even as an empty object) activates the plugin.

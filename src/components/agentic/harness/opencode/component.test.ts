@@ -126,7 +126,7 @@ describe("OpenCode", () => {
 
 			const project = new Project({ name: "test" });
 			const oc = new OpenCode(project);
-			oc.postSynthesize({ existsSync, symlinkSync });
+			oc._postSynthesize({ existsSync, symlinkSync });
 
 			expect(symlinkSync).toHaveBeenCalledWith(
 				"AGENTS.md",
@@ -141,7 +141,7 @@ describe("OpenCode", () => {
 
 			const project = new Project({ name: "test" });
 			const oc = new OpenCode(project);
-			oc.postSynthesize({ existsSync, lstatSync, symlinkSync });
+			oc._postSynthesize({ existsSync, lstatSync, symlinkSync });
 
 			expect(symlinkSync).not.toHaveBeenCalled();
 		});
@@ -155,7 +155,7 @@ describe("OpenCode", () => {
 
 			const project = new Project({ name: "test" });
 			const oc = new OpenCode(project);
-			oc.postSynthesize({ existsSync, lstatSync, symlinkSync });
+			oc._postSynthesize({ existsSync, lstatSync, symlinkSync });
 
 			expect(symlinkSync).not.toHaveBeenCalled();
 		});

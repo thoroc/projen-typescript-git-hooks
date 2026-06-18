@@ -159,7 +159,7 @@ describe("GeminiCli", () => {
 
 			const project = new Project({ name: "test" });
 			const gc = new GeminiCli(project);
-			gc.postSynthesize({ existsSync, symlinkSync });
+			gc._postSynthesize({ existsSync, symlinkSync });
 
 			expect(symlinkSync).toHaveBeenCalledWith(
 				"AGENTS.md",
@@ -174,7 +174,7 @@ describe("GeminiCli", () => {
 
 			const project = new Project({ name: "test" });
 			const gc = new GeminiCli(project);
-			gc.postSynthesize({ existsSync, lstatSync, symlinkSync });
+			gc._postSynthesize({ existsSync, lstatSync, symlinkSync });
 
 			expect(symlinkSync).not.toHaveBeenCalled();
 		});
@@ -188,7 +188,7 @@ describe("GeminiCli", () => {
 
 			const project = new Project({ name: "test" });
 			const gc = new GeminiCli(project);
-			gc.postSynthesize({ existsSync, lstatSync, symlinkSync });
+			gc._postSynthesize({ existsSync, lstatSync, symlinkSync });
 
 			expect(symlinkSync).not.toHaveBeenCalled();
 		});

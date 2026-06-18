@@ -1,7 +1,7 @@
-import { GitHooksManagerType } from "@thoroc/githooks-manager";
-import { GitHooksEnabledProject } from "@thoroc/projen-typescript-git-hooks";
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
+import { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
+import { GitHooksManagerType } from "../githooks-manager";
 import { Jest } from "./jest";
 
 const makeProject = () =>

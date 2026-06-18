@@ -134,7 +134,7 @@ describe("ClaudeCode", () => {
 
 			const project = new Project({ name: "test" });
 			const cc = new ClaudeCode(project);
-			cc.postSynthesize({ existsSync, symlinkSync });
+			cc._postSynthesize({ existsSync, symlinkSync });
 
 			expect(symlinkSync).toHaveBeenCalledWith(
 				"AGENTS.md",
@@ -149,7 +149,7 @@ describe("ClaudeCode", () => {
 
 			const project = new Project({ name: "test" });
 			const cc = new ClaudeCode(project);
-			cc.postSynthesize({ existsSync, lstatSync, symlinkSync });
+			cc._postSynthesize({ existsSync, lstatSync, symlinkSync });
 
 			expect(symlinkSync).not.toHaveBeenCalled();
 		});
@@ -163,7 +163,7 @@ describe("ClaudeCode", () => {
 
 			const project = new Project({ name: "test" });
 			const cc = new ClaudeCode(project);
-			cc.postSynthesize({ existsSync, lstatSync, symlinkSync });
+			cc._postSynthesize({ existsSync, lstatSync, symlinkSync });
 
 			expect(symlinkSync).not.toHaveBeenCalled();
 		});

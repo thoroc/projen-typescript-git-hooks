@@ -11,7 +11,7 @@ export class PullRequestLabeler extends Component {
 
 		const workflow = github.addWorkflow("pull-request-labeler");
 		workflow.on({
-			pullRequestTarget: {},
+			pullRequest: {},
 		});
 
 		workflow.addJob("triage", {
@@ -64,7 +64,7 @@ export class LabelerConfig extends Component {
 		super(project);
 
 		const toV5 = (globs: string[]) => [
-			{ "changed-files": [{ "any-glob-to-any-file": globs }] },
+			{ "changed-files": globs.map((g) => ({ "any-glob-to-any-file": g })) },
 		];
 
 		new YamlFile(project, ".github/labeler.yml", {

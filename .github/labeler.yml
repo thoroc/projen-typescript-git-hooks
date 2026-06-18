@@ -2,17 +2,13 @@
 
 documentation:
   - changed-files:
-      - any-glob-to-any-file:
-          - "*.md"
+      - any-glob-to-any-file: "*.md"
 githubAction:
   - changed-files:
-      - any-glob-to-any-file:
-          - .github/**
+      - any-glob-to-any-file: .github/**
 component:
   - changed-files:
-      - any-glob-to-any-file:
-          - src/components/**
+      - any-glob-to-any-file: src/components/**
 test:
   - changed-files:
-      - any-glob-to-any-file:
-          - src/**/*.test.ts
+      - any-glob-to-any-file: src/**/*.test.ts

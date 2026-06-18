@@ -37,6 +37,8 @@ const project = new cdk.JsiiProject({
 	prettier: false,
 	jest: false,
 
+	excludeTypescript: ["**/*.test.ts"],
+
 	autoApproveOptions: {
 		allowedUsernames: ["thoroc", "dependabot[bot]", "renovate"],
 	},
