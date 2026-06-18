@@ -7,6 +7,13 @@ export interface ReleasePleaseOptions {
 	readonly releaseType?: string;
 	/** The branch to target for releases. Defaults to "main". */
 	readonly targetBranch?: string;
+	/**
+	 * Prevent concurrent release-please runs on the same branch.
+	 * Defaults to true. When enabled, queues concurrent triggers instead of
+	 * racing them, preventing "tag already exists" and "PR cannot be reopened"
+	 * failures that occur when two pushes land on main in quick succession.
+	 */
+	readonly limitConcurrency?: boolean;
 	/** Path to the release-please config file. */
 	readonly configFile?: string;
 	/** Path to the release-please manifest file. */
@@ -33,9 +40,20 @@ export class ReleasePlease extends Component {
 	constructor(github: GitHub, options: ReleasePleaseOptions = {}) {
 		super(github.project);
 
-		const { releaseType = "node", targetBranch = "main" } = options;
+		const {
+			releaseType = "node",
+			targetBranch = "main",
+			limitConcurrency = true,
+		} = options;
 
 		const workflow = github.addWorkflow("release-please");
+
+		if (limitConcurrency) {
+			workflow.file?.addOverride("concurrency", {
+				group: "${{ github.workflow }}-${{ github.ref }}",
+				"cancel-in-progress": false,
+			});
+		}
 
 		workflow.on({
 			push: { branches: [targetBranch] },

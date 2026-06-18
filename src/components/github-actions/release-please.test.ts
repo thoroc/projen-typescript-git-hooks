@@ -36,7 +36,39 @@ jobs:
         with:
           token: \${{ secrets.GITHUB_TOKEN }}
           release-type: node
+concurrency:
+  group: \${{ github.workflow }}-\${{ github.ref }}
+  cancel-in-progress: false
 `);
+	});
+
+	it("adds a concurrency group by default to prevent race conditions", () => {
+		// Arrange
+		const project = new Project({ name: "test" });
+		const github = new GitHub(project);
+		new ReleasePlease(github);
+
+		// Act
+		const config =
+			synthSnapshot(project)[".github/workflows/release-please.yml"];
+
+		// Assert
+		expect(config).toContain("group: ${{ github.workflow }}-${{ github.ref }}");
+		expect(config).toContain("cancel-in-progress: false");
+	});
+
+	it("omits the concurrency block when limitConcurrency is false", () => {
+		// Arrange
+		const project = new Project({ name: "test" });
+		const github = new GitHub(project);
+		new ReleasePlease(github, { limitConcurrency: false });
+
+		// Act
+		const config =
+			synthSnapshot(project)[".github/workflows/release-please.yml"];
+
+		// Assert
+		expect(config).not.toContain("concurrency");
 	});
 
 	it("supports a custom release type", () => {
