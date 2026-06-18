@@ -23,9 +23,9 @@ jobs:
       - name: Install dependencies
         run: bun install
       - name: Run tests
-        run: bunx vitest run --coverage
+        run: bunx vitest run --coverage --coverage.reporter=json-summary --coverage.reporter=text
       - name: Coverage Comment
-        uses: MishaKav/jest-coverage-comment@v1
+        uses: davelosert/vitest-coverage-report-action@v2
   triage:
     runs-on: ubuntu-latest
     permissions:
