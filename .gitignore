@@ -52,6 +52,7 @@ tsconfig.json
 !/biome.jsonc
 !/renovate.json
 !/.github/workflows/release-please.yml
+!/.github/workflows/pages.yml
 test-reports/
 !/.projenrc.ts
 !/lefthook.yml
