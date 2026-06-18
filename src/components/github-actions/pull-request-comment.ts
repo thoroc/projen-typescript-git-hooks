@@ -35,6 +35,17 @@ export class PullRequestCoverageComment extends Component {
 				? jestStep(packageManager)
 				: vitestStep(packageManager);
 
+		const coverageCommentStep =
+			options.testRunner === "jest"
+				? {
+						name: "Coverage Comment",
+						uses: "MishaKav/jest-coverage-comment@v1",
+					}
+				: {
+						name: "Coverage Comment",
+						uses: "davelosert/vitest-coverage-report-action@v2",
+					};
+
 		workflow.addJob("coverage-comment", {
 			permissions: { pullRequests: JobPermission.WRITE },
 			runsOn: ["ubuntu-latest"],
@@ -50,10 +61,7 @@ export class PullRequestCoverageComment extends Component {
 				},
 				...installSteps(packageManager),
 				testStep,
-				{
-					name: "Coverage Comment",
-					uses: "MishaKav/jest-coverage-comment@v1",
-				},
+				coverageCommentStep,
 			],
 		});
 	}

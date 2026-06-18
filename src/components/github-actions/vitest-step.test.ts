@@ -7,7 +7,7 @@ describe("vitestStep", () => {
 		const step = vitestStep(NodePackageManager.BUN);
 		expect(step).toMatchObject({
 			name: "Run tests",
-			run: "bunx vitest run --coverage",
+			run: "bunx vitest run --coverage --coverage.reporter=json-summary --coverage.reporter=text",
 		});
 	});
 
@@ -19,7 +19,7 @@ describe("vitestStep", () => {
 		const step = vitestStep(manager);
 		expect(step).toMatchObject({
 			name: "Run tests",
-			run: "npx vitest run --coverage",
+			run: "npx vitest run --coverage --coverage.reporter=json-summary --coverage.reporter=text",
 		});
 	});
 });
