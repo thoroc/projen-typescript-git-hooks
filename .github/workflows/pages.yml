@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
+      - name: Copy API reference
+        run: cp API.md docs/api.md
       - name: Build docs
         run: npx @docmd/core build
       - uses: actions/upload-pages-artifact@v3

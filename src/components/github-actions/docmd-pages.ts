@@ -31,7 +31,7 @@ export class DocmdPages extends Component {
 				"",
 				"## API Reference",
 				"",
-				"See the [API reference](../API.md) for the full generated API documentation.",
+				"See the [API reference](./api.md) for the full generated API documentation.",
 			].join("\n"),
 		});
 
@@ -64,6 +64,7 @@ export class DocmdPages extends Component {
 			steps: [
 				{ uses: "actions/checkout@v4" },
 				{ uses: "actions/setup-node@v4", with: { "node-version": "lts/*" } },
+				{ name: "Copy API reference", run: `cp API.md ${docsDir}/api.md` },
 				{ name: "Build docs", run: "npx @docmd/core build" },
 				{
 					uses: "actions/upload-pages-artifact@v3",
