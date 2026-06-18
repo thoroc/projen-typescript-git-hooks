@@ -63,10 +63,10 @@ export class DocmdPages extends Component {
 			runsOn: ["ubuntu-latest"],
 			steps: [
 				{ uses: "actions/checkout@v4" },
-				{ uses: "actions/setup-node@v4", with: { "node-version": "lts/*" } },
+				{ uses: "oven-sh/setup-bun@v2", with: { "bun-version": "latest" } },
+				{ name: "Install dependencies", run: "bun install" },
 				{ name: "Copy API reference", run: `cp API.md ${docsDir}/api.md` },
-				{ name: "Install docmd", run: `npm install --no-save ${docmdPackage}` },
-				{ name: "Build docs", run: "npx @docmd/core build" },
+				{ name: "Build docs", run: `bunx ${docmdPackage} build` },
 				{
 					uses: "actions/upload-pages-artifact@v3",
 					with: { path: outputDir },

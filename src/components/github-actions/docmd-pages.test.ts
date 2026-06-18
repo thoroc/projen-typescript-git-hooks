@@ -71,13 +71,13 @@ describe("DocmdPages", () => {
 			expect(workflow).toContain("cp API.md content/api.md");
 		});
 
-		it("runs npx @docmd/core build", () => {
+		it("runs bunx @docmd/core build", () => {
 			const project = new Project({ name: "test-project" });
 			const github = new GitHub(project);
 			new DocmdPages(github);
 
 			const workflow = synthSnapshot(project)[".github/workflows/pages.yml"];
-			expect(workflow).toContain("npx @docmd/core build");
+			expect(workflow).toContain("bunx @docmd/core build");
 		});
 
 		it("uploads the site artifact from the default output dir", () => {
