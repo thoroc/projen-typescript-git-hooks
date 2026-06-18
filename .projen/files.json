@@ -15,6 +15,7 @@
     ".github/workflows/release-please.yml",
     ".github/workflows/release.yml",
     ".github/workflows/upgrade-main.yml",
+    ".github/workflows/workflow-health-monitor.yml",
     ".gitignore",
     ".projen/deps.json",
     ".projen/files.json",
