@@ -58,6 +58,11 @@ export class DocmdPages extends Component {
 			workflowDispatch: {},
 		});
 
+		workflow.file?.addOverride("concurrency", {
+			group: "${{ github.workflow }}-${{ github.ref }}",
+			"cancel-in-progress": false,
+		});
+
 		workflow.addJob("build", {
 			permissions: { contents: JobPermission.READ },
 			runsOn: ["ubuntu-latest"],

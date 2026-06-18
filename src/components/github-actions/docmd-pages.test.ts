@@ -41,6 +41,18 @@ describe("DocmdPages", () => {
 			const workflow = synthSnapshot(project)[".github/workflows/pages.yml"];
 			expect(workflow).toContain("workflow_dispatch");
 		});
+
+		it("adds a per-ref concurrency group with cancel-in-progress false", () => {
+			const project = new Project({ name: "test-project" });
+			const github = new GitHub(project);
+			new DocmdPages(github);
+
+			const workflow = synthSnapshot(project)[".github/workflows/pages.yml"];
+			expect(workflow).toContain(
+				"group: ${{ github.workflow }}-${{ github.ref }}",
+			);
+			expect(workflow).toContain("cancel-in-progress: false");
+		});
 	});
 
 	describe("build job", () => {
