@@ -74,18 +74,15 @@ export class LefthookCommand implements ISerializer {
 		const records: { [key: string]: string | boolean | undefined } = {};
 		const excludes: Array<string> = ["name", "stagedFiles", "stageFixed"];
 
-		for (const propName in this) {
-			if (Object.hasOwn(this, propName)) {
-				const name: string = propName;
-				const value: unknown = this[name as keyof LefthookCommand];
-				const isNotExcluded: boolean = !excludes.includes(name);
+		for (const name of Object.keys(this)) {
+			const value: unknown = this[name as keyof LefthookCommand];
+			const isNotExcluded: boolean = !excludes.includes(name);
 
-				if (value !== undefined && value && isNotExcluded) {
-					if (name === "run" && this.stagedFiles === true) {
-						records[name] = `${value as string} {staged_files}`;
-					} else {
-						records[name] = value as string;
-					}
+			if (value !== undefined && value && isNotExcluded) {
+				if (name === "run" && this.stagedFiles === true) {
+					records[name] = `${value as string} {staged_files}`;
+				} else {
+					records[name] = value as string;
 				}
 			}
 		}
