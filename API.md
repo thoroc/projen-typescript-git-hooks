@@ -2426,6 +2426,169 @@ public readonly serverName: string;
 
 ---
 
+### DocmdPages <a name="DocmdPages" id="@thoroc/projen-typescript-git-hooks.DocmdPages"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.DocmdPages.Initializer"></a>
+
+```typescript
+import { DocmdPages } from '@thoroc/projen-typescript-git-hooks'
+
+new DocmdPages(github: GitHub, options?: DocmdPagesOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPagesOptions">DocmdPagesOptions</a></code> | *No description.* |
+
+---
+
+##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.DocmdPages.Initializer.parameter.github"></a>
+
+- *Type:* projen.github.GitHub
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.DocmdPages.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.DocmdPagesOptions">DocmdPagesOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.DocmdPages.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.DocmdPages.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.DocmdPages.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.DocmdPages.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.DocmdPages.isConstruct"></a>
+
+```typescript
+import { DocmdPages } from '@thoroc/projen-typescript-git-hooks'
+
+DocmdPages.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.DocmdPages.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.DocmdPages.isComponent"></a>
+
+```typescript
+import { DocmdPages } from '@thoroc/projen-typescript-git-hooks'
+
+DocmdPages.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.DocmdPages.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.DocmdPages.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.DocmdPages.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
 ### EditorConfig <a name="EditorConfig" id="@thoroc/projen-typescript-git-hooks.EditorConfig"></a>
 
 #### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.EditorConfig.Initializer"></a>
@@ -11089,6 +11252,94 @@ public readonly json: boolean;
 ```
 
 - *Type:* boolean
+
+---
+
+### DocmdPagesOptions <a name="DocmdPagesOptions" id="@thoroc/projen-typescript-git-hooks.DocmdPagesOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.DocmdPagesOptions.Initializer"></a>
+
+```typescript
+import { DocmdPagesOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const docmdPagesOptions: DocmdPagesOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPagesOptions.property.branch">branch</a></code> | <code>string</code> | Branch to deploy from. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPagesOptions.property.docsDir">docsDir</a></code> | <code>string</code> | Docs source directory passed to docmd as `src`. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPagesOptions.property.outputDir">outputDir</a></code> | <code>string</code> | Build output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPagesOptions.property.title">title</a></code> | <code>string</code> | Site title used in docmd.config.js. Defaults to the project name. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPagesOptions.property.url">url</a></code> | <code>string</code> | Published URL, e.g. "https://thoroc.github.io/projen-typescript-git-hooks". |
+
+---
+
+##### `branch`<sup>Optional</sup> <a name="branch" id="@thoroc/projen-typescript-git-hooks.DocmdPagesOptions.property.branch"></a>
+
+```typescript
+public readonly branch: string;
+```
+
+- *Type:* string
+
+Branch to deploy from.
+
+Defaults to "main".
+
+---
+
+##### `docsDir`<sup>Optional</sup> <a name="docsDir" id="@thoroc/projen-typescript-git-hooks.DocmdPagesOptions.property.docsDir"></a>
+
+```typescript
+public readonly docsDir: string;
+```
+
+- *Type:* string
+
+Docs source directory passed to docmd as `src`.
+
+Defaults to "docs".
+
+---
+
+##### `outputDir`<sup>Optional</sup> <a name="outputDir" id="@thoroc/projen-typescript-git-hooks.DocmdPagesOptions.property.outputDir"></a>
+
+```typescript
+public readonly outputDir: string;
+```
+
+- *Type:* string
+
+Build output directory.
+
+docmd defaults to "site".
+
+---
+
+##### `title`<sup>Optional</sup> <a name="title" id="@thoroc/projen-typescript-git-hooks.DocmdPagesOptions.property.title"></a>
+
+```typescript
+public readonly title: string;
+```
+
+- *Type:* string
+
+Site title used in docmd.config.js. Defaults to the project name.
+
+---
+
+##### `url`<sup>Optional</sup> <a name="url" id="@thoroc/projen-typescript-git-hooks.DocmdPagesOptions.property.url"></a>
+
+```typescript
+public readonly url: string;
+```
+
+- *Type:* string
+
+Published URL, e.g. "https://thoroc.github.io/projen-typescript-git-hooks".
 
 ---
 
