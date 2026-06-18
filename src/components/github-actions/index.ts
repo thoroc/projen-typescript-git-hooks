@@ -8,3 +8,4 @@ export * from "./pull-request-comment";
 export * from "./pull-request-labeler";
 export * from "./release-please";
 export * from "./vitest-step";
+export * from "./workflow-health-monitor";

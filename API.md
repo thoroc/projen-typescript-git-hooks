@@ -10359,6 +10359,169 @@ public readonly project: Project;
 ---
 
 
+### WorkflowHealthMonitor <a name="WorkflowHealthMonitor" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor"></a>
+
+#### Initializers <a name="Initializers" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.Initializer"></a>
+
+```typescript
+import { WorkflowHealthMonitor } from '@thoroc/projen-typescript-git-hooks'
+
+new WorkflowHealthMonitor(github: GitHub, options?: WorkflowHealthMonitorOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.Initializer.parameter.github">github</a></code> | <code>projen.github.GitHub</code> | *No description.* |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.Initializer.parameter.options">options</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitorOptions">WorkflowHealthMonitorOptions</a></code> | *No description.* |
+
+---
+
+##### `github`<sup>Required</sup> <a name="github" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.Initializer.parameter.github"></a>
+
+- *Type:* projen.github.GitHub
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitorOptions">WorkflowHealthMonitorOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.isConstruct"></a>
+
+```typescript
+import { WorkflowHealthMonitor } from '@thoroc/projen-typescript-git-hooks'
+
+WorkflowHealthMonitor.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.isComponent"></a>
+
+```typescript
+import { WorkflowHealthMonitor } from '@thoroc/projen-typescript-git-hooks'
+
+WorkflowHealthMonitor.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
 ## Structs <a name="Structs" id="Structs"></a>
 
 ### AgenticHarnessesOptions <a name="AgenticHarnessesOptions" id="@thoroc/projen-typescript-git-hooks.AgenticHarnessesOptions"></a>
@@ -17444,6 +17607,83 @@ public readonly coverageProvider: string;
 Coverage provider.
 
 Defaults to 'v8'.
+
+---
+
+### WorkflowHealthMonitorOptions <a name="WorkflowHealthMonitorOptions" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitorOptions"></a>
+
+#### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitorOptions.Initializer"></a>
+
+```typescript
+import { WorkflowHealthMonitorOptions } from '@thoroc/projen-typescript-git-hooks'
+
+const workflowHealthMonitorOptions: WorkflowHealthMonitorOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitorOptions.property.branches">branches</a></code> | <code>string[]</code> | Branch names to restrict monitoring to. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitorOptions.property.conclusions">conclusions</a></code> | <code>string[]</code> | Workflow conclusions that trigger issue creation. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitorOptions.property.issueLabel">issueLabel</a></code> | <code>string</code> | Issue label applied to created issues. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitorOptions.property.workflows">workflows</a></code> | <code>string[]</code> | Workflow names to monitor. |
+
+---
+
+##### `branches`<sup>Optional</sup> <a name="branches" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitorOptions.property.branches"></a>
+
+```typescript
+public readonly branches: string[];
+```
+
+- *Type:* string[]
+
+Branch names to restrict monitoring to.
+
+When omitted, all branches are monitored.
+
+---
+
+##### `conclusions`<sup>Optional</sup> <a name="conclusions" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitorOptions.property.conclusions"></a>
+
+```typescript
+public readonly conclusions: string[];
+```
+
+- *Type:* string[]
+
+Workflow conclusions that trigger issue creation.
+
+Defaults to ["failure"].
+
+---
+
+##### `issueLabel`<sup>Optional</sup> <a name="issueLabel" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitorOptions.property.issueLabel"></a>
+
+```typescript
+public readonly issueLabel: string;
+```
+
+- *Type:* string
+
+Issue label applied to created issues.
+
+Defaults to "ci-failure".
+
+---
+
+##### `workflows`<sup>Optional</sup> <a name="workflows" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitorOptions.property.workflows"></a>
+
+```typescript
+public readonly workflows: string[];
+```
+
+- *Type:* string[]
+
+Workflow names to monitor.
+
+When omitted, all workflows are monitored.
 
 ---
 

@@ -11,6 +11,7 @@ import {
 	PullRequestCoverageComment,
 	PullRequestLabeler,
 	ReleasePlease,
+	WorkflowHealthMonitor,
 } from "./src/components/github-actions";
 import { IssueTemplate } from "./src/components/github-templates";
 import { Renovate } from "./src/components/renovate";
@@ -91,6 +92,9 @@ new Commitizen(project, { json: true });
 new CodeOfConduct(project, { author: "thomas.a.roche@gmail.com" });
 new Renovate(project);
 new ReleasePlease(github);
+new WorkflowHealthMonitor(github, {
+	workflows: ["build", "release-please", "pages"],
+});
 new DocmdPages(github, { title: "@thoroc/projen-typescript-git-hooks" });
 new AgenticHarnesses(project, {
 	harnesses: [
