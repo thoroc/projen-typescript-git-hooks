@@ -1,3 +1,4 @@
+import { readFileSync } from "fs";
 import { cdk } from "projen";
 import { GitHub } from "projen/lib/github";
 import { NodePackageManager } from "projen/lib/javascript";
@@ -13,6 +14,14 @@ import {
 } from "./src/components/github-actions";
 import { IssueTemplate } from "./src/components/github-templates";
 import { Renovate } from "./src/components/renovate";
+
+let version = "0.0.0";
+try {
+	const pkg = JSON.parse(readFileSync("package.json", "utf-8"));
+	version = pkg.version ?? "0.0.0";
+} catch {
+	// package.json doesn't exist on first run
+}
 
 const project = new cdk.JsiiProject({
 	author: "thoroc",
@@ -68,6 +77,8 @@ const project = new cdk.JsiiProject({
 		},
 	},
 });
+
+project.package.addVersion(version);
 
 const github = project.github ?? new GitHub(project);
 new PullRequestCoverageComment(github);
