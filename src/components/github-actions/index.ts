@@ -1,5 +1,6 @@
 export * from "./auto-merge";
 export * from "./close-stale-issue";
+export * from "./docmd-pages";
 export * from "./install-script";
 export * from "./install-steps";
 export * from "./jest-step";

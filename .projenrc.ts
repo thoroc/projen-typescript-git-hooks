@@ -6,6 +6,7 @@ import { Biome } from "./src/components/code-standards";
 import { CodeOfConduct } from "./src/components/documentation";
 import { Lefthook } from "./src/components/githooks-manager";
 import {
+	DocmdPages,
 	PullRequestCoverageComment,
 	PullRequestLabeler,
 	ReleasePlease,
@@ -79,6 +80,7 @@ new Commitizen(project, { json: true });
 new CodeOfConduct(project, { author: "thomas.a.roche@gmail.com" });
 new Renovate(project);
 new ReleasePlease(github);
+new DocmdPages(github, { title: "@thoroc/projen-typescript-git-hooks" });
 new AgenticHarnesses(project, {
 	harnesses: [
 		HarnessType.CLAUDE_CODE,
