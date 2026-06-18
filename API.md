@@ -17306,6 +17306,7 @@ const releasePleaseOptions: ReleasePleaseOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.configFile">configFile</a></code> | <code>string</code> | Path to the release-please config file. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.includeComponentInTag">includeComponentInTag</a></code> | <code>boolean</code> | Whether to include the component name in the git tag. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.includeVInTag">includeVInTag</a></code> | <code>boolean</code> | Whether to include the "v" prefix in the git tag. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.limitConcurrency">limitConcurrency</a></code> | <code>boolean</code> | Prevent concurrent release-please runs on the same branch. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.manifestFile">manifestFile</a></code> | <code>string</code> | Path to the release-please manifest file. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.pullRequestTitlePattern">pullRequestTitlePattern</a></code> | <code>string</code> | Pattern for release PR titles (e.g. "chore: release \${version}"). |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.releaseType">releaseType</a></code> | <code>string</code> | The release type (e.g. "node", "python", "rust"). Defaults to "node". |
@@ -17384,6 +17385,22 @@ public readonly includeVInTag: boolean;
 - *Type:* boolean
 
 Whether to include the "v" prefix in the git tag.
+
+---
+
+##### `limitConcurrency`<sup>Optional</sup> <a name="limitConcurrency" id="@thoroc/projen-typescript-git-hooks.ReleasePleaseOptions.property.limitConcurrency"></a>
+
+```typescript
+public readonly limitConcurrency: boolean;
+```
+
+- *Type:* boolean
+
+Prevent concurrent release-please runs on the same branch.
+
+Defaults to true. When enabled, queues concurrent triggers instead of
+racing them, preventing "tag already exists" and "PR cannot be reopened"
+failures that occur when two pushes land on main in quick succession.
 
 ---
 
