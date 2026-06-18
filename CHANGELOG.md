@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/thoroc/projen-typescript-git-hooks/compare/v1.1.1...v1.1.2) (2026-06-18)
+
+
+### Bug Fixes
+
+* **project:** preserve package version across projen synthesis ([#746](https://github.com/thoroc/projen-typescript-git-hooks/issues/746)) ([300f760](https://github.com/thoroc/projen-typescript-git-hooks/commit/300f760c183b79eebe9ed058eff4863463bc8280))
+
 ## [1.1.0](https://github.com/thoroc/projen-typescript-git-hooks/compare/v1.0.0...v1.1.0) (2026-06-18)
 
 
