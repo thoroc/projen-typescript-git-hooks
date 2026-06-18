@@ -20,6 +20,8 @@ jobs:
         run: bun install
       - name: Copy API reference
         run: cp API.md docs/api.md
+      - name: Install @docmd/core
+        run: bun add @docmd/core
       - name: Build docs
         run: bunx @docmd/core build
       - uses: actions/upload-pages-artifact@v3

@@ -66,6 +66,7 @@ export class DocmdPages extends Component {
 				{ uses: "oven-sh/setup-bun@v2", with: { "bun-version": "latest" } },
 				{ name: "Install dependencies", run: "bun install" },
 				{ name: "Copy API reference", run: `cp API.md ${docsDir}/api.md` },
+				{ name: `Install ${docmdPackage}`, run: `bun add ${docmdPackage}` },
 				{ name: "Build docs", run: `bunx ${docmdPackage} build` },
 				{
 					uses: "actions/upload-pages-artifact@v3",

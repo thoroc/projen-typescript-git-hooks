@@ -71,6 +71,15 @@ describe("DocmdPages", () => {
 			expect(workflow).toContain("cp API.md content/api.md");
 		});
 
+		it("installs @docmd/core before building", () => {
+			const project = new Project({ name: "test-project" });
+			const github = new GitHub(project);
+			new DocmdPages(github);
+
+			const workflow = synthSnapshot(project)[".github/workflows/pages.yml"];
+			expect(workflow).toContain("bun add @docmd/core");
+		});
+
 		it("runs bunx @docmd/core build", () => {
 			const project = new Project({ name: "test-project" });
 			const github = new GitHub(project);
