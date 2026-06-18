@@ -9,10 +9,15 @@ export class PullRequestLabeler extends Component {
 	constructor(github: GitHub) {
 		super(github.project);
 
-		const workflow = github.addWorkflow("pull-request-labeler");
-		workflow.on({
-			pullRequest: {},
-		});
+		const existingWorkflow = github.tryFindWorkflow("pull-request");
+		const workflow = existingWorkflow ?? github.addWorkflow("pull-request");
+		if (!existingWorkflow) {
+			workflow.on({ pullRequest: {} });
+			workflow.file?.addOverride("concurrency", {
+				group: "${{ github.workflow }}-${{ github.event.pull_request.number }}",
+				"cancel-in-progress": true,
+			});
+		}
 
 		workflow.addJob("triage", {
 			permissions: {

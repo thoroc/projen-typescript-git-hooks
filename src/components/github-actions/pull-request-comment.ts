@@ -19,10 +19,15 @@ export class PullRequestCoverageComment extends Component {
 	constructor(github: GitHub, options: PullRequestCoverageCommentOptions = {}) {
 		super(github.project);
 
-		const workflow = github.addWorkflow("pull-request-comment");
-		workflow.on({
-			pullRequest: {},
-		});
+		const existingWorkflow = github.tryFindWorkflow("pull-request");
+		const workflow = existingWorkflow ?? github.addWorkflow("pull-request");
+		if (!existingWorkflow) {
+			workflow.on({ pullRequest: {} });
+			workflow.file?.addOverride("concurrency", {
+				group: "${{ github.workflow }}-${{ github.event.pull_request.number }}",
+				"cancel-in-progress": true,
+			});
+		}
 
 		const { packageManager } = (this.project as NodeProject).package;
 		const testStep =
@@ -30,7 +35,7 @@ export class PullRequestCoverageComment extends Component {
 				? jestStep(packageManager)
 				: vitestStep(packageManager);
 
-		workflow.addJob("build", {
+		workflow.addJob("coverage-comment", {
 			permissions: { pullRequests: JobPermission.WRITE },
 			runsOn: ["ubuntu-latest"],
 			env: { CI: "true" },
