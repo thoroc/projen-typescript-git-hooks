@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/thoroc/projen-typescript-git-hooks/compare/v1.0.0...v1.1.0) (2026-06-18)
+
+
+### Features
+
+* **github-actions:** add DocmdPages component for GitHub Pages via docmd ([#742](https://github.com/thoroc/projen-typescript-git-hooks/issues/742)) ([439a27d](https://github.com/thoroc/projen-typescript-git-hooks/commit/439a27d4e9b38d0ff30e3501d918a0cb2d18e82b))
+
 ## 1.0.0 (2026-06-18)
 
 
