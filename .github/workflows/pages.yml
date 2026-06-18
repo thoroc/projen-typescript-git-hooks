@@ -18,6 +18,8 @@ jobs:
           node-version: lts/*
       - name: Copy API reference
         run: cp API.md docs/api.md
+      - name: Install docmd
+        run: npm install --no-save @docmd/core
       - name: Build docs
         run: npx @docmd/core build
       - uses: actions/upload-pages-artifact@v3
