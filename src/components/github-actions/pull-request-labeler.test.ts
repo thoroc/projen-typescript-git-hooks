@@ -31,6 +31,7 @@ jobs:
       pull-requests: write
       contents: read
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/labeler@v5
         with:
           dot: true
