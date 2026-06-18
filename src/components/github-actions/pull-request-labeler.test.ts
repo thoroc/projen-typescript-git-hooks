@@ -23,7 +23,7 @@ describe("pull-request-labeler", () => {
 
 name: pull-request-labeler
 on:
-  pull_request_target: {}
+  pull_request: {}
 jobs:
   triage:
     runs-on: ubuntu-latest
@@ -56,20 +56,16 @@ jobs:
 
 documentation:
   - changed-files:
-      - any-glob-to-any-file:
-          - "*.md"
+      - any-glob-to-any-file: "*.md"
 githubAction:
   - changed-files:
-      - any-glob-to-any-file:
-          - .github/**
+      - any-glob-to-any-file: .github/**
 component:
   - changed-files:
-      - any-glob-to-any-file:
-          - src/components/**
+      - any-glob-to-any-file: src/components/**
 test:
   - changed-files:
-      - any-glob-to-any-file:
-          - src/**/*.test.ts
+      - any-glob-to-any-file: src/**/*.test.ts
 `);
 	});
 });
