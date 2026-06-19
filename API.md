@@ -5017,6 +5017,7 @@ new GitHooksManager(project: GitHooksEnabledProject)
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.addHook">addHook</a></code> | *No description.* |
 
 ---
 
@@ -5054,12 +5055,31 @@ public synthesize(): void
 
 Synthesizes files to the project output directory.
 
+##### `addHook` <a name="addHook" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.addHook"></a>
+
+```typescript
+public addHook(hook: GitClientHook, command: string): void
+```
+
+###### `hook`<sup>Required</sup> <a name="hook" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.addHook.parameter.hook"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a>
+
+---
+
+###### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.addHook.parameter.command"></a>
+
+- *Type:* string
+
+---
+
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.of">of</a></code> | *No description.* |
 
 ---
 
@@ -5108,6 +5128,20 @@ Test whether the given construct is a component.
 ###### `x`<sup>Required</sup> <a name="x" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.isComponent.parameter.x"></a>
 
 - *Type:* any
+
+---
+
+##### `of` <a name="of" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.of"></a>
+
+```typescript
+import { GitHooksManager } from '@thoroc/projen-typescript-git-hooks'
+
+GitHooksManager.of(project: Project)
+```
+
+###### `project`<sup>Required</sup> <a name="project" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.of.parameter.project"></a>
+
+- *Type:* projen.Project
 
 ---
 
@@ -5368,6 +5402,7 @@ new Husky(project: GitHooksEnabledProject, options?: HuskyOptions)
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.addHook">addHook</a></code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.createHook">createHook</a></code> | *No description.* |
 
 ---
@@ -5405,6 +5440,24 @@ public synthesize(): void
 ```
 
 Synthesizes files to the project output directory.
+
+##### `addHook` <a name="addHook" id="@thoroc/projen-typescript-git-hooks.Husky.addHook"></a>
+
+```typescript
+public addHook(hook: GitClientHook, command: string): void
+```
+
+###### `hook`<sup>Required</sup> <a name="hook" id="@thoroc/projen-typescript-git-hooks.Husky.addHook.parameter.hook"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a>
+
+---
+
+###### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.Husky.addHook.parameter.command"></a>
+
+- *Type:* string
+
+---
 
 ##### `createHook` <a name="createHook" id="@thoroc/projen-typescript-git-hooks.Husky.createHook"></a>
 
@@ -6683,6 +6736,7 @@ new Lefthook(project: GitHooksEnabledProject, options?: LefthookOptions)
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.addHook">addHook</a></code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.addCommand">addCommand</a></code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.addScript">addScript</a></code> | *No description.* |
 
@@ -6721,6 +6775,24 @@ public synthesize(): void
 ```
 
 Synthesizes files to the project output directory.
+
+##### `addHook` <a name="addHook" id="@thoroc/projen-typescript-git-hooks.Lefthook.addHook"></a>
+
+```typescript
+public addHook(hook: GitClientHook, command: string): void
+```
+
+###### `hook`<sup>Required</sup> <a name="hook" id="@thoroc/projen-typescript-git-hooks.Lefthook.addHook.parameter.hook"></a>
+
+- *Type:* <a href="#@thoroc/projen-typescript-git-hooks.GitClientHook">GitClientHook</a>
+
+---
+
+###### `command`<sup>Required</sup> <a name="command" id="@thoroc/projen-typescript-git-hooks.Lefthook.addHook.parameter.command"></a>
+
+- *Type:* string
+
+---
 
 ##### `addCommand` <a name="addCommand" id="@thoroc/projen-typescript-git-hooks.Lefthook.addCommand"></a>
 
