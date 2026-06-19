@@ -89,6 +89,13 @@ describe("Renovate", () => {
 		expect(snapshot["renovate.json"].rebaseWhen).toBe("behind-base-branch");
 	});
 
+	it("does not include the projen comment marker", () => {
+		const project = makeProject();
+		new Renovate(project);
+		const snapshot = synthSnapshot(project);
+		expect(snapshot["renovate.json"]["//"]).toBeUndefined();
+	});
+
 	it("allows providing custom packageRules", () => {
 		const project = makeProject();
 		new Renovate(project, {

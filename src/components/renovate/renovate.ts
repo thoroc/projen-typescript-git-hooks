@@ -43,6 +43,7 @@ export class Renovate extends Component {
 		super(project);
 
 		new JsonFile(project, "renovate.json", {
+			marker: false,
 			obj: {
 				$schema: "https://docs.renovatebot.com/renovate-schema.json",
 				extends: ["config:recommended"],
