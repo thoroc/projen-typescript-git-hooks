@@ -24,7 +24,7 @@ jobs:
         run: bun add @docmd/core
       - name: Build docs
         run: bunx @docmd/core build
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site
   deploy:
