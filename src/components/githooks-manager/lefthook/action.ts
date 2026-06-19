@@ -1,4 +1,4 @@
-import type { GitClientHook } from "..";
+import type { GitClientHook } from "../types";
 import type { LefthookCommandOptions } from "./command";
 import type { LefthookScriptOptions } from "./script";
 

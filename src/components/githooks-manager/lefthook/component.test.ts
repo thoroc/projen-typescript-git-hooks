@@ -71,6 +71,7 @@ describe("Lefthook", () => {
 			defaultReleaseBranch: "main",
 			prettier: true,
 			gitHooksManager: GitHooksManagerType.LEFTHOOK,
+			jest: false,
 		});
 
 		const snapshot = synthSnapshot(project);

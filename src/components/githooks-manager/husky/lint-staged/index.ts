@@ -1,7 +1,6 @@
 import { Component, type Project } from "projen";
 import type { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
-import { GitClientHook, Husky } from "..";
-import { LintStagedRule, type LintStagedRuleOptions } from "./lintstagedrule";
+import { LintStagedRule, type LintStagedRuleOptions } from "./rule";
 
 export interface LintStagedOptions {
 	readonly rules?: Array<LintStagedRule>;
@@ -33,9 +32,6 @@ export class LintStaged extends Component {
 		}
 
 		(this.project as GitHooksEnabledProject).addDevDeps("lint-staged");
-
-		const husky = Husky.of(this.project as GitHooksEnabledProject);
-		husky?.createHook(GitClientHook.PRE_COMMIT, ["npx lint-staged"]);
 	}
 
 	public addRule(rule: LintStagedRuleOptions): void {

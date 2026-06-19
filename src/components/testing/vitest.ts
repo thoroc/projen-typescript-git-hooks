@@ -1,6 +1,7 @@
 import { Component, type Project, SampleFile } from "projen";
-import { NodePackageManager, type NodeProject } from "projen/lib/javascript";
-import { GitClientHook, Husky, Lefthook } from "../githooks-manager";
+import type { NodeProject } from "projen/lib/javascript";
+import { GitClientHook, GitHooksManager } from "../githooks-manager";
+import { runTest } from "./run-test";
 
 export interface VitestOptions {
 	/** Enable coverage collection. Defaults to true. */
@@ -41,22 +42,10 @@ export class Vitest extends Component {
 			project.addDevDeps(`@vitest/coverage-${coverageProvider}`);
 		}
 
-		const yarnManagers = [
-			NodePackageManager.YARN,
-			NodePackageManager.YARN2,
-			NodePackageManager.YARN_CLASSIC,
-			NodePackageManager.YARN_BERRY,
-		];
-		const script = yarnManagers.includes(project.package.packageManager)
-			? "yarn test"
-			: "npm run test";
-
-		Husky.of(project)?.createHook(GitClientHook.PRE_PUSH, [script]);
-		Lefthook.of(project)?.addCommand(GitClientHook.PRE_PUSH, {
-			name: "test",
-			run: script,
-			stagedFiles: false,
-		});
+		GitHooksManager.of(project)?.addHook(
+			GitClientHook.PRE_PUSH,
+			runTest(project.package.packageManager),
+		);
 	}
 
 	preSynthesize(): void {

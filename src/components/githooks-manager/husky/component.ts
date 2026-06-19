@@ -1,9 +1,10 @@
 import type { Component, Project } from "projen";
 import { NodePackageManager } from "projen/lib/javascript/node-package";
 import type { GitHooksEnabledProject } from "../../../typescript/githooks-enabled-project";
-import { type GitClientHook, GitHooksManager } from "../manager";
+import { GitHooksManager } from "../manager";
+import { GitClientHook } from "../types";
 import { HuskyHookFile } from "./hook-file";
-import { LintStaged, type LintStagedOptions } from "./lintstaged";
+import { LintStaged, type LintStagedOptions } from "./lint-staged";
 
 export interface HuskyOptions {
 	/**
@@ -47,7 +48,12 @@ export class Husky extends GitHooksManager {
 				this.project as GitHooksEnabledProject,
 				options?.lintStagedOptions,
 			);
+			this.createHook(GitClientHook.PRE_COMMIT, ["npx lint-staged"]);
 		}
+	}
+
+	public addHook(hook: GitClientHook, command: string): void {
+		this.createHook(hook, [command]);
 	}
 
 	createHook(hook: GitClientHook, command: Array<string>): void {
