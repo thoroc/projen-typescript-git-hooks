@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.0](https://github.com/thoroc/projen-typescript-git-hooks/compare/v1.1.2...v1.2.0) (2026-06-19)
+
+
+### Features
+
+* **github-actions:** add WorkflowHealthMonitor component ([#747](https://github.com/thoroc/projen-typescript-git-hooks/issues/747)) ([62f0d09](https://github.com/thoroc/projen-typescript-git-hooks/commit/62f0d099684cc531774a4e464f82bea3559027c4))
+* **github-actions:** merge PR workflows and add pipeline concurrency ([#754](https://github.com/thoroc/projen-typescript-git-hooks/issues/754)) ([c5eb5a2](https://github.com/thoroc/projen-typescript-git-hooks/commit/c5eb5a2ee1990e32efac8e72e355827d9386f01a))
+
+
+### Bug Fixes
+
+* **deps:** update dependency type-fest to v5 ([#776](https://github.com/thoroc/projen-typescript-git-hooks/issues/776)) ([487f3c4](https://github.com/thoroc/projen-typescript-git-hooks/commit/487f3c4f6a040a5e635322786191f5e38138f8fe))
+* **github-actions:** add concurrency group to release-please workflow ([#752](https://github.com/thoroc/projen-typescript-git-hooks/issues/752)) ([36a5389](https://github.com/thoroc/projen-typescript-git-hooks/commit/36a53898be2f21383f627f3b3a8daba559f58b39))
+* **github-actions:** install @docmd/core before building docs in pages workflow ([#751](https://github.com/thoroc/projen-typescript-git-hooks/issues/751)) ([80b0f1b](https://github.com/thoroc/projen-typescript-git-hooks/commit/80b0f1b0740de2199a8f60ed190df3b06bb0b52e))
+* **github-actions:** use vitest-coverage-report-action for vitest test runner ([#758](https://github.com/thoroc/projen-typescript-git-hooks/issues/758)) ([6562e1c](https://github.com/thoroc/projen-typescript-git-hooks/commit/6562e1c00ff029dca9ffd0e51ab600a963bec4bc))
+* **renovate:** suppress projen comment marker from renovate.json ([#757](https://github.com/thoroc/projen-typescript-git-hooks/issues/757)) ([dfb62b0](https://github.com/thoroc/projen-typescript-git-hooks/commit/dfb62b0b71f8f31fb6fbd73e4610efb202e685ec)), closes [#741](https://github.com/thoroc/projen-typescript-git-hooks/issues/741)
+
 ## [1.1.2](https://github.com/thoroc/projen-typescript-git-hooks/compare/v1.1.1...v1.1.2) (2026-06-18)
 
 
