@@ -25,7 +25,7 @@ export class Husky extends GitHooksManager {
 	/**
 	 * Returns the singletone component of a project or undefined if there is none.
 	 */
-	public static of(project: Project): Husky | undefined {
+	public static of(project: Project): GitHooksManager | undefined {
 		const singleton = (c: Component): c is Husky => c instanceof Husky;
 		return (project as GitHooksEnabledProject).components.find(singleton);
 	}

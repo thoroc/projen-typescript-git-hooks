@@ -74,7 +74,7 @@ export class Prettier extends javascript.Prettier {
 			commands: "npx prettier --write --prose-wrap always",
 		});
 
-		Lefthook.of(this.project as GitHooksEnabledProject)?.addCommand(
+		(Lefthook.of(this.project as GitHooksEnabledProject) as Lefthook | undefined)?.addCommand(
 			GitClientHook.PRE_COMMIT,
 			{
 				name: "markdown-prettier",

@@ -6,6 +6,7 @@ import { GitClientHook } from "../types";
 import { LefthookCommand, type LefthookCommandOptions } from "./command";
 import { LefthookConfig } from "./config";
 import { LefthookFile } from "./file";
+import { kebabCase } from "change-case";
 import type { LefthookScriptOptions } from "./script";
 
 export interface LefthookOptions {
@@ -22,7 +23,7 @@ export class Lefthook extends GitHooksManager {
 	/**
 	 * Returns the singletone component of a project or undefined if there is none.
 	 */
-	public static of(project: Project): Lefthook | undefined {
+	public static of(project: Project): GitHooksManager | undefined {
 		const singleton = (c: Component): c is Lefthook => c instanceof Lefthook;
 		return (project as GitHooksEnabledProject).components.find(singleton);
 	}
@@ -48,7 +49,7 @@ export class Lefthook extends GitHooksManager {
 	}
 
 	public addHook(hook: GitClientHook, command: string): void {
-		this.addCommand(hook, { run: command });
+		this.addCommand(hook, { name: kebabCase(command), run: command });
 	}
 
 	public addCommand(hookName: GitClientHook, command: LefthookCommandOptions) {

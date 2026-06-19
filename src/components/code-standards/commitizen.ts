@@ -46,12 +46,12 @@ export class Commitizen extends Component {
 			exec: "cz",
 		});
 
-		Husky.of(this.project as GitHooksEnabledProject)?.createHook(
+		(Husky.of(this.project as GitHooksEnabledProject) as Husky | undefined)?.createHook(
 			GitClientHook.PRE_COMMIT_MESSAGE,
 			["exec < /dev/tty && npx cz --hook || true"],
 		);
 
-		Lefthook.of(this.project as GitHooksEnabledProject)?.addCommand(
+		(Lefthook.of(this.project as GitHooksEnabledProject) as Lefthook | undefined)?.addCommand(
 			GitClientHook.PRE_COMMIT_MESSAGE,
 			{
 				name: "commitizen",

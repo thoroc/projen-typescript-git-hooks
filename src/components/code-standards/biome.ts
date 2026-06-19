@@ -22,7 +22,7 @@ export class Biome extends javascript.Biome {
 			commands: ["bunx biome check --write"],
 		});
 
-		Lefthook.of(project)?.addCommand(GitClientHook.PRE_COMMIT, {
+		(Lefthook.of(project) as Lefthook | undefined)?.addCommand(GitClientHook.PRE_COMMIT, {
 			name: "biome",
 			glob: "src/**/*.ts",
 			run: "bunx biome check --write",
