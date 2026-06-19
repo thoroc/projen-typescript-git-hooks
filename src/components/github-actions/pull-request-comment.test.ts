@@ -41,9 +41,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --check-files
       - name: Run tests
-        run: npx vitest run --coverage
+        run: npx vitest run --coverage --coverage.reporter=json-summary --coverage.reporter=text
       - name: Coverage Comment
-        uses: MishaKav/jest-coverage-comment@v1
+        uses: davelosert/vitest-coverage-report-action@v2
 concurrency:
   group: \${{ github.workflow }}-\${{ github.event.pull_request.number }}
   cancel-in-progress: true
@@ -56,7 +56,9 @@ concurrency:
 			new PullRequestCoverageComment(project.github ?? new GitHub(project));
 			const config =
 				synthSnapshot(project)[".github/workflows/pull-request.yml"];
-			expect(config).toContain("run: npx vitest run --coverage");
+			expect(config).toContain(
+				"run: npx vitest run --coverage --coverage.reporter=json-summary --coverage.reporter=text",
+			);
 		});
 
 		it("uses npx vitest for PNPM", () => {
@@ -64,7 +66,9 @@ concurrency:
 			new PullRequestCoverageComment(project.github ?? new GitHub(project));
 			const config =
 				synthSnapshot(project)[".github/workflows/pull-request.yml"];
-			expect(config).toContain("run: npx vitest run --coverage");
+			expect(config).toContain(
+				"run: npx vitest run --coverage --coverage.reporter=json-summary --coverage.reporter=text",
+			);
 		});
 
 		it("adds bun setup step and uses bunx vitest for BUN", () => {
@@ -98,9 +102,9 @@ jobs:
       - name: Install dependencies
         run: bun install
       - name: Run tests
-        run: bunx vitest run --coverage
+        run: bunx vitest run --coverage --coverage.reporter=json-summary --coverage.reporter=text
       - name: Coverage Comment
-        uses: MishaKav/jest-coverage-comment@v1
+        uses: davelosert/vitest-coverage-report-action@v2
 concurrency:
   group: \${{ github.workflow }}-\${{ github.event.pull_request.number }}
   cancel-in-progress: true
