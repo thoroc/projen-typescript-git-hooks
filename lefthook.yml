@@ -11,8 +11,8 @@ pre-commit:
 
 pre-push:
   commands:
-    test:
-      run: npm run test
+    bun-test:
+      run: bun test {staged_files}
 
 prepare-commit-msg:
   commands:

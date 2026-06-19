@@ -1,22 +1,14 @@
-import { Component } from "projen";
+import { Component, type Project } from "projen";
 import type { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
-
-/**
- * The list of git cient-side hooks
- * @see https://git-scm.com/docs/githooks
- */
-export enum GitClientHook {
-	PRE_COMMIT = "pre-commit",
-	PRE_PUSH = "pre-push",
-	PRE_COMMIT_MESSAGE = "prepare-commit-msg",
-}
-
-export enum GitHooksManagerType {
-	HUSKY = "husky",
-	LEFTHOOK = "lefthook",
-}
+import type { GitClientHook } from "./types";
 
 export abstract class GitHooksManager extends Component {
+	public static of(project: Project): GitHooksManager | undefined {
+		const singleton = (c: Component): c is GitHooksManager =>
+			c instanceof GitHooksManager;
+		return (project as GitHooksEnabledProject).components.find(singleton);
+	}
+
 	constructor(project: GitHooksEnabledProject) {
 		super(project);
 
@@ -28,6 +20,8 @@ export abstract class GitHooksManager extends Component {
 
 		project.addDeps("change-case");
 	}
+
+	public abstract addHook(hook: GitClientHook, command: string): void;
 
 	preSynthesize(): void {
 		// loop over registrableComponents and set the hooks by calling register

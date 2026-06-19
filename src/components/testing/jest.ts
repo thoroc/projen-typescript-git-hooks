@@ -1,6 +1,6 @@
 import { Jest as BaseJest, type JestOptions } from "projen/lib/javascript";
 import type { GitHooksEnabledProject } from "../../typescript/githooks-enabled-project";
-import { GitClientHook, Husky } from "../githooks-manager";
+import { GitClientHook, GitHooksManager } from "../githooks-manager";
 import { runTest } from ".";
 
 export class Jest extends BaseJest {
@@ -15,7 +15,7 @@ export class Jest extends BaseJest {
 
 		const script = runTest(project.package.packageManager);
 
-		Husky.of(project)?.createHook(GitClientHook.PRE_PUSH, [script]);
+		GitHooksManager.of(project)?.addHook(GitClientHook.PRE_PUSH, script);
 	}
 
 	preSynthesize(): void {

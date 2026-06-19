@@ -131,7 +131,7 @@ export class Eslint extends javascript.Eslint {
 			commands: ["eslint --cache --fix", "npx prettier --write"],
 		});
 
-		Lefthook.of(this.project as GitHooksEnabledProject)?.addCommand(
+		(Lefthook.of(this.project as GitHooksEnabledProject) as Lefthook | undefined)?.addCommand(
 			GitClientHook.PRE_COMMIT,
 			{
 				name: "eslint",
@@ -140,7 +140,7 @@ export class Eslint extends javascript.Eslint {
 				stageFixed: true,
 			},
 		);
-		Lefthook.of(this.project as GitHooksEnabledProject)?.addCommand(
+		(Lefthook.of(this.project as GitHooksEnabledProject) as Lefthook | undefined)?.addCommand(
 			GitClientHook.PRE_COMMIT,
 			{
 				name: "prettier",
