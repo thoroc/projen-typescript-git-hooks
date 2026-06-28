@@ -328,7 +328,7 @@
       },
       "steps": [
         {
-          "exec": "bunx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@commitlint/cli,@commitlint/config-conventional,@types/node,@vitest/coverage-v8,commitizen,cz-conventional-changelog,jsii-diff,jsii-pacmak,lefthook,projen,ts-node,typescript,vite-tsconfig-paths,vitest,change-case,type-fest,yaml"
+          "exec": "bunx npm-check-updates@20 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@commitlint/cli,@commitlint/config-conventional,@types/node,@vitest/coverage-v8,commitizen,cz-conventional-changelog,jsii-diff,jsii-pacmak,lefthook,projen,ts-node,typescript,vite-tsconfig-paths,vitest,change-case,type-fest,yaml"
         },
         {
           "exec": "bun install"

@@ -6,7 +6,7 @@ import { GitClientHook } from "../types";
 import { LefthookCommand, type LefthookCommandOptions } from "./command";
 import { LefthookConfig } from "./config";
 import { LefthookFile } from "./file";
-import { kebabCase } from "change-case";
+import { kebabCase } from "../../../utils/case";
 import type { LefthookScriptOptions } from "./script";
 
 export interface LefthookOptions {

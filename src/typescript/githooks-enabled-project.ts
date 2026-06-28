@@ -77,10 +77,10 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
 	};
 
 	readonly gitHooksManager?: Husky | Lefthook;
-	readonly jest?: javascript.Jest;
+	declare readonly jest?: javascript.Jest;
 	readonly vitest?: Vitest;
-	readonly eslint?: javascript.Eslint;
-	readonly prettier?: javascript.Prettier;
+	declare readonly eslint?: javascript.Eslint;
+	declare readonly prettier?: javascript.Prettier;
 	readonly debug?: boolean;
 	readonly editorConfig?: EditorConfig;
 
