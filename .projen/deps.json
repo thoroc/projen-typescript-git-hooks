@@ -54,12 +54,12 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": "~5.0.0",
+      "version": "~5.9.0",
       "type": "build"
     },
     {
       "name": "jsii",
-      "version": "~5.0.0",
+      "version": "~5.9.0",
       "type": "build"
     },
     {
@@ -87,10 +87,6 @@
       "type": "build"
     },
     {
-      "name": "change-case",
-      "type": "bundled"
-    },
-    {
       "name": "type-fest",
       "type": "bundled"
     },
@@ -100,16 +96,12 @@
     },
     {
       "name": "projen",
-      "version": "^0.99.0",
+      "version": "^0.100.0",
       "type": "peer"
     },
     {
-      "name": "change-case",
-      "type": "runtime"
-    },
-    {
       "name": "projen",
-      "version": "^0.99.0",
+      "version": "^0.100.0",
       "type": "runtime"
     },
     {

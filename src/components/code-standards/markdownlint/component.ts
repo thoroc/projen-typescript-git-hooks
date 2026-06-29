@@ -1,4 +1,4 @@
-import * as cc from "change-case";
+import { kebabCase } from "../../../utils/case";
 import {
 	Component,
 	IgnoreFile,
@@ -78,7 +78,7 @@ export class Markdownlint extends Component {
 		(this.project as GitHooksEnabledProject).addDevDeps("markdownlint-cli2");
 
 		if (Object.keys(this.rules).length > 0) {
-			const transformedRules = objectKeyCaseConverter(this.rules, cc.kebabCase);
+			const transformedRules = objectKeyCaseConverter(this.rules, kebabCase);
 
 			new YamlFile(this.project, "markdownlint.yml", {
 				obj: transformedRules,
