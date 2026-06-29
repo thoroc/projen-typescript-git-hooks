@@ -328,13 +328,13 @@
       },
       "steps": [
         {
-          "exec": "bunx npm-check-updates@20 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@commitlint/cli,@commitlint/config-conventional,@types/node,@vitest/coverage-v8,commitizen,cz-conventional-changelog,jsii-diff,jsii-pacmak,lefthook,projen,ts-node,typescript,vite-tsconfig-paths,vitest,change-case,type-fest,yaml"
+          "exec": "bunx npm-check-updates@20 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@commitlint/cli,@commitlint/config-conventional,@types/node,@vitest/coverage-v8,commitizen,cz-conventional-changelog,jsii-diff,jsii-pacmak,lefthook,projen,ts-node,typescript,vite-tsconfig-paths,vitest,type-fest,yaml"
         },
         {
           "exec": "bun install"
         },
         {
-          "exec": "bun update @biomejs/biome @commitlint/cli @commitlint/config-conventional @types/node @vitest/coverage-v8 commit-and-tag-version commitizen constructs cz-conventional-changelog jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii lefthook projen ts-node typescript vite-tsconfig-paths vitest change-case type-fest yaml"
+          "exec": "bun update @biomejs/biome @commitlint/cli @commitlint/config-conventional @types/node @vitest/coverage-v8 commit-and-tag-version commitizen constructs cz-conventional-changelog jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii lefthook projen ts-node typescript vite-tsconfig-paths vitest type-fest yaml"
         },
         {
           "exec": "bunx projen"

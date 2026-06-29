@@ -94,7 +94,7 @@ export class Lefthook extends GitHooksManager {
 			pkg.packageManager === NodePackageManager.YARN_BERRY
 				? "postinstall"
 				: "prepare";
-		pkg.setScript(script, "npx lefthook install");
+		pkg.setScript(script, "lefthook install");
 
 		new LefthookFile(this.project, this.config.serialize());
 	}

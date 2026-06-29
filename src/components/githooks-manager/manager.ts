@@ -17,8 +17,6 @@ export abstract class GitHooksManager extends Component {
 				`${JSON.stringify(project)}: GitHooksManager can only be configured on the root project.`,
 			);
 		}
-
-		project.addDeps("change-case");
 	}
 
 	public abstract addHook(hook: GitClientHook, command: string): void;

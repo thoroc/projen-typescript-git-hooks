@@ -33,7 +33,7 @@
     "vibe:install": "projen vibe:install",
     "watch": "projen watch",
     "projen": "bunx projen",
-    "prepare": "npx lefthook install"
+    "prepare": "lefthook install"
   },
   "author": {
     "name": "thoroc",
@@ -66,13 +66,11 @@
     "projen": "^0.100.0"
   },
   "dependencies": {
-    "change-case": "^5.0.0",
     "projen": "^0.100.0",
     "type-fest": "^5.0.0",
     "yaml": "^2.3.4"
   },
   "bundledDependencies": [
-    "change-case",
     "type-fest",
     "yaml"
   ],

@@ -36,9 +36,8 @@ const project = new cdk.JsiiProject({
 	repositoryUrl: "https://github.com/thoroc/projen-typescript-git-hooks.git",
 
 	docgen: true,
-	deps: ["projen@^0.100.0", "yaml", "type-fest", "change-case"],
-	devDeps: ["projen@^0.100.0"],
-	bundledDeps: ["yaml", "type-fest", "change-case"],
+	deps: ["projen@^0.100.0", "yaml", "type-fest"],
+	bundledDeps: ["yaml", "type-fest"],
 	peerDeps: ["projen@^0.100.0"],
 
 	npmDistTag: "latest",

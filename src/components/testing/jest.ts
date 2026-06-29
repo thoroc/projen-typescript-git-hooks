@@ -35,9 +35,6 @@ export class Jest extends BaseJest {
 			"/node_modules/",
 			"/lib/",
 		]);
-		config?.addOverride("transformIgnorePatterns", [
-			"/node_modules/(?!(change-case)/)",
-		]);
 		config?.addOverride(overrideTransform, {
 			"^.+\\.[jt]s?$": [
 				"ts-jest",

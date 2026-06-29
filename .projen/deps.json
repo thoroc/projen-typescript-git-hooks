@@ -87,10 +87,6 @@
       "type": "build"
     },
     {
-      "name": "change-case",
-      "type": "bundled"
-    },
-    {
       "name": "type-fest",
       "type": "bundled"
     },
@@ -102,10 +98,6 @@
       "name": "projen",
       "version": "^0.100.0",
       "type": "peer"
-    },
-    {
-      "name": "change-case",
-      "type": "runtime"
     },
     {
       "name": "projen",

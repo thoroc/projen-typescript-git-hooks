@@ -156,6 +156,6 @@ export class GitHooksEnabledProject extends typescript.TypeScriptProject {
 			this.editorConfig = new EditorConfig(this, options.editorConfigOptions);
 		}
 
-		this.addDevDeps("yaml", "change-case");
+		this.addDevDeps("yaml");
 	}
 }
