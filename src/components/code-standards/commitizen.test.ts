@@ -57,7 +57,7 @@ describe("Commitizen Component", () => {
 				},
 			],
 		});
-		expect(packageJson.scripts.commitizen).toEqual("npx projen commitizen");
+		expect(packageJson.scripts.commitizen).toEqual("projen commitizen");
 	});
 
 	it("Adds new config to package.json", () => {

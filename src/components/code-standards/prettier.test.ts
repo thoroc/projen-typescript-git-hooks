@@ -47,7 +47,7 @@ describe("Custom Prettier", () => {
 				},
 			],
 		});
-		expect(packageJson.scripts.format).toEqual("npx projen format");
+		expect(packageJson.scripts.format).toEqual("projen format");
 	});
 
 	it("Adds new lint-staged rule for markdown with Husky enabled", () => {

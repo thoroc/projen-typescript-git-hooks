@@ -30,7 +30,8 @@
       "!.projen/tasks.json",
       "!.vibe/config.toml",
       "!lefthook.yml",
-      "!tsconfig.dev.json"
+      "!tsconfig.dev.json",
+      "!tsconfig.json"
     ]
   },
   "formatter": {

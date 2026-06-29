@@ -36,6 +36,7 @@ new AgenticHarnesses(project: Project, options?: AgenticHarnessesOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AgenticHarnesses.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -49,6 +50,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.AgenticHarnesses.postSynthesize"></a>
 
@@ -207,6 +229,7 @@ new AgentsMd(project: Project)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AgentsMd.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -221,6 +244,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.AgentsMd.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.AgentsMd.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.AgentsMd.postSynthesize"></a>
 
@@ -453,6 +497,7 @@ new AislopConfig(project: Project, options?: AislopConfigOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopConfig.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -466,6 +511,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.AislopConfig.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.AislopConfig.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.AislopConfig.postSynthesize"></a>
 
@@ -659,6 +725,7 @@ new AislopMcpServer(project: Project, options?: AislopMcpServerOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AislopMcpServer.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -672,6 +739,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.AislopMcpServer.postSynthesize"></a>
 
@@ -849,6 +937,7 @@ new AutoMerge(github: GitHub)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.AutoMerge.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -862,6 +951,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.AutoMerge.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.AutoMerge.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.AutoMerge.postSynthesize"></a>
 
@@ -1012,6 +1122,7 @@ new Biome(project: GitHooksEnabledProject, options?: BiomeOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Biome.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -1028,6 +1139,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.Biome.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.Biome.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Biome.postSynthesize"></a>
 
@@ -1290,6 +1422,7 @@ new ClaudeCode(project: Project, options?: ClaudeCodeOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ClaudeCode.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -1305,6 +1438,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.ClaudeCode.postSynthesize"></a>
 
@@ -1534,6 +1688,7 @@ new CloseStaleIssue(github: GitHub)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.CloseStaleIssue.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -1547,6 +1702,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.CloseStaleIssue.postSynthesize"></a>
 
@@ -1697,6 +1873,7 @@ new CodeOfConduct(project: Project, options?: CodeOfConductOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.CodeOfConduct.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -1710,6 +1887,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.CodeOfConduct.postSynthesize"></a>
 
@@ -1875,6 +2073,7 @@ new CodeReviewGraphMcpServer(project: Project)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -1888,6 +2087,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.CodeReviewGraphMcpServer.postSynthesize"></a>
 
@@ -2070,6 +2290,7 @@ new Commitizen(project: GitHooksEnabledProject, options?: CommitizenOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Commitizen.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -2083,6 +2304,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.Commitizen.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.Commitizen.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Commitizen.postSynthesize"></a>
 
@@ -2265,6 +2507,7 @@ new ContextModeMcpServer(project: Project)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -2278,6 +2521,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.ContextModeMcpServer.postSynthesize"></a>
 
@@ -2460,6 +2724,7 @@ new DocmdPages(github: GitHub, options?: DocmdPagesOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.DocmdPages.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -2473,6 +2738,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.DocmdPages.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.DocmdPages.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.DocmdPages.postSynthesize"></a>
 
@@ -2623,6 +2909,7 @@ new EditorConfig(project: GitHooksEnabledProject, options?: EditorConfigOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfig.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -2636,6 +2923,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.EditorConfig.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.EditorConfig.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.EditorConfig.postSynthesize"></a>
 
@@ -2797,6 +3105,7 @@ new Eslint(project: GitHooksEnabledProject, options?: EslintOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Eslint.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -2817,6 +3126,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.Eslint.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.Eslint.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Eslint.postSynthesize"></a>
 
@@ -3201,6 +3531,7 @@ new GeminiCli(project: Project, options?: GeminiCliOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GeminiCli.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -3216,6 +3547,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.GeminiCli.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.GeminiCli.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.GeminiCli.postSynthesize"></a>
 
@@ -3443,11 +3795,11 @@ new GitHooksEnabledProject(options: GitHooksEnabledProjectOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTask">addTask</a></code> | Adds a new task to this project. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
@@ -3455,20 +3807,16 @@ new GitHooksEnabledProject(options: GitHooksEnabledProjectOptions)
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBins">addBins</a></code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
@@ -3482,6 +3830,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addExcludeFromCleanup"></a>
 
@@ -3561,22 +3930,6 @@ Task properties.
 
 ---
 
-##### ~~`addTip`~~ <a name="addTip" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTip"></a>
-
-```typescript
-public addTip(message: string): void
-```
-
-Prints a "tip" message during synthesis.
-
-###### `message`<sup>Required</sup> <a name="message" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTip.parameter.message"></a>
-
-- *Type:* string
-
-The message.
-
----
-
 ##### `annotateGenerated` <a name="annotateGenerated" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.annotateGenerated"></a>
 
 ```typescript
@@ -3642,7 +3995,7 @@ public runTaskCommand(task: Task): string
 Returns the shell command to execute in order to run a task.
 
 This will
-typically be `npx projen TASK`.
+typically be `pnpm projen TASK`.
 
 ###### `task`<sup>Required</sup> <a name="task" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.runTaskCommand.parameter.task"></a>
 
@@ -3683,22 +4036,6 @@ The file path.
 
 If this path is relative, it will be resolved
 from the root of _this_ project.
-
----
-
-##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindJsonFile"></a>
-
-```typescript
-public tryFindJsonFile(filePath: string): JsonFile
-```
-
-Finds a json file by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.tryFindJsonFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
 
 ---
 
@@ -3767,24 +4104,10 @@ Bundled dependencies will be added as normal dependencies as well as to the
 Names modules to install.
 
 By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
+be installed in the next `pnpm projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `pnpm
+add/update`. If you wish to specify a version range use this syntax:
 `module@^7`.
-
----
-
-##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addCompileCommand"></a>
-
-```typescript
-public addCompileCommand(commands: ...string[]): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addCompileCommand.parameter.commands"></a>
-
-- *Type:* ...string[]
 
 ---
 
@@ -3803,9 +4126,9 @@ Defines normal dependencies.
 Names modules to install.
 
 By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
+be installed in the next `pnpm projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `pnpm
+add/update`. If you wish to specify a version range use this syntax:
 `module@^7`.
 
 ---
@@ -3825,9 +4148,9 @@ Defines development/test dependencies.
 Names modules to install.
 
 By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
+be installed in the next `pnpm projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `pnpm
+add/update`. If you wish to specify a version range use this syntax:
 `module@^7`.
 
 ---
@@ -3883,9 +4206,9 @@ your code against the minimum version required from your consumers.
 Names modules to install.
 
 By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
+be installed in the next `pnpm projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `pnpm
+add/update`. If you wish to specify a version range use this syntax:
 `module@^7`.
 
 ---
@@ -3903,36 +4226,6 @@ Replaces the contents of multiple npm package.json scripts.
 - *Type:* {[ key: string ]: string}
 
 The scripts to set.
-
----
-
-##### ~~`addTestCommand`~~ <a name="addTestCommand" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTestCommand"></a>
-
-```typescript
-public addTestCommand(commands: ...string[]): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.addTestCommand.parameter.commands"></a>
-
-- *Type:* ...string[]
-
----
-
-##### ~~`hasScript`~~ <a name="hasScript" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.hasScript"></a>
-
-```typescript
-public hasScript(name: string): boolean
-```
-
-Indicates if a script by the name name is defined.
-
-###### `name`<sup>Required</sup> <a name="name" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.hasScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
 
 ---
 
@@ -4097,21 +4390,16 @@ When given a project, this it the project itself.
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.biome">biome</a></code> | <code>projen.javascript.Biome</code> | *No description.* |
@@ -4122,7 +4410,6 @@ When given a project, this it the project itself.
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
@@ -4440,16 +4727,6 @@ If undefined, this is the root project.
 
 ---
 
-##### `projectType`<sup>Required</sup> <a name="projectType" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.projectType"></a>
-
-```typescript
-public readonly projectType: ProjectType;
-```
-
-- *Type:* projen.ProjectType
-
----
-
 ##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.autoApprove"></a>
 
 ```typescript
@@ -4518,18 +4795,6 @@ This will be `undefined` for subprojects.
 
 ---
 
-##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.allowLibraryDependencies"></a>
-
-- *Deprecated:* use `package.allowLibraryDependencies`
-
-```typescript
-public readonly allowLibraryDependencies: boolean;
-```
-
-- *Type:* boolean
-
----
-
 ##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.artifactsDirectory"></a>
 
 ```typescript
@@ -4568,30 +4833,6 @@ public readonly bundler: Bundler;
 
 ---
 
-##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.entrypoint"></a>
-
-- *Deprecated:* use `package.entrypoint`
-
-```typescript
-public readonly entrypoint: string;
-```
-
-- *Type:* string
-
----
-
-##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.manifest"></a>
-
-- *Deprecated:* use `package.addField(x, y)`
-
-```typescript
-public readonly manifest: any;
-```
-
-- *Type:* any
-
----
-
 ##### `npmrc`<sup>Required</sup> <a name="npmrc" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.npmrc"></a>
 
 ```typescript
@@ -4613,20 +4854,6 @@ public readonly package: NodePackage;
 - *Type:* projen.javascript.NodePackage
 
 API for managing the node package.
-
----
-
-##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.packageManager"></a>
-
-- *Deprecated:* use `package.packageManager`
-
-```typescript
-public readonly packageManager: NodePackageManager;
-```
-
-- *Type:* projen.javascript.NodePackageManager
-
-The package manager to use.
 
 ---
 
@@ -4749,23 +4976,6 @@ public readonly prettier: Prettier;
 ```
 
 - *Type:* projen.javascript.Prettier
-
----
-
-##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProject.property.publisher"></a>
-
-- *Deprecated:* use `release.publisher`.
-
-```typescript
-public readonly publisher: Publisher;
-```
-
-- *Type:* projen.release.Publisher
-
-Package publisher.
-
-This will be `undefined` if the project does not have a
-release workflow.
 
 ---
 
@@ -5014,6 +5224,7 @@ new GitHooksManager(project: GitHooksEnabledProject)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManager.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -5028,6 +5239,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.GitHooksManager.postSynthesize"></a>
 
@@ -5204,6 +5436,7 @@ new GitNexusMcpServer(project: Project)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -5217,6 +5450,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.GitNexusMcpServer.postSynthesize"></a>
 
@@ -5399,6 +5653,7 @@ new Husky(project: GitHooksEnabledProject, options?: HuskyOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Husky.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -5414,6 +5669,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.Husky.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.Husky.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Husky.postSynthesize"></a>
 
@@ -5628,9 +5904,11 @@ new HuskyHookFile(project: Project, options: HuskyHookFileOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.synthesize">synthesize</a></code> | Writes the file to the project's output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.diff">diff</a></code> | Returns a unified diff of the old and new file contents with context lines and hunk headers. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.addLine">addLine</a></code> | Adds a line to the text file. |
 
 ---
@@ -5642,6 +5920,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.postSynthesize"></a>
 
@@ -5668,6 +5967,35 @@ public synthesize(): void
 ```
 
 Writes the file to the project's output directory.
+
+##### `diff` <a name="diff" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.diff"></a>
+
+```typescript
+public diff(colorize?: boolean, contextLines?: number): string[]
+```
+
+Returns a unified diff of the old and new file contents with context lines and hunk headers.
+
+Only available after synthesis.
+
+This is an expensive operation and should only be used on non time-critical
+code paths, like debug output.
+
+###### `colorize`<sup>Optional</sup> <a name="colorize" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.diff.parameter.colorize"></a>
+
+- *Type:* boolean
+
+Whether to colorize the diff output.
+
+---
+
+###### `contextLines`<sup>Optional</sup> <a name="contextLines" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.diff.parameter.contextLines"></a>
+
+- *Type:* number
+
+Number of context lines around changes.
+
+---
 
 ##### `addLine` <a name="addLine" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.addLine"></a>
 
@@ -5749,6 +6077,7 @@ Test whether the given construct is a component.
 | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.absolutePath">absolutePath</a></code> | <code>string</code> | The absolute path of this file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.committed">committed</a></code> | <code>boolean</code> | Indicates if the file will be committed. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.path">path</a></code> | <code>string</code> | The file path, relative to the project's outdir. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.changed">changed</a></code> | <code>boolean</code> | Indicates if the file has been changed during synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.marker">marker</a></code> | <code>string</code> | The projen marker, used to identify files as projen-generated. |
@@ -5788,6 +6117,18 @@ public readonly absolutePath: string;
 - *Type:* string
 
 The absolute path of this file.
+
+---
+
+##### `committed`<sup>Required</sup> <a name="committed" id="@thoroc/projen-typescript-git-hooks.HuskyHookFile.property.committed"></a>
+
+```typescript
+public readonly committed: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file will be committed.
 
 ---
 
@@ -5885,9 +6226,11 @@ new IssueTemplate(github: GitHub)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.synthesize">synthesize</a></code> | Writes the file to the project's output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.diff">diff</a></code> | Returns a unified diff of the old and new file contents with context lines and hunk headers. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.addLine">addLine</a></code> | Adds a line to the text file. |
 
 ---
@@ -5899,6 +6242,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.postSynthesize"></a>
 
@@ -5925,6 +6289,35 @@ public synthesize(): void
 ```
 
 Writes the file to the project's output directory.
+
+##### `diff` <a name="diff" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.diff"></a>
+
+```typescript
+public diff(colorize?: boolean, contextLines?: number): string[]
+```
+
+Returns a unified diff of the old and new file contents with context lines and hunk headers.
+
+Only available after synthesis.
+
+This is an expensive operation and should only be used on non time-critical
+code paths, like debug output.
+
+###### `colorize`<sup>Optional</sup> <a name="colorize" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.diff.parameter.colorize"></a>
+
+- *Type:* boolean
+
+Whether to colorize the diff output.
+
+---
+
+###### `contextLines`<sup>Optional</sup> <a name="contextLines" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.diff.parameter.contextLines"></a>
+
+- *Type:* number
+
+Number of context lines around changes.
+
+---
 
 ##### `addLine` <a name="addLine" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.addLine"></a>
 
@@ -6006,6 +6399,7 @@ Test whether the given construct is a component.
 | <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.absolutePath">absolutePath</a></code> | <code>string</code> | The absolute path of this file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.committed">committed</a></code> | <code>boolean</code> | Indicates if the file will be committed. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.path">path</a></code> | <code>string</code> | The file path, relative to the project's outdir. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.changed">changed</a></code> | <code>boolean</code> | Indicates if the file has been changed during synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.IssueTemplate.property.marker">marker</a></code> | <code>string</code> | The projen marker, used to identify files as projen-generated. |
@@ -6045,6 +6439,18 @@ public readonly absolutePath: string;
 - *Type:* string
 
 The absolute path of this file.
+
+---
+
+##### `committed`<sup>Required</sup> <a name="committed" id="@thoroc/projen-typescript-git-hooks.IssueTemplate.property.committed"></a>
+
+```typescript
+public readonly committed: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file will be committed.
 
 ---
 
@@ -6149,6 +6555,7 @@ new Jest(project: GitHooksEnabledProject, options?: JestOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Jest.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -6173,6 +6580,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.Jest.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.Jest.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Jest.postSynthesize"></a>
 
@@ -6570,6 +6998,7 @@ new LabelerConfig(project: Project, options: LabelerConfigOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LabelerConfig.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -6583,6 +7012,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.LabelerConfig.postSynthesize"></a>
 
@@ -6733,6 +7183,7 @@ new Lefthook(project: GitHooksEnabledProject, options?: LefthookOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Lefthook.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -6749,6 +7200,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.Lefthook.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.Lefthook.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Lefthook.postSynthesize"></a>
 
@@ -6986,9 +7458,11 @@ synthesized.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.synthesize">synthesize</a></code> | Writes the file to the project's output directory. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.diff">diff</a></code> | Returns a unified diff of the old and new file contents with context lines and hunk headers. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.addOverride">addOverride</a></code> | Adds an override to the synthesized object file. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.addToArray">addToArray</a></code> | Adds to an array in the synthesized object file. |
@@ -7003,6 +7477,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.LefthookFile.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.LefthookFile.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.LefthookFile.postSynthesize"></a>
 
@@ -7029,6 +7524,35 @@ public synthesize(): void
 ```
 
 Writes the file to the project's output directory.
+
+##### `diff` <a name="diff" id="@thoroc/projen-typescript-git-hooks.LefthookFile.diff"></a>
+
+```typescript
+public diff(colorize?: boolean, contextLines?: number): string[]
+```
+
+Returns a unified diff of the old and new file contents with context lines and hunk headers.
+
+Only available after synthesis.
+
+This is an expensive operation and should only be used on non time-critical
+code paths, like debug output.
+
+###### `colorize`<sup>Optional</sup> <a name="colorize" id="@thoroc/projen-typescript-git-hooks.LefthookFile.diff.parameter.colorize"></a>
+
+- *Type:* boolean
+
+Whether to colorize the diff output.
+
+---
+
+###### `contextLines`<sup>Optional</sup> <a name="contextLines" id="@thoroc/projen-typescript-git-hooks.LefthookFile.diff.parameter.contextLines"></a>
+
+- *Type:* number
+
+Number of context lines around changes.
+
+---
 
 ##### `addDeletionOverride` <a name="addDeletionOverride" id="@thoroc/projen-typescript-git-hooks.LefthookFile.addDeletionOverride"></a>
 
@@ -7265,6 +7789,7 @@ Test whether the given construct is a component.
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.absolutePath">absolutePath</a></code> | <code>string</code> | The absolute path of this file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.committed">committed</a></code> | <code>boolean</code> | Indicates if the file will be committed. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.path">path</a></code> | <code>string</code> | The file path, relative to the project's outdir. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.changed">changed</a></code> | <code>boolean</code> | Indicates if the file has been changed during synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LefthookFile.property.marker">marker</a></code> | <code>string</code> | The projen marker, used to identify files as projen-generated. |
@@ -7306,6 +7831,18 @@ public readonly absolutePath: string;
 - *Type:* string
 
 The absolute path of this file.
+
+---
+
+##### `committed`<sup>Required</sup> <a name="committed" id="@thoroc/projen-typescript-git-hooks.LefthookFile.property.committed"></a>
+
+```typescript
+public readonly committed: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if the file will be committed.
 
 ---
 
@@ -7434,6 +7971,7 @@ new LintStaged(project: GitHooksEnabledProject, options?: LintStagedOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.LintStaged.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -7448,6 +7986,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.LintStaged.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.LintStaged.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.LintStaged.postSynthesize"></a>
 
@@ -7638,6 +8197,7 @@ new Markdownlint(project: GitHooksEnabledProject, options?: MarkdownlintOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Markdownlint.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -7652,6 +8212,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.Markdownlint.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.Markdownlint.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Markdownlint.postSynthesize"></a>
 
@@ -7883,6 +8464,7 @@ new McpConfig(project: Project, options: McpConfigOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.McpConfig.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -7897,6 +8479,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.McpConfig.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.McpConfig.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.McpConfig.postSynthesize"></a>
 
@@ -8102,6 +8705,7 @@ new MistralVibe(project: Project, options?: MistralVibeOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.MistralVibe.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -8115,6 +8719,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.MistralVibe.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.MistralVibe.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.MistralVibe.postSynthesize"></a>
 
@@ -8312,6 +8937,7 @@ new NeuledgeContextMcpServer(project: Project)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -8325,6 +8951,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.NeuledgeContextMcpServer.postSynthesize"></a>
 
@@ -8507,6 +9154,7 @@ new OpenAICodex(project: Project, options?: OpenAICodexOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenAICodex.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -8522,6 +9170,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.OpenAICodex.postSynthesize"></a>
 
@@ -8767,6 +9436,7 @@ new OpenCode(project: Project, options?: OpenCodeOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.OpenCode.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -8782,6 +9452,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.OpenCode.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.OpenCode.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.OpenCode.postSynthesize"></a>
 
@@ -9017,6 +9708,7 @@ new Prettier(project: GitHooksEnabledProject, options?: PrettierOptions, sortImp
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Prettier.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -9032,6 +9724,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.Prettier.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.Prettier.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Prettier.postSynthesize"></a>
 
@@ -9281,6 +9994,7 @@ new PullRequestCoverageComment(github: GitHub, options?: PullRequestCoverageComm
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -9294,6 +10008,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestCoverageComment.postSynthesize"></a>
 
@@ -9439,6 +10174,7 @@ new PullRequestLabeler(github: GitHub)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.PullRequestLabeler.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -9452,6 +10188,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.PullRequestLabeler.postSynthesize"></a>
 
@@ -9595,6 +10352,7 @@ new QmdMcpServer(project: Project)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.QmdMcpServer.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -9608,6 +10366,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.QmdMcpServer.postSynthesize"></a>
 
@@ -9790,6 +10569,7 @@ new ReleasePlease(github: GitHub, options?: ReleasePleaseOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.ReleasePlease.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -9803,6 +10583,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.ReleasePlease.postSynthesize"></a>
 
@@ -9953,6 +10754,7 @@ new Renovate(project: Project, options?: RenovateOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Renovate.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -9966,6 +10768,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.Renovate.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.Renovate.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Renovate.postSynthesize"></a>
 
@@ -10109,6 +10932,7 @@ new RtkProxy(project: Project)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.RtkProxy.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -10122,6 +10946,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.RtkProxy.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.RtkProxy.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.RtkProxy.postSynthesize"></a>
 
@@ -10287,6 +11132,7 @@ new Vitest(project: NodeProject, options?: VitestOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.Vitest.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -10300,6 +11146,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.Vitest.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.Vitest.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.Vitest.postSynthesize"></a>
 
@@ -10465,6 +11332,7 @@ new WorkflowHealthMonitor(github: GitHub, options?: WorkflowHealthMonitorOptions
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -10478,6 +11346,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="@thoroc/projen-typescript-git-hooks.WorkflowHealthMonitor.postSynthesize"></a>
 
@@ -11949,6 +12838,7 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.logging">logging</a></code> | <code>projen.LoggerOptions</code> | Configure logging options such as verbosity. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.parent">parent</a></code> | <code>projen.Project</code> | The parent project, if this project is part of a bigger project. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.projectTree">projectTree</a></code> | <code>boolean</code> | Generate a project tree file (`.projen/tree.json`) that shows all components and their relationships. Useful for understanding your project structure and debugging. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.projenCommand">projenCommand</a></code> | <code>string</code> | The shell command to use in order to run the projen CLI. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.projenrcJson">projenrcJson</a></code> | <code>boolean</code> | Generate (once) .projenrc.json (in JSON). Set to `false` in order to disable .projenrc.json generation. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.projenrcJsonOptions">projenrcJsonOptions</a></code> | <code>projen.ProjenrcJsonOptions</code> | Options for .projenrc.json. |
@@ -11962,15 +12852,12 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.github">github</a></code> | <code>boolean</code> | Enable GitHub integration. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.githubOptions">githubOptions</a></code> | <code>projen.github.GitHubOptions</code> | Options for GitHub integration. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.gitpod">gitpod</a></code> | <code>boolean</code> | Add a Gitpod development environment. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.mergify">mergify</a></code> | <code>boolean</code> | Whether mergify should be enabled on this repository or not. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.mergifyOptions">mergifyOptions</a></code> | <code>projen.github.MergifyOptions</code> | Options for mergify. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | Which type of project this is (library/app). |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.projenCredentials">projenCredentials</a></code> | <code>projen.github.GithubCredentials</code> | Choose a method of providing GitHub API access for projen workflows. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.projenTokenSecret">projenTokenSecret</a></code> | <code>string</code> | The name of a secret which includes a GitHub Personal Access Token to be used by projen workflows. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.readme">readme</a></code> | <code>projen.SampleReadmeProps</code> | The README setup. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.stale">stale</a></code> | <code>boolean</code> | Auto-close of stale issues and pull request. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.staleOptions">staleOptions</a></code> | <code>projen.github.StaleOptions</code> | Auto-close stale issues and pull requests. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.addPackageManagerToDevEngines">addPackageManagerToDevEngines</a></code> | <code>boolean</code> | Automatically add the resolved `packageManager` to `devEngines.packageManager` in `package.json`, setting `onFail` to `ignore`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | Allow the project to include `peerDependencies` and `bundledDependencies`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.authorName">authorName</a></code> | <code>string</code> | Author's name. |
@@ -11983,9 +12870,11 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.bundledDeps">bundledDeps</a></code> | <code>string[]</code> | List of dependencies to bundle into this module. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.bunVersion">bunVersion</a></code> | <code>string</code> | The version of Bun to use if using Bun as a package manager. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.deleteOrphanedLockFiles">deleteOrphanedLockFiles</a></code> | <code>boolean</code> | Automatically delete lockfiles from package managers that are not the active one. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.deps">deps</a></code> | <code>string[]</code> | Runtime dependencies of this module. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.description">description</a></code> | <code>string</code> | The description is just a string that helps people understand the purpose of the package. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.devDeps">devDeps</a></code> | <code>string[]</code> | Build dependencies for this module. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.devEngines">devEngines</a></code> | <code>projen.javascript.DevEngines</code> | Configure the `devEngines` field in `package.json`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.entrypoint">entrypoint</a></code> | <code>string</code> | Module entrypoint (`main` in `package.json`). |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.homepage">homepage</a></code> | <code>string</code> | Package's Homepage / Website. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.keywords">keywords</a></code> | <code>string[]</code> | Keywords to include in `package.json`. |
@@ -11995,7 +12884,6 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. Most projects should not use this option. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmRegistry">npmRegistry</a></code> | <code>string</code> | The host name of the npm registry to publish to. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
@@ -12007,7 +12895,6 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.repository">repository</a></code> | <code>string</code> | The repository is the location where the actual code for your package lives. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.repositoryDirectory">repositoryDirectory</a></code> | <code>string</code> | If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.scripts">scripts</a></code> | <code>{[ key: string ]: string}</code> | npm scripts to include. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.stability">stability</a></code> | <code>string</code> | Package's Stability. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.bumpPackage">bumpPackage</a></code> | <code>string</code> | The `commit-and-tag-version` compatible package used to bump the package version, as a dependency string. |
@@ -12023,10 +12910,8 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releasableCommits">releasableCommits</a></code> | <code>projen.ReleasableCommits</code> | Find commits that should be considered releasable Used to decide if a release is required. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseEnvironment">releaseEnvironment</a></code> | <code>string</code> | The GitHub Actions environment used for the release. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseEveryCommit">releaseEveryCommit</a></code> | <code>boolean</code> | Automatically release new versions every commit to one of branches in `releaseBranches`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseFailureIssueLabel">releaseFailureIssueLabel</a></code> | <code>string</code> | The label to apply to issues indicating publish failures. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseSchedule">releaseSchedule</a></code> | <code>string</code> | CRON schedule to trigger new releases. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseTagPrefix">releaseTagPrefix</a></code> | <code>string</code> | Automatically add the given prefix to release tags. Useful if you are releasing on multiple branches with overlapping version numbers. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseTrigger">releaseTrigger</a></code> | <code>projen.release.ReleaseTrigger</code> | The release trigger to use. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseWorkflowEnv">releaseWorkflowEnv</a></code> | <code>{[ key: string ]: string}</code> | Build environment variables for release workflows. |
@@ -12036,7 +12921,6 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowContainerImage">workflowContainerImage</a></code> | <code>string</code> | Container image to use for GitHub workflows. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.auditDeps">auditDeps</a></code> | <code>boolean</code> | Run security audit on dependencies. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.auditDepsOptions">auditDepsOptions</a></code> | <code>projen.javascript.AuditOptions</code> | Security audit options. |
@@ -12045,13 +12929,13 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.biomeOptions">biomeOptions</a></code> | <code>projen.javascript.BiomeOptions</code> | Biome options. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.buildWorkflow">buildWorkflow</a></code> | <code>boolean</code> | Define a GitHub workflow for building PRs. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.buildWorkflowOptions">buildWorkflowOptions</a></code> | <code>projen.javascript.BuildWorkflowOptions</code> | Options for PR build workflow. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.buildWorkflowTriggers">buildWorkflowTriggers</a></code> | <code>projen.github.workflows.Triggers</code> | Build workflow triggers. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.bundlerOptions">bundlerOptions</a></code> | <code>projen.javascript.BundlerOptions</code> | Options for `Bundler`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.copyrightOwner">copyrightOwner</a></code> | <code>string</code> | License copyright owner. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.copyrightPeriod">copyrightPeriod</a></code> | <code>string</code> | The copyright years to put in the LICENSE file. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.dependabot">dependabot</a></code> | <code>boolean</code> | Use dependabot to handle dependency upgrades. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.dependabotOptions">dependabotOptions</a></code> | <code>projen.github.DependabotOptions</code> | Options for dependabot. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.depsUpgrade">depsUpgrade</a></code> | <code>boolean</code> | Use tasks and github workflows to handle dependency upgrades. |
@@ -12059,8 +12943,6 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.gitignore">gitignore</a></code> | <code>string[]</code> | Additional entries to .gitignore. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.jest">jest</a></code> | <code>boolean</code> | Setup jest unit tests. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.jestOptions">jestOptions</a></code> | <code>projen.javascript.JestOptions</code> | Jest options. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.mutableBuild">mutableBuild</a></code> | <code>boolean</code> | Automatically update files modified during builds to pull-request branches. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmignore">npmignore</a></code> | <code>string[]</code> | Additional entries to .npmignore. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmignoreEnabled">npmignoreEnabled</a></code> | <code>boolean</code> | Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmIgnoreOptions">npmIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .npmignore file. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
@@ -12074,7 +12956,6 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.pullRequestTemplateContents">pullRequestTemplateContents</a></code> | <code>string[]</code> | The contents of the pull request template. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseToNpm">releaseToNpm</a></code> | <code>boolean</code> | Automatically release to npm when new versions are introduced. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseWorkflow">releaseWorkflow</a></code> | <code>boolean</code> | DEPRECATED: renamed to `release`. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowBootstrapSteps">workflowBootstrapSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Workflow steps to use in order to bootstrap this repo. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
@@ -12102,7 +12983,7 @@ const gitHooksEnabledProjectOptions: GitHooksEnabledProjectOptions = { ... }
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.editorConfigOptions">editorConfigOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.EditorConfigOptions">EditorConfigOptions</a></code> | EditorConfig options. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.gitHooksManager">gitHooksManager</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksManagerType">GitHooksManagerType</a></code> | Setup gitHooksManager. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.gitHooksManagerOptions">gitHooksManagerOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.HuskyOptions">HuskyOptions</a> \| <a href="#@thoroc/projen-typescript-git-hooks.LefthookOptions">LefthookOptions</a></code> | gitHooksManagerEnabled options. |
-| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.prettierSortImportsOptions">prettierSortImportsOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions">PrettierSortImportsOptions</a></code> | Enable @trivago/prettier-plugin-sort-imports and configure it. |
+| <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.prettierSortImportsOptions">prettierSortImportsOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions">PrettierSortImportsOptions</a></code> | Enable. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable Vitest instead of Jest. |
 | <code><a href="#@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.vitestOptions">vitestOptions</a></code> | <code><a href="#@thoroc/projen-typescript-git-hooks.VitestOptions">VitestOptions</a></code> | Vitest options. |
 
@@ -12199,6 +13080,19 @@ public readonly parent: Project;
 - *Type:* projen.Project
 
 The parent project, if this project is part of a bigger project.
+
+---
+
+##### `projectTree`<sup>Optional</sup> <a name="projectTree" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.projectTree"></a>
+
+```typescript
+public readonly projectTree: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Generate a project tree file (`.projen/tree.json`) that shows all components and their relationships. Useful for understanding your project structure and debugging.
 
 ---
 
@@ -12381,51 +13275,6 @@ Add a Gitpod development environment.
 
 ---
 
-##### ~~`mergify`~~<sup>Optional</sup> <a name="mergify" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.mergify"></a>
-
-- *Deprecated:* use `githubOptions.mergify` instead
-
-```typescript
-public readonly mergify: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Whether mergify should be enabled on this repository or not.
-
----
-
-##### ~~`mergifyOptions`~~<sup>Optional</sup> <a name="mergifyOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.mergifyOptions"></a>
-
-- *Deprecated:* use `githubOptions.mergifyOptions` instead
-
-```typescript
-public readonly mergifyOptions: MergifyOptions;
-```
-
-- *Type:* projen.github.MergifyOptions
-- *Default:* default options
-
-Options for mergify.
-
----
-
-##### ~~`projectType`~~<sup>Optional</sup> <a name="projectType" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.projectType"></a>
-
-- *Deprecated:* no longer supported at the base project level
-
-```typescript
-public readonly projectType: ProjectType;
-```
-
-- *Type:* projen.ProjectType
-- *Default:* ProjectType.UNKNOWN
-
-Which type of project this is (library/app).
-
----
-
 ##### `projenCredentials`<sup>Optional</sup> <a name="projenCredentials" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.projenCredentials"></a>
 
 ```typescript
@@ -12436,24 +13285,6 @@ public readonly projenCredentials: GithubCredentials;
 - *Default:* use a personal access token named PROJEN_GITHUB_TOKEN
 
 Choose a method of providing GitHub API access for projen workflows.
-
----
-
-##### ~~`projenTokenSecret`~~<sup>Optional</sup> <a name="projenTokenSecret" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.projenTokenSecret"></a>
-
-- *Deprecated:* use `projenCredentials`
-
-```typescript
-public readonly projenTokenSecret: string;
-```
-
-- *Type:* string
-- *Default:* "PROJEN_GITHUB_TOKEN"
-
-The name of a secret which includes a GitHub Personal Access Token to be used by projen workflows.
-
-This token needs to have the `repo`, `workflows`
-and `packages` scope.
 
 ---
 
@@ -12519,6 +13350,19 @@ public readonly vscode: boolean;
 Enable VSCode integration.
 
 Enabled by default for root projects. Disabled for non-root projects.
+
+---
+
+##### `addPackageManagerToDevEngines`<sup>Optional</sup> <a name="addPackageManagerToDevEngines" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.addPackageManagerToDevEngines"></a>
+
+```typescript
+public readonly addPackageManagerToDevEngines: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Automatically add the resolved `packageManager` to `devEngines.packageManager` in `package.json`, setting `onFail` to `ignore`.
 
 ---
 
@@ -12654,11 +13498,11 @@ added both to the `dependencies` section and `bundledDependencies` section of
 your `package.json`.
 
 The recommendation is to only specify the module name here (e.g.
-`express`). This will behave similar to `yarn add` or `npm install` in the
+`express`). This will behave similar to `pnpm add` or `npm install` in the
 sense that it will add the module as a dependency to your `package.json`
 file with the latest version (`^`). You can specify semver requirements in
-the same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and
-this will be what you `package.json` will eventually include.
+the same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and
+this will be what your `package.json` will eventually include.
 
 ---
 
@@ -12690,6 +13534,24 @@ This is required if publishing packages to, or installing scoped packages from A
 
 ---
 
+##### `deleteOrphanedLockFiles`<sup>Optional</sup> <a name="deleteOrphanedLockFiles" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.deleteOrphanedLockFiles"></a>
+
+```typescript
+public readonly deleteOrphanedLockFiles: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Automatically delete lockfiles from package managers that are not the active one.
+
+Only triggered when the lockfile for the configured package
+manager already exists.
+
+This is useful when migrating between package managers to avoid conflicts.
+
+---
+
 ##### `deps`<sup>Optional</sup> <a name="deps" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.deps"></a>
 
 ```typescript
@@ -12702,11 +13564,11 @@ public readonly deps: string[];
 Runtime dependencies of this module.
 
 The recommendation is to only specify the module name here (e.g.
-`express`). This will behave similar to `yarn add` or `npm install` in the
+`express`). This will behave similar to `pnpm add` or `npm install` in the
 sense that it will add the module as a dependency to your `package.json`
 file with the latest version (`^`). You can specify semver requirements in
-the same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and
-this will be what you `package.json` will eventually include.
+the same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and
+this will be what your `package.json` will eventually include.
 
 ---
 
@@ -12748,11 +13610,11 @@ available in your build environment but will not be fetched when this
 module is consumed.
 
 The recommendation is to only specify the module name here (e.g.
-`express`). This will behave similar to `yarn add` or `npm install` in the
+`express`). This will behave similar to `pnpm add` or `npm install` in the
 sense that it will add the module as a dependency to your `package.json`
 file with the latest version (`^`). You can specify semver requirements in
-the same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and
-this will be what you `package.json` will eventually include.
+the same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and
+this will be what your `package.json` will eventually include.
 
 ---
 
@@ -12762,6 +13624,24 @@ this will be what you `package.json` will eventually include.
 [ 'typescript', '@types/express' ]
 ```
 
+
+##### `devEngines`<sup>Optional</sup> <a name="devEngines" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.devEngines"></a>
+
+```typescript
+public readonly devEngines: DevEngines;
+```
+
+- *Type:* projen.javascript.DevEngines
+
+Configure the `devEngines` field in `package.json`.
+
+The `devEngines.packageManager` field is automatically populated based on
+the resolved `packageManager` value. Any fields provided here are merged
+with the auto-populated `packageManager` entry.
+
+> [https://docs.npmjs.com/cli/v10/configuring-npm/package-json#devengines](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#devengines)
+
+---
 
 ##### `entrypoint`<sup>Optional</sup> <a name="entrypoint" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.entrypoint"></a>
 
@@ -12907,22 +13787,6 @@ which is using npm internally and supports provenance statements independently o
 
 ---
 
-##### ~~`npmRegistry`~~<sup>Optional</sup> <a name="npmRegistry" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmRegistry"></a>
-
-- *Deprecated:* use `npmRegistryUrl` instead
-
-```typescript
-public readonly npmRegistry: string;
-```
-
-- *Type:* string
-
-The host name of the npm registry to publish to.
-
-Cannot be set together with `npmRegistryUrl`.
-
----
-
 ##### `npmRegistryUrl`<sup>Optional</sup> <a name="npmRegistryUrl" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmRegistryUrl"></a>
 
 ```typescript
@@ -12971,7 +13835,7 @@ public readonly packageManager: NodePackageManager;
 ```
 
 - *Type:* projen.javascript.NodePackageManager
-- *Default:* NodePackageManager.YARN_CLASSIC
+- *Default:* Detected from the calling process or `YARN_CLASSIC` if detection fails.
 
 The Node Package Manager used to execute scripts.
 
@@ -13036,7 +13900,7 @@ public readonly pnpmVersion: string;
 ```
 
 - *Type:* string
-- *Default:* "9"
+- *Default:* "10.33.0"
 
 The version of PNPM to use if using PNPM as a package manager.
 
@@ -13078,25 +13942,6 @@ public readonly scopedPackagesOptions: ScopedPackagesOptions[];
 - *Default:* fetch all scoped packages from the public npm registry
 
 Options for privately hosted scoped packages.
-
----
-
-##### ~~`scripts`~~<sup>Optional</sup> <a name="scripts" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.scripts"></a>
-
-- *Deprecated:* use `project.addTask()` or `package.setScript()`
-
-```typescript
-public readonly scripts: {[ key: string ]: string};
-```
-
-- *Type:* {[ key: string ]: string}
-- *Default:* {}
-
-npm scripts to include.
-
-If a script has the same name as a standard script,
-the standard script will be overwritten.
-Also adds the script as a task.
 
 ---
 
@@ -13342,21 +14187,6 @@ on a per artifact basis.
 
 ---
 
-##### ~~`releaseEveryCommit`~~<sup>Optional</sup> <a name="releaseEveryCommit" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseEveryCommit"></a>
-
-- *Deprecated:* Use `releaseTrigger: ReleaseTrigger.continuous()` instead
-
-```typescript
-public readonly releaseEveryCommit: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Automatically release new versions every commit to one of branches in `releaseBranches`.
-
----
-
 ##### `releaseFailureIssue`<sup>Optional</sup> <a name="releaseFailureIssue" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseFailureIssue"></a>
 
 ```typescript
@@ -13382,21 +14212,6 @@ public readonly releaseFailureIssueLabel: string;
 The label to apply to issues indicating publish failures.
 
 Only applies if `releaseFailureIssue` is true.
-
----
-
-##### ~~`releaseSchedule`~~<sup>Optional</sup> <a name="releaseSchedule" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseSchedule"></a>
-
-- *Deprecated:* Use `releaseTrigger: ReleaseTrigger.scheduled()` instead
-
-```typescript
-public readonly releaseSchedule: string;
-```
-
-- *Type:* string
-- *Default:* no scheduled releases
-
-CRON schedule to trigger new releases.
 
 ---
 
@@ -13522,19 +14337,6 @@ Github Runner Group selection options.
 
 ---
 
-##### `defaultReleaseBranch`<sup>Required</sup> <a name="defaultReleaseBranch" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.defaultReleaseBranch"></a>
-
-```typescript
-public readonly defaultReleaseBranch: string;
-```
-
-- *Type:* string
-- *Default:* "main"
-
-The name of the main release branch.
-
----
-
 ##### `artifactsDirectory`<sup>Optional</sup> <a name="artifactsDirectory" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.artifactsDirectory"></a>
 
 ```typescript
@@ -13644,21 +14446,6 @@ Options for PR build workflow.
 
 ---
 
-##### ~~`buildWorkflowTriggers`~~<sup>Optional</sup> <a name="buildWorkflowTriggers" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.buildWorkflowTriggers"></a>
-
-- *Deprecated:* - Use `buildWorkflowOptions.workflowTriggers`
-
-```typescript
-public readonly buildWorkflowTriggers: Triggers;
-```
-
-- *Type:* projen.github.workflows.Triggers
-- *Default:* "{ pullRequest: {}, workflowDispatch: {} }"
-
-Build workflow triggers.
-
----
-
 ##### `bundlerOptions`<sup>Optional</sup> <a name="bundlerOptions" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.bundlerOptions"></a>
 
 ```typescript
@@ -13735,6 +14522,19 @@ public readonly copyrightPeriod: string;
 - *Default:* current year
 
 The copyright years to put in the LICENSE file.
+
+---
+
+##### `defaultReleaseBranch`<sup>Optional</sup> <a name="defaultReleaseBranch" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.defaultReleaseBranch"></a>
+
+```typescript
+public readonly defaultReleaseBranch: string;
+```
+
+- *Type:* string
+- *Default:* "main"
+
+The name of the main release branch.
 
 ---
 
@@ -13829,41 +14629,6 @@ public readonly jestOptions: JestOptions;
 - *Default:* default options
 
 Jest options.
-
----
-
-##### ~~`mutableBuild`~~<sup>Optional</sup> <a name="mutableBuild" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.mutableBuild"></a>
-
-- *Deprecated:* - Use `buildWorkflowOptions.mutableBuild`
-
-```typescript
-public readonly mutableBuild: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Automatically update files modified during builds to pull-request branches.
-
-This means
-that any files synthesized by projen or e.g. test snapshots will always be up-to-date
-before a PR is merged.
-
-Implies that PR builds do not have anti-tamper checks.
-
----
-
-##### ~~`npmignore`~~<sup>Optional</sup> <a name="npmignore" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.npmignore"></a>
-
-- *Deprecated:* - use `project.addPackageIgnore`
-
-```typescript
-public readonly npmignore: string[];
-```
-
-- *Type:* string[]
-
-Additional entries to .npmignore.
 
 ---
 
@@ -14032,21 +14797,6 @@ public readonly releaseToNpm: boolean;
 - *Default:* false
 
 Automatically release to npm when new versions are introduced.
-
----
-
-##### ~~`releaseWorkflow`~~<sup>Optional</sup> <a name="releaseWorkflow" id="@thoroc/projen-typescript-git-hooks.GitHooksEnabledProjectOptions.property.releaseWorkflow"></a>
-
-- *Deprecated:* see `release`.
-
-```typescript
-public readonly releaseWorkflow: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true if not a subproject
-
-DEPRECATED: renamed to `release`.
 
 ---
 
@@ -14416,9 +15166,7 @@ public readonly prettierSortImportsOptions: PrettierSortImportsOptions;
 
 - *Type:* <a href="#@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions">PrettierSortImportsOptions</a>
 
-Enable @trivago/prettier-plugin-sort-imports and configure it.
-
-Providing this option (even as an empty object) activates the plugin.
+Enable.
 
 ---
 
@@ -17255,9 +18003,7 @@ public readonly matchUpdateTypes: string[];
 
 ### PrettierSortImportsOptions <a name="PrettierSortImportsOptions" id="@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions"></a>
 
-Options for @trivago/prettier-plugin-sort-imports.
-
-Providing this object enables the plugin.
+Options for.
 
 #### Initializer <a name="Initializer" id="@thoroc/projen-typescript-git-hooks.PrettierSortImportsOptions.Initializer"></a>
 

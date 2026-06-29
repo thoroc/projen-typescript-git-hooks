@@ -6,7 +6,7 @@ import { GitClientHook } from "../types";
 import { LefthookCommand, type LefthookCommandOptions } from "./command";
 import { LefthookConfig } from "./config";
 import { LefthookFile } from "./file";
-import { kebabCase } from "change-case";
+import { kebabCase } from "../../../utils/case";
 import type { LefthookScriptOptions } from "./script";
 
 export interface LefthookOptions {
@@ -94,7 +94,7 @@ export class Lefthook extends GitHooksManager {
 			pkg.packageManager === NodePackageManager.YARN_BERRY
 				? "postinstall"
 				: "prepare";
-		pkg.setScript(script, "npx lefthook install");
+		pkg.setScript(script, "lefthook install");
 
 		new LefthookFile(this.project, this.config.serialize());
 	}
