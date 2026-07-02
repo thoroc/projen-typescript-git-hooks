@@ -42,23 +42,23 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2",
-    "@commitlint/cli": "^21.0.0",
-    "@commitlint/config-conventional": "^21.0.0",
-    "@types/node": "^18",
+    "@commitlint/cli": "^21.2.0",
+    "@commitlint/config-conventional": "^21.2.0",
+    "@types/node": "^18.19.130",
     "@vitest/coverage-v8": "^4.1.9",
     "commit-and-tag-version": "^12",
-    "commitizen": "^4.3.0",
+    "commitizen": "^4.3.2",
     "constructs": "^10.0.0",
     "cz-conventional-changelog": "^3.3.0",
     "jsii": "~5.0.0",
-    "jsii-diff": "^1.92.0",
+    "jsii-diff": "^1.137.0",
     "jsii-docgen": "^10.5.0",
-    "jsii-pacmak": "^1.92.0",
+    "jsii-pacmak": "^1.137.0",
     "jsii-rosetta": "~5.0.0",
     "lefthook": "^2.1.9",
     "projen": "0.99.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^6.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3",
     "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^4.1.9"
   },
@@ -66,10 +66,10 @@
     "projen": "^0.99.0"
   },
   "dependencies": {
-    "change-case": "^5.0.0",
+    "change-case": "^5.4.4",
     "projen": "^0.99.0",
-    "type-fest": "^5.0.0",
-    "yaml": "^2.3.4"
+    "type-fest": "^5.7.0",
+    "yaml": "^2.9.0"
   },
   "bundledDependencies": [
     "change-case",
