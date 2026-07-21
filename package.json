@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "change-case": "^5.0.0",
-    "projen": "^0.99.0",
+    "projen": "^0.101.0",
     "type-fest": "^5.0.0",
     "yaml": "^2.3.4"
   },
